@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T15:37:35.366Z",
+  "generatedAt": "2026-09-25T15:44:04.725Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -19,9 +19,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds automated checks that every device driver follows the same basic rules, for example giving the right error when a device isn't connected or gets a bad value, plus a guard that fails the build if a new driver is added without being checked. The checks caught and fixed several drivers that gave wrong or confusing error answers, including some telescope and rotator drivers. One remaining problem with how four telescope drivers report their parked status is logged for a later fix.",
+      "category": "tests",
+      "summaryHash": "4c670b7379516857925a9f889d0747b179e97e0c"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -36,9 +36,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds an automated check that stops the web server part of the project from relying on hardware-brand code any more than it does today. This keeps the planned device catalog separate from brand-specific code. Maintainers still need to make this check required in the repository settings.",
+      "category": "ci",
+      "summaryHash": "3ee252c180208381dc66d8a6f390be7164f8d538"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -53,9 +53,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds the first piece of the new device catalog, which will become one central place that describes each device's settings, checks them, hides secrets and creates the device. Nothing uses it yet, and it comes with its own tests.",
+      "category": "feature",
+      "summaryHash": "8e107ef3fe3fa0ff6117ecf0a5487689dd3b7bc8"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -70,9 +70,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds tests that record every request the server accepts and exactly how it rejects bad ones, so an accidental change to either now makes the tests fail. The tests also found that the server did needless extra work on every device request. Fixing that made rejected requests roughly 15 times faster, with no change in behavior.",
+      "category": "tests",
+      "summaryHash": "af61f979259a9af8d8cbbb9c37c66b6b3b49e500"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -87,9 +87,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Tests only. Checks that every supported device's settings come through unchanged both when entered and when reloaded from saved settings at startup, including nine devices that had no such check before. It also records how some known problems with bad settings behave today, so later fixes show up clearly.",
+      "category": "tests",
+      "summaryHash": "455ee18a00dd2d4cde5fb2d44a471018f51d66cf"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -104,9 +104,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds tests for how Sky-Watcher mounts point in the southern hemisphere, covering syncing, repeated flips across the meridian (the north–south line in the sky) and targets right next to it. One test uses real measurements from an EQM-35 Pro mount, checked against the star positions worked out from its photos. With those measurements, the docs now list southern pier-side handling and pointing as validated. The driver itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "d474bde6dd34e425b0ce4666fbc451df342fc45b"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -121,9 +121,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Canon EOS 250D passed the standard ASCOM compliance test (ConformU) with no errors or warnings, so it now appears in the list of tested cameras. The docs note that the lens must be set to manual focus, because with autofocus on the camera fails to take pictures.",
+      "category": "docs",
+      "summaryHash": "6ad37265f86ffb481b0d72eee583facad4f9b679"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -138,9 +138,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Canon EOS 70D passed the standard ASCOM compliance test (ConformU) with no errors or warnings, so it now appears in the list of tested cameras. The docs note that the mode dial must be on M, that the longest exposure is 30 seconds, and that a Raspberry Pi 3 is too slow to test this camera.",
+      "category": "docs",
+      "summaryHash": "9f05189f0a5c0e57dce04d8f3d55ec1ed1d03658"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -155,9 +155,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The camera option and messages people see now say \"DSLR / Mirrorless\" instead of \"gphoto2\", the name of a separate command-line tool this server doesn't use. People choose a type of camera, not a software library, so the wording now matches what they're looking for. Saved settings are not affected.",
+      "category": "fix",
+      "summaryHash": "7d1d95f83d74ba543a2761fe372c14312f5a53c1"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -170,9 +170,9 @@
       "deletions": 9,
       "changedFiles": 5,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal tidy-ups to the developer helper tools added in the previous PR. Helper programs are now stored more safely, failed setup steps on the test virtual machine now stop instead of being silently skipped, and the virtual machine still starts when some network ports are busy. Two known issues are also written down for later.",
+      "category": "chore",
+      "summaryHash": "1b21ff3639926a46b5d399c6b54a14fc526f999a"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -187,9 +187,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds two approved design records, one for the planned device catalog and one for the task clock, plus a glossary of project terms and an overview of the project's main parts. The automatic docs checks now also cover these new files, so broken links or outdated references in them get caught.",
+      "category": "docs",
+      "summaryHash": "808f80433fc29c17aefefcff4b9714d96b48ef65"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -202,9 +202,9 @@
       "deletions": 6,
       "changedFiles": 15,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds two internal developer tools: one that walks through a contributor's pull request from start to finish, and one that runs a virtual Raspberry Pi–style machine on a Mac for testing. It also adds a test that Tonight's Sky suggests targets for a brand-new user in every month, so an empty list can't hide a bug. Along the way it found that a fresh server install keeps crashing until storage is set up; that is noted for a follow-up, not fixed here.",
+      "category": "chore",
+      "summaryHash": "3c9826a0018edb31572c658063eec5c550a5ee4d"
     },
     {
       "repo": "open-astro/openastro-ara",

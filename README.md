@@ -21,24 +21,36 @@ Requires Node 22+ and a logged-in `gh` CLI (`gh auth login`).
 ```bash
 npm install
 npm run collect:fetch   # pull PRs only, no summaries
-npm run collect         # pull PRs and generate summaries (needs ANTHROPIC_API_KEY)
+npm run collect         # pull PRs and generate summaries (uses your claude login or ANTHROPIC_API_KEY)
 npm run serve           # preview at http://localhost:8787
 ```
 
-Set `ANTHROPIC_API_KEY` in your shell before `npm run collect`. Summaries use `claude-opus-5` at low effort; the first full run over ~1,400 PRs costs on the order of $10-20, and after that only new PRs are summarized.
+### Summaries: two ways to authenticate
+
+1. **Claude subscription (default, same as the other open-astro repos).** The collector runs headless Claude Code (`claude -p`) in batches of 12 PRs. Locally this uses your existing `claude` login. In Actions it uses the `CLAUDE_CODE_OAUTH_TOKEN` secret, created with:
+
+   ```bash
+   claude setup-token
+   gh secret set CLAUDE_CODE_OAUTH_TOKEN -R open-astro/war-room
+   ```
+
+2. **Anthropic API key.** If `ANTHROPIC_API_KEY` is set (shell, `.env`, or the repo secret), the collector uses the Anthropic SDK with `claude-opus-5` at low effort instead. A first full run over ~1,400 PRs costs on the order of $10-20.
+
+Either way, summaries are cached and only new or edited PRs are summarized on later runs.
 
 Useful flags:
 
 ```bash
 npm run collect -- --full           # ignore the incremental cutoff and re-fetch everything
 npm run collect -- --no-summaries   # same as collect:fetch
+npm run collect -- --limit 20       # summarize at most 20 PRs (for testing)
 ```
 
 ## Deploying with GitHub Actions
 
 1. Push this repo to GitHub.
 2. In **Settings → Pages**, set the source to **GitHub Actions**.
-3. In **Settings → Secrets and variables → Actions**, add `ANTHROPIC_API_KEY`.
+3. Add the `CLAUDE_CODE_OAUTH_TOKEN` secret (see above), or `ANTHROPIC_API_KEY` if you prefer API billing.
 4. If any tracked repo is private or in a different org, also add `GH_PAT` (a fine-grained token with read access to pull requests). Public repos work with the default token.
 5. Run the **Collect PRs and deploy dashboard** workflow once from the Actions tab. After that it runs every hour.
 
