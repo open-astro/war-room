@@ -1,0 +1,47 @@
+name: Collect PRs and deploy dashboard
+
+on:
+  schedule:
+    - cron: "0 * * * *" # hourly
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [repos.json, src/**, site/index.html]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Collect merged PRs and summarize
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run collect
+      - name: Commit updated data
+        run: |
+          git config user.name "war-room-bot"
+          git config user.email "war-room-bot@users.noreply.github.com"
+          git add site/data/prs.json
+          git diff --cached --quiet || git commit -m "data: refresh merged PRs $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

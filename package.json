@@ -1,0 +1,22 @@
+{
+  "name": "war-room",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Dashboard of merged PRs across the OpenAstro repos, with plain-English summaries.",
+  "scripts": {
+    "collect": "tsx src/collect.ts",
+    "collect:fetch": "tsx src/collect.ts --no-summaries",
+    "serve": "node src/serve.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
