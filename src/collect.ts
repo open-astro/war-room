@@ -14,7 +14,8 @@
 import { createHash } from "node:crypto";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fetchMergedPrs, type RawPr } from "./github.js";
-import { summarizePr, summarizerAvailable } from "./summarize.js";
+import { fetchPrDiff } from "./diff.js";
+import { summarizePr, summarizerAvailable, type SummaryInput } from "./summarize.js";
 import { cliAvailable, summarizeBatchCli } from "./summarize-cli.js";
 import type { Dataset, PullRequest } from "./types.js";
 
@@ -24,8 +25,10 @@ try { process.loadEnvFile(".env"); } catch { /* no .env, rely on the shell envir
 const DATA_PATH = "site/data/prs.json";
 const REPOS_PATH = "repos.json";
 const CONCURRENCY = 4; // SDK workers
-const CLI_CONCURRENCY = 2; // parallel `claude -p` processes
-const CLI_BATCH = 12; // PRs per `claude -p` call
+const CLI_CONCURRENCY = 3; // parallel `claude -p` processes
+const CLI_BATCH = 6; // PRs per `claude -p` call (each carries a trimmed diff)
+/** Bump when the summary prompt or inputs change, so every PR is re-summarized. */
+const SUMMARY_VERSION = "v2-diff";
 
 const args = new Set(process.argv.slice(2));
 const wantSummaries = !args.has("--no-summaries");
@@ -34,7 +37,7 @@ const limitArg = process.argv.indexOf("--limit");
 const summaryLimit = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity;
 
 function hashOf(pr: Pick<RawPr, "title" | "body">): string {
-  return createHash("sha1").update(pr.title).update("\n").update(pr.body ?? "").digest("hex");
+  return createHash("sha1").update(SUMMARY_VERSION).update("\n").update(pr.title).update("\n").update(pr.body ?? "").digest("hex");
 }
 
 async function loadDataset(): Promise<Dataset> {
@@ -135,6 +138,15 @@ async function main(): Promise<void> {
   let done = 0;
   let failed = 0;
   const bodyOf = (p: PullRequest) => bodies.get(`${p.repo}#${p.number}`) ?? "";
+  const inputFor = async (p: PullRequest): Promise<SummaryInput> => {
+    let diff = "";
+    try {
+      diff = (await fetchPrDiff(p.repo, p.number)).text;
+    } catch (err) {
+      console.error(`  ${p.repo}#${p.number}: diff unavailable (${(err as Error).message.split("\n")[0]})`);
+    }
+    return { ...p, body: bodyOf(p), diff };
+  };
   const apply = (p: PullRequest, out: { summary: string; category: PullRequest["category"] }) => {
     p.summary = out.summary;
     p.category = out.category;
@@ -150,7 +162,7 @@ async function main(): Promise<void> {
     const worker = async () => {
       for (let pr = queue.shift(); pr; pr = queue.shift()) {
         try {
-          apply(pr, await summarizePr({ ...pr, body: bodyOf(pr) }));
+          apply(pr, await summarizePr(await inputFor(pr)));
         } catch (err) {
           failed++;
           console.error(`  ${pr.repo}#${pr.number}: ${(err as Error).message}`);
@@ -165,7 +177,7 @@ async function main(): Promise<void> {
     const worker = async () => {
       for (let batch = batches.shift(); batch; batch = batches.shift()) {
         try {
-          const out = await summarizeBatchCli(batch.map((p) => ({ ...p, body: bodyOf(p) })));
+          const out = await summarizeBatchCli(await Promise.all(batch.map(inputFor)));
           for (const p of batch) {
             const r = out.get(`${p.repo}#${p.number}`);
             if (r) apply(p, r);
