@@ -27,9 +27,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
       - name: Collect merged PRs and summarize
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          # Subscription auth: `claude setup-token`, stored as CLAUDE_CODE_OAUTH_TOKEN.
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Optional alternative: an API key. If set, it is used instead of the subscription.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: npm run collect
       - name: Commit updated data

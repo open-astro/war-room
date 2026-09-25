@@ -6,11 +6,16 @@
  *   npm run collect                # fetch + summarize (needs ANTHROPIC_API_KEY)
  *   npm run collect:fetch          # fetch only
  *   npm run collect -- --full      # ignore the incremental cutoff, re-fetch everything
+ *   npm run collect -- --limit 20  # summarize at most 20 PRs this run (for testing)
+ *
+ * Summaries use the Anthropic SDK when ANTHROPIC_API_KEY is set, otherwise
+ * headless Claude Code (`claude -p`) via CLAUDE_CODE_OAUTH_TOKEN / local login.
  */
 import { createHash } from "node:crypto";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { fetchMergedPrs, type RawPr } from "./github.js";
 import { summarizePr, summarizerAvailable } from "./summarize.js";
+import { cliAvailable, summarizeBatchCli } from "./summarize-cli.js";
 import type { Dataset, PullRequest } from "./types.js";
 
 // Load ANTHROPIC_API_KEY (and anything else) from a gitignored .env file if present.
@@ -18,11 +23,15 @@ try { process.loadEnvFile(".env"); } catch { /* no .env, rely on the shell envir
 
 const DATA_PATH = "site/data/prs.json";
 const REPOS_PATH = "repos.json";
-const CONCURRENCY = 4;
+const CONCURRENCY = 4; // SDK workers
+const CLI_CONCURRENCY = 2; // parallel `claude -p` processes
+const CLI_BATCH = 12; // PRs per `claude -p` call
 
 const args = new Set(process.argv.slice(2));
 const wantSummaries = !args.has("--no-summaries");
 const fullRefetch = args.has("--full");
+const limitArg = process.argv.indexOf("--limit");
+const summaryLimit = limitArg > -1 ? Number(process.argv[limitArg + 1]) : Infinity;
 
 function hashOf(pr: Pick<RawPr, "title" | "body">): string {
   return createHash("sha1").update(pr.title).update("\n").update(pr.body ?? "").digest("hex");
@@ -103,39 +112,70 @@ async function main(): Promise<void> {
   await saveDataset(ds);
 
   // 2. Summarize
-  const pending = ds.prs.filter((p) => !p.summary && bodies.has(`${p.repo}#${p.number}`));
+  let pending = ds.prs.filter((p) => !p.summary && bodies.has(`${p.repo}#${p.number}`));
   if (!wantSummaries) {
     console.log(`Skipping summaries (--no-summaries). ${pending.length} PRs still need one.`);
     return;
   }
-  if (!summarizerAvailable()) {
-    console.log(`ANTHROPIC_API_KEY not set. ${pending.length} PRs still need a summary.`);
+  const backend = summarizerAvailable() ? "sdk" : (await cliAvailable()) ? "cli" : null;
+  if (!backend) {
+    console.log(`No summarizer available (set ANTHROPIC_API_KEY or install Claude Code). ${pending.length} PRs still need a summary.`);
     return;
   }
-  console.log(`Summarizing ${pending.length} PRs with ${CONCURRENCY} workers...`);
+  const remaining = pending.length;
+  pending = pending.slice(0, summaryLimit);
+  console.log(`Summarizing ${pending.length} of ${remaining} PRs via ${backend === "sdk" ? "Anthropic SDK" : "headless Claude Code"}...`);
+
   let done = 0;
   let failed = 0;
-  const queue = [...pending];
-  const worker = async () => {
-    for (let pr = queue.shift(); pr; pr = queue.shift()) {
-      const key = `${pr.repo}#${pr.number}`;
-      try {
-        const out = await summarizePr({ ...pr, body: bodies.get(key) ?? "" });
-        pr.summary = out.summary;
-        pr.category = out.category;
-        pr.summaryHash = hashOf({ title: pr.title, body: bodies.get(key) ?? "" });
-      } catch (err) {
-        failed++;
-        console.error(`  ${key}: ${(err as Error).message}`);
-      }
-      done++;
-      if (done % 25 === 0) {
-        await saveDataset(ds);
-        console.log(`  ${done}/${pending.length}`);
-      }
-    }
+  const bodyOf = (p: PullRequest) => bodies.get(`${p.repo}#${p.number}`) ?? "";
+  const apply = (p: PullRequest, out: { summary: string; category: PullRequest["category"] }) => {
+    p.summary = out.summary;
+    p.category = out.category;
+    p.summaryHash = hashOf({ title: p.title, body: bodyOf(p) });
   };
-  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+  const checkpoint = async () => {
+    await saveDataset(ds);
+    console.log(`  ${done}/${pending.length}`);
+  };
+
+  if (backend === "sdk") {
+    const queue = [...pending];
+    const worker = async () => {
+      for (let pr = queue.shift(); pr; pr = queue.shift()) {
+        try {
+          apply(pr, await summarizePr({ ...pr, body: bodyOf(pr) }));
+        } catch (err) {
+          failed++;
+          console.error(`  ${pr.repo}#${pr.number}: ${(err as Error).message}`);
+        }
+        if (++done % 25 === 0) await checkpoint();
+      }
+    };
+    await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+  } else {
+    const batches: PullRequest[][] = [];
+    for (let i = 0; i < pending.length; i += CLI_BATCH) batches.push(pending.slice(i, i + CLI_BATCH));
+    const worker = async () => {
+      for (let batch = batches.shift(); batch; batch = batches.shift()) {
+        try {
+          const out = await summarizeBatchCli(batch.map((p) => ({ ...p, body: bodyOf(p) })));
+          for (const p of batch) {
+            const r = out.get(`${p.repo}#${p.number}`);
+            if (r) apply(p, r);
+            else { failed++; console.error(`  ${p.repo}#${p.number}: missing from batch result`); }
+          }
+        } catch (err) {
+          failed += batch.length;
+          console.error(`  batch of ${batch.length}: ${(err as Error).message}`);
+        }
+        done += batch.length;
+        await checkpoint();
+      }
+    };
+    await Promise.all(Array.from({ length: CLI_CONCURRENCY }, worker));
+  }
+
   const wrote = await saveDataset(ds);
   console.log(`Done. ${done - failed} summarized, ${failed} failed.${wrote ? "" : " No changes to write."}`);
 }
