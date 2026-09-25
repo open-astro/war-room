@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T16:19:02.937Z",
+  "generatedAt": "2026-09-25T16:21:20.088Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -10698,9 +10698,9 @@
       "deletions": 73,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Tonight's Sky list in the app now shows the new planning information for each target. Each target gets a colour-coded 0–100 score, a label saying whether it fits your camera's view (\"Fills frame\", \"Small\" or \"Too big\"), and a short line showing tonight's dark window, hours available and hours left. A \"Why?\" button explains each score, and low-scoring targets still appear lower in the list. The description says a button to centre the sky view on a target is included, but the changelog added in this same change says that is coming in a later update.",
+      "category": "feature",
+      "summaryHash": "a39a03d8dd06119644e0a75fbcad9e4dd52b5988"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -10713,9 +10713,9 @@
       "deletions": 89,
       "changedFiles": 8,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The server now ranks Tonight's Sky targets by a 0–100 \"worth shooting tonight\" score based on your telescope and camera. The score weighs how well the object fits your camera's view, how many dark hours it has, how high it gets, and how bright it is against your sky. Short reasons come with each score so users can see why a target ranked where it did. The list now includes targets that haven't risen yet but will be up in darkness tonight, and shows how much dark time is left for each.",
+      "category": "feature",
+      "summaryHash": "64948e89cac3a9d518dcf2a23a94a479b3814b18"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -10728,9 +10728,9 @@
       "deletions": 45,
       "changedFiles": 10,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Tonight's Sky now draws from the full installed deep-sky catalog instead of a fixed list of 20 objects. For each target it works out tonight's viewing window (above the horizon and dark enough), when it is highest in the sky, and how many hours of imaging that allows. If the sky catalog isn't installed, it falls back to the old starter list, so the list is never empty. Ranking is still by current height in the sky; smarter scoring comes in the next update.",
+      "category": "feature",
+      "summaryHash": "6aaf395069af6ac3638e92f6128d2d86736bef3e"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -10743,9 +10743,9 @@
       "deletions": 2702,
       "changedFiles": 36,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The planetarium in the Planning tab now runs on each computer's built-in web browser engine on Mac, Windows and Linux, instead of a bundled copy of Chrome that froze on Mac and broke the whole app on Linux. This also makes the app much smaller to build. Framing got fixes: large multi-panel layouts no longer skew or lock up, the target's sky coordinates are shown live, a centre marker was added, and the sky stops moving while you frame. The row of layer buttons became a tidy \"Display\" menu whose settings are remembered between launches. One change not mentioned in the description: the old \"Catalogs\" menu for showing Messier/NGC/IC markers was removed.",
+      "category": "feature",
+      "summaryHash": "070f6bc29d1b7ee2054da80f563dc6c84bc90a64"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -10758,9 +10758,9 @@
       "deletions": 677,
       "changedFiles": 288,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Planning tab's sky map was replaced with a full interactive planetarium (Stellarium) that works offline. It shows a realistic sky with horizon, planets and constellation art, lets you click any star to identify it, and can point the telescope mount at an object, refusing if the object is below the horizon. The same change also bundles several unrelated fixes: the live connection to the server no longer keeps dropping, equipment no longer shows a false \"connected\" status when the server is gone, and the connect screen now keeps scanning for servers and has a Rescan button.",
+      "category": "feature",
+      "summaryHash": "ad2cf13e4007d20f97f6308cb67d2018ca216b68"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -10773,9 +10773,9 @@
       "deletions": 0,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Planning sky map now draws your local horizon line, plus a marker for straight overhead and North/East/South/West labels, so you can see at a glance what's above the horizon from your location right now. The line updates each time you open Planning. The description notes it had not yet been checked on a real device at merge time, and this map was replaced soon after by the new planetarium in #610.",
+      "category": "feature",
+      "summaryHash": "971cba2868fc5319e2b87d88189d435ffb84c8da"
     },
     {
       "repo": "open-astro/openastro-ara",
