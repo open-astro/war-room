@@ -30,18 +30,26 @@ function hashOf(pr: Pick<RawPr, "title" | "body">): string {
 
 async function loadDataset(): Promise<Dataset> {
   try {
-    return JSON.parse(await readFile(DATA_PATH, "utf8")) as Dataset;
+    const ds = JSON.parse(await readFile(DATA_PATH, "utf8")) as Dataset;
+    lastSavedBody = JSON.stringify({ repos: ds.repos, prs: ds.prs });
+    return ds;
   } catch {
     return { generatedAt: "", repos: [], prs: [] };
   }
 }
 
-async function saveDataset(ds: Dataset): Promise<void> {
-  ds.generatedAt = new Date().toISOString();
+/** Write only when repos or PR data actually changed, so scheduled runs don't produce no-op commits. */
+async function saveDataset(ds: Dataset): Promise<boolean> {
   ds.prs.sort((a, b) => b.mergedAt.localeCompare(a.mergedAt));
+  const body = JSON.stringify({ repos: ds.repos, prs: ds.prs });
+  if (body === lastSavedBody) return false;
+  lastSavedBody = body;
+  ds.generatedAt = new Date().toISOString();
   await mkdir("site/data", { recursive: true });
   await writeFile(DATA_PATH, JSON.stringify(ds, null, 2) + "\n");
+  return true;
 }
+let lastSavedBody = "";
 
 /** Re-fetch from a few days before the newest PR we already have, so late edits are caught. */
 function sinceFor(ds: Dataset, repo: string): string | undefined {
@@ -128,8 +136,8 @@ async function main(): Promise<void> {
     }
   };
   await Promise.all(Array.from({ length: CONCURRENCY }, worker));
-  await saveDataset(ds);
-  console.log(`Done. ${done - failed} summarized, ${failed} failed.`);
+  const wrote = await saveDataset(ds);
+  console.log(`Done. ${done - failed} summarized, ${failed} failed.${wrote ? "" : " No changes to write."}`);
 }
 
 main().catch((err) => {
