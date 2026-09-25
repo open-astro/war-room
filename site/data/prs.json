@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-25T16:22:41.074Z",
+  "generatedAt": "2026-09-25T21:53:30.709Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1103,
+      "title": "client: mDNS discovery prefers the daemon address on the local subnet",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1103",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-25T21:13:07Z",
+      "additions": 189,
+      "deletions": 35,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The app's automatic search for telescope rigs now shows an address that actually works from your network. Before, a Raspberry Pi running its own Wi-Fi hotspot could show up on the connect screen with its hotspot address, which never connects from the home network. Now the app gathers all of a rig's addresses and keeps the ones on the same local network as your computer, falling back to listing all of them if none match. The diff also updates the setup guide to say tapping a discovered rig is now fine, and it notes known gaps as follow-ups: virtual-machine or Docker network setups can still hide the right address, and the new address-gathering step has no automated test yet.",
+      "category": "fix",
+      "summaryHash": "24d286ee9cc25c23169b75e7301d5fcb51d41c8b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 654,
