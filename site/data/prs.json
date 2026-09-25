@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T15:45:13.128Z",
+  "generatedAt": "2026-09-25T15:54:18.910Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -19,9 +19,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds automated checks that every device driver follows the same basic rules, for example giving the right error when a device isn't connected or gets a bad value, plus a guard that fails the build if a new driver is added without being checked. The checks caught and fixed several drivers that gave wrong or confusing error answers, including some telescope and rotator drivers. One remaining problem with how four telescope drivers report their parked status is logged for a later fix.",
+      "summary": "Adds one shared set of standard checks that every supported device driver now runs through, in place of copies of the same tests scattered across drivers. It also adds an automatic check that fails the build if a new driver is added without being included. The shared checks turned up real bugs, and those are fixed: some telescope mounts and rotators sent back the wrong kind of error when disconnected, when asked for a command they don't support, or when given an invalid angle. One remaining issue is logged for later: four mounts still report whether they are parked even while disconnected. Checks that need a connected device will come in a follow-up.",
       "category": "tests",
-      "summaryHash": "4c670b7379516857925a9f889d0747b179e97e0c"
+      "summaryHash": "ea7d3c739b8e2960883911e2f651da12b6fbee24"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -36,9 +36,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds an automated check that stops the web server part of the project from relying on hardware-brand code any more than it does today. This keeps the planned device catalog separate from brand-specific code. Maintainers still need to make this check required in the repository settings.",
+      "summary": "Adds an automatic build check that stops the web server layer and the new device catalog from picking up any more direct ties to individual vendors' code. The current count (40) is locked as a ceiling. It can only go down as later work removes those ties. Only tooling and docs change; the app itself does not. Maintainers still need to make the check required in the repository settings.",
       "category": "ci",
-      "summaryHash": "3ee252c180208381dc66d8a6f390be7164f8d538"
+      "summaryHash": "230307322535e10b5889b1b6e8e3eb3782309b3a"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -53,9 +53,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds the first piece of the new device catalog, which will become one central place that describes each device's settings, checks them, hides secrets and creates the device. Nothing uses it yet, and it comes with its own tests.",
+      "summary": "Lays the groundwork for a new device catalog: one central place that describes each kind of device, checks and cleans up its settings, and creates it. New settings from users are rejected if invalid, while saved settings are repaired with a warning so the device still loads. Secrets like API keys are hidden when settings are displayed. Nothing uses it yet, so users see no change, and the PR includes tests for the new code.",
       "category": "feature",
-      "summaryHash": "8e107ef3fe3fa0ff6117ecf0a5487689dd3b7bc8"
+      "summaryHash": "0cde3b1979cd9cd364b2c0cccfdeb79f33a512f9"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -70,9 +70,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds tests that record every request the server accepts and exactly how it rejects bad ones, so an accidental change to either now makes the tests fail. The tests also found that the server did needless extra work on every device request. Fixing that made rejected requests roughly 15 times faster, with no change in behavior.",
-      "category": "tests",
-      "summaryHash": "af61f979259a9af8d8cbbb9c37c66b6b3b49e500"
+      "summary": "Adds tests that lock down every request the server accepts for each device type and the exact error it returns for bad requests. Any accidental change to either now gets caught. The new tests also exposed a speed problem: the server was redoing slow setup work on every device request. That is now done only once, making those requests about 15 times faster with no change in behavior. The description admits this goes beyond the original tests-only plan.",
+      "category": "fix",
+      "summaryHash": "55d4292016c4ff6aa4d0c94acce4e7f2f65e27c7"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -87,9 +87,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Tests only. Checks that every supported device's settings come through unchanged both when entered and when reloaded from saved settings at startup, including nine devices that had no such check before. It also records how some known problems with bad settings behave today, so later fixes show up clearly.",
+      "summary": "Adds tests only. They confirm that every supported vendor-and-device setup is saved and loaded back the same way, whether it was created through the app or read from the saved file at startup. They also lock in how odd or invalid settings are handled today, so future fixes show up as deliberate changes. No app code changes.",
       "category": "tests",
-      "summaryHash": "455ee18a00dd2d4cde5fb2d44a471018f51d66cf"
+      "summaryHash": "1c2cd0d05a1ba4c6b26067dd5ea346c7ff71a096"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -104,9 +104,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds tests for how Sky-Watcher mounts point in the southern hemisphere, covering syncing, repeated flips across the meridian (the north–south line in the sky) and targets right next to it. One test uses real measurements from an EQM-35 Pro mount, checked against the star positions worked out from its photos. With those measurements, the docs now list southern pier-side handling and pointing as validated. The driver itself is unchanged.",
+      "summary": "Adds Sky-Watcher mount tests for the southern hemisphere: a sync followed by moving away and back, repeated flips across the meridian (the north-south line overhead), and the mount switching sides when a target crosses that line. Tests also compare the pointing math against 14 photos from a real telescope session whose actual sky positions were measured from the images. The mount's documentation now marks southern flip handling and sync as confirmed on real hardware. The driver itself does not change.",
       "category": "tests",
-      "summaryHash": "d474bde6dd34e425b0ce4666fbc451df342fc45b"
+      "summaryHash": "4037a043f1c55f303d3b2ac9cbd977ccce658e9c"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -121,9 +121,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "The Canon EOS 250D passed the standard ASCOM compliance test (ConformU) with no errors or warnings, so it now appears in the list of tested cameras. The docs note that the lens must be set to manual focus, because with autofocus on the camera fails to take pictures.",
-      "category": "docs",
-      "summaryHash": "6ad37265f86ffb481b0d72eee583facad4f9b679"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -138,9 +138,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "The Canon EOS 70D passed the standard ASCOM compliance test (ConformU) with no errors or warnings, so it now appears in the list of tested cameras. The docs note that the mode dial must be on M, that the longest exposure is 30 seconds, and that a Raspberry Pi 3 is too slow to test this camera.",
-      "category": "docs",
-      "summaryHash": "9f05189f0a5c0e57dce04d8f3d55ec1ed1d03658"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -155,9 +155,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "The camera option and messages people see now say \"DSLR / Mirrorless\" instead of \"gphoto2\", the name of a separate command-line tool this server doesn't use. People choose a type of camera, not a software library, so the wording now matches what they're looking for. Saved settings are not affected.",
-      "category": "fix",
-      "summaryHash": "7d1d95f83d74ba543a2761fe372c14312f5a53c1"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -170,9 +170,9 @@
       "deletions": 9,
       "changedFiles": 5,
       "labels": [],
-      "summary": "Internal tidy-ups to the developer helper tools added in the previous PR. Helper programs are now stored more safely, failed setup steps on the test virtual machine now stop instead of being silently skipped, and the virtual machine still starts when some network ports are busy. Two known issues are also written down for later.",
-      "category": "chore",
-      "summaryHash": "1b21ff3639926a46b5d399c6b54a14fc526f999a"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -187,9 +187,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds two approved design records, one for the planned device catalog and one for the task clock, plus a glossary of project terms and an overview of the project's main parts. The automatic docs checks now also cover these new files, so broken links or outdated references in them get caught.",
-      "category": "docs",
-      "summaryHash": "808f80433fc29c17aefefcff4b9714d96b48ef65"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -202,9 +202,9 @@
       "deletions": 6,
       "changedFiles": 15,
       "labels": [],
-      "summary": "Adds two internal developer tools: one that walks through a contributor's pull request from start to finish, and one that runs a virtual Raspberry Pi–style machine on a Mac for testing. It also adds a test that Tonight's Sky suggests targets for a brand-new user in every month, so an empty list can't hide a bug. Along the way it found that a fresh server install keeps crashing until storage is set up; that is noted for a follow-up, not fixed here.",
-      "category": "chore",
-      "summaryHash": "3c9826a0018edb31572c658063eec5c550a5ee4d"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -220,9 +220,9 @@
         "dependencies",
         "github_actions"
       ],
-      "summary": "Routine update to three of the automated tools that run behind the scenes on every code change, including the security scanner. Nothing changes for users.",
-      "category": "ci",
-      "summaryHash": "20840b1371d27a82cf91225c0e5c2fb9cc66a90a"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -238,9 +238,9 @@
         "dependencies",
         ".NET"
       ],
-      "summary": "Routine minor update to an outside library used to publish the project's API documentation page. No visible change expected.",
-      "category": "chore",
-      "summaryHash": "24aa5fa26a290a9a72267ace238659ab27bbe5b6"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -253,9 +253,9 @@
       "deletions": 137,
       "changedFiles": 6,
       "labels": [],
-      "summary": "On phones, portrait tablets and narrow windows, the toolbar on the Run tab used to cut off buttons like Delete, Validate and Export with no hint that they existed. The main Run, Pause, Skip and Abort controls now always stay visible, and anything that doesn't fit moves into a \"More\" menu so every action stays reachable.",
-      "category": "fix",
-      "summaryHash": "50dce48d6877325e33c55bc80521663b615c15f6"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -270,9 +270,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "When a telescope go-to failed partway through, five mount brands (Sky-Watcher, SynScan, iOptron, Celestron and ZWO) quietly reported that the telescope had stopped, as if it had arrived. Imaging software checking on the move now gets an error instead, so it knows the telescope never reached its target.",
-      "category": "fix",
-      "summaryHash": "4c978a279b0efc045beab002264acff3f5fab3d0"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -287,9 +287,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Six telescope brands' drivers accepted invalid \"not a number\" values for coordinates, site location and guiding speed, and could store them or send them to the mount. These values are now rejected with a clear error, adding a second layer of protection behind a related fix that blocks them earlier.",
-      "category": "fix",
-      "summaryHash": "180d14a9cf217052c23961e4db89f62fcc426481"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -304,9 +304,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds a safety watchdog: if a telescope is moving and the controlling software stops talking to it for 30 seconds (adjustable, or can be turned off), the bridge stops the mount and logs an error. This prevents a runaway mount when a client crashes or loses its connection mid-move. It works for every telescope brand but has not yet been tried on real hardware.",
-      "category": "feature",
-      "summaryHash": "d04cb790127e7509f6c336c8e1115f1d76ddf0ef"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -321,9 +321,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds a community-run compatibility test report showing the Canon EOS 4000D camera passes all standard checks, making it the first officially tested Canon body. It also adds an automatic check that keeps the supported-camera documentation consistent as more models are added.",
-      "category": "docs",
-      "summaryHash": "9b1cd3e4cb63e3dd4a423bb605c8770e865c2542"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -338,9 +338,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "When a device of any kind is disconnected, its combined status report now comes back empty, as the ASCOM standard requires, instead of a lone timestamp. This also stops some drivers from leaking misleading default values, such as \"parked\", while nothing is actually connected.",
-      "category": "fix",
-      "summaryHash": "5e307b93351b8d48d2ac167cba9ff63626abfbfa"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -355,9 +355,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "On Sky-Watcher mounts, a small guiding correction on one axis could cancel a correction already running on the other, leaving that axis drifting at guiding speed while the software reported everything as stopped. Each axis now handles its own corrections, so one no longer interrupts the other.",
-      "category": "fix",
-      "summaryHash": "d4853c20fea481ed79a3caab81e00cc6944e0d1e"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -372,9 +372,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "The bridge now rejects three kinds of bad requests before they reach a telescope or other device: invalid numbers such as \"not a number\" or infinity, requests that use the wrong kind of web call for an action, and device numbers too large to be real (which previously wrapped around and reached device 0). This stops malformed commands, such as a go-to with an invalid coordinate, from ever reaching the mount.",
-      "category": "fix",
-      "summaryHash": "327ebfefd14901ec1640a5410f214cd17fd4821a"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -389,9 +389,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "On Sky-Watcher mounts, the \"is guiding\" status now switches off as soon as a guiding correction actually finishes, instead of about a second late. It also no longer wrongly shows \"not guiding\" when a new correction replaces one still running. Guiding software relies on this status to time its next correction.",
-      "category": "fix",
-      "summaryHash": "8c035e1a6f0bec2b9b23d37020faef393c14ca8d"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -406,9 +406,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "On Sky-Watcher mounts connected by serial cable, a lost \"stop\" message could make a guiding correction overshoot by up to a full second. The bridge now resends lost stop messages quickly, so corrections end close to on time.",
-      "category": "fix",
-      "summaryHash": "4fa33d13382a04bf9be843ae32d77a8e9a8ac32c"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -423,9 +423,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds setup advice for two ways of controlling Sky-Watcher mounts. When using the handheld controller, its date, time, location and starting position must be set correctly, or the mount can report the wrong side of the pier. When connecting to the mount directly, users should not also start the handheld controller in the same power session, because on the tested mount it shifted the mount's idea of its position by 90 degrees.",
-      "category": "docs",
-      "summaryHash": "43334cfa5397a264b7e090f8cba2f506493ae069"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -438,9 +438,9 @@
       "deletions": 9,
       "changedFiles": 6,
       "labels": [],
-      "summary": "The planetarium sky map now works on Android and iPad tablets. Before, it was stuck on \"Loading\" on Android, and pinch-zooming could leave the view stuck in a distorted state. Touch devices also get on-screen zoom in, zoom out and reset buttons, and the fixes were checked on a Pixel Tablet and an iPad Air.",
-      "category": "fix",
-      "summaryHash": "43bb5df85ee053d0df59484d1e9096a4637d7baf"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -455,9 +455,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "This is a test-only change. The simulated mount used in testing can now tell apart a mount that rejects a certain question from one that answers it with zero, matching what a real EQ-AL55i Pro owner measured. No product behaviour changes, but future features that rely on this reading will be tested against accurate hardware behaviour.",
-      "category": "tests",
-      "summaryHash": "cfc25d746dbc725b641189e53123859f730852cd"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -470,9 +470,9 @@
       "deletions": 2,
       "changedFiles": 4,
       "labels": [],
-      "summary": "Fixes automatic equipment detection on the Raspberry Pi install, which had been failing every time because of an overly strict security setting. The setting is loosened just enough to let the system look up its network connections, so the setup wizard can now find cameras and other gear. The packaging process also now refuses to build an install that is missing this setting.",
-      "category": "fix",
-      "summaryHash": "adfbc0ccb2c8ab604e217679e83c12a63f613972"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -488,9 +488,9 @@
         "dependencies",
         "github_actions"
       ],
-      "summary": "Routine update of the automated tools that build, review and scan the project's code. Purely internal, with no change for users.",
-      "category": "ci",
-      "summaryHash": "228bdd12f822c73071cf3f217f3e17ffdeea8576"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -503,9 +503,9 @@
       "deletions": 18,
       "changedFiles": 22,
       "labels": [],
-      "summary": "You can now plug a USB GPS receiver into the laptop or desktop running the app, instead of into the Pi, and use it to send accurate time and location to the telescope rig. This helps users who run out of USB ports on the Pi. The first time you fill in your site from GPS, the app can find the receiver and turn the feature on for you, and it will not override a GPS already attached to the rig.",
-      "category": "feature",
-      "summaryHash": "d78914e9c6c64ba0d0681843038d47c4e27230dc"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -518,9 +518,9 @@
       "deletions": 17,
       "changedFiles": 21,
       "labels": [],
-      "summary": "Fixes plate solving (working out where the telescope is pointing from a photo of the sky), which did not work at all on a fresh Pi install. The install now brings in the solving program, points to it by its correct name, and tells it where the star database lives. Users still need to download the star database once (about 1.7 GB), and the setup guide now explains how.",
-      "category": "fix",
-      "summaryHash": "f8447b9ae4b88c0ea4b26b9ab587580546279fcb"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -533,9 +533,9 @@
       "deletions": 29,
       "changedFiles": 13,
       "labels": [],
-      "summary": "Fixes two guiding problems found while setting up a Pi. The system was watching and restarting the guiding program under the wrong name and without permission, so automatic crash recovery silently did nothing; that now works. The system also used the wrong name for the guiding aggressiveness setting, so that setting never reached the guider; it now does.",
-      "category": "fix",
-      "summaryHash": "b46429d13a1880c8eb13661c5f23bf1d3f4fc4fe"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -548,9 +548,9 @@
       "deletions": 10,
       "changedFiles": 12,
       "labels": [],
-      "summary": "The Pi install now includes two astronomy math libraries that were accidentally left out. Without them, features such as sun and moon altitude conditions, meridian flips, polar alignment and some coordinate conversions would fail or silently fall back to less accurate behaviour. The build now refuses to produce an install without them, and the system reports at startup whether they loaded.",
-      "category": "fix",
-      "summaryHash": "cb8ebbb6376bfad2672860894f200930476e4b1d"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -563,9 +563,9 @@
       "deletions": 13,
       "changedFiles": 9,
       "labels": [],
-      "summary": "Each saved image now records where the mount was pointing when it was taken. This lets later plate solving use the recorded position as a starting hint, helps stacking software group images by target, and leaves a record of each night's pointing.",
-      "category": "fix",
-      "summaryHash": "052d12e91d12bef9388a6772165045d68b76e023"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -578,9 +578,9 @@
       "deletions": 16,
       "changedFiles": 8,
       "labels": [],
-      "summary": "Automatic centering on a target can now take the test photo it needs, which it previously could not do at all. This restores centering in sequences, re-centering after a meridian flip, and safety re-centering. It has passed the automated tests but has not yet been tried under a real sky.",
-      "category": "fix",
-      "summaryHash": "cae6d150f500251119cb63f88d9b496e1ad78144"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -593,9 +593,9 @@
       "deletions": 5,
       "changedFiles": 4,
       "labels": [],
-      "summary": "Imaging sequences now talk to the real guiding program instead of a placeholder that pretended to succeed. Before this fix, sequences could run without dithering (small shifts between exposures) and guiding never resumed after a meridian flip, even though the system reported success.",
-      "category": "fix",
-      "summaryHash": "dcd1a912ebcace36c5c44866361db78bbe3583d0"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -608,9 +608,9 @@
       "deletions": 50,
       "changedFiles": 12,
       "labels": [],
-      "summary": "Makes the \"time left\" estimate for a running observing sequence more accurate and cheaper to compute. The app now trusts the server's own estimate first, skips disabled steps when adding up the total, and no longer charges placeholder time for steps that genuinely take none.",
-      "category": "fix",
-      "summaryHash": "a471bd877a897d7b78763b235dae8c2af8442f6b"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -623,9 +623,9 @@
       "deletions": 38,
       "changedFiles": 11,
       "labels": [],
-      "summary": "Stops a tiny \"nudge\" of the telescope from turning into a much faster movement on mounts that can't move very slowly. If a requested speed is far below what the mount can do, it is now refused with a clear message, and the speed buttons only offer speeds the mount can actually perform.",
-      "category": "fix",
-      "summaryHash": "04ce55fcbb43f3bb36f77b973c4d3f808c3fa191"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -638,9 +638,9 @@
       "deletions": 6,
       "changedFiles": 21,
       "labels": [],
-      "summary": "Adds a setting to switch off the automatic move of the filter wheel to its first slot when it is first connected. Previously this hardware movement always happened, even on a manual connect, with no way for the user to turn it off; the choice is now saved with each equipment profile.",
-      "category": "feature",
-      "summaryHash": "e718a4601c9c10c4a5fdac3b5037145a7fb7ffe4"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -655,9 +655,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Fixes the simulated Sky-Watcher mount used in testing, which was modelling slow movements about 21% short, so guiding tests were measuring against a faulty baseline. No product code changed, but the simulator is now accurate enough to help tell real hardware problems apart from test artifacts in an ongoing guiding investigation.",
-      "category": "tests",
-      "summaryHash": "380e9b4aa006640cb4383cf7080f076bf50afc94"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -672,9 +672,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds the Sky-Watcher EQ-AL55i Pro mount to the list of recognized hardware, using measurements supplied by its owner. Previously it was treated as an unknown mount, which could make it point to the wrong part of the sky when used in the southern hemisphere.",
-      "category": "feature",
-      "summaryHash": "eb4e628a33af935f7a54978ae3f0b394df7f9548"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -721,9 +721,9 @@
       "deletions": 64,
       "changedFiles": 15,
       "labels": [],
-      "summary": "Strengthens the safety rules that keep a camera's cooling fan running while its sensor cooler is on, to avoid damaging the camera. The protection now also applies to automated sequences, errs on the side of caution when the cooler's state can't be read, turns the fan on before the cooler starts, and starts the fan if the fan switch connects after cooling has already begun.",
-      "category": "fix",
-      "summaryHash": "c84e46cf3adfade912afe3631c7e8f600232e530"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -736,9 +736,9 @@
       "deletions": 8,
       "changedFiles": 6,
       "labels": [],
-      "summary": "Closes two gaps where the filter wheel's automatic return to its first slot could override a filter that an observing sequence had just asked for. Filter changes requested early in a session are now honored instead of being silently skipped.",
-      "category": "fix",
-      "summaryHash": "dd00c02c0e25dbaca561119e45b51a2a5621df1f"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -751,9 +751,9 @@
       "deletions": 129,
       "changedFiles": 6,
       "labels": [],
-      "summary": "Makes manual telescope movement work on more mounts by adjusting a chosen speed to the nearest speed the mount supports instead of rejecting it. It also keeps north/south movement available when the mount doesn't report speeds for that direction, and uses a more reliable time-based wait when reading the mount's speed options at connect.",
-      "category": "fix",
-      "summaryHash": "30599e7439671ebc5b95152b7e6e753d4d34f9ac"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -766,9 +766,9 @@
       "deletions": 9,
       "changedFiles": 3,
       "labels": [],
-      "summary": "When the telescope refuses a manual movement from the direction pad, the app now shows a message explaining why. Previously these refusals failed silently, leaving users unsure why nothing happened.",
-      "category": "fix",
-      "summaryHash": "860378cd5909c3bde789efbf595d6d0682fb15f3"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -832,9 +832,9 @@
       "deletions": 97,
       "changedFiles": 16,
       "labels": [],
-      "summary": "The server now calculates how long an observing sequence will take and how much time remains, and sends that to the app. Previously the app made its own rougher guess, so this gives a single, more accurate source for the \"time left\" display.",
-      "category": "feature",
-      "summaryHash": "68c6d8da5aa0d10fccb9d95438fa4c9e71903272"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -847,9 +847,9 @@
       "deletions": 28,
       "changedFiles": 11,
       "labels": [],
-      "summary": "The guider setup wizard now asks the server for equipment device names instead of contacting the equipment directly. This keeps all equipment communication going through the server, as intended by the recent app/server separation work.",
-      "category": "refactor",
-      "summaryHash": "8c7aed790fbae6de92df2c2e11252e3a2c537038"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -862,9 +862,9 @@
       "deletions": 246,
       "changedFiles": 12,
       "labels": [],
-      "summary": "Moves the automatic return of the filter wheel to its first slot on first connect from the app to the server. This means it happens consistently whether or not the app is open, only once per session, and never overrides a filter the user or a sequence has explicitly chosen.",
-      "category": "refactor",
-      "summaryHash": "a4f2887f6038860d5b219245ee7fa18543345c67"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -894,9 +894,9 @@
       "deletions": 252,
       "changedFiles": 18,
       "labels": [],
-      "summary": "The rules that keep the camera's cooling fan running while the camera is actively chilled now live on the server instead of only in the app. The fan now turns on automatically whenever cooling is turned on, and requests to switch the fan off while cooling are refused. This closes gaps where the automatic end-of-night warm-up, a second app, or a direct command could skip these safeguards.",
-      "category": "fix",
-      "summaryHash": "b91e68635dfba862d91325920e48f2de180a1ec8"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -909,9 +909,9 @@
       "deletions": 43,
       "changedFiles": 6,
       "labels": [],
-      "summary": "The server now caps how fast the telescope can be moved by hand, instead of relying only on the app's speed picker. Speeds above what the mount supports are reduced to its maximum. If the mount's limit can't be determined, the move is refused, and invalid move requests are rejected outright.",
-      "category": "fix",
-      "summaryHash": "225f45274c07c066948dc028e1b7c4ca614919d0"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -5539,9 +5539,9 @@
       "deletions": 4,
       "changedFiles": 5,
       "labels": [],
-      "summary": "Images saved by the guiding software can now be downloaded by apps running on other computers, not just the machine that took them. This fixes the polar-alignment workflow in OpenAstro Ara, which needs to fetch those images remotely. Downloads are restricted to the capture folder so other files on the machine can't be reached.",
-      "category": "feature",
-      "summaryHash": "5c69a56ee54bc4889d931584e18681c123fc70bb"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -5629,9 +5629,9 @@
       "deletions": 1,
       "changedFiles": 1,
       "labels": [],
-      "summary": "Internal automation change: an outside contributor was added to the trusted list. Their updates to approved pull requests now automatically re-trigger the automated code review.",
-      "category": "ci",
-      "summaryHash": "47ca476e32dc58802db4bfb7047c92d4a31c800e"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-guider",
@@ -5644,9 +5644,9 @@
       "deletions": 29,
       "changedFiles": 1,
       "labels": [],
-      "summary": "Internal automation change: the automated code review can now run on contributions from outside the team, but only after a maintainer approves it by applying a label. This lets outside contributions get reviewed without giving untrusted code control over the review process.",
-      "category": "ci",
-      "summaryHash": "aa824204903e8119c53ea53fee15f66e070507da"
+      "summary": null,
+      "category": null,
+      "summaryHash": null
     },
     {
       "repo": "open-astro/openastro-ara",
