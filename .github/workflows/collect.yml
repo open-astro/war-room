@@ -2,7 +2,7 @@ name: Collect PRs and deploy dashboard
 
 on:
   schedule:
-    - cron: "0 * * * *" # hourly
+    - cron: "17 * * * *" # hourly, off the congested top-of-hour slot
   workflow_dispatch:
   push:
     branches: [main]
