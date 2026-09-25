@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAstro War Room</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f6f6f4;
+    --surface: #fcfcfb;
+    --surface-2: #f0efec;
+    --border: #e2e1dc;
+    --text: #0b0b0b;
+    --text-2: #52514e;
+    --text-3: #7a7975;
+    --accent: #2a78d6;
+    --series-1: #2a78d6;
+    --series-2: #eb6834;
+    --series-3: #1baf7a;
+    --series-4: #eda100;
+    --series-5: #e87ba4;
+    --series-6: #008300;
+    --series-7: #4a3aa7;
+    --series-8: #e34948;
+    --grid: #e6e5e0;
+    --shadow: 0 1px 2px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #121211; --surface: #1a1a19; --surface-2: #242423; --border: #2f2f2d;
+      --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e87; --accent: #3987e5;
+      --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+      --series-5: #d55181; --series-6: #008300; --series-7: #9085e9; --series-8: #e66767;
+      --grid: #2b2b29; --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #121211; --surface: #1a1a19; --surface-2: #242423; --border: #2f2f2d;
+    --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e87; --accent: #3987e5;
+    --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+    --series-5: #d55181; --series-6: #008300; --series-7: #9085e9; --series-8: #e66767;
+    --grid: #2b2b29; --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding: 24px 16px 64px;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; margin-bottom: 20px; }
+  header h1 { font-size: 22px; margin: 0; letter-spacing: -.01em; }
+  header .meta { color: var(--text-3); font-size: 13px; }
+  header .spacer { flex: 1; }
+  .btn {
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-2);
+    border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  .btn[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+  .filters .group { display: flex; gap: 4px; flex-wrap: wrap; }
+  .filters select, .filters input[type=search] {
+    border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px;
+  }
+  .filters input[type=search] { min-width: 200px; flex: 1; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-2); border-radius: 999px; padding: 4px 10px;
+    font-size: 13px; cursor: pointer; user-select: none;
+  }
+  .chip .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+  .chip[aria-pressed="false"] { opacity: .45; }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; box-shadow: var(--shadow); }
+  .tile .label { font-size: 12px; color: var(--text-3); text-transform: uppercase; letter-spacing: .04em; }
+  .tile .value { font-size: 28px; font-weight: 600; line-height: 1.2; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .tile .sub { font-size: 12px; color: var(--text-2); }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); margin-bottom: 16px; }
+  .card h2 { font-size: 14px; margin: 0 0 8px; color: var(--text-2); font-weight: 600; }
+  .chart-wrap { position: relative; }
+  .chart-wrap svg { width: 100%; height: 200px; display: block; overflow: visible; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--text-2); margin-top: 6px; }
+  .legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--c); margin-right: 6px; vertical-align: -1px; }
+  .tooltip {
+    position: absolute; pointer-events: none; background: var(--text); color: var(--bg);
+    padding: 6px 10px; border-radius: 8px; font-size: 12px; line-height: 1.4; white-space: nowrap;
+    transform: translate(-50%, calc(-100% - 8px)); display: none; z-index: 2;
+  }
+
+  .devs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .dev { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 10px; padding: 6px 10px; background: var(--surface-2); font-size: 13px; cursor: pointer; }
+  .dev b { font-variant-numeric: tabular-nums; }
+  .dev .bar { height: 4px; border-radius: 2px; background: var(--accent); }
+
+  .day { margin: 22px 0 8px; font-size: 13px; color: var(--text-3); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+  .pr { display: grid; grid-template-columns: 4px 1fr; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px 12px 10px; margin-bottom: 8px; box-shadow: var(--shadow); }
+  .pr .stripe { border-radius: 2px; background: var(--c); }
+  .pr .top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: 13px; color: var(--text-2); }
+  .pr .repo { font-weight: 600; color: var(--text); }
+  .pr .title { font-size: 15px; font-weight: 600; margin: 2px 0; }
+  .pr .title a { text-decoration: none; }
+  .pr .title a:hover { text-decoration: underline; }
+  .pr .summary { color: var(--text-2); margin: 2px 0 4px; }
+  .pr .summary.pending { color: var(--text-3); font-style: italic; }
+  .pr .foot { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+  .badge { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-2); text-transform: capitalize; }
+  .add { color: var(--series-6); } .del { color: var(--series-8); }
+  .empty { color: var(--text-3); text-align: center; padding: 32px; }
+  .more { display: block; margin: 12px auto; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--text-3); font-weight: 600; font-size: 12px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  @media (max-width: 640px) { .hide-sm { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>OpenAstro War Room</h1>
+    <span class="meta" id="generated"></span>
+    <span class="spacer"></span>
+    <button class="btn" id="viewToggle" aria-pressed="false">Table view</button>
+    <button class="btn" id="themeToggle" title="Toggle light/dark">Theme</button>
+  </header>
+
+  <div class="filters">
+    <div class="group" id="repoChips"></div>
+    <select id="range">
+      <option value="7">Last 7 days</option>
+      <option value="30" selected>Last 30 days</option>
+      <option value="90">Last 90 days</option>
+      <option value="all">All time</option>
+    </select>
+    <select id="author"><option value="">All developers</option></select>
+    <select id="category">
+      <option value="">All types</option>
+      <option value="feature">Features</option>
+      <option value="fix">Fixes</option>
+      <option value="refactor">Refactors</option>
+      <option value="tests">Tests</option>
+      <option value="docs">Docs</option>
+      <option value="ci">CI</option>
+      <option value="chore">Chores</option>
+    </select>
+    <input type="search" id="search" placeholder="Search titles and summaries">
+  </div>
+
+  <div class="tiles" id="tiles"></div>
+
+  <div class="card">
+    <h2 id="chartTitle">PRs merged per week</h2>
+    <div class="chart-wrap">
+      <svg id="chart" role="img" aria-labelledby="chartTitle"></svg>
+      <div class="tooltip" id="tip"></div>
+    </div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <div class="card">
+    <h2>Developers in this range</h2>
+    <div class="devs" id="devs"></div>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<script>
+(async function () {
+  const $ = (s) => document.querySelector(s);
+  const state = {
+    repos: new Set(), range: "30", author: "", category: "", q: "", view: "cards", limit: 100,
+  };
+  try { state.view = localStorage.getItem("wr.view") || "cards"; } catch {}
+  try { const t = localStorage.getItem("wr.theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
+
+  const res = await fetch("data/prs.json", { cache: "no-store" });
+  const data = await res.json();
+  const repos = data.repos;
+  const repoColor = (r) => `var(--series-${Math.min(repos.indexOf(r) + 1, 8)})`;
+  const shortRepo = (r) => r.split("/")[1];
+  repos.forEach((r) => state.repos.add(r));
+
+  $("#generated").textContent = data.generatedAt
+    ? `Updated ${new Date(data.generatedAt).toLocaleString()} · ${data.prs.length.toLocaleString()} merged PRs`
+    : "";
+
+  // Repo chips
+  const chips = $("#repoChips");
+  for (const r of repos) {
+    const b = document.createElement("button");
+    b.className = "chip"; b.style.setProperty("--c", repoColor(r));
+    b.setAttribute("aria-pressed", "true");
+    b.innerHTML = `<span class="dot"></span>${shortRepo(r)}`;
+    b.onclick = () => {
+      if (state.repos.has(r) && state.repos.size > 1) state.repos.delete(r); else state.repos.add(r);
+      b.setAttribute("aria-pressed", String(state.repos.has(r)));
+      render();
+    };
+    chips.appendChild(b);
+  }
+
+  // Author select
+  const authors = [...new Set(data.prs.map((p) => p.author))].sort((a, b) => a.localeCompare(b));
+  for (const a of authors) {
+    const o = document.createElement("option"); o.value = a; o.textContent = a; $("#author").appendChild(o);
+  }
+
+  const bind = (id, key, ev = "change") => $(id).addEventListener(ev, (e) => { state[key] = e.target.value; state.limit = 100; render(); });
+  bind("#range", "range"); bind("#author", "author"); bind("#category", "category"); bind("#search", "q", "input");
+
+  $("#viewToggle").onclick = () => {
+    state.view = state.view === "cards" ? "table" : "cards";
+    try { localStorage.setItem("wr.view", state.view); } catch {}
+    render();
+  };
+  $("#themeToggle").onclick = () => {
+    const cur = document.documentElement.dataset.theme
+      || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem("wr.theme", next); } catch {}
+  };
+
+  function filtered() {
+    const now = Date.now();
+    const cutoff = state.range === "all" ? 0 : now - Number(state.range) * 864e5;
+    const q = state.q.trim().toLowerCase();
+    return data.prs.filter((p) =>
+      state.repos.has(p.repo) &&
+      new Date(p.mergedAt).getTime() >= cutoff &&
+      (!state.author || p.author === state.author) &&
+      (!state.category || p.category === state.category) &&
+      (!q || p.title.toLowerCase().includes(q) || (p.summary || "").toLowerCase().includes(q) || String(p.number) === q)
+    );
+  }
+
+  function render() {
+    const prs = filtered();
+    renderTiles(prs);
+    renderChart(prs);
+    renderDevs(prs);
+    $("#viewToggle").setAttribute("aria-pressed", String(state.view === "table"));
+    $("#viewToggle").textContent = state.view === "table" ? "Card view" : "Table view";
+    state.view === "table" ? renderTable(prs) : renderCards(prs);
+  }
+
+  function renderTiles(prs) {
+    const devs = new Set(prs.map((p) => p.author)).size;
+    const pending = prs.filter((p) => !p.summary).length;
+    const adds = prs.reduce((s, p) => s + p.additions, 0);
+    const dels = prs.reduce((s, p) => s + p.deletions, 0);
+    const label = { 7: "last 7 days", 30: "last 30 days", 90: "last 90 days", all: "all time" }[state.range];
+    $("#tiles").innerHTML = [
+      ["PRs merged", prs.length.toLocaleString(), label],
+      ["Developers", devs, "with a merged PR"],
+      ["Lines changed", `+${adds.toLocaleString()} / −${dels.toLocaleString()}`, "added / removed"],
+      ["Awaiting summary", pending.toLocaleString(), pending ? "run the collector with an API key" : "all summarized"],
+    ].map(([l, v, s]) => `<div class="tile"><div class="label">${l}</div><div class="value">${v}</div><div class="sub">${s}</div></div>`).join("");
+  }
+
+  // Weekly stacked bars by repo
+  function weekStart(d) {
+    const x = new Date(d); x.setUTCHours(0, 0, 0, 0);
+    x.setUTCDate(x.getUTCDate() - ((x.getUTCDay() + 6) % 7)); // Monday
+    return x.getTime();
+  }
+  function renderChart(prs) {
+    const svg = $("#chart"); const tip = $("#tip");
+    const active = repos.filter((r) => state.repos.has(r));
+    if (!prs.length) { svg.innerHTML = ""; $("#legend").innerHTML = ""; return; }
+    const weeks = new Map();
+    const minT = Math.min(...prs.map((p) => new Date(p.mergedAt).getTime()));
+    for (let t = weekStart(minT), end = weekStart(Date.now()); t <= end; t += 7 * 864e5) weeks.set(t, Object.fromEntries(active.map((r) => [r, 0])));
+    for (const p of prs) { const w = weeks.get(weekStart(p.mergedAt)); if (w) w[p.repo]++; }
+    const keys = [...weeks.keys()];
+    const max = Math.max(1, ...[...weeks.values()].map((w) => Object.values(w).reduce((a, b) => a + b, 0)));
+
+    const W = 1000, H = 200, padL = 32, padB = 22, padT = 8;
+    const iw = W - padL, ih = H - padB - padT;
+    const bw = iw / keys.length;
+    const y = (v) => padT + ih - (v / max) * ih;
+    let out = "";
+    // grid
+    const ticks = niceTicks(max);
+    for (const t of ticks) out += `<line x1="${padL}" x2="${W}" y1="${y(t)}" y2="${y(t)}" stroke="var(--grid)" stroke-width="1"/><text x="${padL - 6}" y="${y(t) + 4}" text-anchor="end" font-size="11" fill="var(--text-3)">${t}</text>`;
+    // bars
+    keys.forEach((k, i) => {
+      const w = weeks.get(k); let acc = 0; const x = padL + i * bw + bw * 0.15; const width = Math.max(2, bw * 0.7);
+      active.forEach((r) => {
+        const v = w[r]; if (!v) return;
+        const top = y(acc + v), bottom = y(acc) - (acc ? 2 : 0);
+        out += `<rect x="${x}" y="${top}" width="${width}" height="${Math.max(0, bottom - top)}" rx="${acc + v === total(w) ? 3 : 0}" fill="${repoColor(r)}"/>`;
+        acc += v;
+      });
+      out += `<rect class="hit" data-i="${i}" x="${padL + i * bw}" y="${padT}" width="${bw}" height="${ih}" fill="transparent"/>`;
+    });
+    // x labels
+    const step = Math.ceil(keys.length / 8);
+    keys.forEach((k, i) => { if (i % step === 0) out += `<text x="${padL + i * bw + bw / 2}" y="${H - 6}" text-anchor="middle" font-size="11" fill="var(--text-3)">${fmtShort(k)}</text>`; });
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+    svg.innerHTML = out;
+    $("#legend").innerHTML = active.map((r) => `<span style="--c:${repoColor(r)}">${shortRepo(r)}</span>`).join("");
+
+    svg.onmousemove = (e) => {
+      const hit = e.target.closest(".hit"); if (!hit) { tip.style.display = "none"; return; }
+      const i = Number(hit.dataset.i); const w = weeks.get(keys[i]);
+      const rect = svg.getBoundingClientRect();
+      const px = rect.left + ((padL + i * bw + bw / 2) / W) * rect.width;
+      const wrap = svg.parentElement.getBoundingClientRect();
+      tip.style.left = `${px - wrap.left}px`; tip.style.top = `${e.clientY - wrap.top}px`;
+      tip.innerHTML = `<b>Week of ${fmtShort(keys[i])}</b> · ${total(w)} PRs<br>` + active.map((r) => `${shortRepo(r)}: ${w[r]}`).join("<br>");
+      tip.style.display = "block";
+    };
+    svg.onmouseleave = () => { tip.style.display = "none"; };
+  }
+  const total = (w) => Object.values(w).reduce((a, b) => a + b, 0);
+  function niceTicks(max) {
+    const raw = max / 4, mag = 10 ** Math.floor(Math.log10(raw)), n = raw / mag;
+    const step = (n <= 1 ? 1 : n <= 2 ? 2 : n <= 5 ? 5 : 10) * mag;
+    const t = []; for (let v = step; v <= max; v += step) t.push(v); return t;
+  }
+  const fmtShort = (t) => new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" });
+  const fmtDay = (iso) => new Date(iso).toLocaleDateString(undefined, { weekday: "short", year: "numeric", month: "short", day: "numeric" });
+
+  function renderDevs(prs) {
+    const counts = {};
+    for (const p of prs) counts[p.author] = (counts[p.author] || 0) + 1;
+    const rows = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+    const max = rows[0]?.[1] || 1;
+    $("#devs").innerHTML = rows.map(([a, n]) =>
+      `<div class="dev" data-a="${a}" title="Filter to ${a}"><span>${a}</span><b>${n}</b><span class="bar" style="width:${Math.max(6, 60 * n / max)}px"></span></div>`
+    ).join("") || `<span class="empty">No merged PRs in this range.</span>`;
+    $("#devs").querySelectorAll(".dev").forEach((el) => el.onclick = () => {
+      state.author = state.author === el.dataset.a ? "" : el.dataset.a; $("#author").value = state.author; render();
+    });
+  }
+
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  function renderCards(prs) {
+    const list = $("#list");
+    if (!prs.length) { list.innerHTML = `<div class="empty">No merged PRs match these filters.</div>`; return; }
+    let html = "", lastDay = "";
+    for (const p of prs.slice(0, state.limit)) {
+      const day = p.mergedAt.slice(0, 10);
+      if (day !== lastDay) { html += `<div class="day">${fmtDay(p.mergedAt)}</div>`; lastDay = day; }
+      html += `<article class="pr" style="--c:${repoColor(p.repo)}">
+        <div class="stripe"></div>
+        <div>
+          <div class="top"><span class="repo">${shortRepo(p.repo)}</span><span>#${p.number}</span><span>by ${esc(p.author)}</span>${p.category ? `<span class="badge">${p.category}</span>` : ""}</div>
+          <div class="title"><a href="${p.url}" target="_blank" rel="noopener">${esc(p.title)}</a></div>
+          <div class="summary${p.summary ? "" : " pending"}">${p.summary ? esc(p.summary) : "Summary not generated yet."}</div>
+          <div class="foot"><span class="add">+${p.additions.toLocaleString()}</span><span class="del">−${p.deletions.toLocaleString()}</span><span>${p.changedFiles} files</span>${p.labels.map((l) => `<span class="badge">${esc(l)}</span>`).join("")}</div>
+        </div>
+      </article>`;
+    }
+    if (prs.length > state.limit) html += `<button class="btn more" id="more">Show ${Math.min(100, prs.length - state.limit)} more of ${prs.length - state.limit} remaining</button>`;
+    list.innerHTML = html;
+    const more = $("#more"); if (more) more.onclick = () => { state.limit += 100; render(); };
+  }
+
+  function renderTable(prs) {
+    const list = $("#list");
+    if (!prs.length) { list.innerHTML = `<div class="empty">No merged PRs match these filters.</div>`; return; }
+    list.innerHTML = `<div class="card" style="overflow:auto"><table>
+      <thead><tr><th>Merged</th><th>Repo</th><th>PR</th><th class="hide-sm">Developer</th><th>What it did</th><th class="num hide-sm">+/−</th></tr></thead>
+      <tbody>${prs.slice(0, state.limit).map((p) => `<tr>
+        <td>${p.mergedAt.slice(0, 10)}</td>
+        <td>${shortRepo(p.repo)}</td>
+        <td><a href="${p.url}" target="_blank" rel="noopener">#${p.number}</a> ${esc(p.title)}</td>
+        <td class="hide-sm">${esc(p.author)}</td>
+        <td>${p.summary ? esc(p.summary) : "<i>pending</i>"}</td>
+        <td class="num hide-sm">+${p.additions} / −${p.deletions}</td>
+      </tr>`).join("")}</tbody></table>
+      ${prs.length > state.limit ? `<button class="btn more" id="more">Show more</button>` : ""}</div>`;
+    const more = $("#more"); if (more) more.onclick = () => { state.limit += 100; render(); };
+  }
+
+  render();
+})().catch((e) => { document.querySelector("#list").innerHTML = `<div class="empty">Could not load data/prs.json: ${e.message}</div>`; });
+</script>
+</body>
+</html>
