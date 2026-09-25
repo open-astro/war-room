@@ -60,10 +60,16 @@ async function saveDataset(ds: Dataset): Promise<boolean> {
 }
 let lastSavedBody = "";
 
-/** Re-fetch from a few days before the newest PR we already have, so late edits are caught. */
+/**
+ * Re-fetch from a few days before the newest PR we already have, so late edits are caught.
+ * Falls back to a full fetch while any PR in the repo still lacks a summary, because
+ * summaries need the PR body and bodies are only held in memory for fetched PRs.
+ */
 function sinceFor(ds: Dataset, repo: string): string | undefined {
   if (fullRefetch) return undefined;
-  const newest = ds.prs.filter((p) => p.repo === repo).map((p) => p.mergedAt).sort().at(-1);
+  const mine = ds.prs.filter((p) => p.repo === repo);
+  if (wantSummaries && mine.some((p) => !p.summary)) return undefined;
+  const newest = mine.map((p) => p.mergedAt).sort().at(-1);
   if (!newest) return undefined;
   const d = new Date(newest);
   d.setUTCDate(d.getUTCDate() - 3);
