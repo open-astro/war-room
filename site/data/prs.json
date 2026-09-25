@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T16:21:20.088Z",
+  "generatedAt": "2026-09-25T16:22:41.074Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -20718,9 +20718,9 @@
       "deletions": 446,
       "changedFiles": 205,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The collection of automated tests has been renamed from the old N.I.N.A. name to OpenAstro Ara, as part of the ongoing rebrand of this fork. This is internal only and changes nothing for users. The description calls this the final component rename, but a few references to old N.I.N.A. names still appear in the test code, and the main solution file keeps its old name until a follow-up change.",
+      "category": "refactor",
+      "summaryHash": "1f5a6c5a61c019e037eee7b67327b68b133fcf0f"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20733,9 +20733,9 @@
       "deletions": 1483,
       "changedFiles": 347,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The part of the app that runs automated imaging sequences has been renamed from its old N.I.N.A. name to OpenAstro Ara, and the tests that depend on it were updated to match. This is an internal rebranding step with no intended change in behavior. No code changes were available to review, so this summary is based only on the description, which also says the app may not build cleanly until later rename steps land.",
+      "category": "refactor",
+      "summaryHash": "55d3b517c3c8bf6a656e9c14eaff65b9e87b6a5e"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20748,9 +20748,9 @@
       "deletions": 570,
       "changedFiles": 180,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The equipment-control part of the app (cameras, mounts, guiders, focusers and so on) has been renamed from its old N.I.N.A. name to OpenAstro Ara. This is internal rebranding with no change in behavior, and a companion change (#26) updates the code that uses it. The links from other parts of the project to this component appear to still point at the old folder name, which could stop the app from building until that is corrected.",
+      "category": "refactor",
+      "summaryHash": "c9421248044d2071c2c1d01e9c6c7602328c379c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20763,9 +20763,9 @@
       "deletions": 352,
       "changedFiles": 163,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This companion to #25 updates the imaging-sequence code and the tests so they refer to the equipment component by its new OpenAstro Ara name. It is internal cleanup with no user-facing change. The description says a few plate-solving files were also updated, but the changes shown touch only the sequence code and the tests.",
+      "category": "refactor",
+      "summaryHash": "e16cae7ce91660216f51eef65a1e42b0777ee485"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20778,9 +20778,9 @@
       "deletions": 111,
       "changedFiles": 40,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The plate-solving part of the app has been renamed from its old N.I.N.A. name to OpenAstro Ara. Plate solving is the feature that works out where the telescope is pointing by matching the stars in an image. The rename also fixes an inconsistent upper- and lower-case spelling in the old name, and behavior is unchanged. The test project's link to this component still points at the old folder name, which may cause build problems until it is fixed.",
+      "category": "refactor",
+      "summaryHash": "91a3803d733f04a25d546188b1e0c84ba1eab465"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20793,9 +20793,9 @@
       "deletions": 304,
       "changedFiles": 140,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The image-handling part of the app (reading and saving image files, star detection, image statistics) has been renamed from its old N.I.N.A. name to OpenAstro Ara. Everything that uses it was updated to the new name, with no change in behavior. Several other components still link to it through the old folder name, which may break the build until later cleanup; the description notes the build may be unstable between rename steps.",
+      "category": "refactor",
+      "summaryHash": "a66edc171a73c6edc368ea36bdc2754cb22cd568"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20808,9 +20808,9 @@
       "deletions": 350,
       "changedFiles": 235,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Renamed the part of the app that stores user profiles and settings from its old NINA name to the new OpenAstro Ara name, and updated every other part of the app that relies on it. Nothing changes for users; this is one step in the project-wide rebrand. As planned, the app will not fully build again until a later step in the renaming series.",
+      "category": "refactor",
+      "summaryHash": "9ea440386e2d3b529eff7a9940d108547061b254"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20823,9 +20823,9 @@
       "deletions": 325,
       "changedFiles": 217,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Renamed the part of the app that handles astronomy calculations (sky coordinates, sunrise and sunset, moon position and similar) from its old NINA name to the new OpenAstro Ara name, and pointed everything that uses it to the new name. Nothing changes for users; this is another step in the rebrand. As planned, the app will not fully build until the remaining parts are renamed.",
+      "category": "refactor",
+      "summaryHash": "ae2445621d815304e032d615481c4656a1f2bc2b"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20838,9 +20838,9 @@
       "deletions": 324,
       "changedFiles": 261,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Renamed the app's shared foundation code, which almost everything else is built on, from its old NINA name to the new OpenAstro Ara name. This is the first project rename in the rebrand and has no user-facing effect. The original author and copyright credits were deliberately kept. Other parts of the app will not build until they are renamed in later steps, which the team expects.",
+      "category": "refactor",
+      "summaryHash": "1dfc9878b2a0675dfac204dec09803b6b33b0fee"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20853,9 +20853,9 @@
       "deletions": 240291,
       "changedFiles": 126,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Moved a batch of earlier cleanup work onto the main branch in a single merge, removing about 240,000 lines. The bundle drops built-in support for many camera brands (including ASI, Atik, FLI, Nikon, QHY, SBIG, SVBony, PlayerOne and ToupTek) and their matching filter wheels and focusers. It also removes the old Windows device-connection layer and the old branding and translations, tightens the automated checks, and adds an audit record. No code changes were available to confirm this, so the summary relies on the description alone.",
+      "category": "chore",
+      "summaryHash": "b002dfcf526a0456f8c8c880188a6a6602dc879f"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20868,9 +20868,9 @@
       "deletions": 1,
       "changedFiles": 1,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Documentation only: adds an entry to the project's decision log recording a later review of four earlier pull requests that were merged without the usual automated review. The review found that all four only deleted the files they said they would, with no surprises. It also corrects an earlier note so the list of unreviewed pull requests includes all four instead of three.",
+      "category": "docs",
+      "summaryHash": "07a3715608ce3c5d018f91b3ed2b3eff0d48540b"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -20883,9 +20883,9 @@
       "deletions": 184729,
       "changedFiles": 39,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Removed the 25 non-English translations, so the app is now English-only. The product name and project links now point to OpenAstro Ara instead of NINA, and the README was rewritten for the new project. Old NINA leftovers were also cleared out: the translation tool setup, the release notes, the old Bitbucket build pipeline (which ran unit tests), the linked documentation repository, the logo and splash image, and the code-signing step. Original author and copyright credits were kept, though some internal package descriptions still mention N.I.N.A.",
+      "category": "chore",
+      "summaryHash": "fbdc74189fc504f279d91a6528b2f69aeb5a5517"
     },
     {
       "repo": "open-astro/openastro-ara",
