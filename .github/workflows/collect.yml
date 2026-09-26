@@ -6,8 +6,6 @@ on:
     # (we observed 2 firings in 9 hours). Scheduling three times an hour makes
     # it likely at least one lands each hour. A run is ~1 minute and only
     # commits when data changed, so the extra firings are cheap.
-    # scripts/install-local-trigger.sh adds a launchd backstop that dispatches
-    # this workflow hourly from a Mac in case GitHub drops all three.
     - cron: "17,37,57 * * * *"
   workflow_dispatch:
   push:
