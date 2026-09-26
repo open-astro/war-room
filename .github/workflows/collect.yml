@@ -2,7 +2,13 @@ name: Collect PRs and deploy dashboard
 
 on:
   schedule:
-    - cron: "17 * * * *" # hourly, off the congested top-of-hour slot
+    # GitHub runs cron on a best-effort basis and silently drops many slots
+    # (we observed 2 firings in 9 hours). Scheduling three times an hour makes
+    # it likely at least one lands each hour. A run is ~1 minute and only
+    # commits when data changed, so the extra firings are cheap.
+    # scripts/install-local-trigger.sh adds a launchd backstop that dispatches
+    # this workflow hourly from a Mac in case GitHub drops all three.
+    - cron: "17,37,57 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
