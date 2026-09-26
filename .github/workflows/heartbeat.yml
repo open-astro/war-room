@@ -1,0 +1,35 @@
+name: Heartbeat (hourly trigger)
+
+# GitHub's cron scheduler has proven unreliable for this repo (hours with zero
+# firings despite six slots per hour). This workflow replaces it: each run
+# triggers the collector, sleeps ~59 minutes, then dispatches itself again.
+# The `heartbeat` concurrency group guarantees exactly one running run plus at
+# most one queued, so re-arming never piles up. The cron entry below is only a
+# restarter in case the chain ever breaks; collect.yml also re-arms it.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "3 * * * *"
+
+permissions:
+  actions: write
+
+concurrency:
+  group: heartbeat
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Trigger collect
+        run: gh workflow run collect.yml --repo "$GITHUB_REPOSITORY" --ref main
+      - name: Wait until the next hour
+        run: sleep 3540
+      - name: Re-arm the heartbeat
+        if: always()
+        run: gh workflow run heartbeat.yml --repo "$GITHUB_REPOSITORY" --ref main
