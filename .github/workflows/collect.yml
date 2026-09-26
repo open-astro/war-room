@@ -2,11 +2,10 @@ name: Collect PRs and deploy dashboard
 
 on:
   schedule:
-    # GitHub runs cron on a best-effort basis and silently drops many slots
-    # (we observed 2 firings in 9 hours). Scheduling every 10 minutes makes it
-    # very likely at least one lands each hour. A run is ~1 minute and only
-    # commits when data changed, so the extra firings are cheap.
-    - cron: "7,17,27,37,47,57 * * * *"
+    # GitHub's cron is best-effort and has dropped nearly every slot for this
+    # repo. The hourly cadence actually comes from heartbeat.yml, which
+    # dispatches this workflow; these entries are a fallback only.
+    - cron: "17,47 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -16,6 +15,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write
 
 concurrency:
   group: collect
@@ -51,6 +51,21 @@ jobs:
           git add site/data/prs.json
           git diff --cached --quiet || git commit -m "data: refresh merged PRs $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
+      - name: Ensure the heartbeat chain is alive
+        # If no heartbeat run is running or queued, the chain has broken;
+        # restart it so the hourly cadence resumes.
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          alive=$(gh run list --workflow heartbeat.yml --repo "$GITHUB_REPOSITORY" \
+            --json status --jq '[.[] | select(.status=="in_progress" or .status=="queued" or .status=="waiting" or .status=="pending")] | length')
+          if [ "$alive" = "0" ]; then
+            echo "No heartbeat running; re-arming"
+            gh workflow run heartbeat.yml --repo "$GITHUB_REPOSITORY" --ref main
+          else
+            echo "Heartbeat alive ($alive run(s))"
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
