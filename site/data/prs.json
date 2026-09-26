@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-26T04:40:51.923Z",
+  "generatedAt": "2026-09-26T07:04:48.456Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 663,
+      "title": "Tests: cross-driver contract sweep tier 2, and get_at_park throws NotConnected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/663",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-26T06:07:24Z",
+      "additions": 1463,
+      "deletions": 123,
+      "changedFiles": 22,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Four telescope mount drivers (Bisque, Celestron, SynScan and Sky-Watcher) now report a clear \"not connected\" error when asked whether the mount is parked or at its home position while it is disconnected. Before, they quietly answered \"no\", which could mislead software into thinking it had a real answer. The home-position fix was not in the original request and was added during review, and on Sky-Watcher the same error now also appears if the serial link drops mid-session. Most of the change is a large batch of new automated checks (59 cases) applied across all supported devices, using simulated hardware only; the official conformance tool was not re-run, and camera inconsistencies it found were logged separately rather than fixed.",
+      "category": "fix",
+      "summaryHash": "946ace6d197755fe9510f4fa174b7099b7a0e9e8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 661,
