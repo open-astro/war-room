@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-09-26T13:58:53.439Z",
+  "generatedAt": "2026-09-26T15:57:38.353Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1106,
+      "title": "client: offline adds append to the open draft; Delete works for drafts",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1106",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-26T15:52:50Z",
+      "additions": 352,
+      "deletions": 14,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Fixes two problems when planning without a connection to the telescope computer. Adding several targets now puts them all into the one plan you have open, instead of creating a separate plan for each and showing only the last. The toolbar's Delete button now works on these offline plans, asking for confirmation first. A related issue is logged for follow-up: deleting an offline plan from the Load window can still leave it open on screen and bring it back on the next save.",
+      "category": "fix",
+      "summaryHash": "e4843d911aa037de2e62a48b5c5cdcb78edf668a"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1105,
+      "title": "client: Plan my night targets can be swapped, shown on the atlas, and added to a run",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1105",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-26T15:30:33Z",
+      "additions": 20957,
+      "deletions": 160,
+      "changedFiles": 46,
+      "labels": [],
+      "summary": "Turns night planning into something you can do fully offline. In 'Plan my night', each suggested target gets a sky photo preview, and you can swap it for another target, rotate or reposition the camera frame, or split it into a multi-frame mosaic. You can also show it on the sky map or add it to an imaging run, and 'Add all' builds a single plan for the night. Star and nebula catalogs now ship inside the app, the sky map uses your saved location when the telescope computer is away, Tonight's Sky gains an 'Up now' filter, and the night-mode shortcut changes from N to Ctrl+N (⌘N on Mac). The sky photo previews are downloaded from an outside service and saved for later, with no option yet to turn this off. Most of this very large change was not visible for review, so only the release notes, credits and shortcut changes could be checked against the code.",
+      "category": "feature",
+      "summaryHash": "7aeb12407e3220c56ae8e3fe21553cd9f1277ec7"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1104,
