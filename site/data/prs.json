@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-26T15:57:38.353Z",
+  "generatedAt": "2026-09-26T17:55:44.986Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1107,
+      "title": "data: Wolf-Rayet star catalog package (717 stars, Sheffield Galactic WR Catalogue)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1107",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-26T17:00:29Z",
+      "additions": 450,
+      "deletions": 195,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "Adds a full catalog of 717 Wolf-Rayet stars, a type of very hot, massive star, so users can now search for any of them by number instead of the handful that were available before. The catalog is an optional download in the Data Manager, comes pre-installed with new system packages, and shows up as its own 'Wolf-Rayet stars' list on the sky map. These stars are kept out of the 'tonight's best targets' ranking, since the imaging targets are the glowing gas shells around them. Search also got smarter at telling similar names apart (for example 'WR 2-1' versus 'WR 21') and at matching names typed without spaces or dashes.",
+      "category": "feature",
+      "summaryHash": "cc0d8321c87e365f17a0eef7f91c7b2e097c6ddb"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1106,
