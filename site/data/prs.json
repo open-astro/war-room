@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-26T07:04:48.456Z",
+  "generatedAt": "2026-09-26T12:00:32.728Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 665,
+      "title": "fix: camera ImageReady and CCDTemperature throw NotConnected while disconnected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/665",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-26T11:46:47Z",
+      "additions": 87,
+      "deletions": 82,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Several camera brands (Player One, SVBONY, ToupTek, gphoto-controlled cameras and QHY) now properly report a \"not connected\" error when an app asks for image status, sensor temperature or cooler settings while the camera is disconnected, instead of quietly giving back a made-up answer like \"no image yet\" or 0 degrees. One QHY bug also let a cooler on/off request or a target temperature be accepted and saved while disconnected; that no longer happens. This brings these cameras in line with how ZWO cameras already behaved and with the astronomy device standard, so apps get a clear, honest answer about the connection. The code matches the description, and the tests were updated so they now check for the error instead of accepting the old behavior.",
+      "category": "fix",
+      "summaryHash": "00e733c9cc4e160a72e7f823b6c9be321518f489"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 663,
