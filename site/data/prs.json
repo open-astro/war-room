@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-26T12:00:32.728Z",
+  "generatedAt": "2026-09-26T13:58:53.439Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1104,
+      "title": "client: Tonight's Sky no longer floods with dark nebulae",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1104",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-26T13:01:49Z",
+      "additions": 470,
+      "deletions": 13,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "The Tonight's Sky recommendations no longer fill up with poor imaging targets. Before, thousands of dark dust clouds and faint, little-known nebulae had no brightness data, so they were treated as average and scored as high as the best real targets. Now dark nebulae are ranked lower, and faint nebulae without brightness data are ranked by a hand-picked list of well-known photo targets, with unlisted ones marked down sharply. Emission nebulae also score lower for anyone without narrowband filters, especially under light-polluted skies, so galaxies and clusters rise for those users, and famous nebulae like the Tulip no longer show up twice.",
+      "category": "fix",
+      "summaryHash": "bdd4c226451390b97570161a034d2196400fd1b2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 665,
