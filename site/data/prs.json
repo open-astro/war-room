@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-09-25T21:53:30.709Z",
+  "generatedAt": "2026-09-26T04:40:51.923Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 661,
+      "title": "Router tests: harden the test suites (type-name set pinned, vacuity guards, check E deleted for a static-regex rule, persisted helper restore)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/661",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-26T04:25:53Z",
+      "additions": 228,
+      "deletions": 59,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test-only change that makes the web request routing tests harder to fool; the app itself does not change. The list of supported device types now lives in one shared file the tests read and cross-check against the real code, and two tests now fail if they accidentally check nothing. A timing-based speed test that was unreliable was replaced by an automatic rule that keeps a certain costly setup step from being rebuilt on every request. One test also now works in a throwaway folder, so a crash partway through can no longer leave a fake device behind in the real saved device list and break the next run.",
+      "category": "tests",
+      "summaryHash": "29dea5321f1a14101e01f96fa90530ca0f2f6172"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 660,
+      "title": "Resolve auto-detected ports and hosts at connect time, not at server start-up",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/660",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-26T01:00:41Z",
+      "additions": 2220,
+      "deletions": 165,
+      "changedFiles": 43,
+      "labels": [],
+      "summary": "Devices that are found automatically, such as mounts found over Wi-Fi or USB, are now searched for when someone connects to them instead of once when the server starts. Before, a mount that joined the network or got powered on after the server started showed as \"failed to load\" until the service was restarted, which happened on every reboot of the Raspberry Pi setup. This covers several telescope mounts, focusers, and one filter wheel, and a device's last known location is tried first so reconnects stay fast. The trade-off, noted in the docs, is that the first connect after a restart can be slow while the search runs.",
+      "category": "fix",
+      "summaryHash": "4ff52541de731aff3ae148370c7bf54586597ef5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1103,
