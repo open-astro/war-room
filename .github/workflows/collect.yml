@@ -3,10 +3,10 @@ name: Collect PRs and deploy dashboard
 on:
   schedule:
     # GitHub runs cron on a best-effort basis and silently drops many slots
-    # (we observed 2 firings in 9 hours). Scheduling three times an hour makes
-    # it likely at least one lands each hour. A run is ~1 minute and only
+    # (we observed 2 firings in 9 hours). Scheduling every 10 minutes makes it
+    # very likely at least one lands each hour. A run is ~1 minute and only
     # commits when data changed, so the extra firings are cheap.
-    - cron: "17,37,57 * * * *"
+    - cron: "7,17,27,37,47,57 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
