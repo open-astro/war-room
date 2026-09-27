@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-27T06:45:16.054Z",
+  "generatedAt": "2026-09-27T07:44:11.569Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 673,
+      "title": "fix: GET synctime errors when host clock is outside 2000..2100 UTC (#670)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/673",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-27T07:12:26Z",
+      "additions": 55,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a device's clock is badly wrong, for example a Raspberry Pi that boots up thinking it is 1970, the server now says so with a clear error instead of reporting that bogus time as if it were real. The error tells the user to set the time, and it uses the same allowed date range (years 2000 to 2100) that the server already enforces when someone sets the clock, so the two checks now agree. When the clock is within that range, nothing changes. The code matches the description, with new tests covering the edge cases and a changelog entry added.",
+      "category": "fix",
+      "summaryHash": "8c0dd7a6388486bff0e26f0385ae3f47169e9722"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 672,
