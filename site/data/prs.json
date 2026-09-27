@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-27T00:50:13.061Z",
+  "generatedAt": "2026-09-27T02:48:32.885Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 991,
+      "title": "fix(client): make Tonight's Sky targets inspectable and frameable",
+      "url": "https://github.com/open-astro/openastro-ara/pull/991",
+      "author": "Jewber11",
+      "mergedAt": "2026-09-27T02:09:38Z",
+      "additions": 903,
+      "deletions": 26,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Each target in the Tonight's Sky list now has an info button that opens a details window showing the object's type, position, height in the sky, viewing window, brightness, size, filter advice, and why it was recommended. Tapping the row still frames the target as before. The planetarium's real sky photos are now saved on the device as you view them, so areas you looked at while online still show photos at a dark site with no Internet. When photos aren't available, the framing panel now says why instead of just looking blank. The code that downloads and saves the photos was cut from the diff I was given, so I could only check the parts that point the planetarium at it and show the offline message.",
+      "category": "feature",
+      "summaryHash": "c4713165d64d015e0537bf8f857560d35548d22e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 669,
