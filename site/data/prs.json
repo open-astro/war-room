@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-27T13:39:09.228Z",
+  "generatedAt": "2026-09-27T17:35:46.815Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 685,
+      "title": "Gate the README validated-device and brand counts (#684)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/685",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-27T17:18:21Z",
+      "additions": 261,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Adds an automatic check that stops the project's front-page headline, which says how many devices are validated and how many brands are supported, from falling out of date with the detailed supported-hardware list. That headline had been wrong for three releases and was being recounted by hand each release, so now the build fails if the numbers or the brand list don't match, including when a new brand is added to the detailed list without being mentioned on the front page. The release checklist and contributor notes were updated to describe the new check, and the changelog opens a 4.1.1 entry for it. This is internal tooling and documentation only; nothing about how the software runs has changed.",
+      "category": "ci",
+      "summaryHash": "09311d15cf9a808b159a5c6288ba6c9cb464107a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 683,
