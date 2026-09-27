@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-26T17:55:44.986Z",
+  "generatedAt": "2026-09-27T00:50:13.061Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 669,
+      "title": "fix: guard web UI clock against an out-of-range Value (#511)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/669",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-27T00:00:22Z",
+      "additions": 44,
+      "deletions": 12,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The clock in the web control page no longer breaks when the server sends back a nonsense time value that is far outside any real date. Such values are now ignored: the page keeps its previous clock reading, and the time sync button shows an \"invalid time value\" error instead of failing. The clock display shows dashes rather than crashing if it ever receives an unusable time. The change also includes new tests, a changelog entry, and a tweak so browsers load the updated page files instead of old cached copies.",
+      "category": "fix",
+      "summaryHash": "060d88dd8d642509e80f5cd0a1cde4e28018e3dd"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1107,
