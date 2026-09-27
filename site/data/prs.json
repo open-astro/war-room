@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-27T19:34:02.828Z",
+  "generatedAt": "2026-09-27T20:33:14.210Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1110,
+      "title": "server+packaging: run the storage helper through a root template unit, not sudo",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1110",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-27T19:40:42Z",
+      "additions": 391,
+      "deletions": 25,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Choosing, checking, reformatting and ejecting the disk that stores captured images now works on a packaged Pi. Before this, every one of those actions failed because the server is locked down so it cannot raise its own permissions, which blocked the admin step it relied on. The server now drops off a written request and asks the system to run the disk tool on its behalf, under a narrow rule that allows only that one job, the same approach already used for guider control. The code also quietly rejects a confirmation label containing line breaks, which the description does not mention, and the full server-side path has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "f0c13a8e3827f2895e2f169ec22aa5265589e08a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 695,
