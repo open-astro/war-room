@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-27T07:44:11.569Z",
+  "generatedAt": "2026-09-27T08:43:18.101Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 678,
+      "title": "Fix unsupported-member docs to point to MethodNotImplemented",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/678",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-27T08:39:08Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Corrected the guidance given to people writing new device drivers about which error a driver should report when asked to do something the hardware can't do at all. The old wording said this was \"usually\" a wrong-timing error, which contradicted another part of the same guide and could lead to tests that check for the wrong error but still pass. It now clearly says to use the \"not implemented\" error for missing features, and to save the wrong-timing error for features that exist but can't run right now. This is a documentation-only change to two guide files, and the diff matches the description.",
+      "category": "docs",
+      "summaryHash": "47104c34e4b72d72026fc915938bb0524e449d25"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 673,
