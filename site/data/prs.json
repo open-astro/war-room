@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-27T18:34:52.426Z",
+  "generatedAt": "2026-09-27T19:18:09.026Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1109,
+      "title": "fits: resolve CFITSIO by versioned soname so captures work on a stock .deb install",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1109",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-27T18:45:39Z",
+      "additions": 98,
+      "deletions": 23,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Taking pictures now works on a standard Raspberry Pi install. Before this, every capture failed at the moment of saving the image file, because the app looked for a copy of the image-file library that only comes with a developer add-on, and that add-on is never present on a real device. The app now also finds the version of the library that the normal install actually provides, and the automated checks were changed to match a real device so this kind of problem gets caught in future. The new fallback has not yet run on the Pi itself, since a manual workaround is still in place there, and several related follow-ups (such as a clear warning at startup when the library is missing) are only noted as to-dos, not done.",
+      "category": "fix",
+      "summaryHash": "f84b0f1317931919bbc92f2b82a8451366950072"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 694,
