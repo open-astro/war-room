@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-27T05:21:26.324Z",
+  "generatedAt": "2026-09-27T06:45:16.054Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 672,
+      "title": "fix: cross-origin 403 echoes ClientTransactionID sent only in the JSON body (#509)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/672",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-27T06:30:13Z",
+      "additions": 40,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the server blocks a settings change coming from a web page on a different site, its rejection reply now includes the request's tracking number even if the client sent it only inside the message body, not just in the web address. This lets client software match the rejection to the request it sent. The change comes with a new automated test. Not mentioned in the description, it also rewords the user docs: blocked requests are now described as not acted on, rather than rejected before their contents are read, since the server now does look inside to find the tracking number.",
+      "category": "fix",
+      "summaryHash": "d2f6754ae3e1b08d294f9cfb2931a04856eaf515"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1108,
