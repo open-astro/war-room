@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-27T10:41:43.750Z",
+  "generatedAt": "2026-09-27T13:39:09.228Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 683,
+      "title": "Release 4.1.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/683",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-27T13:31:57Z",
+      "additions": 48,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "This officially releases version 4.1.0. It updates the version number, dates the changelog, updates the README to list 80 validated devices including Canon cameras, and adds the release notes. Those notes highlight support for three Canon cameras (EOS 4000D, 70D and 250D) and the Nikon D3300, plus a new safety feature that stops a moving telescope mount after 30 seconds with no contact, such as when the controlling software crashes. They also list many Sky-Watcher, camera and error-reporting fixes. This PR does not contain any of those changes itself; the actual work landed in earlier PRs.",
+      "category": "chore",
+      "summaryHash": "0c27608fa8d16d44f902a994317d4bafbadd6e3a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 680,
