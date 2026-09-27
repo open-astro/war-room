@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-27T08:43:18.101Z",
+  "generatedAt": "2026-09-27T10:41:43.750Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 680,
+      "title": "Add ActionNotImplemented carve-out to case 8 docs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/680",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-27T09:53:26Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update to the developer guidelines for writing device drivers. It clarifies that when a driver is asked to run a custom command it doesn't recognize, it should report a specific \"action not implemented\" error. That error is different from the general \"not supported\" error. This keeps the written rules in line with how the code already behaves and with what the standard compatibility checker expects. The change matches the description, with the same one-sentence addition made in two guideline files.",
+      "category": "docs",
+      "summaryHash": "a10030c3f92e36b81aab081798eebe8db4dac4c2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 678,
