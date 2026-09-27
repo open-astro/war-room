@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-27T19:18:09.026Z",
+  "generatedAt": "2026-09-27T19:34:02.828Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 695,
+      "title": "Close the PR #685 review notes: README scans, Updated-date gate, headline diagnostics (#690-#693)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/695",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-27T19:23:45Z",
+      "additions": 324,
+      "deletions": 35,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "This tightens the automatic checks that keep the project's documentation accurate, following up on review notes from an earlier change. The checks now also cover the main README, the supported-hardware list and the changelog, so broken links or images there get caught. A new rule makes sure the \"last updated\" date on the supported-hardware page is never older than the latest release, and that date was brought up to today. Visible changes are small: the README's brand list now says just \"Canon and Nikon DSLRs\" without naming the underlying library, and the release instructions now say to update the hardware page date. The main code changes were trimmed from the diff, so the checking logic itself could not be confirmed, but the documentation edits match the description.",
+      "category": "chore",
+      "summaryHash": "21d11b16798e5dc7da88ffc69f85bdd3b08d850e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1109,
