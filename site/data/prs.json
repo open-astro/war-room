@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-27T02:48:32.885Z",
+  "generatedAt": "2026-09-27T04:46:40.810Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1108,
+      "title": "client+server: reconnect and remove any equipment device from its card",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1108",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-27T04:06:31Z",
+      "additions": 1605,
+      "deletions": 51,
+      "changedFiles": 62,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 991,
