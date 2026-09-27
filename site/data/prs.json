@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-27T17:35:46.815Z",
+  "generatedAt": "2026-09-27T18:34:52.426Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 694,
+      "title": "Give the README headline recount one owner: check_docs_drift.py --counts (#689)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/694",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-27T17:47:50Z",
+      "additions": 149,
+      "deletions": 27,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "This is an internal tooling change with no effect on users. The project's documentation checker can now print the numbers behind the README's headline (how many devices are validated, how many brands, and the brand list), along with a ready-to-paste version of that line. The release checklist now simply runs this one command instead of keeping its own separate counting steps, so the rule for counting lives in one place and the two versions can't drift apart. The description mentions seven new test cases while the changelog says eight; the script changes themselves were not shown, so neither number could be checked.",
+      "category": "chore",
+      "summaryHash": "0bb3501755f07f70c6e0fe724dec8146bf52a782"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 685,
