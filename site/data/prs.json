@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T04:46:40.810Z",
+  "generatedAt": "2026-09-27T05:21:26.324Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -17,9 +17,9 @@
       "deletions": 51,
       "changedFiles": 62,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "A switch that had been disconnected can now be reconnected straight from its own card. Before, the card only ever offered Disconnect, and the only way back was to add the device again from scratch. The camera, mount, focuser, filter wheel, rotator, dome, flat panel, weather station and safety monitor cards now work the same way: after a disconnect they keep showing the device with a Connect button and a Remove button, and Remove also stops the device from auto-connecting at startup. Remove is refused while a device is still connected; the reconnect was tested on the real Pi setup, but Remove for those other devices was not, because it needs the updated server installed there.",
+      "category": "fix",
+      "summaryHash": "fcab9b5830f6ec5555330c6f5dfc898502d898cd"
     },
     {
       "repo": "open-astro/openastro-ara",
