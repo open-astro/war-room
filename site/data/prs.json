@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-28T20:14:14.095Z",
+  "generatedAt": "2026-09-28T21:13:30.195Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 709,
+      "title": "Fix Sync Time ClientTransactionID echo, set_now_fn contract, and HostClock stress test",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/709",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-28T20:33:06Z",
+      "additions": 238,
+      "deletions": 20,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This bundles five small follow-up fixes to the \"Sync Time\" feature, which keeps the device's clock in step with the user's browser. When a program sends a request tracking number inside the request body, the server now repeats that number back on every answer, not just when it rejects a request. The web page's clock display also no longer quietly shows a stale time when the server reports a clock problem: it shows an error you can click or tap to read the server's explanation and a pointer to Sync Time. Behind the scenes, swapping out the clock source while requests are running is now safe, a duplicated set of date limits was merged into one, and an automated test that could never fail was fixed so it actually checks something.",
+      "category": "fix",
+      "summaryHash": "aefed2bcd613027220ad023cd2217b7d210b0f52"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 701,
