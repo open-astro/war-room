@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-28T18:15:58.782Z",
+  "generatedAt": "2026-09-28T20:14:14.095Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 701,
+      "title": "Add device catalog JSON bridge and Astroasis descriptor",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/701",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-28T19:46:42Z",
+      "additions": 1790,
+      "deletions": 79,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server now has a central list (catalog) of supported devices and their settings, and it can report that list to other programs. The Astroasis Oasis Focuser is the first device moved onto it, replacing its older one-off setup code. The change also fixes a bug where saving a focuser's settings would quietly drop shared options such as response timeout, telescope aperture and focal length, and site details. It also tightens how whole-number settings are read, so values like 1.5 or true are now rejected instead of being silently rounded. Most of the code itself was too large to show, so the finer details come mainly from the description, though the visible parts are consistent with it.",
+      "category": "feature",
+      "summaryHash": "a1b98a36c84ff8500c71af2e7464246246fe4bd9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1117,
