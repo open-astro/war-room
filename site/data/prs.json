@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-28T21:13:30.195Z",
+  "generatedAt": "2026-09-28T22:12:35.012Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 712,
+      "title": "Fix server crash on a long request path (std::regex recursion)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/712",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-28T22:03:42Z",
+      "additions": 68,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixed a crash where sending the server a web request with an extremely long address (tens of thousands of characters) could knock the whole server offline. The server now rejects any request address longer than 2,048 characters up front with a clear error that states the length and the limit, without repeating the address back. Normal requests are unaffected, since real addresses are far shorter than the limit. The change also adds tests covering the long-address cases and the exact cutoff, plus a changelog entry, and the code matches what the description says.",
+      "category": "fix",
+      "summaryHash": "334901b53785a9d14e68dd5ba5fdc1554effc7ea"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 709,
