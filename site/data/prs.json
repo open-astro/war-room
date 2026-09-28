@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-28T15:20:28.309Z",
+  "generatedAt": "2026-09-28T16:17:34.621Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1115,
+      "title": "client: harden the client error log under an error storm (#1111 follow-up)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1115",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-28T15:48:16Z",
+      "additions": 296,
+      "deletions": 27,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The app's built-in error log now stays manageable when many errors happen at once. It records at most 8 errors every 10 seconds, then adds a single line saying how many more were skipped. It also trims very long console lines and does its slow formatting work later instead of while the screen is drawing, so a flood of errors is less likely to slow the app down or fill the log with repeats. The Support screen now reports skipped errors as \"suppressed\" instead of \"repeats\", and its error count now matches what actually gets exported. The code shown matches the description.",
+      "category": "fix",
+      "summaryHash": "df64259e3cd317e40c4e622bacb07d3e3ba90254"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1114,
