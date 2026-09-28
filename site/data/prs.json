@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-28T16:17:34.621Z",
+  "generatedAt": "2026-09-28T17:16:40.379Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1116,
+      "title": "client: visited tabs are provider state, not a post-frame setState (#1111 PR C)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1116",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-28T16:37:15Z",
+      "additions": 201,
+      "deletions": 31,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Changes how the app remembers which main tabs you have already opened, so opening a tab for the first time no longer triggers an extra redraw of the whole screen a moment later. That extra redraw happened at the same moment as a reported error screen when first opening the Planning tab, and this is the final piece of the work to address it. Tabs still load only when first opened and keep their state when you switch away and back, and new tests confirm that behavior. The code matches the description.",
+      "category": "fix",
+      "summaryHash": "1750f4eb2574284c67b8512bbbcfd7fd25c607d9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1115,
