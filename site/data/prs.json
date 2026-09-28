@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-28T17:16:40.379Z",
+  "generatedAt": "2026-09-28T18:15:58.782Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1117,
+      "title": "client: catch the mDNS send failure and name the Local Network block (#1111)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1117",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-28T17:34:58Z",
+      "additions": 427,
+      "deletions": 11,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "When a Mac blocks the app's access to the local network, the app now tells the user so, instead of silently never finding the telescope rig. The connection screen shows a banner explaining how to allow access in the Mac's privacy settings and then refresh. It also notes that adding the rig by hand still works. Before this, the blocked search failed quietly, which is why an app opened from Finder could miss a rig that the same app started from a terminal would find. The setup docs, the changelog and the tests were updated to match, and the code matches what the description says.",
+      "category": "fix",
+      "summaryHash": "c77eda20a7c6564234e01fc28fc9592f86ccc05f"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1116,
