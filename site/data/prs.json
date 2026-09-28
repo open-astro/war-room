@@ -1,11 +1,60 @@
 {
-  "generatedAt": "2026-09-28T10:21:21.851Z",
+  "generatedAt": "2026-09-28T11:20:28.461Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 700,
+      "title": "Add informational gcovr line-coverage CI job for core and HTTP",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/700",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-28T11:14:54Z",
+      "additions": 141,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Adds a new automated check that measures how much of the code is actually exercised by the test suite and publishes a report with every change. It is informational only: it never blocks a change and runs alongside the other checks, so it does not slow them down. The first run puts overall coverage at about 52%, which gives the team a starting point to track over time. This is internal tooling with no effect on users.",
+      "category": "ci",
+      "summaryHash": "c664c8ab9f841c1e9765dde0cdc2d1d86270e62d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 696,
+      "title": "Skip the Sky-Watcher ':i' step-period readback on the EQ-AL55i Pro (#686)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/696",
+      "author": "kern2011",
+      "mergedAt": "2026-09-28T10:50:32Z",
+      "additions": 108,
+      "deletions": 0,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Stops a misleading warning that flooded the logs for owners of the Sky-Watcher EQ-AL55i Pro mount, with 263 of them in a single day. This mount always gives a meaningless answer when the software asks it to confirm the motor speed it was just given, even though the speed was applied correctly. The software now skips that confirmation for this model only and notes it once when connecting. Mount behavior is unchanged, but real problems will no longer be buried under false alarms.",
+      "category": "fix",
+      "summaryHash": "666adac254ab23a04b91dfbb2fe2589c74012fac"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 667,
+      "title": "Fix Sky-Watcher EQ-AL55i Pro RA step on every live rate change (#666)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/667",
+      "author": "kern2011",
+      "mergedAt": "2026-09-28T10:28:30Z",
+      "additions": 235,
+      "deletions": 22,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Improves guiding accuracy on the Sky-Watcher EQ-AL55i Pro mount. Every time the tracking speed changed, for example during a guide pulse, the software sent an extra restart command that nudged this mount's position slightly. Tests on real hardware showed this model applies speed changes without that restart, so it is now skipped for this model only, while other mounts keep it because they need it. Errors in the standard compatibility test dropped from 6 to 3, but the description notes some westward pulses still miss the tolerance because of the mount's own motor response, so this does not fully fix it.",
+      "category": "fix",
+      "summaryHash": "c9d06b7257e58346e2cdcfaf8d7d198e26dd50ba"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 698,
