@@ -1,11 +1,56 @@
 {
-  "generatedAt": "2026-09-28T14:18:06.029Z",
+  "generatedAt": "2026-09-28T15:20:28.309Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1114,
+      "title": "client: hold the root widget tree still across GPS, night mode and slews (#1111 PR B)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1114",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-28T15:15:40Z",
+      "additions": 414,
+      "deletions": 68,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "The desktop app no longer quietly rebuilds or reshuffles big parts of itself behind the scenes. Before, a GPS update, switching night mode on or off, or starting or stopping a telescope move could cause the whole screen (including the planetarium view) to be torn down and rebuilt. Now the app keeps its screen in place and only swaps the small pieces that actually changed. This is meant to remove likely causes of the red error screen people saw when switching from Live to Planning, though the exact cause of that crash was never confirmed.",
+      "category": "fix",
+      "summaryHash": "2971c3928afc18498f1e397baf6150b2410ed991"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1112,
+      "title": "client: keep a client-side error log and expose it from Support (#1111 PR A)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1112",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-28T14:52:26Z",
+      "additions": 1822,
+      "deletions": 13,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "The desktop app now keeps its own error log on the user's computer, so when something breaks there is finally a record of what went wrong. The Support tab gets a \"Save client log\" button that works even when no telescope rig is connected. Bug reports now include this log, and the copied diagnostics include a short summary of it. In released versions, a broken part of the screen now shows a calm message pointing to the log instead of Flutter's plain grey error box.",
+      "category": "feature",
+      "summaryHash": "52ee7b3cfb2666b92efb80f670fa499084e24afd"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1113,
+      "title": "client: slow the planetarium site poll to 30 s and log mDNS failures (#1111 side findings)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1113",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-28T14:34:17Z",
+      "additions": 152,
+      "deletions": 13,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "The planetarium view now checks the rig's location every 30 seconds instead of every 2 seconds. This cuts a lot of needless traffic to the rig, and location changes made in this app still show up instantly. Separately, when the app fails to find rigs on the local network by automatic discovery, it now writes a note about the failure instead of staying silent, which should make an ongoing \"rig not found\" problem easier to track down.",
+      "category": "fix",
+      "summaryHash": "d8dc433aa06ca50eb18b15aff504fce6f66bde1e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 707,
