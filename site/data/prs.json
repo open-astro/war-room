@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-28T11:20:28.461Z",
+  "generatedAt": "2026-09-28T13:18:47.711Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 705,
+      "title": "Fix gcovr coverage job crash on 5-digit gcov block lines",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/705",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-28T12:52:55Z",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal fix to the automated build checks and does not affect users. The step that measures how much of the code is covered by tests was crashing when the coverage tool hit a line in its input that it did not know how to read. Now it skips those lines with a warning and finishes the report instead of failing outright. The coverage report is still informational only, so this does not change which checks must pass before merging.",
+      "category": "ci",
+      "summaryHash": "6dab051bbd15c266741e05af26375788554b2e8d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 700,
