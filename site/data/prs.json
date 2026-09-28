@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-27T20:33:14.210Z",
+  "generatedAt": "2026-09-28T10:21:21.851Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 698,
+      "title": "Add util::TaskClock with real and virtual-time fake adapters",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/698",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-28T09:43:45Z",
+      "additions": 784,
+      "deletions": 1,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a shared timekeeping building block that device drivers will use for waiting and timeouts, plus a fake version for tests that lets them skip ahead in time instead of actually waiting. This groundwork should let upcoming tests for several telescope mounts (Sky-Watcher, Celestron, SynScan) run quickly and reliably rather than depending on real delays. No driver uses it yet, so nothing changes for users today; the code matches the description and also updates the docs, changelog and a docs-consistency check.",
+      "category": "feature",
+      "summaryHash": "e29359224683220aa6d85246982200f67c1525cb"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1110,
