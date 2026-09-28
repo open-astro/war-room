@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-28T13:18:47.711Z",
+  "generatedAt": "2026-09-28T14:18:06.029Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 707,
+      "title": "Fail ci_preflight.sh fast when the diff base cannot be resolved",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/707",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-28T13:21:16Z",
+      "additions": 22,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The pre-push check script that developers run before sharing their work no longer gives a false all-clear. Before, if it could not find the version of the project to compare against, for example because of a typo or a missing link to the main project, it quietly compared the work to itself. It then saw no changes, skipped nearly every check, and reported \"Safe to push.\" Now it stops right away with an error that explains what went wrong and how to fix it, and the code matches what the description says. This is an internal developer-tooling fix and does not affect users of the software.",
+      "category": "fix",
+      "summaryHash": "e6537486939602fc0d3154e59a77c2c29e4a7f91"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 705,
