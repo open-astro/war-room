@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-29T17:55:55.886Z",
+  "generatedAt": "2026-09-29T18:55:05.217Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1211,
+      "title": "test: CameraConnectIntegrationTest teardown fails when OmniSim is absent",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1211",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T18:24:22Z",
+      "additions": 5,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Internal test fix only. When developers ran the test suite on their own machines without the camera simulator running, the whole run was reported as failed even though every test passed, because a cleanup step tried to delete a folder that was never created. The cleanup now simply skips itself in that case, so local runs report success correctly. Nothing changes for users, and the automated build server was never affected because it always has the simulator available.",
+      "category": "tests",
+      "summaryHash": "53d57eaff1721cf29c1e04eb72ea97a951374bd1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1209,
