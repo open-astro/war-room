@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-29T13:59:17.313Z",
+  "generatedAt": "2026-09-29T16:56:47.081Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1199,
+      "title": "chore: retire the design-status docs; open work moves to P1–P5 issues",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1199",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T16:30:06Z",
+      "additions": 304,
+      "deletions": 5925,
+      "changedFiles": 62,
+      "labels": [],
+      "summary": "The team retired a set of old planning and status documents (the roadmap, to-do lists, progress trackers, decision log and several feature design write-ups) because they no longer matched what the app actually does. Every item that was still open was checked and turned into a GitHub issue with a priority label from P1 (blocks the first release) to P5 (waiting on a maintainer decision). The main product spec, the contribution rules and the server interface notes were kept, and the few lasting decisions from the retired files were moved into the remaining docs and code comments. There is no change to how the app behaves; the visible edits only update comments and instructions to point to the new issue list instead of the removed files.",
+      "category": "docs",
+      "summaryHash": "913df06a4e6a2e1fed6935727ade1ed06d688476"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 725,
