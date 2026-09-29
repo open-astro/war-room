@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-28T22:12:35.012Z",
+  "generatedAt": "2026-09-29T01:09:58.647Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 716,
+      "title": "Pin doc-drift gates: case 4 error codes, alpaca_errors.h, CI roster",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/716",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-29T00:38:54Z",
+      "additions": 311,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's instructions for writing new device drivers now require tests to check for the exact error a driver reports when asked to do something it doesn't support. Before, the tests would pass as long as any error occurred. The automated documentation checker also gained two new checks. The first makes sure the error codes written in the docs match the ones actually defined in the code. The second makes sure the docs list exactly the same automated build jobs the project really runs; the docs had been naming only 11 of 18 and have been corrected. This is internal documentation and tooling work, and no driver or app behavior changes.",
+      "category": "docs",
+      "summaryHash": "55f89a5e4ee871eb0608507cd81b33d510768cad"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 712,
