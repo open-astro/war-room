@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-09-29T18:55:05.217Z",
+  "generatedAt": "2026-09-29T19:54:20.165Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1213,
+      "title": "plate solving: star-database status, astap_cli path migration, -D selection (#1121)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1213",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T19:54:06Z",
+      "additions": 963,
+      "deletions": 17,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": "The plate solving settings now tell you whether a star database is actually installed. They show how many files were found and which databases are present, a clear warning pointing to the install step when none is found, or \"Unknown\" when the rig can't be reached. Before this, a fresh install that skipped that step failed every plate solve with no explanation in the app. Older setups that still point to the old solver location are moved to the new one automatically. When several star databases are installed, the app now picks the right one for the camera's field of view instead of leaving the choice to the solver. The author notes it has not yet been tried on real rig hardware.",
+      "category": "fix",
+      "summaryHash": "5c08459747848bb75e56fa41e7f622cc00bf172f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1212,
+      "title": "fits: probe CFITSIO at boot, log the resolver, honour OPENASTROARA_CFITSIO_PATH (#1120)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1212",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T19:26:50Z",
+      "additions": 496,
+      "deletions": 94,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "If the image-file library the software needs to save pictures is missing, the rig now reports it right at startup, along with the command to install it. Before, the problem only showed up when you took your first exposure. A documented setting for pointing the software at a specific copy of that library now actually works; it was being ignored. The automated tests were also tightened so they fail when the library is missing, instead of quietly passing without checking anything.",
+      "category": "fix",
+      "summaryHash": "c12776a47ac1f5e84fb87be9634a1690bdfbc6d6"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1211,
