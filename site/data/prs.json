@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-29T11:01:42.512Z",
+  "generatedAt": "2026-09-29T13:59:17.313Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 725,
+      "title": "Fix SkyWatcher landing detection to poll the board instead of a timed window",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/725",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-29T13:33:08Z",
+      "additions": 876,
+      "deletions": 666,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts now report that a move has finished as soon as the mount itself says it has stopped, instead of always waiting out a fixed timer of 8 seconds (or 3 seconds for small correction moves). Short moves now finish quickly, and a rare case where the mount could keep showing as \"moving\" for several seconds after a cancelled or failed move is fixed. The pointing tests now simulate the passage of time instead of waiting in real time, which the PR reports cut them from about 12½ minutes to about 1¾ minutes. The changes also touch a saved hardware compatibility test result and the supported-drivers list, which the description does not mention.",
+      "category": "fix",
+      "summaryHash": "25be30b2183d82f93c941afed7e569ec86a2a993"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 732,
