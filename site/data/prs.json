@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T06:05:49.286Z",
+  "generatedAt": "2026-09-29T07:05:18.153Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -19,9 +19,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a bug where using Restart or Shutdown from the web page (or from any device on the local network) could stop the AlpacaBridge service for good instead of bringing it back. During a restart the service could briefly look stopped, quit as if it had shut down on purpose, and so the system never started it again. Now it counts as running for the whole restart. It exits cleanly only when someone actually asked it to stop, and if it stops for any other reason (for example, a restart that fails to reclaim its network port) it reports an error so the system restarts it automatically. The change also removes a double stop during shutdown and adds tests covering these cases. The code changes match what the description says.",
+      "category": "fix",
+      "summaryHash": "36fcd360b12e151491e93608d2682ce440857df3"
     },
     {
       "repo": "open-astro/AlpacaBridge",
