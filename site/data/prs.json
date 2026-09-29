@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-29T19:54:20.165Z",
+  "generatedAt": "2026-09-29T20:53:31.066Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 735,
+      "title": "Fix catalog range messages printing int bounds as doubles",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/735",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-29T20:14:29Z",
+      "additions": 85,
+      "deletions": 5,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Warning messages about a setting being out of range now show limits the way people expect: whole-number settings read like \"min 100, max 60000\" instead of \"100.000000\", and decimal settings show short values like \"0.5\". It also fixes a hidden bug where a setting whose upper limit is the largest possible whole number could be reported with a wildly wrong value, both in these messages and in the settings list the web interface reads. The code matches the description, and new tests cover both cases.",
+      "category": "fix",
+      "summaryHash": "bf3f7f1c0fd80527f2c3eeea6199f8398508d87a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1213,
