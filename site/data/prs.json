@@ -1,11 +1,47 @@
 {
-  "generatedAt": "2026-09-29T08:04:16.950Z",
+  "generatedAt": "2026-09-29T11:01:42.512Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 732,
+      "title": "ci: bump the github-actions group with 4 updates",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/732",
+      "author": "app/dependabot",
+      "mergedAt": "2026-09-29T10:50:04Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "dependencies",
+        "github_actions",
+        "safe-to-review"
+      ],
+      "summary": "Internal maintenance only: this updates four of the automated tools that run behind the scenes when code is checked, covering saving test-coverage reports, the automated AI code reviewer, and the security scanner. Nothing changes for users. The coverage-report tool jumps several major versions at once, but the project's own setup uses it the same way as before.",
+      "category": "ci",
+      "summaryHash": "72c707d1d64e58858ee4931f0729342dfaac3da8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 726,
+      "title": "Add util::AsyncOperation slot for cancellable background bodies",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/726",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-29T10:34:35Z",
+      "additions": 1154,
+      "deletions": 1,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a new shared building block for running long telescope operations, like slewing, in the background. It lets a new command take over from an old one without waiting, and it can tell whether an operation was stopped by the user or simply replaced by a newer command. The goal is to replace near-identical hand-written code in the Sky-Watcher, Celestron and SynScan drivers. However, no driver uses it yet, so telescope behavior does not change in this PR; the Sky-Watcher driver is planned to adopt it first. The PR also includes thorough tests and a design write-up that is still marked as proposed.",
+      "category": "feature",
+      "summaryHash": "28eaf9dab4cd209ed67d2b7fefb6ea1ad16bbba2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 721,
