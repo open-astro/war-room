@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-09-29T16:56:47.081Z",
+  "generatedAt": "2026-09-29T17:55:55.886Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1209,
+      "title": "server: implement the sequencer's CoolCamera/WarmCamera (#1187)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1209",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T17:36:17Z",
+      "additions": 700,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The Cool Camera and Warm Camera steps in automated imaging sequences now actually work. Before, they were placeholders that always failed, so every dark-frame library meant to be shot at a set temperature broke at its first step. Cooling can now happen at once or gradually over a chosen time, and it gives up with a clear reason if the camera stops making progress. Warming eases the camera up toward 20 °C before switching the cooler off, and cancelling holds the camera at its current temperature. The same cooling-fan safety check used elsewhere also applies to these steps, and the change comes with a new set of automated tests.",
+      "category": "fix",
+      "summaryHash": "89462c26dbb02e9538547d825366323aeef0e2f6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1206,
+      "title": "packaging: make /media/openastroara optional in ReadWritePaths (#1186)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1206",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T17:12:57Z",
+      "additions": 144,
+      "deletions": 8,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "A brand-new install of the server software now starts on its own, even before a storage disk for captured images has been set up. Previously the service required that disk's folder to already exist, so on a fresh device it kept crashing and restarting until someone created the folder by hand. The folder is now optional, and a disk attached later from the app works without restarting the service. The change also adds an automated check to catch this kind of mistake and fixes an internal test-machine script that was leaving out licence files needed to build the install package.",
+      "category": "fix",
+      "summaryHash": "6f7d34e17cded790c2e60422f15cc3915724aa6a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1199,
