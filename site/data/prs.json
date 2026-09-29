@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-29T04:07:28.664Z",
+  "generatedAt": "2026-09-29T06:05:49.286Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 719,
+      "title": "Fix restart and shutdown exiting the daemon with status 0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/719",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-29T05:35:47Z",
+      "additions": 320,
+      "deletions": 50,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 718,
