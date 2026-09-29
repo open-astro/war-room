@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-29T20:53:31.066Z",
+  "generatedAt": "2026-09-29T21:52:32.865Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1216,
+      "title": "astrometry: wrap HMS at 24h and DMS at 360 when rounding carries (#1125)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1216",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T21:50:38Z",
+      "additions": 88,
+      "deletions": 7,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 735,
