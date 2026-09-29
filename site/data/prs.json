@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-29T07:05:18.153Z",
+  "generatedAt": "2026-09-29T08:04:16.950Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 721,
+      "title": "Move built-in catalog registration into alpacacore_builtins",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/721",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-29T07:50:53Z",
+      "additions": 561,
+      "deletions": 68,
+      "changedFiles": 32,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal reorganization with no change for users: the code that lists the built-in device types was moved out of the project's shared core into its own separate piece, so the core no longer depends on any camera or mount maker's code and a circular dependency between them is gone. An automated check now fails the build if maker-specific code creeps back into the core, and the contributor guides explain the new rule for adding a maker. The visible changes match the description, though much of the build-setup diff was trimmed. The PR also fixes an unrelated flaky test for the QHY focuser, which could wrongly pass or fail when tests ran in parallel.",
+      "category": "refactor",
+      "summaryHash": "8856bc11e1893245af2d89aa41f122ef063b7b30"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 719,
