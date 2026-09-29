@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-29T21:52:32.865Z",
+  "generatedAt": "2026-09-29T22:52:50.190Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1218,
+      "title": "plate solving: read the CLI solver's stdout and stderr (#1188)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1218",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-29T22:15:48Z",
+      "additions": 201,
+      "deletions": 9,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Plate solving no longer hangs for up to 10 minutes when the solver program prints a lot of text. Before, the app captured the solver's messages but never read them, so once about 64 KB piled up the solver froze until the solve timed out. Now all of the solver's output is read while it runs. Routine solver messages are no longer logged as errors, and when a solve fails, the warning includes the solver's last 20 lines to make the failure easier to diagnose. The change also adds automated tests for heavy output and for cancelling a solve.",
+      "category": "fix",
+      "summaryHash": "cf0e11c1086c463c0955fc0d5bf2ecd39b0c8d54"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1216,
@@ -17,9 +32,9 @@
       "deletions": 7,
       "changedFiles": 3,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Images taken with the telescope pointed very close to the 24-hour line of right ascension now keep their sky coordinates. A rounding quirk turned positions like 23:59:59.96 into \"24:00:00\" (or 359.99…° into \"360°\"), which the app's own image catalog rejected as invalid. As a result, those frames lost their position hint used to speed up plate solving. Such values now wrap around to 00:00:00 instead, while ordinary values and the celestial pole display as before. New tests cover these edge cases and run on the Linux test machines.",
+      "category": "fix",
+      "summaryHash": "e3ef2d76b24b3552276f0539906f49943187bff2"
     },
     {
       "repo": "open-astro/AlpacaBridge",
