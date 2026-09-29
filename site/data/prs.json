@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-29T01:09:58.647Z",
+  "generatedAt": "2026-09-29T04:07:28.664Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 718,
+      "title": "Fix ZWO mount lock-order inversion in pulse_guide vs Connect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/718",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-29T03:38:50Z",
+      "additions": 154,
+      "deletions": 10,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where a ZWO mount could freeze completely if one program was guiding the telescope (for example PHD2) while another program (for example NINA) connected to it at the same moment. When that happened, the mount stopped answering anything until the service was restarted. The fix makes the guiding code wait its turn in the same order as the rest of the driver, so the two actions can no longer block each other. The PR also adds tests that recreate this race, and adjusts an existing stress test that had been quietly skipping the guiding step, which is why the problem went unnoticed before. The code changes match the description.",
+      "category": "fix",
+      "summaryHash": "d774282dabf9fce71f20e2b5fe32da8b5cea22d0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 716,
