@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-30T03:49:36.938Z",
+  "generatedAt": "2026-09-30T04:48:10.102Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1225,
+      "title": "telescope: publish MoveAxis rate bands, clip the pad to the secondary's floor (#1126)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1225",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T04:19:53Z",
+      "additions": 529,
+      "deletions": 81,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "The telescope mount's on-screen direction pad now works right away on mounts that only support one fixed speed. Before, the app offered speed options the mount would reject, so the pad did nothing until someone picked a different speed. Pressing a diagonal on a mount whose two axes have different speed limits now moves both axes, instead of moving one and refusing the other. The help text for manual movement was also rewritten, and older versions of the app keep working. The team notes this has not yet been tested on real hardware of either kind.",
+      "category": "fix",
+      "summaryHash": "1876edab9db2d63bfce0bea59d59011a858417ea"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1224,
