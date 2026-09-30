@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-30T21:34:02.639Z",
+  "generatedAt": "2026-09-30T23:32:28.308Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 752,
+      "title": "Fix Bisque NaN slew/MoveAxis args and device-number narrowing",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/752",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T23:26:40Z",
+      "additions": 205,
+      "deletions": 18,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Mounts controlled through TheSkyX (Bisque) now refuse nonsense values, such as \"not a number\" or infinity, when asked to slew, sync or move an axis. They return a clear \"invalid value\" error instead of passing the bad numbers on to the telescope. These checks now happen before the driver checks whether the mount is connected, which the standard compatibility tester expects. Separately, a request for an extremely large device number used to be misread as a negative number and could reach the wrong device; it now gets the normal \"device not found\" reply. The code matches the description, and new tests cover both fixes.",
+      "category": "fix",
+      "summaryHash": "16c336e0b11a8f48738d0d04a5ebf360e03e512e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1236,
