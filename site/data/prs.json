@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-09-30T02:09:07.221Z",
+  "generatedAt": "2026-09-30T03:49:36.938Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1224,
+      "title": "meridian flip: skip the evaluation when the mount has no coordinates (#1221)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1224",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T03:44:22Z",
+      "additions": 55,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixes a crash in the automatic meridian flip check. If the telescope mount had not yet reported where it was pointing, or could never report it, a running imaging sequence hit an error every time it checked whether to flip. Now the check is simply skipped with a warning and no flip happens until the position is known. When the position is available, nothing changes.",
+      "category": "fix",
+      "summaryHash": "bb887539b99707130ff8a64ea126c5c6eb7f6fdb"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1223,
+      "title": "guider: ReconnectTrigger waits on the in-flight PHD2 recovery instead of failing the run (#1123)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1223",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T03:17:38Z",
+      "additions": 349,
+      "deletions": 14,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Imaging runs no longer fail when the connection to the guiding software (PHD2) briefly drops. The system already reconnects the guider on its own in the background, but the \"Reconnect Equipment\" step used to give up right away. It now waits for that recovery, up to the configured retry time, and the run carries on if the guider comes back. If recovery is not available or fails, it tries a normal reconnect itself. The change also lets the sequence's connect and disconnect equipment steps work for the guider, and removes a false warning that the guider could not reset its calibration. It still needs a real-world test on the Raspberry Pi hardware.",
+      "category": "fix",
+      "summaryHash": "022c4376e9b2e1a660f5e416421697754a0e3ca8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 736,
