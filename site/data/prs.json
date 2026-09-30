@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-30T07:45:41.739Z",
+  "generatedAt": "2026-09-30T10:43:10.574Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 749,
+      "title": "Lower HTTP request body cap from 10 MiB to 64 KiB",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/749",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T10:00:47Z",
+      "additions": 48,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server now rejects any incoming request larger than 64 KB, down from 10 MB. Before this, anyone on the local network could send a handful of huge requests at once and use up enough memory to crash the service on a small 1 GB board. The largest normal request, saving a device's settings from the web page, is only about 4 KB, so everyday use is unaffected. Oversized requests are still turned away right away with the same 'too large' error, and new tests check both sides of the limit.",
+      "category": "fix",
+      "summaryHash": "b7119f23edc66dfcec9cd47f03a928c31c78e155"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 746,
