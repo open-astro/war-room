@@ -1,11 +1,29 @@
 {
-  "generatedAt": "2026-09-30T20:34:57.171Z",
+  "generatedAt": "2026-09-30T21:34:02.639Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1236,
+      "title": "ci: Bump the github-actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1236",
+      "author": "app/dependabot",
+      "mergedAt": "2026-09-30T21:02:08Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update to the behind-the-scenes tools that check the project's code. It moves the AI code-review helper and the security scanner to their latest minor versions. Nothing changes for users of the software, and the code matches what the description says.",
+      "category": "ci",
+      "summaryHash": "79edf98d0f3422b0d328474843568f55d930eaee"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1235,
