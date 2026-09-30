@@ -1,11 +1,29 @@
 {
-  "generatedAt": "2026-09-30T14:39:52.110Z",
+  "generatedAt": "2026-09-30T20:34:57.171Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1235,
+      "title": "build: Bump geolocator from 14.0.3 to 14.1.1 in /client/openastroara_client in the pub group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1235",
+      "author": "app/dependabot",
+      "mergedAt": "2026-09-30T20:23:39Z",
+      "additions": 9,
+      "deletions": 9,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "dart"
+      ],
+      "summary": "Routine update of a location library the client app uses to find the user's position, moving to a newer minor version. This is internal maintenance with no intended change to how the app behaves. The project's list of third-party licenses was updated to match. The diff shows 4 files changed but only 3 appear here, so the fourth was likely a lock file that was trimmed out.",
+      "category": "chore",
+      "summaryHash": "320be4e98720239ec4e4d48e8fe60a27086d8a94"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 750,
