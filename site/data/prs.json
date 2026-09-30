@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-09-29T22:52:50.190Z",
+  "generatedAt": "2026-09-30T00:50:02.933Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1220,
+      "title": "telescope: don't guess JNOW before the mount's EquatorialSystem is read (#1124)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1220",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T00:07:38Z",
+      "additions": 262,
+      "deletions": 26,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Fixes a problem where moving or aligning the telescope mount right after connecting could point it about a third of a degree off target. The software used to assume the mount's coordinate system before it had actually checked, which gave the wrong result for mounts that use a different system. Now it asks the mount first, waiting up to 10 seconds. If the mount doesn't answer, the move stops with a clear error and the alignment reports that it didn't happen, rather than sending coordinates based on a guess. Photos taken before the coordinate system is known are saved without sky position information instead of with wrong information.",
+      "category": "fix",
+      "summaryHash": "002f380b5ca6c578afa251e30134856c17e8f172"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1218,
