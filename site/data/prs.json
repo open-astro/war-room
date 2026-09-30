@@ -1,11 +1,56 @@
 {
-  "generatedAt": "2026-09-30T05:47:32.858Z",
+  "generatedAt": "2026-09-30T06:46:33.843Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1233,
+      "title": "guider: pin recovery to the dropped host/profile, gate local-unit control on a local host (#1192)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1233",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T06:42:33Z",
+      "additions": 547,
+      "deletions": 23,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "When the connection to the guiding software drops and the app tries to reconnect on its own, it now stays locked onto the guider that actually dropped. Before, if someone switched equipment profiles mid-recovery, the app could connect to the new profile's guider and even overwrite that profile's settings with the old address. Now it notices the switch, gives up cleanly, and leaves the new profile to connect normally. Separately, the app now only tries to start or restart the guiding program on this machine when the guider really runs here; a guider on another computer just gets a normal reconnect attempt, and the warning messages were reworded so they no longer promise a restart that may not happen.",
+      "category": "fix",
+      "summaryHash": "5da204623f8e8d3b2b74be6642f8e08dfce23c4e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 733,
+      "title": "Fence ZWO GOTO setup against Park, FindHome, MoveAxis, AbortSlew",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/733",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T06:33:31Z",
+      "additions": 369,
+      "deletions": 16,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixes a safety problem with ZWO mounts where a 'go to' move that was still being set up in the background could fire after the user had already asked the mount to park, go home, jog, stop, abort, or disconnect, sending the telescope somewhere unexpected. Those actions now cancel the pending move and wait for it to fully stop before doing their own thing, and the background setup checks for cancellation between each step so the wait stays under a second. It also stops a cancelled move from leaving the mount wrongly reported as moving or showing the abandoned target as its position. The author recommends a check on a real ZWO mount, since testing so far used a simulated one.",
+      "category": "fix",
+      "summaryHash": "cddfab9bb875947bef031476eddea9cb20286bca"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 747,
+      "title": "Fix Bisque handshake timeout leaving the TheSkyX wrapper connected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/747",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T06:08:31Z",
+      "additions": 65,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixes a bug with TheSkyX (Bisque) mounts where a connection attempt that timed out left the connection stuck half-open, so every later connection attempt was refused until the service was restarted. A failed attempt now cleans up after itself, and the user still sees the original error message explaining what went wrong. This was tested only against a simulated mount, not a real TheSkyX setup.",
+      "category": "fix",
+      "summaryHash": "c81eff513f0c3fc658d03759975562badffa6a72"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 748,
