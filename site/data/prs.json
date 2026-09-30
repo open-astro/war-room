@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-30T06:46:33.843Z",
+  "generatedAt": "2026-09-30T07:45:41.739Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 746,
+      "title": "Add WeeWX catalog descriptor and remove its router arms",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/746",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T07:24:15Z",
+      "additions": 544,
+      "deletions": 53,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The WeeWX weather station connection now uses the project's newer shared device catalog. It is the second device type moved over, following Astroasis, and its special-case handling was removed from the main request-handling code. Error messages for a missing WeeWX address or a zero or negative polling interval or timeout stay the same. It also adds a new safeguard that rejects extremely large interval or timeout values, which could previously make the station be polled nonstop. The description notes a few small behavior shifts that are not visible in the trimmed code: rejected saved settings are now logged as errors instead of warnings, and the two number settings now reject decimal or true/false values.",
+      "category": "refactor",
+      "summaryHash": "864b1f6f8f9a6ce93362d2593f4f89814c7359b9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1233,
