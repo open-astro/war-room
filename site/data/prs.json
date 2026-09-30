@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-09-30T00:50:02.933Z",
+  "generatedAt": "2026-09-30T01:49:27.685Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 739,
+      "title": "Fix ZWO camera registered by Camera ID never connecting (#738)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/739",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T01:32:47Z",
+      "additions": 49,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO cameras that were set up by their camera ID number can now connect again. Before this fix, every connect attempt for such a camera failed with a \"Camera ID not specified\" error, in release 4.1.0 and since, because an early name check (like the one NINA's device picker makes) quietly wiped the saved ID. The camera lookup now works before the camera is opened, and a failed lookup no longer throws away an ID the user configured; cameras set up by position number were never affected. The code matches the description, including a new automated test and hands-on confirmation on a Raspberry Pi with two real cameras.",
+      "category": "fix",
+      "summaryHash": "92f14ec15145c172a04dae6d157176b315babea1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 737,
+      "title": "Read WandererAstro link health from an injected TaskClock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/737",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T01:13:20Z",
+      "additions": 171,
+      "deletions": 53,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal testing improvement for the WandererAstro cover/flat panel, power box and filter wheel, with no change in how the devices behave for users. The code that notices when a device has gone silent for more than 10 seconds can now be driven by a simulated clock in tests, so the tests check the exact 10-second cutoff without actually waiting and run faster. Normal use still runs on the real clock, and the silence limit and error message are unchanged.",
+      "category": "tests",
+      "summaryHash": "2592003a788462248e0eeafd543b19d9cbda31d8"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1220,
