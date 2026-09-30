@@ -1,11 +1,75 @@
 {
-  "generatedAt": "2026-09-30T04:48:10.102Z",
+  "generatedAt": "2026-09-30T05:47:32.858Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 748,
+      "title": "Release 4.2.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/748",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T05:46:39Z",
+      "additions": 32,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This marks AlpacaBridge version 4.2.0 as released (dated 30 September 2026) and adds the plain-language release notes. The headline of 4.2.0 is that the server can now update itself from its web page, so no terminal is needed for future upgrades. It also bundles fixes for ZWO cameras, a Restart button that could leave the server off, and several Sky-Watcher and ZWO mount problems. The features and fixes themselves were merged in earlier pull requests; this one only updates the version number, dates and notes.",
+      "category": "chore",
+      "summaryHash": "fa0bb2545108cba0a5af9bfe407c94613fb9d090"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1227,
+      "title": "astrometry: UT1-UTC from a bundled IERS Bulletin A table instead of 0 (#1190)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1227",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T05:17:53Z",
+      "additions": 2085,
+      "deletions": 4,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Ara now accounts for the small, changing difference between atomic clock time and the Earth's actual rotation. Until now this was treated as zero, which could make sky position and pointing calculations off by up to about 13 arcseconds. The correction comes from an official table from the international Earth-rotation service that ships with the app, so it works at a dark site with no internet. There is also a way to supply a newer table without reinstalling, and a script to refresh it before each release.",
+      "category": "fix",
+      "summaryHash": "03ee95f0afc30d1779d2a186968ff8b5068eda6d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 745,
+      "title": "Add web UI software update with release notes and root helper unit",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/745",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T04:56:34Z",
+      "additions": 2980,
+      "deletions": 10,
+      "changedFiles": 30,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a Software Update section to the AlpacaBridge web page. Users can check whether a newer version exists, read what changed in plain language, and install it with one button. The page shows progress and reconnects once the server restarts on the new version. Nothing updates automatically, and the install runs through a tightly limited system helper rather than giving the server broad admin rights. The team tested it end to end on real hardware.",
+      "category": "feature",
+      "summaryHash": "468b13ff11152d5a753c36604491f0b63b6505ae"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1226,
+      "title": "storage: a bind of the empty store directory is not a mounted disk (#1207)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1226",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-30T04:53:06Z",
+      "additions": 199,
+      "deletions": 18,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Fixes a case where Ara thought the image storage drive was plugged in when it wasn't. After a restart with the drive removed, captures could then try to save onto the main system disk and fail with a confusing permission error. Ara now correctly says the storage drive is ejected, and the drive-watching feature uses the same improved check. The description says the system service setup was unchanged, but the diff does edit that service file; the edit isn't visible in the trimmed diff.",
+      "category": "fix",
+      "summaryHash": "282966ad3cda02b331780138dfc677eb699f32fb"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1225,
