@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-30T10:43:10.574Z",
+  "generatedAt": "2026-09-30T14:39:52.110Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 750,
+      "title": "Fix QHY error-sentinel cast, fake CURTEMP and worker strand",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/750",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T13:51:37Z",
+      "additions": 383,
+      "deletions": 18,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes three problems with QHY cameras and filter wheels. When the camera can't read a setting like gain or offset, it sends back a special error value; the software used to turn that into a meaningless number and pass it on as real, but now it reports a clear error instead, and a filter wheel with an unreadable slot count is refused. It also fixes a timing bug where disconnecting at just the wrong moment could leave the camera temperature stuck, and possibly the cooler unregulated, until the program restarted. A small fix to the simulated test camera and new tests cover all three cases, and the code matches the description.",
+      "category": "fix",
+      "summaryHash": "ad888a201ba9d6b54d0df34f2328cabe229a898c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 749,
