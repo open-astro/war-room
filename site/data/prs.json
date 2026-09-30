@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-09-30T01:49:27.685Z",
+  "generatedAt": "2026-09-30T02:09:07.221Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 736,
+      "title": "Fix troubleshooting docs config file location and build recipe",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/736",
+      "author": "diegopereiran",
+      "mergedAt": "2026-09-30T01:50:31Z",
+      "additions": 38,
+      "deletions": 21,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The help pages and the 4.1.0 release notes now give exact steps for changing or turning off the safety feature that stops a mount left slewing with nobody connected. They name the real settings file location, say to edit it as the service's own user, and add the restart needed to apply the change. Editing the file the obvious way, as the administrator, would have quietly broken later saves from the web settings page. The instructions for building from source were also corrected, since the old steps listed an incomplete set of required packages and pointed to the wrong folder. Documentation only, no change to how the software behaves.",
+      "category": "docs",
+      "summaryHash": "a3ffb8ff93ad9a04732e10032092c14baaff4f6f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 739,
