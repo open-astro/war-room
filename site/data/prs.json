@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T16:18:33.585Z",
+  "generatedAt": "2026-10-01T20:15:04.081Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1254,
+      "title": "server: openapi.yaml is a generated snapshot with a drift test (#1131)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1254",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T19:56:06Z",
+      "additions": 11169,
+      "deletions": 1221,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1253,
