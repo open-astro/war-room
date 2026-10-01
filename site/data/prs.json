@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T10:23:18.610Z",
+  "generatedAt": "2026-10-01T11:22:22.532Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 760,
+      "title": "Replace CHANGELOG edits with per-PR changelog fragments",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/760",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T10:27:31Z",
+      "additions": 772,
+      "deletions": 116,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Changes how release notes are collected so pull requests worked on at the same time no longer clash with each other. Before, every change edited the same shared section of the project's change log, so whenever one merged, every other open change needed fixing up by hand. Now each change adds its own small note file, and those notes are only combined into the main change log when a release is made, with the next version number suggested automatically from them. This is internal process and tooling, including updated contributor instructions and automated checks, and has no effect on what users of the software see.",
+      "category": "chore",
+      "summaryHash": "a78bcfdb19e1c82ec59881474209ce7afd1bfa59"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 758,
