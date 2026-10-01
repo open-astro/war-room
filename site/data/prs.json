@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T12:21:33.919Z",
+  "generatedAt": "2026-10-01T13:18:19.194Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 761,
+      "title": "Fix http_port 0 rebind, discovery port and probe match",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/761",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T12:40:10Z",
+      "additions": 315,
+      "deletions": 22,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 757,
