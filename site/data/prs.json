@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T04:28:19.670Z",
+  "generatedAt": "2026-10-01T05:27:21.684Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1243,
+      "title": "server: build the real composition root in a test (#1128)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1243",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T05:13:35Z",
+      "additions": 145,
+      "deletions": 8,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This is an internal safety-net change with no visible effect for users. The server's startup code was split so a new automated test can assemble the server exactly as it does at real startup, without actually going online. The test then checks that each piece of equipment (telescope, camera, guider, focuser, dome, and others) is wired to the real device control rather than a placeholder that does nothing. This guards against a recent bug where the guider was quietly connected to a do-nothing stand-in, which let sequences report success without actually driving the device.",
+      "category": "tests",
+      "summaryHash": "94511a39e8ad4ec5b45bc0383dd4abe52fb83314"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 751,
