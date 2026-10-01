@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-01T08:24:52.531Z",
+  "generatedAt": "2026-10-01T09:24:17.279Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 756,
+      "title": "Add LAN surface threat model decision record",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/756",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T08:56:09Z",
+      "additions": 145,
+      "deletions": 0,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Adds a security write-up describing who on the local network can reach each part of AlpacaBridge (the device controls, the management and update controls, the web page, the Wi-Fi settings and the auto-discovery service), what they could do there, and the limits each part enforces. It also lists four known risks that were reviewed and accepted, the gaps still open, which earlier security findings are now fixed, and a checklist reviewers should use whenever something new is exposed or saved. The main README now warns not to install AlpacaBridge on a shared computer, because any local user there could take control of the connected equipment. This is documentation only; no behavior changed.",
+      "category": "docs",
+      "summaryHash": "b0ee82f008623f5a71b8a3c6ea1b864511c12514"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1250,
+      "title": "telescope: real MeridianFlip slew + SideOfPier not-implemented latch (#1238)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1250",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T08:27:18Z",
+      "additions": 357,
+      "deletions": 16,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Automatic meridian flips now actually move the telescope. The flip step was only a placeholder that always reported failure, so every scheduled flip ended with the mount parked safely and the imaging run paused until someone stepped in. The mount now re-points to the same target and lands on the other side, and when the mount supports it, the software first tells it which side to end up on. Two smaller changes: the software can now ask the mount which side a move will land on, and a mount that can't report its side is asked once instead of every two seconds. The author notes this still needs testing on real hardware.",
+      "category": "fix",
+      "summaryHash": "c3aeadd97448fdbc808e230ef2802b50af7da9cc"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1247,
