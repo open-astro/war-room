@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T13:18:19.194Z",
+  "generatedAt": "2026-10-01T13:21:09.594Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -17,9 +17,9 @@
       "deletions": 22,
       "changedFiles": 8,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes several problems with how the server finds and advertises its network port when it is set to let the computer pick any free port. Before, the server could move to a different port after recovering from a connection fault, and the network auto-discovery feature told astronomy apps the wrong port (zero). Now it keeps the same port, logs the real number, and discovery stays quiet until it knows the right port. Discovery also only answers the exact standard request message, can share its network port with other Alpaca programs on the same machine, and explains clearly in the log when it cannot start. One gap remains, noted by the author: if the server is restarted through the management controls it can still end up on a new port while discovery keeps advertising the old one, and only the bundled example program was updated to pass the real port to discovery.",
+      "category": "fix",
+      "summaryHash": "1ef2e145f86c261d08e0628905576d244726ee64"
     },
     {
       "repo": "open-astro/AlpacaBridge",
