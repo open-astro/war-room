@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-01T02:29:54.478Z",
+  "generatedAt": "2026-10-01T03:29:04.827Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1240,
+      "title": "guider: close the camera-drop fault row on EquipmentReconnected (#1191)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1240",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T03:10:58Z",
+      "additions": 290,
+      "deletions": 47,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "When the guide camera drops out and comes back mid-session, the problem record in the fault log is now closed as soon as the camera returns, instead of staying open until the guider is reconnected. The user also gets a notice that guiding can resume. A camera that keeps dropping and returning still won't pause, skip or stop a run each time. The changelog entry also notes an unrelated earlier fix: polar alignment's first slew direction now uses the correct sky time instead of zero. That note is changelog text only and has no matching code change in this PR.",
+      "category": "fix",
+      "summaryHash": "cc0ef892498c4a0af41ac2889df36f0265d3e32f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 753,
+      "title": "Log unmatched setup paths and stray discovery packets at DEBUG",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/753",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T03:08:06Z",
+      "additions": 160,
+      "deletions": 10,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two log messages that any device on the local network could trigger over and over are now hidden at the normal logging level, so outsiders can no longer fill up the log files with warnings. One is for requests to setup pages that don't exist, and the other is for stray network messages on the device-discovery channel. The setup message is also shortened to a sensible length when the request is very long. What clients see in response is unchanged, and new tests check both changes.",
+      "category": "fix",
+      "summaryHash": "2e89fd7015c1d7b35d825839506dde4aadafdbac"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1239,
