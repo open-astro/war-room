@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T00:31:34.126Z",
+  "generatedAt": "2026-10-01T02:29:54.478Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1239,
+      "title": "telescope: serve the meridian-flip inputs instead of 0/0/pierEast (#1229)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1239",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T02:05:02Z",
+      "additions": 313,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Imaging sequences that include an automatic meridian flip no longer try to flip right at the start of the run. The system had been reporting the mount's flip timing as zero, which the flip check read as \"flip now\", so the flip was attempted immediately, failed, and paused the run until someone stepped in. The mount status now reports a real time-until-flip based on the observing site's location, plus which side of the pier the mount is actually on. When something can't be worked out, it is marked as unknown so no flip happens on a guess. Note that the flip itself still isn't actually performed yet, which is tracked as a separate follow-up.",
+      "category": "fix",
+      "summaryHash": "a3f0f6ccc0a636fbb5cad7868865e8f806dbfe9a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1237,
