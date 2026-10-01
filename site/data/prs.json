@@ -1,11 +1,60 @@
 {
-  "generatedAt": "2026-10-01T03:29:04.827Z",
+  "generatedAt": "2026-10-01T04:28:19.670Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 751,
+      "title": "Move Sky-Watcher task waits and their deadlines onto the TaskClock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/751",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T04:26:30Z",
+      "additions": 764,
+      "deletions": 153,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Mostly internal work on the Sky-Watcher telescope driver. Its short timed waits during guiding pulses, stopping an axis, and slow-rate motion now run on a swappable clock, so tests can fast-forward time instead of really waiting; 18 tests were moved over and the Sky-Watcher test run got about 45 seconds shorter. Along the way it fixes a rare timing gap where a request to cancel a background task could be missed. Normal behaviour should otherwise be unchanged, and the slew, parking and connect waits are left for a second part.",
+      "category": "refactor",
+      "summaryHash": "cf63613ac726b0ff42641566c5a60d6ded59e1c1"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1242,
+      "title": "equipment: card Reconnect/Remove follow-ups (#1127)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1242",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T04:21:48Z",
+      "additions": 763,
+      "deletions": 61,
+      "changedFiles": 23,
+      "labels": [],
+      "summary": "Several fixes to the Reconnect and Remove buttons on equipment cards. Reconnect now works for a device the server still holds even when its auto-connect entry was deleted, instead of wrongly saying there is no previous device. Removing a device now updates every open app window right away, a switch that is still connecting no longer offers Remove, and removing a switch that had failed now properly lets go of its hardware connection instead of leaving it hanging. As the description notes, automatic recovery after a fault also uses the new reconnect behaviour, so a device dropped from auto-connect but still held can be reconnected after a fault.",
+      "category": "fix",
+      "summaryHash": "3e830367e36411b5d80688b1c2d02dcdcfe01c6a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 754,
+      "title": "Add Host header allowlist against DNS rebinding",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/754",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T03:59:05Z",
+      "additions": 413,
+      "deletions": 5,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Security hardening: the server now refuses web and API requests addressed to an unfamiliar name, which blocks a known trick (DNS rebinding) where a malicious website could talk to the device from a user's browser. Requests by IP address, localhost, the machine's own name, or local-network names like .local still work. Router-assigned names such as something.lan now get an access-denied error unless added in a new config setting, so anyone opening the web UI by such a name will need that setting or the IP address. The team's test-rig deploy instructions were updated to allow .lan names automatically.",
+      "category": "feature",
+      "summaryHash": "0386b5de8d5e251d804241fc7e62c909332f3353"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1240,
