@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T07:25:43.054Z",
+  "generatedAt": "2026-10-01T08:24:52.531Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1247,
+      "title": "storage: helper follow-ups — injectable paths, stale sweep, locked fstab (#1135)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1247",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T07:29:53Z",
+      "additions": 313,
+      "deletions": 21,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Fixes two housekeeping problems in how the system sets up external storage drives. A storage request that was cancelled partway through could leave a leftover file sitting around until the next reboot; the server now clears those leftovers when it starts. Two storage operations happening at the same time could also overwrite each other's changes to the system's list of drives to mount. They now take turns, and each uses its own scratch file. The change also lets the storage setup run end to end in automated tests, and the diff matches the description; the script portions were trimmed from the view, so their details could not be checked directly.",
+      "category": "fix",
+      "summaryHash": "04be59270767badf4e0a8b204f2ef7caffafb17a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1245,
