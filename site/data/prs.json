@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T11:22:22.532Z",
+  "generatedAt": "2026-10-01T12:21:33.919Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 757,
+      "title": "Move the Sky-Watcher telescope into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/757",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T11:31:16Z",
+      "additions": 1018,
+      "deletions": 153,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Sky-Watcher telescope mounts that connect directly to the motor controller are now set up through the project's shared device catalog, instead of special-case code in the web server. This is part of an ongoing cleanup to move each device brand into one consistent system, and for valid setups it should work the same as before. A few user-visible details changed: the error for an impossible observing-site location is worded differently, settings that don't match the chosen connection type are now kept rather than thrown away, and whole-number settings like baud rate now refuse decimals instead of silently rounding them. The description notes the final test against a real Sky-Watcher mount had not yet been run when this was written.",
+      "category": "refactor",
+      "summaryHash": "4a0388cb0a19bd45b7f5d36cd960c1030b5faef2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 760,
