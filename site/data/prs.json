@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T15:19:10.420Z",
+  "generatedAt": "2026-10-01T16:18:33.585Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1253,
+      "title": "packaging: require glibc 2.38, guard Docker natives, retire playbook §11 (#1130)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1253",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T15:44:38Z",
+      "additions": 91,
+      "deletions": 9,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The server install package now refuses to install on the older Debian Bookworm system. Before this change it would install there but then quietly fail to load its star-position (astrometry) libraries, because those libraries need a newer core system library than Bookworm has. Debian Trixie or newer was already the documented minimum, and the docs were updated so they all agree. The test build image will now also fail right away if those two libraries are missing, instead of producing an image that only warns about it at startup, and new automated checks keep these safeguards from being undone.",
+      "category": "fix",
+      "summaryHash": "da1612248b834cfc74317d503f58308cc530fc6b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1252,
