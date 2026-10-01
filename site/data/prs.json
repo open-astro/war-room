@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T14:19:53.056Z",
+  "generatedAt": "2026-10-01T15:19:10.420Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1252,
+      "title": "client: hide the unwired 'In-app banner' toggle too (#1189)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1252",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T14:36:30Z",
+      "additions": 30,
+      "deletions": 39,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "The \"In-app banner\" switch has been removed from the Notifications settings and no longer shows up in settings search. It was on by default but did nothing, because the app never actually shows a notification banner. This follows the same cleanup recently done for the desktop-notification switch. People's saved preference is still kept in their profile so it can come back once banners really exist, and the Pushover help text was also updated (not mentioned in the description) so it no longer refers to banner or desktop notifications.",
+      "category": "fix",
+      "summaryHash": "e1c3530a1743fcf972a96bf0a3f023edcb084f9c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1251,
