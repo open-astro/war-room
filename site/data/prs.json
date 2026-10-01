@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T09:24:17.279Z",
+  "generatedAt": "2026-10-01T10:23:18.610Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 758,
+      "title": "Fix iOptron fault latch to count consecutive failures and allow AbortSlew",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/758",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T10:02:49Z",
+      "additions": 204,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "iOptron mounts no longer get locked into a \"communications compromised\" state after three unrelated hiccups spread across a night. Now only three failed readings in a row trigger that lockout, and any good reading in between resets the count. When the lockout does trip, the stop command still goes through, even if the mount is parked, so users can always halt a moving mount without reconnecting. A successful stop also lifts the lockout; if the stop fails, the lockout stays.",
+      "category": "fix",
+      "summaryHash": "86038c7112abf91fd275baf54c54cb51350ba5a1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 756,
