@@ -1,11 +1,29 @@
 {
-  "generatedAt": "2026-09-30T23:32:28.308Z",
+  "generatedAt": "2026-10-01T00:31:34.126Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1237,
+      "title": "build: Bump the nuget group with 5 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1237",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-01T00:14:00Z",
+      "additions": 274,
+      "deletions": 275,
+      "changedFiles": 58,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine update of five outside software libraries: the image library used to turn captured frames into JPEG previews, the tool that serves the interactive API documentation page, and two tools used only for automated testing. The biggest jump was the testing tool moving to a new major version. That forced the maintainer to adjust many of the project's automated tests so they still build and run correctly, and the full test suite passed locally afterward. There is no intended change to how the app behaves for users, and the third-party license list was refreshed to match the new versions.",
+      "category": "chore",
+      "summaryHash": "27ddaac3409c7af508d464d297de3f13f918b125"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 752,
