@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T13:21:09.594Z",
+  "generatedAt": "2026-10-01T14:19:53.056Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1251,
+      "title": "client: hide the unwired 'OS desktop notification' toggle (#1189)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1251",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T14:01:06Z",
+      "additions": 59,
+      "deletions": 17,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The \"OS desktop notification\" switch has been removed from the Notifications settings and no longer shows up when searching settings. The switch was on by default but never actually did anything, since the app has no way to send system pop-up notifications yet, so it was misleading. Saved profiles still keep the old value so nothing breaks, and the switch can come back once real desktop notifications exist. The \"In-app banner\" switch has the same problem but was left in place for now.",
+      "category": "fix",
+      "summaryHash": "9d0b4ff7e0f13dff8d4894641467d5a638183b02"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 761,
