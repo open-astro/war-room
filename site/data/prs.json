@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T05:27:21.684Z",
+  "generatedAt": "2026-10-01T07:25:43.054Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1245,
+      "title": "telescope: auto-recover an AlpacaBridge \"communications compromised\" latch (#1193)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1245",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-01T06:27:13Z",
+      "additions": 269,
+      "deletions": 20,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The telescope mount can now recover by itself from a known glitch where, after a brief Wi-Fi drop, the mount's network bridge keeps saying it is connected but refuses to report the mount's position. Before, someone had to disconnect and reconnect the mount by hand. Now the app spots that specific error message, marks the mount as faulted, logs it, sends a notification, and runs its usual automatic reconnect attempts, pausing any running sequence and resuming it once the mount is back. It never does this while the mount is moving, and it counts a lingering fault as one incident rather than raising it again every few seconds. It has not yet been tried on real hardware, and the fix relies on matching the exact error wording seen in the field report.",
+      "category": "fix",
+      "summaryHash": "dae1e6405c2e3e84ae40354fd6c4b4cc169713ff"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1243,
