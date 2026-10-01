@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T20:15:04.081Z",
+  "generatedAt": "2026-10-01T21:15:33.852Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -17,9 +17,9 @@
       "deletions": 1221,
       "changedFiles": 12,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The published description of the server's web API is accurate again. It had stopped at 28 hand-written entries, some of them long gone, while the server actually offers about 200. It is now copied straight from what the server itself reports, covering 206 entries, and an automatic check fails whenever someone changes the API without refreshing that copy. The live-connection (WebSocket) notes, which can't be generated this way, moved into the design docs. The PR also steadies two flaky automated tests about mount connection faults and makes small documentation touch-ups.",
+      "category": "docs",
+      "summaryHash": "13d300c0c283d98fda7e2eedd98a78fe39b6bf99"
     },
     {
       "repo": "open-astro/openastro-ara",
