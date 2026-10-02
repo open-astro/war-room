@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-02T14:00:32.202Z",
+  "generatedAt": "2026-10-02T17:57:13.920Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1258,
+      "title": "client: scan for the rig every launch (nothing stored, user picks); Android/iOS CI and discovery fixes (#1129)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1258",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-02T17:48:48Z",
+      "additions": 1160,
+      "deletions": 176,
+      "changedFiles": 29,
+      "labels": [],
+      "summary": "The app no longer remembers a rig's address between sessions. Every time it opens, it scans the local network, lists every rig it finds, and lets you choose, even when only one is found. This fixes people getting stuck on \"your rig didn't answer\" after a rig moved or changed address. Rig discovery now works on Android for the first time, iOS no longer shows a false \"network access blocked\" warning, and several small wording and display issues found on a Pixel tablet and an iPad are fixed. The automated build checks now also compile the Android and iOS apps.",
+      "category": "fix",
+      "summaryHash": "e32933b918753bc48cb31d0c4706f53cdf29c6e4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 792,
+      "title": "fix: replace invalid UTF-8 in JSON responses instead of failing (#764)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/792",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T17:19:59Z",
+      "additions": 115,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Wi-Fi network list no longer fails completely when a nearby network has a name with unusual characters. Before, one such network caused the whole scan to return an error with no networks listed. Now the unreadable characters are shown as a placeholder symbol and every other network still appears. The fix covers all of the bridge's data responses, not just Wi-Fi. One limitation remains: a network with such a name can't yet be joined from the list, and that has been filed as a separate follow-up.",
+      "category": "fix",
+      "summaryHash": "2e887947d3df9d8a64126cdd523d2b147bb00983"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1257,
