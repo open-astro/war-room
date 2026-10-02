@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-01T21:15:33.852Z",
+  "generatedAt": "2026-10-02T00:11:53.079Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 762,
+      "title": "Add Sky-Watcher altitude floor and goto target check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/762",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-01T23:51:56Z",
+      "additions": 1993,
+      "deletions": 569,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": "Sky-Watcher mounts now have an optional \"minimum altitude\" setting. When it is set, the mount refuses any go-to command whose target is below that height above the horizon, before it moves or interrupts anything already in progress. This helps keep the telescope from pointing into the ground, a pier, or nearby obstacles. Both new settings are off by default. A second \"meridian limit\" setting can be saved but does nothing yet, and the web page says so. One small behavior change: a go-to sent while the mount is parking is now refused instead of cancelling the park. The trimmed diff shows the new settings and the limit check being passed to the mount, but the main driver change was cut, so the refusal behavior is confirmed only by the description and tests.",
+      "category": "feature",
+      "summaryHash": "7078b5ef5db73cc790921633e18ae84b67cd83fd"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1254,
