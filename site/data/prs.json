@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-02T07:06:09.865Z",
+  "generatedAt": "2026-10-02T12:02:08.036Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 789,
+      "title": "Stop CodeQL scanning the vendored SDKs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/789",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T11:57:25Z",
+      "additions": 14,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated security scanner no longer checks the third-party camera maker software bundled with the project, which is kept exactly as the makers ship it. That bundled code included sample programs that are never built or shipped, and they were producing 15 'high' security warnings on every scan that the team could not fix. The project's own camera code is still scanned, and a note was added telling developers not to put their own code in that folder because it would go unchecked.",
+      "category": "ci",
+      "summaryHash": "af963d384b3362b35f80dd60d5363e51257381b5"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 788,
+      "title": "Make the Host check settings always editable in the web UI",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/788",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T11:27:23Z",
+      "additions": 66,
+      "deletions": 272,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The 'Allowed host names' list and the on/off switch for restricting host names can now always be changed from the web interface. Before, setting them through the server's startup environment locked both fields and the server refused any change, which happened on every test rig. The server now ignores those environment settings and only uses the saved settings file, which the web interface updates. Neither setting has been in a released version, so no existing installs lose anything, but it does mean anyone on the local network who can reach the web interface can change this list, like every other server setting.",
+      "category": "fix",
+      "summaryHash": "ab007e7592f50651b4ab2d69c34b0f194d790bab"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 786,
