@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-02T05:07:57.002Z",
+  "generatedAt": "2026-10-02T07:06:09.865Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 786,
+      "title": "fix(synscan): decode precise RA and Azimuth from the upper 24 bits (#785)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/786",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T06:44:51Z",
+      "additions": 97,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where telescopes controlled through a SynScan V4 handset reported the wrong sky position. In high-precision mode, the software read the wrong part of the handset's reply for the east-west sky coordinate (right ascension) and the compass direction (azimuth). As a result, a mount that was standing still appeared to spin rapidly around the sky, and the compass reading could be off by tens of degrees. Tested on a real mount, the readings now match the handset, and a new automated test checks this using real replies recorded from that mount.",
+      "category": "fix",
+      "summaryHash": "5d23adab6fd7c891059d5672cebddf514bed7fd6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 784,
