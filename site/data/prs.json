@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-02T02:10:09.637Z",
+  "generatedAt": "2026-10-02T05:07:57.002Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 784,
+      "title": "Add Host check and allowed host names settings to the web UI",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/784",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T04:31:16Z",
+      "additions": 1080,
+      "deletions": 90,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "The settings page now has an on/off switch for a security feature that only accepts connections addressed to approved device names, plus a box for adding allowed names such as a router or proxy address. Before, this needed command-line access to the device. Changes apply right away and are saved to the settings file. A save is refused, with an error shown and nothing changed, if it would lock out the very page making the change, if a name is invalid or there are too many, or if the setting is controlled by the system environment, in which case the field is shown as read-only. The change also fixes the settings file reader so a # inside a quoted value, such as a location named \"Obs #2\", is no longer cut off as if it were a comment.",
+      "category": "feature",
+      "summaryHash": "2d4c4b4741a9f8d719c5eeadd4400fa32de6e54f"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1256,
