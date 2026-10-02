@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-02T12:02:08.036Z",
+  "generatedAt": "2026-10-02T13:01:13.757Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 790,
+      "title": "Point the Host check's 403 message at the web UI field",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/790",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T12:09:41Z",
+      "additions": 11,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When someone opens the bridge in a browser using a computer name that isn't on the allowed list, the \"not allowed\" error message now tells them to open the web page by IP address instead and add the name in the \"Allowed host names\" setting. Previously the message only mentioned the settings file, which was written before that web page setting existed. Opening by IP address always works, so the new wording gives a fix anyone can follow. The error code and the start of the message stay the same, so existing troubleshooting guides that quote it still match.",
+      "category": "fix",
+      "summaryHash": "9e1ded013d75b2d6c5c4a15e14899987b20f4796"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 789,
