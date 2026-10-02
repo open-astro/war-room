@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-02T00:11:53.079Z",
+  "generatedAt": "2026-10-02T01:10:56.203Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 767,
+      "title": "Make the Host header check opt-in, off by default",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/767",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T00:26:18Z",
+      "additions": 127,
+      "deletions": 19,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "AlpacaBridge no longer turns away browsers and apps that reach it by a router-assigned name such as astropi.lan. Before this change, those users could get an \"access denied\" error after upgrading. The safety check that refused unfamiliar web addresses is now off by default, and anyone who wants it can switch it back on in the settings. A separate protection against other websites sending commands to the device stays on all the time; the shown code and the docs line up with the description, though the main logic change itself was trimmed from view.",
+      "category": "fix",
+      "summaryHash": "15dfdd16fb364a1306a59c433564fa5614cd21c3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 762,
