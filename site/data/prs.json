@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-02T01:10:56.203Z",
+  "generatedAt": "2026-10-02T02:10:09.637Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1256,
+      "title": "server: §33 client-pushed update with root helper and automatic rollback (#1122)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1256",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-02T01:45:54Z",
+      "additions": 1787,
+      "deletions": 40,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "The telescope server can now be updated even with no internet, such as at a dark observing site. The app sends the new server package directly to the rig, which checks that it is the right package, a newer version, and not damaged in transfer. A small separate helper with administrator rights then installs it, restarts the server, and automatically goes back to the previous version if the new one doesn't come up healthy within 90 seconds. The button in the app that triggers this is still to be built, and the author notes it hasn't yet been tried on the real Raspberry Pi hardware, so it should be tested there before anyone relies on it.",
+      "category": "feature",
+      "summaryHash": "393d0be00ebccdc8fc8d7631109ba4c6569edf3d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 780,
+      "title": "Fix OnStep, Celestron, SynScan stops that fail silently",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/780",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-02T01:37:41Z",
+      "additions": 370,
+      "deletions": 47,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "For OnStep, Celestron and SynScan telescope mounts, a stop command that failed (for example because of a dropped cable or Wi-Fi connection) used to be quietly ignored, and the mount was then reported as stopped even though it might still be moving. Now each stop is attempted separately, and if any of them fails the software reports an error and keeps showing the mount as possibly moving, so safety checks that rely on that status aren't misled. Nothing changes when the stops work normally. The author lists a few similar spots, such as the general \"abort slew\" command on these mounts, that still have the old behavior and were left for later.",
+      "category": "fix",
+      "summaryHash": "0764175b1ba8e65b0644ea32389baa449eac4b72"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 767,
