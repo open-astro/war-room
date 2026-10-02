@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-02T13:01:13.757Z",
+  "generatedAt": "2026-10-02T14:00:32.202Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1257,
+      "title": "packaging: drop the rejected package after a rollback; /run instead of /var/run",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1257",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-02T13:52:46Z",
+      "additions": 43,
+      "deletions": 13,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Two fixes to the offline update feature, found while testing it on a real Raspberry Pi. When a pushed update fails and the system goes back to the previous version, the broken update file (about 70 MB) is now deleted instead of taking up space on the SD card. When there is no earlier version to go back to, the system now tells the operator how to recover. That recovery message only appears when the new version fails to start properly, not when the install itself fails, even though the description says both cases show it. Installs also stop printing system warnings, because the package now uses the current standard location for its temporary runtime files.",
+      "category": "fix",
+      "summaryHash": "81e8164fa90ad4c3cf630bd6a929e733dd6f9df1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 790,
