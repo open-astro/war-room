@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-03T07:45:26.944Z",
+  "generatedAt": "2026-10-03T08:45:15.682Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 809,
+      "title": "Fix iOptron PulseGuide argument checks before connection check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/809",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T08:18:02Z",
+      "additions": 16,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The iOptron mount driver now checks guiding commands for bad values before anything else. A guide direction or duration that is out of range now gets a clear \"invalid value\" reply, no matter whether the mount is connected, disconnected, or parked. Before, the same bad request could come back as \"not connected\" or \"parked,\" which hid the real problem and broke the astronomy software standard the project follows. The code matches the description, and new tests cover the disconnected case but not the parked case.",
+      "category": "fix",
+      "summaryHash": "6fc5dd403309c0ff8b6b567919d4e5631c163bfc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 808,
+      "title": "Document the Host check fields in the wifi-api description",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/808",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T07:55:33Z",
+      "additions": 66,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This is a documentation-only change that describes two existing server settings in the network management guide. One switch turns on a check that refuses requests sent to unexpected web addresses, which guards against a known browser-based attack, and the other is a list of extra addresses to allow. The new text explains the defaults, the accepted formats and limits, and the error replies. It also explains that the server will not let you lock yourself out. No software behavior changes.",
+      "category": "docs",
+      "summaryHash": "fabde59f3e239ca823d8dd77d8b7fa20e32235d0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 807,
