@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T01:50:35.736Z",
+  "generatedAt": "2026-10-03T03:48:56.406Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 801,
+      "title": "Keep trailing comments when saving config values",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/801",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T03:19:56Z",
+      "additions": 62,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Saving a setting from the web settings page no longer deletes the help notes written next to that setting in the configuration file. Before this fix, the first save would remove the explanations that ship with the default settings. Now the note and its spacing are kept, and a # symbol that is part of a setting's value is still treated as part of the value rather than as a note. The code matches the description, and a new automated test confirms the behavior.",
+      "category": "fix",
+      "summaryHash": "9424f32f1739c1442713f0ba5fa0de15d8cb8178"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 797,
