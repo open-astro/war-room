@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T11:42:43.199Z",
+  "generatedAt": "2026-10-03T12:41:57.019Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 811,
+      "title": "Move ASIAIR Plus pwm_gpio.h out of external/",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/811",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T11:53:44Z",
+      "additions": 42,
+      "deletions": 27,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "This is an internal housekeeping change with no effect on how the ASIAIR Plus power switch behaves. A small file describing how the software talks to the ASIAIR Plus power ports was written by the project team, but it sat in a folder meant for outside vendor code, which the automated security scanner skips. It now lives alongside the driver code that uses it, so the scanner checks it too. Besides the move, the file gained the project's standard license notice and some whitespace tidying, and the docs were updated to point to the new location.",
+      "category": "refactor",
+      "summaryHash": "83bbb99f8a9966fa778695269fc0d051a1961eca"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 810,
