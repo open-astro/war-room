@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T16:38:31.505Z",
+  "generatedAt": "2026-10-03T18:36:50.646Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1259,
+      "title": "polar-align: seed with the mount's own rotation; exposure, single-frame mode, live view, field-readable panel",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1259",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-03T18:18:32Z",
+      "additions": 1943,
+      "deletions": 203,
+      "changedFiles": 22,
+      "labels": [],
+      "summary": "Polar alignment, the step that lines the telescope mount up with the sky's pole, now works when the mount starts several degrees off. Before, it measured how far the mount had turned from the camera's view of the sky instead of asking the mount itself, so it gave up every time; with the fix, a real field test reached a very accurate result. The polar alignment screen was also redesigned for use outdoors: a live view from the guide camera, large easy-to-read numbers with plain directions like \"Raise\" or \"Move west\", a plain-language quality rating, and controls to change exposure time or take one frame at a time instead of shooting nonstop. The part that fetches the camera frames was only partly visible here, so the screen redesign is confirmed mostly by the description and change log, while the new connection points for the live image and single-frame capture are visible in the code.",
+      "category": "fix",
+      "summaryHash": "b57e822c070ea62b320c3757ad56ae334096f9b7"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1261,
