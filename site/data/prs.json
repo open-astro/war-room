@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T21:36:20.016Z",
+  "generatedAt": "2026-10-03T22:34:51.497Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1263,
+      "title": "autofocus: automatic step size from the measured V width (§59.8)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1263",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-03T22:21:13Z",
+      "additions": 728,
+      "deletions": 43,
+      "changedFiles": 23,
+      "labels": [],
+      "summary": "Autofocus can now choose its own step size, meaning how far the focuser moves between test shots, and this is on by default for existing setups too. After one wide first sweep, it remembers how sharply focus falls off on that telescope and sizes the next sweep to match. If no sweep has run yet, it estimates a step from the telescope's optics and the focuser's reported step length. This fixes nights like the recent one where steps were too large, most test shots looked equally blurry, and the focus result was unreliable; users can still switch it off and enter a step size by hand, and the focus details screen now shows which step size was used and where it came from. One small difference from the description: the code notes that the optics-based estimate can be off by one step from the setup wizard's version, rather than being exactly the same.",
+      "category": "feature",
+      "summaryHash": "3792359857c8ab8f02d92fec516495b2f4b17c3c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1262,
