@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-03T03:48:56.406Z",
+  "generatedAt": "2026-10-03T04:48:12.569Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 805,
+      "title": "Fix lone quote in a plain config value hiding its comment",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/805",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T04:25:51Z",
+      "additions": 75,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug in how the server reads and saves its settings file. If a hand-written setting contained a stray double quote, such as a telescope location written as 8\" Dob, any note added after it on the same line was wrongly read as part of the value, and saving a new value could mishandle that note. Now the value loads correctly as 8\" Dob, and the note is kept when the setting is changed. New tests cover this case and confirm that normally quoted values still behave as before.",
+      "category": "fix",
+      "summaryHash": "b5a888ae6a23f6f450e66f28b55122ff3934087f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 803,
+      "title": "Fix iOptron range checks that ran after the connection check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/803",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T04:02:16Z",
+      "additions": 113,
+      "deletions": 36,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For iOptron focusers, mounts and power-box switches, the server now checks whether a requested value is in range before checking whether the device is connected. Previously, an out-of-range request sent to a disconnected device got a \"not connected\" error instead of the \"invalid value\" error the ASCOM standard requires, so apps now get a consistent answer either way. The code matches the description, and the PR also updates an internal guide for writing drivers. One small difference from the claim that connected behavior is unchanged: a parked mount given a bad axis-move request now reports \"invalid value\" before it reports that it is parked.",
+      "category": "fix",
+      "summaryHash": "a112333760633283354c0f48c5e6dd60386055f1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 801,
