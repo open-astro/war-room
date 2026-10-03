@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-02T17:57:13.920Z",
+  "generatedAt": "2026-10-03T00:51:23.258Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 794,
+      "title": "Refresh the preflight diff base from its own remote and warn when it is stale",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/794",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T00:33:50Z",
+      "additions": 27,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This fixes an internal developer tool that runs the project's checks locally before code is pushed. The tool was supposed to update its copy of the main code to compare against, but it never actually did, and the failure was hidden, so checks could quietly compare against an outdated version. It now updates from the correct place, and it prints a clear warning with the date of the old copy whenever it can't update. It also rejects oddly formatted settings that could otherwise trick the tool into doing unintended things.",
+      "category": "fix",
+      "summaryHash": "cfd9a25f1132830508b8f117725c1dd329bb69bc"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1258,
