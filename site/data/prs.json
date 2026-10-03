@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T19:36:04.306Z",
+  "generatedAt": "2026-10-03T21:36:20.016Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1262,
+      "title": "setup: Focusing step — live autofocus V-curve/stats/frame, guide-camera focus loop through the guider",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1262",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-03T21:30:36Z",
+      "additions": 6271,
+      "deletions": 82,
+      "changedFiles": 49,
+      "labels": [],
+      "summary": "Setup now has a new Smart Focus step, between connecting equipment and polar alignment, where users can focus both the main telescope and the guide camera. For the main telescope it runs autofocus and shows the run as it happens: a live focus curve, key numbers like star sharpness and star count, and a picture of the focused star field. It can also cancel a run, including one a sequence started, and warns when the result looks unreliable. For the guide camera it gives live 'keep going / go back' advice while you turn the focuser by hand, borrowing images through the guider so guiding isn't disrupted, and Ara now refuses to connect the guider's camera as the main camera because that is what broke guiding on the night of Oct 2. The visible code matches the description, though much of it was trimmed and could not be checked, and the guide-camera path was only tested on simulators, not on the real rig.",
+      "category": "feature",
+      "summaryHash": "255bb3b0f567761520f4735838893668c53a0293"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1260,
