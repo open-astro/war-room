@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T18:36:50.646Z",
+  "generatedAt": "2026-10-03T19:36:04.306Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1260,
+      "title": "autofocus: coarse search before the V-curve sweep; skip unmeasurable probes, re-centre on edge minima",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1260",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-03T19:18:50Z",
+      "additions": 618,
+      "deletions": 44,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Autofocus now works even when the focuser starts a long way from sharp focus. Before, stars that far out showed up as big faint blobs the software could barely see, so autofocus gave up early. It now starts with a quick rough search on a shrunken, lower-detail image to find roughly where focus is, then runs the normal fine sweep around that spot. The fine sweep also skips blurry readings instead of quitting and shifts over to try again if the best point lands at the edge. In a real test it went from about 640 steps out to within a few steps of best focus. The change also keeps every move inside the focuser's reported range. A routine refocus that is already close now costs three extra test shots.",
+      "category": "fix",
+      "summaryHash": "6b5bed7175fd4e460918f1dc426afa0327efcaa1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1259,
