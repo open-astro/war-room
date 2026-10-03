@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T08:45:15.682Z",
+  "generatedAt": "2026-10-03T11:42:43.199Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 810,
+      "title": "Fix layering gate failing open on an unresolved ${VAR}",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/810",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T11:36:25Z",
+      "additions": 47,
+      "deletions": 7,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Tightens an automated check that keeps the project's shared core free of manufacturer-specific camera and device code. Before this, the check could be slipped past if vendor code was referenced indirectly through a placeholder name it couldn't work out, and it would quietly pass. Now any placeholder it can't fully see through counts as a failure, so vendor code can't sneak into the core that way. The current code still passes, and the change comes with new tests that prove the gap is closed. It only affects the build checks, not the server itself.",
+      "category": "fix",
+      "summaryHash": "ca58b502c62c52b5bfbb4a11f9af97bb04ffa576"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 809,
