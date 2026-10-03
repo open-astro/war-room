@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-03T00:51:23.258Z",
+  "generatedAt": "2026-10-03T01:50:35.736Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 797,
+      "title": "Add a pull request template with a thinking path",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/797",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T01:42:23Z",
+      "additions": 115,
+      "deletions": 30,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds a standard form that every new pull request on the project now starts with. It asks contributors to explain their reasoning step by step, link the related issue, list what changed, describe how they checked it, note risks, and say which AI model helped, then tick a checklist. The project's automated pull-request helper and the developer guide were updated to fill in this form instead of the older layout. This affects only how contributions are written up, not the software itself.",
+      "category": "chore",
+      "summaryHash": "c6271882443eb8eed61560c37b29248a22d7ea57"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 798,
+      "title": "Match layering gate tokens inside CMake generator expressions",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/798",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T01:28:34Z",
+      "additions": 67,
+      "deletions": 8,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This is an internal fix to an automatic check that stops the core of the server from depending directly on device-specific driver code. Before, that dependency could get past the check if it was wrapped in a certain conditional syntax in the build files. Now the check catches those wrapped cases too, and new self-tests confirm both what it should block and what it should still allow. Users of the server see no change.",
+      "category": "ci",
+      "summaryHash": "435e487742bbd368b42b37e9a59e8758c953a921"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 795,
+      "title": "Widen layering gate CMake scan beyond AlpacaCore vendor files",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/795",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T00:58:36Z",
+      "additions": 161,
+      "deletions": 13,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "This is an internal fix that makes the same dependency check look at many more build files. It now covers the core and web-server parts of the project, including test build files, instead of only a short fixed list, and it catches a few more ways driver code could leak into the core. The visible changes are only the updated notes and change log. The main code change was left out of the trimmed diff, so it could not be checked directly here.",
+      "category": "ci",
+      "summaryHash": "a3a5b16b395edac12de18e279b4f0120cb18237b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 794,
