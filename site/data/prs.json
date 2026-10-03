@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T04:48:12.569Z",
+  "generatedAt": "2026-10-03T07:45:26.944Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 807,
+      "title": "Cover AsyncOperation stale-throw WARN and document body re-entrancy",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/807",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-03T07:14:01Z",
+      "additions": 80,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Internal change only, with no effect on how the server behaves for users. It adds a warning note for driver authors about the tool that runs drivers' long tasks in the background. The note says certain calls must not be made from inside one of those tasks, because doing so can crash the program or cause an error. It also adds a test confirming that when an outdated background task fails, exactly one warning is written to the log, so a future change that silently drops that warning will be caught.",
+      "category": "tests",
+      "summaryHash": "e73da2debd2b55b0c2b56498591eed57d613d4bd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 805,
