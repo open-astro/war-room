@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-03T12:41:57.019Z",
+  "generatedAt": "2026-10-03T16:38:31.505Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1261,
+      "title": "docs: contributions temporarily paused",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1261",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-03T15:39:32Z",
+      "additions": 6,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "The project's front page and contributor guide now show a notice that outside contributions are temporarily paused, meaning people who are not collaborators can't open pull requests, file issues, or comment for now. According to the description, this matches a repository setting limiting interaction to collaborators, which expires on April 3, 2027. The notices are meant to be removed once contributions reopen. Only the text notices are in this change; the access setting itself was made separately.",
+      "category": "docs",
+      "summaryHash": "1743c037a669771aa6b856fa59a72892e9cb17f0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 811,
