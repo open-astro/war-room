@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-04T23:13:40.622Z",
+  "generatedAt": "2026-10-04T23:38:32.221Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 838,
+      "title": "Fix Bisque test counting absolute motion commands",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/838",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T23:33:47Z",
+      "additions": 10,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Internal test fix only, with no change to how the telescope software behaves. A check for the Bisque telescope driver counted every movement command sent since the test began, including any sent while connecting. It now counts only the commands from the step being tested. This stops the test from failing for the wrong reason if connecting ever starts sending a movement command.",
+      "category": "tests",
+      "summaryHash": "f56743a3be0ceef676581d80dd04962ed89289e7"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1270,
+      "title": "feat(guiding): guide exposure in Tune Guiding; Apply sends a tuning-only push so guiding keeps running",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1270",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-04T23:16:10Z",
+      "additions": 633,
+      "deletions": 37,
+      "changedFiles": 29,
+      "labels": [],
+      "summary": "Pressing Apply in the Tune Guiding dialog no longer stops guiding partway through a night's run. Before, Apply re-sent the guider's full setup, which briefly disconnected its equipment. That ended the guide session and left the sequence running unguided until someone restarted guiding by hand. Apply now sends only the tuning settings that can change while guiding continues, and the dialog also gains a new choice for the guide camera's exposure length, which is saved with the profile and also sent each time the guider connects.",
+      "category": "feature",
+      "summaryHash": "27b626aeba04c91d1e7864a987965d4783e13c69"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 837,
@@ -17,9 +47,9 @@
       "deletions": 1,
       "changedFiles": 2,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "A one-word fix to the contributor instructions. They now say that the name of each change-note file must be all lowercase, which the project's automatic checks already required. This saves contributors with mixed-case branch names from having that check reject their change note.",
+      "category": "docs",
+      "summaryHash": "b1cefca844bf8bca205edc664ecaa346adc10909"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -32,9 +62,9 @@
       "deletions": 351,
       "changedFiles": 46,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Live tab now shows a countdown timer whenever the camera is taking a picture the user did not start from that screen, such as sequence frames, focus checks or plate-solve shots. Guiding has moved to a strip along the bottom that works like the popular PHD2 guiding graph: live error traces, markers for dithers, settling and lost stars, the usual statistics, and, on desktop, the ability to replay a saved PHD2 guide log. Cancelling an exposure now ends it within about a second, instead of hanging for up to a minute past the exposure time and being logged as a camera fault. The change also fixes a guiding accuracy number that was labelled in arcseconds when it was really in camera pixels, and a status header that overflowed on small screens.",
+      "category": "feature",
+      "summaryHash": "0a620beef709cca754520c3fa7b5a9431e2231e3"
     },
     {
       "repo": "open-astro/AlpacaBridge",
