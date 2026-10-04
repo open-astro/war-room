@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-04T20:16:28.797Z",
+  "generatedAt": "2026-10-04T21:15:43.329Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 834,
+      "title": "Fix config writer ending a section at a blank line",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/834",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T21:03:42Z",
+      "additions": 128,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Saving a setting no longer creates a duplicate copy of it in the settings file when someone has hand-edited that file and left a blank line or comment in the middle of a section. Before, the program treated such a gap as the end of the section and added a second copy of the setting below it. Now it updates the existing line in place, and any new settings go after the section's last real entry. The code matches the description, and new tests cover the gap case, adding a missing setting, and creating a section that did not exist yet.",
+      "category": "fix",
+      "summaryHash": "cfa4fe3149b9fa5bf5487c88cfc80c0c1a712ce6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 833,
+      "title": "Fix changelog fragment parser dropping blank lines inside bullets",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/833",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T20:49:33Z",
+      "additions": 56,
+      "deletions": 6,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This fixes the internal tool that builds the project's release notes, so it no longer strips the blank lines inside a single note entry. Notes with two paragraphs or with a code example now come out as written, and blank lines between separate entries are still removed as before. The tool also now rejects a note that opens a code example but never closes it, where it used to silently merge the rest of the note into one entry. This affects only how release notes are produced, not the software itself, and the code matches the description.",
+      "category": "fix",
+      "summaryHash": "d28ec53b589ad74b0c4a48ee31fd24e8f0a0fa1c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 827,
