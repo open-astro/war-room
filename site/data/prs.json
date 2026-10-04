@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-04T03:30:34.091Z",
+  "generatedAt": "2026-10-04T07:27:05.795Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 820,
+      "title": "Fix iOptron AbortSlew letting a queued async GOTO through",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/820",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T07:26:45Z",
+      "additions": 144,
+      "deletions": 18,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a safety bug with iOptron telescope mounts: if a program started a slew and then immediately cancelled it, the move command could still reach the mount after the cancel had already reported success, leaving the telescope moving with no stop. Cancelling now waits for any pending move to be dropped (or sent first, then stopped) and always sends the stop command, even when the driver thinks the mount is already still. New tests reproduce the original problem, which happened every time before the fix. It has not been tried on real hardware yet, and it is unconfirmed whether the extra stop command also cancels small guiding corrections on some mount models.",
+      "category": "fix",
+      "summaryHash": "677a49ef5d803aecc93659ed4f150089035f71e0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 814,
