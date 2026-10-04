@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-04T10:24:35.878Z",
+  "generatedAt": "2026-10-04T11:23:39.115Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 826,
+      "title": "Fix single-quoted config value cut at its hash",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/826",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T10:41:36Z",
+      "additions": 49,
+      "deletions": 15,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Settings written in single quotes that contain a # sign, such as a site name like 'Obs #2', are now read correctly instead of being cut off at the # and loading as just 'Obs. The same fix applies when the server saves a changed setting back to the settings file, so the rest of that line, including any note after it, is kept. Single quotes now work the same way double quotes already did. A value with an apostrophe in the middle, like Bob's #2, is still cut at the #, as intended.",
+      "category": "fix",
+      "summaryHash": "80a36ff1414e99c114a115c51e0d8fde8da9a81e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 825,
