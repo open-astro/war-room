@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-04T07:27:05.795Z",
+  "generatedAt": "2026-10-04T08:26:20.010Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 819,
+      "title": "Fix Sky-Watcher RA running after Tracking=false during a guide pulse",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/819",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T08:02:27Z",
+      "additions": 140,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixed a bug with Sky-Watcher mounts. If someone turned tracking off while the mount was making a small guiding correction, the mount could start moving again on its own once the correction ended, even though the software still said tracking was off. The mount now stays stopped as the user asked, including in two related moments shortly before and after the correction where the same problem could happen. The code matches the description, and new automated tests cover all three cases, but the fix has not been tried on a real mount yet.",
+      "category": "fix",
+      "summaryHash": "ac90f78bbd7f664daace6278b40673d9e09a2abb"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 818,
+      "title": "Fix device config choosing GPIO lines, chip nodes and device paths",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/818",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T07:39:39Z",
+      "additions": 313,
+      "deletions": 10,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Closed a security gap: the server has no login, so anyone on the local network could send a device setup request telling it to switch on any hardware pin or open any device file. Setup requests for the supported power boxes (ZWO ASIAIR, iOptron iMate, ToupTek StellaVita) are now rejected unless they use that board's own pins and device paths, and the same check runs when saved settings load at startup. Any custom setup that used other pins will now be refused, though the standard default settings still work. The main code change was cut from the diff we received, so this summary relies on the description, the updated documentation and the new test setup, which all agree.",
+      "category": "fix",
+      "summaryHash": "383b561c91c38c162255550bf3bde158e3ccdc53"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 820,
