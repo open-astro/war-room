@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-04T08:26:20.010Z",
+  "generatedAt": "2026-10-04T09:25:20.574Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 822,
+      "title": "Pin ZWO ASIAIR Plus pwm_gpio.h ioctl struct sizes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/822",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T08:54:26Z",
+      "additions": 12,
+      "deletions": 7,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This is an internal safety check for the code that controls the power and switch outputs on the ZWO ASIAIR Plus. The data the software sends to the device's operating system now uses fixed-size numbers. The software also refuses to build if that data ever ends up a different size than the device expects. Nothing changes for users today; the point is to catch a subtle mistake before it can reach real hardware, and the diff matches the description.",
+      "category": "refactor",
+      "summaryHash": "e20d3c616141ee544e17576e1688924247bd01d1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 819,
