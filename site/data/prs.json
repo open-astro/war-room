@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-03T22:34:51.497Z",
+  "generatedAt": "2026-10-04T03:30:34.091Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 814,
+      "title": "fix: preserve exact Wi-Fi SSID bytes (#793)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/814",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-04T03:12:45Z",
+      "additions": 283,
+      "deletions": 47,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Wi-Fi settings can now tell apart networks whose names contain unusual characters that used to show up as identical placeholder symbols. Before this, the web page could save the wrong network or connect to the wrong one. The system now keeps an exact copy of each network name, and the page adds a short code next to names that would otherwise look the same. Older tools that use plain network names still work, and this was not tested on real hardware with such networks.",
+      "category": "fix",
+      "summaryHash": "dcc19a51e093a61ce6e67b4d2911a662ffefc2b0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 817,
+      "title": "Fix iOptron rewriting the altitude limit and meridian treatment",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/817",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T02:44:54Z",
+      "additions": 39,
+      "deletions": 197,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "The iOptron telescope driver no longer changes the safety limits stored on the mount. Before, when the mount refused a move, the driver quietly lowered the mount's horizon limit to -89 degrees and loosened its meridian setting, then tried again. If the connection dropped during the move, the mount could be left with those unsafe settings. Now a refused move is simply reported as an error and is not retried, so moves that used to succeed this way will fail, and this has not yet been tested on a real mount.",
+      "category": "fix",
+      "summaryHash": "f60c007b7728b84a869e2673be3d53673703591c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1263,
