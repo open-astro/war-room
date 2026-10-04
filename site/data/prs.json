@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-04T09:25:20.574Z",
+  "generatedAt": "2026-10-04T10:24:35.878Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 825,
+      "title": "Fix router site coordinate range message trailing zeros",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/825",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T09:59:33Z",
+      "additions": 57,
+      "deletions": 13,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "When someone enters an impossible site latitude or longitude, the error message now shows clean numbers, such as \"200 is out of range: must be between -90 and 90 degrees\", instead of \"200.000000\" and \"-90.000000\". The server now uses the same number style it already uses for its other range warnings, so its messages look consistent. Only the wording of these errors changes; which values are accepted or rejected stays the same. New tests check both the latitude and longitude messages.",
+      "category": "fix",
+      "summaryHash": "9680cbfc4bc3ab72f043abd45aa68efef4dc56a7"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 823,
+      "title": "Fix fragment name check message for uppercase branch slugs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/823",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T09:34:09Z",
+      "additions": 15,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "This is an internal tooling and documentation change for contributors, and users will not notice anything. When a contributor's changelog note file has capital letters in its name, the project's checker now explains that the name must be lowercase and shows the correct name, instead of giving a vague rejection. The naming rule itself is unchanged. Several contributor guides were also updated so they no longer tell people to edit the main changelog file by hand.",
+      "category": "chore",
+      "summaryHash": "efaf7b5339a06abcb9b0b26c186d1f3741832df0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 822,
