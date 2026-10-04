@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-04T21:15:43.329Z",
+  "generatedAt": "2026-10-04T23:13:40.622Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 837,
+      "title": "Fix AGENTS.md fragment slug omitting lowercase",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/837",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T22:55:46Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1269,
+      "title": "Live tab: exposure timer over the frame, PHD2-style guide graph along the bottom",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1269",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-04T22:48:06Z",
+      "additions": 4493,
+      "deletions": 351,
+      "changedFiles": 46,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 834,
