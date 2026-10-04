@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-04T11:23:39.115Z",
+  "generatedAt": "2026-10-04T12:22:52.187Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 828,
+      "title": "Fix discovery advertising the old port after a restart",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/828",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T12:10:54Z",
+      "additions": 10,
+      "deletions": 5,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "The example server now keeps telling other devices on the network the correct address to connect to after it restarts. Before this fix, when the server was set to pick any free connection point (a port) on its own and was then restarted, it got a new port but kept advertising the old one. Clients searching the network would be pointed at a port where nothing was listening. The change only affects the example server in that particular setup, and the code matches what the description says.",
+      "category": "fix",
+      "summaryHash": "75219bcee00de6c9469ae393caa56adc83c598ff"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 812,
+      "title": "Fix Celestron, SynScan, and Sky-Watcher motion races",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/812",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-04T11:46:51Z",
+      "additions": 1068,
+      "deletions": 211,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes timing conflicts in the Celestron, SynScan and Sky-Watcher telescope mount drivers, where a leftover motion task could still send commands after a newer one had taken over. For example, an old task could stop a slew the user had just started. Motion commands like slewing, parking, finding home, guiding, manual moves and abort now take turns. Abort also cleans up reliably, and on SynScan, after an abort the mount goes back to the tracking mode the user asked for. A few related behaviors also changed: a bad input to a disconnected mount now reports the bad value rather than \"not connected\", and a Sky-Watcher blocking slew that gets interrupted now reports an error, even though the mount may still be moving. The changes were checked against simulated mounts only, not real hardware, and much of the code diff was too large to show in full here.",
+      "category": "fix",
+      "summaryHash": "c8a34e267318f743988835fc18711a0e511bc506"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 826,
