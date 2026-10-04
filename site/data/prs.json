@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-04T12:22:52.187Z",
+  "generatedAt": "2026-10-04T18:18:01.108Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1266,
+      "title": "Sequencer field fixes: live run status, rig-cooked runs, rotate camera by hand, five-shot Smart Focus, guide-camera focus, guiding that parks instead of running unguided",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1266",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-04T18:17:19Z",
+      "additions": 5423,
+      "deletions": 193,
+      "changedFiles": 82,
+      "labels": [],
+      "summary": "A large batch of fixes from the first real nights of running imaging sequences at the telescope. Sequences no longer skip every target or quietly image without guiding: if guiding won't start, the run now pauses and waits for the user. The screen now shows the current step, target name and a live frame count, and imaging runs only include steps the connected equipment can actually do. It also adds a guided \"rotate the camera by hand\" step for setups without a motorized rotator, plus a quicker and more reliable five-shot autofocus and a guide-camera focus helper that knows when focus is good enough and stops by itself. Most of the code was not visible for review, but the parts shown match the description.",
+      "category": "fix",
+      "summaryHash": "4d8301223052a934fce7a236bd0de2d19608986d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 828,
