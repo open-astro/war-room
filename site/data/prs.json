@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-04T18:18:01.108Z",
+  "generatedAt": "2026-10-04T19:17:11.780Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 829,
+      "title": "Update submit-pr step 4 for an unresolvable pre-flight base",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/829",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T19:14:52Z",
+      "additions": 5,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This updates the step-by-step guide contributors and AI helpers follow before submitting a change. The pre-submission check script can now stop before running any checks if it can't figure out which version of the code to compare against, and the guide now explains how to handle that. It says to report that specific error and the comparison point it tried, rather than looking for a failed check that doesn't exist. This is a documentation-only change, and the edits match the description.",
+      "category": "docs",
+      "summaryHash": "27c2167516a4aa5e97aa42dd57b402bf0a7af0c0"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1268,
+      "title": "Server test suite: parallel fixtures, tick-scaled bench waits, IO category for the quick run (#1265)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1268",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-04T18:31:16Z",
+      "additions": 326,
+      "deletions": 63,
+      "changedFiles": 108,
+      "labels": [],
+      "summary": "The server's automated test suite now finishes in under 30 seconds on a laptop instead of about 18 minutes. Tests now run side by side, and simulated equipment checks in every tenth of a second instead of waiting out real-world delays. A few slow tests were also rewritten, including one that used to sit for over ten minutes and one that kept hitting 10-second timeouts. Tests that touch files, databases or local network connections are now labeled so developers can run a quick subset, and the app's real behavior is unchanged because the new timing settings are only used by tests.",
+      "category": "tests",
+      "summaryHash": "5b1e435c756bc97c5d516da585be05ab00c45150"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1266,
