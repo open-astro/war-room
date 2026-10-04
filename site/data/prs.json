@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-04T19:17:11.780Z",
+  "generatedAt": "2026-10-04T20:16:28.797Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 827,
+      "title": "Fix ADR 0003 stale root seam and floor sentence",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/827",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T19:26:40Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This corrects an outdated sentence in one of the project's design-decision documents, the one explaining the automated check that keeps the docs matching the code. The old text claimed none of the other checks had certain safety features, which stopped being true after a recent change. The paragraph now spells out which checks have those features, which have only one, and which have none. It is a documentation-only fix, with no change to the software itself, so readers planning future work on these checks can trust what the document says.",
+      "category": "docs",
+      "summaryHash": "85d75350eb589eaba2ae4dfdd3d314edb9ca8150"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 829,
