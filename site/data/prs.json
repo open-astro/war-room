@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-05T09:05:14.431Z",
+  "generatedAt": "2026-10-05T11:03:33.919Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 853,
+      "title": "Add SVBONY camera catalog descriptor and remove its router arms",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/853",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T11:00:21Z",
+      "additions": 256,
+      "deletions": 30,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "The setup for SVBONY cameras now lives in the shared device catalog, the same way some other brands already work, instead of being hand-wired into the server's request-handling code. Cameras should behave the same as before, with one small exception: a camera number that is not a whole number, such as 1.5, is now rejected rather than quietly rounded down, and a saved camera with such a value will show as failed to load. The code matches the description. It was tested only on a build without vendor drivers and not on real hardware.",
+      "category": "refactor",
+      "summaryHash": "595683277868750aee25b1b1ce0dc8ade14926f6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 851,
