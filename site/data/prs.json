@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-04T23:38:32.221Z",
+  "generatedAt": "2026-10-05T00:12:58.256Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 840,
+      "title": "Fix layering gate skipping L2 when AlpacaHTTP CMakeLists is absent",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/840",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T00:11:31Z",
+      "additions": 19,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "The automated check that keeps the project's code organized in the right layers now fails loudly when one of the build setup files it relies on is missing or can't be read. Before, one of its rules was quietly skipped in that case and the check still reported success, giving false reassurance. This only affects the project's internal build checks, not the server itself, and the code matches the description, including new tests for both the missing-file and unreadable-file cases.",
+      "category": "fix",
+      "summaryHash": "20f86ac8d4381692bccdddd305c92c006694279e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 839,
+      "title": "Fix release accepting a version below the proposed bump",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/839",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-04T23:46:43Z",
+      "additions": 11,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "The release tool now refuses a version number that is lower than what the pending changes call for. For example, it will no longer accept a small patch number when the changes include breaking changes that need a major version bump, and it names the version it expected instead. Choosing a higher number than suggested is still allowed. This is internal release tooling only, and the code matches the description, with tests added for both cases.",
+      "category": "fix",
+      "summaryHash": "69f7428b1ddc2ce8e7bb443b3bab7952a414995e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 838,
