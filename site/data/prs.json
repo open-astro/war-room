@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-05T01:11:59.861Z",
+  "generatedAt": "2026-10-05T02:11:07.240Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1271,
+      "title": "rotation: Rotate camera by hand moves to the Plan screen — exposure, single shot or loop; run step removed",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1271",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-05T02:04:54Z",
+      "additions": 2274,
+      "deletions": 956,
+      "changedFiles": 37,
+      "labels": [],
+      "summary": "For telescopes without a motorized rotator, the tool that helps you turn the camera by hand to the planned framing angle has moved out of the imaging run and onto the Plan screen, where you set up your framing. You can take one frame at a time (shoot, turn, shoot again) or let it shoot continuously while you turn. Each frame shows how much further to turn and where the camera is really pointing compared with the plan. When you press Done, it takes one full-quality check frame and either approves the framing or tells you how far off it still is. Imaging runs no longer pause for a manual rotation step. The author notes this has not yet been tried with a real camera and telescope, especially the faster lower-resolution preview frames.",
+      "category": "feature",
+      "summaryHash": "ed14fbf35de6a76419f7964d3d56fda89081580c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 841,
