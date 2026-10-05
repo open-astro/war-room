@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-05T05:08:44.817Z",
+  "generatedAt": "2026-10-05T06:07:55.309Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 848,
+      "title": "Fix Sky-Watcher RA stopped by pulse end after Tracking=true",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/848",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T06:07:17Z",
+      "additions": 54,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixes a Sky-Watcher mount bug where turning tracking on while a short guiding nudge was in progress could leave the mount not actually tracking, even though it reported that tracking was on. When the nudge finishes, the mount now resumes tracking if tracking is switched on, so stars stay put. A new automated test covers this case, and the related earlier fix for the opposite situation still works.",
+      "category": "fix",
+      "summaryHash": "9c475b37477cfc0715ccd7aeac713ff1d243dc0e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 836,
+      "title": "Sky-Watcher serial: harden the link layer against a tty that ignores VMIN/VTIME",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/836",
+      "author": "kern2011",
+      "mergedAt": "2026-10-05T05:53:52Z",
+      "additions": 412,
+      "deletions": 35,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Makes the cable connection to Sky-Watcher mounts more robust. Previously, some USB adapters could freeze the entire server if the mount went quiet mid-conversation, and every request would hang until the service was restarted. Now waits are time-limited, so a silent mount times out and retries instead. A garbled reply caused by electrical noise is now retried once instead of failing the operation, and a briefly backed-up connection is waited out instead of erroring. The initial step that detects which port the mount is on is not covered by this change.",
+      "category": "fix",
+      "summaryHash": "7225f0ba64d450f36aaf4f6e461687139b62b108"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 847,
+      "title": "Fix client text reaching log lines unescaped",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/847",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T05:31:05Z",
+      "additions": 249,
+      "deletions": 15,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Stops outside devices on the network from tampering with or scrambling the server's log. Previously, text sent in some requests was written to the log as-is, so a client could insert fake log lines or hidden control characters that affect an operator's terminal. That text is now made safe before it is logged, and overly long values are shortened without cutting a character in half. Only log output changes, not how requests are handled. One other place that logs error messages is noted as still needing a separate fix.",
+      "category": "fix",
+      "summaryHash": "96a9cac28e6aa0e037afca3cc7dabb521a8a7a3a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 846,
