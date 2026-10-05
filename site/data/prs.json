@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-05T02:11:07.240Z",
+  "generatedAt": "2026-10-05T03:10:24.568Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1272,
+      "title": "Plan: target by coordinates — RA/Dec entry with J2000/JNow, add to plan slews there",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1272",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-05T02:26:52Z",
+      "additions": 1826,
+      "deletions": 0,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "The Plan screen can now take a target by its sky coordinates instead of only by name: a new pin button, or pasting a position into the search box, opens a form that accepts the common formats people copy from star catalogues and hand controllers, in either standard catalogue (J2000) or current-date (JNow) coordinates. \"Add to plan\" builds the same imaging run as picking an object from Tonight's Sky, so the telescope slews there, and recently entered targets are saved on the device so they are ready at the observing site. It also fixes a bug affecting every \"add to plan\": a new run could quietly be saved as an offline draft even though the app showed it was connected, because the connection was released partway through creating the run. The author notes it has not been tried on real equipment yet, and looking up objects by name online is left for later work.",
+      "category": "feature",
+      "summaryHash": "be235b192d866be8a407aaf320e7c278f3269a39"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1271,
