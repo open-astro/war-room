@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-05T15:00:51.448Z",
+  "generatedAt": "2026-10-05T23:20:31.812Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1276,
+      "title": "linux: Wayland-only runner — refuse X11, drop the X11/no-op code, per-family runtime packages, decision record (#1201)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1276",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-05T22:39:33Z",
+      "additions": 125,
+      "deletions": 147,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "The Linux version of OpenAstro Ara now runs only on modern Wayland desktops such as GNOME and KDE Plasma. If someone starts it on an older X11 desktop, it stops right away with a plain message telling them to log in to a Wayland session, instead of failing with a confusing error. The old X11-only code for window title bars, re-centering the window and setting the taskbar icon was removed, since Wayland handles those itself. The setup guide now lists the packages needed on Ubuntu, Fedora and Arch, the decision is written down in the design notes, and a test was added to catch any accidental return of X11 support.",
+      "category": "refactor",
+      "summaryHash": "9bc8eab8f00a685ad15fdbad381fc00edf6f0a58"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1275,
+      "title": "linux: planetarium overlay on native Wayland — client-side overlay + GBM probe for WebKit's DMABUF renderer (#1200)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1275",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-05T22:04:20Z",
+      "additions": 935,
+      "deletions": 42,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "The sky map in the Planning tab now works on Linux Wayland desktops, where it used to show up blank. The app now checks at startup whether the computer's graphics can support its faster drawing method and quietly switches to a safer one if not, which covers virtual machines, setups without a graphics card, and NVIDIA systems that previously crashed. The sky map also uses much less processor power when nobody is touching it, and this saving applies on every platform, not just Linux. Other fixes include touchpad pinch-to-zoom on the map, clicks on the map no longer stealing typing focus from the search box, a proper taskbar icon on Wayland with a helper script to register it, smoother performance on large 4K screens, and a clean shutdown with no leftover background processes.",
+      "category": "fix",
+      "summaryHash": "edcb8eaaa937942983f54edcc4f7e408932b8056"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 855,
+      "title": "Explain every option in changelog_fragments.py --help",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/855",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T20:28:23Z",
+      "additions": 39,
+      "deletions": 11,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "An internal tooling improvement. The script that checks and assembles changelog entries now explains each of its options when asked for help, instead of listing them with no description. How the script actually behaves is unchanged.",
+      "category": "chore",
+      "summaryHash": "93f950f0cfc59fac7b089187e187d95a2802e0bc"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1274,
