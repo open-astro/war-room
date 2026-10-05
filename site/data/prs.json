@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-05T03:10:24.568Z",
+  "generatedAt": "2026-10-05T04:09:32.326Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1273,
+      "title": "tests: flaky timing fixes for the pause, filter-wheel slot wait and latched-bridge tests (#1244, #1249, #1255)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1273",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-05T03:16:20Z",
+      "additions": 62,
+      "deletions": 21,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Test-only change that fixes three automated tests which sometimes failed at random when the test machine was busy. They covered pausing a running sequence, a filter wheel waiting for its list of filter slots, and a telescope that reports a stuck error while it is moving. The tests used to wait a fixed amount of time and hope things had happened. They now wait for clear signs that each step has actually happened, and one shared helper now fails loudly instead of quietly moving on when something never happens. The code matches the description, and nothing about how the software behaves for users changes.",
+      "category": "tests",
+      "summaryHash": "1d2de9e18d49855eff2fe09cbf45de42df405c6c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1272,
