@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-05T04:09:32.326Z",
+  "generatedAt": "2026-10-05T05:08:44.817Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 846,
+      "title": "Fix IsPulseGuiding staying true after a pulse is reaped",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/846",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T04:57:44Z",
+      "additions": 75,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "On Celestron and SynScan telescope mounts, the server stopped a guide pulse when a slew, park or homing command started, but kept reporting that guiding was still in progress for several seconds afterward. Guiding software that checks this status could end up waiting for a pulse that was no longer running. The status now clears as soon as the command cancels the pulse, which matches how the abort command already behaves, and new tests cover each case.",
+      "category": "fix",
+      "summaryHash": "838db86049e8860d1d0c80f4ce734245b29129fd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 845,
+      "title": "Fix ASIAIR device form offering GPIO values the server refuses",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/845",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T04:45:34Z",
+      "additions": 22,
+      "deletions": 16,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The web setup form for the ZWO ASIAIR power switch now offers only settings the server will accept, so users no longer fill it in and then get rejected on save. Each port's pin is now picked from a short list of the four valid pins, and the two hardware device path fields are now locked to their only allowed values. Older saved setups with unsupported values are quietly corrected to the defaults when edited and saved. The form still lets a user pick the same pin for two ports, which the server rejects, so it does not fully prevent every refused setup.",
+      "category": "fix",
+      "summaryHash": "6abd6cdb05a70af6fcc464de90ef290b258e6484"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 842,
+      "title": "Fix telescope target and guide-rate races",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/842",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-05T04:18:21Z",
+      "additions": 325,
+      "deletions": 72,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Several telescope drivers (Celestron, SynScan, OnStep, Bisque, Sky-Watcher and iOptron) could read or change the stored target position and guide speed while another request was using them at the same moment, which risked inconsistent values. These are now properly guarded, and slews and syncs take one consistent copy of the target before acting on it. SynScan guiding also no longer silently changes the target coordinates a user or app had set, because it now tracks its own position estimate separately. The PR adds stress tests and notes a known limitation of a memory-checking tool on the Raspberry Pi 4.",
+      "category": "fix",
+      "summaryHash": "d985544fc65de4f1a93f45a28fae21b571dfd102"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1273,
