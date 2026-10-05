@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-05T00:12:58.256Z",
+  "generatedAt": "2026-10-05T01:11:59.861Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 841,
+      "title": "Update config comment scanner to one shared helper",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/841",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T00:30:28Z",
+      "additions": 113,
+      "deletions": 58,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Internal cleanup with no change in how the server behaves. Two parts of the server, one that reads the settings file and one that rewrites it when settings change, each had their own identical copy of the logic that works out where a note (comment) begins on a line. Now both use a single shared copy, so a future fix only has to be made once and the two can't drift apart. New tests check that logic directly, including cases like a '#' inside quoted text such as \"Obs #2\".",
+      "category": "refactor",
+      "summaryHash": "aaa82c486311c6be0c2e8c6410c09e658f130c7b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 840,
