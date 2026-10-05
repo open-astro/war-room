@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-05T06:07:55.309Z",
+  "generatedAt": "2026-10-05T09:05:14.431Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 851,
+      "title": "Fix client text reaching exception and device type log lines raw",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/851",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T08:39:24Z",
+      "additions": 41,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The server no longer lets an outside app sneak fake entries into its logs. Before this fix, a request containing a hidden line break, either in a date value or in the device type sent when setting up a device, could make one request show up as several log lines, including made-up ones. Those line breaks are now written out as visible escape codes, which keeps the logs trustworthy, and what apps get back from the server is unchanged. One side effect is that very long error messages are now cut off at about 4,000 characters in the log, and the changelog note mentions only the error-message part of the fix, not the device setup part.",
+      "category": "fix",
+      "summaryHash": "48bf435d17179b3731fa0bd2f3a1ce33fa9f9d6a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 848,
