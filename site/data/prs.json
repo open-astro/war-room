@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-05T11:03:33.919Z",
+  "generatedAt": "2026-10-05T12:02:47.994Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 854,
+      "title": "Fix ASIAIR form accepting one GPIO line on two ports",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/854",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T11:36:41Z",
+      "additions": 72,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The settings form for ASIAIR Pro and Plus devices now catches it when the same control line is picked for two different ports, and shows a message naming the line and both ports before anything is saved. Before, the form sent the settings anyway and the server rejected them with a less helpful error. This also catches a case where older saved settings load with a repeated choice by default. The server's own check is unchanged, and the fix was tested in a browser but not on real hardware.",
+      "category": "fix",
+      "summaryHash": "c217f8ecf9f4f3ba192bf3be2a6128f0c8cb232a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 852,
+      "title": "Add Falsified by PR-body gate for new test cases",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/852",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T11:16:48Z",
+      "additions": 539,
+      "deletions": 0,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "This is an internal change to the project's review process and does not affect users. When a pull request adds a new test, the author must now write in the description which small code change would make that test fail. The goal is to show that each test actually catches a real problem, not that it would pass no matter what. An automated check confirms these notes are filled in and in the right format, but it does not run the code changes itself (reviewers still verify them), and it is not yet required for merging.",
+      "category": "ci",
+      "summaryHash": "42318e99b979696d917c7966bd937a4fbc014b06"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 853,
