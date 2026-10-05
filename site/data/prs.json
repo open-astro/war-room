@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-05T12:02:47.994Z",
+  "generatedAt": "2026-10-05T15:00:51.448Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1274,
+      "title": "docs: first-PR walkthrough, stale build-blocker text, §28.8 storage-less startup (#1172, #1205, #1208)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1274",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-05T14:35:05Z",
+      "additions": 52,
+      "deletions": 21,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Documentation refresh for contributors and anyone running the system. The contributor guide now has a step-by-step walkthrough for a first pull request and points to the test setup that mimics the Raspberry Pi. Outdated build instructions saying part of the project could not be built are gone. The docs now accurately describe what happens when no storage drive is attached: the server still starts, refuses to capture until a drive is chosen, and no longer sends a separate 'storage unavailable' alert. The only code change is reworded log messages and an internal comment, so the app behaves the same.",
+      "category": "docs",
+      "summaryHash": "81ea76b5947c2cc3f4483684c86dd6711a6ddfb7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 854,
