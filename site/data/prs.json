@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-06T11:10:22.198Z",
+  "generatedAt": "2026-10-06T12:09:38.217Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 873,
+      "title": "Move the Bisque telescope into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/873",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T11:51:23Z",
+      "additions": 297,
+      "deletions": 60,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Support for Bisque Paramount telescopes (controlled through TheSkyX) now comes from the project's shared device catalog, which keeps each brand's settings and setup rules in one place. Before, this telescope was set up by special-case code inside the main web request handling. Telescope behavior should be the same, and the code matches the description. A few messages users may see are worded differently: the startup log line, the error for a setting of the wrong type, the error for an out-of-range site latitude or longitude, and the warning shown when a saved setting had to be corrected. Bisque also now appears in the list of available device types the server reports.",
+      "category": "refactor",
+      "summaryHash": "2780f9a729a542bd731164e279ae0f74bc76d256"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 872,
+      "title": "Fix SVBONY cameraIndex accepting out-of-range values",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/872",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T11:22:54Z",
+      "additions": 30,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The setting that picks which SVBONY camera to use (its number in the list of connected cameras) now refuses negative numbers and numbers that are far too large when it is saved. Before, those values were accepted, and a very large number could silently turn into a different, wrong number before the camera was even contacted. One side effect: an old saved setup with a bad number now loads with the default, the first camera, and shows a warning, where before it failed when connecting.",
+      "category": "fix",
+      "summaryHash": "66b9fc9c9a687e094da3ea727b17ae4bbfffddc0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 871,
