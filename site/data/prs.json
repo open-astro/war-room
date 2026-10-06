@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-06T13:08:51.627Z",
+  "generatedAt": "2026-10-06T14:08:02.012Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1295,
+      "title": "fix(client): client log export runs the §54.6 credential blacklist; discovery failures logged once per streak (#1144)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1295",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T13:32:50Z",
+      "additions": 323,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "When someone exports the app's error log to share in a bug report, passwords, access tokens, API keys and private keys are now blanked out of the exported copy. Server names, file paths and coordinates are left in on purpose so the person can review the file before sharing, and the original log on the device is not changed. This closes a gap: the server already strips secrets from its own files, but this log is written by the app itself and never went through that cleanup. The app also stops repeating the same server-search error line about 15 times a minute when searching keeps failing, printing each message once until searching works again.",
+      "category": "fix",
+      "summaryHash": "053e56ae4eb7a9a3797073978a7c775633282e70"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 874,
