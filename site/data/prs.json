@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-05T23:20:31.812Z",
+  "generatedAt": "2026-10-06T00:19:44.609Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 859,
+      "title": "Fail a PR whose body drops a PR template section",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/859",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T23:39:02Z",
+      "additions": 227,
+      "deletions": 4,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds an automatic check that fails a pull request if its description leaves out a section of the project's standard template (such as the reasoning, the risks or the AI model used) or leaves one unfilled. Several recent pull requests skipped the template because it is only filled in automatically when a PR is opened from the GitHub web page, and nobody caught it. The check reads its rules from the template itself, skips automated bot PRs, and is not yet required to merge until a maintainer turns that on. The release process and contributor docs were updated to match. The main checking script was not shown in the trimmed diff, so its details could not be confirmed directly.",
+      "category": "ci",
+      "summaryHash": "d548c4b8a9c43b28cebdfb1b91f89dd463ad2b59"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 858,
+      "title": "Keep changelog fragment bullets on one line and enforce it in --check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/858",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-05T23:25:32Z",
+      "additions": 23,
+      "deletions": 42,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sets a single style rule for changelog notes: each bullet point is written on one line rather than wrapped across several, and the existing changelog check now rejects wrapped bullets. Two older notes that wrapped their lines were joined into single lines with the same words, and the guide's example was fixed to show the right style. This is an internal tidy-up. The published changelog and release notes look the same as before.",
+      "category": "chore",
+      "summaryHash": "20c979e2dfec6774fee8ff0cca9f3da9125106fe"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1276,
