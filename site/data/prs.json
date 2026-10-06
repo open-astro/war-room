@@ -1,11 +1,56 @@
 {
-  "generatedAt": "2026-10-06T05:15:26.796Z",
+  "generatedAt": "2026-10-06T06:14:49.444Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 866,
+      "title": "Fix changelog fence check reading inline code as a fence",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/866",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T05:52:34Z",
+      "additions": 37,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This fixes the automatic check that reviews release-note entries before they are accepted. It was rejecting some valid entries because it mistook a short snippet of code at the start of a line, or a deeply indented line, for the start of a larger code block that was never closed. Valid entries now pass, and genuine mistakes are still caught. This only affects the project's internal release-note tooling, not the telescope server itself.",
+      "category": "fix",
+      "summaryHash": "984fe82b2952568616c9a2f8dbc8916da2fdf3d2"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1289,
+      "title": "fix(guider): host-locality follow-ups — domain-aware name match, bounded resolve, one verdict per pass, remote-loss diagnostic (#1234)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1289",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T05:45:39Z",
+      "additions": 253,
+      "deletions": 43,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "This tightens how the app decides whether the guiding software runs on this computer or on another one. Previously a second device with the same base name on a different network, such as \"raspberrypi.site2\", could be mistaken for this machine, which led the app to start or restart the wrong local service. It now checks the full network name, and a slow network lookup can no longer hold up a guider restart request for more than about a second and a half. Other parts of the change: the app makes this decision once per reconnect cycle instead of on every attempt, a lost remote guider is now logged and flagged the same way as a local one, and switching to a profile that uses the same guider no longer cancels an automatic reconnect. The author left open a separate product question: whether the app should reconnect to the new profile's guider on its own.",
+      "category": "fix",
+      "summaryHash": "50000afc9fc79228d2378e05a3b960d67c534a22"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1288,
+      "title": "fix(mount): pad bands are the intersections with the secondary's bands; re-publish caps once a late axis answers (#1230)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1288",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T05:17:26Z",
+      "additions": 266,
+      "deletions": 43,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The on-screen direction pad for moving the telescope now only offers speeds that both of the mount's axes can actually run as chosen. Before, on some mounts a diagonal press could move one direction 6 to 12 times faster than the other, because one axis quietly rounded the chosen speed to its nearest supported step. The pad's speed list is also refreshed if the mount reports one axis's speeds late, instead of keeping an incorrect list for the whole session. One detail differs from the description: when the two axes share no speeds at all, the code first falls back to the previous, looser rule, and only uses the unfiltered list if that also yields nothing.",
+      "category": "fix",
+      "summaryHash": "bd5ab65e8fde2a4a1d904fcd4c18e6893cc167cf"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1287,
