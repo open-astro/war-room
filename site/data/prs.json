@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-06T08:13:01.124Z",
+  "generatedAt": "2026-10-06T09:12:04.095Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1294,
+      "title": "fix(platesolve): a centre request for another target while one runs is 409; camera capability test seam (#1149)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1294",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T08:46:27Z",
+      "additions": 234,
+      "deletions": 5,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "If you ask the telescope to center on a new target while it is still centering on a different one, the request is now turned down with a clear message saying which job is running and how to cancel it. Before, the second request quietly joined the running job, and the app could report the wrong target as centered. Asking again for the same target still just joins the job already running. The PR also adds test coverage for the camera's binning and exposure limits, and adds a changelog note that was missed in an earlier PR.",
+      "category": "fix",
+      "summaryHash": "acccc5a4b581b6a1000d431cc217f9d508be0418"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1293,
+      "title": "fix(mount): position resolves its frame first, sync observes the caller's token, a refused seed slew is slew_failed (#1222)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1293",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T08:20:20Z",
+      "additions": 187,
+      "deletions": 4,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Centering is more accurate right after a mount connects. Before, if centering started before the app had checked which coordinate system the mount uses, it guessed and could be off by about a third of a degree on its first try. It now checks first, at most once per connection, so a mount that never answers does not slow every step down. Stopping a sequence during a centering sync now takes effect right away instead of waiting up to 10 seconds, and polar alignment now reports a refused starting slew as \"slew failed\" instead of an internal error.",
+      "category": "fix",
+      "summaryHash": "bbb487b3851fb175e144de88024c87ecba1b536e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 868,
