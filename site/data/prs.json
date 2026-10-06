@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-06T00:19:44.609Z",
+  "generatedAt": "2026-10-06T00:50:03.865Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 862,
+      "title": "Fix sync slew ignoring a superseding command on Celestron, SynScan",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/862",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T00:36:04Z",
+      "additions": 168,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "For Celestron and SynScan telescope mounts, a 'go to these coordinates and wait' request now reports an error if another user or app interrupts it partway through (by stopping, parking, or manually moving the mount). Before, it wrongly reported success even though the telescope never reached its target. On Celestron mounts it could also switch tracking back on in the middle of a park or manual move. The code matches the description, and the change was checked with simulated mounts only, not real hardware.",
+      "category": "fix",
+      "summaryHash": "5546e55e8d23bd3a817282735d8e4baa708ce6bb"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 861,
+      "title": "Add gphoto camera catalog descriptor and remove its router arms",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/861",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T00:20:26Z",
+      "additions": 220,
+      "deletions": 34,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Internal reorganization that moves the gphoto camera (for DSLR-style cameras) into the shared device list used for all supported hardware. This removes another piece of camera-specific code from the main request handler. Setup should work the same as before, and the gphoto camera now appears in the server's list of supported devices. One small behavior change: the camera number setting must now be a whole number, so a saved setup with a value like 1.5 will no longer load and needs to be saved again with a whole number.",
+      "category": "refactor",
+      "summaryHash": "50f236dc0b8c25263d60d54a730ed5725fbba0a3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 859,
