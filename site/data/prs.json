@@ -1,11 +1,29 @@
 {
-  "generatedAt": "2026-10-06T09:12:04.095Z",
+  "generatedAt": "2026-10-06T11:10:22.198Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 871,
+      "title": "ci: bump anthropics/claude-code-action from 1.0.235 to 1.0.241 in the github-actions group",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/871",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-06T10:40:38Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update to the behind-the-scenes tool that runs AI-assisted code reviews on new changes, moving it to a newer version (1.0.241). The newer version includes some security tightening from the tool's makers plus general upkeep. Nothing changes for people using the project; this only affects the project's internal review automation.",
+      "category": "ci",
+      "summaryHash": "af8b99b31a4b89960ed9ef0365d2f967763e8168"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1294,
