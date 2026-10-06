@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-06T12:09:38.217Z",
+  "generatedAt": "2026-10-06T13:08:51.627Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 874,
+      "title": "Fix Sky-Watcher auto-detect probe hang on a port that ignores VTIME",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/874",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T12:16:48Z",
+      "additions": 165,
+      "deletions": 24,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Fixes a problem where automatic searching for a Sky-Watcher telescope mount could freeze indefinitely. Some USB-to-serial adapters ignore the usual 'stop waiting after a while' setting, so a port with nothing connected could stall the search forever. Now each port being checked gives up on schedule (about 1.5 seconds per attempt) and the search moves on. The same safeguard also covers a shared quick check used when connecting SynScan hand controllers, and the change includes new automated tests, though it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "4d99703cd7187294f8323cc9ee776b31148e0a3e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 873,
