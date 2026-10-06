@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-06T06:14:49.444Z",
+  "generatedAt": "2026-10-06T07:13:46.993Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 857,
+      "title": "Fix telescope readback, tracking, park, and guide state (#774)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/857",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-06T06:59:35Z",
+      "additions": 1050,
+      "deletions": 220,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Telescope apps connected through AlpacaBridge now get the mount's real position, tracking, parking and guiding status instead of guesses or leftover values, across Sky-Watcher, Celestron, ZWO and TheSkyX (Bisque) mounts. After a move the bridge reports where the mount says it is rather than where it was told to go, and if the mount stops answering position requests it now reports a clear error instead of repeating stale numbers. Tracking direction is chosen from the mount model and observing site, and park positions on equatorial mounts are saved so they stay correct as the sky turns. For some mounts that cannot report how they are set up, the bridge now refuses to answer instead of guessing, which may surface new errors for those users; a follow-up is planned to let people set this manually.",
+      "category": "fix",
+      "summaryHash": "2acae4dd1ec910c8caa63ddc625faed3ec1544d0"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1290,
+      "title": "fix(mount): a reconnect is recovered only after a clean read; ordered disconnect/connect; latch matched on any read; slew-watch guard (#1246)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1290",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T06:35:12Z",
+      "additions": 489,
+      "deletions": 27,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "When the telescope mount drops out and the app reconnects it, the mount is now only treated as recovered once it actually returns a good reading. Before, the bridge could say \"connected\" while every request still failed, so the app resumed the imaging run and announced \"Telescope recovered\" even though the mount was unusable. Now it keeps trying and, if it still cannot get a good reading, shows the usual \"not recovered\" notice. Reconnects also fully disconnect before connecting again, the stuck state is caught on any failed reading, and the app avoids false alarms while a mount is mid-move, waiting at most five minutes.",
+      "category": "fix",
+      "summaryHash": "2c95481a1ef80ea6d2e213411e802da8c8305ad4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 866,
