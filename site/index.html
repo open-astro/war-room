@@ -333,7 +333,7 @@
     const t = []; for (let v = step; v <= max; v += step) t.push(v); return t;
   }
   const fmtShort = (t) => new Date(t).toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" });
-  const fmtDay = (iso) => new Date(iso).toLocaleDateString(undefined, { weekday: "short", year: "numeric", month: "short", day: "numeric" });
+  const fmtDay = (iso) => new Date(iso).toLocaleDateString(undefined, { weekday: "short", year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
 
   function renderDevs(prs) {
     const counts = {};
