@@ -1,11 +1,56 @@
 {
-  "generatedAt": "2026-10-06T02:57:45.010Z",
+  "generatedAt": "2026-10-06T04:16:15.939Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1285,
+      "title": "fix(astrometry): DUT1 follow-ups — anchored extrapolation, last-day coverage, real-file fixture, override hardening, freshness check (#1232)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1285",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T04:05:33Z",
+      "additions": 238,
+      "deletions": 26,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Polishes how the app handles the small, changing difference between Earth-rotation time and clock time once its built-in reference table runs out. Readings now carry on smoothly past the end of the table instead of jumping by about 26 thousandths of a second, and the table's final day is fully counted rather than being treated as expired a day early. A bad custom table setting now falls back safely to the built-in table instead of breaking every later calculation. The automated checks also now warn when the built-in table is within 90 days of running out, and the tests use an exact copy of the official data file.",
+      "category": "fix",
+      "summaryHash": "3398c80488d537628c204abd120c1a9c820355a3"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1284,
+      "title": "feat(faults): fault-log retention — storage.fault_log_retention_days, daily sweep (#1145)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1284",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T03:45:13Z",
+      "additions": 559,
+      "deletions": 19,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "The app's record of equipment faults used to grow forever. Old entries are now cleared out automatically, once shortly after startup and then once a day. A new Settings → Storage option, \"Keep fault history (days)\", controls how long entries are kept: the default is 90 days, 0 keeps everything, and negative numbers are refused. Only the fault records are removed; captured images are not touched.",
+      "category": "feature",
+      "summaryHash": "76487ddbb4687ec7d66a41f3a85ddaeaa65c9626"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1283,
+      "title": "fix(astrometry): fold RA separation to ±12h, sign wrapped DMS, lift Windows-only test gates (#1217)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1283",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T03:18:56Z",
+      "additions": 47,
+      "deletions": 16,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Fixes plate-solve results for targets near the 0h line of right ascension (one of the two sky coordinates). Before, the app measured the gap the long way around the sky, so it reported a meaningless near-24-hour error and wrong pointing corrections; it now takes the short way. It also fixes a missing plus sign on some declination values written into image files, makes a set of coordinate tests run on every operating system instead of only Windows, and fixes an unrelated test that was failing at random.",
+      "category": "fix",
+      "summaryHash": "232d1885870c59a36e79c02ee2b1ef099fb539a5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1282,
