@@ -1,11 +1,56 @@
 {
-  "generatedAt": "2026-10-06T07:36:06.256Z",
+  "generatedAt": "2026-10-06T08:13:01.124Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 868,
+      "title": "Fix Sky-Watcher MoveAxis and sync stranding a running pulse",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/868",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T08:06:41Z",
+      "additions": 197,
+      "deletions": 25,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a Sky-Watcher mount bug where moving one axis by hand, or syncing the mount's position, could leave the other axis quietly turning at guiding speed while the software reported that guiding had stopped. Now a manual move only cancels guiding on the axis being moved, a sync stops both axes properly before updating the position, and a request that gets refused no longer interrupts guiding that is already running. Tested only against a simulated mount, not real hardware.",
+      "category": "fix",
+      "summaryHash": "90d62917ee0d7c64abbb99e249ee2c91511b075d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1292,
+      "title": "fix(sequencer): rate-limit progress-driven checkpoint writes; solver cancel kills the tree and stops the readers (#1219)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1292",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T07:46:35Z",
+      "additions": 329,
+      "deletions": 7,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "During plate solving, every line of output from the solver used to trigger a save of the sequence's progress file, which meant hundreds of writes to the SD card per centering. Saves driven by progress updates are now limited to about one per second, with a final save so the latest state is never lost, while start, pause, resume and stop still save immediately. The PR also makes cancelling a solve more reliably shut down the solver and stop reading its output, and adds tests. The author notes the cancel change makes no visible difference on Linux today.",
+      "category": "fix",
+      "summaryHash": "b039446114beb99b7cfaaf6c1570fa54ccb45257"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 867,
+      "title": "Add Player One catalog descriptor and remove its router arms",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/867",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T07:38:47Z",
+      "additions": 545,
+      "deletions": 179,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": "Player One cameras, filter wheels and power switches are now set up through the shared device catalog instead of special-case code in the server. When Player One support is not built in, the error message now says \"Player One\" correctly instead of just \"Player\". The automated check that every supported device gets the standard compatibility tests now reads the catalog directly, so it can no longer silently skip a device type. Two small behavior changes come with it: a log message wording changes, and a fractional or true/false device index is now rejected.",
+      "category": "refactor",
+      "summaryHash": "0255fb55639deb39ac73ad5eace22a0ac62499c8"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1291,
