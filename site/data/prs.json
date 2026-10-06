@@ -1,11 +1,56 @@
 {
-  "generatedAt": "2026-10-06T04:16:15.939Z",
+  "generatedAt": "2026-10-06T05:15:26.796Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1287,
+      "title": "fix(guider): record a fault row for every guide-camera drop, not just the first per episode (#1241)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1287",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T04:46:58Z",
+      "additions": 42,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "When the guide camera keeps disconnecting and reconnecting during a single guiding session, every drop now shows up in the fault log, not just the first one. The automatic reaction to losing the guider (such as pausing the sequence) still happens only once per session, so a flaky camera won't trigger it over and over, and each later drop is marked as resolved when the camera comes back. Deciding whether that reaction should switch back on after a long stretch of stable guiding was left for the maintainer on purpose.",
+      "category": "fix",
+      "summaryHash": "ae092e021037e352d8ba8cdd57b7d337a46d2960"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 864,
+      "title": "Fix Sky-Watcher Tracking=false racing an RA pulse-end restore",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/864",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T04:32:45Z",
+      "additions": 262,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a timing problem on Sky-Watcher mounts where turning tracking off right as a small guiding correction finished could fail. The mount would keep moving, and the user got a \"timed out\" error. Turning tracking off now always works and the mount stops, whatever order the commands land in. This was found through an occasional test failure and checked against a simulated mount only, so it still needs a check on real hardware before release.",
+      "category": "fix",
+      "summaryHash": "2f82c4fb8c44c14f224a416b3304d3d89143c6d4"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1286,
+      "title": "fix(guider): one reconnect deadline, cancellable mediator connect, dispose-safe disconnect, CanSetShiftRate (#1228)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1286",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T04:28:54Z",
+      "additions": 166,
+      "deletions": 9,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Cleans up how the sequencer reconnects the guider. A reconnect now waits at most one retry period instead of sometimes nearly two, and pressing Stop or Abort cancels the wait right away instead of making the user sit it out. It also releases a leftover timer sooner, stops disconnecting from raising an error if the guider is shutting down at the same moment, and correctly reports that the guiding software can shift its lock position.",
+      "category": "fix",
+      "summaryHash": "9343bde23a7e9fdcb8eac35978c0feb6cbd6f605"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1285,
