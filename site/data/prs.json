@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-06T07:13:46.993Z",
+  "generatedAt": "2026-10-06T07:36:06.256Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1291,
+      "title": "fix(platesolve): partial databases never picked, one directory scan, PUT echoes the stored path, URL-aware boot warning, wiring tests (#1215)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1291",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T07:14:18Z",
+      "additions": 408,
+      "deletions": 41,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "Plate solving (the step that works out where the telescope is pointing from a photo) no longer gets tripped up by a half-finished star catalog download. Before, a single leftover file from an interrupted download could be chosen and make the solver fail; now such incomplete catalogs are ignored, noted once in the log, and left out of the Settings list. The settings screen also now shows the solver path exactly as it was saved and refreshes the catalog status right after saving, and a solver set up as a web address gets a clear startup warning instead of a confusing \"not found\" message. Some checks on the real Raspberry Pi hardware are still pending, as the author notes.",
+      "category": "fix",
+      "summaryHash": "abd1655bb3ee8f4df8fd23d612f2195d000e59fb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 857,
