@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-06T00:50:03.865Z",
+  "generatedAt": "2026-10-06T02:18:01.635Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1280,
+      "title": "Review follow-ups from #1277: planetarium page-logic harness, daemon vdB magnitude (#1278, #1279)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1280",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T02:16:35Z",
+      "additions": 278,
+      "deletions": 20,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "Fixes a catalog mistake on the telescope server: for one family of faint reflection nebulae (the van den Bergh catalog), the listed brightness actually belongs to the nearby star lighting them, not the nebula itself. The server now treats these objects as having no known brightness, matching what the app already did, so they no longer show up as unusually bright targets. The PR also adds automated tests for the planetarium page's GoTo status messages and its coordinate search box, and these now run in the automated build checks on all three operating systems.",
+      "category": "fix",
+      "summaryHash": "07ccceccd6a13f6111b04240561584284b0e32fd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 863,
+      "title": "Ask for a ## Falsified by section in the PR body",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/863",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-06T01:59:00Z",
+      "additions": 5,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only change to the contributor guidelines. Pull request descriptions should now list each new test, and the code change that would make it fail, under its own \"Falsified by\" heading, so it shows up as a separate section instead of being buried in other text. The automated check already accepted this format, and older descriptions written the previous way still pass.",
+      "category": "docs",
+      "summaryHash": "18ab78efd7a21f5e2cd60d5941262a98650b3944"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1277,
+      "title": "Client fixes: draft-delete ghost editor, Tonight's Sky data holes, audit nits (#1142, #1141, #1198)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1277",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T01:30:51Z",
+      "additions": 864,
+      "deletions": 360,
+      "changedFiles": 36,
+      "labels": [],
+      "summary": "Fixes several app problems. Deleting a draft from the sequence Load dialog no longer leaves it open so it quietly comes back, unnamed, on the next save. Tonight's Sky now recognizes more popular imaging targets and rates faint nebulae that have no brightness data more sensibly, and two well-known regions (Jellyfish and Horsehead) that never matched because of a naming mismatch now do. The planetarium GoTo button now shows a checkmark only after the mount has actually moved, not just when the move was requested. Smaller fixes include showing a star's catalog ID instead of placeholder names like \"Anon (Marston)\", a cleaner GPS disconnect, and better filtering of network connections when finding a rig, plus some test cleanup.",
+      "category": "fix",
+      "summaryHash": "fba2c741c40f652ea7524129f4d0bb3e150303c5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 862,
