@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-06T14:08:02.012Z",
+  "generatedAt": "2026-10-06T15:07:11.209Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1296,
+      "title": "feat(planetarium): DSS2 tile cache housekeeping: size cap, .part sweep, cache-buster key, fetch shedding, token in path, Clean button (#1143)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1296",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-06T14:45:14Z",
+      "additions": 807,
+      "deletions": 55,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The planetarium's saved sky photos (the real telescope imagery that appears when you zoom in on a target) now look after themselves. The cache stops growing at about 512 MB by deleting the oldest photos first, while always keeping the basic overview images needed to start offline. It also cleans up half-finished downloads left over from a crash, and it no longer opens a pile of extra connections when many photos are requested at once. A new Settings → Storage row shows how much space the photos use and has a Clean button, and the photo addresses now include the app's private access code so other web pages on the same computer can't read or control the cache. The description notes that one part, re-downloading photos when the survey publishes a new version, is built in but not actually triggered by the planetarium today.",
+      "category": "feature",
+      "summaryHash": "4825a6fd891bdc0bb3ef53a28aab02b5d69d8312"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1295,
