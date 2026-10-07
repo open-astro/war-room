@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-07T09:51:20.226Z",
+  "generatedAt": "2026-10-07T10:50:27.596Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 885,
+      "title": "Fix connect failure reporting for Connected and Connecting",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/885",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T10:39:11Z",
+      "additions": 344,
+      "deletions": 73,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a telescope or other device fails to connect, astronomy apps talking to AlpacaBridge now reliably find out. Before, a request to connect could report success while the connection was still in progress, the \"is it connecting?\" check could hide a failure, and failures came back as the wrong kind of error. Now the server waits up to 60 seconds for the real result (it used to give up after 8), returns the failure with the device's own reason, and keeps showing it until the app tries again or disconnects. This changes the error some apps will see, and the author notes it was not tested on real hardware or with the ASCOM conformance checker; the trimmed diff shows the tests, settings, and docs, but the main server logic was too large to confirm line by line.",
+      "category": "fix",
+      "summaryHash": "453c18e77d8a574a01efa47fa53164198276c64c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 891,
