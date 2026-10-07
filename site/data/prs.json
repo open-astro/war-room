@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-07T08:52:14.399Z",
+  "generatedAt": "2026-10-07T09:51:20.226Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 891,
+      "title": "Define the [P1]-[P5] issue priority scale",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/891",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T09:08:18Z",
+      "additions": 32,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project now has a written definition of the P1 to P5 priority tags that start every issue title, from P1 (unsafe or broken for real users right now) down to P5 (housekeeping and nice-to-haves), with a plain test and real examples for each level. It also sets firm rules: anything that could move telescope hardware unexpectedly or fail to stop it is never ranked below P2, and priorities should reflect impact that someone has actually checked rather than whatever a reporter or review bot suggested. This came after a review bot marked several issues as top priority when some turned out not to be real problems, so the goal is more consistent and trustworthy priorities. Only documentation changed, and it matches what the description says.",
+      "category": "docs",
+      "summaryHash": "b80621f53e0d5bfd02944c508a900960ad10bcb9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 883,
