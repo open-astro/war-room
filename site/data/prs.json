@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-06T18:05:47.505Z",
+  "generatedAt": "2026-10-07T00:58:49.162Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 876,
+      "title": "Flag the four 4.3.0 changes that break a 4.2.0 setup, and add a breaking test",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/876",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T00:26:40Z",
+      "additions": 84,
+      "deletions": 14,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The release notes now clearly warn about four changes that can stop an existing 4.2.0 setup from working after an upgrade. These are: certain Sky-Watcher SynScan mounts refusing to track, saved GPIO switch settings with out-of-range values being skipped, saved camera entries with odd number values not loading, and iOptron mounts no longer retrying a refused slew. Because these count as breaking, the next release will be numbered 5.0.0 instead of 4.3.0, and each warning tells users what to do after upgrading. The PR also moves three entries that had been wrongly listed under the already-released 4.2.0, corrects an out-of-date note about the network address check, and adds a simple \"breaking or not\" checklist so bug fixes with side effects get flagged in the future. No program code changes; only notes and contributor guidelines were edited.",
+      "category": "docs",
+      "summaryHash": "874a6b0eae51251cbe5e8d4cef3770bf9628c9ba"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1297,
