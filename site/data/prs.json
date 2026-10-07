@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T15:46:16.355Z",
+  "generatedAt": "2026-10-07T16:46:01.682Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -17,9 +17,9 @@
       "deletions": 12,
       "changedFiles": 3,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "For telescopes controlled through TheSkyX (Bisque), pressing \"stop\" while a guiding nudge was in progress used to freeze all status readings, such as whether the mount is moving, until the nudge finished. Now those readings keep answering normally while the stop request waits its turn. The fix also limits each guiding nudge to 30 seconds, where before a single nudge could tie up the connection for weeks. This is a small breaking change: any software that asks for a nudge longer than 30 seconds will now get an error, though real guiding nudges last from milliseconds to a few seconds. The changes were checked only against a simulated TheSkyX, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "ba37a7c69d3905a420b5a63a6f153b6c9f2e5e94"
     },
     {
       "repo": "open-astro/AlpacaBridge",
