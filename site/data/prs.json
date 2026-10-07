@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-07T04:55:29.558Z",
+  "generatedAt": "2026-10-07T07:52:57.502Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 879,
+      "title": "Add alignment mode setting for SynScan AZ-EQ and Celestron forks",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/879",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T07:13:28Z",
+      "additions": 353,
+      "deletions": 81,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "Owners of Sky-Watcher AZ-EQ5/AZ-EQ6 mounts and Celestron fork mounts can now tell the server how their mount is set up, using a new Alignment Mode choice (auto, Alt-Az, or equatorial) in the device settings form. The mount's handset doesn't report this, so after a recent change AZ-EQ mounts could not track at all and fork mounts on a wedge were treated as Alt-Az. With the setting chosen, AZ-EQ mounts track and park correctly again and wedge-mounted forks are handled as equatorial, while leaving it on auto keeps the current behaviour. The visible code matches the description, and the author notes it has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "cbf27f81702c7420a57019cc28a86903f71f2de3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 877,
