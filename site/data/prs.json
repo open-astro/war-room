@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-07T10:50:27.596Z",
+  "generatedAt": "2026-10-07T14:47:12.596Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 892,
+      "title": "Validate ZWO ASI294MC Pro on arm64 (ConformU 4.5.1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/892",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-07T14:18:10Z",
+      "additions": 307,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO ASI294MC Pro camera is now officially listed as a supported, tested device. It was run through the standard ASCOM compatibility checker on a Raspberry Pi 4 and passed with no errors or warnings, and the full test report was added to the project. The public device lists were updated to include it, raising the advertised count from 80 to 81 validated devices. No driver code changed, so this is a documentation and test-record update only, with no change to how the software behaves.",
+      "category": "docs",
+      "summaryHash": "d59d9d31c78e2ad8c72a9ddde77d56d4b8214a68"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 885,
