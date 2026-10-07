@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-07T16:46:01.682Z",
+  "generatedAt": "2026-10-07T20:42:06.366Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 894,
+      "title": "Fix QHY bin write and ToupTek abort blocking during an exposure",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/894",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T20:31:26Z",
+      "additions": 158,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Two camera brands no longer freeze while a picture is being taken. On QHY cameras, changing the binning setting during an exposure used to make the driver wait for the whole frame and block other requests; it now refuses straight away with a clear 'not allowed right now' error. On ToupTek cameras, an abort or disconnect that arrived while the camera was restarting could be undone, so the user waited for the full exposure; abort and disconnect now take effect immediately. New automated tests cover both cases, but the fix has not yet been tried on real cameras.",
+      "category": "fix",
+      "summaryHash": "cb8028b0c0f0c1795aa330eaeed82233a6df801f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 895,
+      "title": "Fix Sky-Watcher guard missing a crossing before its first sample",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/895",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T20:08:17Z",
+      "additions": 67,
+      "deletions": 7,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Sky-Watcher mount's safety guard for the low-altitude limit and the meridian limit now reliably stops the mount. Before, the guard took its first reading only after the mount had started moving. If the mount was already past a limit by then, the guard treated that position as normal and never stopped it. The mount's position is now recorded before any motion begins, so a manual move or tracking that starts from rest is halted at the limit, and a mount that starts outside a limit can still be moved back in. The change adds two automated tests (the description mentions only one) and has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "7c5848550a777cda44fb280658e6058dd7fba152"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 893,
