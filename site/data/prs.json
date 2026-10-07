@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-07T07:52:57.502Z",
+  "generatedAt": "2026-10-07T08:52:14.399Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 883,
+      "title": "Document SynScan handset recovery when the SBC powers it over USB",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/883",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T08:39:49Z",
+      "additions": 19,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds instructions for reviving a Sky-Watcher SynScan hand controller that has stopped responding, for setups where the small computer at the telescope powers the hand controller through its USB cable. Restarting the mount alone does not reset the hand controller in that setup. The fix that worked every time on the test rig is to unplug the USB cable, power-cycle the mount, wait 30 seconds at the main screen, then plug the cable back in. The automated compatibility-test routine now also checks that the hand controller answers a position request before a test run starts. This is a documentation and procedure change only; the driver itself is unchanged, and the new pre-run check has not yet been tried in a real test session.",
+      "category": "docs",
+      "summaryHash": "187da272254c23112a370222e1023477a5b92b60"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 884,
+      "title": "Add Celestron per-axis pulse guiding regression tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/884",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T08:26:28Z",
+      "additions": 98,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Adds automated tests for Celestron mounts. They check that a small guiding correction on one axis no longer cuts short or hides a correction already running on the other axis. The underlying bug was already fixed in an earlier change, and these tests make sure it cannot quietly come back. This is test-only work with no change to how the software behaves, though it adds about 8 seconds to the test run.",
+      "category": "tests",
+      "summaryHash": "4bcbb39aa2e8c448406c532efa19d2e2a32e439d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 879,
