@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-07T03:56:55.028Z",
+  "generatedAt": "2026-10-07T04:55:29.558Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 877,
+      "title": "Fix ASIAIR PWM release, PDH reader spin and Bisque reply shift",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/877",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T04:38:27Z",
+      "additions": 280,
+      "deletions": 11,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Fixes three separate problems with equipment connections. When the ZWO ASIAIR Pro power box disconnects, any dimmable port such as a dew heater is now left fully on or fully off to match its setting, instead of sometimes being left off at random. When a Gemini PDH power hub is unplugged, the server no longer burns a full CPU core retrying, because it now pauses briefly between empty reads. With the TheSkyX telescope link, a late reply is now thrown away instead of being handed to the next command, which used to leave every later answer one step behind; the author notes one wrong reply can still slip through in a narrow timing window. The code matches the description, and each fix has a new test, though none was tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "6df51f51162539340d39aa215c9f83c193972754"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 878,
+      "title": "Fix WeeWX AveragePeriod and TimeSinceLastUpdate contract",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/878",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T04:22:50Z",
+      "additions": 215,
+      "deletions": 22,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Makes the WeeWX weather-station driver report data the way the astronomy device standard expects. The averaging period now always reads zero, since the station gives live readings, and any attempt to set another value is rejected. Asking how long since the last weather update with no specific sensor named now returns the real time since the freshest reading, instead of wrongly saying the data never updated. Asking about a sensor name that does not exist now returns an \"invalid value\" error rather than \"not implemented.\" This matters for safety logic that watches for stale weather data. The code matches the description, and the author notes it fixes only part of the linked issue.",
+      "category": "fix",
+      "summaryHash": "36c4521a148fd2d6c8fa72828453d9c2ba2b1c18"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 875,
