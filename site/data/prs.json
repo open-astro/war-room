@@ -1,11 +1,65 @@
 {
-  "generatedAt": "2026-10-07T20:42:06.366Z",
+  "generatedAt": "2026-10-07T22:40:44.391Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1302,
+      "title": "ci: Bump anthropics/claude-code-action from 1.0.235 to 1.0.241 in the github-actions group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1302",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-07T22:27:23Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update of the tool that runs our automated AI code reviews, moving it to a slightly newer version. The newer version includes some security tightening from the tool's makers. Nothing changes for users of the app.",
+      "category": "ci",
+      "summaryHash": "02c3bdd5133e884551bd861a70dcc11b5b0bb5a7"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1301,
+      "title": "build: Bump the nuget group with 1 update",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1301",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-07T22:11:22Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine automated update of a small library used by the server, which provides its browsable page documenting the server's interface. It moves to a minor patch version with no published notes, and the list of third-party licenses was updated to match. No visible change is expected.",
+      "category": "chore",
+      "summaryHash": "10589a40e9e910377a264f868b0cdeceac1dac49"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1300,
+      "title": "build: Bump the pub group in /client/openastroara_client with 4 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1300",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-07T21:57:48Z",
+      "additions": 39,
+      "deletions": 35,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "dart"
+      ],
+      "summary": "Routine automated update of four libraries used by the client app: the iOS-style icon set, the app version lookup, link opening, and the embedded web view used for the planetarium sky view. The icon set jumps to a new major version, which can bring bigger changes, though nothing else in the app needed to change for it. The diff also records that each library's license was checked and is effectively unchanged, and updates the third-party license list.",
+      "category": "chore",
+      "summaryHash": "251be8bc7217b8e4be83d1b718418031b2f7e3c9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 894,
