@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-07T00:58:49.162Z",
+  "generatedAt": "2026-10-07T03:56:55.028Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 875,
+      "title": "Fix Sky-Watcher limits not stopping MoveAxis and tracking",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/875",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T03:37:05Z",
+      "additions": 1689,
+      "deletions": 1095,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "On Sky-Watcher mounts, the minimum-altitude and meridian safety limits now also apply during manual moves and normal tracking, not just when slewing to a target. Before this, a manual move or long tracking session could drive the telescope past a limit and into the tripod or the ground; now the driver watches the position and stops the motion, logging a warning, as soon as it crosses a configured limit. Motion that starts already past a limit is left alone so you can move back out, and Park and Find Home are still not limited. The settings page text is updated to match, and it notes that gotos are still not refused at the meridian limit. The code also includes a small fix, mentioned only in passing in the description, that keeps the reported position from jumping when a guiding pulse overlaps a limit check.",
+      "category": "fix",
+      "summaryHash": "78f5bda4a953d017033e2d694115c53043c976bd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 876,
