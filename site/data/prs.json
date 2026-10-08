@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-08T04:35:49.180Z",
+  "generatedAt": "2026-10-08T08:32:54.152Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 909,
+      "title": "Add a connection status dot to the Devices tab",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/909",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T07:46:34Z",
+      "additions": 414,
+      "deletions": 10,
+      "changedFiles": 25,
+      "labels": [],
+      "summary": "The Devices tab in the web interface now shows a small colored dot before each device name: green when a client is connected and the device is responding, yellow when it is loaded but not connected, and red when there is a fault. Before this, a mount whose cable was pulled or whose power was cut could still look healthy, so users had to open each device to find problems. Only some drivers can report link problems so far (Celestron, SynScan, iOptron, Sky-Watcher, Gemini, and WandererAstro), so other devices will show green or yellow but never red for a lost link. The page refreshes the dots every 5 seconds while the tab is open, and the change was checked on real telescope hardware.",
+      "category": "feature",
+      "summaryHash": "044e233fd643094893161c851fd9ce26df6b4746"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 907,
