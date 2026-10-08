@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-08T03:36:48.943Z",
+  "generatedAt": "2026-10-08T04:35:49.180Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 907,
+      "title": "Add a ZWO CAA SDK test seam and fake-based rotator tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/907",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T04:05:27Z",
+      "additions": 298,
+      "deletions": 56,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "The ZWO CAA rotator now has automated tests that run without the manufacturer's software installed, using a stand-in that pretends to be the rotator. To make that possible, the rotator code was lightly restructured so it can talk to either the real rotator or the stand-in, but in normal use it still talks to the real rotator exactly as before, so nothing changes for users. The new tests check that a saved Sync position is remembered after reconnecting, is tied to each rotator's serial number, and is applied when moving, and that reverse mode and a failed connection are handled correctly. It was not tried on real hardware, though the code that runs on real hardware is unchanged.",
+      "category": "tests",
+      "summaryHash": "e408ecc5594f430c2c6fb1ce0ddfff724097a9cb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 905,
