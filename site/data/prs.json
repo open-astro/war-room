@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-08T01:38:11.697Z",
+  "generatedAt": "2026-10-08T02:38:34.537Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1304,
+      "title": "feat(focus): Bahtinov mask focusing on Setup → Smart Focus (#1299)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1304",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-08T02:32:58Z",
+      "additions": 3987,
+      "deletions": 31,
+      "changedFiles": 27,
+      "labels": [],
+      "summary": "Users can now focus the main telescope with a Bahtinov mask, a simple cover that turns a bright star into three light spikes that line up only when the scope is in focus. The focus screen gets a choice between autofocus and Bahtinov mode, and opens in Bahtinov mode when no motorised focuser is connected. While it runs, the app shows the star with the spikes drawn on it, how far off focus it is, and plain advice such as \"keep going\" or \"you passed focus.\" Autofocus and imaging runs are blocked until it finishes, so nobody shoots through the mask by accident. This first version only guides manual focusing and has been tested on simulated stars, not yet on a real sky.",
+      "category": "feature",
+      "summaryHash": "de45310cf7b245e2b0123e6dbeb255f69d1e3d26"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 899,
