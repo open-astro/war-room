@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-08T09:32:04.633Z",
+  "generatedAt": "2026-10-08T18:24:53.777Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 904,
+      "title": "Improve ImageBytes payload performance",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/904",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-08T17:40:54Z",
+      "additions": 493,
+      "deletions": 180,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Downloading full camera images in the fast binary format is now much quicker and uses less memory, because the server no longer makes several extra copies of the image before sending it. On a Raspberry Pi 4 with a ZWO ASI6200 camera, a 122 MB frame went from about 3.4 seconds to 1.3 seconds, and peak memory use dropped by about a quarter. One deliberate behavior change: if a camera driver hands over a broken image whose size doesn't match its stated dimensions, both image formats now return a clear error instead of quietly sending partial data. The standard compatibility checker still reports some separate timing failures, which are tracked as follow-up work.",
+      "category": "feature",
+      "summaryHash": "31188586e47242c87babe698299c1d67c68753f0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 908,
