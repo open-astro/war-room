@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-08T18:24:53.777Z",
+  "generatedAt": "2026-10-08T20:22:59.267Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1309,
+      "title": "feat(client): the workstation fits the window, small laptop to 4K",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1309",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-08T20:00:55Z",
+      "additions": 1460,
+      "deletions": 332,
+      "changedFiles": 29,
+      "labels": [],
+      "summary": "The desktop app now resizes to fit the window, from small laptop screens up to 4K monitors. Focusing, polar alignment, the live view with its guiding graph, and the planning sky view now fill the space they have and grow on big screens, and only scroll when the window is too short. The smallest allowed window also gets shorter so the app works on common laptops. It fixes a bug where a captured image did not re-fit after a window resize, plus several Linux and Windows problems: the sky view staying the wrong size, see-through menu cards, a time control hidden behind other buttons, and repeated network error messages. A few screens still scroll slightly at the very smallest window size, and polar alignment has not yet been tried on a real telescope at night.",
+      "category": "feature",
+      "summaryHash": "46a39bbbd9a5f1acf458365ea8a4f7f517a846b2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 904,
