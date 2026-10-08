@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-08T08:32:54.152Z",
+  "generatedAt": "2026-10-08T09:32:04.633Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 908,
+      "title": "Fix ZWO MoveAxis stop, SynScan slew preconditions, Bisque guide rates",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/908",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T09:05:28Z",
+      "additions": 363,
+      "deletions": 59,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "Fixes several telescope-control mistakes in three mount types. On ZWO mounts, stopping movement on one axis no longer stops the other. SynScan mounts now refuse a slew when tracking is off and refuse guiding nudges while a slew is underway. Bisque mounts now reject guide speeds outside the allowed range. The PR also makes a larger change that its title does not mention: for every telescope, the server now refuses the older 'slew and wait' commands, so client programs must use the 'start slew and check back' form. The PR calls this a breaking change that requires a new major version (5.0.0), and none of it has been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "7d1472c3e55c3c07f42efeaca3219b014974879e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 909,
