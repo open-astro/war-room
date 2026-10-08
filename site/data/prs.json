@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-08T00:39:00.591Z",
+  "generatedAt": "2026-10-08T01:38:11.697Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 899,
+      "title": "Fix rotator and QHY filter wheel move completion reporting",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/899",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T01:17:23Z",
+      "additions": 270,
+      "deletions": 21,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "Three telescope accessories now report the end of a move honestly instead of faking success or getting stuck. The WandererAstro rotator no longer claims it reached its target when the controller never confirms the move. It keeps the last confirmed angle and reports an error that points to the power supply. The QHY filter wheel no longer shows 'still moving' forever after a failed move or when it stops on the wrong slot, and the ZWO rotator now says it can't report its step size instead of giving a made-up zero. None of this was tested on real hardware, and the time the QHY wheel must rest before it counts as stopped was flagged for a hardware check before release.",
+      "category": "fix",
+      "summaryHash": "120b38b4b7849b9c79171f306340172d70ea16b6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1303,
+      "title": "feat(equipment): manual filter wheel, a driverless wheel that prompts for each hand swap (#1298)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1303",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-08T00:51:44Z",
+      "additions": 2938,
+      "deletions": 80,
+      "changedFiles": 42,
+      "labels": [],
+      "summary": "Owners of telescopes with hand-changed filters (drawers, sliders or wheels turned by hand) can now choose a 'Manual filter wheel' that needs no driver. When an imaging run needs a different filter, the app shows an 'Install the X filter' prompt on every screen, posts a notification, and waits with no time limit until the user confirms the swap or cancels it. It also remembers which filter is installed across restarts. The same change makes the run editor show what each loop actually does (frame count, time, autofocus and dither schedule), and the toolbar Delete button now removes only the highlighted item, with Undo, instead of always wiping the whole sequence. It also fixes server errors when someone picks a filter slot that doesn't exist or uses a wheel that isn't connected. As the description notes, saved images still don't record which filter was used, for any filter wheel.",
+      "category": "feature",
+      "summaryHash": "7e66ec8f485dfb5f87b3409dd6168b4d7421a906"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 901,
