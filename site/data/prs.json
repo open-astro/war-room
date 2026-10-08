@@ -1,11 +1,56 @@
 {
-  "generatedAt": "2026-10-08T02:38:34.537Z",
+  "generatedAt": "2026-10-08T03:36:48.943Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 905,
+      "title": "Persist the rotator Sync offset across reconnects and restarts",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/905",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T03:26:52Z",
+      "additions": 480,
+      "deletions": 9,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "Rotators from WandererAstro and ZWO now remember their alignment correction (the angle offset set with a sync) after a disconnect, reconnect, or server restart, instead of losing it and going back to the raw motor angle each time. The offset is saved to a small settings file on the telescope computer, and if that file cannot be read or written, the problem is logged and the rotator keeps working. Only the WandererAstro path has its own end-to-end test. The ZWO change was not built or tested by the author, and neither rotator has been checked on real hardware.",
+      "category": "fix",
+      "summaryHash": "9f78626ba2b3ebc6d6ea16f50245002785fe2599"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 903,
+      "title": "Move the OnStep telescope into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/903",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T03:04:53Z",
+      "additions": 448,
+      "deletions": 101,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Internal reorganization that moves OnStep telescope setup into the shared device list that most other brands already use, removing OnStep-specific code from the web request handling layer. Users should see almost no difference, but OnStep now appears in the server's list of supported devices, and the error message for an out-of-range site latitude or longitude has slightly different wording. Saved settings also now keep the serial port details even when auto-detect is chosen, though they are only used for a serial connection.",
+      "category": "refactor",
+      "summaryHash": "af1e141c3e963888e4f96657082317bfd2ce3f9b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 902,
+      "title": "Fix Gemini focuser and flat panel reading a late reply as the next one",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/902",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T02:45:07Z",
+      "additions": 69,
+      "deletions": 0,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Fixes a bug where the Gemini focuser and Gemini flat panel could act on an old, late-arriving reply as if it were the answer to a new command, which could report the wrong focuser position or flat panel brightness or cover state. Before sending each command, the software now throws away any leftover data waiting on the connection, so each command only reads its own reply. New automated tests cover both devices, but the fix has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "69ebac3380f2239d1861e5e3f2334f00bd794703"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1304,
