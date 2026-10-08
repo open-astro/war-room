@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-08T22:21:22.679Z",
+  "generatedAt": "2026-10-08T23:20:38.791Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 915,
+      "title": "Fix Sky-Watcher tty exclusive claim and link fault recovery",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/915",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T22:40:29Z",
+      "additions": 96,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The Sky-Watcher direct mount driver now reserves the mount's serial connection for itself while connected, so another program on the same computer can no longer grab it and scramble its communication settings. If the link to the mount still goes quiet, the driver now restores its own settings after each timeout, so the connection recovers by itself once the mount answers again. Before this, the connection stayed broken until someone reconnected, and that reconnect could fail too. It was checked with a simulated mount but not on real hardware.",
+      "category": "fix",
+      "summaryHash": "d2a418bd17c765598bcab031d259ce675edcad32"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 917,
+      "title": "Move Sky-Watcher sleeps and slew deadlines onto the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/917",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T22:22:18Z",
+      "additions": 520,
+      "deletions": 225,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the Sky-Watcher mount driver. Its timed waits, such as waiting for the mount to stop, finish a slew, or return home, now run on a clock that tests can fast-forward. Behavior with a real mount should be unchanged, though it was not tested on hardware. The main benefit is faster, more reliable tests: the Sky-Watcher test run drops from about 15 to about 13 minutes, and new tests check that each timeout fires at the right moment.",
+      "category": "tests",
+      "summaryHash": "4a32879ad862fcccbfe1fdda4bc1a2fe922feb6a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 916,
