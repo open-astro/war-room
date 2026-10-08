@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-08T20:22:59.267Z",
+  "generatedAt": "2026-10-08T22:21:22.679Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 916,
+      "title": "Move the Celestron telescope into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/916",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T21:55:01Z",
+      "additions": 537,
+      "deletions": 129,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Settings for Celestron telescopes are now managed in the same central place as Sky-Watcher, Bisque and OnStep, instead of being handled inside the web request layer. This is mostly internal tidying that makes adding future vendors easier, but there are two small visible differences: saved Celestron settings now keep connection details that aren't in use (for example a serial port when the network connection is chosen), and an out-of-range site latitude or longitude now gets a slightly different error message. It has not been tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "9cdd36459f0d11592cbd4643bb23ebb18de4e29e"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1310,
+      "title": "fix(camera): sequence frames record the wheel's installed filter",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1310",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-08T21:47:52Z",
+      "additions": 193,
+      "deletions": 7,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Photos taken during an imaging sequence now record which filter was in the filter wheel. Before, they were saved with no filter for every kind of wheel, because the step that takes the picture does not name a filter. Now, if no filter is named, the app uses the one currently in the wheel, unless the wheel is disconnected, still moving or waiting on a manual swap. This fills in the filter in the image file, the saved frame list and file names, and it means the automatic refocus that watches for focus drift can finally trigger on setups with a filter wheel. The PR also fixes an intermittent test failure on macOS and Linux, which does not affect users.",
+      "category": "fix",
+      "summaryHash": "2b1da122764a3cae0cea10e9ff0446f62c5614e6"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1309,
