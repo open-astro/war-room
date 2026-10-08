@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-07T22:40:44.391Z",
+  "generatedAt": "2026-10-08T00:39:00.591Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 901,
+      "title": "Fix ASIAIR Plus close leaving a partial-duty PWM port off",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/901",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T00:27:25Z",
+      "additions": 157,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "On the ZWO ASIAIR Plus, disconnecting could leave a power port that was set to a partial power level (for example a dew heater at 50%) switched off, depending on where its on/off cycle happened to stop. Now, on disconnect, any port set above 0% is left on and any port at 0% is left off, matching what the ASIAIR Pro already does. This keeps heaters and other gear powered after a disconnect, as users expect. It adds a test and updates the docs. It has not been tried on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "d80e7940601447407abf36ef9a6678f0565b1752"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 900,
+      "title": "Fix QHY camera ICameraV4 violations",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/900",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-08T00:09:28Z",
+      "additions": 339,
+      "deletions": 63,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The QHY camera driver now gives honest answers to astronomy apps like NINA instead of hiding problems or making up numbers. A failed or stuck exposure is now reported right away instead of looking like the camera is still working. The driver no longer claims it can stop an exposure early and keep the image, so apps should use abort instead. Readings the camera cannot actually provide, such as heat-sink temperature, or a sensor temperature it has not read yet, now return a clear 'not available' error instead of a fake value like 0 or 20°C. It also rejects exposures longer than the camera's maximum. One trade-off is that apps watching the temperature may briefly see an error after a single failed reading. It has not been tried on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "d6debd44902ddf7f76b4afb77238eb98dca34aae"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 897,
+      "title": "Fix SynScan GOTO landing 29 arcsec off in RA",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/897",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-07T23:54:11Z",
+      "additions": 527,
+      "deletions": 9,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts controlled through a SynScan handset could finish a slew to a target about 29 arcseconds off (measured on an EQM-35 Pro), which is outside the 10 arcsecond tolerance used by the standard ASCOM compatibility checker. After each slew the driver now checks where the mount actually landed and makes up to three small corrective moves. If it is still more than 10 arcseconds off, it reports the slew as failed instead of pretending it succeeded. Slews may take a little longer as a result. Disconnecting, stopping, or starting a new move during a slew now responds immediately. This changes real mount motion and has not been tested on hardware yet, so the team plans a check on the EQM-35 Pro after merge.",
+      "category": "fix",
+      "summaryHash": "a08170014d721574b9d2036784ff9869e1a2c023"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1302,
