@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-09T08:13:09.323Z",
+  "generatedAt": "2026-10-09T10:11:09.253Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 935,
+      "title": "Fix AbortSlew swallowing failed stops on OnStep, Celestron and SynScan",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/935",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T09:21:00Z",
+      "additions": 273,
+      "deletions": 10,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When someone tells an OnStep, Celestron or SynScan telescope mount to stop moving, the software now sends every stop command even if one of them fails, and it reports an error if any could not get through. Before, a failed stop could be silently ignored, or could cause the remaining stop commands to be skipped, so the mount might keep moving while the software claimed it had stopped. When a stop fails, the mount is also no longer marked as stopped. The tradeoff is that on an unresponsive Celestron or SynScan connection, the stop request can now take up to about three times longer before giving up, and the change has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "00bc6a7f4f52d2530525a966a53d026070cfb6b2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 930,
