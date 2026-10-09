@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-09T04:16:13.398Z",
+  "generatedAt": "2026-10-09T06:11:18.703Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 918,
+      "title": "Add beta channel release tooling",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/918",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T05:53:44Z",
+      "additions": 1459,
+      "deletions": 88,
+      "changedFiles": 30,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Maintainers can now publish beta test versions of AlpacaBridge before a full stable release. Upcoming versions will be prepared on a separate long-lived release branch, put out as opt-in betas, and only later promoted to stable. The automated checks, release notes, version numbering and installer packaging were all updated to understand beta versions, and the built-in update check now links users to the correct beta release page. New documentation explains how the beta channel works and how people can opt in, though actually publishing beta packages to the download server happens outside this project.",
+      "category": "feature",
+      "summaryHash": "c97452ed8bf80a819f8b2d328db8f046314a185b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1312,
