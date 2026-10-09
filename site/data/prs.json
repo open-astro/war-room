@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-08T23:20:38.791Z",
+  "generatedAt": "2026-10-09T02:17:56.827Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 921,
+      "title": "Add a Sky-Watcher per-device Dec axis sense override",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/921",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T01:28:38Z",
+      "additions": 444,
+      "deletions": 40,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "Sky-Watcher mount owners can now pick a new 'Dec axis sense' setting (auto, normal, or reversed) for each mount in the web settings form. On some motor boards that haven't been measured yet, the software guessed the axis direction wrong and sent the telescope to a spot half a sky away, and until now users had to wait for a new release. This setting lets them fix it themselves right away. The device's displayed name now also says where that direction came from (measured, user override, unmeasured default, or the board couldn't identify itself), which helps with troubleshooting. The change has not been tried on real hardware yet.",
+      "category": "feature",
+      "summaryHash": "c92b4fcce23b2aa31b38a609e781f5fda28d0786"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 915,
