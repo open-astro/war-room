@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-09T13:08:36.517Z",
+  "generatedAt": "2026-10-09T19:01:20.646Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 936,
+      "title": "Add Canon bulb exposures through eosremoterelease",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/936",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T18:47:35Z",
+      "additions": 807,
+      "deletions": 493,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Canon cameras controlled through the project's general camera driver can now take long exposures (up to an hour) instead of being stuck at a 30-second maximum, which matters for astrophotography. Canon bodies don't have the simple 'bulb' switch that Nikon cameras use, so the driver now holds the shutter open by sending the equivalent of pressing and releasing the remote shutter button, and it always sends the release, even if something goes wrong or the exposure is cancelled. It also works when the camera's mode dial is set to B, which previously failed outright on the EOS 70D. This was tested on the EOS 70D and 250D only, and a small side change to how the driver picks the long-exposure setting could affect Nikon cameras but was not re-tested on one.",
+      "category": "feature",
+      "summaryHash": "5bb0a02fde1d8916627c2d2d01b20f9452043803"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 934,
