@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-09T20:02:53.310Z",
+  "generatedAt": "2026-10-09T21:01:58.567Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 944,
+      "title": "Fix QHY CCDTemperature before the first poll",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/944",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T20:47:17Z",
+      "additions": 52,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem where a cooled QHY camera could not report its sensor temperature immediately after connecting. Until the bridge's first routine temperature check, which happens shortly after connecting, asking for the temperature returned an error, and the standard ASCOM compliance checker asks early enough to hit it. The camera now takes one temperature reading while it is connecting, so a real value is ready right away; if that reading fails, the connection still succeeds and the camera reports an error rather than a made-up number. The code matches the description, but the fix has only been checked with simulated cameras, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "2b45a9f8557ad5834c82a333f562a46bfe6870db"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 940,
