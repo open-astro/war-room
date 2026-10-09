@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-09T02:17:56.827Z",
+  "generatedAt": "2026-10-09T04:16:13.398Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1312,
+      "title": "feat(guiding): polar alignment residual from guiding Dec drift (#1311)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1312",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-09T03:55:31Z",
+      "additions": 2579,
+      "deletions": 50,
+      "changedFiles": 37,
+      "labels": [],
+      "summary": "Ara now tells you how much polar alignment error is still left after setup, worked out automatically from the first five minutes of each guiding run with no extra steps. The guiding strip shows a progress readout and then a rating like \"PA ≥ 48″ · Excellent\" (or \"noisy\" or \"n/a\" when it can't measure well), and each night's results are saved and shown in the Image Library alongside that imaging session. The number is a minimum, not the full error, and it is skipped when comet tracking or an adaptive-optics unit is in use. The visible code matches the description, but it has only been tested in simulation, not yet on a real telescope, and some smaller Polar Align improvements from the original request are left for later.",
+      "category": "feature",
+      "summaryHash": "c15f046c0130be8aa1215ae4b27f098718765b39"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 921,
