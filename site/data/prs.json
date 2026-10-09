@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-09T19:01:20.646Z",
+  "generatedAt": "2026-10-09T20:02:53.310Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 940,
+      "title": "Move the QHY devices into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/940",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T19:35:42Z",
+      "additions": 700,
+      "deletions": 226,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Setup rules for QHY cameras, filter wheels and the Q-Focuser now live in one QHY-specific place, instead of being split between that place and the central part of the server that handles incoming web requests. For users, behavior should mostly stay the same, with one breaking change: settings that should be whole numbers are now checked strictly, so a saved config with a fractional or true/false value in those fields will be rejected. The change was not tested on real hardware, and the QHY-enabled build was left to the automated checks because the QHY software kit only runs on ARM boards.",
+      "category": "refactor",
+      "summaryHash": "dd9f8d9a42386ebd762de81c3e8404955a261108"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 939,
+      "title": "Add latency and silent modes to the Sky-Watcher fakes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/939",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T19:16:27Z",
+      "additions": 145,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test-only change. The simulated Sky-Watcher mounts used in testing can now add a steady delay to every reply, count how many replies they have sent, and (for the network version) stop answering completely. New tests use these to check that the driver notices a mount that has gone quiet and recovers when it starts talking again. No code that runs at the telescope was changed.",
+      "category": "tests",
+      "summaryHash": "2907a755e70df0127d96667fe9ff3bb3254202c3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 936,
