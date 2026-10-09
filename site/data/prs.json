@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-09T06:11:18.703Z",
+  "generatedAt": "2026-10-09T07:13:53.996Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 922,
+      "title": "Bind ZWO cameras by serial so device numbers survive restarts",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/922",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T07:08:54Z",
+      "additions": 1014,
+      "deletions": 99,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "ZWO cameras now keep the same device number across restarts. Previously, if two ZWO cameras were connected, a reboot could swap them, so software asking for \"camera 0\" might get the wrong one. The server now remembers each camera by its serial number, or by model name if it has no serial, and gives it a permanent ID that is never shared with another camera. To read serial numbers it briefly opens each matching camera at startup, and the change has not been tested on real hardware or with a two-camera setup.",
+      "category": "fix",
+      "summaryHash": "8e28f2ab2250ce46e04fb7d5a318882e5becabe8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 923,
+      "title": "Update Celestron and SynScan task waits to use the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/923",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T06:32:22Z",
+      "additions": 660,
+      "deletions": 256,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "The Celestron and SynScan telescope drivers now use a shared timing source that tests can fast-forward, so their park and slew tests run quickly instead of waiting in real time. It also fixes a timing bug where a request to cancel a background telescope task could be missed, leaving that task to wait out its full timeout. Normal telescope behaviour is otherwise unchanged, and it was not tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "9b6b3896be2efa34643bce86d997a2dcde3de6d0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 918,
