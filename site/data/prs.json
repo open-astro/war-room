@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-09T21:01:58.567Z",
+  "generatedAt": "2026-10-09T23:00:22.315Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 945,
+      "title": "Move the ToupTek devices into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/945",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T22:28:12Z",
+      "additions": 682,
+      "deletions": 218,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The setup rules for ToupTek equipment (camera, focuser, filter wheel and power/heater switch) now live in one place alongside the other camera brands, instead of being split between that ToupTek code and the server's main request-handling code. This is mostly internal tidying, but there are small visible side effects. Saved ToupTek settings now keep every field that device type allows, even ones that no longer apply. A few badly formatted settings that used to be quietly ignored are now rejected with an error. Most of the actual code changes were not shown in full, so this summary leans on the description, and the author notes it was not tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "c2536bac3dbe12d027db662b0e17ac95f9d70d18"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 944,
