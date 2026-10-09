@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-09T10:11:09.253Z",
+  "generatedAt": "2026-10-09T13:08:36.517Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 934,
+      "title": "Update the SynScan telescope to use the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/934",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T12:44:16Z",
+      "additions": 560,
+      "deletions": 141,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "The SynScan telescope (used with many Sky-Watcher-style hand controllers) now plugs into the server's shared device list, the same way the Celestron telescope already does, instead of having its own special-case code in the part that routes web requests. Users should see the same setup options and behaviour as before, and SynScan now shows up in the list of available device types. There is one small breaking change: a saved SynScan setting that has a decimal or true/false value where a whole number is expected (for example the baud rate or network port) will no longer load. Some error and log messages also read differently. Not tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "6038ff047dc4ac1f92d774c23aaebc89e96ee6f0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 931,
+      "title": "Move Sky-Watcher slew, park and home onto the operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/931",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T12:29:02Z",
+      "additions": 775,
+      "deletions": 421,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The Sky-Watcher telescope driver now uses the project's shared, tested helper for running background moves (slewing, going to a target, parking, homing and stopping an axis) instead of its own hand-built thread code. The practical gain is that a new command no longer has to wait for a stuck earlier one to finish before it can start, and stopping one axis no longer interferes with the other. The shared helper itself also changed: if the system cannot start a new background task, it now reports a clear error and leaves everything as it was. This affects motion and safety-related paths but has not been checked on a real mount yet.",
+      "category": "refactor",
+      "summaryHash": "755a64c8e23d2666d17cdc7ea0a73cd5ddacc488"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 935,
