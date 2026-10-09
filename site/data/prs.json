@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-09T07:13:53.996Z",
+  "generatedAt": "2026-10-09T08:13:09.323Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 930,
+      "title": "Release notes: add the ZWO camera identity change to 5.0.0-beta.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/930",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T07:34:36Z",
+      "additions": 2,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Updates the 5.0.0 beta 1 release notes to cover a late fix for ZWO cameras. The notes now warn that each ZWO camera's unique ID changes once after the upgrade, so some apps may ask you to pick the camera again. They also warn that a saved camera that is unplugged or replaced now fails to connect with a clear message instead of quietly opening a different one. A matching entry under fixes explains that with several ZWO cameras attached, they no longer swap places after a restart. Documentation only.",
+      "category": "docs",
+      "summaryHash": "cd2bc720ff6d813004efccb87613abb2d58a3bee"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 929,
+      "title": "Add a test-count floor to the CI test run",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/929",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T07:32:28Z",
+      "additions": 71,
+      "deletions": 2,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Internal change to the automated test checks. Until now they only failed if no tests ran at all, so a large chunk of tests could silently drop out and everything still looked green. Now the run also fails if the number of tests falls about 10% below the expected count, and the error names the setup that shrank. It also adds a clearer warning when the test library is missing, makes some build settings explicit, and raises the minimum build-tool version, with no change for users.",
+      "category": "ci",
+      "summaryHash": "0dd1af76c30987c9d3fbf59dcb790449d1d14046"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 927,
+      "title": "Release 5.0.0-beta.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/927",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-09T07:19:27Z",
+      "additions": 91,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Cuts the first beta of AlpacaBridge 5.0, which testers can install by opting into the beta update channel and try before the stable release. It sets the version to 5.0.0 beta 1 and adds plain-language release notes. The notes cover the breaking changes, new settings for Sky-Watcher, SynScan and Celestron mounts, a long list of fixes, and how to opt in and out of the beta. No program code changes, only version labels and documentation.",
+      "category": "chore",
+      "summaryHash": "320e0ff1719b35ed02da039bdfad278c4e288ee5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 922,
