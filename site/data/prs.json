@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-10T22:42:15.481Z",
+  "generatedAt": "2026-10-10T22:58:05.927Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1013,
+      "title": "Add WeeWX stalled-feed and contract tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1013",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T22:47:08Z",
+      "additions": 342,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds more automated tests for the WeeWX weather station connection and does not change how the software itself behaves. The tests now use a pretend weather feed that can hang without answering, cut the connection, or return a server error, and they check that the software handles these cases sensibly. For example, it should stay connected and keep the last good readings while showing they are getting older, then recover once the feed comes back. The point is that if someone later breaks how stale or bad weather data is handled, a test will catch it.",
+      "category": "tests",
+      "summaryHash": "535230f2f7d676eb0382116757e909a564a63a5d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1012,
