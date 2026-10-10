@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-10T22:58:05.927Z",
+  "generatedAt": "2026-10-10T23:41:26.078Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1014,
+      "title": "Add an SDK seam, fake and locked decorator for the SVBONY camera",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1014",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T23:37:16Z",
+      "additions": 758,
+      "deletions": 144,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The SVBONY camera driver can now be tested without a real camera plugged in, using a simulated stand-in for the vendor's camera software, the same approach already used for several other camera brands. This lets automated tests and stress tests cover connecting, taking an exposure and handling failures, which they could not reach before. Camera behavior for users is not meant to change, and the diff matches the description. It has only been tested on simulated hardware so far.",
+      "category": "tests",
+      "summaryHash": "0c4add25061fc96973abe7bc9e69af5501d26c8b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1008,
+      "title": "Implement ZWO catalog descriptors for non-camera devices",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1008",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T23:15:31Z",
+      "additions": 934,
+      "deletions": 394,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO mount, filter wheel, focuser, rotator and power switches (including ASIAIR Pro and Plus) are now set up through the project's shared device catalog instead of special-case code in the central request handler, which sheds about 370 lines. The ZWO camera has not moved yet and is planned next. Most error messages for bad settings stay the same, but a few checks changed slightly: whole numbers written with a decimal point are now accepted for a switch's pin number, out-of-range numbers are now rejected, and the RK3568 ASIAIR Plus now rejects a wrongly typed pin value it used to ignore. It has only been tested with simulated devices.",
+      "category": "refactor",
+      "summaryHash": "11958d7216ab558eb7e0f813c0359218bc07c09a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1013,
