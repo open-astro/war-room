@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-10T01:57:45.234Z",
+  "generatedAt": "2026-10-10T02:56:50.724Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 952,
+      "title": "Fix SynScan AbortSlew leaving Slewing true after a failed tracking restore",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/952",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T02:29:14Z",
+      "additions": 33,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug with SynScan (Sky-Watcher) telescope mounts where stopping a move could leave the mount reported as still moving even though it had actually stopped. When a stop is requested, the software also turns the mount's star-tracking back on, and if that step failed, the \"still moving\" status was never cleared. The order is now swapped so the mount is marked as stopped first, then tracking is turned back on; a failed tracking step still reports an error, but no longer gives a false \"moving\" status. The code matches the description, and a new automated test covers the case, though it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "2027488a148d2b85281fd89927f088235753f6cd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 946,
