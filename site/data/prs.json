@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-10T06:56:07.027Z",
+  "generatedAt": "2026-10-10T07:55:08.101Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 971,
+      "title": "Move the WandererAstro devices into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/971",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T07:54:23Z",
+      "additions": 557,
+      "deletions": 218,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The WandererAstro dust cover with flat panel, rotator, filter wheel and WandererBox power switch are now set up through the project's shared device list, the same way other brands already are, instead of through special-case code in the part of the server that handles web requests. For users these devices should behave the same, with one small visible difference: the device settings now keep the documented options for each device type, and users get a warning when unrecognized settings are dropped. The change removes about 200 lines of special-case code and keeps the rules for rejecting bad setups in one place. It was checked with automated tests only, not on real hardware.",
+      "category": "refactor",
+      "summaryHash": "bc1ff970911a39fc66f0715b8a7438cdd27210ed"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 967,
