@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-09T23:00:22.315Z",
+  "generatedAt": "2026-10-10T01:57:45.234Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 946,
+      "title": "Write the corrected system time back to the hardware RTC",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/946",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T01:44:20Z",
+      "additions": 354,
+      "deletions": 31,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a connected app or the Sync Time button in the web interface corrects the clock on a telescope computer that has no internet time source, the corrected time is now also saved to the computer's battery-backed hardware clock. Before this, the fix was lost at the next power cycle, so off-grid rigs started each session with the wrong time again. Packaged installs now give the service permission to write that hardware clock. Installs built from source must set this permission by hand, and if the write fails the service logs a warning while the running clock stays correct. This has only been tested in software, not on real hardware.",
+      "category": "feature",
+      "summaryHash": "3fd5db89a43db7cfdb06074fa45f28844420bd7a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 948,
+      "title": "Move Sky-Watcher pulse guide and rate check to operation slots",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/948",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T01:09:44Z",
+      "additions": 286,
+      "deletions": 169,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This reworks how the Sky-Watcher telescope driver runs the background work behind short guiding nudges and the check it does after a tracking-speed change. That work now uses the project's shared mechanism for background tasks instead of custom one-off code. It also closes a gap where a late leftover command could be sent to the mount after tracking had been turned off or another action had taken over. One change not described as part of the main goal: an existing test was made more reliable by adding a two-second wait. The authors rate the change medium risk and have not tried it on a real mount.",
+      "category": "refactor",
+      "summaryHash": "ee792c66022e24985323231b23335539ac0f40ba"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 945,
