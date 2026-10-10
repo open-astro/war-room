@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-10T05:56:54.765Z",
+  "generatedAt": "2026-10-10T06:56:07.027Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 967,
+      "title": "Beta 1 notes: install by hand until the apt beta channel opens",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/967",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T06:48:46Z",
+      "additions": 13,
+      "deletions": 21,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The install instructions for the 5.0.0 beta 1 test release now tell testers to download and install it by hand, because the special 'beta' download channel they were told to switch on does not exist yet, so those steps failed for everyone. The notes now say not to touch those settings for now, and they explain how to go back to the previous stable version 4.2.0 if needed. The updated text also drops the earlier warning that a hand install will not automatically get the next beta, and it drops the link to the beta channel guide. The published release page was edited separately to match.",
+      "category": "docs",
+      "summaryHash": "2d7d92a1998e296a859f073d91e2655a278cece1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 965,
