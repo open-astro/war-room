@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-10T03:58:59.360Z",
+  "generatedAt": "2026-10-10T04:57:43.994Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 953,
+      "title": "Move the Gemini devices into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/953",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T04:03:01Z",
+      "additions": 514,
+      "deletions": 167,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is mostly an internal reorganization: support for three Gemini devices (the focuser, the flat panel, and the Power & Data Hub switch) now lives in one Gemini-specific place instead of being partly hard-coded into the server's central request-handling code. The visible code matches the description, with device creation behaving as before and no hardware scans happening at startup. There are small user-facing side effects: a saved Gemini flat panel or switch setup will now drop leftover settings that belong to other Gemini device types, and when Gemini support is not built in, a bad switch type now gets a more specific error message. It was tested with simulated devices only, not on real hardware.",
+      "category": "refactor",
+      "summaryHash": "bace220d7e3fe5fc3f097ab79d5125b702c3853f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 954,
