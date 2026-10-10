@@ -1,11 +1,62 @@
 {
-  "generatedAt": "2026-10-10T10:52:38.781Z",
+  "generatedAt": "2026-10-10T11:51:56.894Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 996,
+      "title": "Move SynScan slew, Park and pulse bodies onto the operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/996",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T11:41:06Z",
+      "additions": 692,
+      "deletions": 375,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Sky-Watcher SynScan telescope driver now runs its background work (slewing, parking and guiding pulses) the same shared way the Celestron driver already does, and both drivers now use a single shared routine for parking. Mount behaviour is meant to stay the same, so this is mainly a cleanup that leaves one approach to maintain instead of two. It also tightens an edge case: if the system refuses to start a new move right after a previous one was cancelled, the mount is now stopped and its status is restored correctly. It was only tested against a simulated mount, not real hardware.",
+      "category": "refactor",
+      "summaryHash": "491680f972be8b2edba26887e1e0f7f858dffef2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 975,
+      "title": "Add a status cache to the Player One and ZWO switch reads",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/975",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T11:27:05Z",
+      "additions": 451,
+      "deletions": 26,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Player One and ZWO camera-based heater and fan switches now answer status requests from a reading that is at most a tenth of a second old, instead of asking the camera again for every value. This cuts traffic on the camera's USB connection when apps check status often. The tradeoff is that a reading can be up to 100 ms behind, but any change made through the switch itself shows up right away. If the camera stops responding three times in a row, the switch reports a communication problem instead of showing old values. Other switch drivers were already efficient and were left unchanged.",
+      "category": "feature",
+      "summaryHash": "823559de5269a3d66f16bc0e89bb62dab190d2ad"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 981,
+      "title": "Add Sky-Watcher link loss and relink policy",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/981",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T10:57:47Z",
+      "additions": 593,
+      "deletions": 48,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts now report themselves as disconnected if the connection has been broken for 30 seconds or more. Previously they kept showing as connected forever, so apps never found out the mount was gone. Short Wi-Fi hiccups under 30 seconds are still tolerated, and some network errors that clearly mean the connection is unusable trigger the disconnect immediately. The software does not reconnect by itself, so the user's app has to reconnect. A decision document explains the policy for other drivers, which keep their current behaviour for now.",
+      "category": "feature",
+      "summaryHash": "c8ddfba91f929b50c8b667fe3cd89ded6f21ff46"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 997,
