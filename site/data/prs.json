@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-10T08:54:17.996Z",
+  "generatedAt": "2026-10-10T09:53:31.881Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 982,
+      "title": "Move Celestron async slew, Park and pulse bodies onto the operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/982",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T09:33:26Z",
+      "additions": 377,
+      "deletions": 246,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron telescope driver now handles background moves (slewing, parking and guiding nudges) the same shared way the Sky-Watcher driver already does, instead of keeping its own separate copy of that machinery. Normal behaviour is meant to stay the same. The one real change is a rare failure case: if the computer refuses to start a background move, the driver now puts its reported status back to what is true, and stops the mount if it had just cancelled a slew already in progress. This was tested only against a simulated mount, not real hardware; the parts of the change visible here are mostly documentation updates, as the main code changes were not shown.",
+      "category": "refactor",
+      "summaryHash": "efff1b8f370f1cdec82481cb534ec8436ec59789"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 963,
+      "title": "Fix QHY and ToupTek camera frame validation (#913)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/963",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-10T09:28:21Z",
+      "additions": 713,
+      "deletions": 74,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "QHY and ToupTek cameras now check each captured frame before saying an image is ready. A broken or wrongly sized frame now produces a clear error instead of being passed to astronomy software as a good picture. For QHY cameras, a frame that arrives slightly smaller than requested is filled out to the right size with blank pixels, while ToupTek treats the same situation as a failure. Cancelling an exposure or reconnecting the camera no longer leaves an old error behind. The change also adds a shared image check used by the web server's responses and new tests, but it has not been tried on real cameras, and ToupTek 3x3 binning still needs checking on hardware before release.",
+      "category": "fix",
+      "summaryHash": "5dacfefef422453cf86f866772a3611bde3b9845"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 974,
