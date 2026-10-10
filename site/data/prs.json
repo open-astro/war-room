@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-10T11:51:56.894Z",
+  "generatedAt": "2026-10-10T16:47:38.898Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1003,
+      "title": "Fix Sky-Watcher limit-guard seed using a mid-ramp position cache",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1003",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T16:46:18Z",
+      "additions": 42,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug in the Sky-Watcher telescope mount's safety limits that could wrongly stop a move. If the mount coasted past a limit while stopping, the software could still be holding an older, out-of-date position, so a follow-up move back toward safety was mistaken for crossing the limit and halted. The mount now throws away that saved position once a stop is confirmed and reads a fresh one before the next move. A new automated test covers the case; it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "d82b1655b2cd8254c49f229c4d9f5bb2442b8712"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1001,
+      "title": "Add a 100 ms status cache to the ToupTek AAF focuser",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1001",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T16:36:31Z",
+      "additions": 182,
+      "deletions": 18,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ToupTek AAF focuser now gathers its moving state, position and temperature in one quick round of reads, and reuses those values for 100 milliseconds instead of asking the device again for each question. This cuts device traffic when apps check the focuser often. The saved values are thrown away after any move or halt command, so a new move is never hidden. If the connection fails three times in a row, the focuser reports a clear \"communications compromised\" error until a read succeeds. The code also adds something the description does not mention: if only the temperature read fails, temperature requests now return a \"not available\" error while position and movement still work. The description says the maximum focuser position is read once at connect, but the shown changes only add a test confirming this, so it seems to have worked that way already. The filter wheels get only a new test, with no behavior change.",
+      "category": "feature",
+      "summaryHash": "9fd0ef690a76b66acfc541dd21d3ec044e4a8029"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 996,
