@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-10T21:43:15.699Z",
+  "generatedAt": "2026-10-10T22:42:15.481Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1012,
+      "title": "Fix SynScan pulse position hold shortened by a second axis",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1012",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T22:37:23Z",
+      "additions": 25,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug with SynScan telescope mounts during guiding, where small automatic corrections nudge the telescope in two directions. When a short correction in one direction overlapped a longer one in the other, the short one ended the position estimate too early, so the reported telescope position jumped back to the raw mount reading partway through the longer correction. The estimate now lasts until the longest correction finishes, giving guiding software a steadier position. A new automated test covers this case; it uses a simulated mount and has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "b82e35ffecc3d6de928a1edd5ad67cbb061715de"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1000,
