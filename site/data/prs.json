@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-10T04:57:43.994Z",
+  "generatedAt": "2026-10-10T05:56:54.765Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 965,
+      "title": "Move the Sky-Watcher duty-cycle worker onto an operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/965",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T05:42:15Z",
+      "additions": 86,
+      "deletions": 82,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup in the Sky-Watcher mount driver. When the mount has to track at a speed too slow for its motors, it moves in short repeated bursts. That background job now runs on the same shared, already-tested machinery as the driver's other background jobs, replacing a hand-built version. Users should see no difference. A new test checks that a very slow tracking change made during a guiding nudge takes effect once the nudge ends, but this has not been tried on a real mount.",
+      "category": "refactor",
+      "summaryHash": "7a8be671aff70d96ecd476df7eb1fea62ef2e1aa"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 964,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/964",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T05:12:36Z",
+      "additions": 1590,
+      "deletions": 128,
+      "changedFiles": 39,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings the fixes from the 5.0 beta back into the main line of development, so the next release does not lose them. The fixes include: ZWO cameras keep the same number across restarts, QHY cameras report temperature right after connecting, and telescope 'stop' commands on several mounts now report a real error instead of quietly ignoring a failed stop. It also adds the beta release notes, and the release process now attaches a ready-to-install package to beta releases so testers do not have to build it themselves. The main line keeps its own version number (4.2.0), and this merged code had not passed a full automated build when the PR was written.",
+      "category": "chore",
+      "summaryHash": "3d6755b6993a3b271be300cf425dd06a2b3573ac"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 953,
