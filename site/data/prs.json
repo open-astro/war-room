@@ -1,11 +1,62 @@
 {
-  "generatedAt": "2026-10-10T16:47:38.898Z",
+  "generatedAt": "2026-10-10T18:45:49.346Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1002,
+      "title": "Add StateSnapshot utility and snapshot-served state record",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1002",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T18:26:10Z",
+      "additions": 304,
+      "deletions": 1,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a shared building block that later driver work will use to answer questions about a device (such as where a telescope is pointing) from a recently measured copy instead of asking the hardware each time. It makes sure a change a user just made shows up right away and is not overwritten by an older reading that arrives late. It also flags readings that have become too old. No driver uses it yet, so nothing changes for users today. The PR also adds tests and a design note explaining the approach.",
+      "category": "feature",
+      "summaryHash": "a2fa6eebecb399dd9c83c649b83413364f1e40b8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1006,
+      "title": "Add dependency graph submission for the C++ build",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1006",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T18:09:04Z",
+      "additions": 317,
+      "deletions": 1,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes tooling change. On every update to the main branch, the project now reports its full list of ingredients to GitHub. This includes the system packages it needs, a library it downloads during the build, and the camera and mount maker toolkits bundled with it. Before, GitHub only saw the project's automation settings, so its record of what ships in the package was incomplete. A new check also fails the build if someone adds a bundled maker toolkit without listing it.",
+      "category": "ci",
+      "summaryHash": "d209841a4bd94ac4bbe87345702ec63fa0de9028"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1007,
+      "title": "Fix Celestron slot tests failing by sidereal time",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1007",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T17:54:26Z",
+      "additions": 27,
+      "deletions": 11,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix for some Celestron telescope tests that failed for roughly half of every day, depending on the time. The tests aimed the simulated telescope at a fixed spot in the sky. At certain hours that triggered a different movement path than the tests expected. They now pick a target based on the current sky position, so they pass at any time. There is no change to how the real driver behaves.",
+      "category": "tests",
+      "summaryHash": "84ea3c3b80fb41f4ea6417eb5dfcadb25fc51404"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1003,
