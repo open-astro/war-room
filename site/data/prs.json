@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-10T02:56:50.724Z",
+  "generatedAt": "2026-10-10T03:58:59.360Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 954,
+      "title": "Cache the ZWO EAF and CAA status frame for DeviceState",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/954",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T03:49:31Z",
+      "additions": 791,
+      "deletions": 68,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO focuser and rotator drivers now gather a device's moving status, position, and (for the focuser) temperature in a single read and reuse it for up to a tenth of a second, instead of asking the device separately for each value. This makes status checks from astronomy software faster and lighter on the USB connection. Settings that never change, such as the focuser's travel limits and the rotator's reverse setting, are read once when connecting, and any move, stop, or sync forces a fresh read. If the device stops answering three times in a row, the drivers report a clear communications error until it recovers, with no reconnect needed. One change goes beyond the description: connecting a ZWO focuser now fails if its travel limit cannot be read.",
+      "category": "feature",
+      "summaryHash": "e544bfebcc050742d2aa8abeb08351f397705d2b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 951,
+      "title": "Beta 1 notes: add the QHY CCDTemperature fix, and attach the .deb to beta pre-releases",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/951",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T03:46:22Z",
+      "additions": 129,
+      "deletions": 12,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Beta releases on GitHub now come with a ready-to-install package and a checksum file, so testers can install a beta by hand instead of building it from source. Until now that was the only option, because the separate beta download channel does not exist yet. Stable releases are unchanged and still ship only through the regular package server. The 5.0.0 beta 1 release notes also gain two fixes they were missing: a QHY camera temperature error right after connecting, and a SynScan mount that could wrongly report it was still moving after being stopped. The installation guides and the release checklist were updated to match.",
+      "category": "ci",
+      "summaryHash": "e9169157df2efd71d441353e1d8c14031226aebe"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 952,
