@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-10T18:45:49.346Z",
+  "generatedAt": "2026-10-10T21:43:15.699Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1000,
+      "title": "Add a status cache and HID transport seam to the Astroasis focuser",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1000",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T21:37:15Z",
+      "additions": 429,
+      "deletions": 71,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Astroasis Oasis focuser driver now talks to the hardware far less often. Recent readings of position, movement and temperature are reused for a tenth of a second, and fixed values like the maximum step are read once when connecting instead of on every request. Previously a single status check from a client could cost three trips to the device, so this should make the focuser lighter and more responsive under frequent polling. Connecting now fails if the maximum step can't be read, and after three failed reads in a row the driver reports a communication fault until a read succeeds. The change also lets the driver be tested without a real focuser attached, but it has not yet been tried on actual hardware.",
+      "category": "feature",
+      "summaryHash": "f2c2142bc0dc0d8fc768e83cfa05773fbcb80b3f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1002,
