@@ -1,11 +1,79 @@
 {
-  "generatedAt": "2026-10-10T09:53:31.881Z",
+  "generatedAt": "2026-10-10T10:52:38.781Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 997,
+      "title": "Put the priority label in the create-an-issue example",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/997",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T10:43:05Z",
+      "additions": 4,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A small documentation follow-up to the switch from title tags to priority labels. The example for filing a new issue now includes a priority label and mentions the issue type labels, so issues created by copying it are not left without a priority. It also corrects an unreleased changelog note that still described the old title-tag approach.",
+      "category": "docs",
+      "summaryHash": "5c492681d7ebf0f0940cd2756ceebb5bb60e13d6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 987,
+      "title": "Track issue priority with P1-P5 labels instead of a title prefix",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/987",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T10:25:52Z",
+      "additions": 20,
+      "deletions": 16,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Issue priority (P1 to P5) is now tracked with labels instead of a tag at the start of each issue title. Labels can be filtered and sorted in GitHub and do not get lost when someone edits a title. This PR updates the team's written conventions to match a switch the maintainer already made on the open issues. Closed issues keep their old title tags on purpose, and the priority scale itself is unchanged.",
+      "category": "docs",
+      "summaryHash": "668cf0e26ad7faee840a5ce5e94a6a03581d7d82"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 986,
+      "title": "Require 28 days in beta for a major release, tracked by a milestone",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/986",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T10:00:12Z",
+      "additions": 12,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Major releases now have to spend at least four weeks in beta before they can become the official release, counted from the first beta. Before, the only rule was two weeks since the most recent beta. The hardware checks a release is waiting on will also be tracked as a GitHub milestone, and a release is ready only when that list is empty. For 5.0.0, the earliest release date moves to about November 7, 2026.",
+      "category": "docs",
+      "summaryHash": "a860e020a5ac937b210b51290aa2c142e947b81f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 985,
+      "title": "Close issues named by merged stable PRs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/985",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T09:57:31Z",
+      "additions": 199,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes merged into the stable beta branch now automatically close the issues they say they fix, which GitHub only does on its own for the main branch. Until now these issues stayed open after their fix landed and had to be closed by hand. The automation closes only this project's issues that the PR explicitly marks as fixed, and leaves a comment pointing to the fix. It is internal tooling with a built-in self-check, and it will first be proven on the next stable-branch merge.",
+      "category": "ci",
+      "summaryHash": "de257498264d72785a560f392b2986c51d0cc134"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 982,
