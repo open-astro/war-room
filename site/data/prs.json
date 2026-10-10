@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-10T07:55:08.101Z",
+  "generatedAt": "2026-10-10T08:54:17.996Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 974,
+      "title": "Fix SynScan hour-angle Park RA wrapping to 24 h",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/974",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T08:33:06Z",
+      "additions": 32,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a rare bug where telling a SynScan telescope to park at its saved position could fail with an \"out of range\" error the user never caused. A tiny rounding quirk in the position math could produce a value just past the allowed limit, and that value is now wrapped back to the start of the valid range. The code matches the description and adds a small test for the edge case. It was not tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "64ac3d333b224a83428cde888f02677e5854c078"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 972,
+      "title": "Fix Sky-Watcher refused slot start leaving axes moving",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/972",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-10T08:16:32Z",
+      "additions": 165,
+      "deletions": 8,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a safety issue with Sky-Watcher mounts. If a new move (go-to, park, or find-home) was requested while the mount was already moving, and the new move failed to start, the mount could keep moving while the software reported it as stopped. Now the mount is stopped in that case and tracking is turned off, the same as an emergency stop. If the mount was only tracking and nothing was in motion, it keeps tracking. The code matches the description; it adds five tests using a simulated mount and was not tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "cdca4af6d31d47e1b5477f9d37e51d58f680d139"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 971,
