@@ -1,11 +1,62 @@
 {
-  "generatedAt": "2026-10-11T04:37:16.383Z",
+  "generatedAt": "2026-10-11T05:36:23.109Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1041,
+      "title": "Write down when a fix may target the stable branch",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1041",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T05:22:29Z",
+      "additions": 40,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's contributor guidelines now spell out exactly which fixes are allowed onto the stable (beta-hardening) branch. A fix qualifies only if it repairs something that broke since the last stable release, closes an issue tracked for the release, or is small enough not to require re-testing the driver on real hardware. Bigger driver reworks go to the main development branch instead, unless a maintainer approves them by name or they finish a multi-part series already partly on the stable branch. This is a documentation and policy change only, prompted by a recent large camera fix that technically met the old, vaguer wording.",
+      "category": "docs",
+      "summaryHash": "68bd73b6a933a9724bf05120d4ca5f470d3f499b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1038,
+      "title": "Fix SVBONY camera frame validation (#913)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1038",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-11T05:13:18Z",
+      "additions": 2465,
+      "deletions": 424,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "SVBONY cameras now check each captured image for problems, such as the wrong size, an unexpected format, or missing data, before handing it to astronomy software. If something is wrong, the software gets a clear error instead of a broken image, and the next good exposure works normally. Users should note some behavior changes: \"stop exposure\" is no longer offered (use abort instead), and cameras with no supported image format now refuse to connect. The change also adds extensive tests that simulate the camera, so this behavior can be checked without real hardware.",
+      "category": "fix",
+      "summaryHash": "2ee082c32f49a850a931f24edb40d0b4966e557f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1040,
+      "title": "Update stress-gate wording for the empty ALLOWLIST",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1040",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T04:56:24Z",
+      "additions": 14,
+      "deletions": 11,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a wording-only cleanup of an internal check that requires every driver to have a stress test. The exemption list for older drivers is now empty because every driver has such a test, but the check's messages and the related guides still described it as holding leftover drivers. They now match reality, and the guide notes one camera vendor (Player One) whose test setup is built slightly differently. Nothing about how the check behaves has changed.",
+      "category": "docs",
+      "summaryHash": "39cf8e7a5ef891e3e4b562b0ae0486ac1d5abee2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1037,
