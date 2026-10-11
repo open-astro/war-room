@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-11T05:36:23.109Z",
+  "generatedAt": "2026-10-11T10:32:08.388Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1045,
+      "title": "Update stable-branch admission rule on stable/5.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1045",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T10:08:22Z",
+      "additions": 48,
+      "deletions": 10,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This copies the stricter rule about which fixes may go into a release that is still in testing (from #1044) onto the 5.0 release line, so contributors reading that line's guidelines see the same rule as on the main line. It is a documentation-only change, and the text matches the main version word for word. The PR was made at a maintainer's explicit request, since a docs change would not normally be allowed on that release line under this same rule.",
+      "category": "docs",
+      "summaryHash": "bf49fb2d7c1b3792f94cf1dc1bec220a22cd4bc9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1044,
+      "title": "Admit only defects introduced after the previous stable release to stable branches",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1044",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T09:38:16Z",
+      "additions": 44,
+      "deletions": 39,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This tightens the contributor guidelines for which bug fixes may go into a release that is still in testing: only bugs that first appeared after the previous stable release qualify. Older bugs, even serious ones, now go into the next regular release instead. Several earlier exceptions were removed, such as fixes tied to open release-blocking issues, small changes that would not need re-validation on hardware, and finishing a multi-part fix already started there. The goal is to keep the testing release low-risk; this is a documentation-only change with no effect on how the software behaves.",
+      "category": "docs",
+      "summaryHash": "b3d84ca91b67c810b64c5f87feecdf0ef8044f1e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1041,
