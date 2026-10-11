@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-11T01:39:43.827Z",
+  "generatedAt": "2026-10-11T02:38:51.638Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1025,
+      "title": "Fix Sky-Watcher slews landing short in RA by holding an ahead landing",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1025",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T02:25:00Z",
+      "additions": 684,
+      "deletions": 553,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts no longer stop slightly short of their target when moving to a new spot in the sky. Before, every move ended about 6 to 17 arcseconds off, which made the EQM-35 Pro fail the standard ASCOM compatibility test (ConformU) and was blocking the 5.0.0 release. Now, if the mount arrives a little ahead of where the target will be, it waits briefly, up to 5 seconds, for the sky to catch up instead of resuming tracking at once or trying the move again. On real hardware every move now lands within about 1 arcsecond, the compatibility test passes, and the code matches the description, adding new automated tests for both northern and southern hemisphere sites.",
+      "category": "fix",
+      "summaryHash": "38e00ce8e88c16a67693cc88c07cce1d7cc83257"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1026,
