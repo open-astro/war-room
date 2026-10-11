@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-11T22:21:54.011Z",
+  "generatedAt": "2026-10-11T23:12:57.188Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1048,
+      "title": "Fix SVBONY capture-stop recovery",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1048",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-11T22:38:13Z",
+      "additions": 47,
+      "deletions": 17,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1051,
+      "title": "Port review bot allowlist and full output to stable/5.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1051",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-11T22:25:00Z",
+      "additions": 10,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1050,
