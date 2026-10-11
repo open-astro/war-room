@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-11T15:27:38.649Z",
+  "generatedAt": "2026-10-11T22:21:54.011Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1050,
+      "title": "Print the review bot's full output to find its auth error",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1050",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-11T22:10:32Z",
+      "additions": 7,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1049,
+      "title": "Allow pauleyj to trigger the review bot on fork PRs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1049",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-11T21:39:49Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1046,
