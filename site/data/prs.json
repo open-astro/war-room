@@ -1,11 +1,62 @@
 {
-  "generatedAt": "2026-10-11T02:38:51.638Z",
+  "generatedAt": "2026-10-11T03:38:15.795Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1033,
+      "title": "Update web UI device status dot wording",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1033",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T03:21:19Z",
+      "additions": 22,
+      "deletions": 15,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The colored status dot next to each device in the web interface now explains itself in plainer words when you hover over it. For example, yellow now says \"Idle, no client connected\" instead of \"Loaded, not connected\", and a failed connection now reads \"Last connect failed\" so it is clear the problem came from the last attempt and a retry may work. The dot colors themselves are unchanged, and the code matches the description.",
+      "category": "fix",
+      "summaryHash": "4ffd13b384a13d5a43556bbb1c4f489a60337ea2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1032,
+      "title": "Release 5.0.0-beta.2",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1032",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T03:04:25Z",
+      "additions": 103,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This publishes the second beta of version 5.0.0 so testers get the fixes made since the first beta. The main fixes are Sky-Watcher slews that stopped slightly short, SynScan slews that failed at random, and stricter checks so several camera brands report an error instead of producing a broken image. Only the version number and documentation change here, including new plain-language release notes with upgrade and rollback instructions.",
+      "category": "chore",
+      "summaryHash": "8305d915de544c8ad644abf500edb09eb39737ed"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1031,
+      "title": "Fix SynScan slews failing on handset landing scatter",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1031",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T02:45:26Z",
+      "additions": 117,
+      "deletions": 32,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem in the 5.0 beta where telescope moves on SynScan-controlled Sky-Watcher mounts failed at random. The hand controller naturally lands a few arcseconds off target. The software now records this small leftover offset as a warning in the log and treats the move as finished, instead of reporting it as an error. This matches how version 4.2.0 behaved, and plate solving can still center the target precisely. Tests were updated to replay the scatter seen on a real mount.",
+      "category": "fix",
+      "summaryHash": "c792949e0c243ea446b96211e3d942aa28766bf5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1025,
