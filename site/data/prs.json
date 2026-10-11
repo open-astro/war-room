@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-10T23:41:26.078Z",
+  "generatedAt": "2026-10-11T01:39:43.827Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1026,
+      "title": "Correct beta.1 notes and re-validate ZWO cameras and EAF on beta.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1026",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T01:31:54Z",
+      "additions": 658,
+      "deletions": 642,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Corrects two misleading statements in the 5.0.0-beta.1 upgrade notes that beta testers read before upgrading. The notes now say the ZWO camera identity change is about older versions using a different ID when a camera was disconnected, not about one specific camera model lacking a serial number, and that a misconfigured GPIO switch shows up as \"failed to load\" rather than disappearing from the device list. It also adds fresh compatibility test reports showing two ZWO cameras and the ZWO focuser passing cleanly on beta.1. Documentation and test reports only; no code changes.",
+      "category": "docs",
+      "summaryHash": "405c12e00a49df931d79cb2ff09fb5ccfcde0373"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1020,
+      "title": "Fix Player One and iCAM camera frame validation",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1020",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-11T01:13:29Z",
+      "additions": 2207,
+      "deletions": 402,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Player One and iCAM cameras now check each captured image before handing it to a client, so a bad or mismatched frame is reported as an error instead of being passed along as a good image. Stopping an exposure early now keeps the partial image, while aborting throws it away, and problems such as timeouts or failed guiding pulses are now reported instead of being silently ignored. The change also lets these cameras be tested without real hardware, and adds a large set of tests covering these cases. Much of the diff is also formatting cleanup in the same file.",
+      "category": "fix",
+      "summaryHash": "65d696dd28bb61e1cfd044e982f43fa484bd695a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1014,
