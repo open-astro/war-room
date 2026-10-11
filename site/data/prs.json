@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-11T10:32:08.388Z",
+  "generatedAt": "2026-10-11T15:27:38.649Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1046,
+      "title": "Serve Sky-Watcher position and status from a polled snapshot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1046",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T14:44:15Z",
+      "additions": 1897,
+      "deletions": 649,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1045,
