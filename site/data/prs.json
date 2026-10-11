@@ -1,11 +1,77 @@
 {
-  "generatedAt": "2026-10-11T03:38:15.795Z",
+  "generatedAt": "2026-10-11T04:37:16.383Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1037,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1037",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T04:35:38Z",
+      "additions": 4606,
+      "deletions": 1732,
+      "changedFiles": 54,
+      "labels": [],
+      "summary": "This brings every fix from the 5.0.0 beta 2 release into the main line of development, so the next release does not lose them. The carried fixes include more accurate goto landings for Sky-Watcher and SynScan mounts, a SynScan guiding fix, and stricter checks that reject broken or malformed images from Player One, QHY and ToupTek cameras instead of passing them on. It also adds a lot of new hardware-free testing for Player One and QHY cameras, along with updated release notes and process docs. Main keeps its own version number rather than taking the beta's.",
+      "category": "chore",
+      "summaryHash": "1472a69cf230e104cdd47aadfbdca8f28f708275"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1039,
+      "title": "Add Nightly Build status badge to the README",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1039",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T04:22:15Z",
+      "additions": 3,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's front page now shows a status badge for the nightly build, next to the existing CI badge. Anyone can see at a glance whether the latest nightly package built successfully and click through to the build history. Documentation only.",
+      "category": "docs",
+      "summaryHash": "7221581f742d2f8c0e918ed1dd861d1ed48dd4bc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1034,
+      "title": "Use git rerere for merge downs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1034",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T04:07:02Z",
+      "additions": 20,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal process change: the maintainer instructions for merging a beta branch back into main now turn on a Git feature that remembers how earlier merge conflicts were resolved and reapplies those answers when the same conflict comes up again. This saves repeated manual work on each merge. Reapplied fixes are still left for a person to review before they are accepted.",
+      "category": "docs",
+      "summaryHash": "3e61532890710072ab2e5d7049c6811bbf3ecd98"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1036,
+      "title": "Add Nightly Build workflow: arm64 .deb from main on a moving release",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1036",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-11T03:50:57Z",
+      "additions": 206,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Testers can now download an installable package of the latest development code every morning, instead of waiting for the next beta or building it themselves. A new automated job builds the package each night when there are new changes and posts it on a single 'nightly-build' page on GitHub, replacing the previous night's file. These nightlies are unsupported, are never pushed to the regular package server, and are numbered so a tester can move up to the next official release without a downgrade. A new docs section explains how to install one.",
+      "category": "ci",
+      "summaryHash": "5687234e980b47e94ae6a27ff5306331e96f738e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1033,
