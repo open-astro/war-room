@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-12T02:19:49.598Z",
+  "generatedAt": "2026-10-12T03:18:52.408Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1316,
+      "title": "fix(guider): pin the guide camera by Alpaca UniqueID and re-resolve its number before a push (#1308)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1316",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T03:13:15Z",
+      "additions": 619,
+      "deletions": 55,
+      "changedFiles": 28,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1057,
+      "title": "Fix ZWO enumeration aborting on one unreadable camera slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1057",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T02:37:02Z",
+      "additions": 203,
+      "deletions": 29,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1315,
+      "title": "fix(faults): a deliberate disconnect ends the recovery episode instead of being fought (#1307)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1315",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T02:29:52Z",
+      "additions": 197,
+      "deletions": 14,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1053,
