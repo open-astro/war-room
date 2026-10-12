@@ -1,11 +1,77 @@
 {
-  "generatedAt": "2026-10-12T04:17:54.911Z",
+  "generatedAt": "2026-10-12T05:17:12.256Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1318,
+      "title": "feat(sequencer): unguided exposure ceiling — tracking probe + exposure guard (#1264)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1318",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T05:14:48Z",
+      "additions": 2513,
+      "deletions": 25,
+      "changedFiles": 36,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1066,
+      "title": "Validate Player One index range in catalog fields",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1066",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T05:03:46Z",
+      "additions": 54,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1061,
+      "title": "Fix Sky-Watcher pulse-guide deadline to use the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1061",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T04:41:35Z",
+      "additions": 29,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1059,
+      "title": "Fix discovery advertising a closed port during restart (#889)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1059",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T04:20:07Z",
+      "additions": 12,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1317,
