@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-12T08:14:43.661Z",
+  "generatedAt": "2026-10-12T09:48:21.582Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1076,
+      "title": "Fix WeeWX TimeSinceLastUpdate answering while disconnected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1076",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T09:37:03Z",
+      "additions": 25,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1074,
