@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-12T10:12:52.559Z",
+  "generatedAt": "2026-10-12T11:12:30.679Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1079,
+      "title": "Fix Sky-Watcher SyncToCoordinates during a MoveAxis jog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1079",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T10:35:59Z",
+      "additions": 62,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1080,
+      "title": "Fix iOptron serial links to be held exclusively (#995)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1080",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T10:17:31Z",
+      "additions": 145,
+      "deletions": 1,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1078,
