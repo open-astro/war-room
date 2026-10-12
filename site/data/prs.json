@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-12T21:03:52.981Z",
+  "generatedAt": "2026-10-12T22:02:53.932Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1321,
+      "title": "feat(sequencer): port NINA's Center After Drift trigger; fix negative-declination encoding (#1195)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1321",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T21:44:28Z",
+      "additions": 1114,
+      "deletions": 31,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1083,
+      "title": "Docs: clarify ToupTek short-frame release note",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1083",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-12T21:33:03Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1082,
