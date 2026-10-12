@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-12T05:17:12.256Z",
+  "generatedAt": "2026-10-12T06:16:21.811Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1319,
+      "title": "feat(autofocus): measure the focuser's upward backlash after the calibrating sweep (#1139)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1319",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T05:54:55Z",
+      "additions": 567,
+      "deletions": 19,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1060,
+      "title": "Fix AbortExposure keeping a completed exposure failure",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1060",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T05:21:53Z",
+      "additions": 68,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1318,
