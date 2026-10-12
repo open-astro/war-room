@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-12T03:18:52.408Z",
+  "generatedAt": "2026-10-12T04:17:54.911Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1317,
+      "title": "fix(cooling): harden the sequencer Cool/Warm Camera after #1209 (#1210)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1317",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T03:51:44Z",
+      "additions": 313,
+      "deletions": 37,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1316,
