@@ -1,11 +1,44 @@
 {
-  "generatedAt": "2026-10-12T22:02:53.932Z",
+  "generatedAt": "2026-10-12T23:02:38.668Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1100,
+      "title": "Canon EOS 4000D: ConformU report for the bulb path (#1063)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1100",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T22:47:28Z",
+      "additions": 234,
+      "deletions": 231,
+      "changedFiles": 4,
+      "labels": [
+        "documentation",
+        "testing"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1322,
+      "title": "fix(api): stale-session guard, WebSocket connection cap, frame files confined to capture roots (#1194)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1322",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T22:41:30Z",
+      "additions": 827,
+      "deletions": 22,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1321,
