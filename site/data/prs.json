@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-11T23:12:57.188Z",
+  "generatedAt": "2026-10-12T01:20:47.316Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1052,
+      "title": "Fix C1 and bidi controls reaching log lines unescaped",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1052",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T01:16:10Z",
+      "additions": 50,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1313,
+      "title": "fix(time-sync): the daemon never reads a GPS receiver; the dongle lives on the client (#1305)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1313",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T00:42:30Z",
+      "additions": 103,
+      "deletions": 962,
+      "changedFiles": 27,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1048,
