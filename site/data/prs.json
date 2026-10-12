@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-12T07:15:47.339Z",
+  "generatedAt": "2026-10-12T08:14:43.661Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1074,
+      "title": "Fix SynScan landing refinement dragging RA on Dec-only passes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1074",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T07:30:42Z",
+      "additions": 47,
+      "deletions": 11,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1075,
