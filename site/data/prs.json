@@ -1,11 +1,60 @@
 {
-  "generatedAt": "2026-10-12T06:16:21.811Z",
+  "generatedAt": "2026-10-12T07:15:47.339Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1075,
+      "title": "Fix submit-pr merge-down guard to stop push and PR",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1075",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T07:10:27Z",
+      "additions": 13,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1320,
+      "title": "feat(flip): re-focus and guider-recal policies after the flip, explicit unattended window (#1138)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1320",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T07:00:19Z",
+      "additions": 1066,
+      "deletions": 58,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1073,
+      "title": "Fix pre-flight gate 2b2 stable remote for a bare base",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1073",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T06:23:03Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1319,
