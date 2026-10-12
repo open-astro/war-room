@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-12T09:48:21.582Z",
+  "generatedAt": "2026-10-12T10:12:52.559Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1078,
+      "title": "Fix QHY ImageArray reshaping a completed frame after ROI change",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1078",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T09:51:28Z",
+      "additions": 60,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1076,
