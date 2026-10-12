@@ -1,11 +1,77 @@
 {
-  "generatedAt": "2026-10-12T01:20:47.316Z",
+  "generatedAt": "2026-10-12T02:19:49.598Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1053,
+      "title": "Fix ZWO enumeration aborting on one unreadable camera slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1053",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T02:11:31Z",
+      "additions": 517,
+      "deletions": 329,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1055,
+      "title": "Fix Sky-Watcher resend rejecting a started move",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1055",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T02:02:21Z",
+      "additions": 51,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1314,
+      "title": "fix(guider): equipment pickers save a [host:port/N] device, never a bare Alpaca driver (#1306)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1314",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T01:46:28Z",
+      "additions": 768,
+      "deletions": 43,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1054,
+      "title": "Fix configureddevices stalling on a connecting device",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1054",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-12T01:29:58Z",
+      "additions": 32,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1052,
