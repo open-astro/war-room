@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-13T18:48:48.605Z",
+  "generatedAt": "2026-10-13T19:47:02.658Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1352,
+      "title": "feat(guider): per-axis minimum move — dec_minimum_move beside the RA value (#1156 part 2)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1352",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T19:35:19Z",
+      "additions": 202,
+      "deletions": 24,
+      "changedFiles": 24,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1351,
+      "title": "feat(guider): profile duplicate/rename follow to the PHD2 twin; terminal WS status for guider start/stop/dither (#1156 part 1)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1351",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T19:04:37Z",
+      "additions": 910,
+      "deletions": 27,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1349,
