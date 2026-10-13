@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-13T07:56:21.180Z",
+  "generatedAt": "2026-10-13T08:55:52.076Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1123,
+      "title": "Track CI tools in the dependency graph, add update issues and OSV scan",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1123",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T08:51:08Z",
+      "additions": 1045,
+      "deletions": 8,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1335,
+      "title": "fix: two-rung ladder for a floored prior; mount specs only while connected (#1264 follow-up)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1335",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T08:28:27Z",
+      "additions": 42,
+      "deletions": 4,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1334,
