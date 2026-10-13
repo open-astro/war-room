@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-13T12:53:10.159Z",
+  "generatedAt": "2026-10-13T13:52:08.696Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1343,
+      "title": "feat(client): the planner applies the fitted sky-model k — hours by 1/k, sub length by the real sky rate (#1140 P2 stage 3)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1343",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T13:15:57Z",
+      "additions": 321,
+      "deletions": 18,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1342,
