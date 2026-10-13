@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-13T06:56:33.340Z",
+  "generatedAt": "2026-10-13T07:56:21.180Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1334,
+      "title": "feat: mount spec sheet seeds the unguided prior — daemon read + client surfaces (#1264 stage 1)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1334",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T07:53:28Z",
+      "additions": 972,
+      "deletions": 19,
+      "changedFiles": 34,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1333,
+      "title": "fix(client): morning card — acknowledge the card itself, read every ended run (#1138 follow-up)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1333",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T07:15:48Z",
+      "additions": 122,
+      "deletions": 45,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1117,
+      "title": "fix: distinguish ZWO StopExposure and AbortExposure during readout",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1117",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-13T07:09:30Z",
+      "additions": 152,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1332,
