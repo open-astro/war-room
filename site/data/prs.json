@@ -1,11 +1,92 @@
 {
-  "generatedAt": "2026-10-13T00:01:06.889Z",
+  "generatedAt": "2026-10-13T01:00:31.318Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1102,
+      "title": "ci: pin vendored SDK files and gate the .deb SBOM on them",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1102",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T00:50:14Z",
+      "additions": 257,
+      "deletions": 19,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1325,
+      "title": "fix(fits): verify a CFITSIO export before accepting a library; gate the boot probe in CI e2e (#1214)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1325",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T00:31:34Z",
+      "additions": 176,
+      "deletions": 16,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1081,
+      "title": "Fix SynScan southern PEC tracking mode and RA readback sawtooth landings",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1081",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T00:31:05Z",
+      "additions": 1407,
+      "deletions": 536,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1101,
+      "title": "ci: attest build provenance and an SBOM for beta and nightly .debs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1101",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T00:30:34Z",
+      "additions": 158,
+      "deletions": 4,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1324,
+      "title": "fix(storage): one store-mount probe for lsblk, disk space and the capture gate; mountinfo + device liveness (#1231)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1324",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T00:01:15Z",
+      "additions": 472,
+      "deletions": 47,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1323,
