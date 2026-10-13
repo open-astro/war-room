@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-12T23:02:38.668Z",
+  "generatedAt": "2026-10-13T00:01:06.889Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1323,
+      "title": "test(client): profile the Tonight's Sky window scan over the real bundled catalogs (#1141)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1323",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-12T23:10:41Z",
+      "additions": 91,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1100,
