@@ -1,11 +1,60 @@
 {
-  "generatedAt": "2026-10-13T03:58:48.888Z",
+  "generatedAt": "2026-10-13T04:59:46.714Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1114,
+      "title": "Repeat a SynScan GOTO the handset ends 49' off",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1114",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T04:52:31Z",
+      "additions": 183,
+      "deletions": 13,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1111,
+      "title": "Fix ZWO camera frame validation and recovery",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1111",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-13T04:44:58Z",
+      "additions": 2007,
+      "deletions": 376,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1329,
+      "title": "feat(client): unguided exposure ceiling in the client — readiness fact, advisor line, probe readout, Imaging → Unguided (#1264)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1329",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T04:21:32Z",
+      "additions": 1539,
+      "deletions": 5,
+      "changedFiles": 30,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1328,
