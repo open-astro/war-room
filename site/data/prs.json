@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-13T14:51:29.824Z",
+  "generatedAt": "2026-10-13T16:50:18.322Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1347,
+      "title": "feat: dew formation advisory — humidity + dew-point gap + rising HFR → dew_formation diagnostic + one warning (#1158 §42.2 row 18)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1347",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T16:32:15Z",
+      "additions": 426,
+      "deletions": 1,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1346,
+      "title": "feat: Verify Position after a Stop Mount — snapshot + solve beside the mount's reported and intended positions (#1159 §57.4)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1346",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T15:53:17Z",
+      "additions": 1049,
+      "deletions": 9,
+      "changedFiles": 17,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1345,
