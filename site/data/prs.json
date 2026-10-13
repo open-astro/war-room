@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-13T09:55:01.226Z",
+  "generatedAt": "2026-10-13T10:54:29.279Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1339,
+      "title": "fix(client): one integration formula for the tier note; a mosaic redoes it (#1140 P5 follow-up)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1339",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T10:24:39Z",
+      "additions": 163,
+      "deletions": 25,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1338,
+      "title": "feat(client): session planner weighs banked hours — finish a tier tonight, skip a finished one (#1140 P5)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1338",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T10:01:26Z",
+      "additions": 340,
+      "deletions": 23,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1337,
