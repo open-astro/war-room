@@ -1,11 +1,58 @@
 {
-  "generatedAt": "2026-10-13T10:54:29.279Z",
+  "generatedAt": "2026-10-13T11:53:35.041Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1139,
+      "title": "fix(weewx): limit the feed fetch to http and https; fix #1136 changelog clause",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1139",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T11:43:21Z",
+      "additions": 26,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1340,
+      "title": "feat: pre-sleep checklist — preflight/today + bedtime card + Setup → Before you sleep (#1138 §58.14)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1340",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T11:24:12Z",
+      "additions": 2550,
+      "deletions": 13,
+      "changedFiles": 24,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1136,
+      "title": "Track gphoto libraries, add changelogs, report only fixable OSV findings",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1136",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T10:54:27Z",
+      "additions": 609,
+      "deletions": 71,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1339,
