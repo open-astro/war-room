@@ -1,11 +1,60 @@
 {
-  "generatedAt": "2026-10-13T04:59:46.714Z",
+  "generatedAt": "2026-10-13T05:57:27.586Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1118,
+      "title": "Release 5.0.0-beta.3",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1118",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T05:22:39Z",
+      "additions": 118,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1330,
+      "title": "feat(client): integration budget — auditable inputs, tier standing, noise-tolerance knob, goldens (#1140)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1330",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T05:10:16Z",
+      "additions": 925,
+      "deletions": 15,
+      "changedFiles": 22,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1116,
+      "title": "Validate QHY miniCam8M on arm64 (ConformU 4.5.1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1116",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-13T05:05:15Z",
+      "additions": 303,
+      "deletions": 305,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1114,
