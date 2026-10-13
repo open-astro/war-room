@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-13T21:45:45.827Z",
+  "generatedAt": "2026-10-13T21:52:19.088Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1356,
+      "title": "feat(server,client): server internal-state endpoint + Stats \"Pi performance\" section; §66.10 latency budget as a recorded test (#1175)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1356",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T21:45:28Z",
+      "additions": 1059,
+      "deletions": 7,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1355,
