@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-13T13:52:08.696Z",
+  "generatedAt": "2026-10-13T14:51:29.824Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1345,
+      "title": "feat(image): OSC frames render as luminance; DetectStars draws its stars; loader wires detector + annotator (#1147 §2105)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1345",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T14:35:30Z",
+      "additions": 340,
+      "deletions": 20,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1344,
+      "title": "feat(client): standalone Optimal Sub calculator from the Tonight's Sky header (#1140, NEXTGEN §5)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1344",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T14:05:56Z",
+      "additions": 932,
+      "deletions": 1,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1343,
