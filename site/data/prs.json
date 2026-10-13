@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-13T17:48:29.983Z",
+  "generatedAt": "2026-10-13T18:48:48.605Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1349,
+      "title": "feat(client): Run shortcuts and the session planner as ⌘K actions; Plan tonight opens the planner (#1154)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1349",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T17:54:42Z",
+      "additions": 343,
+      "deletions": 36,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1348,
