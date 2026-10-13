@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-13T09:28:19.942Z",
+  "generatedAt": "2026-10-13T09:55:01.226Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1337,
+      "title": "fix: cloned probe keeps its trailed bar; best-effort unguided cache read (#1264 follow-up)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1337",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T09:36:20Z",
+      "additions": 119,
+      "deletions": 5,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1124,
+      "title": "Check every vendored SDK and the upstream protocol documents",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1124",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T09:31:10Z",
+      "additions": 513,
+      "deletions": 68,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1336,
