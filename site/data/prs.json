@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-13T08:55:52.076Z",
+  "generatedAt": "2026-10-13T09:28:19.942Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1336,
+      "title": "feat: Imaging → Unguided profile section — guard, probe ladder, re-centre and prior-tolerance knobs (#1264)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1336",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T09:08:50Z",
+      "additions": 1248,
+      "deletions": 91,
+      "changedFiles": 33,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1123,
