@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-13T02:58:48.912Z",
+  "generatedAt": "2026-10-13T03:58:48.888Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1328,
+      "title": "test(client): cover the plate-solve vertical and the profile-import file seam (#1150)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1328",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T03:14:31Z",
+      "additions": 590,
+      "deletions": 54,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1327,
