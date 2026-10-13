@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-13T19:47:02.658Z",
+  "generatedAt": "2026-10-13T20:46:14.722Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1354,
+      "title": "chore(ci): bench/CI hygiene — gojq in Sanity, fork-aware Flutter-bump guard, counted waits, native arm64 bench lane (#1173)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1354",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T20:27:57Z",
+      "additions": 157,
+      "deletions": 27,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1353,
+      "title": "fix(storage): helper follow-ups — FSTAB override + rebuild bench, lock-open fallback, age-gated sweep, eager-resolve test (#1248)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1353",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T19:58:40Z",
+      "additions": 289,
+      "deletions": 16,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1352,
