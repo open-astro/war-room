@@ -1,11 +1,92 @@
 {
-  "generatedAt": "2026-10-13T05:57:27.586Z",
+  "generatedAt": "2026-10-13T06:56:33.340Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1332,
+      "title": "feat(client): collimation health as a picture on the Smart Focus card (#1139, §59.10)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1332",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T06:44:50Z",
+      "additions": 554,
+      "deletions": 0,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1121,
+      "title": "ci: attest build provenance for beta .debs on stable/5.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1121",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T06:44:37Z",
+      "additions": 21,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1104,
+      "title": "Fix async telescope motion error reporting",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1104",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-13T06:39:27Z",
+      "additions": 1727,
+      "deletions": 143,
+      "changedFiles": 27,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1119,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1119",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T06:13:49Z",
+      "additions": 4460,
+      "deletions": 1215,
+      "changedFiles": 62,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1331,
+      "title": "feat(client): the morning card — §58.13 overnight session summary on reconnect (#1138)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1331",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T06:06:23Z",
+      "additions": 1580,
+      "deletions": 0,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1118,
