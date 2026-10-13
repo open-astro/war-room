@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-13T11:53:35.041Z",
+  "generatedAt": "2026-10-13T12:53:10.159Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1342,
+      "title": "feat: sky-model calibration store — k per filter kind from the library, gated, on Imaging → Defaults (#1140 P2 stage 2)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1342",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T12:40:40Z",
+      "additions": 1307,
+      "deletions": 2,
+      "changedFiles": 23,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1341,
+      "title": "feat: every frame records its sky background (p05 + median ADU, bin) for the calibration store (#1140 P2 stage 1)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1341",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T12:04:51Z",
+      "additions": 416,
+      "deletions": 26,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1139,
