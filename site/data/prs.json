@@ -1,11 +1,41 @@
 {
-  "generatedAt": "2026-10-13T21:52:19.088Z",
+  "generatedAt": "2026-10-13T22:44:14.955Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1358,
+      "title": "feat(camera): optional image_type on manual capture — calibration frames over REST (#1177)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1358",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T22:43:28Z",
+      "additions": 144,
+      "deletions": 3,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1357,
+      "title": "feat(data-manager): ETag beside Last-Modified on sky-data re-downloads; download mechanics documented (#1171)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1357",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T22:22:40Z",
+      "additions": 280,
+      "deletions": 61,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1356,
