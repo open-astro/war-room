@@ -1,11 +1,26 @@
 {
-  "generatedAt": "2026-10-13T01:59:37.216Z",
+  "generatedAt": "2026-10-13T02:58:48.912Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1327,
+      "title": "feat(client): offline profile authoring — wizard drafts saved locally, replayed on reconnect (#1137)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1327",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T02:29:39Z",
+      "additions": 2221,
+      "deletions": 8,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1110,
