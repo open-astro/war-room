@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-13T01:00:31.318Z",
+  "generatedAt": "2026-10-13T01:59:37.216Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1110,
+      "title": "Require exactly one GOTO on the retried Celestron async slew",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1110",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-13T01:38:45Z",
+      "additions": 4,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1326,
+      "title": "feat(mosaics): persist mosaic projects; derive per-panel progress from the frame catalog (#1146)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1326",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-13T01:31:08Z",
+      "additions": 2115,
+      "deletions": 169,
+      "changedFiles": 25,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1102,
