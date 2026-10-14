@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-14T21:10:37.864Z",
+  "generatedAt": "2026-10-14T21:25:31.978Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 844,
+      "title": "Add Altair camera driver over a shared ToupTek-family SDK wrapper",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/844",
+      "author": "RudolphLu",
+      "mergedAt": "2026-10-14T21:16:51Z",
+      "additions": 4778,
+      "deletions": 1009,
+      "changedFiles": 50,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now run Altair Astro cameras, which previously did not work because ToupTek's software does not recognize them. Altair cameras are rebranded ToupTek hardware, so instead of copying the ToupTek camera code, both brands now share one driver, and any future ToupTek camera fix also applies to Altair. The change bundles Altair's own camera library (MIT licensed, with permission confirmed by Altair), adds Altair as a choice in the web setup page, and installs the needed device permissions with the package. Two models were tested cleanly, and the notes advise using a USB 2 port on the OrangePi 3 LTS board, where the USB 3 port was found to drop full-size frames.",
+      "category": "feature",
+      "summaryHash": "5ebe987311930f68f7c16ce02b889aa6046f674c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1153,
