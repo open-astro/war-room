@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-14T15:30:34.252Z",
+  "generatedAt": "2026-10-14T19:27:01.486Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1143,
+      "title": "Fix SynScan re-GOTO aim after far-miss repeat",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1143",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-14T18:59:48Z",
+      "additions": 50,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1144,
