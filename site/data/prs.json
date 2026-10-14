@@ -1,11 +1,29 @@
 {
-  "generatedAt": "2026-10-14T22:23:57.245Z",
+  "generatedAt": "2026-10-14T23:22:31.707Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1151,
+      "title": "ci: bump the github-actions group with 5 updates",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1151",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-14T23:01:20Z",
+      "additions": 6,
+      "deletions": 6,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine internal maintenance with no effect on the product or its users. This updates five of the automated tools used by the project's build and checking system to their latest minor versions. That includes the tool that saves test and scan results, the security code scanner, and the automated AI code reviewer. The changes match the description exactly.",
+      "category": "ci",
+      "summaryHash": "efc8f0d2d95db4a30365cdb488149c1ed8831a55"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 844,
