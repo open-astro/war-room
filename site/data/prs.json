@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-14T19:27:01.486Z",
+  "generatedAt": "2026-10-14T20:25:54.115Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1153,
+      "title": "Fix SynScan Park failing on one dropped status reply",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1153",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-14T20:06:20Z",
+      "additions": 147,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1146,
+      "title": "Fix Bisque sync slew hiding completion poll errors",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1146",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-14T19:50:45Z",
+      "additions": 77,
+      "deletions": 6,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1143,
