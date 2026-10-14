@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T21:25:31.978Z",
+  "generatedAt": "2026-10-14T22:23:57.245Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -609,9 +609,9 @@
       "deletions": 0,
       "changedFiles": 9,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "After an autofocus run on a telescope with a central mirror (such as an SCT, Maksutov, RC or Newtonian), the Smart Focus card now shows a small picture of how well the optics are lined up, instead of just a notification. The picture shows which way and how far the shadow in a defocused star is off-centre, with a plain verdict (looks good, slight, or significant and worth fixing before continuing), a clock position, and a short hint about what that usually means for your type of scope. The direction is shown as it appears in the image, not at the eyepiece, and the caption says so. A new focus run clears the old result, and the app only uses information the system already sends, so nothing else needed to change.",
+      "category": "feature",
+      "summaryHash": "54da3ffee46da22188cd5701e96e96b2ff143c98"
     },
     {
       "repo": "open-astro/AlpacaBridge",
