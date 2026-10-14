@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-13T23:43:28.966Z",
+  "generatedAt": "2026-10-14T14:30:52.283Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1142,
+      "title": "Record libgphoto2 and LibRaw licences in debian/copyright",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1142",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-14T13:45:46Z",
+      "additions": 35,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1359,
