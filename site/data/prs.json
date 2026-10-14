@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T20:25:54.115Z",
+  "generatedAt": "2026-10-14T21:10:37.864Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -19,9 +19,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Parking a SynScan telescope mount no longer fails just because one status reply from the hand controller got lost during the move. The mount now shrugs off up to two missed replies in a row and only gives up on the third, which matches how the Celestron driver already behaves. Before this, a single hiccup on the cable could stop the mount partway to its park position. New automated tests cover the change, but it has not been tried on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "7df5960ad8f2e16a3e244022668e851aea395d6b"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -36,9 +36,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When a mount controlled through TheSkyX software is told to move and wait until it arrives, a lasting problem in TheSkyX is now reported with its real error message. Before, the error was hidden and showed up only as a vague two-minute timeout. A single failed check is still ignored, and three failures in a row now stop the wait and show the actual cause. Parking has the same hidden-error problem and was deliberately left unchanged here.",
+      "category": "fix",
+      "summaryHash": "505b9024258ef9c163ffc0746e25ba7550786749"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -53,9 +53,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This fixes how SynScan mounts fine-tune their aim after a move that lands far off target. When the mount missed badly and repeated the move, it kept an old correction from an earlier attempt. That leftover correction could throw off the next adjustment. The repeat now starts fresh from the real target, so later corrections are based only on the latest miss. A new test covers this, but it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "13aea35a1491a5eb488ad278522b9b89ff5d181c"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -70,9 +70,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The web settings page now asks for confirmation before any WiFi change that could cut off your own connection to the device. This covers turning off the device's hotspot, turning off WiFi, and changing a running hotspot's name, password or frequency band. If you cancel, the setting goes back to how it was. This protects people in the field who reach the device through its hotspot from accidentally locking themselves out, although the question may also appear in a few cases where the connection would not actually drop.",
+      "category": "fix",
+      "summaryHash": "1f8618f57a450b961da779f9deec7007ea4e600a"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -87,9 +87,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This is a test-only change, with no change to the software users run. The simulated Sky-Watcher mount used in cable-connected tests used to pretend every mount was a Wave 100i, including features other models lack. It now behaves like the specific mount being tested, so tests can catch problems the old, overly forgiving simulation might have hidden. A new test checks that an EQM-35 Pro mount is handled with its own real settings.",
+      "category": "tests",
+      "summaryHash": "affa029fd64deb0ecd9d51d35a8f66700b01dd94"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -104,9 +104,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This updates the installable package's licensing record to name two outside libraries the camera driver relies on: libgphoto2 and LibRaw, along with their open-source licences. No software behaviour changes. It keeps the project's legal paperwork complete, and it notes that more must be added if libgphoto2 is ever bundled directly into the package.",
+      "category": "chore",
+      "summaryHash": "13cfad3f91dbd70e03c98b49621d4d950612ed31"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -119,9 +119,9 @@
       "deletions": 53,
       "changedFiles": 18,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When the disk gets critically full, users can now choose to pause the running imaging session instead of only warning or stopping it entirely. While paused, no new pictures are taken until space is freed and the run is resumed. The same change makes the warning shown when importing a shared profile list everything that sharing actually removes, makes repeated star-catalog lookups faster by remembering recent results, and removes four never-used event names from the documentation.",
+      "category": "feature",
+      "summaryHash": "0683755cc7ec7f76cf868256f048e12f4f65ec54"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -134,9 +134,9 @@
       "deletions": 3,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Scripts and other tools that take a single picture through the API can now say what kind of frame it is: a normal image, or one of the calibration types (dark, bias, flat or dark-flat). The frame is labelled and filed under that type, and darks and biases are taken with the shutter closed. Without this, building a set of calibration frames meant setting up a full imaging sequence. Unknown types are rejected, and existing callers behave exactly as before.",
+      "category": "feature",
+      "summaryHash": "c990ff121a1e7ded73213a91185aabf61d8b4b57"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -149,9 +149,9 @@
       "deletions": 61,
       "changedFiles": 9,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When re-downloading a star catalog or other sky data that is already installed, the app now uses a second way of checking whether the file has changed. This avoids downloading again a file that was re-uploaded unchanged with a new date. The PR also documents two decisions: interrupted downloads restart rather than resume, because the files are small, and nothing extra is needed for phones, since downloads already run on the server.",
+      "category": "feature",
+      "summaryHash": "d5a79a47e085c9fa48238d804b20d46fd7a8f7d0"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -164,9 +164,9 @@
       "deletions": 7,
       "changedFiles": 19,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Stats screen has a new \"Pi performance\" section that shows how the server computer is doing. It covers uptime, memory, CPU use, background clean-ups, busy threads, connected clients and system load. Figures are only gathered when someone looks, so the section costs nothing otherwise. A speed check for key server responses is now recorded on every test run but only fails the build when that is switched on. The PR also includes two small follow-ups from the previous PR, including a fix so an equipment notification with a blank title gets a sensible default title.",
+      "category": "feature",
+      "summaryHash": "41cb11f033e538b24c9f2b18c3df0543de3e819c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -179,9 +179,9 @@
       "deletions": 98,
       "changedFiles": 23,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Mostly internal housekeeping: all the outside software packages the project depends on are now pinned in one place, so different parts can't drift onto different versions. A check found no known security problems, and the one outdated testing package was left in place on purpose, with the reason written down. One change users will notice: equipment warnings and errors that used to go only to the server log, such as a guiding settle timeout, now appear in the notification inbox. Repeats are suppressed for five minutes.",
+      "category": "chore",
+      "summaryHash": "30958596891ff1f21e9937190688eb34f7d46b9b"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -194,9 +194,9 @@
       "deletions": 27,
       "changedFiles": 11,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal build and test housekeeping. The automated checks now run the test suite natively on the same kind of ARM processor the Raspberry Pi uses, and three tests that waited a fixed time now wait for actual activity, making them less flaky. The weekly job that proposes software updates no longer gets confused by a contributor's copy of the same branch. The PR also bundles small comment and test tweaks from an earlier change.",
+      "category": "ci",
+      "summaryHash": "bcaad06cb5438b255831869195ca41320c3dd33d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -209,9 +209,9 @@
       "deletions": 16,
       "changedFiles": 7,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Several follow-up fixes to the tool that sets up the external storage drive. If the tool cannot create its lock file (for example, on a read-only system folder), it no longer quits silently; it now prints a warning and carries on. At startup, the cleanup of leftover storage request files now skips anything less than five minutes old, so restarting the app during a long disk format no longer deletes the result of a format that is still running. The rest is test coverage, a test-only setting that is locked down so it cannot touch the real system configuration, and a corrected error-code table in the docs.",
+      "category": "fix",
+      "summaryHash": "4503d0516b1be9126984c6f48837f831e213c01c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -224,9 +224,9 @@
       "deletions": 24,
       "changedFiles": 24,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Guiding now has separate minimum-correction settings for the two telescope axes (RA and Dec). Before, one value applied to both. Settings and the Tune guiding dialog now show both rows. Profiles saved before this change keep guiding exactly as before, because the Dec value copies the RA value until someone changes it. The PR also includes two small fixes: a dither cancelled partway through is now reported as cancelled rather than successful, and renaming a profile keeps the guider's matching profile name in sync with the name actually saved.",
+      "category": "feature",
+      "summaryHash": "07156089c0c6646b2d532fab1d8a9d17fb6ef4a6"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -239,9 +239,9 @@
       "deletions": 27,
       "changedFiles": 14,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The guiding software's profile now follows the app's equipment profile. Duplicating a profile copies its guider calibration, so the copy is ready to use right away. Renaming a profile renames the guider's copy too, but this is skipped while guiding is running so it does not interrupt an active session. Starting, stopping and dithering the guider now send a final success-or-failure message to the app, so a refused dither or a failed settle no longer looks like it worked. Connecting to the guider is also more robust: one failing setup step no longer blocks the others, and equipment connect waits now time out after 15 seconds instead of 60.",
+      "category": "feature",
+      "summaryHash": "0b9001bdb44b38b7f91bae753c36619dd39e726d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -254,9 +254,9 @@
       "deletions": 36,
       "changedFiles": 8,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The ⌘K command palette now offers three new actions: run or resume the sequence, pause or resume it, and plan tonight's session. Each label shows its keyboard shortcut, so the palette also serves as a shortcut cheat sheet. If an action can't be done right now, a short message explains why. The \"Plan tonight\" button on the empty Run tab now opens the session planner directly instead of just switching to the Planning tab. This change is app-only.",
+      "category": "feature",
+      "summaryHash": "71ce4655f80bd539d8daa7fade44452956586fe7"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -269,9 +269,9 @@
       "deletions": 25,
       "changedFiles": 23,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The estimated time remaining for an imaging run is now more accurate. A step that is already underway counts only its remaining time, so a 5-minute exposure that is 4 minutes in now counts as 1 minute rather than 5. Quick settings changes no longer add a made-up 15 seconds each, and disabled steps no longer count toward the total. Moving steps around during a run now refreshes the estimate, and the remaining-time display no longer drops to zero between loop passes. A known gap: the app's own step count still includes disabled steps, though in practice saved plans don't contain any today.",
+      "category": "fix",
+      "summaryHash": "4a77e84b6eed4b0aa21db18f941c7528c429a209"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -284,9 +284,9 @@
       "deletions": 1,
       "changedFiles": 5,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The app can now warn when dew is likely forming on the telescope optics. It checks once a minute, and raises the alarm when three signs appear together: very high humidity, an air temperature right at the dew point, and stars in recent images growing noticeably blurrier. When that happens, it posts one warning suggesting you wipe the optics or turn on the dew heaters, and it pauses autofocus until the condition clears. It never parks the telescope or stops the run. Setups without a weather station are unaffected.",
+      "category": "feature",
+      "summaryHash": "7ac119914f3894520e299e0aeb5d22648b08a839"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -299,9 +299,9 @@
       "deletions": 9,
       "changedFiles": 17,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "After you use Stop Mount, the pop-up now has a \"Verify Position — show me an image\" button. It takes one quick test picture, works out from the stars where the telescope is really pointing, and shows that next to where the mount thinks it is and where it was last told to go, with how far apart they are. This lets you check the mount is somewhere sensible before resuming, skipping or ending, and it only looks: it never moves or corrects the mount. As part of this, the mount's \"where I was last sent\" position is now actually read from the mount; before this it was never filled in, so that third position would always have been blank.",
+      "category": "feature",
+      "summaryHash": "6e354088ff8841ebf4d3464afa909d8fa540a55d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -314,9 +314,9 @@
       "deletions": 20,
       "changedFiles": 8,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Pictures from colour cameras now show on screen as a smooth black-and-white image instead of the grainy checkerboard pattern they had before. When star detection is asked to mark what it found, it now draws a circle around each star while keeping an unmarked copy, and frames loaded from the library are now given a real star finder instead of an empty placeholder. Support for camera RAW files and saving as TIFF is still not done.",
+      "category": "feature",
+      "summaryHash": "fd18bf2be9d672baf30d082982dc0d8949e2c6ac"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -329,9 +329,9 @@
       "deletions": 1,
       "changedFiles": 8,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "A new calculator button in the Tonight's Sky header opens an \"Optimal Sub\" calculator. It is a scratch pad where you can change camera, telescope, filter and sky settings and immediately see the recommended exposure length and, if you add a target, how many hours of imaging it needs. It starts from your saved setup but never changes it, and a bad entry shows a plain message instead of an error. While building it, the team also fixed two problems with the input boxes: typed edits quietly snapped back to the old value, and large whole numbers like 50000 were shown as 5.",
+      "category": "feature",
+      "summaryHash": "7b76ed29c7291258ce3da6ee0f512eb3aebfff94"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -344,9 +344,9 @@
       "deletions": 18,
       "changedFiles": 14,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The planning tools now use the correction factor learned from your own past photos, so their advice matches your real equipment and sky instead of only the manufacturer's numbers. Tonight's Sky hour estimates, the plan dialog, and the exposure-length advisor all change, but only for filter types whose correction passed its quality check. Each estimate's details now say whether a measured correction was used or only the standard model.",
+      "category": "feature",
+      "summaryHash": "a2304703ceaf5d8c9038a47bbc862c1cae582a8b"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -359,9 +359,9 @@
       "deletions": 2,
       "changedFiles": 23,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The system can now work out, for each type of filter, how much brighter or dimmer your real sky looks compared with what the standard model predicts, using your recent photos. Each result is only marked usable if it passes quality checks; if not, it explains why. Results are saved with your profile and shown under Settings → Imaging → Defaults, with a button to recalculate. This stage only measures and stores the results; the planner does not use them yet.",
+      "category": "feature",
+      "summaryHash": "e401faf85b83eb0bee494558e24d1bb89292d1e3"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -374,9 +374,9 @@
       "deletions": 26,
       "changedFiles": 11,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Every picture taken, including calibration shots, now has its background sky brightness measured and saved, along with the camera binning setting that was actually used. Older pictures get this measurement filled in the first time someone looks at their brightness chart. This is groundwork for later features that tune the planner to your real sky. There is no visible change in the app yet, but the measurements are now available to other tools.",
+      "category": "feature",
+      "summaryHash": "9f62d7753581e08941e02b8053bc40c41f11f486"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -391,9 +391,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The weather-station (WeeWX) driver now only fetches its data feed from normal web addresses (http or https), including after a redirect. Before, it would also read local files or other kinds of addresses, which exposed the bridge to a known security issue in the download library it uses. A weather feed set to any other kind of address will now fail to connect with an error, but normal WeeWX setups are unaffected. The PR also corrects a self-contradicting sentence in an earlier changelog note.",
+      "category": "fix",
+      "summaryHash": "71e7b1b8dc69f8ddb5cc1b76356cbf76738f80f0"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -406,9 +406,9 @@
       "deletions": 13,
       "changedFiles": 24,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds a pre-sleep checklist: once per night, when a sequence is running after dark, the app shows a bedtime card that checks equipment connections, free disk space, the plate solver, camera cooling, the mount, the running sequence, when tonight's target will flip sides and how high it will be then, the unattended hours, and which device will sound the alarm. Anything the system cannot read is shown as unknown rather than quietly passing. You can tap \"All good\" to go to bed or \"Adjust\", and the same card lives under Setup → Before you sleep with a Refresh button. The plate solver and slew speed are only checked for presence, not actually tested, and the card says so.",
+      "category": "feature",
+      "summaryHash": "041934365819029ed3668e237678bcd972521b0d"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -421,9 +421,9 @@
       "deletions": 71,
       "changedFiles": 7,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The automated security scan now only reports vulnerabilities in the libraries this project actually ships, and only opens an alert issue for serious ones that Debian has already fixed. The first scan had flooded an issue with about 100 findings nobody could act on. The project also now watches for new releases of the camera libraries used by the gphoto driver (where support for new camera models arrives), and dependency update issues now include the upstream release notes. This is internal tooling; nothing changes for telescope users directly.",
+      "category": "ci",
+      "summaryHash": "7e134504004751b34d6d7a04aae729e7f814897c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -436,9 +436,9 @@
       "deletions": 25,
       "changedFiles": 4,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a misleading note in the session planner: when you turned a planned target into a multi-panel mosaic, the plan could still say the slice would finish that target's imaging goal, even though each panel only gets a fraction of the night. The note is now recalculated when the mosaic grid changes, and goes away or comes back as appropriate. It also makes the planner use one single calculation for imaging time everywhere, so the scoring and the notes cannot disagree.",
+      "category": "fix",
+      "summaryHash": "fc2df7b37f247224cea8c401ebdb6c8e6210d735"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -451,9 +451,9 @@
       "deletions": 23,
       "changedFiles": 9,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The session planner now takes into account how much imaging time you already have on each target from past nights. It favours a target if tonight's time would finish its imaging goal, steers away from targets that are already finished in favour of new ones, and adds a note to the plan explaining which applied. If your history can't be loaded within a few seconds, or a target has no goal set, the plan works exactly as before.",
+      "category": "feature",
+      "summaryHash": "f9aac04b63ef35de499a8ffe9ff1d9d6f4b45152"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -466,9 +466,9 @@
       "deletions": 5,
       "changedFiles": 7,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "A set of small follow-up fixes to the unguided imaging settings. Copying or templating a tracking-test step now keeps its custom trailing threshold instead of quietly resetting to the default. Saving profile settings for offline use no longer fails entirely if just the unguided section can't be read. The settings screen now tells you when a chosen option needs your optics or typical seeing filled in before it can work.",
+      "category": "fix",
+      "summaryHash": "1c92251dba2a84c9448345d0a8b5a0a15e3a3ade"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -483,9 +483,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The weekly update check now watches every third-party camera, filter wheel and focuser software kit the project bundles, plus 21 outside protocol documents and reference files the drivers were built from. When any of these changes upstream, an issue is opened automatically, so nobody has to remember to check by hand. A new safety check also fails the build if a bundled kit or vendor folder is added without being tracked or given a stated reason. The time limit for the job was raised to 30 minutes, and the changes include a small fix to some outdated web links inside one bundled vendor document that the description does not mention.",
+      "category": "ci",
+      "summaryHash": "8250c280048b8565559704a85e9b78b1b925ff36"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -498,9 +498,9 @@
       "deletions": 91,
       "changedFiles": 33,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Settings for imaging without a guide camera can now be edited in the app under Imaging → Unguided and are saved with the user's profile. Users can turn the trailing guard on or off, change how strict it is about star shape, and set how quickly it shortens or lengthens exposures. They can also edit the list of test exposures used to measure the mount, choose when the scope re-centres on its target, and pick how the starting estimate from the mount's spec sheet is calculated. Every default matches the previous behaviour, so existing profiles and runs are unchanged, and the app rejects invalid values.",
+      "category": "feature",
+      "summaryHash": "ed95cdf67d8305acde4e7ccc4c4385cdae71dd6f"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -515,9 +515,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The project now has automatic alerts for updates and security problems that GitHub's built-in tools do not cover. A weekly check opens one issue for each build tool or library with a newer version, and closes it once the project catches up. A daily scan checks the system packages the nightly installer pulls in on the target computer and opens an issue for any new serious vulnerability. The list of tracked dependencies was also expanded to include the tools used for building and testing.",
+      "category": "ci",
+      "summaryHash": "f1bbc3ffac04a7dbd1b5d9eb2c12c4ed928f7c2d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -530,9 +530,9 @@
       "deletions": 4,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This fixes two problems in the recent mount spec sheet work for imaging without a guide camera. When the starting estimate was very short, the mount test ran only one exposure, so it could never confirm that longer exposures were fine. It now also tests at the starting estimate itself, giving it two steps. The app also stopped using a mount's spec sheet after the mount disconnects, so it no longer makes estimates from a mount that is not attached.",
+      "category": "fix",
+      "summaryHash": "38e5b02e61b3adcf6d04612ec3b42bc5fe31cf7c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -545,9 +545,9 @@
       "deletions": 19,
       "changedFiles": 34,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When a mount driver publishes a spec sheet (tracking error, gear timing, encoders, and so on), the app now reads it on connect and shows it on the mount's readiness card and in the Unguided settings. Before any measurement has been made, it uses those figures to estimate how long an exposure can run without a guide camera, and the exposure advisor shows that estimate and where it came from. A real measurement still takes priority. No bridge version publishes these sheets yet, so for now every mount shows \"no spec sheet\".",
+      "category": "feature",
+      "summaryHash": "a2f3fdd03449886e5fc365993452ff0c268dbae3"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -560,9 +560,9 @@
       "deletions": 45,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This fixes the morning summary card, which reports what happened overnight. Dismissing a paused or failed run's card could previously record the wrong outcome, so the card came back on the next connect. Dismissal now applies to the exact card the user closed. The app also checks every finished run instead of only the eight most recently edited sequences, so a night's run on an older sequence is no longer missed. Not mentioned in the description: those checks now run all at once instead of one by one, which should make reconnecting faster with large libraries.",
+      "category": "fix",
+      "summaryHash": "076ea86309a6301eed2705a5ae57a2b04ee6c654"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -577,9 +577,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes two timing problems with ZWO cameras. The camera no longer briefly reports a picture as ready while a new exposure is still starting. Once the camera has started sending a finished image to the computer, a \"stop\" request is now ignored and an \"abort\" request is refused with an error, so the completed image is kept instead of thrown away. This is a deliberate behavior change: software that aborts during that phase will now get an error. The new automated tests were not run on the author's machine because they need ARM hardware, and the change was not tested on a real ZWO camera. The PR also adds a small, unrelated check on how device settings are saved.",
+      "category": "fix",
+      "summaryHash": "38c9446774c6ad0e434dc06c49dfa998cc3335ac"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -609,9 +609,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal release-process change for the 5.0 beta line. Each beta install package now comes with a signed record proving it was built by the project's own release process from the tagged code. The docs now show testers how to check that record. This was already done on the main development line and is now copied to the 5.0 branch so the remaining betas get it too. It will only be proven to work on the next beta release.",
+      "category": "ci",
+      "summaryHash": "dc52b6591d895d3c8925f3eedc850cced02e9724"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -626,9 +626,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Telescope mounts from several brands (Celestron, SynScan, Sky-Watcher, iOptron, TheSkyX/Bisque and ZWO) now report problems honestly during moves, parking and homing. Before, a failed status check could look like a successful arrival. Now the error is kept and passed on to the controlling software, so it no longer acts as if the mount reached its target when it did not. Celestron mounts now tolerate one or two brief communication hiccups before treating a move as failed. Most of the code changes were too large to show here, so only the shared parking logic and the documentation updates could be checked directly against the description.",
+      "category": "fix",
+      "summaryHash": "6a39c9a6ee5a88f576003aa26aa6c461093de09c"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -643,9 +643,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Brings all the bug fixes from the 5.0 beta 3 release into the main development line, so future 5.1 work starts with everything beta testers are running. This covers fixes for several cameras (SVBONY, QHY, ToupTek, ZWO, Player One) and for SynScan and Sky-Watcher mounts. Some of these fixes had to be carefully reworked because the same code had been reorganized on the main line in the meantime. It also includes a safer version of the internal merge script and a refreshed SynScan compatibility test report.",
+      "category": "chore",
+      "summaryHash": "c342c867896f5cca8005eefa7973a843f31d23ba"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -658,9 +658,9 @@
       "deletions": 0,
       "changedFiles": 12,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds a \"morning card\": when the app reconnects and finds that an imaging session finished, failed, was stopped or paused for you while nobody was watching, it shows one summary. The summary says what happened and when, how many frames were captured, and the warnings the system posted during the night. It also offers buttons to review the details, open the run, or dismiss the card. Each card is shown only once on a device, and it is skipped for sessions you watched end live or that ended more than 36 hours ago.",
+      "category": "feature",
+      "summaryHash": "6d2a224124747c54c2af24622a7ce8925aeffc22"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -675,9 +675,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Prepares the third beta of AlpacaBridge 5.0 by bumping the version number and the README badge and adding plain-language release notes for testers. The beta bundles recent fixes for Sky-Watcher/SynScan mount pointing and southern-hemisphere tracking, several camera brands (SVBONY, QHY, ToupTek, ZWO), and the Devices tab, so people at the telescope can confirm them. No program code changed; the release still has to be tagged after merge.",
+      "category": "chore",
+      "summaryHash": "92321eb11bda75ead43a28c60d266d21552a7bae"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -690,9 +690,9 @@
       "deletions": 15,
       "changedFiles": 22,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Tonight's Sky planner now shows how it worked out the hours each target needs, including sky darkness, moon, filter and target brightness, so the estimate can be checked rather than taken on faith. Each target also shows progress toward its goal, such as \"2.8 h to go — finishes tonight\", \"needs another night\", or a \"Tier complete — diminishing returns\" tag that nudges you toward something new. A new Planning setting under Imaging Defaults controls how long each single exposure should be, and the planner, plan dialog and sequence editor all use it. The setting is stored only on the device. Some planned pieces, such as a calibration store and ranking targets by how close they are to finishing, are not in this change.",
+      "category": "feature",
+      "summaryHash": "9b6881121fd5d3de1742157e92a2bca03ab1a2df"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -707,9 +707,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Records a fresh, clean compatibility test of the QHY miniCam8M camera on a Raspberry Pi 4 running the 5.0 beta 2 build, replacing an older test report and listing the exact hardware and software versions used. The camera passed every check, including correct image sizes at all binning levels and correct behavior when an exposure is cancelled. One case, a broken or incomplete image coming from the camera, could not be reproduced on real hardware, so it remains covered only by simulated tests and one related issue stays open. No program code changed.",
+      "category": "docs",
+      "summaryHash": "451238bd7ae7b6d0aa89f006943b9f5b7bf21d47"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -724,9 +724,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Some Sky-Watcher/SynScan mounts occasionally finish a GoTo about 49 arcminutes off target while reporting success. The driver now automatically repeats that GoTo once to the same target. If the second attempt also misses by that much, the slew reports an error instead of silently claiming it arrived, so imaging software either lands on target or knows it didn't. This is a deliberate behavior change: a mount that refuses a move, hits a limit or never moves will now produce an error where it used to report success. The fix is covered by new tests but has not yet been confirmed on the real mount.",
+      "category": "fix",
+      "summaryHash": "5915f262b302b1b8a78404c2e0f30a59f917fc0d"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -741,9 +741,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Makes ZWO cameras more trustworthy about their images. The driver now checks that each finished frame has the size and format that was requested before saying it is ready. Failed or bad downloads stay reported as errors until the camera recovers. Overlapping exposure requests are refused instead of corrupting the current one, and a failed new exposure no longer wipes the previous image. Saved ZWO device settings with impossible device numbers are now dropped while the device stays listed for repair, rather than loading a different camera. The code also removes the old checks that refused to set up a ZWO filter wheel, focuser, rotator or dew heater with no device selected, which the description does not clearly spell out. The change also includes a large set of new simulated-camera tests and some formatting-only edits.",
+      "category": "fix",
+      "summaryHash": "6f40a80e1ffc85482bc9eefbf20465cfa553530f"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -756,9 +756,9 @@
       "deletions": 5,
       "changedFiles": 30,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "For setups without a guide camera, the app now shows the longest exposure the mount can hold before stars start to trail. This figure is the \"unguided ceiling\" that the telescope computer already measures. It appears in four places: on the mount's readiness card, as an \"Unguided: about N s\" line next to the suggested exposure length, live in the Run tab as each test exposure finishes, and on a new Settings → Imaging → Unguided page. That page also has a button to throw away the old measurement and remeasure on the next run. The app deliberately does not send its own starting guess, so a remeasure is not overridden. Using the mount's spec sheet and making the measurement rules adjustable are still waiting on other work.",
+      "category": "feature",
+      "summaryHash": "cc709ab746587f4965acc0fece4ef14cb35f7cde"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -771,9 +771,9 @@
       "deletions": 54,
       "changedFiles": 7,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds automated tests for the app's plate-solving feature, which works out where the telescope is pointing from a photo, and for importing a shared equipment profile from a file. A small amount of app code was rearranged so these parts can be tested without a real server or file picker. Users should see no difference.",
+      "category": "tests",
+      "summaryHash": "81ba754c24f30a6ffd3030adfc15aadacb72189b"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -786,9 +786,9 @@
       "deletions": 8,
       "changedFiles": 21,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The setup wizard now works when the app cannot reach the telescope computer. A profile saved offline, or during a dropped connection, is kept on the device and sent automatically the next time the app connects, with a short note saying what happened. If the telescope computer rejects the saved profile, it is discarded and the user is told to finish it from Setup. Connecting equipment and guider setup still have to be done at the rig. Two smaller changes come with it: offline planning now uses the custom horizon the user drew, and switching to a different server mid-session sends the user back through the startup flow.",
+      "category": "feature",
+      "summaryHash": "a4e193b6192c06bc10f66889a390ffa999cac922"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -803,9 +803,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Test-only change. An automated check for Celestron telescopes once again fails if the driver sends a repeated move command twice when it should send it once. An earlier change had loosened this check without giving a reason. Nothing changes for users.",
+      "category": "tests",
+      "summaryHash": "88150f083796590a80b0396caf0c06770b95eb60"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -818,9 +818,9 @@
       "deletions": 169,
       "changedFiles": 25,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Mosaics, large images built from a grid of smaller panels, are now saved as real projects instead of temporary placeholders. Progress for each panel is worked out from the photos actually taken, so the app still knows which panels are done after a restart, across several nights, or after photos are deleted. The Library now opens with a Mosaics section showing each project's grid and how many panels are finished. The old built-in sample mosaic has been removed.",
+      "category": "feature",
+      "summaryHash": "d4550472424d79786fcf4e29a8a0790d962669ec"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -835,9 +835,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Tightens the release process so the camera and device maker software bundled in the install package is checked against a recorded fingerprint. A swapped or changed vendor file now causes the build to fail rather than ship unnoticed. To make this check possible, those vendor files are no longer trimmed during packaging, which makes the install about 2.3 MB larger with no change in how it works. The package's list of contents now also records the exact versions of the tools used to build it.",
+      "category": "ci",
+      "summaryHash": "31c0019f17b5cab181d1d58cae3bea0f3576668d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -850,9 +850,9 @@
       "deletions": 16,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a problem where pointing the app at the wrong library for its astronomy image format could break saving every captured image. The app now checks that a library is the right one before using it, skips any that aren't, and records the skipped ones in its startup log. The automated build checks also now confirm that this startup check runs.",
+      "category": "fix",
+      "summaryHash": "700d7995953e37e499c27af056f5b5a4d2c50968"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -867,9 +867,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes two problems with Sky-Watcher SynScan mounts. Southern-hemisphere users were having their hand controller accidentally switched into a periodic-error playback mode when tracking was turned on; it now uses normal equatorial tracking in both hemispheres. The driver also now corrects for the controller only updating its clock once a second, which made reported positions jump around by up to 15 arcseconds. It finishes each slew with small timed moves instead of repeated full slews, so the mount lands more accurately and no longer reverses after every slew. Guiding corrections in the east-west direction were also reworked, because a 'west' nudge was actually moving the mount east on the test rig.",
+      "category": "fix",
+      "summaryHash": "533f50f8411038fcde3dbf675cdebc26387ffc30"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -884,9 +884,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Beta and nightly install packages built by GitHub now come with a signed record of which workflow and which code version built them, plus a signed list of the software they contain. Testers can run one command to confirm a downloaded package is genuine and unaltered, which the existing checksum file could not prove. Stable releases, which are built elsewhere, are not covered.",
+      "category": "ci",
+      "summaryHash": "151b5cc80687303562634404b3f7b19ba0999d8a"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -899,9 +899,9 @@
       "deletions": 47,
       "changedFiles": 9,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Every part of the app now agrees on whether the image storage drive is actually plugged in. Previously, after a restart with the drive missing, the Storage panel could still show the drive as present and report the SD card's free space as if it were the drive's, even though captures were correctly refused. Detection is also more reliable now: it recognises a drive unplugged mid-session, and some deliberate custom setups now count correctly as storage. The author notes the mid-session unplug case was checked with automated tests only, not reproduced live.",
+      "category": "fix",
+      "summaryHash": "316cf5cc851090831b798122a7249d844c02873f"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -914,9 +914,9 @@
       "deletions": 0,
       "changedFiles": 1,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds a test that times how long the Tonight's Sky list takes to calculate over the full built-in catalog of about 17,000 objects. On a Mac it takes around 46 milliseconds, well within expectations. The test fails only if the time grows dramatically, so a major slowdown would be caught automatically. It was not measured on a phone or the Pi.",
+      "category": "tests",
+      "summaryHash": "5db39f42efec495a46570862185c9f3e926a7f16"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -932,9 +932,9 @@
         "documentation",
         "testing"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Documentation update confirming that long 'bulb' exposures now work on the Canon EOS 4000D camera. A user's test run on a recent nightly build passed the standard compatibility checker with no errors and took a 60-second frame, where the older version capped exposures at 30 seconds. The docs note this came from a user's setup and that some camera settings were not recorded.",
+      "category": "docs",
+      "summaryHash": "aeb83b0ff7753f5b95f1a1c8646b0a934feb9aa9"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -947,9 +947,9 @@
       "deletions": 22,
       "changedFiles": 13,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Security hardening for the server in three areas. A client that has been taken over by another client can no longer keep sending commands with its old session; it must reconnect first, though the emergency stop always works. The server now allows at most 16 live connections at once and asks extra ones to retry later, so a flood of reconnects can't exhaust it. Downloading, previewing, exporting or deleting images is now limited to the approved image folders, so frames saved earlier to a custom folder outside them won't be available until that folder is set again. The app itself doesn't send the session id on most requests yet, so the first protection mostly helps other clients for now.",
+      "category": "fix",
+      "summaryHash": "9515616f5e3369e207638c84e602e130a38208e3"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -962,9 +962,9 @@
       "deletions": 31,
       "changedFiles": 20,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Imported NINA plans that use \"Center After Drift\" now work again instead of loading it as an unknown step. During a run, every so often a saved light frame is checked to see where the telescope is really pointing. If the view has drifted more than 10 arc-minutes from the target, the telescope re-centres before the next frame, with no extra exposures taken. Rigs without a guider get this added to every imaging loop automatically. The PR also fixes a bug that sent targets south of the celestial equator to the wrong position, off by twice their arc-minutes. Plans saved earlier for southern targets keep the old error until they are rebuilt. It has not been tested on a real telescope yet.",
+      "category": "feature",
+      "summaryHash": "6caf7d7d6de9287fc867059504e48a1212454b06"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -979,9 +979,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Documentation-only fix to the release notes. They now say clearly that on ToupTek cameras, a frame smaller than the requested size fails with an error. Before, the notes implied it was filled out with blank pixels as QHY cameras do. This should spare ToupTek users some confusion about failed exposures after upgrading.",
+      "category": "docs",
+      "summaryHash": "6a1326b9a239023e1da94061762dd3f3ce88ab36"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -996,9 +996,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal testing change: the code that saves Wi-Fi network profiles can now be tested without touching the computer's real Wi-Fi. New tests check that network names are saved exactly, existing profiles keep their identity, passwords are handled safely, and errors are reported properly. Normal behavior for users is unchanged.",
+      "category": "tests",
+      "summaryHash": "0fe3fb903775f6494f8af645bd261cb532b25d93"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1013,9 +1013,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "On Sky-Watcher mounts, asking to correct the mount's position while it is being moved manually used to fail with a confusing \"Motor not stopped\" message from the hardware. In some cases it quietly stopped the manual move instead. It now refuses with a clear error saying which axis is still moving, and the manual move keeps going. Not yet tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "70a66bccd5f38dcd57e34437e2073d0f5bac44c4"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1030,9 +1030,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "An iOptron mount, focuser, or filter wheel now keeps exclusive hold of its connection while connected. Before, when another iOptron device searched for its own connection, it could open the one already in use, wipe pending replies, and send stray commands into it. Now that search skips busy connections, and they are released properly on disconnect. Not yet tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "a79a32e2e18a7f76d4684790b10bd00064433a13"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1047,9 +1047,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "On QHY cameras, changing the image size setting after a picture finished could crop, pad, or reshape that finished picture when it was downloaded. The camera driver now remembers the size each picture was taken at, so the downloaded image always matches the exposure. Not yet tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "fe8b36cd27711cd79696bb8a1079788fcc41ecdb"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1064,9 +1064,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The WeeWX weather station driver now correctly reports \"not connected\" when an app asks how long ago the weather data was last updated while the device is disconnected. Before, it returned a stale answer from the previous session, which breaks the astronomy device standard. A new test covers this, and it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "fc1a938229a444e73349cab71446a7fb1e2c498e"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1081,9 +1081,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When a SynScan mount re-tries a slew to land more precisely on a target, it now leaves the east-west aim alone if that direction is already on target, and only corrects the north-south direction. The handset's east-west position reading wobbles by up to about 15 arcseconds each second, so before, every extra correction for north-south could also drag the east-west pointing off target. This is a partial fix for the underlying issue and has not been tried on a real mount yet.",
+      "category": "fix",
+      "summaryHash": "b2c070bc11d3a964e554f91241bef926f677449c"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1098,9 +1098,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This fixes an internal maintainer recipe for copying changes from one release line to the next. When the recipe found unresolved merge conflicts it skipped saving the work but still uploaded the branch and opened an unmergeable pull request. It now stops completely and prints a clear \"STOPPED\" message saying what blocked it. This is internal tooling only and does not affect users.",
+      "category": "chore",
+      "summaryHash": "910c125928b4bf4c35814489a0dca4f4ce29e68c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1113,9 +1113,9 @@
       "deletions": 58,
       "changedFiles": 20,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Users can now choose what happens after the telescope flips sides of the sky mid-session. Refocusing can be set to always, never, or only if the temperature has changed by more than a set amount (2 °C by default) since the last autofocus. Guiding can be quickly restored, fully recalibrated, or skipped. An optional fixed \"unattended\" time window can also replace the sunset-based one that decides when alerts get louder overnight. The code also fixes refocus-after-flip, which existed but could never actually run, so it now happens after re-centring. Unlike the description's stated default, older saved profiles keep their previous guiding behaviour unless the new setting is chosen.",
+      "category": "feature",
+      "summaryHash": "8293568ee2f5136d9a7a1f86babadec1ff7578f8"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1130,9 +1130,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This fixes an internal check that developers run on their own machines before uploading changes. For one kind of release-branch setup, it looked in the wrong place and gave a different answer than the automated server checks. It now falls back to the default location when the name it guessed does not exist. This is internal tooling only.",
+      "category": "ci",
+      "summaryHash": "3b47157eac9e24d9a6424360112a71a2fbc1ef1d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1145,9 +1145,9 @@
       "deletions": 19,
       "changedFiles": 14,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "After a full autofocus run, the software now takes three extra frames to measure the focuser's slack (backlash), meaning how far it falls short when moving upward. Once that measurement is confirmed, the quicker Smart Focus mode adds that amount to its upward moves so the optics land where intended. This happens automatically with nothing asked of the user, and the focusing screen shows \"Measuring focuser backlash…\" while it runs. If the measurement fails, for example because of clouds, nothing is recorded and focus stays where the sweep left it. It still needs testing on a real rig.",
+      "category": "feature",
+      "summaryHash": "bc55848319841547ac85033363c9b17c6e20e4da"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1162,9 +1162,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "QHY and ToupTek cameras can now recover from a failed exposure by aborting it. Before, if an exposure ended in failure, aborting did not clear the error, so the camera kept reporting that old failure until a new exposure was started, and software that aborts to recover got stuck. Now an abort puts the camera back to idle with no image waiting. New automated tests cover both camera brands, but the fix has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "618e5dfe174f40ae154a09f20893fc6f0e0e8220"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1177,9 +1177,9 @@
       "deletions": 25,
       "changedFiles": 36,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "On setups without a guide camera, an imaging run now starts by measuring how long an exposure the mount can hold before stars start to smear. It takes a short series of test shots of increasing length, then shortens the run's exposures to that limit and adds more frames so the total imaging time stays the same. During the run, a watchdog shortens exposures if two frames come out smeared (marking those frames and sending one alert) and lengthens them again after ten good frames. The result is saved and reused as the starting point for the next night. Setups with a guide camera are unchanged. Some on-screen readouts and settings are left for later, and it still needs testing on a real mount.",
+      "category": "feature",
+      "summaryHash": "2ad246574ace2298d53546e720610eb8abd23b10"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1194,9 +1194,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "For Player One cameras, filter wheels and the thermal switch, the setting that picks which device to use now refuses numbers that are negative or impossibly large. Before, a huge number could silently wrap around and point at a different device. One side effect: if a saved setting already holds such a bad number, it is reset to the first device at start-up and a note is written to the log.",
+      "category": "fix",
+      "summaryHash": "93c86578c35439dca6d297eaf6701e8809993adb"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1211,9 +1211,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal timing cleanup for the Sky-Watcher mount driver: the end-of-guiding-pulse deadline now uses the same clock as the rest of the guiding logic. Real-world behavior does not change; this mainly lets automated tests control timing correctly. A new test was added that adds about 1.3 seconds to the test run.",
+      "category": "fix",
+      "summaryHash": "07c196f393c6d152fee74d51c83a7baaf4ec7b59"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1228,9 +1228,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When the bundled server restarts and was set to pick its network port automatically, it no longer tells other software on the network to connect to the old port that just closed. It now goes quiet during the restart and announces the new port once it is ready. This only affects that automatic-port setup. It was checked by hand, and no automated test was added.",
+      "category": "fix",
+      "summaryHash": "154eea6fe7a987c33ad2311e3c6f3ac3d0be0a3d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1243,9 +1243,9 @@
       "deletions": 37,
       "changedFiles": 7,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The sequence steps that cool and warm the camera are now more robust. A single failed reading no longer makes the warm-up step skip its gradual ramp and switch a very cold sensor straight off. Cooling no longer gives up too early because of one brief full-power reading. A slow but steady cool-down no longer raises a false temperature-drift alarm. The cooling fan is now adjusted once a minute instead of every 15 seconds, and a second cooling step is refused while one is already running. The warm-up target stays at 20 °C. Seven new tests cover these cases, but it still needs a night with a real cooled camera.",
+      "category": "fix",
+      "summaryHash": "ae11cd9311328d183f5f61a83330c40474606c4a"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1258,9 +1258,9 @@
       "deletions": 55,
       "changedFiles": 28,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The guide camera is now remembered by its permanent identity rather than by a position number that can change. The camera server sometimes swaps the numbers of ZWO cameras after a restart, so the guider could quietly open the main imaging camera instead of the guide camera. Before applying guider settings, the app now checks where the saved guide camera really is and refuses, with a clear message, if it has moved, gone missing, or turns out to be the main imaging camera. Older saved setups only get the imaging-camera check until the guide camera is picked again, and if the camera server cannot be reached the identity check is skipped with a warning.",
+      "category": "fix",
+      "summaryHash": "717afd181e85a0c5a25ddcc9d185471ba3b8074c"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1275,9 +1275,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This brings the fix from #1053 to the 5.0 stable release line. When one connected ZWO camera is in a bad state and cannot be read, it is now skipped and logged instead of stopping every other ZWO camera from connecting. If the camera you want is the broken one, the error now says which one failed and suggests power-cycling it and any hub it powers. It has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "8e11c825f840b2446c9acb14cd122bf0ef275d6c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1290,9 +1290,9 @@
       "deletions": 14,
       "changedFiles": 10,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "If a mount or camera drops out and the app is trying to bring it back, disconnecting it by hand now actually stops that recovery. Before, the app could reconnect the mount anyway, send it a stop-slew command, and log it as recovered. Now the recovery stops, any paused imaging sequences stay paused, a notification is shown, and the fault history labels the entry \"released — disconnected by hand\".",
+      "category": "fix",
+      "summaryHash": "ef61be1ea07d6fd699373181d7ab7976a6ca3c33"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1307,9 +1307,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When one connected ZWO camera is in a bad state and cannot be read, it is now skipped and logged instead of stopping every other ZWO camera from connecting. Cameras saved by position keep pointing at the same physical camera, and the ZWO dew-heater control follows the same rule. If the camera you want is the broken one, the error now says which one failed and suggests power-cycling it. The change also includes a fresh compatibility test report for the ASI533MC Pro camera, which passed with no issues.",
+      "category": "fix",
+      "summaryHash": "5e99192e2a5be3a6cf63031993abd7bd798efd20"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1324,9 +1324,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "With Sky-Watcher mounts, a garbled reply on a noisy connection could make the driver report that a move had failed even though the mount had actually started moving. That is risky, because the user may not send a stop. The driver now recognizes this case and treats the move as started, logging a warning. A genuine refusal the first time a move is sent is still reported as an error. It has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "6f6ca3687a4739cf6fba2f453034a319adb89e7d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1339,9 +1339,9 @@
       "deletions": 43,
       "changedFiles": 16,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The guider settings menus now list the real cameras and mounts found on your camera servers, including any found with Discover Alpaca. Before, they offered only a generic \"Alpaca Camera\" choice, which left the guider not knowing which server to use, so nothing connected. Picking a camera now fills in its server address automatically, and Apply refuses an incomplete choice and explains why. Setups saved the old way need the camera picked again once. The change also fixes long labels overflowing in some settings rows.",
+      "category": "fix",
+      "summaryHash": "cd482079a66bc2cfaa060bab5091281d3d223dfc"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1356,9 +1356,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Devices page in the web interface no longer freezes while a telescope mount is connecting. Before, building the device list waited for each device to answer whether it was connected, and several mount brands block that question until their connection attempt finishes (about 2.3 seconds on one tested mount). Now a device that is still connecting is simply shown as not connected, without being asked. The author notes that one less common way of connecting can still cause the wait, and that fix is tracked separately.",
+      "category": "fix",
+      "summaryHash": "cc7574af4525125ff60e11e8c80524b77f8670a5"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1373,9 +1373,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Text sent in by outside programs is now cleaned up more thoroughly before it is written to the server's log. Some invisible special characters were slipping through: some can make a terminal act on hidden commands, and others can flip the visible order of text on a log line. These characters now show up as harmless escape codes instead, so incoming text cannot trick or mislead someone reading the logs. Ordinary text, including accented letters and other alphabets, is unchanged.",
+      "category": "fix",
+      "summaryHash": "166a450521f6fc7f546c4049f6cb81a5628e2b9d"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -1388,9 +1388,9 @@
       "deletions": 962,
       "changedFiles": 27,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The rig's server no longer looks for a USB GPS receiver on its own. That automatic search opened every USB serial port every few minutes, including the one a serial-connected mount was using, which knocked the mount offline. A GPS dongle should now be plugged into the computer running the app, which already reads the GPS signal and sends the time and location to the rig. The status screens, help text and documentation were updated to match, and the time-sync status no longer reports whether the server has its own GPS.",
+      "category": "fix",
+      "summaryHash": "b26cc3c4483b5fb90aca27ef9b7a0ce3d23800b2"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1405,9 +1405,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This fixes how SVBONY cameras recover when stopping a capture goes wrong. The driver no longer tries to stop a capture that never actually started. If a stop cannot be confirmed, the camera now clearly reports an error state with 0% progress until the user retries Abort or reconnects. Error messages now tell users they can retry Abort instead of only suggesting a reconnect, and failed stops are now recorded in the log. This was tested with a simulated camera only, not real hardware.",
+      "category": "fix",
+      "summaryHash": "586efc8f3fb194df2ddefbf3f63fb71a2a6c7bd4"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1420,9 +1420,9 @@
       "deletions": 1,
       "changedFiles": 3,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal change to the automated code-review bot on the stable 5.0 branch. It copies over two fixes already made on the main branch: contributor pauleyj is allowed to trigger the bot, and the bot temporarily prints its full output so a recurring failure can be diagnosed. While that output is on, the full review sessions appear in public logs, and the setting is meant to be removed afterward.",
+      "category": "ci",
+      "summaryHash": "c2bd3ae38b01dffff652586570980393d5dc901e"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1435,9 +1435,9 @@
       "deletions": 0,
       "changedFiles": 2,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal change to the automated code-review bot, which has been failing within seconds on every run since October 11 without saying why. This temporarily makes the bot print its full output so the real error shows up in the logs. It is meant to be undone after one run, because while it is on, the full review sessions appear in public logs.",
+      "category": "ci",
+      "summaryHash": "18345196aaaf5587b6c3fadc9d77243999236fa6"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1450,9 +1450,9 @@
       "deletions": 1,
       "changedFiles": 2,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal tooling change: the automatic review bot now runs on pull requests from outside contributor pauleyj, instead of failing each time they push an update. They still get no extra access to the project, and a maintainer must still approve each of their pull requests for review.",
+      "category": "ci",
+      "summaryHash": "d6c4f740f230c4aba03c486774e5b438fbb6b7db"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -1467,9 +1467,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Sky-Watcher mount driver now checks the mount's position and status in the background about ten times a second and answers questions from that saved copy, instead of asking the mount every time. This makes answers much faster on slow Wi-Fi or serial connections, and a mount that goes silent is now noticed even when nobody is asking it anything; after 30 seconds of silence it is reported as disconnected. The change also fixes cases where a slew or homing move that ended or was interrupted could leave the mount wrongly marked as still moving. The other telescope drivers are unchanged, and the change comes with new tests, updated documentation and a fresh test report from a real EQM-35 Pro mount.",
+      "category": "feature",
+      "summaryHash": "7b635540cb0bfbb1cc434a3a402a95fb5e9cec01"
     },
     {
       "repo": "open-astro/AlpacaBridge",
