@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-14T14:30:52.283Z",
+  "generatedAt": "2026-10-14T15:30:34.252Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1144,
+      "title": "Ask before a hotspot or WiFi change can drop the connection",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1144",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-14T15:22:10Z",
+      "additions": 294,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1145,
+      "title": "Fix Sky-Watcher serial fake answering Wave geometry for all boards",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1145",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-14T15:00:01Z",
+      "additions": 69,
+      "deletions": 11,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1142,
