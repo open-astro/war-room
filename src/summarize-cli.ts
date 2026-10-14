@@ -80,8 +80,18 @@ function runClaude(args: string[], input: string): Promise<string> {
     child.stderr.setEncoding("utf8").on("data", (c: string) => (err += c));
     child.on("error", reject);
     child.on("close", (code) => {
-      if (code === 0) resolve(out);
-      else reject(new Error(`claude exited ${code}: ${err.trim().slice(0, 300)}`));
+      if (code === 0) return resolve(out);
+      // With --output-format json, claude reports auth/API errors on stdout
+      // (e.g. {"is_error":true,"result":"Failed to authenticate..."}) and
+      // leaves stderr empty, so include both.
+      let detail = err.trim();
+      try {
+        const envelope = JSON.parse(out) as { result?: string; api_error_status?: number };
+        if (envelope.result) detail = `${envelope.api_error_status ?? ""} ${envelope.result}`.trim();
+      } catch {
+        if (!detail) detail = out.trim();
+      }
+      reject(new Error(`claude exited ${code}: ${detail.slice(0, 300)}`));
     });
     child.stdin.on("error", () => { /* claude exited before reading everything; the close handler reports it */ });
     child.stdin.end(input);
