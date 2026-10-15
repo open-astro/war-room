@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-15T02:20:10.027Z",
+  "generatedAt": "2026-10-15T03:19:25.301Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1162,
+      "title": "Update Bisque telescope waits to read the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1162",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T03:02:12Z",
+      "additions": 341,
+      "deletions": 51,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The driver for telescope mounts controlled through TheSkyX now uses a clock that tests can fast-forward. That covers its waits for parking and slewing, its two-minute time limits, and its short-term memory of the mount's position. This lets automated tests check these waits instantly instead of actually waiting, and the Bisque test run dropped from about 21 seconds to about 10 while gaining 9 new checks. Behaviour with a real telescope is meant to be unchanged, though it was not tried on hardware.",
+      "category": "tests",
+      "summaryHash": "b7a80cc4ef9e397a54a05cdc839dcd8909315b89"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1160,
+      "title": "Update the QHY CCD SDK to 26.07.28",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1160",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T02:27:27Z",
+      "additions": 367,
+      "deletions": 44,
+      "changedFiles": 247,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The bundled software from camera maker QHY, used by the QHY camera and filter wheel support, was upgraded from the June 2026 release to the July 2026 release. The new version adds firmware for three more camera models and setup rules for a few more devices. Our own driver code is unchanged apart from pointing builds, installers and docs at the new version. It has not been tested with a real QHY camera yet, which is the one check the automated builds cannot do.",
+      "category": "chore",
+      "summaryHash": "8837e406b80e2c811e2d970b35beb43ef991efc2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1158,
