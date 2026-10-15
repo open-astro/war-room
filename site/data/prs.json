@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-15T12:11:59.631Z",
+  "generatedAt": "2026-10-15T14:10:25.084Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1189,
+      "title": "Add configurable max step to the ZWO EAF focuser",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1189",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T13:52:24Z",
+      "additions": 282,
+      "deletions": 20,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO EAF focusers now have an optional \"Max Step\" setting in the web device form. When it is filled in, the bridge writes that travel limit to the focuser when it connects, which repairs units that had a limit of 0 stored and so refused every move. Units that report 0 with nothing configured, or that are given a value above what the hardware supports, now refuse to connect with a clear message instead of failing every move. That is flagged as a breaking change, and it has not been tested on real hardware.",
+      "category": "feature",
+      "summaryHash": "1502aa4a33ab1be823a9514237f6ae589b5ef34b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1188,
+      "title": "Fix iOptron Slewing true during a long PulseGuide",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1188",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T13:30:55Z",
+      "additions": 281,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "iOptron mounts no longer report that they are \"slewing\" (making a large move) during a guiding correction pulse or for one second afterward. The mount firmware calls these pulses slewing, which made guiding software stop mid-session after long corrections. Real moves such as go-to, park and home still report as slewing, even if a pulse arrives during them. One known catch: a move started from the hand controller during a pulse is also hidden. The fix has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "003d8f6190d4a4b1a1db05f7915680edab916cc2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1185,
