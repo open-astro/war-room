@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-15T14:10:25.084Z",
+  "generatedAt": "2026-10-15T16:08:43.805Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1192,
+      "title": "Fix FakeSkyWatcherMount reply count racing the client",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1192",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T15:35:42Z",
+      "additions": 18,
+      "deletions": 15,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a flaky automated test for the Sky-Watcher mount driver that kept failing on slower build machines. The simulated mount used in testing was counting each reply only after sending it, so a test could check the count a moment too early and see the wrong number. The simulator now counts each reply before sending it, which let two tests drop their extra waiting. This is a test-only change and does not affect the real driver or users.",
+      "category": "tests",
+      "summaryHash": "d3bb3b512c687b04f46d709a16cc62bcde7aec17"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1189,
