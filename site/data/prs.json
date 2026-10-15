@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-15T09:14:31.507Z",
+  "generatedAt": "2026-10-15T10:13:39.257Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1180,
+      "title": "Show Web UI site coordinates at 6 decimals",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1180",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T09:41:14Z",
+      "additions": 39,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The web dashboard now shows a telescope site's latitude and longitude rounded to 6 decimal places in a device's settings list, instead of long unreadable numbers like -33.8567844444444. Six decimals is still precise to about 11 centimeters, so nothing useful is lost. This only changes what is displayed. The saved values and the edit forms keep full precision, which matches what the code does.",
+      "category": "fix",
+      "summaryHash": "2f572645d5bb4115bbe50b23b34864dbab9b8eef"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1178,
