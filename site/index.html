@@ -65,8 +65,11 @@
   }
   .btn[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-  .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
-  .filters .group { display: flex; gap: 4px; flex-wrap: wrap; }
+  .filters { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .filters .row { display: flex; gap: 8px; align-items: center; }
+  .filters .repos { flex-wrap: nowrap; gap: 6px; overflow-x: auto; scrollbar-width: thin; }
+  .filters .repos .chip { flex: none; white-space: nowrap; }
+  .filters .controls { flex-wrap: wrap; }
   .filters select, .filters input[type=search] {
     border: 1px solid var(--border); background: var(--surface); color: var(--text);
     border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px;
@@ -137,25 +140,27 @@
   </header>
 
   <div class="filters">
-    <div class="group" id="repoChips"></div>
-    <select id="range">
-      <option value="7">Last 7 days</option>
-      <option value="30" selected>Last 30 days</option>
-      <option value="90">Last 90 days</option>
-      <option value="all">All time</option>
-    </select>
-    <select id="author"><option value="">All developers</option></select>
-    <select id="category">
-      <option value="">All types</option>
-      <option value="feature">Features</option>
-      <option value="fix">Fixes</option>
-      <option value="refactor">Refactors</option>
-      <option value="tests">Tests</option>
-      <option value="docs">Docs</option>
-      <option value="ci">CI</option>
-      <option value="chore">Chores</option>
-    </select>
-    <input type="search" id="search" placeholder="Search titles and summaries">
+    <div class="row repos" id="repoChips"></div>
+    <div class="row controls">
+      <select id="range">
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+        <option value="all">All time</option>
+      </select>
+      <select id="author"><option value="">All developers</option></select>
+      <select id="category">
+        <option value="">All types</option>
+        <option value="feature">Features</option>
+        <option value="fix">Fixes</option>
+        <option value="refactor">Refactors</option>
+        <option value="tests">Tests</option>
+        <option value="docs">Docs</option>
+        <option value="ci">CI</option>
+        <option value="chore">Chores</option>
+      </select>
+      <input type="search" id="search" placeholder="Search titles and summaries">
+    </div>
   </div>
 
   <div class="tiles" id="tiles"></div>
