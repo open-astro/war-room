@@ -1,11 +1,62 @@
 {
-  "generatedAt": "2026-10-15T04:18:40.394Z",
+  "generatedAt": "2026-10-15T05:17:50.433Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1168,
+      "title": "Fix Player One StartExposure to refuse during a running exposure",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1168",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T05:15:34Z",
+      "additions": 82,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Player One and iCAM cameras now refuse a request to start a new exposure while one is still running or downloading, instead of quietly throwing away the current frame and starting over. This matches how ZWO and QHY cameras already behave, so no client loses a picture without being told. It is a behavior change: software that used to restart an exposure directly must now cancel the current one, or wait for it to finish, first. A camera whose last exposure finished, was cancelled, or failed can still start a new one; the description notes that SVBONY, ToupTek/Altair and GPhoto cameras still have the old silent-restart behavior.",
+      "category": "fix",
+      "summaryHash": "4d3c1a4de011f3c30aae5c7133d5f80316adf914"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1164,
+      "title": "Show Debian and Ubuntu package versions in the dependency graph",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1164",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T04:56:12Z",
+      "additions": 102,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "GitHub's dependency overview for the project now shows a version number for each Debian and Ubuntu package the build relies on. Before, 21 of the 46 listed items had no version. The automated job now asks the package manager which version it would install that day and records it, so the versions will change as Debian and Ubuntu publish updates. This only affects the reporting; the build and the installable package are unchanged.",
+      "category": "ci",
+      "summaryHash": "f5a6703bdb2585ec43bc28190cfe0113bb667240"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1165,
+      "title": "Fix two ZWO camera duplicate checks on stored entries",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1165",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T04:40:07Z",
+      "additions": 130,
+      "deletions": 10,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes two problems with how saved ZWO camera settings are checked for duplicate IDs. A recent change meant that if one saved camera had a single badly formatted setting, its whole entry was skipped during the duplicate check, so a second camera could be added with the same ID; now only the bad setting is ignored and the duplicate is refused again. Separately, when two saved cameras shared an ID, the clash was fixed only in memory and warned on every startup; it is now fixed in the saved file once. The ID that client software sees for these cameras does not change.",
+      "category": "fix",
+      "summaryHash": "9aa5f82fb403759c8d9e95176e09aed93b93ae69"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1163,
