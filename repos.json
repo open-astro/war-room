@@ -2,6 +2,8 @@
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
-    "open-astro/openastro-guider"
+    "open-astro/openastro-guider",
+    "open-astro/openastro-phd2",
+    "open-astro/phdlogview"
   ]
 }
