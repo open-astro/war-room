@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-15T06:16:52.726Z",
+  "generatedAt": "2026-10-15T07:16:01.454Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1171,
+      "title": "Keep OSV alert fingerprints stable across Debian revisions",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1171",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T07:01:41Z",
+      "additions": 20,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The nightly security scan of the software packages the server depends on no longer reopens alerts that maintainers already reviewed and dismissed. Before, each time Debian shipped a small security update to a package such as curl, every dismissed alert for it was treated as brand new and lost its written reason. The scan now identifies each alert by the package and the advisory only, so a dismissal stays in place until Debian actually fixes the issue. The first scan after this change will reopen the current alerts one more time, and maintainers will need to dismiss them again once.",
+      "category": "ci",
+      "summaryHash": "6efb9c4e30fa7e11345a58fe1c15cb6af1b95d4e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1172,
+      "title": "Fix Sky-Watcher connect error to name the port or host and the reason",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1172",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T06:24:23Z",
+      "additions": 125,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the Sky-Watcher mount fails to connect, the error now says which serial port or network address it tried, why it failed, and which setting to check. Before, it only said \"Failed to connect\", so someone in NINA or the web page could not tell a wrong port from a mount that is switched off. Typical reasons now include a missing port, a port already in use, a host name that cannot be found, or a mount that does not answer. Only the error wording changed, the error codes stay the same, and the change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "a2c01dcbdebf04ec4739bda8f20ac9d7e1f44e73"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1173,
