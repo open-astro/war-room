@@ -1,11 +1,62 @@
 {
-  "generatedAt": "2026-10-15T05:17:50.433Z",
+  "generatedAt": "2026-10-15T06:16:52.726Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1173,
+      "title": "Remove router routes outside the Alpaca schema",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1173",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T05:57:52Z",
+      "additions": 105,
+      "deletions": 78,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server no longer accepts a few requests that are not part of the official Alpaca standard: asking a dome whether it can slew, asking a weather station for 'seeing', and using 'mount' as another name for 'telescope'. These now get a plain 'unknown' error. Also, asking a switch to cancel an in-progress action used to report success even though nothing was cancelled; it now honestly says this is not supported. This is a breaking change for any client that used those requests, though none are known.",
+      "category": "fix",
+      "summaryHash": "ffa802eb6c0250e4076243064fecd7297a57f0ae"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1170,
+      "title": "Fix alpacabridge --help, --version and argument checks",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1170",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T05:35:55Z",
+      "additions": 117,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Running the server with --help used to start a full server instead of showing help. Now --help and -h print usage instructions and quit, --version prints the version number, and mistyped options or extra arguments stop with an error before anything starts. One behavior change: if you point the server at a config file that is missing or unreadable, it now refuses to start instead of quietly falling back to default settings. Normal startup with no arguments, which the install scripts use, is unchanged.",
+      "category": "fix",
+      "summaryHash": "c579d610266c55848cc4f8702028d0f6c13b46ed"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1169,
+      "title": "Fix Falsified-by gate false no-marker error for slid hand-rolled blocks",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1169",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T05:29:06Z",
+      "additions": 78,
+      "deletions": 22,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal fix to an automated check that makes sure every new hand-written test is labeled with a name. The check sometimes wrongly flagged a new test as unlabeled when it was added right before an existing one, because of how git shows the change. It now looks at the finished file to decide which tests are really new, and comes with extra self-tests for these cases.",
+      "category": "ci",
+      "summaryHash": "15db30f38456ead7b079538e1bf25fc3155deee2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1168,
