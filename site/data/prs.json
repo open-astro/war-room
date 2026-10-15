@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-15T07:28:21.094Z",
+  "generatedAt": "2026-10-15T08:16:38.041Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1175,
+      "title": "Fix whole-number config error text for fractional and boolean values",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1175",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T07:54:11Z",
+      "additions": 73,
+      "deletions": 14,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When someone enters a decimal number (like 9600.5) or a true/false value in a device setting that needs a whole number, the error message now says plainly that the field \"must be a whole number\" and shows what was entered. Before, it said the value had \"the wrong type (got number)\", which was confusing because it looked like numbers weren't allowed at all. What the server accepts is unchanged, and other kinds of mistakes, such as text in a number field, keep the old message. The code matches the description, and the change includes new tests and updated release notes for several camera and telescope brands.",
+      "category": "fix",
+      "summaryHash": "230bafa2de3f2e36b42bb4986acb121567288944"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1174,
