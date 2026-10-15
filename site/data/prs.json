@@ -1,9 +1,11 @@
 {
-  "generatedAt": "2026-10-15T17:47:22.059Z",
+  "generatedAt": "2026-10-15T19:55:58.853Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
-    "open-astro/openastro-guider"
+    "open-astro/openastro-guider",
+    "open-astro/openastro-phd2",
+    "open-astro/phdlogview"
   ],
   "prs": [
     {
@@ -6941,6 +6943,24 @@
       "summaryHash": "06b3f3075e7c5d9019c9150728c87d90916b3dd9"
     },
     {
+      "repo": "open-astro/openastro-phd2",
+      "number": 29,
+      "title": "Bump the actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/29",
+      "author": "app/dependabot",
+      "mergedAt": "2026-09-24T15:22:28Z",
+      "additions": 3,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine update of the automated tools that run on the project's code: the AI review helper and GitHub's security scanner were moved to newer versions. Nothing changes for users of the app; this is internal maintenance.",
+      "category": "ci",
+      "summaryHash": "d4e9082589e75ea49e7ba0254250718da7fd38a8"
+    },
+    {
       "repo": "open-astro/AlpacaBridge",
       "number": 632,
       "title": "fix(telescope): an async slew that fails after the initiator returns now surfaces through Slewing (#575)",
@@ -10252,6 +10272,39 @@
       "summaryHash": "7e8d21aa4cc334e904565ab327c44dad9ec8c1c9"
     },
     {
+      "repo": "open-astro/openastro-phd2",
+      "number": 26,
+      "title": "Bump the actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/26",
+      "author": "app/dependabot",
+      "mergedAt": "2026-09-07T15:29:14Z",
+      "additions": 3,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine update of the automated AI review helper and GitHub's security scanner to newer versions. This is internal maintenance with no effect on the app itself. An outside problem with a required astronomy library first made this update's automatic checks fail; that was fixed separately in #27.",
+      "category": "ci",
+      "summaryHash": "d27e39d8034aa00a5f22f2839a83df196041f527"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 27,
+      "title": "CI: build libindi from source instead of the INDI PPA",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/27",
+      "author": "joeytroy",
+      "mergedAt": "2026-09-07T15:00:45Z",
+      "additions": 32,
+      "deletions": 27,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "The project's automated Linux builds and checks were breaking because an outside package source stopped offering the newer version of INDI, the astronomy device library the app depends on. Linux systems then fell back to an older version that is too old to build with. The automated builds now download and build the required version of that library themselves, which adds a few minutes per run but removes reliance on that outside source. This affects only the team's build and release process, not how the app behaves for users.",
+      "category": "ci",
+      "summaryHash": "a0b9157def9d07b6478cd5a8c610cef35ad53cb1"
+    },
+    {
       "repo": "open-astro/openastro-ara",
       "number": 984,
       "title": "ci: Bump the github-actions group with 3 updates",
@@ -10496,6 +10549,24 @@
       "summary": "Routine internal update that moves the automated review and code-scanning tools used by the build system to newer versions. There is no effect on the product itself.",
       "category": "ci",
       "summaryHash": "36b242206469a296e200b7130472fb4ec1c3bf30"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 25,
+      "title": "Bump the actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/25",
+      "author": "app/dependabot",
+      "mergedAt": "2026-08-24T14:29:20Z",
+      "additions": 3,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine update of the automated AI review helper and GitHub's security scanner to newer versions. This is internal maintenance with no effect on the app itself.",
+      "category": "ci",
+      "summaryHash": "92f6d54809943bede0efb0b1a026338ccdb46906"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -10806,6 +10877,24 @@
       "summary": "The app's file open and save dialogs now use the finished release of the file-picker component instead of a pre-release test version. The description only mentions the version bump, but the new version works slightly differently, so the diff also adjusts the app everywhere files are chosen or saved. That includes exporting and importing profile shares, exporting frames from the library, and importing and exporting sequences. Users should see the same behaviour, including the saved file name shown in the confirmation message.",
       "category": "chore",
       "summaryHash": "529ccd3ad7dd0ee4db5141e22ee16a4e3931bdf1"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 24,
+      "title": "Bump the actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/24",
+      "author": "app/dependabot",
+      "mergedAt": "2026-08-18T15:32:15Z",
+      "additions": 3,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine update of the automated AI review helper and GitHub's security scanner to newer versions. This is internal maintenance with no effect on the app itself.",
+      "category": "ci",
+      "summaryHash": "62cb746601a64c414933a76ec7a1476df5bb13b4"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -11271,6 +11360,24 @@
       "summary": "The AlpacaBridge web portal can now manage the device's WiFi from the browser. Users can scan for and join networks, manage saved networks, run a personal hotspot on 2.4 or 5 GHz for field use, turn the radio on or off, and pick the WiFi country setting. The country setting is re-applied at startup because some devices refuse to run a 5 GHz hotspot without it. The feature was tested on all eight supported devices and hides itself on setups with no WiFi. This change also cuts the 3.4.0 release and updates the build and packaging requirements.",
       "category": "feature",
       "summaryHash": "35204eebcd6d60b92f3f1b67b3c86be5d6c38f0d"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 23,
+      "title": "Bump the actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/23",
+      "author": "app/dependabot",
+      "mergedAt": "2026-08-10T14:01:08Z",
+      "additions": 3,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine update of the automated AI review helper and GitHub's security scanner to newer versions. The security scanner moved up two versions here. This is internal maintenance with no effect on the app itself.",
+      "category": "ci",
+      "summaryHash": "093f09ee1edb98a9ba882748cdf222141a65c60c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -11763,6 +11870,21 @@
       "summaryHash": "aa30ee6745b0957646a0c4fe0d01e1d3b8fb195d"
     },
     {
+      "repo": "open-astro/openastro-phd2",
+      "number": 22,
+      "title": "Windows 10 launch fix, fast Alpaca connects, self-bootstrapping build script",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/22",
+      "author": "joeytroy",
+      "mergedAt": "2026-08-05T21:09:33Z",
+      "additions": 335,
+      "deletions": 34,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "PHD2 now starts on clean Windows 10 computers, where it previously failed because the installer left out some Microsoft support files it needs; all of them are now included, so users don't have to install anything extra. Connecting to ZWO/ASI Alpaca equipment is faster: the camera connects in about 1–2 seconds instead of stalling for 15, and the rotator, which previously could not connect at all, now does. Mount connection failures now show the equipment's own plain error message with a hint to check power, instead of a confusing error number. The installer also offers a desktop shortcut, and the Windows build script can now set up all of its own tools on a fresh machine.",
+      "category": "fix",
+      "summaryHash": "a28d7a42fa056b3b9648ee02ed8dfce90f4ba230"
+    },
+    {
       "repo": "open-astro/openastro-ara",
       "number": 925,
       "title": "ci: Bump the github-actions group with 2 updates",
@@ -11826,6 +11948,24 @@
       "summary": "The project's documentation now points to the OpenAstro website instead of the old GitHub wiki, including the setup guide for each supported device and the FAQ. The logo in the main documents now comes from a copy stored in the project itself, because the old web address for it stopped working. The platform badge was shortened, and the version number was raised to 3.2.0 ahead of a release that will be published separately. The image file itself does not appear in the trimmed changes, but every document now points to it.",
       "category": "docs",
       "summaryHash": "4ccd6f7f4d3149ce38b7c59762dd7ff00801b969"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 21,
+      "title": "Bump the actions group with 2 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/21",
+      "author": "app/dependabot",
+      "mergedAt": "2026-08-05T14:33:59Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update to the security-scanning tool used in the project's automated checks, moving from version 4.37.3 to 4.37.4. This is internal and does not affect users. The attached release notes also mention a later 4.37.5, but this change only moves to 4.37.4.",
+      "category": "chore",
+      "summaryHash": "548c83f75e404e1c6359a4761f9c55c42c925bc7"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -12435,6 +12575,24 @@
       "summary": "The server can now run a complete polar alignment routine. It takes two measurements with the guide camera, moving the telescope between them, to work out how far the mount is pointing from the celestial pole. It then enters a live mode that updates the error as the user turns the mount's adjustment knobs. The routine pauses and keeps retrying if the sky can't be read five times in a row, reports clear reasons when it fails, and always restores the mount's tracking and cleans up its temporary images. It also streams live progress updates for the app to display.",
       "category": "feature",
       "summaryHash": "97825b6d9e025a11b233c8bc35198262e4992184"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 20,
+      "title": "Bump the actions group with 4 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/20",
+      "author": "app/dependabot",
+      "mergedAt": "2026-07-30T21:42:52Z",
+      "additions": 19,
+      "deletions": 19,
+      "changedFiles": 7,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update of several tools used by the project's automated build and check system, including the code-download step, the AI review helper, and the security scanner. This is internal and does not affect users.",
+      "category": "chore",
+      "summaryHash": "a3116adef7432e0bf5374095b0ebac6217fb2f1c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -13129,6 +13287,24 @@
       "summaryHash": "df21cc562898ca07341d60263e144c9c94c52298"
     },
     {
+      "repo": "open-astro/openastro-phd2",
+      "number": 19,
+      "title": "Bump the actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/19",
+      "author": "app/dependabot",
+      "mergedAt": "2026-07-20T13:58:44Z",
+      "additions": 3,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update of the AI code-review helper and the security-scanning tool used in the project's automated checks. This is internal and does not affect users.",
+      "category": "chore",
+      "summaryHash": "e3cf5f67e3541d1a376e06887aed554e842da32b"
+    },
+    {
       "repo": "open-astro/AlpacaBridge",
       "number": 139,
       "title": "Fix QHY PulseGuide blocking, Connect() race, and disconnect hang",
@@ -13511,6 +13687,54 @@
       "summary": "Routine automated update of the tool that runs AI code reviews on pull requests, moving it to a newer version. No effect on the product itself.",
       "category": "ci",
       "summaryHash": "a562369781f093a85fe74631d614d62bafacf646"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 18,
+      "title": "Bump the actions group with 5 updates",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/18",
+      "author": "app/dependabot",
+      "mergedAt": "2026-07-14T14:13:17Z",
+      "additions": 22,
+      "deletions": 22,
+      "changedFiles": 7,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Automated update of the tools behind the project's build and release system. The description gives no details, but the changes are fairly large version jumps, including the tools that store and collect the finished installers during a release. This is internal and does not directly affect users.",
+      "category": "chore",
+      "summaryHash": "dba5f383e65d60cdc1a2a04bfafe0ea703b553db"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 17,
+      "title": "ci: fast PR checks, sanitizer runs, dependabot, and manual CD for all release targets",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/17",
+      "author": "joeytroy",
+      "mergedAt": "2026-07-13T04:06:24Z",
+      "additions": 1011,
+      "deletions": 7,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "This reorganizes the project's automated checks so proposed changes get quick feedback. Pull requests now run only fast checks for style, common bugs, hidden-character tricks, and setup security. The slow full build, a security scan, and deeper crash and timing tests on Raspberry Pi–style hardware now run after changes are merged or on a weekly schedule. The trade-off is that a change that breaks the build is caught after merging rather than before, so the team is asked to run the full build manually first for big changes. Releases are now built by hand for Debian, Windows, and macOS and saved as unpublished drafts, and the outside tools these checks rely on are now locked to exact versions and updated weekly.",
+      "category": "ci",
+      "summaryHash": "090433984299dd5d4a8eaca4db3df35a7b888faf"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 16,
+      "title": "Fix audit findings across source, build, packaging, CI, and docs",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/16",
+      "author": "joeytroy",
+      "mergedAt": "2026-07-12T21:45:46Z",
+      "additions": 7793,
+      "deletions": 4476,
+      "changedFiles": 82,
+      "labels": [],
+      "summary": "A large cleanup that fixes a long list of crash risks, memory leaks and timing bugs found in a project-wide review. The fixes cover the remote-control interface and all three ways the app talks to equipment (INDI, ASCOM and Alpaca). It also repairs the Windows build, removes leftover vendor files and long-dead mount code, and adds the first automatic build-and-test check on Linux for every pull request. The app was confirmed working on Windows with a real camera, but the Linux check and the Mac installer build were not yet verified when this merged.",
+      "category": "fix",
+      "summaryHash": "4e7dafd3fa8ad63aa009d233e384c4b01392394d"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -23071,6 +23295,21 @@
       "summaryHash": "4a765e8e36ff78bc0f8bd7e0c4a9c043cf9df255"
     },
     {
+      "repo": "open-astro/openastro-phd2",
+      "number": 15,
+      "title": "ci: add Claude Code automated PR review workflow",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/15",
+      "author": "joeytroy",
+      "mergedAt": "2026-06-03T04:00:15Z",
+      "additions": 59,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Internal tooling only. This adds an automated AI reviewer that posts one short comment on each pull request, focused on bugs, correctness, security and performance, and updates that same comment on later pushes. The description says the PR was meant to stay open to collect more CI work, but it was merged with just this one workflow.",
+      "category": "ci",
+      "summaryHash": "4a765e8e36ff78bc0f8bd7e0c4a9c043cf9df255"
+    },
+    {
       "repo": "open-astro/AlpacaBridge",
       "number": 66,
       "title": "Fix cppcheck findings and remove dead Beast/vcpkg scaffolding (#64)",
@@ -27856,6 +28095,141 @@
       "summaryHash": "b811cc07905244ba8c757789fe28e3c4635c73ae"
     },
     {
+      "repo": "open-astro/openastro-phd2",
+      "number": 13,
+      "title": "Add Windows ASCOM camera support, make run_exe.bat always wipe tmp",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/13",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-16T22:17:46Z",
+      "additions": 1254,
+      "deletions": 36,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Windows users can now use any camera that has an ASCOM driver from its maker, listed alongside the existing Alpaca and INDI options. No vendor software is bundled. Camera selection now matches names more strictly, so a camera whose name happens to contain \"INDI\", \"Alpaca\" or \"ASCOM\" is no longer sent down the wrong path. Separately, the Windows developer build script now always starts from scratch, which makes it more reliable but turns a 1–5 minute rebuild into a 10–60 minute one.",
+      "category": "feature",
+      "summaryHash": "1d6ad57d6ac2a14ce4a002263fd1a6c2720f80fe"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 12,
+      "title": "Release 2.0.0: unit test suite, hardened CI gates, macOS arm64",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/12",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-15T22:03:28Z",
+      "additions": 2678,
+      "deletions": 299,
+      "changedFiles": 39,
+      "labels": [],
+      "summary": "This cuts the 2.0.0 release. Its centerpiece is a new set of automated tests that must pass before any Linux, Mac or Windows installer can be produced. It is a major version because support for Intel Macs, older macOS and 32-bit Windows was dropped. The changes also rebrand the product more widely than the description lets on: the Linux package, Mac app and Windows installer are now all named \"openastro-phd2\" / \"OpenAstro PHD2\", and existing Linux installs move to new names. It also fixes several Windows installer build problems found along the way.",
+      "category": "feature",
+      "summaryHash": "b466d8541d4c211a7fca75aac70e4f0376f9401b"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 11,
+      "title": "Fix Alpaca abort hang (#7) and flaky GP covariance test (#8)",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/11",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-15T03:21:20Z",
+      "additions": 33,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixes a bug where pressing Stop while looping exposures on some Alpaca cameras could freeze the app until it was force-quit. The app now sends the stop request once and gives up after 3 seconds if the camera never confirms. It also makes a test that randomly failed now and then give consistent results.",
+      "category": "fix",
+      "summaryHash": "822b768f35ce6ebc66695c9b7666d12871407d91"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 10,
+      "title": "Add native macOS Apple Silicon support; cross-platform dialog/INDI fixes",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/10",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-15T02:25:49Z",
+      "additions": 957,
+      "deletions": 892,
+      "changedFiles": 54,
+      "labels": [],
+      "summary": "Adds a native build for Apple Silicon Macs, packaged as a self-contained installer with a drag-to-Applications window, plus dark mode and OpenAstro branding. On all platforms, dialogs now open on the same screen as the main window. Searching for INDI and Alpaca servers no longer freezes the screen, equipment setup no longer auto-connects and hangs, and a locally running INDI server is now found. The changes also quietly enable Alpaca rotators and guiding output on Mac, make the new-profile wizard start with no camera or mount pre-selected, and remove a good deal of outdated Mac and upload code.",
+      "category": "feature",
+      "summaryHash": "ca0f94d3a4766c6b0b6d900373cfa80e4834fd16"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 9,
+      "title": "Modernize toolchain and refresh dependencies",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/9",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-13T22:46:52Z",
+      "additions": 494,
+      "deletions": 15598,
+      "changedFiles": 95,
+      "labels": [],
+      "summary": "Brings the project's build tools and bundled libraries up to date, including a security patch in one of the Windows libraries and newer versions of the INDI and testing libraries. It also drops 32-bit Windows, removes support for the old StarShoot AutoGuider camera, deletes a large amount of unused code, and narrows Linux builds to Debian 13 and Raspberry Pi OS 'Trixie'. The About box now lists Joey Troy as the current maintainer, and a new helper command for cutting releases was added. Most of the code changes were trimmed from what we received, so only some of these claims could be checked directly. Those include the newer language version, the libusb removal, and the new release workflow.",
+      "category": "chore",
+      "summaryHash": "6c09ee17116e0e557b6c0c0ac5b628ee80e3a15d"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 6,
+      "title": "Fix .deb build on Debian trixie and align package filenames",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/6",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-13T05:35:49Z",
+      "additions": 52,
+      "deletions": 47,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes the installable Debian package build so it works on Debian 'Trixie', which only offers an INDI library that is too old. Instead of stopping with an error, the build now automatically downloads and compiles a newer INDI version. It also corrects a package-name mismatch that made packaging fail, and fixes a step that reported 'package not found' even after a successful build.",
+      "category": "fix",
+      "summaryHash": "7b01ac0b530eaa6925427eb79a686637fbcb3a28"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 5,
+      "title": "Fix Alpaca loopback discovery; require INDI 2.0+ with from-source fallback",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/5",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-13T04:33:52Z",
+      "additions": 148,
+      "deletions": 80,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "Equipment discovery for ASCOM Alpaca now finds servers that only listen on the local machine, which is the default for ASCOM Remote Server. On Linux and Mac, discovery now also checks every network connection rather than only the main one. New profiles start with an empty port instead of a misleading 6800, so the setup dialog no longer reopens for people who really use that port. INDI 2.0 or newer is now strictly required, and the local Linux build script fetches it automatically when the system copy is too old. The installable-package build still assumed a system copy at this point; that was fixed later in #6.",
+      "category": "fix",
+      "summaryHash": "7577abec34721a2110f3c1ac892c88c0c581f425"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 4,
+      "title": "Re-add INDI support with auto-discovery + first-exposure fix (1.3.0)",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/4",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-13T03:31:09Z",
+      "additions": 5566,
+      "deletions": 17,
+      "changedFiles": 34,
+      "labels": [],
+      "summary": "Restores support for INDI cameras, mounts and rotators on Windows, Mac and Linux. This had been removed in an earlier slimming-down, but Linux and Raspberry Pi users need it. A new 'Discover Servers' button finds INDI servers on the local network in about two seconds. The PR also fixes a long-standing problem where the first exposure after connecting an INDI camera could drop the connection, and fills in the camera's pixel size automatically in the setup wizard. It also bundles the earlier Windows build update, a web portal icon and a developer commit helper, and marks the version as 1.3.0.",
+      "category": "feature",
+      "summaryHash": "2e8bd53df7aa8431824298805d3abd17560bd648"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 3,
+      "title": "Bump vcpkg to 2024.11.16 and parallelize Windows build",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/3",
+      "author": "joeytroy",
+      "mergedAt": "2026-05-12T15:34:45Z",
+      "additions": 15,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Repairs the Windows build, which had broken because a download it relied on was removed from the internet. The fix is to move to a newer version of the library package manager. It also makes Windows builds use all processor cores so they finish faster. Two things are not mentioned in the description: the build script now deletes the previous build folder every time, forcing a full rebuild on each run, and Windows script files are now locked to Windows-style line endings.",
+      "category": "ci",
+      "summaryHash": "4edf0fe83c994b2e533690decf6bc5cb083aba71"
+    },
+    {
       "repo": "open-astro/AlpacaBridge",
       "number": 46,
       "title": "Add ToupTek AAF focuser driver, ConformU validated x64+arm64",
@@ -27944,6 +28318,21 @@
       "summary": "This is the 1.0.0 release, and AlpacaBridge now runs only on Linux (Debian 13), on standard PCs and Raspberry Pi 4/5. Windows, macOS and older Raspberry Pi support are gone, and the bundled files for those systems were deleted. It adds support for the Gemini Automatic Astro Focuser Pro and a proper Debian install package that sets itself up as a background service and includes the ZWO camera files other tools like SmartGuider need. The description also lists stability fixes for ZWO and iOptron mounts over Wi-Fi and other drivers; those code changes were too large to check here, though the refreshed test reports and new tests are present.",
       "category": "feature",
       "summaryHash": "97c0620ea46ab0b750a38084eab524bd281679de"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 1,
+      "title": "Feature/slim",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/1",
+      "author": "joeytroy",
+      "mergedAt": "2026-03-22T23:30:01Z",
+      "additions": 220,
+      "deletions": 49183,
+      "changedFiles": 244,
+      "labels": [],
+      "summary": "A large cleanup that reduces the app to ASCOM Alpaca-only equipment support. It removes the built-in drivers for many camera brands, along with INDI and native ASCOM support, adaptive optics, secondary mounts, and guiding through the camera's guide port. The equipment setup screen now only offers a camera, a mount and a rotator. No code changes were provided, so this summary is based on the description alone.",
+      "category": "refactor",
+      "summaryHash": "8dc86660bfa6f9b0edf541c963a5d3c3c993fa43"
     },
     {
       "repo": "open-astro/AlpacaBridge",
