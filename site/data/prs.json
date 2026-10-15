@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-15T16:08:43.805Z",
+  "generatedAt": "2026-10-15T17:47:22.059Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1191,
+      "title": "Fix Sky-Watcher writes and getters ignoring the link-fault latch",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1191",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T17:17:01Z",
+      "additions": 357,
+      "deletions": 31,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a Sky-Watcher mount stops responding, the bridge now refuses every command (slewing, parking, tracking changes, guiding and so on) with one clear \"communications compromised\" error and sends nothing to the mount. Before, only position reads behaved this way; other questions could return out-of-date answers, and commands could still be sent to a link that wasn't working. It also adjusts some behavior when the mount is fully disconnected: asking for the tracking rate or rate offsets now returns a \"not connected\" error instead of a value, which better matches the astronomy device standard. The change comes with new automated tests but has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "c32fc0fb7452015c235c24c0d5cbc23b8298d795"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1192,
