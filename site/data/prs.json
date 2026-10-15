@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T19:55:58.853Z",
+  "generatedAt": "2026-10-15T21:05:54.026Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1195,
+      "title": "Fix ZWO EAF max step connect refusals",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1195",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T20:52:29Z",
+      "additions": 61,
+      "deletions": 61,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO EAF focusers that stopped connecting after the recent maximum-travel setting was added will connect again. If the unit has a stored limit of zero and no limit is set in the settings, it now connects with a warning in the log instead of being refused. Moves still won't work until a limit is set. If the configured limit is higher than the focuser can physically travel, it is lowered to the unit's real limit with a warning instead of blocking the connection. The code matches the description, and tests and documentation were updated to match; it has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "09d43e3af71661d182b4ede43d4f262dabafa25f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1191,
