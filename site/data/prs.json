@@ -1,11 +1,65 @@
 {
-  "generatedAt": "2026-10-15T11:12:54.160Z",
+  "generatedAt": "2026-10-15T12:11:59.631Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1185,
+      "title": "Track the ASCOM Alpaca standard documents in the dependency-update checks",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1185",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T12:02:39Z",
+      "additions": 8,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "documentation",
+        "dependencies",
+        "safe-to-review",
+        "P4"
+      ],
+      "summary": "The project's automatic update checker now also watches the official ASCOM Alpaca standard documents (the two API definitions and the API reference page) on the standards website. When any of them changes, an issue is opened automatically, so nobody has to remember to recheck by hand. This is internal tooling and documentation only. The server and drivers are not affected.",
+      "category": "chore",
+      "summaryHash": "1063d1df188072fbb523a907f8826e6377dd961b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1183,
+      "title": "Fix SkyWatcher limits start-outside test flake",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1183",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T11:44:11Z",
+      "additions": 15,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixed a test for the Sky-Watcher mount's motion-limit safety check that failed at random on slow machines. The test now clears an old stored mount position before it starts and waits for real position checks instead of a fixed pause. This is a test-only change with no effect on how the software behaves.",
+      "category": "tests",
+      "summaryHash": "586a311a688482c3edc2007e887561b5dddd151f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1184,
+      "title": "Move failed-to-load devices out of configureddevices",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1184",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T11:26:15Z",
+      "additions": 130,
+      "deletions": 15,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server's standard device list now shows only devices that actually loaded. Saved devices that failed to load have moved to a separate list that only the web interface uses. Before, outside astronomy apps (such as the ConformU checker) could see broken entries they could not connect to, which breaks the standard. The web interface reads both lists, so the red error card with its Edit and Delete buttons works as before, at the cost of one extra request each time it refreshes status.",
+      "category": "fix",
+      "summaryHash": "cafb5dec3b5005b707eb206289d93befdf97f2c8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1179,
