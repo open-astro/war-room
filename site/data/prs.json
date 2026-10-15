@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-15T08:16:38.041Z",
+  "generatedAt": "2026-10-15T09:14:31.507Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1178,
+      "title": "Explain why the QHY stress test does not expect DriverException",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1178",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T08:49:07Z",
+      "additions": 19,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test change only: this adds an explanatory note to an existing stress test for the QHY camera driver, and nothing about how the software behaves has changed. Earlier reviewers kept asking whether a badly timed disconnect during an exposure could cause a certain error the test doesn't allow for. The note records why that can't happen in this test, so the question doesn't need to be re-investigated. The code confirms only a comment and a changelog entry were added.",
+      "category": "tests",
+      "summaryHash": "349f154ea348e9516a636fb1e955ff58e0ccb619"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1177,
+      "title": "Skip the SynScan readback tick hunt on a handset without the sawtooth",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1177",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T08:29:37Z",
+      "additions": 59,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Slews with some Sky-Watcher SynScan handsets now finish up to about 4 seconds sooner. After a slew, the driver fine-tunes the final position in up to three rounds, and each round waited over a second for a once-per-second timing signal in the position readings. Some handsets never show that signal, so the wait was wasted every time. The driver now remembers when the signal isn't there and skips the wait for the rest of that connection, starting over after reconnecting or changing tracking or time settings. Handsets that do show the signal behave as before, and the change comes with new tests but has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "504514204948cc9aae3aa04dc86b55bbb7c3998c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1175,
