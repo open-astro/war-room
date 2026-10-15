@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-15T00:21:58.463Z",
+  "generatedAt": "2026-10-15T01:21:09.799Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1149,
+      "title": "Update the ZWO ASI camera static library to 1.41",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1149",
+      "author": "kern2011",
+      "mergedAt": "2026-10-15T00:42:10Z",
+      "additions": 566,
+      "deletions": 564,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO camera driver now uses version 1.41 of ZWO's camera software kit. Before this, the installer already shipped 1.41, but the camera driver was still built on the older 1.40 copy, so the two were out of step. No driver code changed, and the docs and version records now say 1.41. Two cameras (ASI120MM Mini and ASI533MC Pro) passed the standard compatibility checker on the new version with no errors.",
+      "category": "chore",
+      "summaryHash": "cb284cf5ddb50fac873d1471d98dfb671f0c4500"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1150,
+      "title": "Update the ZWO EAF SDK to 1.8.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1150",
+      "author": "kern2011",
+      "mergedAt": "2026-10-15T00:23:31Z",
+      "additions": 111,
+      "deletions": 91,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO EAF electronic focuser driver now uses ZWO's focuser software kit version 1.8.1 instead of 1.7.7, which brings in ZWO's latest fixes and support for newer focuser hardware. The new kit adds a \"stop and wait\" command, but the driver does not use it yet and still stops the focuser the same way as before. On one newer focuser unit, moving, stopping and the standard compatibility checker all worked without problems. The older focuser model was not tested on the new version.",
+      "category": "chore",
+      "summaryHash": "b1fa1c78ffcec04d4edd0e24f177efb249874609"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1148,
