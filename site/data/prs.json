@@ -1,11 +1,45 @@
 {
-  "generatedAt": "2026-10-15T10:13:39.257Z",
+  "generatedAt": "2026-10-15T11:12:54.160Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1179,
+      "title": "Fix Sky-Watcher landing hold comments and goto overhead docs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1179",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T10:58:22Z",
+      "additions": 38,
+      "deletions": 20,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This corrects notes and documentation about how the Sky-Watcher telescope driver finishes a goto, with no change to how the telescope actually behaves. The old text said a short correcting move on one mount takes about 3 seconds. The real measurement is about a quarter of a second, so the text now uses that figure. The notes also now mention that the final waiting step runs even when tracking was off, and that a slew can take longer than the earlier comment suggested. One follow-up from the original review list was deliberately skipped, and the description explains why.",
+      "category": "docs",
+      "summaryHash": "4ba07daa20e5d2e908e36131af76165637ff36e3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1182,
+      "title": "Run Gemini focuser stress cases over the pty fake",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1182",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T10:41:43Z",
+      "additions": 87,
+      "deletions": 36,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test improvement for the Gemini focuser and flat panel drivers, with no change to the product itself. The focuser's heavy multi-threaded tests used to point at a device that did not exist, so every connection failed and the real connect and disconnect steps were never tested. They now run against a simulated device, and a new test checks that a disconnect sent right after a connect is not lost. The flat panel tests also now open, close, and stop the cover during the stress run, which helps catch timing bugs earlier.",
+      "category": "tests",
+      "summaryHash": "69844ed967cacf233af157d217d00989dde11e1a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1180,
