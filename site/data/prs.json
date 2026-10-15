@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-15T07:16:01.454Z",
+  "generatedAt": "2026-10-15T07:28:21.094Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1174,
+      "title": "Fix ZWO first CCDTemperature read after connect returning 0.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1174",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T07:19:08Z",
+      "additions": 70,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug with ZWO cameras where the first temperature reading after connecting came back as 0 °C instead of the real sensor temperature, so apps that check the temperature once on connect were recording a wrong value. The driver now briefly re-checks, up to five times over about a quarter of a second, when that first reading is zero, and later readings are not slowed down. If the camera still reports zero after those retries, the driver passes along 0 °C rather than an error, so a genuine freezing-point reading still works. The fix was checked with simulated-camera tests only, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "f62555826d7a8ccfe9f12f211519f17f46755349"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1171,
