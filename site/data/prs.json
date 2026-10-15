@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T22:04:36.957Z",
+  "generatedAt": "2026-10-15T23:03:56.172Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,100 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 30,
+      "title": "Enable compiler warnings and add a sanitizer CI job",
+      "url": "https://github.com/open-astro/phdlogview/pull/30",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T22:42:43Z",
+      "additions": 214,
+      "deletions": 99,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "The build now flags questionable code on every platform, and CI treats those flags as failures, so new problems are caught before merging. A new CI job also runs the tests with extra memory and safety checks. Fixing the flagged code turned up one real bug: the log reader held on to temporary memory it did not own. The rest were small cleanups and renames, plus a new test for a session where every frame lost the star. The description first says Windows warnings stay non-fatal, but the final setup makes them fatal on Windows too, and the renamed graph-drawing code was not checked visually.",
+      "category": "ci",
+      "summaryHash": "1d727440d498bba3cd9669777f9f13b7cf2d4b12"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 29,
+      "title": "Split parser and analysis into a core library and add unit tests",
+      "url": "https://github.com/open-astro/phdlogview/pull/29",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T22:42:15Z",
+      "additions": 2924,
+      "deletions": 1418,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Behind-the-scenes reorganisation that separates the log reading and guiding-statistics math from the app's windows, with no intended change in behaviour. That separation allowed the project's first automated tests. They check results against a real guiding log from the OpenAstro guider, against unusual or broken logs, and against independently calculated statistics.",
+      "category": "refactor",
+      "summaryHash": "a4cd86240f09774c85b2ffb7f5cc62c0ae9ad50d"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 27,
+      "title": "Modernise CMake build and move dependencies to vcpkg",
+      "url": "https://github.com/open-astro/phdlogview/pull/27",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T22:41:26Z",
+      "additions": 3456,
+      "deletions": 3565,
+      "changedFiles": 31,
+      "labels": [],
+      "summary": "The build setup was rebuilt, and the libraries the app depends on are now fetched automatically, with wxWidgets pinned to a specific version. This changes which systems the app supports. Mac builds are now Apple Silicon only and need macOS 26 or newer, and the old 32-bit Windows libraries were removed. Windows builds no longer need separate runtime files. The changes also include the automated multi-platform CI setup that PR #28 describes.",
+      "category": "chore",
+      "summaryHash": "0779780df5c960d2b73f14f95656182e2b0dfed2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1198,
+      "title": "Fix Sky-Watcher MoveAxis restore overriding SetTracking(false)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1198",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T22:35:45Z",
+      "additions": 108,
+      "deletions": 38,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a Sky-Watcher mount problem where turning tracking off while the mount was still slowing down from a manual move could fail. The mount would keep tracking and report an error. A background step now properly yields to the 'stop tracking' request, the same way the other axis already did. A previously quarantined test now runs normally, and new tests cover the timing issue. This has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "b0368b0c57f78175b5d8b20acdf01e1bb6303c91"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 28,
+      "title": "CI: build and test matrix on GitHub Actions",
+      "url": "https://github.com/open-astro/phdlogview/pull/28",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T22:27:22Z",
+      "additions": 221,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Adds automatic builds and tests on GitHub for five platforms: Linux (two chip types), Mac on Apple Silicon, and Windows (two chip types). Each run produces a downloadable build. Tool updates are proposed weekly. The setup differs slightly from the description. On Linux it builds the pinned wxWidgets from source instead of using the system package, and the Mac job uses the custom macOS 26 setup.",
+      "category": "ci",
+      "summaryHash": "06e96bd3cf2606ae3b52aa181fe21e68d21779f1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1196,
+      "title": "Fix Sky-Watcher step-period readback warning on /16 boards",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1196",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T22:11:06Z",
+      "additions": 88,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Stops the Sky-Watcher EQM-35 Pro mount from filling the log with false 'step period readback' warnings on almost every speed change. This board reports the value back in a different format, and the driver now recognises it. Values that match neither format still trigger a warning. Only logging is affected, not mount movement. This has not been tested on hardware.",
+      "category": "fix",
+      "summaryHash": "4b3efce631c1859789ac303d80de7aaec89350fb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1199,
