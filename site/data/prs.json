@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-15T01:21:09.799Z",
+  "generatedAt": "2026-10-15T01:52:28.296Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1157,
+      "title": "Update the Player One Camera SDK to 3.10.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1157",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T01:29:50Z",
+      "additions": 24,
+      "deletions": 19,
+      "changedFiles": 26,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Player One camera driver now ships with the latest version of the camera maker's software library (3.10.1, up from 3.10.0). According to Player One's notes, this version fixes horizontal stripes that showed up in images from Uranus and Xena 585M cameras when using HDR mode with 2x hardware binning. The rest of the change just points the build, install scripts and documentation at the new version. It was not tested on real cameras.",
+      "category": "chore",
+      "summaryHash": "f547203cae171ef53326950e84aa1e6c64b1fd61"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1149,
