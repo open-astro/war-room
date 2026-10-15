@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-10-14T23:22:31.707Z",
+  "generatedAt": "2026-10-15T00:21:58.463Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1148,
+      "title": "Add Celestron CGX direct USB telescope backend",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1148",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-15T00:03:52Z",
+      "additions": 9345,
+      "deletions": 91,
+      "changedFiles": 54,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron CGX and CGX-L mounts can now be connected and controlled directly over USB, without going through the Celestron hand controller. The web setup screen gains options for this new connection, and the change ships with simulated-mount tests, protocol notes, and a passing standard compatibility test run on real hardware. Beyond the new mount support, it also moves two small clock-related helpers out of the Sky-Watcher driver into shared code (behavior unchanged) and updates team guidance to note that seven older telescope drivers still report one error type in a legacy way that has not yet been fixed.",
+      "category": "feature",
+      "summaryHash": "19c5c1babba7d5f0642c2a26f6f924eacb4dd19f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1155,
+      "title": "Fix ToupTek odd NumX/NumY at bin 2+ and the WaitImageV4 row-pitch rejection",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1155",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-14T23:38:39Z",
+      "additions": 958,
+      "deletions": 648,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "ToupTek-based cameras (including Altair and some SVBONY models) no longer fail when asked for an image whose width or height is an odd number of pixels, either when combining pixels (binning) or, for odd widths, even at normal resolution. The camera software always rounds these images down to an even size, so the driver now requests a slightly larger area and trims it back. Where there is no room to grow at the edge of the sensor, it copies the last row or column from its neighbour. The fix was confirmed on two real cameras with clean results on the standard compatibility test, and it is a prerequisite for the 5.0.0 release.",
+      "category": "fix",
+      "summaryHash": "3e2d01be1a4fa0455b34732b0733617a8987cd1d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1151,
