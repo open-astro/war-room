@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T21:05:54.026Z",
+  "generatedAt": "2026-10-15T22:04:36.957Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1199,
+      "title": "Fold saved connectionType to lower case",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1199",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T21:51:39Z",
+      "additions": 111,
+      "deletions": 19,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Device settings now treat the connection type the same way regardless of capitalization, so \"Network\", \"SERIAL\" or \"Auto\" work exactly like \"network\", \"serial\" and \"auto\". Before this, a saved setup that said \"Network\" was quietly treated as a cable connection and its network address was thrown away, while the settings screen rejected the same value outright. Both paths now use one shared rule, and the saved list shows the lower-case value. As the PR notes, a few devices (a Gemini switch, WandererAstro and an iOptron filter wheel) are now stricter: \"SERIAL\" with no port chosen is refused instead of auto-detecting the port.",
+      "category": "fix",
+      "summaryHash": "b82f3de24fcb77a54f0e84d04ab368b3ebacee22"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1197,
+      "title": "Fix QHY CFW3 reconnect-mid-move test racing the pty",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1197",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T21:22:12Z",
+      "additions": 12,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only fix for an automated check on the QHY filter wheel that failed at random, about once in 50 runs, in the slowest test build. The test now waits until the simulated wheel has actually received the move command before it simulates a reconnect, so the command can no longer get lost in the test setup. No driver code changed, and a separate random failure in the same issue report, for Sky-Watcher, is still open.",
+      "category": "tests",
+      "summaryHash": "40f5726bb097eccf19ba03b0620ad77e4b6ec021"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1195,
