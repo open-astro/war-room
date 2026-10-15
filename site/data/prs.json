@@ -1,11 +1,28 @@
 {
-  "generatedAt": "2026-10-15T01:52:28.296Z",
+  "generatedAt": "2026-10-15T02:20:10.027Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1158,
+      "title": "Fix SBOM runtime dependency versions",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1158",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T02:01:14Z",
+      "additions": 33,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The software ingredient list that ships with each beta and nightly package now records which version of each library the package needs to run, such as the camera and USB libraries. Before, it only named these libraries without versions, so a reader could not tell which ones the build was made with. The versions come from the build machine, so they show what the package was built against, not necessarily what a user will have installed. The main code change could not be checked because it was left out of the provided diff; the visible parts are a matching test mentioned in the description, wording updates in the docs and an automated workflow, and a changelog note.",
+      "category": "fix",
+      "summaryHash": "52abfb20a9f07627d9321f4f0186ba5b28de9373"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1157,
