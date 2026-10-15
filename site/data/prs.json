@@ -1,11 +1,63 @@
 {
-  "generatedAt": "2026-10-15T03:19:25.301Z",
+  "generatedAt": "2026-10-15T04:18:40.394Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1163,
+      "title": "Move the ZWO camera into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1163",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T03:54:51Z",
+      "additions": 1562,
+      "deletions": 843,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review",
+        "on hold"
+      ],
+      "summary": "ZWO cameras are now set up through the same shared device list as every other supported brand, which finishes a cleanup that already moved the other ZWO devices last time. Users should see no change in how cameras behave. The rules for spotting duplicate cameras and remembering each camera's serial number and ID now live in one place instead of being spread through the server's main request-handling code. The PR also quietly fixes a settings-file bug where an extremely large number could turn into a negative one, and refreshes the hardware test reports for two ZWO cameras.",
+      "category": "refactor",
+      "summaryHash": "51f8c87006ec2b13817c641febcb9bbefd4379bf"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1159,
+      "title": "Fix changelog_fragments --bump ignoring legacy UNRELEASED categories",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1159",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T03:36:42Z",
+      "additions": 26,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The release tool that suggests the next version number now looks at all pending changelog entries, including ones in an older-style section of the changelog that it used to skip. Before this, a breaking change or new feature listed only there would not raise the version number as it should, and the tool would accept a version that was too low. This affects internal release tooling only, not the server itself.",
+      "category": "ci",
+      "summaryHash": "166608df88fa9d6ca5d34914f822f95357428b53"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1161,
+      "title": "Fix Falsified-by gate diff base drifting from the base branch",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1161",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-15T03:20:16Z",
+      "additions": 91,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes an automated pull request check that makes sure every new test comes with a note explaining what it guards against. If the main branch moved on after a pull request was opened, the check could wrongly blame that pull request for tests that other people had added in the meantime. It now compares only against the right starting point, so each pull request is checked only for its own tests. This is internal CI tooling, with no change for users.",
+      "category": "ci",
+      "summaryHash": "4a92bb82f59faddfc934c31f9296805e3bf8ea1c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1162,
