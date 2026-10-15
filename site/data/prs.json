@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T23:03:56.172Z",
+  "generatedAt": "2026-10-15T23:18:56.884Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 31,
+      "title": "Bump the actions group across 1 directory with 3 updates",
+      "url": "https://github.com/open-astro/phdlogview/pull/31",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-15T23:14:42Z",
+      "additions": 9,
+      "deletions": 9,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine maintenance with no change to the app itself. This updates three of the standard tools our automated build system uses to fetch the code, reuse saved build pieces, and store finished downloads. The newer code-fetching tool also adds safer default protections when building contributions from outside the project.",
+      "category": "ci",
+      "summaryHash": "71d6bf303a8ee6215fa0ab90fb6b99b522478aa3"
+    },
     {
       "repo": "open-astro/phdlogview",
       "number": 30,
