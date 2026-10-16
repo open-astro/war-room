@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T09:54:38.626Z",
+  "generatedAt": "2026-10-16T10:54:51.718Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1225,
+      "title": "Fix Sky-Watcher slew and tracking edge cases near the pole and during recovery",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1225",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T10:28:20Z",
+      "additions": 503,
+      "deletions": 27,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes several rare mistakes in how the Sky-Watcher mount driver tracks and moves. The main fix: if the site's latitude is changed from northern to southern hemisphere while a small guiding correction is in progress, the mount now turns its tracking around correctly instead of keeping the old direction, which would make stars smear. It also stops the mount from reporting 'tracking' after a stop command failed but the mount did stop, and avoids a pointless second slew for targets close to the meridian. Despite the title, nothing here is specific to the pole. One reported problem could not be reproduced and only gained tests, and the on-telescope check was not run.",
+      "category": "fix",
+      "summaryHash": "b6e3d2104d44b94aa248bc82cf9f75c3f88e97c3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1235,
+      "title": "Upload only fixable or Critical OSV findings to code scanning",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1235",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T10:01:27Z",
+      "additions": 56,
+      "deletions": 16,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal change to the daily security scan of the software's dependencies. The project's security alert list now only shows problems that have a fix available in Debian, plus Critical problems with no fix, which may mean a dependency should be dropped. This cuts the noise from dozens of alerts nobody could act on. Side effect: hidden alerts appear as 'fixed' even though they are not, and come back once Debian ships a fix. The code part of this change was not visible in the provided diff, so only the description, docs and tests describe it.",
+      "category": "ci",
+      "summaryHash": "6cdca9ed2976b651cd7e0915ab0c25667c931727"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1227,
