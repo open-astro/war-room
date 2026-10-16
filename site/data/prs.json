@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T22:46:09.647Z",
+  "generatedAt": "2026-10-16T23:44:30.299Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,36 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1367,
+      "title": "Guider calibration in Ara: live step plot, stored result, verdict, clear (#1364 item 2)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1367",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T23:04:36Z",
+      "additions": 1259,
+      "deletions": 11,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "The Guide camera window in Ara now shows the guider's calibration next to the camera picture. It draws a live plot of each calibration step as it happens, shows the saved result, and gives a plain verdict (Good, Check or Redo) with the reason. A new Clear calibration button makes the guider calibrate again the next time guiding starts. If a calibration is cut short, for example because looping or guiding stopped or the connection dropped, it is now marked as failed instead of appearing to run forever.",
+      "category": "feature",
+      "summaryHash": "77ff3f9372c6ed5106bbc6a4c125ba5e89ca0e79"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1250,
+      "title": "Harden ConformU pin parsing and correct the OnStep report records",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1250",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T23:00:27Z",
+      "additions": 50,
+      "deletions": 21,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "This is internal tooling and documentation cleanup, with no change to the drivers themselves. The script that reads which ConformU test-tool version the project uses now reports an error if the setup document lists two different versions, instead of quietly using whichever one comes first. The weekly update check can now attach a short note to the issues it opens, and the ConformU beta entry uses this to explain the correct steps for adopting a new beta. The docs now list the newest ConformU version and correct the description of an older OnStep mount test report, which was actually run on a regular PC with an older ConformU version, not on arm64 as the docs said.",
+      "category": "chore",
+      "summaryHash": "3c72cfdf7b846bef24daedc7e09f61a7b38f48b7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1244,
