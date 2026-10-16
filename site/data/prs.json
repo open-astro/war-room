@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T16:49:47.201Z",
+  "generatedAt": "2026-10-16T17:48:58.091Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1233,
+      "title": "Move the iOptron devices into the device catalog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1233",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T17:34:40Z",
+      "additions": 1083,
+      "deletions": 592,
+      "changedFiles": 26,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is mostly an internal reorganization: the setup rules for iOptron equipment (the mount, the iMate PowerBox, the iEAF focuser, the iEFW filter wheel, and iCAM cameras) were moved out of the server's request-handling code and into the shared device catalog where every other brand already lives. With iOptron done, that request-handling code no longer contains anything brand-specific, which makes it easier to maintain and add new equipment. A few error messages change slightly, and the server now rejects a malformed PowerBox port list it used to accept. The author notes it was not tested on real hardware, and in builds without the needed hardware library the PowerBox now shows as available in the catalog even though setting it up is still refused.",
+      "category": "refactor",
+      "summaryHash": "d1d36f8a7b01fcbedc0a2f679719be1e627f5c3c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1243,
