@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T05:57:43.280Z",
+  "generatedAt": "2026-10-16T06:25:47.985Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1213,
+      "title": "Add WeeWX fetcher seam so stress cases reach the poll thread",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1213",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T06:11:43Z",
+      "additions": 250,
+      "deletions": 33,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This change makes the automated stress tests for the WeeWX weather station driver actually exercise the part of the driver that regularly checks for new weather readings. Previously those tests pointed at an address that could never answer, so the driver never finished connecting and that background checking was never tested. The driver can now be handed a stand-in data source during tests, which allows new tests for problems like disconnecting during a slow reading or recovering from failed readings. The diff confirms real users are unaffected, since the driver still fetches data over the network exactly as before.",
+      "category": "tests",
+      "summaryHash": "eb57c6f642b8420df7466bdc7ccc834debb6e7aa"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1215,
