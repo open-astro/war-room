@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T21:46:52.086Z",
+  "generatedAt": "2026-10-16T22:13:14.954Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,68 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 36,
+      "title": "Release 2.2.1",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/36",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T21:57:26Z",
+      "additions": 10,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This prepares the 2.2.1 release of the guider by updating the version number and the list of changes. The release adds a description of the imaging equipment to the guide log, lets gain be set on Alpaca cameras, and makes the Linux install packages work again on Debian 13 and Raspberry Pi OS Trixie. No program code changes here; the release itself is built in a separate step after merging.",
+      "category": "chore",
+      "summaryHash": "70550cf9055b25f67ba6d10440d8aa6d252e1998"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1240,
+      "title": "OnStep: the tracking restore never outlives its slew (#1230)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1240",
+      "author": "kern2011",
+      "mergedAt": "2026-10-16T21:54:14Z",
+      "additions": 553,
+      "deletions": 11,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a safety bug with OnStep telescope mounts where the server could switch tracking back on, and move the mount, at the end of a later slew it had not started, such as a move from the handset. Turning tracking back on after a move now only applies to the move that asked for it, and a user's choice to turn tracking off always wins, including when a move is cancelled. The change was checked with new automated tests and on a real TeSeek HM-17 mount. That mount is now listed as validated, bringing the count to 86 devices, although its test report was made with the already released version rather than this new code.",
+      "category": "fix",
+      "summaryHash": "fe397f0de83d6366768b7429245654fcdba5d101"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 87,
+      "title": "Log the imaging gear from Alpaca in the guide log",
+      "url": "https://github.com/open-astro/openastro-guider/pull/87",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T21:50:03Z",
+      "additions": 2049,
+      "deletions": 5,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "The headless guider now records the imaging setup in its guide log: telescope, imaging camera with its sky coverage per pixel, filter wheel, rotator, focuser, weather and how the guide camera is mounted. It also notes filter changes, the start and end of imaging exposures, and conditions once a minute. All of this is read automatically and read-only from the same Alpaca server, in the background so guiding is never slowed, which lets Guide Insight judge guiding quality against the imaging setup. It is the same change as the matching guider app update; passing equipment details through the app's control interface was left out.",
+      "category": "feature",
+      "summaryHash": "47dd810aaec07f3461df7fe6142c35b7b30b33e7"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 35,
+      "title": "Log the imaging gear from Alpaca in the guide log",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/35",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T21:49:58Z",
+      "additions": 2054,
+      "deletions": 5,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "When the guider is connected through Alpaca, the guide log now automatically records the imaging setup: telescope, imaging camera with its sky coverage per pixel, filter wheel, rotator, focuser, weather and guide-camera setup. While guiding, it also notes filter, rotator and focuser moves, the start and end of imaging exposures, and conditions once a minute. Equipment is only read, never changed, and the reading happens in the background so guiding is never held up. This lets Guide Insight judge guiding against the imaging setup with nothing for the user to configure; setups not using Alpaca simply get a note saying so.",
+      "category": "feature",
+      "summaryHash": "77b51b9f5156f7331b031b8ff82e01352952c954"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1365,
