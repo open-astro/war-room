@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T03:00:19.944Z",
+  "generatedAt": "2026-10-16T03:59:30.578Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1207,
+      "title": "Fix ZWO mount empty connectionType to mean auto",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1207",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T03:56:42Z",
+      "additions": 74,
+      "deletions": 53,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A ZWO telescope mount saved without a connection type now auto-detects the mount when it connects, the same as every other mount. Before, the server refused such a mount when it was set up, or treated it as a serial cable connection and logged a warning. The web settings page now shows these mounts as Auto instead of Serial, while a connection type the driver does not recognize is still refused or treated as serial.",
+      "category": "fix",
+      "summaryHash": "8378ed54cf8edfaa05ad620e3bbace5086c70f17"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1210,
+      "title": "Add pty repro of serial port retune and stuck disconnect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1210",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T03:28:42Z",
+      "additions": 207,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change with no change to how the software behaves. It adds two automated tests that reproduce two known problems with simulated serial ports. The first shows that a second driver can take over a port another driver is already using and change its settings. The second shows that a rotator can then hang forever when asked to disconnect. Both tests are marked as expected to fail until later fixes land.",
+      "category": "tests",
+      "summaryHash": "79efabd035fff5a67f56d91dccb76b7f5250daac"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1193,
+      "title": "Report a failed GPhoto exposure instead of looking connected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1193",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T03:04:13Z",
+      "additions": 270,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a DSLR or mirrorless camera exposure fails, client apps now get a clear error explaining why, instead of waiting forever for an image that never arrives. The camera stays ready, so the next exposure can be started. If the camera has dropped off USB, for example after powering itself off, it is now shown as disconnected so the user knows to reconnect. One side effect: apps that treated \"image not ready\" as \"still working\" will now see an error after a failed shot.",
+      "category": "fix",
+      "summaryHash": "d25a738b878cd3f0520a495b49efdc159db96e32"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1206,
