@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T23:18:56.884Z",
+  "generatedAt": "2026-10-16T00:02:56.378Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,66 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 35,
+      "title": "macOS: make the section heading and graph labels readable",
+      "url": "https://github.com/open-astro/phdlogview/pull/35",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T23:56:15Z",
+      "additions": 19,
+      "deletions": 22,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "On Mac, the small text on the graphs (axis labels, markers and legends) is now readable. Before, it was shrunk twice and came out tiny. The session information panel now uses the normal system font instead of a fixed tiny 8-point Arial. The description frames this as a Mac fix, but the panel font change applies on every platform, not just Mac.",
+      "category": "fix",
+      "summaryHash": "6a6de6bfccc659f8411ed03c0ff28022106a7a93"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 34,
+      "title": "Show frames where the star was lost as gaps in the graph",
+      "url": "https://github.com/open-astro/phdlogview/pull/34",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T23:48:17Z",
+      "additions": 213,
+      "deletions": 47,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "When the guiding software lost track of the star, those moments now show as breaks in the graph lines. Before, they were drawn as drops to zero, which could look like real measurements. This applies to the position, star brightness and signal-quality lines. The PR also merges four near-duplicate drawing routines into one and adds tests for the gap detection.",
+      "category": "fix",
+      "summaryHash": "3e9a27cbe2981528768ed1c392b134d05872e0d5"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 33,
+      "title": "Read and write numbers independently of the system locale",
+      "url": "https://github.com/open-astro/phdlogview/pull/33",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T23:40:15Z",
+      "additions": 166,
+      "deletions": 9,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Fixes wrong numbers for users whose computers use a comma as the decimal separator, such as German settings on Linux. Values like 6.45 were being read as 6, which made the graphs look rounded off. The frequency-analysis spreadsheet export had the reverse problem and wrote commas into a comma-separated file, which broke its columns. Both now work the same regardless of regional settings, and new tests check this under German settings in the automated build.",
+      "category": "fix",
+      "summaryHash": "6cbee235c283fb1e9dcc63a0658a069b346ecbdc"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 32,
+      "title": "Explain when the opened file is a PHD2 debug log",
+      "url": "https://github.com/open-astro/phdlogview/pull/32",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-15T23:24:23Z",
+      "additions": 41,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "If someone opens one of the guiding program's debug logs by mistake, the viewer now explains that it is the wrong kind of file. It also says which guide log file to open instead. Before, it just showed an empty window with no explanation. Tests confirm that debug logs are recognized and that normal guide logs are not flagged.",
+      "category": "feature",
+      "summaryHash": "f4c09a3fb24dfe4a271ccb06a7f2d545da3f6876"
+    },
     {
       "repo": "open-astro/phdlogview",
       "number": 31,
