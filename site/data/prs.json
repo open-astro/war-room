@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T06:25:47.985Z",
+  "generatedAt": "2026-10-16T06:57:35.117Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1219,
+      "title": "Fix out-of-range saved site coordinate kept in stored device entry",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1219",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T06:40:23Z",
+      "additions": 38,
+      "deletions": 9,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a saved device setup contains an impossible location value, such as a latitude of 200 degrees, the bridge now removes that bad value from the saved settings instead of keeping it. Before, the value was already ignored with a warning, but it still showed up in the device list and got written back the next time settings were saved. Valid location values in the same setup are kept, and devices that don't use location settings are left untouched. The fix covers Sky-Watcher and iOptron telescopes and has only been checked with simulated tests, not real hardware.",
+      "category": "fix",
+      "summaryHash": "55ba290660f5907b28de684d7c83eff70bfe2565"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1209,
+      "title": "fix(qhy): read 16-bit frames little-endian, not byte-swapped",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1209",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T06:37:29Z",
+      "additions": 39,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Images from QHY cameras in 16-bit mode now come out correctly. Before, the bridge read the two halves of each pixel value in the wrong order, which turned every frame into noise with odd ring-shaped stars. Because of this the guiding software could not find any stars, so guiding and automatic focusing did not work. Simpler 8-bit and colour images were not affected, and a new test makes sure the order stays correct.",
+      "category": "fix",
+      "summaryHash": "03ac3faf3536e9d9827305b601ad36f1a8ad8943"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1213,
