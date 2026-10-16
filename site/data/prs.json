@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T22:13:14.954Z",
+  "generatedAt": "2026-10-16T22:46:09.647Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,53 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1244,
+      "title": "Make ConformU 4.5.2-rc.1 the standard",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1244",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T22:36:13Z",
+      "additions": 56,
+      "deletions": 27,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's official version of ConformU, the testing tool every driver must pass, is now the 4.5.2 release candidate instead of 4.5.1. The new version fixes a false failure in the telescope guiding test that hit OnStep mounts near the pole, and a clean run on the TeSeek HM-17 confirms this. Because the tool's download link silently swaps in each new build, the project now keeps its own copy of this exact version and the install step refuses to continue if the file's fingerprint doesn't match. Only docs, setup instructions and a small change to a dependency-reporting script are touched, not the drivers themselves.",
+      "category": "chore",
+      "summaryHash": "717cd6f27a7726ec433e32649ae8eda5f6142835"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1366,
+      "title": "Guide camera in Ara: the guider's live picture, locked star, stars, SNR; tap to pick a star (#1364 item 1)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1366",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T22:32:35Z",
+      "additions": 1959,
+      "deletions": 6,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "Ara can now show the guide camera's live picture, so users can pick a guide star without opening the guider's own web page. A new Guide camera window, opened from the Live tab's guiding strip, shows the locked star, other stars the guider found, and signal strength while guiding; tapping a star selects it, and there are Loop, Stop and Deselect buttons. Pressing Loop also connects the guider's camera and mount first, which avoids a vague error. One change the description doesn't mention: background checks the guider is expected to refuse no longer post a new error to the inbox every second. Tested on a Pi, but a full night test with the mount powered on is still pending.",
+      "category": "feature",
+      "summaryHash": "54769685668724fe4c792ad14d88a42aa6a404fb"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 88,
+      "title": "Headless Guiding Assistant over JSON-RPC",
+      "url": "https://github.com/open-astro/openastro-guider/pull/88",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T22:22:13Z",
+      "additions": 3509,
+      "deletions": 705,
+      "changedFiles": 17,
+      "labels": [],
+      "summary": "The guider's Guiding Assistant can now be run remotely, so Ara can use it during setup on a headless install with no window open. It measures how the star drifts without corrections, how steady the air is, how far off the polar alignment is, and, if requested, backlash in the mount. It then returns suggested settings, and the user can choose which ones to save to the profile. Settings it turns off during the run are put back afterwards, even if the run is stopped or fails. The calculations were moved out of the on-screen window into their own code with new automated tests, and the existing window now uses that same code.",
+      "category": "feature",
+      "summaryHash": "139a0ec5db805b98147b251f781672f292602863"
+    },
     {
       "repo": "open-astro/openastro-phd2",
       "number": 36,
