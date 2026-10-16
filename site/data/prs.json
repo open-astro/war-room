@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T11:54:54.612Z",
+  "generatedAt": "2026-10-16T14:51:27.564Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1238,
+      "title": "Run SynScan and Celestron slew tests on the fake task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1238",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T13:53:51Z",
+      "additions": 376,
+      "deletions": 173,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated tests for the SynScan and Celestron telescope mount drivers now simulate the passage of time instead of actually waiting in real time, so they finish much faster. In a local run, the four affected test files dropped from about 14 minutes to under 7, which should shorten the automated checks that run on every change. A simulated Celestron mount used in testing also now answers a startup check correctly, so tests no longer sit through 14 one-second retries when connecting. This is test-only work: the telescope software itself is unchanged and the tests still check the same things, though a couple of tests still take 40 to 50 seconds each.",
+      "category": "tests",
+      "summaryHash": "a219e979b00d1e9d939413149a17380b5a83dfc2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1234,
