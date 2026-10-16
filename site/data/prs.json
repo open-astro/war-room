@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T08:55:30.078Z",
+  "generatedAt": "2026-10-16T09:54:38.626Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1227,
+      "title": "OnStep: DoesRefraction reports the OnStepX coordinate mode (#1216)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1227",
+      "author": "kern2011",
+      "mergedAt": "2026-10-16T09:34:09Z",
+      "additions": 174,
+      "deletions": 4,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStep mounts running the newer OnStepX firmware now correctly tell astronomy software whether the mount already corrects positions for atmospheric bending (refraction). Before, the driver always said it did not, even though most OnStepX builds (including the TeSeek HM-17) do, so software could end up applying the correction twice and point slightly wrong. The driver now asks the mount when it connects and refuses attempts to change a setting that is fixed in the firmware. Older OnStep firmware keeps the old behavior, and the setting now gives a clear 'not connected' error when no mount is attached.",
+      "category": "fix",
+      "summaryHash": "bd9b6e65f426244bbb78803f22f6e0c1ad0857f7"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1232,
+      "title": "Serve Gemini focuser getters from a state snapshot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1232",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T09:08:28Z",
+      "additions": 458,
+      "deletions": 17,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Gemini focuser driver now checks the focuser's position, movement and temperature in the background four times a second and answers questions from that saved copy, instead of talking to the device every time it is asked. This keeps the connection free so move and stop commands are not delayed by software that asks for updates constantly, though the answers can be up to a quarter-second old. If the focuser stops responding several times in a row, the driver reports a communication problem but still always allows a stop command, and recovers on its own once the focuser answers again. This was tested only against simulated hardware, not a real focuser.",
+      "category": "refactor",
+      "summaryHash": "71c142c35e2759acb16428a606046824da92186e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1224,
