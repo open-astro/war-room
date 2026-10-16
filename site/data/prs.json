@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T10:54:51.718Z",
+  "generatedAt": "2026-10-16T11:54:54.612Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1234,
+      "title": "Route iOptron telescope driver waits and deadlines through TaskClock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1234",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T11:52:51Z",
+      "additions": 326,
+      "deletions": 184,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron telescope driver now gets its sense of time from a swappable clock instead of always reading the real one. On real hardware it still uses the real clock, so nothing changes at the telescope. The main payoff is speed: the driver's tests can skip ahead in time instead of actually waiting, which cuts minutes from the automated test runs. One small behavior change: disconnecting the mount now cuts short two brief startup and retry pauses (about a quarter second and three quarters of a second) instead of waiting them out.",
+      "category": "refactor",
+      "summaryHash": "2786d8ecc514b1f4b67f333746b886e0d6ab6bce"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1237,
+      "title": "List everything AlpacaBridge needs at runtime in the dependency graph",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1237",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T11:25:41Z",
+      "additions": 201,
+      "deletions": 15,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "GitHub's dependency page for the project now gives a fuller list of what AlpacaBridge relies on. It adds the system pieces the installed software needs to run, which were missing before. It also restores the automation tools used to build and sign releases, which had dropped off the list for four of the project's workflows. The nightly build now sends a second list taken from the actual built package, though that step has not yet been tried for real and will first run on the next nightly. Nothing in the installed software itself changes.",
+      "category": "chore",
+      "summaryHash": "7afec9aaee47882c6962ed91b291700d71a526fa"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1236,
+      "title": "Build the bundled libgphoto2 without libxml2",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1236",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T11:08:53Z",
+      "additions": 29,
+      "deletions": 7,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The camera support library bundled with AlpacaBridge is now built without an XML library that had a critical, unpatched security flaw. This removes that dependency from the installed package and clears the open critical security alert. The XML library was only used by two experimental camera modes, one older Olympus mode and a Wi-Fi-only Panasonic mode, and neither is supported by AlpacaBridge. An automatic check now fails the build if that library ever creeps back in.",
+      "category": "fix",
+      "summaryHash": "068ddde6422ca81b89387afeda5b9457a7b7017e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1225,
