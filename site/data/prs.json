@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T01:41:14.454Z",
+  "generatedAt": "2026-10-16T03:00:19.944Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1206,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1206",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T02:08:27Z",
+      "additions": 1705,
+      "deletions": 1136,
+      "changedFiles": 30,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings the fixes from the 5.0 beta.4 release back into the main line of development, so they are not lost and future merges stay simpler. For users, it includes better handling of ToupTek cameras when an odd image width or height is used with binning, and a change for Player One cameras: the \"stop exposure early and keep the partial image\" option is now reported as unsupported, because testing on real hardware showed the camera throws that image away. People should use \"abort\" to end an exposure early instead. It also carries smaller fixes to release tooling and review checks, and keeps main's own version number. In one case main deliberately keeps its own version of a flaky telescope-mount test instead of the beta's fix, so that flakiness may still need a separate fix on main.",
+      "category": "chore",
+      "summaryHash": "1d97c209e08049b5a697fe300fff877484e4c48b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1200,
