@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T01:02:08.445Z",
+  "generatedAt": "2026-10-16T01:41:14.454Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1200,
+      "title": "Fix CGX stop handoffs and complete telescope DeviceState",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1200",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-16T01:35:17Z",
+      "additions": 1221,
+      "deletions": 457,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Makes stop commands on the Celestron CGX mount more dependable: a Stop or Unpark sent while the mount is finishing a guiding correction is now accepted, and the command it replaced can no longer start afterwards. All telescopes now also report the current date and time in their combined status reading, and the CGX skips some unneeded position reads when building that reading. The PR also adds better error logging for failed CGX commands, a large set of new tests, and a fresh compatibility test report from a real mount with no errors. The author notes that the related issue is only partly resolved, and some parked-mount checks were deliberately kept.",
+      "category": "fix",
+      "summaryHash": "894333e326ae7245ba928d5b67cb6a4d8a975d07"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1205,
+      "title": "Release 5.0.0-beta.4",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1205",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T01:26:52Z",
+      "additions": 115,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Publishes the 5.0.0 beta 4 test release. Testers get fixes made since beta 3, including a fix for odd image sizes on ToupTek cameras and a fix for a camera lockup on Player One cameras. Only the version number, dates and release notes change, with no code changes.",
+      "category": "chore",
+      "summaryHash": "d26e7aa67efba91c7500acfce157423dfca5c99b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1203,
+      "title": "Log camera \"Image not ready\" answers at DEBUG, not ERROR",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1203",
+      "author": "kern2011",
+      "mergedAt": "2026-10-16T01:18:08Z",
+      "additions": 238,
+      "deletions": 26,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server no longer fills its error log when imaging software asks a camera for a picture before one is ready. That happens routinely during every exposure, so these messages are now recorded as low-priority debug notes, which makes real camera faults easier to spot. Camera apps receive exactly the same response as before. The change covers all supported camera brands, and real failures such as a stopped or failed exposure are still logged as errors. New tests check this for every camera.",
+      "category": "fix",
+      "summaryHash": "db7bc27dc5992791532e3d35323d95dea633f657"
+    },
     {
       "repo": "open-astro/phdlogview",
       "number": 40,
