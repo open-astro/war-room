@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T14:51:27.564Z",
+  "generatedAt": "2026-10-16T16:49:47.201Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1243,
+      "title": "Keep the built package's run-time libraries in the dependency graph",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1243",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T16:45:16Z",
+      "additions": 140,
+      "deletions": 75,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "This is an internal tooling fix, with no change to the software that ships. GitHub's dependency page is supposed to list the system libraries the AlpacaBridge package needs when it runs, but those entries only showed up for a few hours after each nightly build and then disappeared after the next merge. Now every update to the main branch fetches the latest nightly package and includes its run-time libraries in the regular report, so they stay listed all the time. The list can lag the main branch by up to a day, and the change also fixes how two shell programs are counted as needed: that now relies only on the device rule files the package actually installs.",
+      "category": "ci",
+      "summaryHash": "8ec9748052f42ec0c168a35ccb6a076d49328dd2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1238,
