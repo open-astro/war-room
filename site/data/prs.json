@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T17:48:58.091Z",
+  "generatedAt": "2026-10-16T20:46:17.655Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1248,
+      "title": "Add Sky-Watcher goto backlash compensation",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1248",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T20:10:00Z",
+      "additions": 1170,
+      "deletions": 52,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher telescope mounts can now optionally correct for the slack in their gears when moving to a target, so the scope settles in the same way every time and points more consistently. When this is turned on, a move that would arrive from the loose side of the gears goes slightly past the target and then creeps back onto it slowly. The setting is off by default and can be set separately for each axis in the web settings page. It deliberately does not apply to small guiding corrections or manual moves, because autoguiding software already handles slack itself. The visible changes (settings, setup, docs and tests) match the description, though the main motion code was too large to show and could not be checked directly.",
+      "category": "feature",
+      "summaryHash": "28cbfee90c61a49f51c9934a4afbeb74cbea8779"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1233,
