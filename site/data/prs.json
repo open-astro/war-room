@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T06:57:35.117Z",
+  "generatedAt": "2026-10-16T07:56:21.633Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1226,
+      "title": "Accept decision 0006: the Sky-Watcher rig ConformU run passed",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1226",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T07:14:05Z",
+      "additions": 5,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Documentation-only update that marks a design decision as officially accepted. The decision covers how telescope drivers run and cancel long-running background work such as slewing and parking. It had been waiting on a real-hardware compatibility test with a Sky-Watcher mount, and that test passed cleanly on 2026-10-11. The docs now also note that this new approach exists only in the main development line, not in the 5.0 release or its betas, and will first ship in the next release after 5.0.",
+      "category": "docs",
+      "summaryHash": "9eb18cd381812509f67c9b375da4cdac9b1f7080"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1219,
