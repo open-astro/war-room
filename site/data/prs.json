@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T04:58:39.856Z",
+  "generatedAt": "2026-10-16T05:57:43.280Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1215,
+      "title": "Make full-fake stress cases prove an in-storm connect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1215",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T05:51:17Z",
+      "additions": 180,
+      "deletions": 51,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change with no effect on how the server behaves. The automated stress tests, which hammer devices with many connect and disconnect requests at once, now also check that a connection still works afterward. Before, they could pass even if every connection attempt failed. The tests that destroy a device mid-connection also now start each round with a fresh simulated device, so leftover replies from one round can't affect the next.",
+      "category": "tests",
+      "summaryHash": "a9b44fdef343fb8d30c07754bf34ace158ce7cf1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1214,
+      "title": "Make the SynScan synchronous landing wait cancellable",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1214",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T05:28:15Z",
+      "additions": 77,
+      "deletions": 11,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On Sky-Watcher SynScan telescopes, stopping a slew with Abort now takes effect right away during the final small correction at the end of a slew. Before, a program waiting for the slew to finish could stay stuck for up to 8 seconds. Any new movement command, park or disconnect now ends that wait too. A new test covers the abort case, and the mount still reports an aborted slew as an error, just as it did before.",
+      "category": "fix",
+      "summaryHash": "f92d67c612aefb62e5a4f1a7caf653e4211f34b8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1212,
