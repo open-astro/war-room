@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T07:56:21.633Z",
+  "generatedAt": "2026-10-16T08:55:30.078Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1224,
+      "title": "OnStep: FindHome and Park no longer restart tracking (#1218)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1224",
+      "author": "kern2011",
+      "mergedAt": "2026-10-16T08:36:14Z",
+      "additions": 184,
+      "deletions": 7,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a safety problem with OnStep telescope mounts: after the software sent the mount to its home position, it would immediately turn star-tracking back on, so the mount slowly drifted away from home without anyone asking it to move. The same unwanted command was also sent after parking, though the mount ignored it there. Now home and park leave tracking off, and after a normal move to a sky position the software only turns tracking back on if the mount actually lost it along the way. This removes an unrequested motion command, was confirmed on a real TeSeek HM-17 mount, and comes with new automated tests.",
+      "category": "fix",
+      "summaryHash": "c324260b56d2bc53e5e82d6292c29a9fd5816b84"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1231,
+      "title": "OnStep: :GU# pier side from T/W/o, and corrected OnStep notes (#1217)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1231",
+      "author": "kern2011",
+      "mergedAt": "2026-10-16T07:58:22Z",
+      "additions": 112,
+      "deletions": 27,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Corrects how the software reads which side of the mount's pier an OnStep telescope is on. It had been mistaking a letter that just means \"this is a German equatorial mount\" for \"pier east,\" so it always reported east. Users and astronomy apps will see no difference, because the side-of-pier answer they get is calculated a different way and never used this value. Most of the change is in the internal developer notes, which now describe the mount's status codes correctly and explain that some north/south guiding test failures are caused by atmospheric refraction, not random noise. It also adds a test using real status replies recorded from a TeSeek HM-17.",
+      "category": "fix",
+      "summaryHash": "d3953614d93980601fb86dfda54b71b76159dc40"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1226,
