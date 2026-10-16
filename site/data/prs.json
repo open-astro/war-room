@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T03:59:30.578Z",
+  "generatedAt": "2026-10-16T04:58:39.856Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1212,
+      "title": "Keep saved CFW3, Gemini hub and Wanderer entries that have no port path",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1212",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T04:50:13Z",
+      "additions": 204,
+      "deletions": 30,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Saved QHY CFW3 filter wheel, Gemini power hub and WandererAstro devices set to a serial connection but with no port filled in are no longer silently dropped when the server starts. They now stay in the device list with a warning, and trying to connect gives a clear error telling the operator to set the port. The device never tries to guess a port on its own, so it won't disturb other USB devices. The code matches the description; the author notes it was not tested on real hardware, and the QHY part was not run locally and relies on the automated build checks.",
+      "category": "fix",
+      "summaryHash": "c268eeadc6586532f939ba492f8d967e99c8c240"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1208,
+      "title": "Fix ZWO camera library shipped twice: symlink unversioned .so names",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1208",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T04:23:22Z",
+      "additions": 83,
+      "deletions": 4,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO camera library was being installed twice in every package, wasting about 3.4 MB on each telescope computer. The extra copy is now a shortcut to the real file, matching how the QHY and Player One libraries are already set up. Three other ZWO libraries that had the same duplication but are not shipped were fixed the same way. A new automated check now fails the build if a duplicate library like this is committed again.",
+      "category": "fix",
+      "summaryHash": "132fe48fe2b0aa7773a694ba5272fca8a70a4168"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1207,
