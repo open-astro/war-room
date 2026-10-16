@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T20:46:17.655Z",
+  "generatedAt": "2026-10-16T21:46:52.086Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,66 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1365,
+      "title": "Bahtinov star pick, zoom and short-spike detector; run-tab, PA-session and guider-calibration fixes from the 2026-10-16 field night",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1365",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T21:36:08Z",
+      "additions": 1924,
+      "deletions": 133,
+      "changedFiles": 40,
+      "labels": [],
+      "summary": "Bahtinov-mask focusing is now much more usable. You can tap a star to lock onto it, zoom in on it, pick 4 or 8 second exposures, and see a steadier reading averaged over the last few frames. The star-pattern detection was rebuilt so it works on the short, faint spikes of a small telescope, where the old version found nothing during the October 16 field night. The PR also fixes a crash on the Run tab when starting a second run, automatically closes a polar alignment left open when guiding starts (so runs no longer stall at \"Guiding did not start\"), clears stale pause messages on Resume, and shows guider calibration progress such as \"North step 7 · 11.9 px\". The focusing work was used successfully at the telescope, but the automatic polar-alignment cleanup has not been tried on real equipment yet.",
+      "category": "feature",
+      "summaryHash": "99847bf29f9c40fc95c740eb81afb73a855f8c81"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 86,
+      "title": "Web UI: show calibration progress, lock settings while guiding",
+      "url": "https://github.com/open-astro/openastro-guider/pull/86",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T21:32:03Z",
+      "additions": 264,
+      "deletions": 0,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "The guider's web app now shows live calibration progress on the Guide tab (direction, step number and how far the star has moved) instead of appearing frozen. It also blocks changes to settings, equipment, profiles and darks while calibrating or guiding, greying out those buttons and showing a note, so pressing Save mid-run can no longer disturb it. Stop, pause, dither and the drift-alignment tool still work during a run. Actions taken in the web app are now written to the debug log, and the other programs that control the guider (Ara and N.I.N.A.) are not affected by the new lock.",
+      "category": "fix",
+      "summaryHash": "89313fa0d70dfbdfda2f1e046300888d681326fa"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 85,
+      "title": "Support camera gain on Alpaca cameras",
+      "url": "https://github.com/open-astro/openastro-guider/pull/85",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T21:00:16Z",
+      "additions": 176,
+      "deletions": 2,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Gain can now be set on Alpaca cameras in the headless guider, such as a ZWO camera connected through AlpacaBridge. Before, every attempt failed with \"camera has no gain control.\" The guider now reads the camera's gain range when it connects and converts the 0–100% setting to the camera's own scale before each exposure. In the web app, the gain box is now disabled for cameras without gain, so saving no longer stops partway and skips the other camera settings. Cameras that list gain as named options rather than a number range are still not supported, and the change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "cc0f1009fbe4d140738ca82b4b292edddf6715a7"
+    },
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 34,
+      "title": "Support camera gain on Alpaca cameras",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/34",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T21:00:11Z",
+      "additions": 170,
+      "deletions": 0,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "This is the same Alpaca camera gain fix as in the guider, applied to the PHD2 desktop app. Gain can now actually be set on Alpaca cameras like a ZWO camera behind AlpacaBridge: the app reads the camera's gain range on connect and sends the matching value before exposures. Cameras that offer gain as a list of named options are still not supported, and it has not been checked on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "cfd3a7e9a91eeef1d3aa7e1a22d6c482da341b6e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1248,
