@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T00:02:56.378Z",
+  "generatedAt": "2026-10-16T01:02:08.445Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,100 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 40,
+      "title": "Analysis: allow drift correction to be turned off",
+      "url": "https://github.com/open-astro/phdlogview/pull/40",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T00:44:52Z",
+      "additions": 23,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The log viewer's analysis can now be told to skip its usual step of removing the steady drift from the star's position, so the drift chart and frequency chart can show the raw positions instead. This is only the behind-the-scenes logic: there is no on-screen switch yet, and that will come with the redesigned Drift view. Nothing changes for users today because correction stays on by default. A new test confirms both modes behave as expected.",
+      "category": "feature",
+      "summaryHash": "459cb8a2da4c82b848cfb35438ebd93603c90485"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1201,
+      "title": "Report CanStopExposure false on Player One: the SDK discards the frame",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1201",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T00:38:27Z",
+      "additions": 436,
+      "deletions": 456,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Player One cameras, and the iOptron iCAM cameras that are rebadged Player One models, now report that they cannot do a \"stop exposure\" and return an error if asked to. Testing on real hardware showed that stopping throws the image away, and the recent beta then left the camera stuck as \"exposing\" for the full exposure time before failing. This fixes that regression from the 5.0 cycle: imaging apps will use \"abort exposure\" instead, which ends the shot in about a fifth of a second. Apps that call stop without first checking whether it is supported will now get an error, so this is marked as a breaking change in the changelog.",
+      "category": "fix",
+      "summaryHash": "6a549e93052250ecfe24aa7b6f244bccf646e8da"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1190,
+      "title": "Bundle libgphoto2 2.5.34 in the Debian package",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1190",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T00:36:03Z",
+      "additions": 1289,
+      "deletions": 542,
+      "changedFiles": 33,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The installer package now ships its own copy of the camera-control library used for Nikon, Canon and Sony cameras, version 2.5.34. Before, it relied on the older copy from the operating system, which has known security holes that Debian may not patch. Users get the security fixes and support for newer camera models without waiting for an operating system update, and other programs on the computer keep using the system's own copy. Beyond what the title says, it also fixes Canon long \"bulb\" exposures: the new library renamed some settings, which had quietly cut the longest exposure on the EOS 70D and 250D from one hour to 30 seconds. It also adds automated checks that build and install the package to confirm the bundled copy is the one being used.",
+      "category": "feature",
+      "summaryHash": "b5b913860632f9940ee2102c7cb57dab3e5d10f6"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 38,
+      "title": "Label Guiding Assistant and RA-only runs in the section list",
+      "url": "https://github.com/open-astro/phdlogview/pull/38",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T00:24:01Z",
+      "additions": 103,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The list of sections in an opened log now says what kind of run each one was, instead of calling every section \"Guiding\". The new labels are Guiding Assistant, Guiding + GA, Unguided, and Guiding, RA only. The original request also asked to tell apart the two kinds of drift-alignment runs, but the guide log does not record which kind it was, so those runs show up as \"Guiding, RA only\".",
+      "category": "feature",
+      "summaryHash": "79d6889d2ddb1075c2e11b6511050598d2918fd9"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 37,
+      "title": "Option to exclude frames between server PAUSE and RESUME",
+      "url": "https://github.com/open-astro/phdlogview/pull/37",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T00:15:34Z",
+      "additions": 372,
+      "deletions": 97,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "A new setting lets users leave out the frames recorded while an imaging program had paused guiding, so they don't skew the statistics and analysis. Those frames are handled the same way as the frames recorded while the star settles. The setting is off by default and is remembered between sessions. The existing code that decides which frames to count was also moved into its own part of the program without changing how it behaves, and new tests were added to lock in that behaviour.",
+      "category": "feature",
+      "summaryHash": "0043a03c5f5f9dc944d25c9ff44b2307141ca493"
+    },
+    {
+      "repo": "open-astro/phdlogview",
+      "number": 36,
+      "title": "Place time-axis labels at their actual times",
+      "url": "https://github.com/open-astro/phdlogview/pull/36",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T00:04:52Z",
+      "additions": 89,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The clock times along the bottom of the guiding graph now line up with the moment each frame was actually taken. Before, the labels assumed frames came at an even pace, so they drifted out of place and could be minutes off after a pause in guiding. Across a pause the times now jump straight ahead, and labels that would land on top of each other are skipped so the text stays readable.",
+      "category": "fix",
+      "summaryHash": "b36f2032a99f454a75cbe33c4a66afd63f513107"
+    },
     {
       "repo": "open-astro/phdlogview",
       "number": 35,
