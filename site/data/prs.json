@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T16:28:41.196Z",
+  "generatedAt": "2026-10-17T16:34:24.291Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -19,9 +19,9 @@
       "deletions": 8,
       "changedFiles": 13,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Users can now start and stop guiding directly from the app. Previously, pressing Stop in the guide camera window could quietly end guiding in the middle of an imaging run, with no way to restart it. Every later dither was then skipped. There is now a Guide / Stop guiding button on the guiding strip and a Guide button in the guide camera window, and that window's Stop button now says \"Stop guiding\" when it will actually end guiding, so this is harder to do by accident.",
+      "category": "fix",
+      "summaryHash": "f642dca9014acef798fd59a30ec9bbf18cdce653"
     },
     {
       "repo": "open-astro/openastro-ara",
