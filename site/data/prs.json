@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T21:29:25.184Z",
+  "generatedAt": "2026-10-17T21:34:04.136Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1284,
+      "title": "Fix thermal switches binding to a camera without a heater",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1284",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T21:29:36Z",
+      "additions": 1888,
+      "deletions": 137,
+      "changedFiles": 39,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1282,
