@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T06:42:06.062Z",
+  "generatedAt": "2026-10-17T07:41:11.229Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,74 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1361,
+      "title": "ci: Bump the github-actions group with 5 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1361",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-17T07:24:08Z",
+      "additions": 7,
+      "deletions": 7,
+      "changedFiles": 3,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine internal update to the tools that run the project's automated checks, builds and code reviews. No change for users. Two tools jump more than the routine label suggests: the Go setup tool goes up two major versions, and the build-file upload tool is described as a small 7.0.1 to 7.0.2 step, but the old setting was marked as version 4.",
+      "category": "ci",
+      "summaryHash": "b568d49131880be679cd9ac7da4619dbea6b9645"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1360,
+      "title": "build: Bump Microsoft.AspNetCore.OpenApi and 10 others",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1360",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-17T07:08:37Z",
+      "additions": 49,
+      "deletions": 49,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine update of eleven outside software libraries to newer minor or patch versions. These include the database and web components and several testing tools. The list of third-party licenses was updated to match. No new features or behavior changes are intended.",
+      "category": "chore",
+      "summaryHash": "031decf4a8fe5b04584515f950e45cb11f9b8586"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1261,
+      "title": "Fix nightly version naming main after the open stable release",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1261",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T06:54:59Z",
+      "additions": 137,
+      "deletions": 10,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes how the automatic nightly test builds are named now that the 5.0 stable release line has been split off. Nightly builds were mislabeled as 5.0.0 previews even though they contain newer work. The system could also have quietly 'upgraded' a tester back to the older 5.0.0 release, which lacks those fixes. Nightlies are now named after the next release (currently 5.1.0), so they sort correctly and never roll testers back. The change adds a self-check to the automated checks and updates the docs.",
+      "category": "fix",
+      "summaryHash": "0a7ba77e846a620ae92b8b49947bf03edb2c1f5b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1375,
+      "title": "Follow a GPS dongle moved to another USB socket",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1375",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T06:51:24Z",
+      "additions": 203,
+      "deletions": 8,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "On a Mac, plugging the USB GPS dongle into a different socket changes its port name, which broke every GPS read until the user picked the port again. Now, when someone presses Read now or Fill from GPS and the saved port is gone, the app tries the single GPS-like port it can see. It saves that port only after it actually gets a GPS fix. The automatic background reading never tries an unchosen port, because that could reset a focuser or mount controller; instead its error message suggests where the GPS might be. If there are zero or several possible ports, the app keeps the saved choice and lets the user decide.",
+      "category": "fix",
+      "summaryHash": "59e7a7e1c15a152a3aa95399924b2eae8906979f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1260,
