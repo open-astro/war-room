@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T19:30:46.196Z",
+  "generatedAt": "2026-10-17T20:29:52.294Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1383,
+      "title": "Home and Park stop guiding first; a lost guide star pauses the run and resumes it when the star is back",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1383",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T19:59:59Z",
+      "additions": 835,
+      "deletions": 16,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Two fixes from a problem night. First, pressing Home or Park in the app now stops guiding before the mount moves, as the sequencer's own park and home steps already did; on 2026-10-16 the guider spent nine minutes chasing a lost star after a Home. If the guider won't stop within a few seconds, the move goes ahead anyway. Second, if the guide star is lost for more than 30 seconds (cloud, dew, a bump), the run now pauses by default with a notice and resumes on its own once the star is back, instead of imaging on unguided; if bad weather triggers a safety park in the meantime, the safety system takes over resuming the run when the sky clears.",
+      "category": "fix",
+      "summaryHash": "8f5affce8a3cc6a22f5dc16de16602f0ae9a7f55"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1382,
