@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T20:29:52.294Z",
+  "generatedAt": "2026-10-17T21:29:25.184Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1282,
+      "title": "Add TaskClock reads to SVBONY and gphoto camera waits",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1282",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T21:11:38Z",
+      "additions": 262,
+      "deletions": 30,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The SVBONY and gphoto camera drivers now take their timing from a clock that tests can swap out, instead of always reading the real system clock. That lets automated tests fast-forward through waits like exposure timeouts, guide pulses and long-exposure holds instead of actually sleeping. Six quick new tests use this. Behavior on real telescopes is unchanged because the default is still the real clock, and the code matches what the description says.",
+      "category": "refactor",
+      "summaryHash": "131d2855a686936a36df634e0776fd7775e90eee"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1384,
+      "title": "A device whose reads keep failing turns its chip amber instead of staying green",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1384",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T20:52:15Z",
+      "additions": 950,
+      "deletions": 37,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "A device that still says it is connected but keeps failing its basic status readings now shows an amber status light instead of a misleading green one. This covers the filter wheel, camera, focuser and rotator. After about three failed checks in a row (roughly six seconds) a warning is raised with the device's own error message and logged in the fault history. The warning clears on its own once readings work again, or when the user reconnects or disconnects the device. Running imaging sessions are not paused by this. It came from a night when a broken filter wheel and camera stayed green for several minutes, and the code shown matches the description.",
+      "category": "fix",
+      "summaryHash": "d623f9d37e9c14b9c3f0a31d2937af9d7c18b4f6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1281,
+      "title": "Update ConformU standard to the 4.5.2 release",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1281",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T20:50:37Z",
+      "additions": 35,
+      "deletions": 68,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's standard version of ConformU, the official tool for checking that drivers follow the astronomy device rules, is now the formal 4.5.2 public release. It replaces the pre-release copy the project had been hosting itself. Installs now download the public release and check its fingerprint, and the automated update watcher follows official releases. This only changes documentation and tooling, and older test reports remain valid.",
+      "category": "chore",
+      "summaryHash": "75fb67cd8f20e2504e0bd7dbbbfbca403d946999"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1383,
