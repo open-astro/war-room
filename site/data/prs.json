@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T23:27:47.972Z",
+  "generatedAt": "2026-10-17T23:32:13.148Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1387,
+      "title": "The Guiding Assistant runs from Ara: drift, seeing and Dec backlash measured, suggestions accepted (#1364)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1387",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T23:31:19Z",
+      "additions": 2453,
+      "deletions": 28,
+      "changedFiles": 27,
+      "labels": [],
+      "summary": "You can now run the guiding software's Guiding Assistant straight from Ara, from a new button in the Guide camera window or under Setup. Choose how long to measure (one to five minutes) and whether to test for slack in the mount's declination gears. Ara then shows how the star drifts, how steady the sky is, how far off the polar alignment is, and suggested guide settings, all ticked by default. One click saves the ticked suggestions to the guider's settings. This needs a newer version of the guider, and older ones simply show \"not available.\" The visible code matches the description, but large parts of the diff were trimmed, and the change still has to be tried on real equipment on the next guided night.",
+      "category": "feature",
+      "summaryHash": "b59c4a7eef04332816a5192e385a00deabcfe542"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1285,
