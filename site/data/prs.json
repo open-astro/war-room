@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T22:36:13.881Z",
+  "generatedAt": "2026-10-17T23:27:47.972Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1285,
+      "title": "Update ToupTek camera and filter wheel waits to use the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1285",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T23:19:00Z",
+      "additions": 273,
+      "deletions": 37,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change with no difference for users. The ToupTek camera and filter wheel drivers now get their timing from a shared, swappable clock, which covers pulse guiding, temperature checks, exposure timeouts and filter wheel homing. Automated tests can now fast-forward through these waits instead of actually sleeping, and seven new tests were added. The real clock is still used on the telescope, and the code matches the description.",
+      "category": "refactor",
+      "summaryHash": "e45a16b907ff2d86e87fbbe92b839727bc3e5a2a"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1385,
+      "title": "fix: autofocus on a colour camera, and polar alignment unpark and southern arrows",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1385",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T22:36:04Z",
+      "additions": 1071,
+      "deletions": 69,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This PR fixes autofocus on colour cameras and two polar alignment problems, all found during a real night of observing. Autofocus now detects stars properly on colour sensors, refuses to settle on a poor focus curve, and ignores misleading readings that had pulled it far out of focus. Smart Focus now approaches every position from the same direction, so play in the focuser's gears no longer throws it off. Polar alignment now unparks a parked mount instead of failing, and its arrows point the right way in the southern hemisphere. The code also makes Smart Focus fall back to the regular sweep when the focuser is too close to the end of its travel, which the description does not mention.",
+      "category": "fix",
+      "summaryHash": "1980aeaf50f003e6ebfdfed59400644652dd4882"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1288,
