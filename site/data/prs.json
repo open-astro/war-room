@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T01:45:01.955Z",
+  "generatedAt": "2026-10-17T04:43:23.652Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,53 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1372,
+      "title": "A profile can no longer be saved without a guide camera",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1372",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T04:32:13Z",
+      "additions": 292,
+      "deletions": 22,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "Setting up a new profile no longer lets you skip choosing a guide camera without noticing. A fresh guider has no camera of its own, so a blank choice used to save a profile where guiding and guide-camera focusing could never work, which is what happened on a new install in the field. The setup screens now hold the Next button until a camera (or an explicit \"None\") is picked, settings show a warning while none is chosen, and the setup page no longer treats guide optics alone as \"configured\". If focusing still fails because no camera is connected, the error now tells you to check the camera's cable and power or pick the camera in the guider settings.",
+      "category": "fix",
+      "summaryHash": "d241ee34a65575366050a01eb0bed8150e552c82"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1258,
+      "title": "Move iOptron async slews onto the operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1258",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T04:18:24Z",
+      "additions": 220,
+      "deletions": 155,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup of the iOptron telescope driver: the way it starts a slew in the background now uses the same shared mechanism as the Celestron, SynScan and Sky-Watcher drivers instead of its own hand-built version. Users should see no difference, and a slew the mount rejects is still reported as before. The only visible change is slightly different wording in one error message. It was tested only against a simulated mount, not real hardware.",
+      "category": "refactor",
+      "summaryHash": "1fcabd8b81b0868ff0d0fa5f92c6f406bc8b3f66"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1371,
+      "title": "Guide camera gain lives in Ara's profile (guider's 95 % default buried the stars)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1371",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T04:11:37Z",
+      "additions": 283,
+      "deletions": 18,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": "Ara now sets the guide camera's gain itself, defaulting to 50%, instead of leaving it at the guider's built-in 95%. At 95% a common guide camera produced pure noise and guide focus found no stars, while 50% brought hundreds of stars into view. The gain is stored in the profile, existing profiles get 50%, and it is applied whenever the guider connects, when a profile is pushed, and when you press Apply in Tune Guiding, which now has its own gain setting. If a camera has no gain control, this is quietly logged and does not cause an error.",
+      "category": "fix",
+      "summaryHash": "63a982084d23379fcf17055b8a69accc720284b1"
+    },
     {
       "repo": "open-astro/openastro-phd2",
       "number": 37,
