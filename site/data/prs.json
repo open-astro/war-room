@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T23:44:30.299Z",
+  "generatedAt": "2026-10-17T00:31:19.593Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1253,
+      "title": "Fix Sky-Watcher relink test pty reuse flake",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1253",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T00:13:12Z",
+      "additions": 18,
+      "deletions": 19,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix for an automated Sky-Watcher mount test that failed now and then for no real reason. The test simulates unplugging and replugging the mount, and it now sets up the replacement connection before cutting the old one. This means the test no longer depends on lucky timing. The driver itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "6dc8124352d4abc9fc00f3e7ecb8665576317854"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1252,
+      "title": "Make Sky-Watcher MoveAxis sky-referenced in both hemispheres",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1252",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-16T23:51:35Z",
+      "additions": 179,
+      "deletions": 46,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The manual slew buttons for Sky-Watcher mounts now move the telescope in sky directions: the first axis goes east and the second goes north, in both hemispheres and on either side of the pier. Before this, the direction depended on where you were and how the mount was turned, so users had to flip a \"Primary Reversed\" setting in NINA. Users who turned that setting on must turn it off after upgrading, or their buttons will run backwards. Go-to, tracking and guiding are unchanged, and the change has not been tested on a real mount yet.",
+      "category": "feature",
+      "summaryHash": "c421ce0c007588caff5e408d673efb607b908fd9"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1368,
+      "title": "Every guider setting from Ara, kept in the profile; profile select carries unguided (#1364 item 3)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1368",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-16T23:46:07Z",
+      "additions": 2451,
+      "deletions": 8,
+      "changedFiles": 32,
+      "labels": [],
+      "summary": "Ara now has a Guider settings window, opened from Tune Guiding or from the guide camera view. It covers almost all of the guider's advanced options, such as star detection, exposure limits, guiding methods, backlash and dither behavior. Anything you set is saved with the rig's profile and sent to the guider when you apply it, without stopping guiding. Settings you leave alone keep the guider's own values, and multi-star only takes effect on the next guider connect. It also fixes a bug where switching or copying a profile kept the previous rig's unguided-imaging settings.",
+      "category": "feature",
+      "summaryHash": "8b6b69aa73158768d56b44495f4854d9b44bb6d9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1367,
