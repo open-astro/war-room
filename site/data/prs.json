@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T05:42:26.368Z",
+  "generatedAt": "2026-10-17T06:42:06.062Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1260,
+      "title": "Build both test suites in one tree; slew Sky-Watcher tests on virtual time",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1260",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T06:05:46Z",
+      "additions": 428,
+      "deletions": 219,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal change to speed up the automated checks that run on every pull request; nothing changes for telescope users. The shared core code used to be compiled twice per check run and is now compiled once, and 23 slow Sky-Watcher mount tests now fast-forward through simulated slews instead of waiting in real time. The tests themselves and what they check are unchanged. Developer docs were updated to match. The author notes the converted tests were not built or run locally, so the automated checks are their first real run.",
+      "category": "ci",
+      "summaryHash": "006515b5fc44799784c2a444906bdf32a6c59d1e"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1374,
+      "title": "No storage disk, no run: Start refuses, a lost disk pauses, a failed frame never dithers",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1374",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T06:05:32Z",
+      "additions": 535,
+      "deletions": 24,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "Fixes a bad night-time failure. A storage drive dropped off mid-run, every exposure then failed instantly, yet the mount kept dithering after each one, so the guider sat \"settling\" for half an hour and nothing was saved. Now a run will not start if no storage disk is mounted or the disk is critically full under an abort/pause policy, and the app shows a \"No storage disk\" dialog with a shortcut to the storage settings. If the drive disappears during a run, the run pauses until you plug it back in and press Resume, which retakes the frame. Frames that failed or were skipped no longer trigger a dither or count toward autofocus, and other refused commands now show the server's actual reason instead of a generic message.",
+      "category": "fix",
+      "summaryHash": "57b620f7c2cd4ddf3b33cc067c1dae7f90531663"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1373,
