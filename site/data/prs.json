@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T14:35:11.200Z",
+  "generatedAt": "2026-10-17T15:36:54.758Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1377,
+      "title": "Field fixes: frames of a '(…)' target save again; Center and Rotate finds the focal length",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1377",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T15:32:02Z",
+      "additions": 134,
+      "deletions": 17,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Fixes two problems found during a night of real use. First, any target whose name contained brackets or parentheses, such as \"Lion Nebula (Sh2-132)\", could not save a single picture: every exposure failed, so nothing showed up in Live view or the image library. Files are now saved and reopened under exactly the name given. Second, the \"Center and Rotate\" step stopped with an error saying the telescope's focal length was missing, even though it was set in Options; the rotation step now reads the same optics settings that centering already used, and its error message now points to Options → Imaging → Optics. One older save path still swaps brackets for underscores in file names on purpose, so existing folder names stay the same.",
+      "category": "fix",
+      "summaryHash": "a096d6fc7271397057624da3bcc250be716d824b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1275,
