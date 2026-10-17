@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T12:36:49.307Z",
+  "generatedAt": "2026-10-17T13:14:40.820Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1271,
+      "title": "OnStep: a '#'-terminated reply no longer costs 10 ms per character (#1242)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1271",
+      "author": "kern2011",
+      "mergedAt": "2026-10-17T13:05:41Z",
+      "additions": 92,
+      "deletions": 44,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Reading position and status from OnStep telescope mounts is now about five to six times faster. The driver was pausing briefly after every single character it received from the mount, so a typical position reading took around 0.16 seconds instead of about 0.025 seconds. The code change is a single small adjustment that skips the pause when data is arriving, while keeping it for short replies that need it to finish cleanly. The PR also adds a test for the speed-up and corrects the team's notes, which had wrongly blamed the slowness on the connection itself and on a one-time startup delay.",
+      "category": "fix",
+      "summaryHash": "e42840e89cddf352126eb6fcd09d581e9e3e34fd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1273,
