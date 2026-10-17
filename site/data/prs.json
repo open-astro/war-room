@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T09:23:50.928Z",
+  "generatedAt": "2026-10-17T09:39:16.932Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1270,
+      "title": "Add an SDK seam, fake and Locked decorator for Player One",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1270",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T09:34:07Z",
+      "additions": 1244,
+      "deletions": 32,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Player One Phoenix filter wheel driver can now be tested without a real wheel attached, matching how most other camera and wheel brands in the project are already tested. The driver now talks to the wheel through a swappable connection point, so tests can plug in a simulated wheel. Normal use still goes through the real wheel software, and the code changes confirm nothing changes for users. Most of the work is new tests and test helpers for both the Player One wheel and camera, plus doc notes; it has not been tried on real hardware yet.",
+      "category": "tests",
+      "summaryHash": "e498eb798a964d9898555f9b307aac9de86b86a9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1272,
