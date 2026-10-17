@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T08:40:19.808Z",
+  "generatedAt": "2026-10-17T09:23:50.928Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1272,
+      "title": "Run Gemini flat panel cover and calibrator commands in operation slots",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1272",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T09:17:41Z",
+      "additions": 503,
+      "deletions": 153,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Gemini Rev2 and Pro flat panel driver now handles its cover open/close and light on/off commands with the same shared background-task system the other drivers already use, replacing its own custom handling. Commands still reach the device in the same order. There are two small behavior changes users could notice. If a command fails at the device, the panel now reports an error until the next command of that kind, where before it showed a fresh status reading. Also, light commands still waiting in line when the panel disconnects are now dropped. This was tested with simulated hardware only, not a real panel.",
+      "category": "refactor",
+      "summaryHash": "f07a03737cc4a8d72bf8451e953c3aba45c658eb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1269,
