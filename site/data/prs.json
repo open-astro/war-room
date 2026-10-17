@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T21:34:04.136Z",
+  "generatedAt": "2026-10-17T22:36:13.881Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,41 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1288,
+      "title": "Stop the rc.1 fragment naming the removed ConformU mirror",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1288",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T22:21:16Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "documentation",
+        "safe-to-review"
+      ],
+      "summary": "This corrects one release-notes entry for the 4.5.2-rc.1 version of ConformU, the testing tool the project uses. The entry still said the tool was downloaded from a project mirror that has since been deleted, and now it says that mirror was used only until the official 4.5.2 release replaced it. The notes now match the later entry and no longer point readers to a download that doesn't exist. Text only, no code changes.",
+      "category": "docs",
+      "summaryHash": "931c3562abc88b989e348eb09b909bff32d8f9e4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1278,
+      "title": "OnStep: a pulled serial adapter is a lost link, and a reconnect recovers it (#1241)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1278",
+      "author": "kern2011",
+      "mergedAt": "2026-10-17T21:40:45Z",
+      "additions": 902,
+      "deletions": 28,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the USB cable to an OnStep telescope mount is unplugged, the software now reports the mount as disconnected right away. Before, it kept claiming to be connected while every command failed with a vague error. One reconnect now recovers the link after the cable goes back in. If the link was down for 5 seconds or more, the reconnect also stops any movement the mount kept doing on its own, because OnStep mounts keep slewing with the cable out. This brings OnStep in line with how the Sky-Watcher driver already handles a lost connection, and it adds tests and updated docs.",
+      "category": "fix",
+      "summaryHash": "afabda73f284402607b14c64f4d6809315ab869e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1284,
@@ -19,9 +54,9 @@
       "deletions": 137,
       "changedFiles": 39,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The dew heater and fan switches for ZWO, ToupTek and Player One cameras now let you pick which camera they control from a dropdown of attached cameras, and the dropdown marks the cameras that actually have a heater or fan. Before, users typed a camera number that defaulted to 0, which on two-camera rigs often pointed at the guide camera. The switch then failed with an unhelpful \"not supported\" error. The switch now remembers the camera by serial number (ZWO and Player One), so it keeps the right camera if the USB order changes, and error messages name the bound camera and the one to choose. It also fixes an older ZWO issue where a failed camera setup could leave the camera held open, and it adds broad test coverage.",
+      "category": "fix",
+      "summaryHash": "397851dd63fd9e95da7cfd1287ec3d6a290b0677"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -8718,9 +8753,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Adds two setup warnings to the supported-drivers guide, based on testing with an EQM-35 Pro mount. For the SynScan driver, the hand controller's date, time, time zone and location must be correct, and the mount must be switched on at its home position; otherwise the mount can report the wrong side of the pier. For the Sky-Watcher direct driver, users should not use the hand controller and this driver without restarting the mount in between, because the hand controller shifted the mount's stored position by 90 degrees and could make a 'go home' command drive it the wrong way. Documentation only.",
+      "summary": "This adds two setup notes for Sky-Watcher mounts to the supported-drivers guide. For the SynScan hand-controller driver, users need to set the handset's date, time, time zone and location, and power the mount on at its home position, or the reported side of the pier can be wrong. For the direct motor-controller driver, users shouldn't use the hand controller and this driver in the same power-on session, because the hand controller can shift the mount's position count by 90 degrees and make the driver point the wrong way. The added note gives the test site's latitude as -37, while the PR description says -34.",
       "category": "docs",
-      "summaryHash": "b801b73bd082b0a4c9a45ea8821d306dfc6cc86b"
+      "summaryHash": "1487d286eab153a0ae8e9b7aa0dd4fe36f06b217"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -9559,9 +9594,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Fixes a Sky-Watcher telescope pointing bug where some mounts aimed half a sky away (12 hours off) depending on which side of the equator they were used. On an EQM-35 Pro in the northern hemisphere, a goto could send the telescope below the horizon while the software reported the correct target. The driver now accounts for both the hemisphere and how each motor board counts its movement. This is only confirmed for the EQM-35 Pro and Wave 150i; other Sky-Watcher boards keep the old behavior until someone measures them. If the driver can't identify the board at connect time, it now logs a clear warning that pointing may be wrong.",
+      "summary": "This fixes a pointing error in the direct Sky-Watcher mount driver. An EQM-35 Pro used north of the equator, or a Wave 150i south of it, aimed half a turn (12 hours) away from the requested target while still reporting the target. The driver now accounts for the hemisphere and for how each mount model's motor board counts movement, using values measured on these two models. Other models keep their previous behavior until someone measures them. Hardware tests on an EQM-35 Pro confirmed correct pointing in both hemispheres, and the driver now logs a warning if it can't identify the mount model.",
       "category": "fix",
-      "summaryHash": "9b49f9706d149cdc1c60f91d7f83b44acebff16c"
+      "summaryHash": "bf49882f05e90d0db625fe85094b101b99e732ba"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -10184,9 +10219,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Re-ran the standard compatibility test on the Sky-Watcher EQM-35 Pro mount with the newer test version (4.5.1), this time on a Raspberry Pi with the mount plugged in directly. It passed with no errors, issues or timing problems, including measured checks for custom tracking speeds. The saved test report and docs were updated; no driver code changed.",
+      "summary": "The Sky-Watcher EQM-35 Pro mount was re-tested with the newer ConformU 4.5.1 compatibility suite, this time running directly on a Raspberry Pi, and passed with no errors or issues. The refreshed test report replaces the older one, and the supported-drivers docs and changelog are updated to match. The docs now note that this report includes the tracking-rate tests, while the Wave 100i reports still need a refresh. The driver code is unchanged.",
       "category": "docs",
-      "summaryHash": "10e948e6ed46d994ef292b7d22fab809cd9ff31c"
+      "summaryHash": "2994166f8c87137ddf86b60fbd7f4215a8fb09de"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -10526,9 +10561,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Fixes a serious aiming bug in the Sky-Watcher direct mount driver: every goto was off by a quarter turn, and in the southern hemisphere tracking ran the wrong way. Automated conformance checks never caught it because the driver always agreed with itself; a user pointing at a real star did, and the fix was checked by moving a real mount to known positions. It also keeps tracking correct when the site latitude is changed across the equator while the mount is connected, and fixes a few cases where rate changes were silently dropped during guiding. The authors note that one part of the new model is based on measurements rather than theory, so northern Synta boards and southern Wave mounts may still point wrong until more hardware readings come in (tracked in #458).",
+      "summary": "Fixes a serious aiming error on Sky-Watcher mounts: the software misunderstood where the telescope starts out, so every goto landed about a quarter-turn off and could even point below the horizon. The new math was checked by physically pointing real mounts and comparing where the tube actually ended up, because the automated tests could never catch this kind of mistake. It also brings back reversed tracking for southern-hemisphere users (undoing #250). It handles a site location corrected across the equator mid-session, and fixes speed changes that were silently ignored while the other axis was busy, a fix the title doesn't mention. The author warns that some mount and hemisphere combinations, such as a Synta board in the north or a Wave in the south, may still point exactly backwards until further testing (#458), and the main driver code itself was not visible in the trimmed diff.",
       "category": "fix",
-      "summaryHash": "f9a8e4ec912bbfeaf070627dd392a489351bef5b"
+      "summaryHash": "06559479101364832e5009bff2b612f63069eb94"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -11662,9 +11697,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Fixes Sky-Watcher mounts in the southern hemisphere tracking the sky in the wrong direction. The mount was doubling the stars' apparent drift instead of cancelling it, which would have left stars trailing badly. The mistake was a reversal that turned out to be wrong when tested on a real mount in Australia, and removing it also changes the southern direction of east/west guiding and manual moves, which was checked on hardware. New automated tests confirm tracking direction in both hemispheres, but they cover only basic tracking, not guiding.",
+      "summary": "Stops Sky-Watcher mounts from turning the wrong way when tracking in the southern hemisphere, which made stars drift at twice the normal rate instead of staying still. The bug was found by testing on a real mount, and it also changes the direction of guiding nudges and manual moves in the south. The PR adds tests that check the tracking direction and notes from the hardware testing. Note that #441 later reversed this change after finding the real cause was a separate error in the aiming math.",
       "category": "fix",
-      "summaryHash": "abcc9749d8e880648f1fd41f7fe61f4313085987"
+      "summaryHash": "af352431da05d77add5e183d70d15885cff5ddee"
     },
     {
       "repo": "open-astro/AlpacaBridge",
