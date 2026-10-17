@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T07:41:11.229Z",
+  "generatedAt": "2026-10-17T08:40:19.808Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1269,
+      "title": "Add iOptron to the architecture slot row",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1269",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T08:12:27Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update: the project's architecture page now lists iOptron mounts alongside Sky-Watcher, Celestron and SynScan as using the shared system for running and cancelling telescope moves in the background. This catches the page up with an earlier change that moved iOptron onto that system, so readers are no longer told it still works the old way.",
+      "category": "docs",
+      "summaryHash": "487f12fdb45f30b7a2c62026e888a627d0ac7f70"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1376,
+      "title": "Backspace in the Run tab's instruction search edits the query",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1376",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T07:45:32Z",
+      "additions": 53,
+      "deletions": 7,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Fixes a bug in the Run tab where pressing Backspace or Delete while typing in the \"Find an instruction…\" search box deleted the selected step from the sequence instead of erasing a character. Keyboard shortcuts on that tab now step aside whenever any text box is being typed in, so Space no longer pauses a running sequence and Cmd+R no longer starts or resumes a run from the search box. Two new automated tests cover the Backspace and Space cases.",
+      "category": "fix",
+      "summaryHash": "5b55ccd6a5fb91f2ab7e7a50ff96123e91a53806"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1257,
+      "title": "SynScan telescope: serve position and status from a state snapshot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1257",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T07:45:15Z",
+      "additions": 1613,
+      "deletions": 224,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The SynScan telescope driver now checks the mount once a second in the background and answers questions about position and status instantly from that latest reading, instead of asking the handset each time. This makes status requests much faster, and the reported time now reflects when the reading was taken. It also handles a lost connection more clearly: after three failed checks in a row the driver flags a problem, and if that lasts 30 seconds it reports the mount as disconnected. Beyond what the title says, the change also speeds up the project's automated build checks by caching compiled code, and updates the hardware test instructions to match the new timing.",
+      "category": "feature",
+      "summaryHash": "519a559389901e31c104abb9099a8680967d8251"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1361,
