@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T15:36:54.758Z",
+  "generatedAt": "2026-10-17T16:28:41.196Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1378,
+      "title": "Guiding can be started again from the client",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1378",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T15:53:25Z",
+      "additions": 361,
+      "deletions": 8,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1377,
