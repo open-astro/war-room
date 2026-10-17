@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T00:46:31.278Z",
+  "generatedAt": "2026-10-17T01:45:01.955Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,98 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-phd2",
+      "number": 37,
+      "title": "Imaging gear: device overrides and snapshot JSON (shared with openastro-guider)",
+      "url": "https://github.com/open-astro/openastro-phd2/pull/37",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T01:19:37Z",
+      "additions": 832,
+      "deletions": 50,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "This brings openastro-phd2's imaging-gear code back in line with the identical copy in openastro-guider, which uses it for two new remote commands. Those commands let the imaging app say exactly which camera, filter wheel, focuser and other devices to read, and fetch the current equipment readout. openastro-phd2 gets no new command, so nothing can set these choices yet and its guide log behaves as before. The improved log handling for device switches (a different wheel or focuser is not recorded as a move, and a camera swap does not end an exposure) therefore only takes effect in the guider for now.",
+      "category": "refactor",
+      "summaryHash": "f1ecf481fc63646202f64da22e1cca5a18a3cc7f"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 92,
+      "title": "Imaging gear API: set_imaging_gear_devices and get_imaging_gear",
+      "url": "https://github.com/open-astro/openastro-guider/pull/92",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T01:19:32Z",
+      "additions": 1270,
+      "deletions": 60,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "The guider gains two remote commands for Ara. One lets Ara name exactly which imaging camera, filter wheel, focuser, rotator, mount and weather device to read, instead of the guider guessing. The other returns the guider's latest saved readout of that equipment without making a new network request. The guide camera can never be chosen as the imaging camera, and the choices last only for the current session so a saved number can't pick the wrong device on another rig. Changes take effect on the next poll, and switching to a different filter wheel, focuser or rotator is no longer recorded in the log as a movement.",
+      "category": "feature",
+      "summaryHash": "8ccdf00181f764fd6d573fb1b6434e04833574a3"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 91,
+      "title": "Guiding Assistant: headless backlash outcome parity with the dialog",
+      "url": "https://github.com/open-astro/openastro-guider/pull/91",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T01:12:16Z",
+      "additions": 202,
+      "deletions": 36,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "When the Guiding Assistant runs remotely (without its window) and the backlash test doesn't give a usable result, its history entry now says \"Backlash test aborted\", as it does in the window. Before, remote runs left that entry blank. The status report also now says whether the backlash test was valid, impaired (the number is only a minimum) or aborted. A second item in the description is only a code comment explaining an existing rounding choice, and does not change behaviour.",
+      "category": "fix",
+      "summaryHash": "bda2e07c696330673e7888b69ef5c8059df55668"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 90,
+      "title": "set_connected / get_connected per device",
+      "url": "https://github.com/open-astro/openastro-guider/pull/90",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T01:05:48Z",
+      "additions": 317,
+      "deletions": 5,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "Remote clients can now connect or disconnect the guide camera, mount or rotator one at a time instead of always all together. This fixes the case where Ara couldn't show the live guide-camera view because the mount was switched off and the all-at-once connect returned an error. The mount or rotator can now join or leave while the camera is looping, but not during calibration or guiding. The old all-at-once behaviour is still the default.",
+      "category": "feature",
+      "summaryHash": "efde3f3e5160b8386d4e9daa8adc581c30f5f028"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1370,
+      "title": "The guiding graph fills from the guider's history when a client connects mid-session (#1364 item 5)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1370",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T01:04:35Z",
+      "additions": 794,
+      "deletions": 2,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "If you open or reconnect Ara while guiding is already running, the guiding graph now shows the guider's recent history straight away, up to its last 400 frames, instead of starting empty. The server fetches this history from the guider and works out each point's age on its own clock, so the graph lines up even if the two computers' clocks disagree. History never overwrites live data, and a failed fetch just leaves the graph empty.",
+      "category": "feature",
+      "summaryHash": "940d749a76565fb9947ac7cfe2882872f3cabbbe"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1254,
+      "title": "Pick newest nightly deb by stamp and fail on unreadable udev rules paths",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1254",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T01:03:31Z",
+      "additions": 126,
+      "deletions": 13,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is internal build tooling only. The job that reports the project's dependencies to GitHub now picks the newest nightly package by its build date rather than by file name, which could put version 5.0.9 ahead of 5.0.10. It also now fails loudly instead of silently skipping some device-rule file paths it can't work out.",
+      "category": "ci",
+      "summaryHash": "0ddcbf7f2656d7ef8137104acea9923ce720c371"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1369,
