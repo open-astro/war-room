@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T09:39:16.932Z",
+  "generatedAt": "2026-10-17T12:36:49.307Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1273,
+      "title": "Fix SynScan stops restoring a stale tracking mode",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1273",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T11:39:09Z",
+      "additions": 300,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug with SynScan telescope mounts where stopping a movement could switch tracking back on by itself after the user had turned it off on the handset, so the mount moved when nobody asked it to. The driver used to remember the tracking setting only from when it first connected. Now it checks the handset's current setting when a movement starts and when a stop is sent, and a stop no longer turns tracking back on if it was off. The code matches the description and comes with new automated tests, but it has not yet been tried on a real mount, and each guiding correction now makes a couple of extra round trips to the handset.",
+      "category": "fix",
+      "summaryHash": "dd6c7acc6e379fdb6b089f1c1087797bccea8258"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1270,
