@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T18:31:39.054Z",
+  "generatedAt": "2026-10-17T19:30:46.196Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1382,
+      "title": "A frame never starts on a star that has not settled",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1382",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T19:18:54Z",
+      "additions": 524,
+      "deletions": 10,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "When the guider fails to settle after a dither, the run no longer starts the next exposure anyway. It now tries the dither once more, and if that also fails, or if the guider refused because it wasn't guiding, the run pauses until someone checks the guider and presses Resume. This is a response to two trailed frames on the night of 2026-10-16. It also stops successful settles from being falsely logged as guider errors, which caused 46 bogus warnings that night. Note that a setup where the guider is connected but intentionally not guiding will now pause at its first dither, so the dither step should be removed from such plans. Rigs with no guider connected behave as before.",
+      "category": "fix",
+      "summaryHash": "f5553efcfc1ce6731cc4f7b44e2eb98c44b60e5a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1381,
