@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T17:32:31.281Z",
+  "generatedAt": "2026-10-17T18:31:39.054Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1381,
+      "title": "A separate guide scope no longer hands the guider the imaging rotator",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1381",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T18:12:10Z",
+      "additions": 381,
+      "deletions": 60,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "Ara no longer gives the guiding software the main camera's rotator when the rig uses a separate guide scope. The guider assumed the guide camera turned with that rotator, so on one night a 49° rotation scrambled a good guiding calibration and ruined the following frames. The rotator option is now offered only for an off-axis guider, and with a guide scope Ara clears any saved rotator and tells the guider to use none. Off-axis guider users should note that the setting defaults to guide scope, so they need to choose \"Off-axis guider\" after upgrading or their rotator will stop being sent.",
+      "category": "fix",
+      "summaryHash": "4b3337d357b0aaebe9ea7001d0fc80d794b77145"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1379,
