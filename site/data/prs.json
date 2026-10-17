@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T13:14:40.820Z",
+  "generatedAt": "2026-10-17T14:35:11.200Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1275,
+      "title": "Fix SynScan site getters waiting on a handset that ignores w",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1275",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T13:36:41Z",
+      "additions": 139,
+      "deletions": 6,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "With SynScan telescope mounts, asking for the observing site's latitude or longitude could freeze every other reading from the mount, such as its position and status. This happened when the hand controller never answered the site question, so everything waited for the full timeout. The site readings now just report the location the server already remembers and never ask the hand controller, so other readings are no longer held up. Apps will notice one difference: if the site isn't known yet they now get a clear \"not known yet\" error instead of a misleading 0, and they get a \"not connected\" error when the mount is disconnected. Other actions like starting tracking and parking can still wait on a silent hand controller, and the fix has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "b4777106444fe6a7c03ab864d0d876d1e550451d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1271,
