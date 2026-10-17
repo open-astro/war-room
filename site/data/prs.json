@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T16:34:24.291Z",
+  "generatedAt": "2026-10-17T17:32:31.281Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1379,
+      "title": "The wheel's Alpaca filter names are the filter names Ara uses",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1379",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T17:30:13Z",
+      "additions": 538,
+      "deletions": 74,
+      "changedFiles": 17,
+      "labels": [],
+      "summary": "Ara now uses the filter names reported by the connected filter wheel everywhere, instead of its own built-in defaults. This fixes an 'Unknown filter' error when taking exposures: the filter picker offered names like 'Hα' while the planning settings expected 'Ha'. When a wheel connects, its names are copied into the saved profile, and the filter pickers list them directly. The planning lookup also now recognises common alternate spellings (for example Ha, Hα and 'Antlia Ha 3nm' all count as hydrogen-alpha), so existing sequences keep working. One behaviour change: names you set in Ara will now be replaced by the wheel's own names when it reconnects, so custom names should be set on the wheel itself. The visible changes confirm the wheel-name syncing; the picker and lookup changes were trimmed from the diff, so those parts come from the description.",
+      "category": "fix",
+      "summaryHash": "d049c974d3139d650ecc237d578cfde8810af37b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1378,
