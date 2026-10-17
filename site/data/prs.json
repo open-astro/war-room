@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T04:43:23.652Z",
+  "generatedAt": "2026-10-17T05:42:26.368Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1373,
+      "title": "Center and Center-and-Rotate slew to the target first; a failed go-to skips the target",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1373",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T05:41:22Z",
+      "additions": 121,
+      "deletions": 9,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "When a run starts on a new target, the \"Center\" and \"Center and Rotate\" steps now point the telescope at the target first, before taking any photos to figure out where it's aimed. Previously they tried to work out the position from wherever the mount happened to be resting, which after unparking was the celestial pole, so in a real session the telescope never moved to the target. If the telescope can't move there (for example, it's disconnected or parked), the step now fails cleanly, and the run skips that target and moves on to the next one instead of focusing and taking photos of the wrong part of the sky. The code matches the description, and new automated tests check the new order and the failure handling.",
+      "category": "fix",
+      "summaryHash": "a15e5520ad57115c9ddc6a672685ddd9f5268af3"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1372,
