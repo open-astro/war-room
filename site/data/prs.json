@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T00:31:19.593Z",
+  "generatedAt": "2026-10-17T00:46:31.278Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1369,
+      "title": "One guider state everywhere: looping, star selected, settling; the Run tab shows the guider (#1364 item 6)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1369",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T00:31:05Z",
+      "additions": 499,
+      "deletions": 46,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "The guider now reports three more of its real states: looping on frames, a star picked, and settling after a dither or start. Before, the first two were shown as \"stopped\" even while the guide camera was busy, and settling just looked like guiding. All screens now use the same wording for the guider's state. The Run tab also gets a new guider line under the current step that updates every couple of seconds, so a long calibration no longer looks stuck. The guide-camera focus tool now treats a looping guider as busy and its help text explains this. The visible code matches the description; the Run tab and dialog changes were trimmed from the diff, so they could not be checked directly.",
+      "category": "feature",
+      "summaryHash": "585852c54538b83d13fbe07b919b0957bfba5a22"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1253,
