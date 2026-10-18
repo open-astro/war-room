@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T21:14:53.577Z",
+  "generatedAt": "2026-10-18T22:38:21.652Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1330,
+      "title": "Update Sky-Watcher serial fake to run on the shared board core",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1330",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T22:33:32Z",
+      "additions": 139,
+      "deletions": 196,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal testing change with no effect on the product. The simulated Sky-Watcher mount that tests use over a serial cable now shares its core with the simulated mount used over the network. Tests can now combine connection-failure scenarios with realistic mount movement. All existing tests pass unchanged, though the serial simulator now answers two commands slightly differently so that it matches the network version.",
+      "category": "tests",
+      "summaryHash": "ed084d77d78456b8329080113b73b5ee5af15153"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1399,
+      "title": "Drop the SuperNOVAS remainder() build patch now that upstream merged the fix (#1386)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1399",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-18T22:22:33Z",
+      "additions": 25,
+      "deletions": 37,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "The project's astronomy library had a bug that placed the Sun about 14 degrees off. The team reported the bug and its fix was accepted by the library's maintainers. This change updates to that fixed version and removes the temporary workaround that patched the library during every build. The new version is a pre-release build rather than a final release, and the license notices and changelog were updated to match.",
+      "category": "chore",
+      "summaryHash": "99c32bc18f5a6a9bd9764f44e23588e654f25862"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1328,
