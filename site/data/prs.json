@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T11:23:21.046Z",
+  "generatedAt": "2026-10-18T12:22:34.972Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1322,
+      "title": "Add a nightly optimized all-vendors test job",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1322",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T12:16:43Z",
+      "additions": 120,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The nightly build now also runs the full test suite against every camera and device vendor, using the same speed-optimized settings as the installable package users get. Until now, the only all-vendors test run used a slower debugging build, so problems that appear only in the optimized version could reach users unnoticed. A failure turns the nightly run red but does not stop that night's package from being published, and pull requests take no extra time. The change is limited to the automated build setup plus matching notes in the docs and changelog, with no change to the product itself.",
+      "category": "ci",
+      "summaryHash": "3f1c2bd752d84620da20a798ed12738a4bbcaa08"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1321,
+      "title": "Add LockedZWOSDK decorator and ZWO camera stress case",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1321",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T11:54:13Z",
+      "additions": 225,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change for the ZWO camera driver, with no change to how the product behaves. It adds a test helper that makes the simulated ZWO camera handle one request at a time, matching how the project already tests other camera brands. It also adds two tests: one confirms the helper passes every kind of camera request through, and one hammers the camera with repeated connect, capture and disconnect cycles through it.",
+      "category": "tests",
+      "summaryHash": "697e650bb0068940aaf891d713bf9333f9a12920"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1317,
