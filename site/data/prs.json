@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T07:28:01.551Z",
+  "generatedAt": "2026-10-18T08:26:05.371Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1308,
+      "title": "Run the all-vendors suite once, with coverage and a working ccache",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1308",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T08:09:49Z",
+      "additions": 141,
+      "deletions": 199,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the project's automated checks, and the server itself is unchanged. The full test suite covering every supported hardware brand used to run twice on each change, once on its own and once in a separate job that measured how much of the code the tests exercise. Now it runs once and produces that measurement in the same pass. The build cache for that run also works again, so the combined job takes about 8 minutes instead of roughly 20 minutes across the two old jobs, and the measurement now runs on every proposed change rather than only after merging.",
+      "category": "ci",
+      "summaryHash": "13dfa2778c5c0d4a273014bdfdc65d136d392a97"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1311,
+      "title": "Release 5.0.0-beta.5",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1311",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T08:06:07Z",
+      "additions": 143,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This prepares the fifth beta of AlpacaBridge 5.0 for testers by updating the version number, the dates in the README and the supported-hardware list, and adding plain-language release notes. The beta mainly delivers fixes made since beta 4. The most urgent is a fix for QHY cameras, whose 16-bit images were unusable in beta 4. It also includes a SynScan mount fix so it no longer restores an outdated tracking mode, plus Sky-Watcher and thermal-switch fixes. No software code changes in this request itself, and the release becomes official once it is tagged and the installer package is published to the beta download channel.",
+      "category": "chore",
+      "summaryHash": "f5869056ef195b7e7c742a7fd20bc36687a461d5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1390,
