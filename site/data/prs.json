@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T17:18:10.607Z",
+  "generatedAt": "2026-10-18T18:07:21.916Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1398,
+      "title": "Retire Accord.NET: delete the unused vendored Accord.Imaging fork and port the last three calls (#1386, part 3 of 3)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1398",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-18T17:40:34Z",
+      "additions": 188,
+      "deletions": 75965,
+      "changedFiles": 311,
+      "labels": [],
+      "summary": "This finishes removing an old third-party math and imaging library from the project. A large bundled copy of that library turned out not to be used at all and was deleted. The last three places that still relied on it were moved to built-in tools: the dome-to-telescope alignment math, the custom horizon lookup, and the random offsets used when nudging the telescope between guided exposures. The author checked that results match the old code within tiny rounding differences, so users should see no change in behavior or image quality, and the project drops its last license of that type (LGPL). No code diff was available, so this is based on the description alone.",
+      "category": "refactor",
+      "summaryHash": "c4575a30c5255099684512219d23c03ecf86a864"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1397,
