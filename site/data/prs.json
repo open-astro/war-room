@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T06:28:28.946Z",
+  "generatedAt": "2026-10-18T07:28:01.551Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1390,
+      "title": "The astrometry natives build from ERFA and SuperNOVAS submodules instead of vendored SOFA/NOVAS copies (#1386)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1390",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-18T07:23:14Z",
+      "additions": 510,
+      "deletions": 88917,
+      "changedFiles": 330,
+      "labels": [],
+      "summary": "Ara's sky-position math now runs on current, maintained versions of two standard astronomy libraries, instead of old copies inherited from the original N.I.N.A. project. This removes about 89,000 lines of copied code, and the libraries are now updated automatically. While switching, the team found and worked around a bug in the new library that put the Sun about 14 degrees off. The workaround is temporary and has not yet been reported to the library's authors. No code changes were available to check, so this summary is based only on the description; this is part 1 of 3.",
+      "category": "refactor",
+      "summaryHash": "33fc25745f313bde619ce3f116f3be7489e3d64c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1306,
+      "title": "Pin the SynScan sidereal wall clock in the AZ-EQ park tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1306",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T06:56:02Z",
+      "additions": 61,
+      "deletions": 27,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a test that sometimes failed for no real reason: the SynScan mount park tests could break on slow build machines when a second of real time passed during the test. The tests now freeze the clock the driver uses for star time, so results are the same every run. Real telescopes are unaffected because the driver still uses the normal clock unless a test replaces it. The code changes match the description.",
+      "category": "tests",
+      "summaryHash": "1dc211d8583885b229e7d9238adf304a92c6cc42"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1391,
+      "title": "Re-read the guide camera's pixel size and id when the guider connects",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1391",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T06:40:06Z",
+      "additions": 468,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the guider connects, Ara now checks the guide camera's pixel size and ID. It updates the saved profile if the pixel size changed or no ID was stored, and PHD2 gets the new size the next time the profile is sent. If the stored ID points to a different camera, which suggests the camera was moved or swapped, Ara changes nothing and logs a warning. If the camera can't be read, the connection still succeeds normally. Other device types and showing these changes in the app are planned for later.",
+      "category": "fix",
+      "summaryHash": "f2be1eadbbb1b653ea7ef4fde01ffc0e333c435f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1303,
