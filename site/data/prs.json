@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T04:27:49.225Z",
+  "generatedAt": "2026-10-18T05:28:25.468Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1302,
+      "title": "Move Player One camera waits onto the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1302",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T05:25:17Z",
+      "additions": 156,
+      "deletions": 17,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Player One camera driver now tracks its timing (guide pulses, exposure time limits and the check for a finished image) through a shared clock that tests can fast-forward, so its tests no longer have to wait in real time. Nothing changes for people using the camera. The PR also adds five new tests, though the changelog note lists only three of them. It was not tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "fd9c2f8555e851a8fa27d73eb2335bee8a8ebae2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1293,
+      "title": "Fix Sky-Watcher serial settle drain and pulse hook test guard",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1293",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T04:36:43Z",
+      "additions": 149,
+      "deletions": 50,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "After a garbled or out-of-order reply, the Sky-Watcher mount driver now keeps clearing the connection for its full short cleanup window instead of stopping early. Stopping early could let a late reply be mistaken for the answer to the next command. It also stops retrying too early when the system briefly interrupts it. The rest of the change hardens the tests so one failed test cannot leave leftover state that breaks later ones, and two follow-up items from the original issue were deliberately left out.",
+      "category": "fix",
+      "summaryHash": "46bb029b04c1581ef17106212a662fd800000963"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1294,
@@ -36,9 +70,9 @@
       "deletions": 39,
       "changedFiles": 12,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Several fixes to the Guiding Assistant. Start is now disabled while the guider is actively guiding, with a message saying to stop guiding first. Closing and reopening the dialog keeps track of which suggestions were already applied, and a missing drift value shows a plain dash. Starting a run now allows up to 25 seconds on the server and 30 on the app instead of 5 to 10, so a slow guider no longer shows an error for a run that actually began, and switching servers clears the guiding graph and loads the new server's history instead of showing the old one.",
+      "category": "fix",
+      "summaryHash": "d9d237cf5da4338bc969e78bd2e67710e1f31fee"
     },
     {
       "repo": "open-astro/AlpacaBridge",
