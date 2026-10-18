@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T00:31:18.276Z",
+  "generatedAt": "2026-10-18T01:30:20.048Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1283,
+      "title": "Add the Canon EOS 600D ConformU report (#1077)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1283",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T00:48:58Z",
+      "additions": 240,
+      "deletions": 7,
+      "changedFiles": 6,
+      "labels": [
+        "documentation",
+        "safe-to-review"
+      ],
+      "summary": "The Canon EOS 600D is now listed as a validated camera, based on a clean compatibility test run that a user did on a Raspberry Pi 5 and shared. The project docs were updated to include it, which raises the validated-device count from 86 to 87. The change also fixes the test-results overview page, which had been missing two camera brand groups. This is documentation only, and the user's report of long exposures working on a newer test build is recorded as their own claim, since no log was provided for it.",
+      "category": "docs",
+      "summaryHash": "393d41ff155974bff39df9b95bcb0565985053f3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1286,
