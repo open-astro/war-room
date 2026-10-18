@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T01:30:20.048Z",
+  "generatedAt": "2026-10-18T04:27:49.225Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1294,
+      "title": "Fix SynScan and Celestron comment and docs drift bundle",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1294",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T03:59:57Z",
+      "additions": 60,
+      "deletions": 17,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Housekeeping for the SynScan and Celestron telescope drivers: outdated or overstated code comments and docs were corrected, a setting the code never used was removed, and the list of allowed mount alignment choices now lives in one place instead of three. Telescope behavior is meant to be unchanged. The docs now also explain that a waiting telescope move is cancelled if another motion command arrives, and that this does not guarantee the mount has stopped. Part of the driver and web server changes were not visible in the trimmed diff, so the no-behavior-change claim could not be fully checked here.",
+      "category": "refactor",
+      "summaryHash": "87a8ff4710b32db0707bb0c3d5858a8623871007"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1389,
+      "title": "Guiding Assistant: Start waits while guiding, applied marks survive reopen, graph reseeds on server switch (#1364)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1389",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-18T03:57:18Z",
+      "additions": 537,
+      "deletions": 39,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1297,
+      "title": "Close catalog, CI gate script and docs gaps from 5.0 review notes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1297",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T03:36:47Z",
+      "additions": 166,
+      "deletions": 20,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Mostly internal tidy-up ahead of the 5.0.0 release. Two automated checks used when reviewing code changes were made stricter: one now notices new tests even when they share a name with a test in another file, and one now flags device catalog files that name the wrong vendor or cannot be checked. The only change to the running server is that one warning in the log now hides odd control characters from a saved setting, with a new test to confirm it. Power port setup docs for ASIAIR and StellaVita devices were corrected to say only the PWM frequency can be changed, and several code comments were fixed to match the code.",
+      "category": "ci",
+      "summaryHash": "e5eca9ba5a530e74529381fb9b4c3db9e7a44aa4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1283,
