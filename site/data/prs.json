@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T12:22:34.972Z",
+  "generatedAt": "2026-10-18T13:21:41.909Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1323,
+      "title": "Update QHY focuser to serve its state from a snapshot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1323",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T12:52:31Z",
+      "additions": 551,
+      "deletions": 84,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY Q-Focuser driver now checks the focuser on a fixed schedule, about four times a second, and answers questions like position, whether it is moving, and temperature from that latest reading. Before, a question could itself trigger a conversation with the hardware. This makes it work the same way as the other drivers. One trade-off is that an unplugged focuser is now noticed at the next scheduled check rather than right away, and a reading can be up to 30 seconds old before the connection is treated as lost. The main driver code was not in the material provided, so those details come from the description. The new notes also point to a decision record (number 0010) that this change does not appear to add. It has not been tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "5cf7e64e0b8f75df4c7bdf9923e644436884d267"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1324,
+      "title": "Move Sky-Watcher fake axis model into a shared board core",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1324",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T12:33:38Z",
+      "additions": 843,
+      "deletions": 787,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test-only change with no effect on the product. The simulated Sky-Watcher mount used in tests was split so that its motion model is separate from the network connection it talks over. The goal is to let a later change reuse the same simulated mount over a serial connection, which is how the targeted EQ mounts actually connect. The code and description agree that the logic was moved without being changed.",
+      "category": "tests",
+      "summaryHash": "6f02982c09881772c397ea04726816a12459ebf3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1322,
