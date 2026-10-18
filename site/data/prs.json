@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T18:07:21.916Z",
+  "generatedAt": "2026-10-18T21:14:53.577Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1328,
+      "title": "Update ZWO camera waits to read the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1328",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T21:04:37Z",
+      "additions": 169,
+      "deletions": 22,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to make testing easier and does not change how the server behaves. The ZWO camera driver now gets the time and does its short waits through a shared timekeeping helper that other drivers already use, instead of reading the system clock directly. This covers the first temperature-reading retries, the guiding-pulse timing, and the pause between exposure retries. Tests can now fast-forward a pretend clock instead of actually waiting, and four new tests check these timings.",
+      "category": "refactor",
+      "summaryHash": "3b153d05c418ac513cd359311280740742d77316"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1398,
