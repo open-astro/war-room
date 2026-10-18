@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T13:21:41.909Z",
+  "generatedAt": "2026-10-18T17:18:10.607Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1397,
+      "title": "Drop the N.I.N.A.-era dead libraries: SqlClient, SQLite, VisualBasic, MEF, CommunityToolkit.Mvvm, OxyPlot (#1386, part 2 of 3)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1397",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-18T16:59:57Z",
+      "additions": 422,
+      "deletions": 2713,
+      "changedFiles": 130,
+      "labels": [],
+      "summary": "Behind-the-scenes cleanup that removes nine unused software libraries left over from the older program this project was built from. It also deletes an old data-import tool, two unused files, and outdated configuration files that nothing reads anymore. The few pieces that actually relied on these libraries, such as the sky altitude and twilight chart data, were rewritten in-house and checked to give exactly the same results, so users should see no difference. The project is now smaller, its list of third-party licences is shorter, and this is the second of three planned cleanup steps.",
+      "category": "chore",
+      "summaryHash": "094ec9bd946d0b114482373227c5c58763e2e093"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1323,
