@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T23:32:13.148Z",
+  "generatedAt": "2026-10-18T00:31:18.276Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1286,
+      "title": "Add SynScan lost-link stress storm and poll-start race case",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1286",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-17T23:53:39Z",
+      "additions": 223,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change that adds two heavy-load checks for the SynScan telescope driver, simulating a hand controller that goes silent or gets cut off while other work is happening at the same time. The tests confirm the driver correctly notices the lost connection, refuses reads while disconnected, and recovers when reconnected, plus that a quick connect-then-disconnect race leaves background status checks in the right state. No behaviour changes for users; it gives the automated checks better coverage of these failure-and-recovery paths.",
+      "category": "tests",
+      "summaryHash": "9755ea4a5887d9ce97914d049effc8e1ed081002"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1388,
+      "title": "The astrometry natives build with the solution, so a fresh checkout's tests pass",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1388",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-17T23:51:00Z",
+      "additions": 126,
+      "deletions": 43,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "Developers on Linux and macOS no longer have to run a separate script by hand before the tests will pass: the regular build now compiles two bundled astronomy calculation libraries automatically and puts them where the app and tests expect them. Before this, a fresh copy of the project failed 34 tests until someone remembered the manual step. Packages built for the Raspberry Pi are deliberately unaffected and still get their own separately built copies, and a machine without a C compiler just gets a warning instead of a failed build. The automated checks now verify the libraries were produced rather than building them by hand, and the developer docs were updated to match.",
+      "category": "fix",
+      "summaryHash": "8fa7aa30412a8a06ddb93362ea9894ffbfb6b5fc"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1387,
