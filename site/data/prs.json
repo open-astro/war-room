@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T08:26:05.371Z",
+  "generatedAt": "2026-10-18T09:25:07.807Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1314,
+      "title": "Harden the coverage compiler wrapper and check the coverage report",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1314",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T09:05:26Z",
+      "additions": 31,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the automated build checks; nothing changes for users. It closes four small gaps that could have let problems slip by unnoticed. A compiler update now always triggers a fresh build cache, and the build fails if the test coverage figures stop adding up. It also flags a warning when one of the check jobs is rebuilding almost everything instead of reusing earlier work. Expect one slower build right after merging while the cache refills.",
+      "category": "ci",
+      "summaryHash": "9c54743f0f004a4bd47fde7a9ceb9739cc61b114"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1312,
+      "title": "Refuse equatorial slews while Tracking is false on five telescope drivers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1312",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T08:29:42Z",
+      "additions": 607,
+      "deletions": 45,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Telescope mounts from Sky-Watcher, Bisque, Celestron NexStar, iOptron and ZWO now refuse a 'go to these sky coordinates' command with a clear error when tracking is switched off. Before, they would move and then sit still, so the target drifted out of view without any warning. The astronomy standard these drivers follow requires this refusal, and one other driver already did it. This is a visible behavior change: astronomy software must turn tracking on before slewing, for example after parking or homing the mount. Some cases are deliberately still allowed, such as changing the target of a move already in progress. The change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "c7be89625d451ab14e3397de1856da92accc0b5b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1308,
