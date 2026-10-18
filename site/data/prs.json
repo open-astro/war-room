@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T05:28:25.468Z",
+  "generatedAt": "2026-10-18T06:28:28.946Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1303,
+      "title": "Fix whole-second mount sidereal time, coverage races and CI wait",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1303",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T06:00:15Z",
+      "additions": 311,
+      "deletions": 34,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "Six telescope mount drivers (SynScan, Bisque, OnStep, iOptron, Celestron and ZWO) were rounding the current time down to the whole second when working out sidereal time, the sky clock used to point the mount. Sidereal time and the park and pointing values built on it could jump in roughly one-second steps and lag by up to about 15 arcseconds. Those drivers now use the exact time, and each has a new test that checks this. The PR also removes three causes of random test failures and stops running the slow, informational code-coverage check on pull requests, so pull-request checks should finish about six minutes sooner. It also adds caching to two other checks and fixes a build error that appeared when an optional library is missing.",
+      "category": "fix",
+      "summaryHash": "a0ef8451891fdff77a078c049661e43992fd43f2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1304,
+      "title": "Add WandererAstro rotator fake and racing-disconnect cases",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1304",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T05:42:14Z",
+      "additions": 294,
+      "deletions": 22,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change for the WandererAstro devices: the cover calibrator, filter wheel, power box and rotator. A new stand-in for the rotator lets its stress tests run as if a real device were connected, where before they only checked that connecting failed. Each of the four devices also gets a new test that fails if a disconnect request sent during a connect is lost. The stress tests now also exercise settings they used to skip. No driver behavior changes for users.",
+      "category": "tests",
+      "summaryHash": "e79a193e28446508f41b5a2dc7a528e4a6dc91fa"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1302,
