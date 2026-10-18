@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T10:24:19.867Z",
+  "generatedAt": "2026-10-18T11:23:21.046Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1317,
+      "title": "Update AGENTS.md thread sections to point at the operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1317",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T11:11:02Z",
+      "additions": 45,
+      "deletions": 21,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update to the project's contributor and AI-agent guide. It now tells authors of new device drivers to use the project's shared, built-in mechanism for running background tasks (such as moving or parking a telescope) instead of writing their own. The older hand-written rules are kept only for the drivers that have not switched over yet. This removes outdated advice that a new driver could have copied. No software behavior changes.",
+      "category": "docs",
+      "summaryHash": "c338c16c90fab205a8f2845a6d4b7fc4fd9ccdb2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1319,
+      "title": "Fix id-only ZWO dew heater listing every camera on connect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1319",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T10:44:40Z",
+      "additions": 201,
+      "deletions": 51,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem with ZWO camera dew heaters that were set up using only a camera ID. Each time one connected, it opened and closed every attached ZWO camera, which could disturb another camera that was in the middle of taking a picture. It now opens only its own camera, and looks at the other cameras only when it needs to report that the chosen camera has no heater. The PR also adds stress tests that run against a simulated camera kit, plus small documentation updates and a one-line wording fix in the release pipeline comments.",
+      "category": "fix",
+      "summaryHash": "f3d4fb5aa0a6ccf282d8143e965070cbce3031e6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1318,
+      "title": "Fix QHY CCDTemperature connect test racing the cooler worker",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1318",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T10:28:35Z",
+      "additions": 9,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix for an automated QHY camera check that sometimes failed on slow build machines. The simulated camera's temperature was drifting before the test read it. The test now keeps the simulated temperature steady, so it only checks that a temperature reading is available right after connecting. The actual camera software is unchanged.",
+      "category": "tests",
+      "summaryHash": "f7626fbdfa4f7fac1db68167817b2d0ee5fe28ff"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1315,
