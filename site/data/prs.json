@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T22:38:21.652Z",
+  "generatedAt": "2026-10-18T23:13:01.549Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1329,
+      "title": "Add a Stable or Beta update channel selector to the web UI",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1329",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T22:56:14Z",
+      "additions": 1231,
+      "deletions": 101,
+      "changedFiles": 27,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Software Update section of the web interface now has a simple Stable or Beta choice. Before, joining the beta meant logging into the device and editing two settings by hand, and if only one was changed, the update check and the actual install could point at different release streams. Now one choice switches both together. The choice is locked if someone has pointed updates at a custom mirror, and the page warns that a beta version already installed stays in place after going back to Stable until a newer stable release comes out.",
+      "category": "feature",
+      "summaryHash": "3a711ca7721c79a290a30153609a2d72d0a457f6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1330,
