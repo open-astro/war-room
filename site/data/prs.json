@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T09:25:07.807Z",
+  "generatedAt": "2026-10-18T10:24:19.867Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1315,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1315",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-18T09:44:22Z",
+      "additions": 2969,
+      "deletions": 287,
+      "changedFiles": 72,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings all the fixes from the 5.0 beta.5 release into the main development line, adapted to fit the newer design on main where the two had drifted apart. For users, it carries several real changes: dew heater and fan controls for ZWO, ToupTek and Player One cameras can now be told which camera they belong to (automatically, by serial number, or by position), with a new camera picker in the web interface. SynScan mounts no longer turn tracking back on wrongly after stops or guiding pulses when tracking was changed on the handset, and QHY cameras now read 16-bit image data in the correct byte order. The merge also fixes a timing problem that made one SynScan test fail intermittently, and adds tests, documentation updates and release notes.",
+      "category": "fix",
+      "summaryHash": "c61b587a4dcc68c517433774431f81c47f3cd253"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1314,
