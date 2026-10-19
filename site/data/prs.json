@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T17:02:39.182Z",
+  "generatedAt": "2026-10-19T17:47:14.368Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1396,
+      "title": "build: Bump ASCOM.Alpaca.Components, ASCOM.Alpaca.Device and ASCOM.Tools",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1396",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-19T17:16:58Z",
+      "additions": 7,
+      "deletions": 7,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine dependency update: three outside software packages the project uses to talk to astronomy equipment were moved from version 4.0 to 4.1. The list of third-party licenses was updated to match, and it also shows a fourth related package moving to 4.1 that the description does not mention. There is no visible change in behavior on the project's side.",
+      "category": "chore",
+      "summaryHash": "412a6c8c2a659875a71da04dc7ada075ed12db6f"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1395,
