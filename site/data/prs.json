@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T03:10:02.370Z",
+  "generatedAt": "2026-10-19T04:13:36.911Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1344,
+      "title": "Fix the SVBONY abort-recovery test racing the stop retry",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1344",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T03:54:14Z",
+      "additions": 20,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only fix. One automated check for SVBONY cameras sometimes failed on unrelated pull requests because it checked the camera's status a moment too early, before the driver had finished confirming that a stopped capture had really stopped. The check now waits up to two seconds for that confirmation before it looks, so unrelated work should stop failing on it. Nothing changes for users.",
+      "category": "tests",
+      "summaryHash": "30d58c4dbbfa29c72c36edcd2d65365a2e2f4349"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1402,
+      "title": "A relaunched client adopts the run in progress instead of an empty Run tab",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1402",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T03:52:25Z",
+      "additions": 184,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "If you open or reopen the app while an imaging run is already going or paused, the Run tab now picks up that run and shows its Resume and Abort controls instead of coming up empty. This fixes a problem from the October 18 rig night, when a paused run could only be resumed over a remote command line while an automatic shutdown countdown ran. A sequence the user picked themselves is never replaced. The code also does a few things the description doesn't mention: it looks for the active run only once per connection, so clearing the selection on purpose doesn't pull the run straight back, and if several runs look active it picks the most recently changed one. It adds tests for both cases.",
+      "category": "fix",
+      "summaryHash": "cdb8e2e7b86f74d208c44ca42a8e54dcfd70bfef"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1342,
+      "title": "ci: attach the arm64 .deb and dbgsym to stable Releases too (stable/5.0 port of #1338)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1342",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T03:29:13Z",
+      "additions": 72,
+      "deletions": 44,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a release-process change for the 5.0 stable branch. Stable releases, starting with the upcoming 5.0.0, will now include the installable arm64 package and its matching debugging-information package, each with a checksum file. Until now only beta releases got these files, so the 5.0.0 release would have shipped without a package for the apt repository to re-host. The release now fails if the debugging package wasn't built. It brings over a change already made on the main branch, minus one extra signing step this branch never had.",
+      "category": "ci",
+      "summaryHash": "258bbb4ea867dcc5d6cd55e8341378479397f5ec"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1340,
