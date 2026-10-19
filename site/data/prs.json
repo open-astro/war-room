@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T20:59:28.751Z",
+  "generatedAt": "2026-10-19T21:47:06.801Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1383,
+      "title": "Condense the CI gate instructions to author rules",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1383",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T21:28:53Z",
+      "additions": 127,
+      "deletions": 44,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal cleanup of the project's written guidance for contributors and AI coding assistants. The largest guidance file, about how the automated checks work, was cut from roughly 32k to 8.5k characters by keeping only what an author must do and pointing to the check scripts themselves for the details. Two rules were moved to the topic files where they fit better, two confusingly similar headings were renamed, and a few script comments and one error message were updated to match. The project's software does not change.",
+      "category": "docs",
+      "summaryHash": "c4440648845fc9193ea002ccaefa1e39faa2a8b0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1371,
+      "title": "Fix ZWO USB 2.0 camera second exposure failing and retrying",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1371",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T21:17:59Z",
+      "additions": 198,
+      "deletions": 0,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "USB 2.0 ZWO cameras, such as the ASI120MM Mini, no longer fail and silently re-run a long exposure that starts right after the previous image download. Before this fix, a 10-second exposure could take about 20 seconds. The driver now waits until 600 ms have passed since the last download before starting any exposure longer than 3 seconds. Short exposures like guiding loops, USB 3.0 cameras, and the first exposure after connecting are not affected, and the fix was confirmed on real hardware along with new automated tests.",
+      "category": "fix",
+      "summaryHash": "9507931c792e9edb577ac83650886e23411ddb52"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1373,
+      "title": "Serve Bisque telescope position and status from a state snapshot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1373",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T20:59:44Z",
+      "additions": 1044,
+      "deletions": 122,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Bisque (TheSkyX) telescope driver now checks the mount's position, tracking and pier side once a second in the background and answers requests from that saved copy. Before, it asked TheSkyX each time, so answers stay fast even on a slow connection. Changes made through the driver, such as starting tracking, slewing or syncing, show up right away. If TheSkyX stops responding, the driver now reports a fault and, after 30 seconds, treats the connection as lost until the user reconnects, matching how the other mount drivers behave. The PR also updates two design notes and adds a substantial set of new tests.",
+      "category": "feature",
+      "summaryHash": "33a246ee03f36763d001e3d1ee3a6d8d5a75458f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1382,
