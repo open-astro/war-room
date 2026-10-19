@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T21:58:15.678Z",
+  "generatedAt": "2026-10-19T22:59:09.753Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1398,
+      "title": "Add Astroasis HID fake, Locked decorator and sweep roster row",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1398",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T22:55:08Z",
+      "additions": 400,
+      "deletions": 143,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change for the Astroasis (Oasis) focuser driver. The simulated focuser used in tests was moved to a shared place so more test suites can use it. Because of that, the stress tests and the cross-driver compliance checks now get past the connection step and exercise the real driver logic instead of stopping at a connection failure. The visible parts of the code match the description: the device software itself did not change, and it was not tried on real hardware.",
+      "category": "tests",
+      "summaryHash": "8ed54d404d75e09e362d297b2eac3604deb946af"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1415,
+      "title": "Plate solve: per-frame tuning and a staged search before blind (#1136)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1415",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T22:54:46Z",
+      "additions": 1334,
+      "deletions": 130,
+      "changedFiles": 49,
+      "labels": [],
+      "summary": "Plate solving (working out where the telescope is pointing from a photo) is now faster and recovers better when the mount's position is wrong. Ara now picks how much to shrink each image based on the telescope and camera, instead of using one fixed number. When a guided search fails, it tries cheaper options first: near the last good solve, then correcting the focal length, then wider areas, and only then a full-sky search. On the test rig, a normal solve took about 2.3 seconds, and a mount pointing 100° off recovered in 7 seconds instead of 71. The timeout setting is now actually used (before, every solve had a hidden 10-minute limit), and a solve the user starts by hand can now correct the telescope's focal length in the profile when it is clearly wrong, with a notice.",
+      "category": "feature",
+      "summaryHash": "53c8eb41bd4d379957fc9ee03f3f4a9000b6bf97"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1384,
