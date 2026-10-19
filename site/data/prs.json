@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T23:13:01.549Z",
+  "generatedAt": "2026-10-19T01:11:51.542Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1331,
+      "title": "Add the ZWO ASI178MC and ToupTek G3M678C ConformU reports",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1331",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T01:10:16Z",
+      "additions": 613,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two more cameras, the ZWO ASI178MC and the ToupTek G3M678C, are now listed as officially validated, which brings the project's count from 87 to 89 devices. A user tested both cameras on a Raspberry Pi 5 with the standard ASCOM checking tool and both passed with no errors or warnings. This change only adds those test reports and updates the documentation. No software behavior changed.",
+      "category": "docs",
+      "summaryHash": "3ae2549210fdceb031fd540a6c319d678943fce5"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1325,
+      "title": "OnStep: an equatorial slew needs Tracking (#1274)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1325",
+      "author": "kern2011",
+      "mergedAt": "2026-10-19T00:59:09Z",
+      "additions": 145,
+      "deletions": 19,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStep telescope mounts now refuse a 'go to these sky coordinates' command unless tracking is switched on. This matches the industry standard and every other telescope driver in the project, and OnStep was the last one that didn't. Apps that slew an OnStep mount without turning tracking on first, for example right after unparking, will now get an error instead of the mount moving. Slews given as altitude and direction are not affected, and new tests and documentation cover the change.",
+      "category": "fix",
+      "summaryHash": "8c16c1f539eb2308313b603fd9cf4a1538f3e61a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1329,
