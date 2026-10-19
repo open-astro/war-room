@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T10:08:27.631Z",
+  "generatedAt": "2026-10-19T11:07:30.405Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1366,
+      "title": "Serve Astroasis focuser getters from a state snapshot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1366",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T10:08:22Z",
+      "additions": 625,
+      "deletions": 118,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Astroasis Oasis focuser now checks its own status in the background about ten times a second, so requests for its position, movement, and temperature are answered instantly from memory instead of waiting on the device. This copies the approach already used for the QHY focuser and removes delays for software that asks for status less often. It also adds clearer handling of a bad connection: after three failed checks in a row, the focuser reports a communication problem, and if it stays silent for 30 seconds it shows as disconnected and can be reconnected. This was tested only with simulated hardware, not a real focuser, and the main driver code was not shown in full, so it could not be fully checked against the description.",
+      "category": "feature",
+      "summaryHash": "0390f96782e0dfe073c7a0b9c4c0db27504914f3"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1412,
