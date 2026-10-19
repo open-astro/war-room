@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T14:05:05.523Z",
+  "generatedAt": "2026-10-19T17:02:39.182Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1395,
+      "title": "build: Bump the gradle group in /client/openastroara_client/android with 3 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1395",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-19T17:01:38Z",
+      "additions": 3,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "java"
+      ],
+      "summary": "Routine automated update to the build tools for the Android version of the client app: the Android build plugin, the Kotlin language plugin, and the Gradle build system were moved to newer versions. The description gives version numbers for only the first two, but the code also moves Gradle from 9.3.1 to 9.8.1. Nothing changes for users. This is upkeep so the Android app keeps building with current tools.",
+      "category": "chore",
+      "summaryHash": "a0bf11af0de1de8ffbbfa495b7ed74577efd4bae"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1394,
+      "title": "ci: Bump the github-actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1394",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-19T16:47:19Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update to the tools that run in the project's automated checks: the AI code-review assistant and the security code scanner were both moved to newer versions. This is internal only and does not change the app. The newer security scanner requires a more recent version of its analysis engine and adds an extra settings check, which may show warnings in the automated checks.",
+      "category": "ci",
+      "summaryHash": "d8452c6b9052952346430e6d820a34d0d10c7b2f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1393,
+      "title": "build: Bump dotnet-sdk from 10.0.100 to 10.0.402",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1393",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-19T16:27:33Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "dotnet_sdk_package_manager"
+      ],
+      "summary": "Routine automated update that moves the project to a newer patch release of the .NET development kit used to build it (10.0.100 to 10.0.402). This is internal build upkeep with no direct change for users.",
+      "category": "chore",
+      "summaryHash": "045a23e09ca5cd1cc4101c47c1e69f6e84d51c49"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1374,
