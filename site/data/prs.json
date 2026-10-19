@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T05:12:06.971Z",
+  "generatedAt": "2026-10-19T06:11:15.090Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1405,
+      "title": "Backlash compensation needs a pulse width to turn on; an enable alone no longer poisons every guider push",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1405",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T05:46:33Z",
+      "additions": 47,
+      "deletions": 7,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Turning on backlash compensation in the guider's advanced settings now requires a pulse width (20 to 8000 ms). The settings dialog warns about this next to the fields before you press Apply, and the server refuses to save the combination. Previously, a profile with backlash on and no pulse width made the guider reject that whole group of settings on every push, with no sign of the problem in the app. Older profiles already saved in that state now skip just the backlash settings and log a note on how to fix it, so the rest of the guider settings still get through.",
+      "category": "fix",
+      "summaryHash": "fdc6fa54755af77c1dedb54086d27316f9db7aca"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1345,
+      "title": "Add a StellaVita powerbox SDK seam, fake and Locked decorator",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1345",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T05:28:24Z",
+      "additions": 661,
+      "deletions": 41,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to make the ToupTek StellaVita power box driver testable without real hardware. It adds a stand-in power box for automated tests, including stress tests and the standard compatibility checks. How the power box behaves for users is unchanged: ports still start on and connecting changes nothing. It has been checked only against the stand-in, not on a real device.",
+      "category": "tests",
+      "summaryHash": "c99a3a4a55dba857c3d67b35839bb3f85741c697"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1403,
