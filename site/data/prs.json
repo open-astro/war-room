@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T11:07:30.405Z",
+  "generatedAt": "2026-10-19T14:05:05.523Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1374,
+      "title": "Fix Sky-Watcher AbortSlew restoring tracking twice",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1374",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T13:59:36Z",
+      "additions": 45,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a small glitch with Sky-Watcher mounts: if a user stopped a manual nudge of the telescope and then hit \"abort\" while the stop was still finishing, the mount's tracking was switched off and back on twice instead of once. Abort now cancels the pending stop, so tracking is restored a single time and the mount gets one fewer unnecessary stop-and-restart. A test and a one-line note in the troubleshooting guide were added. It was checked with a simulated mount only, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "656c2336b698856ad855dad4092bb61c014f622e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1372,
+      "title": "Run the iOptron clock-sync body in an operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1372",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T13:26:15Z",
+      "additions": 427,
+      "deletions": 140,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup for the iOptron telescope driver. The background job that sets the mount's location and clock after connecting now uses the project's shared system for running background tasks, instead of its own custom setup. Disconnecting or shutting down now reliably stops that job, and a job that was cancelled sends no further commands to the mount. Users should see no change in behavior; the clock sync sends the same commands as before, and tests and developer notes were updated to match.",
+      "category": "refactor",
+      "summaryHash": "eff6de06051310ddf1e9e2fdffdd1f131b337f66"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1369,
+      "title": "Serve Celestron telescope position and status from a state snapshot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1369",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T13:11:20Z",
+      "additions": 1176,
+      "deletions": 247,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For Celestron NexStar mounts, the telescope's position and status (where it points, whether it is moving, tracking, and which side of the pier it is on) are now refreshed by a background check about once a second. Apps get answers straight from that stored copy instead of waiting on the mount each time, so readings stay fast even on a slow connection, though they can be up to about a second old. It also adds clearer handling when the connection is lost, stops a user's location setting from being overwritten by an older reading, and reports \"moving\" as unknown rather than \"not moving\" when the mount never answered. The changes were tested only with a simulated mount; no real Celestron mount was available, and the authors note it needs a real-hardware check before release.",
+      "category": "refactor",
+      "summaryHash": "3ac5af9d4b87017f1d27461c66a1f2c6343431ea"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1366,
