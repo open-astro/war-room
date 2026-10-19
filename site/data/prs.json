@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T06:11:15.090Z",
+  "generatedAt": "2026-10-19T07:11:27.092Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1357,
+      "title": "CI: give the ASan job its own ccache prefix",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1357",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T07:00:59Z",
+      "additions": 123,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal build-system fix: one of the automated safety-check jobs kept loading the wrong saved build cache, so it rebuilt everything from scratch on every run. It now has its own cache name, which should save about a minute and a half of build time per run. A new automatic check also stops two jobs' cache names from overlapping like this again. Whether the cache actually gets reused will only be confirmed on the second build after merge.",
+      "category": "ci",
+      "summaryHash": "d7ee3fcc5b82d675407577013c66ca67cd3d4c5d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1404,
+      "title": "One object, one row: fold the bundled catalogs' twins into one row with aliases (#1267, part 4)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1404",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T06:45:19Z",
+      "additions": 1471,
+      "deletions": 40,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "Sky objects that appear in several bundled catalogs under different names now show up once instead of several times. For example, the North America Nebula used to be listed three times (NGC 7000, Sh2-117, C 20) and is now one entry, with the other names shown underneath as \"also ...\". Search finds an object by any of its names, each catalog view still labels it with its own name, and a target looked up online that the app already knows about now lands on the existing entry instead of appearing as a duplicate. Objects are only combined when the catalogs say they are the same, when a hand-made list pairs them, or when entries from different catalogs sit almost exactly on top of each other, so close pairs of galaxies stay separate.",
+      "category": "feature",
+      "summaryHash": "fe1e73f2d2bdf32b57b99a157caeb2152a7b7b21"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1354,
+      "title": "Fix camera state reads while disconnected (#1334)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1354",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T06:30:17Z",
+      "additions": 58,
+      "deletions": 47,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For all six supported camera brands, asking a disconnected camera what it is doing, or how far along an exposure is, now returns a proper \"not connected\" error. Before, it wrongly answered \"idle\" and \"0% done\", so a program checking the camera before connecting could believe a camera was ready when it was not. This is what the astronomy device standard requires. It was checked only with simulated cameras, not real hardware.",
+      "category": "fix",
+      "summaryHash": "39ca3254cac258241cc4b64623e8d95d9a30a1df"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1406,
+      "title": "Guiding Assistant: Accept parses the guider's reply, and an assistant run no longer reads as guiding or starts a PA residual",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1406",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T06:20:41Z",
+      "additions": 266,
+      "deletions": 10,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "Two fixes for the Guiding Assistant, the tool that measures how well the mount tracks. Pressing Accept used to show \"Unable to get response\" even though the guider had saved the new settings, which left Ara's settings out of step with the guider. Ara now understands the guider's slightly malformed reply, and the values show as applied. Also, while the assistant runs, Ara now shows \"Guiding Assistant\" instead of \"guiding\", and no longer starts polar-alignment measurements or lost-star alerts based on drift that is deliberately left uncorrected. The dialog now gives a more honest estimate of how long the run takes.",
+      "category": "fix",
+      "summaryHash": "b5fcdd2e684fc3a223e8a8299f08edb87a64a7da"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1405,
