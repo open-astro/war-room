@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T04:13:36.911Z",
+  "generatedAt": "2026-10-19T05:12:06.971Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1403,
+      "title": "A dither waits out a brief star loss and restarts guiding itself before pausing the run",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1403",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T05:03:44Z",
+      "additions": 223,
+      "deletions": 18,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "When a dither (a small deliberate nudge of the telescope between exposures) happens while the guide star has briefly vanished, Ara now waits up to 20 seconds for the star to come back instead of immediately pausing the whole imaging run. If the guider has stopped altogether, for example after a manual slew, Ara restarts guiding by itself and carries on. It only pauses and asks for help if that restart fails, and pressing Resume tries the restart again. This fixes two cases from the October 18 observing night where a short star loss and a manual slew each left the run stuck waiting for the user.",
+      "category": "feature",
+      "summaryHash": "f8a3483d05eb374d22f1cf0c5688e1241a1769cd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1347,
+      "title": "Log NotConnected replies at DEBUG instead of ERROR",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1347",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T05:03:39Z",
+      "additions": 164,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When an app keeps asking a disconnected device for information, the server no longer records each of those requests as an error in its log. These are now logged as low-priority debug messages, so the error log only shows real problems. Previously, one app polling a disconnected device could add hundreds of error lines in under half an hour. The reply the app receives is unchanged.",
+      "category": "fix",
+      "summaryHash": "6895634c7b87c58152041cc57c8724b4d17ff97d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1346,
+      "title": "Stress the iOptron iEFW, iEAF and iMate drivers while connected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1346",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T04:46:07Z",
+      "additions": 455,
+      "deletions": 129,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is mostly an internal testing improvement for the iOptron filter wheel, focuser and power box drivers. Their stress tests used to fail at the connection step every time, so they never tested the drivers while actually connected. The tests now connect to simulated devices first and add checks for disconnects that happen during a connection. To make the power box testable, its hardware-control code was rearranged behind a swappable layer, with no intended change in behavior.",
+      "category": "tests",
+      "summaryHash": "51322f44a5186a4ab1a123e67cc892356cdd4eff"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1401,
+      "title": "Target search by any name: offline HYG/OpenNGC index, then Simbad through the daemon with a cache (#1267, parts 2–3)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1401",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T04:27:37Z",
+      "additions": 1999,
+      "deletions": 27,
+      "changedFiles": 23,
+      "labels": [],
+      "summary": "The planetarium search box can now find targets by almost any name, such as \"AB Cas\", \"HIP 12235\", \"Wolf 359\" or \"alpha CMa\", not just names in the built-in catalogs. The server first checks a name list built from the star and deep-sky catalogs already installed, which works with no internet. If that fails, it asks the online Simbad astronomy database and saves the answer, so a target looked up at home still works at a dark site without internet. A found target opens the target dialog with its position and details filled in, ready to frame or add to the plan. If the name is unknown or there is no internet, the user gets a clear message instead of a search that never finishes.",
+      "category": "feature",
+      "summaryHash": "1b03c41e0b2aa63c5bca503d9a75a3e62f4604cb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1344,
