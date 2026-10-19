@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T02:10:49.854Z",
+  "generatedAt": "2026-10-19T03:10:02.370Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,72 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1340,
+      "title": "Fix QHY USB recovery by isolating SVBONY SDK symbols",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1340",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-19T03:01:03Z",
+      "additions": 3053,
+      "deletions": 30,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "QHY cameras and their built-in filter wheels can now reconnect after a power or USB interruption without restarting the server. The cause was the SVBONY camera software, which carried its own copy of a USB library that quietly took over the USB calls the QHY software relies on. The build now keeps that copy private, and new automated checks make sure it stays that way. The change also adds clearer logging when camera scanning fails, a manual diagnostic tool, and documentation. The successful hardware tests were done on an older QHY software version, so this exact version has not yet been proven on real hardware.",
+      "category": "fix",
+      "summaryHash": "fdd6e8912ada6e829d140fd8a79e7b481db25f19"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1400,
+      "title": "Re-read every device's Alpaca identity on connect and before a run; a swap tells the user and clears what it measured (#1362)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1400",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T02:51:52Z",
+      "additions": 1277,
+      "deletions": 55,
+      "changedFiles": 26,
+      "labels": [],
+      "summary": "Ara now notices when a different piece of gear has been plugged into the same slot, such as a new guide camera replacing the old one. It checks each device's identity when the device connects and again before a sequence starts. If something has changed, Ara posts an inbox notice listing what to re-check and clears calibrations that were measured with the old device. A swapped guide camera is now accepted and its pixel size is read again, instead of being refused. This fixes a real case where a new guide camera kept the old camera's pixel size.",
+      "category": "feature",
+      "summaryHash": "98dc7ff0121bf76d8cea37e2c45802164de6f97a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1332,
+      "title": "Load the Software Update card when the page opens",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1332",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T02:43:15Z",
+      "additions": 39,
+      "deletions": 7,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Software Update card in the web page now fills itself in as soon as the page opens. Before this, a reload showed the update channel as Stable even on Beta systems, left the selector locked, and showed no installed version until someone clicked Check for Updates. The change also corrects the manual (no web page) Beta sign-up instructions, which had led to the wrong channel being shown and repeated warnings during system updates.",
+      "category": "fix",
+      "summaryHash": "6661ff6c2fcebc89e70b5b6421c1b5b570180787"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1335,
+      "title": "Fix Sky-Watcher AbortSlew turning tracking off after a MoveAxis jog",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1335",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T02:24:07Z",
+      "additions": 112,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On Sky-Watcher mounts, stopping a manual nudge with the abort command no longer turns tracking off. The mount now goes back to tracking if it was tracking before the nudge, as the astronomy device standard requires, and the safety limits that guard the mount's movement are turned back on as well. The automatic safety stop that fires when a client goes silent now also leaves a tracking mount tracking. Aborting a goto, park, or home is unchanged.",
+      "category": "fix",
+      "summaryHash": "289c17600405bb19201683056ef5c2f82bb44e3c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1339,
