@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T01:11:51.542Z",
+  "generatedAt": "2026-10-19T02:10:49.854Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1339,
+      "title": "Add a ZWO EFW SDK test seam, fake and Locked decorator",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1339",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T02:03:10Z",
+      "additions": 621,
+      "deletions": 37,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO filter wheel driver can now be tested with a simulated filter wheel instead of real hardware, the same way several other camera and accessory brands are already tested. This adds new automated checks, including one that simulates the wheel reporting \"moving\" while it turns and one that hammers connect and disconnect under heavy load. Nothing changes for users: the driver still talks to the real wheel exactly as before. This only covers the filter wheel; the matching work for ZWO's focuser and camera rotator is planned for a later change.",
+      "category": "tests",
+      "summaryHash": "f9a2e4c81c9a44a1628bc8113f2624c9297cf6b7"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1338,
+      "title": "ci: attach the arm64 .deb and dbgsym to stable Releases too",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1338",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T01:43:09Z",
+      "additions": 74,
+      "deletions": 46,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Stable releases on GitHub now come with the ready-to-install Raspberry Pi package, which until now was attached only to beta releases. Every release, stable or beta, also gets a separate debug-symbols package, each with a checksum file and a signed record proving it was built from that release. Before this, stable packages were built on a separate machine that was often offline, so a stable release could wait hours for its package. Now the project's package repository can simply copy the files from the GitHub release. The release instructions and developer docs were updated to match.",
+      "category": "ci",
+      "summaryHash": "87931e5722732bfbe978b7595b8ba36ef16ffdaf"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1331,
