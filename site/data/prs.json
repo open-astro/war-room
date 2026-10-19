@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T21:47:06.801Z",
+  "generatedAt": "2026-10-19T21:58:15.678Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1384,
+      "title": "Add decision record for designs to avoid",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1384",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T21:47:40Z",
+      "additions": 78,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds a new written project decision that lists six software designs the team has agreed not to build, even though they keep coming up as tempting next steps. Examples include one shared driver for every telescope brand and one shared connection layer for every equipment maker. For each design it explains what the idea is, why it was rejected, and what to do instead. Reviewers can now point to this one document instead of repeating the argument, and anyone who wants one of these designs must answer its reasons first. It is documentation only; no software behaviour changed.",
+      "category": "docs",
+      "summaryHash": "ca4024deb87df04694393a6938dbee7d9824e26d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1383,
