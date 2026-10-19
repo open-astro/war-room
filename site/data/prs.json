@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T07:11:27.092Z",
+  "generatedAt": "2026-10-19T08:11:16.953Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,87 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1409,
+      "title": "The desktop mirror queue leaves out frames the download endpoint would refuse",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1409",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T08:09:44Z",
+      "additions": 208,
+      "deletions": 52,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The desktop backup mirror no longer keeps trying to download old frames that the telescope computer can never hand over. During the 2026-10-18 observing night, two frames saved before the current storage layout were requested every 15 seconds all night, failing each time and filling the log with warnings. The backup list now skips any frame the download step would refuse and notes it in the log only once. It still keeps looking past those frames, so newer images continue to back up even if many old ones are skipped.",
+      "category": "fix",
+      "summaryHash": "bdea7892e7fe40576d4217e9a24636ec70a34bd1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1351,
+      "title": "CI: delete superseded Actions caches after each run on main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1351",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T08:05:23Z",
+      "additions": 203,
+      "deletions": 1,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal build-system change. The project's automated builds were piling up roughly 2 GB of saved build data with every update, which pushed it past GitHub's 10 GB storage limit, so GitHub was throwing away data that was still being used. A new automatic cleanup step now runs after each main build and deletes only the outdated copies, keeping the newest one of each kind. This should keep builds, including the nightly one, fast and reliable.",
+      "category": "ci",
+      "summaryHash": "15c2645b15312cfdac953ebdb307f8baa9d93efb"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1359,
+      "title": "Run Sky-Watcher EQM-35 cases over serial",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1359",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T07:48:10Z",
+      "additions": 205,
+      "deletions": 123,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change. The automated tests for the Sky-Watcher EQM-35 Pro mount now talk to the simulated mount over a serial cable connection at the mount's real speed, instead of over a network connection the real mount never uses. A new test also checks that cutting the cable in the middle of a slew is correctly reported as a lost connection. The mount driver itself is unchanged, and this completes a three-part piece of work.",
+      "category": "tests",
+      "summaryHash": "69823b07f5c07749ca1f820ebd323dfd1ac97ad5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1407,
+      "title": "A tapped guide star reads Star selected with its SNR, and the Multi-star chip shows",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1407",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T07:41:15Z",
+      "additions": 228,
+      "deletions": 10,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "When you tap a star in the guide camera's live view, the app now shows \"Star selected\" along with the star's brightness readings (signal-to-noise and mass). Before, the status went straight back to \"Looping\" on the next frame and showed no readings, so a tap seemed to do nothing beyond moving the box. The Multi-star / Single star indicator also appears again: the newer guider version no longer reports that setting where the app looked for it, so the app now checks a second place. All of this was spotted during the 2026-10-18 observing night.",
+      "category": "fix",
+      "summaryHash": "f9cd010b7811cddeb6fa598436cc009e13f36121"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1356,
+      "title": "Share ZWO EAF and CAA SDK fakes and add Locked decorators",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1356",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T07:30:46Z",
+      "additions": 735,
+      "deletions": 170,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Mostly a test cleanup for the ZWO focuser and rotator. The simulated versions of these devices, used only in tests, now live in one shared place, and new tests check how the drivers behave when many requests arrive at the same time. Those new tests found a real bug: the rotator could read a setting while a connection was still writing it, which could give a wrong value. That one line in the rotator driver has been fixed, and nothing else changes for users.",
+      "category": "tests",
+      "summaryHash": "04fe387100d89694a3e441696e6367d2c8293bcd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1357,
