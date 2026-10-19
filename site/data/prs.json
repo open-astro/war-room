@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T19:00:55.990Z",
+  "generatedAt": "2026-10-19T20:59:28.751Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1382,
+      "title": "Split AGENTS.md into shared topic instruction files",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1382",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T20:47:55Z",
+      "additions": 1628,
+      "deletions": 1373,
+      "changedFiles": 66,
+      "labels": [],
+      "summary": "This is an internal change to the guidance that AI coding assistants read when working on the project, and it changes nothing about how the software behaves. The main guidance file had grown back to about 144,000 characters and was loaded in full for every task. It is now cut to about 11,000 characters, and the shared rules move into seven topic files that load only when someone works on the related part of the project. A new automatic check fails the build if the main file grows past 15,000 characters again, and links and references across the docs and tools were updated to point to the new locations.",
+      "category": "docs",
+      "summaryHash": "4b67a031bc8f6df99efb4c80dd6176bb6d8f1252"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1375,
+      "title": "OnStep: Connected no longer waits for a connect in progress (#910)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1375",
+      "author": "kern2011",
+      "mergedAt": "2026-10-19T20:17:17Z",
+      "additions": 144,
+      "deletions": 6,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStep telescope mounts now answer status questions right away while they are still connecting, instead of making the asking program wait until the whole connection process finishes. Before this change, a status request sent during a connect could hang for several seconds. The mount still correctly reports itself as not connected until the connect is fully done, including after a disconnect or a reconnect over a lost cable. New tests cover these cases, and other mount brands (Celestron, iOptron, Bisque and Sky-Watcher) still have the old waiting behavior.",
+      "category": "fix",
+      "summaryHash": "595f2ffdb0550fcb5d66bd0466082804fbb1c482"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1414,
