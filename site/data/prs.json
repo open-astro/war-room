@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T08:11:16.953Z",
+  "generatedAt": "2026-10-19T09:09:16.698Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1411,
+      "title": "Progress frames carry the current instruction's description and target, so the Run tab shows the first step",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1411",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T08:48:52Z",
+      "additions": 57,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The Run tab now shows what a run is doing from its very first step, for example \"Cooling camera to -10 °C\", instead of staying on \"Run started\". Before this, steps that take no pictures, like cooling the camera, showed nothing. On the 2018-10-18 rig night that left the screen blank for almost five minutes. The live updates now include the current step and target, and the app keeps the last known values if it is talking to an older server that does not send them.",
+      "category": "fix",
+      "summaryHash": "e0038e67d933521204e9c475c6a759c2d7dfd540"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1358,
+      "title": "Run the Bisque pulse guide body in an operation slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1358",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T08:38:39Z",
+      "additions": 133,
+      "deletions": 56,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal cleanup of how the Bisque (TheSkyX) telescope driver runs its short guiding nudges in the background. It now uses the same shared mechanism the other telescope drivers already use, instead of its own custom one. Guiding is meant to behave the same for users. One small difference: disconnecting no longer clears a failed guide's error, though reconnecting still does. It was tested only against a simulated mount, not real hardware.",
+      "category": "refactor",
+      "summaryHash": "4f2e71ecea4b3a0772e2d767eab570d39c023b93"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1410,
+      "title": "The dew advisor's stop cancels its check and survives the host's shutdown budget",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1410",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T08:29:58Z",
+      "additions": 64,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Restarting the Ara server no longer hangs for 30 seconds and then crashes when a weather station stops answering. Before, the dew-warning checker waited on the stuck weather reading during shutdown, and the old process was killed abruptly instead of exiting cleanly. Now the checker cancels its reading first, and if that still takes too long it logs a warning and lets the shutdown finish.",
+      "category": "fix",
+      "summaryHash": "b324a85d7bbbcdafdb4614403d4db2d93a2b4aa4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1353,
+      "title": "CI: open an issue when a scheduled run on main fails",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1353",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T08:25:35Z",
+      "additions": 374,
+      "deletions": 1,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal CI change. When one of the automatic scheduled jobs on the main branch fails, a GitHub issue now opens automatically with a link to the failed run. The jobs covered are the nightly build, the security scans and the dependency check. Further failures add comments to that issue, and the next successful run closes it. A nightly run that skipped its work because nothing changed does not count as a fix. Before this, these failures showed up only on the Actions page and could go unnoticed for days.",
+      "category": "ci",
+      "summaryHash": "300eca1f86f9f3b29f8bbd240eb1963d25516fb0"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1409,
