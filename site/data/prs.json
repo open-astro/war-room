@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T09:09:16.698Z",
+  "generatedAt": "2026-10-19T10:08:27.631Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,51 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1412,
+      "title": "A manual GoTo during a sequence run asks first; forced, it slews",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1412",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T09:52:18Z",
+      "additions": 479,
+      "deletions": 18,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "Pointing the telescope somewhere new by hand while an imaging session is running now asks for confirmation first. Previously the move was accepted silently, which stopped guiding and paused the session (this happened on the 2026-10-18 rig night). Now the system warns that moving will pause the run and only goes ahead if you choose \"Slew anyway\", both from the mount panel and from the Stellarium planning page. Simply re-aligning the mount's position without moving it is never blocked, and a session already paused waiting for you also counts as in progress, which the description does not mention.",
+      "category": "feature",
+      "summaryHash": "19e518986c0db5e2583a1eb04cc54563ed6f94d8"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1413,
+      "title": "Playbook prose reconciliation: Flutter bump supersede, gps-mobile status, AlpacaBridge version, docs/ paths; bench README lists the lane (#1152)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1413",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T09:33:55Z",
+      "additions": 66,
+      "deletions": 57,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Documentation only. The internal design guide was brought back in line with how the project actually works, covering how old Flutter update requests get closed, which GPS sources are really used, and how the companion bridge's version will be found. Links to the deployment and running guides were also fixed throughout. The hardware test bench guide now says it runs every test marked for it (about 25 today), not just the original three.",
+      "category": "docs",
+      "summaryHash": "f68b9c3d027d31a7529f559af3ab101bbc65fdad"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1408,
+      "title": "Recent and saved targets live in the profile, with the local file as the offline mirror (#1267, part 5)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1408",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T09:15:30Z",
+      "additions": 1297,
+      "deletions": 68,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "Recent and saved sky targets are now stored with your profile on the rig, so a target you set up at home appears on any device you connect from at the dark site, not just the one you typed it on. Each device keeps its own local copy for when there is no connection, and changes sync on the next connect. Deletions made on one device stay deleted everywhere. Lists are kept separate for each rig and profile, are capped at 200 targets, and now show a target's other names and where it was looked up.",
+      "category": "feature",
+      "summaryHash": "ed989dcd228f75e0c4256dc5feb4924cd4274bc5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1411,
