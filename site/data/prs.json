@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T17:47:14.368Z",
+  "generatedAt": "2026-10-19T19:00:55.990Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1414,
+      "title": "Polar alignment close-out: auto binning, near-pole reticle, bolt nudge (#1133)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1414",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-19T18:42:08Z",
+      "additions": 768,
+      "deletions": 32,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "This wraps up the remaining polar alignment work from the October on-sky test night. Once the alignment is very close (under 2 arcminutes), the on-screen target now zooms into a finer scale with smaller rings and tick marks, which makes the final small adjustments easier. If one turn of a knob makes that axis worse, the app now says which bolt it was and that it moves the other way on this mount. The image-shrinking setting used to speed things up now picks itself automatically based on the camera, though in practice every guide camera in use stays at full size. The PR also fixes a bug where shrunk images were analyzed as if they were full size, which could stop them from being recognized. The parts of the code shown match the description, but the screen changes themselves were not visible in the trimmed code.",
+      "category": "feature",
+      "summaryHash": "4d37a85e940113d6806f537fc610f0cc5ee908f6"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1396,
