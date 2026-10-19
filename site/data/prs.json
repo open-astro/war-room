@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T22:59:09.753Z",
+  "generatedAt": "2026-10-19T23:57:21.125Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1399,
+      "title": "Add UtcOffset value type and decision record, piloted in Celestron",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1399",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T23:42:18Z",
+      "additions": 251,
+      "deletions": 26,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron telescope driver now handles the date and time a client sets on the mount using a new shared building block, so the team can test how that time moves forward without the tests having to actually wait. Nothing changes for users during normal operation, except that the stored time is now also forgotten when the mount disconnects, not only when it reconnects. This has no visible effect, because the time can't be read or set while disconnected anyway. The PR also records this design choice in the project's decision notes so the other mount drivers (SynScan, iOptron, OnStep, ZWO) can switch to the same approach later.",
+      "category": "refactor",
+      "summaryHash": "5a2157bbda011ce8f47447a43a48763a85190caf"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1400,
+      "title": "Update QHY camera waits to read an injected TaskClock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1400",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-19T23:20:43Z",
+      "additions": 515,
+      "deletions": 60,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY camera and QHY filter wheel drivers now take all their timing (exposure time limits, guiding pulse length, short pauses before downloading an image, and waits for stuck background tasks to finish) from a shared clock that tests can fast-forward. Before, the camera used the real clock directly. The filter wheel had its own separate one-off approach, which is now replaced by the same shared clock. Behaviour on real hardware is meant to be unchanged, and nine new tests check each of these waits without slowing the test run noticeably. The changes were only tested against simulated hardware, and the camera code was not built with the project's normal build setup before CI ran.",
+      "category": "refactor",
+      "summaryHash": "512fd09e2901f4638f6e8a1947e56adca6d6509e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1398,
