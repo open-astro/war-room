@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T14:48:51.289Z",
+  "generatedAt": "2026-10-20T15:44:00.570Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1423,
+      "title": "Setup picks the plate-solver star database per camera and downloads it after Save (#1136)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1423",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T15:34:11Z",
+      "additions": 1579,
+      "deletions": 92,
+      "changedFiles": 41,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1425,
