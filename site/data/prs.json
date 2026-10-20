@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T08:49:39.098Z",
+  "generatedAt": "2026-10-20T09:49:42.838Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1424,
+      "title": "Point code comments at the instruction files that hold the rules",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1424",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T09:45:13Z",
+      "additions": 124,
+      "deletions": 120,
+      "changedFiles": 68,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup only. Notes in the code that pointed to the project's old rulebook now point to the specific guideline documents where those rules were recently moved, so a developer can go straight to the right rule. The code shows only note text changing (plus four labels inside tests), so nothing changes for users. One note was reworded slightly rather than just repointed.",
+      "category": "docs",
+      "summaryHash": "d44341ea13931877ca5ce86ce0483f839b9e0ee3"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1420,
+      "title": "Support → Logs pages back with a before cursor (#1185, §29.9)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1420",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T09:09:41Z",
+      "additions": 316,
+      "deletions": 8,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The Support → Logs screen now has a \"Load older\" button at the bottom of the list, so users can keep paging back through earlier log entries instead of only seeing the most recent batch. The same level and text filters apply to each older page, and the button disappears once there is nothing older to fetch. The authors note a small known gap: entries with exactly the same timestamp at a page boundary can be skipped, and paging very far back is slower than it could be.",
+      "category": "feature",
+      "summaryHash": "e63b93996570c2b7c6a1665dbcac3f92266647fb"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1421,
+      "title": "Update architecture overview Celestron status to Production",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1421",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T09:02:11Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only. The architecture overview now lists Celestron support as Production, instead of saying direct USB and the focus motor were still in development. It also notes that one mount model, the CGX-L over direct USB, is untested. This brings the overview in line with the supported-drivers list.",
+      "category": "docs",
+      "summaryHash": "3b716843da47caaa6d4df578a8b2bf1ad089b866"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1423,
