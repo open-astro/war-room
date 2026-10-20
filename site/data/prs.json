@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T20:39:49.241Z",
+  "generatedAt": "2026-10-20T21:38:50.951Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1428,
+      "title": "Storage can copy the store onto another disk",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1428",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T21:37:53Z",
+      "additions": 2515,
+      "deletions": 37,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "The Storage settings now have a \"Copy to another disk\" option that copies the storage drive onto a second drive plugged into the server, either everything or only the folders you pick. It only adds files: anything already on the other drive with the same size is skipped, so running it again just picks up new frames, and nothing is ever deleted or overwritten. The copy runs in the background with progress shown, checks for enough space first, and won't start during an imaging run. When it finishes, the drive is safely unmounted so it can be unplugged. The PR also includes follow-up fixes from the earlier disk-switching work, so a failed switch to a new drive no longer risks remounting the rejected one.",
+      "category": "feature",
+      "summaryHash": "87ec51c1136ba12bfbeae87c2887a06855f046fe"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1427,
