@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T16:45:38.270Z",
+  "generatedAt": "2026-10-20T17:42:26.182Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1424,
+      "title": "A guide star lost for a long time is recovered by plate solve (§42.2)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1424",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T17:13:52Z",
+      "additions": 1669,
+      "deletions": 147,
+      "changedFiles": 26,
+      "labels": [],
+      "summary": "When clouds hide the guide star for a long time, Ara can now get an imaging run going again by itself instead of leaving it paused all night. Three minutes into an outage it starts checking about once a minute whether stars are visible again. Once they are, it re-aims the telescope at the target using a photo of the sky, restarts guiding and resumes the run. If that fails, the run stays paused, it warns once and tries again later, and it never parks the telescope. As part of this change, a dither that restarts guiding after a long gap also re-aims first, and the existing recovery after a safety pause no longer moves the telescope if the target has dropped below the horizon limit.",
+      "category": "feature",
+      "summaryHash": "e1941e98e23dc35a47774a1c815a966a2a056ce1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1423,
