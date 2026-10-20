@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T09:49:42.838Z",
+  "generatedAt": "2026-10-20T10:26:49.901Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1421,
+      "title": "Bug reports have a §54.3 sharing mode: full, coarse GPS, or redacted (#1185)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1421",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T10:11:10Z",
+      "additions": 867,
+      "deletions": 56,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "When users send a bug report, they can now choose how much personal information it includes: everything (the default), only a rough location (rounded to about 111 km), or a fully redacted version that hides exact location, equipment serial numbers, passwords and tokens, home-network addresses and computer usernames. The scrubbing happens while the report file is being created, so the downloaded file never contains the hidden details at all. Obvious passwords and access keys are now removed in every mode, including 'everything'. The author notes a few known gaps: some device names can still identify equipment, and the app's own error log saved next to the report is not scrubbed.",
+      "category": "feature",
+      "summaryHash": "83c1c5f466976c8ee08d52359126c9a2a68147d5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1424,
