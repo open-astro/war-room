@@ -194,7 +194,9 @@
   const res = await fetch("data/prs.json", { cache: "no-store" });
   const data = await res.json();
   const repos = data.repos;
-  const repoColor = (r) => `var(--series-${Math.min(repos.indexOf(r) + 1, 8)})`;
+  // Skips series-6 (green) and series-8 (red): they mark additions/deletions and clash with series-3/series-2.
+  const REPO_SERIES = [1, 2, 3, 4, 5, 7];
+  const repoColor = (r) => `var(--series-${REPO_SERIES[Math.min(repos.indexOf(r), REPO_SERIES.length - 1)]})`;
   const shortRepo = (r) => r.split("/")[1];
   repos.forEach((r) => state.repos.add(r));
 
