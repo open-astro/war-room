@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T22:38:11.813Z",
+  "generatedAt": "2026-10-20T23:37:16.722Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1428,
+      "title": "Fix ZWO AM longitude and slew-completion coordinates",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1428",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-20T23:00:34Z",
+      "additions": 651,
+      "deletions": 31,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes two bugs in how the bridge talks to ZWO AM mounts such as the AM5. The mount stored the site's east/west position with the wrong sign, so its site and time data were off. Separately, the mount reported that a move had finished before its final position was available, which made an automated compatibility check (ConformU) wrongly flag a guiding problem. The visible code change confirms the sign correction in both directions; the rest of the driver changes were not shown in full, and the PR also adds tests, documentation and a passing check report from a real AM5.",
+      "category": "fix",
+      "summaryHash": "1249fd131e5e3179e80e0e58570797c2145f95b9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1434,
