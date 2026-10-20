@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T11:47:25.672Z",
+  "generatedAt": "2026-10-20T13:45:50.757Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1425,
+      "title": "ci: bump the github-actions group with 4 updates",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1425",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-20T13:06:54Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine maintenance with no effect on the product itself. It updates the outside tools used by the project's automated checks: the AI code reviewer and GitHub's security scanners, which look for flaws in the code and in third-party components. The changes match the description exactly, with each tool moved to its newer version and nothing else touched.",
+      "category": "ci",
+      "summaryHash": "19d8380a9599658d4f5e91a3713a20eeb2efcfdb"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1422,
