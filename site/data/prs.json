@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T23:57:21.125Z",
+  "generatedAt": "2026-10-20T02:54:46.521Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/openastro-ara",
@@ -8,6 +8,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1410,
+      "title": "Fix decision records and glossary that disagree with the code",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1410",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T02:52:49Z",
+      "additions": 61,
+      "deletions": 34,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's written design rules, glossary and architecture overview were corrected so they match what the software actually does today. Several statements had fallen out of date or contradicted each other, for example which drivers already use certain shared building blocks and what counts as a lost connection to a device. Places where the code still breaks the rules are now linked to separate issues that will fix the code, rather than being written down as exceptions. Documentation only; nothing about how the software behaves changes, but it prepares for a planned automatic check that will flag changes that disagree with these rules.",
+      "category": "docs",
+      "summaryHash": "21191bc8cfa9d01eca0bc8ed0b1d823e08ddc9fa"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1320,
+      "title": "feat(celestron): focus motor driver on its own USB port",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1320",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T02:32:12Z",
+      "additions": 2202,
+      "deletions": 20,
+      "changedFiles": 27,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now control the Celestron Focus Motor (for SCT, EdgeHD and RASA telescopes) plugged in through its own USB port, so astronomy apps like NINA and SharpCap can move, stop and read the focuser. Because Celestron's own utility can erase the motor's calibration, the driver can connect to an uncalibrated motor and run or cancel the calibration itself, and it takes care never to send the command that wipes a good calibration. The person who requested it tested it on real hardware and it passed the official ASCOM compatibility check with no problems, so it is now listed as a validated device. Temperature readings and temperature compensation are not supported, and the motor must be connected directly, not through the mount.",
+      "category": "feature",
+      "summaryHash": "e63b183bb495c7d94bd91852d262cc48b06747c4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1401,
+      "title": "OnStep: record a link loss only for the link that was checked (#1289)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1401",
+      "author": "kern2011",
+      "mergedAt": "2026-10-20T02:08:53Z",
+      "additions": 380,
+      "deletions": 16,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing bug in the OnStep telescope driver's check for an unplugged USB adapter. If a user disconnected, or the driver reconnected, at just the wrong moment during that check, the driver could wrongly record the connection as lost (making the next connect send stop commands to the mount) or even close a freshly opened connection. The driver now only records a loss for the exact connection it checked and double-checks before closing anything, and new tests, including a heavy stress test, cover these situations.",
+      "category": "fix",
+      "summaryHash": "4065062175061fac62df667696743c50be2fd705"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1399,
