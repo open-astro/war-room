@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T05:22:33.291Z",
+  "generatedAt": "2026-10-20T07:50:27.179Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1419,
+      "title": "Name the Celestron focus motor 94155-A and record its port name",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1419",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T07:44:56Z",
+      "additions": 9,
+      "deletions": 6,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The supported-hardware list now names the Celestron focus motor that was actually tested as the 94155-A, the newer version with a notch for the EdgeHD focal reducer, along with its firmware version. It also notes that the older 94155 has not been tested yet. The setup page's example serial port now shows the motor's stable USB name instead of a generic one, so users can copy a path that keeps working when other USB devices are plugged in. This is a documentation and wording change only, and the driver itself is unchanged; old outside links to the previous test-report folder will no longer work.",
+      "category": "docs",
+      "summaryHash": "33f9295b4a7bb5880ba26f04a1820f1a28864cd7"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1417,
+      "title": "Plate-solver star databases download from the Data Manager (#1136)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1417",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T07:20:12Z",
+      "additions": 1192,
+      "deletions": 116,
+      "changedFiles": 31,
+      "labels": [],
+      "summary": "Users can now download the plate solver's star databases straight from the app's Sky data settings. Before, they had to be fetched by hand during setup. Each download is checked for integrity, and the databases that suit the rig's field of view are marked Recommended. A download that won't fit on the device's storage is refused up front with the space it needs, instead of failing near the end. The system service was also given permission to write to the database folder, which it would otherwise have been blocked from. The solver's rules for which database to use at different field widths now match the solver's own defaults, and two obsolete databases are no longer suggested. Much of the code diff was trimmed, so these details come mostly from the description and changelog.",
+      "category": "feature",
+      "summaryHash": "1dc3d2d5f89b223d8e8abcf0fe96d42995ca1f43"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1416,
