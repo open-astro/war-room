@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T07:50:27.179Z",
+  "generatedAt": "2026-10-20T08:49:39.098Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1423,
+      "title": "Verify link fragments in every scanned instruction document",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1423",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T08:27:55Z",
+      "additions": 47,
+      "deletions": 12,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated check that guards the project's internal documentation now catches links pointing to a section heading that no longer exists, in every scanned document. Before, it only did this for the design-decision records, so renaming a heading elsewhere could silently break links to it. This is an internal tooling change; no broken links were found in the current docs, and nothing users run is affected.",
+      "category": "ci",
+      "summaryHash": "9a9f74521f7239e884db22f8e24082e6f97849af"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1419,
+      "title": "test(polar-align): witness the pause through the WS event, not a status poll",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1419",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T08:17:08Z",
+      "additions": 20,
+      "deletions": 2,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Fixes an unreliable automated test for polar alignment that failed about half the time and was holding up other merges this week. The test was checking too slowly and often missed a very brief 'paused' moment. It now watches for the notification the app sends when it pauses. The app itself is unchanged; this only affects the test.",
+      "category": "tests",
+      "summaryHash": "ff87c8606b1ed1d072690e122497bcce96c6cf11"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1420,
+      "title": "Check the nightly .deb before it is published",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1420",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T08:07:31Z",
+      "additions": 30,
+      "deletions": 7,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The nightly build now installs its Linux package and runs the same camera-library check that pull requests already go through, before publishing it. A nightly package that fails the check is no longer released to testers. The pull-request check is unchanged, and the related documentation was updated to match. The new steps had not run in the nightly build before merge, so the first nightly afterwards will be their first real test.",
+      "category": "ci",
+      "summaryHash": "dd258552a2c2a0b8a96ff7f5d60c2ed658f4747f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1418,
+      "title": "Desk batch from #1185: camera DTO gaps, one grouped dark count, release-mode default guard",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1418",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T08:01:21Z",
+      "additions": 464,
+      "deletions": 55,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Bundles three small improvements. The server now reports more camera details: sensor type, whether it has a mechanical shutter, any preset gain and offset settings (such as 'ISO 800'), exposure precision, and the cooler's heat-sink temperature, though no screen shows them yet. Dark-library status checks now use one database lookup instead of one per combination, which lightens the load while a build is running. The sequence editor also now fails with a clear error, instead of a confusing crash in release builds, when it meets badly formed default settings. Most of the server code changes were left out of the material provided, so these server-side details rest mainly on the description and the changelog.",
+      "category": "feature",
+      "summaryHash": "1cfa81db5ab95491c3435cea603b3de1d74d81b4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1419,
