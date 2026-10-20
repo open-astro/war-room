@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T15:44:00.570Z",
+  "generatedAt": "2026-10-20T16:45:38.270Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -20,9 +20,9 @@
       "deletions": 92,
       "changedFiles": 41,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The setup wizard now works out which star map the telescope's position-finding tool needs, separately for the main camera and the guide camera, and downloads it onto the rig after you save. It does this from the telescope, camera sensor and a new field for focal reducers or Barlow lenses. Before saving, the review screen shows each camera's needed database and its size, or warns when the view is too narrow to work. The large 1.3 GB database is no longer the default: most typical setups now get a much smaller 109 MB one, and two new mid-size databases were added to the download list. The visible code matches the description, though most of the code changes were too large to be shown in full.",
+      "category": "feature",
+      "summaryHash": "8b48ee05ba1b20a50df3cf7ad1a3671d33c7355e"
     },
     {
       "repo": "open-astro/AlpacaBridge",
