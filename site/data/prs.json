@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T21:38:50.951Z",
+  "generatedAt": "2026-10-20T22:38:11.813Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1434,
+      "title": "Fix Celestron PulseGuide joining its pulse slot under the driver mutex",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1434",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T22:37:08Z",
+      "additions": 259,
+      "deletions": 102,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "With Celestron telescopes, sending a new guiding nudge while the previous one was still finishing could freeze the driver for about a third of a second, so even simple status questions like \"are you guiding?\" had to wait. The driver now waits for the old nudge to finish without blocking everything else, so status answers keep flowing during back-to-back guide pulses. It also adds a safety step: if a long guide pulse cannot be fully started, the driver now stops the mount's motion and clears the guiding state instead of leaving it moving. The PR says this was tested only with simulated hardware, not on a real Celestron mount.",
+      "category": "fix",
+      "summaryHash": "ef4ec63aaeabfa65bd56ed228f652a8dbf1111fc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1435,
+      "title": "Fix serial devices disturbing each other's ports (#1202)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1435",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T22:20:05Z",
+      "additions": 5219,
+      "deletions": 2299,
+      "changedFiles": 78,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Many astronomy gadgets use the same cheap USB-serial adapter, so one device's auto-detect could open, reconfigure or knock over another device's connection; in the field this left a Gemini power hub stuck until restart and made some rotators and mounts hang on disconnect. Now all 18 serial device drivers connect through one shared, careful method that reserves the port for a single device, locks out other programs, never waits forever on a read, and repairs the port settings if something else changed them. Auto-detect now skips ports already in use by a different kind of device and picks ports in a stable order, and connection errors name the device that is holding the port. It also adds a large set of tests and an automatic check that blocks future code from opening serial ports the old way.",
+      "category": "fix",
+      "summaryHash": "58dbb4e2437675ad16efedff4dc410f013e506e4"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1429,
+      "title": "An opened frame no longer queues behind the library grid's thumbnails",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1429",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T22:03:11Z",
+      "additions": 284,
+      "deletions": 11,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Opening a frame in the Image Library no longer times out when the library has to rebuild all its thumbnails, for example on a freshly copied drive or after clearing the cache. Previously the opened image waited in line behind dozens of thumbnail jobs and could take over 100 seconds, past the app's 60-second limit. Now an opened image jumps ahead of any waiting thumbnails, and thumbnails for black-and-white frames are shrunk before processing instead of working on the full-size image. On the test device an opened image now loads in about 2.6 seconds instead of 108, and the whole grid fills in about 43 seconds instead of 113.",
+      "category": "fix",
+      "summaryHash": "90c664bfd94655f208b2d6bb09d1cfddd08968c9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1428,
