@@ -194,9 +194,17 @@
   const res = await fetch("data/prs.json", { cache: "no-store" });
   const data = await res.json();
   const repos = data.repos;
-  // Skips series-6 (green) and series-8 (red): they mark additions/deletions and clash with series-3/series-2.
-  const REPO_SERIES = [1, 2, 3, 4, 5, 7];
-  const repoColor = (r) => `var(--series-${REPO_SERIES[Math.min(repos.indexOf(r), REPO_SERIES.length - 1)]})`;
+  // Pinned by name so repos.json order doesn't matter. Avoid series-6 (green) and series-8 (red): they mark
+  // additions/deletions and clash with series-3/series-2. Unlisted repos render gray until given a color here.
+  const REPO_SERIES = {
+    "open-astro/AlpacaBridge": 1,
+    "open-astro/openastro-ara": 2,
+    "open-astro/openastro-guider": 3,
+    "open-astro/openastro-phd2": 4,
+    "open-astro/phdlogview": 5,
+    "open-astro/astap": 7,
+  };
+  const repoColor = (r) => (REPO_SERIES[r] ? `var(--series-${REPO_SERIES[r]})` : "var(--text-3)");
   const shortRepo = (r) => r.split("/")[1];
   repos.forEach((r) => state.repos.add(r));
 
