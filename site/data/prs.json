@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T19:37:50.662Z",
+  "generatedAt": "2026-10-20T20:39:49.241Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,36 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1427,
+      "title": "Choosing a second disk actually switches the store to it",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1427",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T20:18:11Z",
+      "additions": 459,
+      "deletions": 36,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "With two storage drives plugged in, choosing the second one in the storage settings now really moves new frames onto it. Before, the app said the switch had worked, but frames kept going to the first drive until the next reboot. If the switch can't finish, for example because the current drive is in use, the old drive is put back so frames never end up on the system's own memory card, and the app shows a clearer message when it's the current drive that's busy. It also fixes a separate problem where a disk check that had repaired errors was always reported as clean, and adds tests and an updated setup guide.",
+      "category": "fix",
+      "summaryHash": "f32fe5a57472736241b9abd873233d32dea50f7c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1426,
+      "title": "Deleting a profile asks about its OpenAstro Guider profile and deletes it reliably (§63.4)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1426",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T19:48:39Z",
+      "additions": 2267,
+      "deletions": 233,
+      "changedFiles": 30,
+      "labels": [],
+      "summary": "When you delete a profile, the confirmation now asks whether to also delete the matching profile in the OpenAstro Guider, along with its guide calibration and dark library, and a short message afterwards says what happened. Before, that cleanup ran silently and almost always failed because the guider refuses deletes while its equipment is connected, so old guider profiles piled up unnoticed. Now the app briefly disconnects the guider's equipment to do the delete and reconnects it. It never interrupts active guiding: if the guider is busy or offline, the delete waits and runs automatically the next time it can. The checkbox is on by default but off when another profile shares the same guider profile. The work was tested automatically, but the author notes a check on real hardware is still to be done.",
+      "category": "feature",
+      "summaryHash": "51ed25f9c2b7f5875e9c0ae8e0d093b023900237"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1425,
