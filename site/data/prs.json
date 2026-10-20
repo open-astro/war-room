@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T04:53:00.209Z",
+  "generatedAt": "2026-10-20T05:22:33.291Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1416,
+      "title": "Bundle the multi-core ASTAP solver in the server deb (#1136)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1416",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T04:58:20Z",
+      "additions": 338,
+      "deletions": 87,
+      "changedFiles": 34,
+      "labels": [],
+      "summary": "The server package now comes with its own built-in plate solver (the tool that works out where the telescope is pointing from a photo of the sky), so users no longer have to install a separate Debian package for it. This bundled version is the project's own faster copy that uses every processor core, and on the test hardware it cut solve times roughly in half, for example from about 7 seconds to about 3 seconds when the starting guess is far off. Existing setups that point at the old standard solver locations are switched over to the bundled one automatically, while custom locations chosen by users are left alone. The build and test pipeline was also updated to compile the solver and check that it actually runs before a release goes out, and the license and deployment documents were updated to match.",
+      "category": "feature",
+      "summaryHash": "875f42301c022f23388867f86bf7ee26060804a1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1417,
