@@ -1,13 +1,65 @@
 {
-  "generatedAt": "2026-10-20T02:54:46.521Z",
+  "generatedAt": "2026-10-20T03:53:01.725Z",
   "repos": [
     "open-astro/AlpacaBridge",
+    "open-astro/astap",
     "open-astro/openastro-ara",
     "open-astro/openastro-guider",
     "open-astro/openastro-phd2",
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1416,
+      "title": "Add the decision-record gate: authorization, code owners and review rule",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1416",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T03:48:54Z",
+      "additions": 556,
+      "deletions": 6,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a gate so the project's written design rules (its \"decision records\") can't be changed quietly: any pull request that edits them now needs a collaborator to post an explicit approval comment tied to that exact version, and two named owners are made responsible for the records and the gate itself. Every pull request description must now list which records it touches, and the automated reviewer is told which rules apply to the changed code so it can flag violations. The final enforcement setting has to be switched on by an admin after merge. The PR also makes small wording clarifications to two existing records and fixes two minor issues in an existing docs-checking script, which the title doesn't mention. No product behavior changes.",
+      "category": "ci",
+      "summaryHash": "ee09fa8ebdae214f50a1054fc18fe22d0eb43499"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1415,
+      "title": "Add checkable Rules and Adoption rosters to every decision record",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1415",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T03:37:03Z",
+      "additions": 752,
+      "deletions": 69,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Reorganizes every design decision record so its rules are written as a numbered, clearly scoped list, and turns the scattered lists of which drivers follow which design into tidy tables. New automated checks now compare those tables with the actual code, so a driver change that isn't reflected in the docs fails the build instead of drifting out of date, as happened three times before. One rule is slightly reworded to also allow a device to refuse a new movement command rather than replacing the running one. Documentation and tooling only; the app itself doesn't change.",
+      "category": "docs",
+      "summaryHash": "f6a03034d30669167200bfac53da88ee2dfb5787"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1412,
+      "title": "Add SDK seams decision record and ByteChannel to designs to avoid",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1412",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T03:04:51Z",
+      "additions": 74,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only: adds a new decision record explaining why each camera and accessory vendor's software library is accessed through a stand-in layer that lets drivers be tested without real hardware, and lists the nine vendors already set up this way. It also adds a seventh entry to the \"designs to avoid\" record, explaining why the team chose not to build a shared fake connection layer for serial and network drivers and what evidence would justify revisiting that. No code or behavior changes.",
+      "category": "docs",
+      "summaryHash": "477c68aa9029f50a788c38e4b51e5cb0c99df230"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1410,
