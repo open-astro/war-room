@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T10:26:49.901Z",
+  "generatedAt": "2026-10-20T11:47:25.672Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1422,
+      "title": "Solver packages survive an index-path change; an unwritable path is refused up front (#1136)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1422",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T11:11:01Z",
+      "additions": 458,
+      "deletions": 16,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "The Data Manager now remembers where each plate-solving star database was installed. If you change the index folder in the settings, the older copy (which can be over a gigabyte) is still listed with its location shown and can be removed, instead of being silently forgotten on disk. Downloading again puts a fresh copy in the new folder, which is where the solver actually looks. Removing a database deletes every copy the app knows about, which the description notes can also delete a copy another profile still uses. Separately, if the app cannot write to the chosen folder, the download is refused right away with the folder and the reason, instead of failing partway through a large download.",
+      "category": "fix",
+      "summaryHash": "3ab573ef58052441983f008ac80720a3b8bc8ffc"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1421,
