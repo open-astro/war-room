@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T03:53:01.725Z",
+  "generatedAt": "2026-10-20T04:53:00.209Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1417,
+      "title": "Stop the decision-records check reading #NNNN as a record",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1417",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T04:26:39Z",
+      "additions": 9,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal fix to the project's review tooling. An automatic check confirms that a pull request's description lists every design decision record it changes, and it was mistaking issue references like \"#0005\" for record numbers, so it could be satisfied by accident. It now ignores numbers that follow a \"#\", and a misplaced line in the contributor instructions was moved back where it belongs.",
+      "category": "ci",
+      "summaryHash": "8d50a1d0982acea8494125207f2b66ecfcad08ab"
+    },
+    {
+      "repo": "open-astro/astap",
+      "number": 1,
+      "title": "astap_cli: use all cores for FITS loading, star detection and the search",
+      "url": "https://github.com/open-astro/astap/pull/1",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T04:14:28Z",
+      "additions": 920,
+      "deletions": 438,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "The command-line version of the ASTAP plate solver, which works out where in the sky a photo was taken, can now use all of a computer's processor cores instead of just one. On a 4-core Raspberry Pi this makes solving roughly two to three times faster, and only uses a little more memory. A new option lets users choose how many cores to use, and using a single core gives exactly the same results as before. The code also lets the number of cores be set through a system setting the description doesn't mention, and the changes to star detection and the sky search weren't included in the material provided, so only the faster image loading could be checked directly.",
+      "category": "feature",
+      "summaryHash": "112a1583d5cac4afbc6bcb11a1a62ef7c74da889"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1416,
