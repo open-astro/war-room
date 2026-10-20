@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T17:42:26.182Z",
+  "generatedAt": "2026-10-20T19:37:50.662Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1425,
+      "title": "Setup → Connect counts every device type, not just cameras",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1425",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-20T18:42:57Z",
+      "additions": 189,
+      "deletions": 78,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The setup step that checks for the AlpacaBridge now counts every kind of connected gear (mounts, focusers, filter wheels and so on), not just cameras. Before, a healthy setup showed a confusing amber message like \"2 device(s) advertised, connectivity not verified\" that only counted cameras; it now shows a green message such as \"offering 2 cameras, 1 mount and 1 focuser,\" noting that each device is checked when you actually connect it. This is a deliberate change from the earlier amber warning, made at the maintainer's request, and if one type of gear fails to report, the bridge is still shown as found. The built-in manual filter wheel is left out of the count, and new tests cover these cases.",
+      "category": "fix",
+      "summaryHash": "48537575ab5d902ac7ffa3f6a3ba2dbdc3d0d059"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1424,
