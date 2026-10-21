@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T21:19:01.870Z",
+  "generatedAt": "2026-10-21T22:18:29.790Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1441,
+      "title": "Camera-lost errors outside a run say to try again (#1436)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1441",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T21:45:30Z",
+      "additions": 170,
+      "deletions": 19,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "When the camera stops responding or isn't connected during autofocus, a plate solve, or the rotation readout outside of an imaging run, the error now tells you what to do next: check the USB cable and power (or connect the camera), then try again. The rotation readout on the Plan screen now shows \"Camera unavailable\" right away instead of wrongly blaming the sky with \"the field would not solve\". One behavior change: during a run, a flat set started with the camera disconnected now pauses the run and waits for you to fix it and press Resume, instead of quietly skipping that set and moving on.",
+      "category": "fix",
+      "summaryHash": "8e7995eeb1a2e9664f8d9911d1af7befd77e5da1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1498,
+      "title": "Fix the QHY CFW3 filter wheel to raise a failed move on Position",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1498",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T21:27:33Z",
+      "additions": 92,
+      "deletions": 34,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "If the QHY CFW3 filter wheel fails to reach a filter slot (for example it times out mid-move), asking the wheel for its position now reports an error instead of returning a slot number that may be wrong. The error stays until the next move command or a reconnect, so imaging software notices the failed move rather than carrying on with the wrong filter. The PR also adds a general project rule that every driver should report failed background operations this way. It was tested only against a simulated wheel, not real hardware.",
+      "category": "fix",
+      "summaryHash": "2cc96cfc4d51a77a03db4eedb2f5339b6fee798b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1484,
