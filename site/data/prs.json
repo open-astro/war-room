@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T23:37:16.722Z",
+  "generatedAt": "2026-10-21T00:36:23.731Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1447,
+      "title": "Fix Gemini Lite calibrator commands holding the state lock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1447",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T00:25:42Z",
+      "additions": 154,
+      "deletions": 33,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes the Gemini Flat Panel Lite so that asking for the panel's current brightness or on/off state gets an immediate answer, even while a command to turn the light on or off is still waiting for the panel to respond. Before, those status checks could stall for around a third of a second behind each command. If an on/off command fails, the previously reported state now stays in place, and a command that finishes while the panel is being disconnected no longer overwrites the reset state. The change adds tests for these timing cases but has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "441fd4b5bcd2e40a8afe1119a51bc15bfd2c64f3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1442,
+      "title": "Release 5.0.0-beta.6",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1442",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T23:59:13Z",
+      "additions": 153,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Prepares the 5.0.0 beta 6 release so testers can try the fixes made since beta 5 before the final 5.0.0 release. Those fixes include each device now owning its own serial port, which affects every serial-connected device, and corrections to ZWO mount longitude and position reporting after a slew. The version number and dates are updated, beta release notes are added, and the ZWO AM5 mount is now listed as validated, raising the supported count from 82 to 83 devices. This is version and documentation changes only, with no code changes, though the AM5 test was run on a build from before the serial port change.",
+      "category": "chore",
+      "summaryHash": "ccaef2b0cf3116adb2d5d4a74e04f362ac5482b4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1436,
+      "title": "Add decision 0016: getters never wait on device I/O",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1436",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-20T23:42:18Z",
+      "additions": 106,
+      "deletions": 27,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a new written project rule: requests for a device's current status should never have to wait while the server is talking to that device. It also updates the contributor guidelines and earlier design notes to match the rule. Camera drivers are allowed an exception until a measured slowdown shows they need to change. This is documentation only with no code changes, and it sets the standard that later fixes, such as the Gemini flat panel change, will be checked against.",
+      "category": "docs",
+      "summaryHash": "b2c9ab280fcd61932df4b0906a2841dbb045d01f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1428,
