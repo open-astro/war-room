@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T23:17:19.818Z",
+  "generatedAt": "2026-10-21T23:40:20.429Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1515,
+      "title": "Update ADR 0006 rule 3 to allow cancel() from outside the slot",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1515",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T23:23:54Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A documentation-only update to one of the project's written design rules for how telescope drivers stop background tasks. The rule now explicitly allows a new movement command to signal a running background task to stop, as long as it does not wait for that task to finish and the task double-checks it should stop before sending anything to the hardware. This matches what the OnStep telescope driver already does, so reviewers should stop flagging it as a possible rule violation. No code or behavior changed.",
+      "category": "docs",
+      "summaryHash": "3095ed0912944ace6bfef00fb0f8cf0eaedc16eb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1514,
