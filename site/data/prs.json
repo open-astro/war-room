@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T20:40:21.137Z",
+  "generatedAt": "2026-10-21T21:19:01.870Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1484,
+      "title": "Fix SynScan initiators to supersede the old slew body",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1484",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T20:55:17Z",
+      "additions": 1379,
+      "deletions": 193,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For Sky-Watcher SynScan telescope mounts, a new command such as slewing to a new target, parking, unparking, moving an axis, or stopping no longer has to wait for the previous movement to finish talking to the hand controller. Before, if the hand controller was slow or stuck, the new command could hang for several seconds until that old exchange timed out. Now the new command takes over right away, and movement commands are sent to the mount strictly in order, so an old, replaced movement can never send the mount a command after the newer one. The change also fixes two smaller problems during parking: a failed stop now properly ends a park so Park can be tried again, and a replaced park no longer counts as a failed status check. Celestron mounts are unchanged.",
+      "category": "fix",
+      "summaryHash": "0f5213c95bed46decbc9550f6cad1e384582dcfc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1506,
