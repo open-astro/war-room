@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T08:29:38.481Z",
+  "generatedAt": "2026-10-21T09:28:45.897Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1491,
+      "title": "Fix the iGuider CI flake and tighten router protocol edges",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1491",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T09:12:49Z",
+      "additions": 242,
+      "deletions": 141,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes an unreliable automated test for the iGuider camera that had been failing on the main branch and blocking the review bot, so the project's automatic checks should pass reliably again. It also makes the server stricter and more consistent when it gets malformed requests. Whole-number settings sent as JSON no longer accept fractions or out-of-range numbers, which before were quietly cut down or wrapped around. Two read-only lookup addresses now refuse anything other than a plain read, and bad attempts to change the server's description settings get a clear rejection. The team flags the first two changes as breaking for unusual clients, though normal device traffic and the web interface are not expected to be affected, and the design notes and changelog were updated to match.",
+      "category": "fix",
+      "summaryHash": "8cf942e075131adcd23da8af621c2bcfcfd2320f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1485,
