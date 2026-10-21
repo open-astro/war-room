@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T18:21:14.205Z",
+  "generatedAt": "2026-10-21T20:20:38.258Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,53 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1440,
+      "title": "Bulk delete always removes the files from disk (#1437)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1440",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T20:12:34Z",
+      "additions": 80,
+      "deletions": 19,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Deleting frames from the image library now always removes the image files and their previews and thumbnails from the drive, not just the library entry. Before, a delete that only removed the library entry left the file behind, and the server found it again at startup and the frame reappeared. Older apps that still say \"keep the file\" are accepted but ignored. The app now asks for file removal by default, so it also deletes files on older servers that still honour the setting.",
+      "category": "fix",
+      "summaryHash": "90caa65e98005cf87efb7aee23ed69ac4240cf08"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1503,
+      "title": "Add contract sweep cases for hooks, initiators and names",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1503",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T20:00:44Z",
+      "additions": 173,
+      "deletions": 11,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Tests only. Adds new shared checks that every device driver must pass. Asking a device for its firmware or software version must answer immediately even while it is still connecting. Telescope park and stop-moving commands must return within a second. Filter wheel names must not be blank and must be editable while the wheel is disconnected. A new driver that breaks one of these rules will now fail the test run instead of relying on reviewers to catch it.",
+      "category": "tests",
+      "summaryHash": "fdd9cb065be3c2f1a5b5629be9886b31e4617606"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1439,
+      "title": "Bias and darks after sky flats always wait for the lens cap (#1435)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1439",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T19:34:56Z",
+      "additions": 43,
+      "deletions": 8,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "When a calibration run shoots twilight sky flats and then bias or dark frames, it now always stops and asks you to put the lens cap on first, even if the request didn't ask for that pause. Before, these runs could skip the pause and take \"darks\" with the scope open to the sky, which ruins them. The pause message for sky-flat runs no longer mentions a flat panel, since those setups don't use one. The PR also fixes an unrelated flaky test that was breaking the build.",
+      "category": "fix",
+      "summaryHash": "a3b112e206cf4738aea29cd46697770612c5d724"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1432,
