@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T20:20:38.258Z",
+  "generatedAt": "2026-10-21T20:40:21.137Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1506,
+      "title": "Add contract sweep cases for ADR 0010 rule 6",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1506",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T20:35:44Z",
+      "additions": 690,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds automated tests to enforce an existing project rule: when the server's last reading from a device is somewhat old but the connection hasn't been lost, it should keep answering with that last reading instead of refusing. Each of the eight drivers that work this way (several telescope mounts and focusers) is now checked both for that case and for the case where the device has been silent long enough to count as disconnected. A new automated check also makes sure that list of drivers stays in sync with the project's design document. Until now only human review guarded this rule, and a violation slipped through in an earlier change. No driver or server behavior changes; the code changes only tests, a check script, and one documentation line.",
+      "category": "tests",
+      "summaryHash": "7f34bfd9f27f57702d56afa557b15b1ef4c89798"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1440,
