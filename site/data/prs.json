@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T17:15:30.040Z",
+  "generatedAt": "2026-10-21T18:21:14.205Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1432,
+      "title": "Calibration that matches the lights: flats, bias and darks filed beside them",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1432",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T17:49:25Z",
+      "additions": 4782,
+      "deletions": 511,
+      "changedFiles": 65,
+      "labels": [],
+      "summary": "Taking calibration frames (flats, bias and darks) is now much more automatic and is tied to the specific night's images. The app turns the rotator and cools the camera back to how the images were taken, works out flat exposures from two quick test shots, and reuses flats from earlier nights when the setup hasn't changed. The calibration frames are saved in the same folder as the images they belong to, and if the camera disconnects mid-run the session pauses and asks the user to check it instead of failing every remaining frame. It also fixes frame deletion so files are actually removed. One change not mentioned in the description: older saved flat plans that relied on the previous default settings will now use the new automatic brightness and exposure instead.",
+      "category": "feature",
+      "summaryHash": "3659cd9ed45ed51ef3933b72e840cf5f19f81235"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1502,
