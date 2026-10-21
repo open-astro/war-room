@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T01:35:26.327Z",
+  "generatedAt": "2026-10-21T02:34:37.653Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1455,
+      "title": "Fix ZWO EAF, CAA, dew switch and AM connect holding mutex_",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1455",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T02:02:20Z",
+      "additions": 1427,
+      "deletions": 293,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Four ZWO devices (the EAF focuser, the CAA rotator, the dew heater switch and the AM mount) now answer basic questions such as their name and ID right away, even while they are in the middle of connecting or talking to the hardware. Before, a client asking for the device name during a connect could be stuck waiting for the whole connect to finish. Disconnecting now also waits for any exchange already in progress instead of cutting the device off mid-conversation, and a disconnect that happens during a status read is no longer counted as a connection problem. The change also stops a location or guide-speed setting made during the mount's connect from being overwritten, and it adds tests and notes. The visible code matches the description; most of the rotator, switch and mount changes were not shown in the trimmed diff.",
+      "category": "fix",
+      "summaryHash": "66c1ec36a98505c7a2937215e1f2ee69023d8515"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1431,
+      "title": "A device AlpacaBridge has to search for connects on the first try",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1431",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T01:43:11Z",
+      "additions": 252,
+      "deletions": 17,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "Devices that the bridge has to hunt for, such as a flat panel or power hub on automatic port detection or an iOptron mount found over the network, should now connect on the first try instead of sitting on \"Connecting…\" for minutes. That search can take 8 to 13 seconds, but Ara gave up after 5 and sent a second request, which restarted the search. Now a connect gets up to 60 seconds with a single request, and the automatic recovery keeps waiting while a connect is still in progress. The trade-off is that a device that never answers now takes up to a minute to show an error, and the fix has not yet been checked on the real hardware.",
+      "category": "fix",
+      "summaryHash": "20c816634cb417658962d9d2a2923dc84241a60d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1451,
