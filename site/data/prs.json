@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T06:31:12.048Z",
+  "generatedAt": "2026-10-21T07:30:25.278Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1481,
+      "title": "Record ASCOM action casing, DeviceState and telescope rules in docs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1481",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T06:57:36Z",
+      "additions": 23,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only: the guidance that AI agents follow when writing and reviewing telescope device drivers now includes several official astronomy-equipment standard rules it was missing, taken from the official ASCOM docs. The new rules cover how certain device commands and status reports should behave, how a rotator remembers its calibration, how a mount calculates star time, and how a mount should respond when told to stop moving. One wrong claim was also fixed: a roughly five-second disconnect time limit comes from one specific testing tool, not from every program that talks to the devices. Nothing about how the software runs has changed; the aim is for future drivers to get these rules right the first time instead of being caught in review.",
+      "category": "docs",
+      "summaryHash": "2618fdbb315a1d7c848315eab984a4f41332984f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1464,
