@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T02:34:37.653Z",
+  "generatedAt": "2026-10-21T03:33:51.277Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1429,
+      "title": "OnStep: re-send a running MoveAxis before OnStepX's guide time limit ends it (#1378)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1429",
+      "author": "kern2011",
+      "mergedAt": "2026-10-21T02:55:42Z",
+      "additions": 945,
+      "deletions": 140,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On OnStep telescope mounts, holding a slew button in an app no longer makes the mount stop by itself after about 10 seconds. The mount's firmware ends manual moves after a short time limit, so the bridge now repeats the move command every 7 seconds until the user lets go. It only does this while the mount still reports the move as running, and never within 1 degree of the horizon or overhead limits, which the firmware only enforces at the moment of crossing. The app's \"is moving\" indicator now also turns off when the mount ends a move on its own; the change additionally moves the driver's internal timers onto a shared clock so tests can run without real waiting, which the description mentions only in passing.",
+      "category": "fix",
+      "summaryHash": "e6e4df4846b44c7301768336498967f1efa22d1d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1455,
