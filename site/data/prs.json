@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T07:30:25.278Z",
+  "generatedAt": "2026-10-21T08:29:38.481Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,74 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1485,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1485",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T08:14:33Z",
+      "additions": 451,
+      "deletions": 591,
+      "changedFiles": 149,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings the finished 5.0.0 release back into the main development line, so the project's main copy now says version 5.0.0 instead of 4.2.0 and shows the dated release notes. It removes the 143 pending release-note entries that 5.0.0 already shipped, so they won't be announced again in the next release. One note about SynScan and QHY settings now needing whole numbers was kept for 5.1 so it isn't lost. There are no software behavior changes, only version, release-note, and device test-report files.",
+      "category": "chore",
+      "summaryHash": "fee9692b260b1704e6310b7766194524da719c70"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1483,
+      "title": "Record the 2026-10-21 ASCOM conformance decisions in ADRs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1483",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T07:57:58Z",
+      "additions": 135,
+      "deletions": 11,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This writes down decisions the maintainer made about following the ASCOM astronomy standard more closely, before any code is changed. Sky-Watcher mounts will use one clock for everything and will refuse a time change from an app when the device's clock is already synced over the internet. A rotator's \"sync\" will report an error if its setting can't be saved, and the saved setting will be cleared when the rotator is removed. Two new proposals give every device a permanent unique ID and let Sky-Watcher mounts connect before a location is set. This is documentation only; the software still behaves the old way until follow-up work lands.",
+      "category": "docs",
+      "summaryHash": "2008e35213ff600716fdc47daff481edf0c421f3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1482,
+      "title": "Record the HTTP departures from the Alpaca API listings in ADR 0007",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1482",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T07:41:18Z",
+      "additions": 20,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds a single documented list of the places where AlpacaBridge's web server answers differently from the official Alpaca standard on purpose, each with its reason. Examples include blocking suspicious browser requests and rejecting oversized or malformed requests. It also adds a review rule: any new departure from the standard must be added to this list in the same change. This is documentation only and changes no behavior.",
+      "category": "docs",
+      "summaryHash": "9d98d02eba4047ba01004612ec1b586810118d6e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1469,
+      "title": "Release 5.0.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1469",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T07:30:17Z",
+      "additions": 1530,
+      "deletions": 1672,
+      "changedFiles": 151,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is the official 5.0.0 release, after six test (beta) versions. Users who don't opt into betas will now get 5.0.0 instead of 4.2.0, along with new plain-language release notes and a dated changelog. Four devices (a ZWO focuser, two ZWO cameras and a Sky-Watcher mount) were retested on the final build and passed, with the mount's location data altered for privacy. The release went out before the usual waiting period, with the maintainer's approval. Several drivers changed during the beta, including SynScan, Celestron, OnStep, iOptron, Gemini and WandererAstro, and were not retested.",
+      "category": "chore",
+      "summaryHash": "68da47a26c9203099e40a268876b6b84117618c2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1481,
