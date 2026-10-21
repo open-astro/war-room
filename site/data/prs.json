@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T03:33:51.277Z",
+  "generatedAt": "2026-10-21T04:32:56.068Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1467,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1467",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T04:21:57Z",
+      "additions": 805,
+      "deletions": 36,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Brings the latest fixes from the 5.0 beta branch (beta.6) into the main development line, so future releases include them. The main user-facing change is for ZWO AM mounts: the site longitude is now converted correctly between the mount's west-positive convention and the standard east-positive one, the driver no longer retries a rejected slew with a flipped longitude, and a slew is only reported as finished once the final position has been read. It also adds a passing validation report for the ZWO AM5, raising the advertised count to 91 validated devices. One new piece of merge logic means that if position reads keep failing after a slew, a new slew may still be allowed with tracking off until the next good read.",
+      "category": "fix",
+      "summaryHash": "4789f9ef23c1cf6d23aa7c5e01eabda0ea47b87e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1456,
+      "title": "Port SerialLink (#1435) to main's serial wrappers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1456",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T03:55:29Z",
+      "additions": 5299,
+      "deletions": 2466,
+      "changedFiles": 90,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Brings the fix for drivers interfering with each other on shared USB serial adapters into the main development line. Before this, one device's auto-detect check could open and reconfigure another device's live connection, and disconnecting could then hang. Now every serial driver opens its port through one shared mechanism that claims the port, turns away other drivers by naming which device holds it, and makes short scans wait their turn. The change also covers the Celestron CGX mount and AUX focuser, which exist only on the main line and now require exclusive use of their port, and it fixes a related bug where a CGX reconnect could get stuck waiting on another device's scan. A new automated check stops any driver from opening a serial port the old, unprotected way.",
+      "category": "fix",
+      "summaryHash": "300b072f290424259bce822f299001ac88295ac5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1429,
