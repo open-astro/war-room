@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T16:22:47.388Z",
+  "generatedAt": "2026-10-21T17:15:30.040Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -22,9 +22,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Celestron focus motor driver no longer talks to the motor when someone simply asks for its position or whether it is moving. It now always answers from the latest regularly refreshed reading, so these questions cannot stall the server or count toward the safety check that flags a broken connection. When connecting, the driver now tries its first reading twice so there is usually an answer right away; if both tries fail, questions get a brief \"not available yet\" for up to a quarter second. It also fixes a timing problem where a question asked during a disconnect and reconnect could wrongly say the motor was not calibrated; it now says \"not connected\" instead. Not yet tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "15da12b5935c9bc54a32cf76955934753d33fe43"
     },
     {
       "repo": "open-astro/AlpacaBridge",
