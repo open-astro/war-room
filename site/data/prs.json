@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T04:32:56.068Z",
+  "generatedAt": "2026-10-21T06:31:12.048Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1464,
+      "title": "Add iOptron iGuider guide camera driver (UVC over V4L2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1464",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T06:15:36Z",
+      "additions": 2976,
+      "deletions": 13,
+      "changedFiles": 34,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now run iOptron's iGuider guide camera, so owners can guide with programs like PHD2 or NINA straight from the small computer at the telescope. It appears in the web setup page as its own \"iOptron iGuider\" choice, separate from iOptron's main imaging cameras to avoid confusion. Exposures snap to the camera's fixed set of lengths (0.01 to 3.5 seconds), and the driver works around the camera's habit of not restarting after a pause by keeping the video feed running the whole time. It also recovers on its own from brief stalls and asks for a fresh connection if the camera is unplugged. The visible code matches the description; most of the driver itself was too large to include here, so those details come from the description and project notes.",
+      "category": "feature",
+      "summaryHash": "0254dca3bce05e4db168e0a314051127f96ab028"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1467,
