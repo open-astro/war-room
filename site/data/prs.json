@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T22:18:29.790Z",
+  "generatedAt": "2026-10-21T23:17:19.818Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1514,
+      "title": "Fix QHY CFW3 move worker to run on an AsyncOperation slot (#1510)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1514",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T23:03:15Z",
+      "additions": 97,
+      "deletions": 70,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes rework of how the QHY CFW3 filter wheel driver waits for the wheel to finish moving. The wait now uses the project's standard background-task mechanism instead of a hand-rolled one, so it shuts down cleanly when the wheel is disconnected. Users should see the same behavior as before, with one small improvement: if that background wait ever fails to start, the wheel's position now recovers instead of staying stuck as \"moving\" forever. Despite the \"Fix\" title, this is mostly a restructuring, and it was not tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "5365c6c4d6b100610dc00e76d6dcc82e21e8b331"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1442,
+      "title": "An all-zero flat probe leaves the 12-bit scaling undecided (#1438)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1442",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T22:24:21Z",
+      "additions": 54,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "When capturing flat frames, the app takes test shots to check whether the camera stretches 12-bit data to look like 16-bit data. A completely black test shot no longer counts toward that decision. The first shot with any light now decides it once for the whole session, and later shots are not re-checked. The description says nothing changes for users, but one of the new tests shows a different result in a rare case: a later test shot that happened to look stretched used to restart the calculation and pick a very different exposure (32.5 s instead of 2.05 s), and that no longer happens.",
+      "category": "fix",
+      "summaryHash": "a20fe8c8b40054ac42c70bb991c685d8da550303"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1441,
