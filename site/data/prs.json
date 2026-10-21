@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T01:00:26.749Z",
+  "generatedAt": "2026-10-21T01:35:26.327Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1451,
+      "title": "Quick pre-flight by default; the review waits for CI's build and test jobs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1451",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T01:11:47Z",
+      "additions": 315,
+      "deletions": 113,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The local check that contributors run before submitting a change now runs only the fast checks by default and finishes in seconds. Before, it could take up to an hour. The slow build and test steps still run in the shared automated testing on every change, and contributors can still run them locally if they ask for the full check. The automated AI review now waits for those build and test results and stops early if they fail, so no paid review is spent on a change that is already broken. The PR also fixes the local check on Macs, where it used to crash partway through, and updates the team's instructions and docs to match.",
+      "category": "ci",
+      "summaryHash": "aee3ee691c9109f614e5ecc79930d9f223f37685"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1430,
+      "title": "A reconnect clears degraded faults left by an earlier daemon",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1430",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-21T01:11:29Z",
+      "additions": 34,
+      "deletions": 10,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "When a device reconnects, its old \"degraded\" warnings are now cleared along with its old \"disconnected\" warnings. Before this, the focuser and rotator status indicators could stay amber for hours after a USB dropout even though both devices were working fine. That happened because the background service restarted in the middle of the problem, and nothing was left to mark the warnings as resolved. A device that is still having trouble will raise the warning again within a few seconds, and a new test confirms that only the reconnected device's warnings are cleared.",
+      "category": "fix",
+      "summaryHash": "31e710c4e12eb757d1a967a7915fe6114c77a81b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1450,
