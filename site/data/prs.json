@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T11:27:06.556Z",
+  "generatedAt": "2026-10-21T14:24:28.751Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1499,
+      "title": "Add a contract sweep case for DeviceState value types",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1499",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T14:05:21Z",
+      "additions": 118,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds an automated test that checks every telescope, camera, focuser and other device driver reports its live status values in the right format, such as whole numbers where the astronomy standard expects whole numbers. A camera driver once sent a progress value in the wrong format for a year without anyone noticing, because the standard test tool only shows this as a quiet note. This change only adds a test: all 17 drivers checked on a regular PC already pass, so no driver behavior changed. The test can't check one telescope status value on three telescope drivers, because their simulated connections can't report it.",
+      "category": "tests",
+      "summaryHash": "5b919765d0a7271689fa4d079529795335c191f4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1497,
+      "title": "Fix the review wait step to treat only success as green",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1497",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T13:47:30Z",
+      "additions": 134,
+      "deletions": 17,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Tightens the automated code-review step so it only starts when every required build and test job actually passed. Before, a job that was skipped counted as passing, so a review could start on code with a failing build. The review job also now gets 90 minutes instead of 75, so a slow build no longer leaves too little time to finish. A new check makes sure these time limits stay in sync wherever they are written down. This is internal tooling only and does not affect users.",
+      "category": "ci",
+      "summaryHash": "80ff429700678b60c0a5c7272b4c6dd45a600e0e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1496,
+      "title": "Fix the ConformU report check message to cite the right rule",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1496",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T13:26:47Z",
+      "additions": 5,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes the error message shown when a driver's standard test report is not clean. It now points contributors to the instructions that actually explain the rule, instead of a document that doesn't mention it. Only the message text changed; the check itself works exactly as before.",
+      "category": "fix",
+      "summaryHash": "d70e1bf417fc8025597d1b8c1bf40c1ee832be07"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1493,
