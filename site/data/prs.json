@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T09:28:45.897Z",
+  "generatedAt": "2026-10-21T11:27:06.556Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1493,
+      "title": "Persist a GUID UniqueID per device and make rotator offsets durable",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1493",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T11:19:12Z",
+      "additions": 1284,
+      "deletions": 422,
+      "changedFiles": 84,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Every device set up in AlpacaBridge now gets its own permanent, randomly generated ID that is saved with its settings. Before, most devices were named after their slot number, so two different setups could report the same ID and renumbering a device changed it. Rotators now store their calibration offset under this permanent ID, and a calibration that cannot be saved is now refused instead of quietly appearing to work. Offsets left behind by removed rotators are cleaned up at the next start, so a new device in the same slot starts fresh instead of inheriting an old offset. Existing setups get their new IDs automatically on first start, and any saved rotator offsets carry over.",
+      "category": "fix",
+      "summaryHash": "7abdfef976f155c2e4e322de55cabda1b9ef5116"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1491,
