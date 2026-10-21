@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T14:24:28.751Z",
+  "generatedAt": "2026-10-21T15:23:42.898Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1501,
+      "title": "Add a self-test to ci_preflight.sh for bash 3.2 support",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1501",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T15:08:07Z",
+      "additions": 118,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the project's developer tooling. The script developers run before pushing, which repeats the automated checks locally, can now test itself, and the automated checks now run that self-test on every pull request. It guards the earlier fix that let the script work with the older shell that comes with Macs, so a later edit that breaks it on a Mac gets caught before merging. The automated run uses a newer shell rather than the actual Mac one, so it mainly relies on scanning the script for newer-only features.",
+      "category": "ci",
+      "summaryHash": "469e6564e3788259aecd0846cdd1730f1deefbfa"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1499,
