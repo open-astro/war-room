@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T00:36:23.731Z",
+  "generatedAt": "2026-10-21T01:00:26.749Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1450,
+      "title": "Add decision 0017: serial port ownership",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1450",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T00:49:16Z",
+      "additions": 85,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds a written rule for how the telescope server's device drivers share serial ports. It sets out that every driver should go through one shared way of opening a port, so one driver checking for its device can no longer grab or reconfigure a port another driver is already using. That was the cause of earlier connection failures, already fixed on the 5.0 release line. This change is documentation only: the main development line does not follow the rule yet, and every serial driver there is listed as waiting on a separate follow-up change.",
+      "category": "docs",
+      "summaryHash": "d14990cb7e111d1c3cd1bc26091900e32d987c71"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1447,
