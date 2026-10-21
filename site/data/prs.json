@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T15:23:42.898Z",
+  "generatedAt": "2026-10-21T16:22:47.388Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1502,
+      "title": "Fix Celestron focus motor getter polling and reconnect races",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1502",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T15:26:32Z",
+      "additions": 158,
+      "deletions": 18,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1501,
