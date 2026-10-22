@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T05:12:03.383Z",
+  "generatedAt": "2026-10-22T07:15:02.990Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1525,
+      "title": "Add GPhoto mirror lock-up sequence and long-exposure NR setting",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1525",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T06:12:39Z",
+      "additions": 1112,
+      "deletions": 89,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "DSLR cameras with mirror lock-up turned on in their own menu can now take exposures through AlpacaBridge. Before this, every shot on those Canon cameras failed after a one-minute wait. The driver now detects the setting and fires the shutter in two steps with a short, adjustable pause between them, and gives a clear error telling the user to switch the setting off if a camera can't support this. The web setup page also gains an option to turn the camera's long-exposure noise reduction on or off, which otherwise doubles the time per frame, though in practice this only works on Nikon cameras and Canon users still need to set it in the camera menu.",
+      "category": "fix",
+      "summaryHash": "67cbcc7f6a3aadec982c0472a01dc00edc31074b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1504,
