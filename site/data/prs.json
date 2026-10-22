@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T03:20:51.047Z",
+  "generatedAt": "2026-10-22T04:13:01.427Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1511,
+      "title": "Fix serial line registry lock held across tcsetattr",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1511",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T03:54:58Z",
+      "additions": 120,
+      "deletions": 11,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When several devices are plugged in over serial at once, one slow or stuck USB-serial adapter could freeze connecting or disconnecting the other, unrelated devices. This happened because all ports shared a single lock that stayed held while waiting on the slow adapter. Now the lock is held only long enough to copy the saved settings, so a misbehaving adapter can no longer hold up the rest. The change comes with a new test that simulates a stuck adapter, and the design notes were updated to match; it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "8ab7a1d71a2df3f1869e9933c6081210933d2f85"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1512,
+      "title": "ZWO AM: pin GOTO ownership until arrival publication",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1512",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-22T03:21:42Z",
+      "additions": 98,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds a new automated test for ZWO AM mounts and does not change how the software behaves. The test checks that while a mount is finishing a move but its final position cannot yet be read, a client can still redirect it to a new target. It also checks that redirecting is refused once the move is reported as finished, or as soon as someone explicitly turns tracking off. The aim is to guard against a recent change accidentally breaking this rule; the test uses a simulated mount, not real hardware.",
+      "category": "tests",
+      "summaryHash": "2c82e04d13ea83fe0c3497497052eb5b1b4f7f34"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1505,
