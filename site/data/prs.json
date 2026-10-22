@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T14:04:37.442Z",
+  "generatedAt": "2026-10-22T15:03:48.127Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,41 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1533,
+      "title": "Move the Sky-Watcher position model onto the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1533",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T14:41:15Z",
+      "additions": 77,
+      "deletions": 24,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Sky-Watcher telescope driver now uses the same internal clock for estimating where the telescope is pointing as it already used elsewhere, so automated tests can fast-forward time and check that the estimated position moves correctly. In real use nothing should change, because that clock is the normal system clock. The change also includes a small tweak so that when two position readings carry exactly the same timestamp, an older background reading no longer overwrites a newer direct one. Several tests were updated or added, and some needless waits were removed; it has not been tried on real hardware.",
+      "category": "refactor",
+      "summaryHash": "1aae910d43cbb8daa32abdf4f84b3f01743533d0"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1434,
+      "title": "build: Bump the nuget group with 2 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1434",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-22T14:37:51Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine automated update of two supporting software libraries used for the project's web API documentation to their latest minor versions, along with the matching license list. No direct change to how the project behaves is expected.",
+      "category": "chore",
+      "summaryHash": "3b591d7501b1f3cff6d64c8cafe66ccc44da773b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1433,
