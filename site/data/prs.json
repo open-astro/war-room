@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T12:06:25.329Z",
+  "generatedAt": "2026-10-22T13:05:32.301Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1532,
+      "title": "Answer 400 for a wrong verb on Alpaca management paths",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1532",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T12:54:15Z",
+      "additions": 34,
+      "deletions": 29,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When an app sends the wrong kind of request to three of the server's standard management addresses (the ones that list API versions, list connected devices, and describe the server), the server now replies with a 'bad request' error and a short plain-text message. Before, it replied with a 'method not allowed' error and a structured error message. The new reply is what the official Alpaca protocol specifies, so client software gets the answer it expects. Management addresses that exist only in AlpacaBridge keep the old behavior, and the tests, changelog and design notes were updated to match.",
+      "category": "fix",
+      "summaryHash": "cf81e4d489ff31d4b78032d41233561d633a800b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1495,
