@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T07:15:02.990Z",
+  "generatedAt": "2026-10-22T08:09:36.386Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1529,
+      "title": "Cache the Claude Code CLI in the review workflow",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1529",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T08:08:15Z",
+      "additions": 61,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated pull request review now keeps a saved copy of the Claude Code tool it needs, so it no longer downloads the tool fresh on every run. Earlier, a review failed when the download site was busy and refused the request. If the saved copy is missing, the review now tries the download up to five times and waits longer between tries. It also checks that the tool is the expected version before the review starts. This is internal build tooling only and does not change the software that runs at the telescope.",
+      "category": "ci",
+      "summaryHash": "02a868b741f3081052e817a8c8dffa73bc954f32"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1525,
