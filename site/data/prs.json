@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T15:03:48.127Z",
+  "generatedAt": "2026-10-22T16:02:53.342Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1494,
+      "title": "OnStep: Park and FindHome stop any motion first and read the mount's answer (#1430)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1494",
+      "author": "kern2011",
+      "mergedAt": "2026-10-22T15:20:18Z",
+      "additions": 1365,
+      "deletions": 42,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On OnStep mounts, asking the telescope to park or go home now actually works even if the mount is still moving: it first stops any motion, waits for the mount to come to rest, and then parks or homes, retrying briefly if the mount says it is still settling. Before this, a park or home request sent during or just after a manual move reported success but the mount silently did nothing, which was seen on real hardware. The mount's own refusal reasons, such as no park position being set, are now passed back to the user instead of being ignored, and the request still returns right away as the standard requires. The driver logic itself was too large to show in the provided changes, so that part is taken from the description, while the visible changes confirm the new reading of the mount's answers, extensive new tests, and updated documentation.",
+      "category": "fix",
+      "summaryHash": "194035836d7e2661ccb17fec88866b8f5f5b4f0b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1533,
