@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T04:13:01.427Z",
+  "generatedAt": "2026-10-22T05:12:03.383Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1504,
+      "title": "Fix CGX stop progress reads blocked by lost-ACK exchanges",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1504",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-22T04:35:35Z",
+      "additions": 15,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a lag on the Celestron CGX telescope where, after a user asked the mount to stop or unpark, asking \"is it still moving?\" could hang while the driver was busy talking to the mount. Now that question is answered right away with \"yes, still stopping\" instead of waiting behind the stop commands, so apps stay responsive and see the in-between state. The actual stop behavior is unchanged. The tests were strengthened to check this reliably, and a short note was added to the docs and changelog.",
+      "category": "fix",
+      "summaryHash": "c05e668ca587dd0f8677eb399bd92516bc8f695d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1511,
