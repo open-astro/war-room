@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T19:00:37.255Z",
+  "generatedAt": "2026-10-22T20:58:40.641Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1444,
+      "title": "A connected device shows its details at once, not after the 15 s poll",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1444",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-22T20:07:10Z",
+      "additions": 378,
+      "deletions": 5,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "When you connect a device, or remove one and connect it again, its details like sensor info, readings and ports now show up right away instead of after a wait of up to 15 seconds. The delay happened because the server said a device was connected before it had finished reading the device, and the app only checked again on its regular 15-second check. Now every device type sends a second notice once its details are ready, and the app no longer misses a notice that arrives while it is busy reading. The code changes shown match the description, though the switch, mount, safety monitor and app-side changes were cut from the diff and could not be checked directly.",
+      "category": "fix",
+      "summaryHash": "ec65a2bc941b6c46e9651f6aa92a4a13bb9aed7a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1443,
