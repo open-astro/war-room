@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T23:40:20.429Z",
+  "generatedAt": "2026-10-22T00:16:26.880Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1513,
+      "title": "Fix disconnected getters and Gemini flat panel state (#1478)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1513",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-21T23:44:14Z",
+      "additions": 240,
+      "deletions": 58,
+      "changedFiles": 26,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Several device drivers now follow the ASCOM rules more closely. Some telescopes, focusers and flat-panel covers used to answer certain questions while unplugged or disconnected; they now report a clear \"not connected\" error instead. The Gemini flat panels also give more accurate readings: brightness shows 0 when the light is off right after connecting, and the cover's \"moving\" signal now always agrees with its reported state. The Gemini focuser now reports an error when it can't read its temperature-compensation setting, instead of quietly saying it is off. The parts of the code shown match the description, but the changes still need to be checked on real hardware.",
+      "category": "fix",
+      "summaryHash": "d1303c94ee39941429bc7998f048edffe8845431"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1515,
