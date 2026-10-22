@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T01:15:38.854Z",
+  "generatedAt": "2026-10-22T01:53:43.431Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1517,
+      "title": "Keep a decision-record authorization until the records change",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1517",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T01:30:57Z",
+      "additions": 174,
+      "deletions": 17,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Changes to the project's decision records (the documents that capture key design choices) still need a collaborator's written sign-off, but that sign-off now stays valid across later pushes as long as the records themselves haven't changed. Before, every new push needed a fresh sign-off, even one that only touched code or tests, which the maintainer found too tedious. Any push that edits, adds or removes one of those records still needs a new sign-off. The PR also fixes a smaller issue where the automated review checker failed if its closing \"Issues found\" line was written in bold, italics or with a period at the end, and it updates the related docs and pull request template to match.",
+      "category": "feature",
+      "summaryHash": "47a00f5786953f347cb0afc1275c06e69622831c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1519,
