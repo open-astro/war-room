@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T20:58:40.641Z",
+  "generatedAt": "2026-10-22T23:56:11.447Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1539,
+      "title": "Fix SynScan tick-hunt wait to read the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1539",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T23:54:18Z",
+      "additions": 97,
+      "deletions": 15,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The SynScan telescope driver now uses the project's shared timing system for a short wait it does while finishing a GOTO, instead of the computer's clock directly. Real-world timing stays the same, but a stop request now ends that wait right away, and the wait can be checked by an automated test that runs on simulated time. This completes SynScan's move to the shared timing system, and the project's design record was updated to say so. It has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "32ca9f310e66d40d623b0f1b3d075bf4f2e30a60"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1535,
+      "title": "OnStep: MoveAxis re-send follow-ups from the #1429 review (#1458, #1459, #1460, #1461)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1535",
+      "author": "kern2011",
+      "mergedAt": "2026-10-22T23:30:10Z",
+      "additions": 601,
+      "deletions": 49,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes several leftover problems with how OnStep mounts keep a manual move going (the driver repeats the move command every 7 seconds so the mount doesn't time out). If that repeat can't be started, the driver now stops the axis and reports an error, instead of leaving the mount moving with nothing keeping it going. On firmware that never reports movement status, it also stops checking the mount every 7 seconds for no reason. It also fixes a stall where asking for the firmware version during connect had to wait for slow mount replies, and makes a test-only timing mix-up go away. Many new tests cover these cases.",
+      "category": "fix",
+      "summaryHash": "1114bc14d9be88b3286ee582055230a9761f2e21"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1534,
+      "title": "Fix ZWO AM telescope transport isolation",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1534",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-22T23:08:51Z",
+      "additions": 859,
+      "deletions": 489,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When more than one ZWO AM telescope is set up, each one now has its own separate connection, instead of all of them sharing one. Before, connecting, failing to connect, or disconnecting one entry could cut off or take over another telescope's working link. Looking up network addresses was also made safe when several connections start at once, and two entries still can't claim the same serial port. The change passed ten new isolation tests, the full test suite, and a conformance check on a real AM5 over USB. It was not tested with two physical mounts at once.",
+      "category": "fix",
+      "summaryHash": "fd2131b2f102109db8f44ff900998444be1f1d9c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1444,
