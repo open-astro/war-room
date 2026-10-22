@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T16:02:53.342Z",
+  "generatedAt": "2026-10-22T19:00:37.255Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1443,
+      "title": "A local AlpacaBridge is addressed as localhost, whatever network the box is on",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1443",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-22T18:08:32Z",
+      "additions": 787,
+      "deletions": 125,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "Ara now remembers equipment plugged into its own board as \"this machine\" instead of by whatever network address it had when the gear was first found. Before, moving the box between networks (field router, home Wi-Fi, a phone hotspot) left every device saved under an old address, so each one hung for about a minute at startup and showed as offline even though it was sitting right there. Existing setups repair themselves on the first startup after the update, though a device whose identity the bridge software has since changed (such as the dew heater) must be picked once more by hand. The same change also updates the bundled plate-solving tool to a sturdier multi-core version, and the check that stops the guide camera and main camera from being set to the same device still works with the new local naming.",
+      "category": "fix",
+      "summaryHash": "d31a1fb62577a2fafa98512a7b1a9694bbebc625"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1494,
