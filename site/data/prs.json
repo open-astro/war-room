@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T11:07:05.295Z",
+  "generatedAt": "2026-10-22T12:06:25.329Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1495,
+      "title": "Use one Sky-Watcher time source and connect without a site",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1495",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T11:26:45Z",
+      "additions": 1088,
+      "deletions": 988,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts can now connect before the observing location is entered, instead of refusing the connection. Anything that depends on the location, such as pointing, tracking, slewing and guiding, gives a clear error naming what is missing until both latitude and longitude are set, and it starts working as soon as they are, with no reconnect needed. The mount's reported date and time now come from the same clock as its sky-position math, so the readings always agree; on computers that set their own time from the internet, apps can no longer override the date. It also fixes the web dashboard showing each device's ID twice, and changes the published test report so it removes the site location entirely instead of rounding it.",
+      "category": "fix",
+      "summaryHash": "35403edcc8abca5e1c1fdf7365ae98a3b14226d8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1518,
