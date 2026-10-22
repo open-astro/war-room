@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T01:53:43.431Z",
+  "generatedAt": "2026-10-22T03:20:51.047Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1505,
+      "title": "Use the injected task clock for CGX continuity checks",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1505",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-22T02:16:25Z",
+      "additions": 218,
+      "deletions": 23,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX mount driver now uses its own adjustable internal clock, instead of the computer's real clock, when it checks that the mount hasn't moved between a disconnect and a reconnect. That means tests can now simulate the time limit running out, or the mount settling, without actually waiting. Most of the change is new tests, test cleanup helpers and documentation updates, and normal behavior on real hardware should be unchanged. Some related timing work is still open in a separate issue, and the change has not been tried on a physical mount.",
+      "category": "fix",
+      "summaryHash": "c51c01c4beed034066ca43ade1cd207632d84a69"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1517,
