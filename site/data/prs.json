@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T00:16:26.880Z",
+  "generatedAt": "2026-10-22T01:15:38.854Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1519,
+      "title": "Camera PercentCompleted raises outside Exposing; cooler members need the capability",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1519",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T01:07:03Z",
+      "additions": 661,
+      "deletions": 54,
+      "changedFiles": 23,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "All supported cameras now follow the official ASCOM camera standard more closely in two places. Exposure progress is now only reported while a picture is actually being taken; at other times the camera returns an error instead of a misleading 0% or 100%. Cameras without a cooler now say the cooler feature is not supported, instead of claiming the cooler is off or running at zero power. Player One cameras also now report a real error when they can't read cooler power, rather than quietly showing 0%. The code matches the description, and ToupTek and Altair cooler handling is left for later work.",
+      "category": "fix",
+      "summaryHash": "ca5ff1d91ebc67828ecd3d677d70db9f3c92a20d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1516,
+      "title": "Make the review bot account for every decision-record rule in scope",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1516",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-22T00:21:02Z",
+      "additions": 161,
+      "deletions": 21,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the automated code-review bot. Each review must now include a line for every project design rule that applies to the change, saying whether it passed, failed, or did not apply. A review missing any of those lines is not posted. The bot also now refuses to run when it can't work out which rules apply, which fixes reviews on the stable release branch that had been running without the rule list. Per the description, the new checks only take effect on reviews after this one was merged.",
+      "category": "ci",
+      "summaryHash": "85263e74dc2934637fa3faa1b15d6c815b43ff37"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1513,
