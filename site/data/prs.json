@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T08:09:36.386Z",
+  "generatedAt": "2026-10-22T11:07:05.295Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1518,
+      "title": "ZWO AM: serve telemetry without live getter reads and bound stale state",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1518",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-22T10:59:24Z",
+      "additions": 2180,
+      "deletions": 1207,
+      "changedFiles": 23,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO AM mount driver now answers status questions, such as where the telescope is pointing, whether it is moving or whether it is parked, from regularly collected readings instead of querying the mount on the spot. If the mount stops responding, it reports a clear error instead of old or guessed values. After three failed readings in a row the driver reports a communications fault but still lets emergency stop commands through, and after 30 seconds without recovery it treats the connection as lost until the user reconnects. Guiding pulses also no longer get held up waiting on slow position replies; this is flagged as a breaking change because apps may now see new errors, and the code changes match the description.",
+      "category": "fix",
+      "summaryHash": "e50bcc444c481392c1d416c62f9054187300a601"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1529,
