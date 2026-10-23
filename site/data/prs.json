@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T01:54:29.742Z",
+  "generatedAt": "2026-10-23T02:53:39.340Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1544,
+      "title": "Comment on issues that miss a type, priority or size label",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1544",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T02:00:50Z",
+      "additions": 320,
+      "deletions": 3,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "New issues on the project's issue tracker now get an automatic reminder comment if they are missing a type, priority or size label, so incomplete issues no longer slip past planning unnoticed. The single comment lists what is missing, updates itself as labels are added or removed, and disappears once all three are set. It never adds labels or closes anything, and it ignores closed issues and ones opened by bots. The bug report and feature request forms now also fill in the matching type label automatically, and the code matches what the description says.",
+      "category": "ci",
+      "summaryHash": "2113824371b2e922e9657d9e3969426d7f0d3c47"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1545,
