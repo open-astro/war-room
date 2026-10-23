@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T12:45:52.648Z",
+  "generatedAt": "2026-10-23T14:43:25.986Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1562,
+      "title": "Fix focuser getters failing before the first state frame",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1562",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T14:31:05Z",
+      "additions": 186,
+      "deletions": 47,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Four focuser drivers (Celestron, Gemini, Astroasis and QHY) now only report themselves as connected once they have actually received a first status reading from the device, so apps no longer get a confusing \"state not available yet\" error from a healthy focuser right after connecting. If the focuser does not answer two first readings in a row, connecting now fails cleanly and releases the device, instead of appearing connected with no data. This also fixes an automated stress test that had been failing at random on unrelated changes. QHY's part could not be fully built on the developer's machine, and none of it was tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "964d4e716aee96afbcfd2edc2e376a8ef6113124"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1563,
+      "title": "Fix remaining telescope spec-audit argument and state errors",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1563",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T14:05:50Z",
+      "additions": 406,
+      "deletions": 69,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Several telescope mount drivers now follow the ASCOM standard more closely and stop reporting made-up values. They no longer claim to correct for atmospheric refraction, they say the site elevation is unknown until it is set (instead of reporting 0 m), and they reject impossible sky coordinates when asked which side of the mount a target is on. On Celestron NexStar mounts, guiding pulses longer than about 25 seconds are now refused instead of being quietly shortened, and the mount's date is no longer filled in from the computer's clock when the mount cannot be read. This fixes only part of the original audit, and some apps may notice these changes in behavior.",
+      "category": "fix",
+      "summaryHash": "93ac37f350cf1d73d35778a526e94d0bfe5d52e6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1559,
