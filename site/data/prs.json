@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T15:06:18.795Z",
+  "generatedAt": "2026-10-23T16:41:58.331Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1568,
+      "title": "ci: publish the nightly .deb only after the optimized suite passes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1568",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T16:24:01Z",
+      "additions": 13,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The nightly test build that testers install is now published only after the full test suite has passed on the optimized version of the software. Before this, the two ran side by side, so a nightly could go out even when those tests failed, and that happened on October 23. If the tests fail now, nothing new is published and testers keep the previous nightly until the problem is fixed. The trade-off is that nightlies take longer, and a flaky test can hold them back.",
+      "category": "ci",
+      "summaryHash": "a0bf5bc021575a3c16beb8c958788a140383a02f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1567,
+      "title": "ci: attest the .deb SBOM with actions/attest, not the deprecated attest-sbom",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1567",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T16:03:02Z",
+      "additions": 5,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal build change. The step that attaches a signed list of what is inside each nightly and release package now uses GitHub's current tool instead of an older one that GitHub has retired. The inputs and the result stay the same, and the deprecation warning on every nightly build goes away. Nothing changes for users.",
+      "category": "ci",
+      "summaryHash": "7e109f7878d5420c266c5ec03d5036bc1e56d6db"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1566,
