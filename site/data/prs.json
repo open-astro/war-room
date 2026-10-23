@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T23:56:11.447Z",
+  "generatedAt": "2026-10-23T00:55:19.865Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1540,
+      "title": "Update zizmor to v1.31.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1540",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T00:30:11Z",
+      "additions": 7,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal maintenance: the tool that checks the project's automated build setup for security problems was updated to a newer version (1.25.2 to 1.31.1), both in the automated checks and in the script developers run on their own machines before submitting work. This keeps both places running the same, current version so newer checks and fixes are picked up. Nothing about the software users run has changed.",
+      "category": "ci",
+      "summaryHash": "121548c31c78093f7ba63bf6165f6b5da6fbd933"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1541,
+      "title": "Fix adr-authorization failure text to name the records changed since the authorization",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1541",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T00:13:09Z",
+      "additions": 74,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Improves the message shown when an automated check blocks a change because the project's design decision documents were edited after a reviewer last approved them. Before, the message only gave a count of all affected documents. Now it names the specific documents that changed since the approval, so reviewers can see right away why the approval no longer applies. If the names are too long, or contain unusual characters that could be misused, it falls back to showing a count. This only changes the wording of the message, not when the check passes or fails, and new automated tests were added to cover it.",
+      "category": "fix",
+      "summaryHash": "fe80f14ce1318f8e391489454a6254279c67298e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1539,
