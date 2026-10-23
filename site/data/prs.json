@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T00:55:19.865Z",
+  "generatedAt": "2026-10-23T01:54:29.742Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1545,
+      "title": "Validate Celestron focus motor 94155 (ConformU 4.5.2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1545",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T01:28:13Z",
+      "additions": 97,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The older Celestron focus motor (model 94155, the version without the notch) is now officially listed as supported, alongside the newer 94155-A that was already confirmed. A user tested it on their telescope and it passed the standard compatibility check with no problems, and the test log has been added to the project. The docs also now warn that cancelling a focuser calibration wipes out the saved calibration on both models. This is a documentation-only change with no code changes, and the test was run on a pre-5.0.0 build of the software.",
+      "category": "docs",
+      "summaryHash": "153fd74766c6ddfea29a793c92a20dd6a429e680"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1537,
+      "title": "Add a configurable Alpaca discovery port",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1537",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T00:57:50Z",
+      "additions": 368,
+      "deletions": 30,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Users can now change the network port the server uses to announce itself to astronomy apps on the network, instead of being stuck with the fixed default of 32227. It can be set in the settings file, through an environment setting, or from a new field in the web interface, and it takes effect after a restart. This matters when another program is already using the default port, and it brings the server in line with the official Alpaca standard. The default is unchanged, so existing setups behave as before; it has not yet been tested with real astronomy apps or on hardware.",
+      "category": "feature",
+      "summaryHash": "212bf4f588626372eaf20a312b8635c9917fed7d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1540,
