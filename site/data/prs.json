@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T14:43:25.986Z",
+  "generatedAt": "2026-10-23T15:06:18.795Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1566,
+      "title": "Fix OnStep MoveAxis park and home test rendezvous",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1566",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T15:02:12Z",
+      "additions": 27,
+      "deletions": 8,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a flaky automated test for the OnStep telescope driver that kept breaking the nightly build. It checks that parking or homing the telescope while it is moving stops the move and parks or homes it in time. Under heavy computer load, the test's simulated clock sometimes moved forward too early, so the test wrongly reported that parking took too long. Only the test code changed, not the telescope driver, and the change also makes the test fail outright if the simulated clock gets stuck, rather than quietly continuing.",
+      "category": "tests",
+      "summaryHash": "25cfe9687f19171ad224c64018656f5783a6b4a6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1562,
