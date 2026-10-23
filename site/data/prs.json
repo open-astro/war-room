@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T22:36:59.259Z",
+  "generatedAt": "2026-10-23T23:35:49.654Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1577,
+      "title": "Add README authored-line badge and docs-drift check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1577",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T23:32:10Z",
+      "additions": 140,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's front page now shows a badge with how much code the team wrote itself, about 247,000 lines, leaving out bundled third-party code. An automatic check fails if the badge drifts more than 5% from the real count, and the release steps now include refreshing it, so the number stays honest without anyone counting by hand. Nothing in the software itself changes.",
+      "category": "docs",
+      "summaryHash": "f54baf1d91a0dd8d4205bc8fbb91c30de5d66a10"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1570,
+      "title": "Update task clock decision for wrapper wire timing",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1570",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T23:01:38Z",
+      "additions": 6,
+      "deletions": 3,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This updates a written design decision about how the code keeps time during testing. It adds a new rule: the parts that talk to telescope hardware over cables and the network keep using real time, because a simulated test clock there would make tests freeze. It is a documentation change only, settling a question that kept coming up in code reviews, and the software works exactly as before.",
+      "category": "docs",
+      "summaryHash": "b13058d8e46cadf4f460d454478498c443db4d17"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1565,
