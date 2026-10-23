@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T18:40:00.459Z",
+  "generatedAt": "2026-10-23T22:36:59.259Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1565,
+      "title": "Fix ZWO AM verified identity and Auto duplicate protection",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1565",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-23T22:34:20Z",
+      "additions": 1898,
+      "deletions": 1156,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO AM telescope mounts now have to prove their identity before the software will connect to them. The mount must report a supported model (AM3, AM5, AM5N or AM7) and its own serial number, and nothing is sent to it until both checks pass. The software also blocks two configured entries from controlling the same physical mount over different connections (for example USB and Wi-Fi) when either entry uses the Auto setting. This replaces an earlier, simpler model-only check, adds many new tests and documents the vendor command used to read the serial; the serial-number check has only been confirmed on one AM5 so far.",
+      "category": "fix",
+      "summaryHash": "15376708929b094428d15098d00dd4b0cf66365f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1572,
