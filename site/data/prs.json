@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T16:41:58.331Z",
+  "generatedAt": "2026-10-23T17:41:01.110Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1571,
+      "title": "Fix GPhoto longexpnr fake test flake",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1571",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T17:28:08Z",
+      "additions": 18,
+      "deletions": 14,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes an automated test for the GPhoto camera driver that sometimes failed at random. The test simulates a camera being unplugged partway through connecting, but it picked that moment by counting steps, and the count could shift when other tests running at the same time touched a shared file. It now triggers the unplug at the exact step it means to test, so it gives the same result every run. The driver itself is unchanged; only the test and its fake camera were touched.",
+      "category": "tests",
+      "summaryHash": "13eebc1070ac291d0d0f29b8ca17e9e0223d6583"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1560,
+      "title": "Bisque: getters no longer wait behind TheSkyX exchanges",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1560",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T16:56:26Z",
+      "additions": 496,
+      "deletions": 109,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "With the Bisque driver (telescope control through TheSkyX), simple questions like the telescope's name, whether it is connected, or where it is pointing no longer stall while the mount is busy homing, parking, slewing, syncing or connecting. Before, these could wait up to a minute behind a slow command, longer than astronomy apps usually wait, so they could report errors. The change also makes sure that stopping a slew reliably shows the telescope as no longer moving. Connecting now also checks whether the mount is parked before it reports itself as connected. Many new tests and updated design notes are included, and it has not yet been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "15d9cd1c255192202eba7ae36d780f648fd34b4f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1568,
