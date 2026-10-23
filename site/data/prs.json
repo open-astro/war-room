@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T08:48:24.510Z",
+  "generatedAt": "2026-10-23T09:47:48.656Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1542,
+      "title": "Move Celestron NexStar getters off the mount exchange lock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1542",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T08:58:51Z",
+      "additions": 1840,
+      "deletions": 610,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron NexStar telescopes now answer basic status questions (such as the mount's name, whether it is connected, and where it is pointing) right away, even while the server is waiting on a slow or unresponsive mount. Before, those questions could hang until a command to the mount timed out, which made software watching the telescope freeze. The safety stop that fires when a homing move keeps failing still works, and new safeguards make sure that stop does not cut short a newer move the user has just started. A failed connection attempt now also cleans up properly and reports the mount as disconnected. The change adds a large set of new tests and updates the related design notes.",
+      "category": "fix",
+      "summaryHash": "2a46504ab4a78a32794c1ae30d75a58b2f8b42fa"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1555,
