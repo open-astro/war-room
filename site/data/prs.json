@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T05:51:16.362Z",
+  "generatedAt": "2026-10-23T06:50:16.647Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1549,
+      "title": "Remember the auto-detected port or IP across connects",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1549",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T06:38:53Z",
+      "additions": 1515,
+      "deletions": 58,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Gemini power hub, the Gemini flat panels and iOptron mounts that are set to find themselves automatically now remember where they were last found (which USB port or network address) and check that spot first on the next connect. Before, every connect searched all over again, which took 5 to 13 seconds on the small computer at the telescope and made imaging apps with a 5-second limit give up and retry. A reconnect now takes about a second, the full search still runs if the device has moved, and a port or address the user typed in by hand is used as given and never saved. Most of the code changes were too large to show, so the details of the new behavior could not be checked against the description.",
+      "category": "fix",
+      "summaryHash": "f11868e3b034b39964647e604c59a6ff30e7c2ac"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1538,
+      "title": "Keep a stored UniqueID instead of replacing it",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1538",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T06:09:16Z",
+      "additions": 144,
+      "deletions": 79,
+      "changedFiles": 26,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Devices now keep the permanent ID they already have instead of having it swapped for a new random one on first start, after an edit or after an upgrade. This matters because imaging apps like NINA tie saved equipment profiles to that ID, and the astronomy device standard says it must never change; ZWO cameras in particular were losing their serial-based IDs. A new ID is now created only when a device has none, has a plain device-number ID, or shares an ID with another device. The visible code changes confirm the new rule for which IDs are kept; the rest is mostly wording updates in docs and comments, plus small web page changes that the description does not mention.",
+      "category": "fix",
+      "summaryHash": "3116d1bb0bd33fc2f854e2f4c705de1653d39b74"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1552,
