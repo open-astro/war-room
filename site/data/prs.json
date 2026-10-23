@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T03:52:37.354Z",
+  "generatedAt": "2026-10-23T04:51:47.895Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1548,
+      "title": "Fold the review bot's decision-record checklist into a details block",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1548",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T04:26:17Z",
+      "additions": 41,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated review bot's comments on pull requests are now much shorter. Its long rule-by-rule checklist, which could run to 65 lines of mostly \"not applicable\" answers, is now collapsed by default behind a one-line count such as \"65 rules: 22 pass, 43 n/a\". The final sign-off and any problems found stay visible, and the full list is one click away. This only changes how the comment looks; the review checks themselves are unchanged, and the code matches the description.",
+      "category": "ci",
+      "summaryHash": "614456b5be4c1825fc8b92b957c49b8187477cdd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1547,
