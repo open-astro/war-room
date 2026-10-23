@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T10:05:46.096Z",
+  "generatedAt": "2026-10-23T10:46:44.493Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1561,
+      "title": "Fix review-bot checklist fold keeping a checklist line outside",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1561",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T10:35:47Z",
+      "additions": 49,
+      "deletions": 20,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a small bug in the automated review bot that comments on pull requests; it does not affect the telescope software itself. The bot tucks its decision-record checklist into a collapsible section with a count at the top. It always left the comment's final line outside that section, assuming it was the approval note, so when the final line was a checklist item it was left out of view and left out of the count. Now only a real approval or 'issues found' note stays outside, and the change adds checks to keep it that way.",
+      "category": "ci",
+      "summaryHash": "2c2d414f46d4ddd37afaaa2afa7bc9b1265796ce"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1554,
