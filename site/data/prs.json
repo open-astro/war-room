@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T07:49:16.209Z",
+  "generatedAt": "2026-10-23T08:48:24.510Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1555,
+      "title": "Harden ZWO reply synchronization when a late response follows the input flush",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1555",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T07:58:58Z",
+      "additions": 454,
+      "deletions": 12,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a mix-up with ZWO telescope mounts. When the mount was slow to answer a question about where it was pointing, its late answer could be mistaken for the reply to the next command. The bridge now briefly waits, for at most a fraction of a second, for that overdue answer and throws it away before sending the next request, while guiding nudges and the emergency stop are never held up by this wait. The fix applies on Linux and similar systems but not on Windows, and so far it has only been checked with new automated tests that imitate a slow mount, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "9bf7d8890af40987b684ea056fc9c55e33c1da4e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1556,
