@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T04:51:47.895Z",
+  "generatedAt": "2026-10-23T05:51:16.362Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1552,
+      "title": "Fix ZWO AM connect to require a verified AM identity",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1552",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T05:25:35Z",
+      "additions": 221,
+      "deletions": 6,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When connecting to a ZWO telescope mount, the software now checks that the device really identifies itself as a ZWO AM mount (such as AM3, AM5 or AM5N) before it sends any settings like location, time or tracking speed. Before this, a wrong device or one that never answered could be reported as connected and then receive those commands. If the check fails twice, the connection is refused with a readable reason, and the user can simply try again once the right mount is attached. One side effect the author notes: in automatic device-detection mode, another device listed ahead of the mount now causes the connection to be refused rather than moving on to the next candidate, which a later change is meant to address.",
+      "category": "fix",
+      "summaryHash": "ff96c9e3923560c0b02611dd660cba38a0e5e987"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1551,
+      "title": "Add a daily check that the latest release installs from apt",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1551",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T05:04:48Z",
+      "additions": 153,
+      "deletions": 2,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds an automated daily check that installs the newest release in a fresh test machine, following the exact install steps written in the project's README. It confirms the version installed matches the latest published release, allowing a one-day grace period while the download server catches up, and that the program can actually start. If anything fails, a tracking issue is opened automatically, so a broken release is spotted within a day instead of by a user. This is internal tooling and does not change the software itself.",
+      "category": "ci",
+      "summaryHash": "a01765dfa78f6397b46622531888fb1a8e774a8a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1548,
