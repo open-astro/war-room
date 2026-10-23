@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T10:46:44.493Z",
+  "generatedAt": "2026-10-23T11:45:48.627Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1559,
+      "title": "Answer Device API parameter errors with HTTP 400 text",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1559",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T11:25:23Z",
+      "additions": 597,
+      "deletions": 231,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1561,
