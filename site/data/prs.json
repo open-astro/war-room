@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T11:45:48.627Z",
+  "generatedAt": "2026-10-23T12:45:52.648Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -22,9 +22,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When an app talking to the telescope server leaves out a required setting or sends one it can't read (for example a word where a number belongs), the server now refuses with a clear \"bad request\" error in plain text naming the problem. Before, it answered as if things were fine and tucked an \"invalid value\" note inside the reply. It also stops oversized or fractional numbers from quietly turning into a different number, which could have pointed a request at the wrong device. This follows the official Alpaca protocol more closely, but apps that relied on the old style of error reply will see different responses; the server's own management pages keep their existing error format.",
+      "category": "fix",
+      "summaryHash": "504b2bed9fe95d98f2aa2e238b42e41d6afcd9a9"
     },
     {
       "repo": "open-astro/AlpacaBridge",
