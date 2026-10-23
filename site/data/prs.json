@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T02:53:39.340Z",
+  "generatedAt": "2026-10-23T03:52:37.354Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1547,
+      "title": "Add a weekly Markdown link check with lychee",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1547",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T03:44:47Z",
+      "additions": 104,
+      "deletions": 10,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project now checks every link in its written guides once a week, and anyone can also start the check by hand. If a link has gone dead, the problem shows up as a single tracked issue that closes itself once the links are fixed, so broken links no longer go unnoticed. This change also repairs eight links in two guides that pointed at pages that no longer exist, plus one outdated install link. It does not change the product itself; it only adds automation and fixes documentation.",
+      "category": "ci",
+      "summaryHash": "ab87fdc3d5b816840a0a4a5ea8b623a780d6a818"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1546,
+      "title": "Prune superseded GitHub Releases after each release",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1546",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T03:25:54Z",
+      "additions": 206,
+      "deletions": 2,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The release process can now clean up the project's Releases page automatically. When a new test (beta) version comes out, it removes the downloads for older test versions of the same release, and when the final version ships, it removes all of its test versions. The version history is kept, so a removed download can be rebuilt if needed, though only within 30 days. This cleanup is switched off for now and only turns on once a project setting is enabled, because the team first wants to confirm it won't cause problems for people who get updates through the package installer.",
+      "category": "ci",
+      "summaryHash": "312d5c70fdb9ad221651851fa3d98b631dab8cc9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1544,
