@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T09:47:48.656Z",
+  "generatedAt": "2026-10-23T10:05:46.096Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1554,
+      "title": "Run the APT install check steps in bash",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1554",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T10:03:48Z",
+      "additions": 7,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes the daily automated check that tests whether AlpacaBridge installs correctly from the OpenAstro package repository. Its first run crashed with a script error before it could check anything, because the test environment used a more basic command interpreter that did not understand some of the commands. The check now uses the right interpreter, so it can report whether the install actually works. This is an internal testing change only, and the author notes it has not yet been confirmed working on a real run after merging.",
+      "category": "ci",
+      "summaryHash": "d7145faaf3fea93695e4933586ec5022058417f8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1542,
