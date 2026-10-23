@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T17:41:01.110Z",
+  "generatedAt": "2026-10-23T18:40:00.459Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1572,
+      "title": "Add Allow header to management 405 responses",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1572",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T18:06:12Z",
+      "additions": 32,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a program uses the wrong kind of request on one of AlpacaBridge's own management functions, such as shutdown, restart, device setup or time sync, the server's rejection now also lists which kinds of request that function accepts. This follows the web standard for this type of error and lets client software work out the correct request on its own. Nothing else about these error replies changes, and the code matches the description, with tests covering all eight management functions.",
+      "category": "fix",
+      "summaryHash": "352e5cb1a18473cd133c0a9dea4a27659ae2efb2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1569,
+      "title": "Settle TIOCEXCL and raw read/write gating in decision 0017",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1569",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T17:46:47Z",
+      "additions": 133,
+      "deletions": 27,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This settles two questions the team's written design decision on serial ports (the cable connections to telescope hardware) had left open. First, trying to claim a port for exclusive use stays a best-effort step: if the system refuses, a warning is logged and the connection goes ahead, because no such refusal has been seen on real hardware. Second, drivers may no longer read from or write to a serial port directly, except two mount drivers that already do it safely, and an automated check now fails the build if someone breaks this rule. Nothing changes in how the server behaves, and the check only catches the most direct way of breaking the rule, not every way. The code for the new check was left out of the material provided, so the details of the check could not be confirmed from the code.",
+      "category": "docs",
+      "summaryHash": "e7ae95cca02c41caf9b6ae1410bb26c6512a5f50"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1571,
