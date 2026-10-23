@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T06:50:16.647Z",
+  "generatedAt": "2026-10-23T07:49:16.209Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1556,
+      "title": "Fix ZWO AM no-op Tracking write dropping the in-flight poll",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1556",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T07:36:56Z",
+      "additions": 87,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixed a problem with ZWO AM telescope mounts where repeatedly telling the mount to keep tracking the way it already was could make its reported status stop updating, for up to about 30 seconds. Now a request that changes nothing is ignored as it should be, so the mount's live status keeps refreshing normally even when an app sends the same setting over and over. A new automated test covers this, and the change matches what the description says. It has not yet been tried on a real mount.",
+      "category": "fix",
+      "summaryHash": "4b333a770978f35c35b5078045e734bb871f9db3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1549,
