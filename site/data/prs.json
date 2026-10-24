@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T00:34:56.874Z",
+  "generatedAt": "2026-10-24T00:49:12.636Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1579,
+      "title": "Move QHY integrated filter wheel SDK calls off the state lock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1579",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T00:44:25Z",
+      "additions": 443,
+      "deletions": 134,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY filter wheel built into some QHY cameras no longer makes simple questions, like the filter names or whether it is connected, wait while the wheel is being read, moved, or connected. Each read takes about a tenth of a second, so those waits were enough for the ASCOM compatibility checker (ConformU) to flag the driver as too slow. Disconnecting is also safer now: if it happens in the middle of a read or move, that request cleanly reports \"not connected\" instead of a confusing filter-count error. The main code and test changes were left out of the diff provided, so only the documentation and changelog updates could be checked against the description, and the author notes it has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "2427304a81e167712c0b68605001edf59647c53f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1574,
