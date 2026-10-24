@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T17:20:40.974Z",
+  "generatedAt": "2026-10-24T22:17:06.166Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1617,
+      "title": "Add DeviceCall for device-call parameters, envelope and errors",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1617",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T21:53:40Z",
+      "additions": 1500,
+      "deletions": 2753,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is mostly an internal cleanup of how the server handles requests to telescopes, cameras and other devices. Reading a request's settings, deciding how to report errors, and wrapping up the reply used to be repeated for each of the eleven device types; it now lives in one shared place, which removes about 2,000 lines. A few small behavior changes come with it: the telescope now accepts one more common way of sending numbers, and unexpected internal errors are always reported as a general driver error instead of a guessed error code. It was checked with new automated tests on simulated devices only, not on real hardware or with the standard ASCOM compatibility checker.",
+      "category": "refactor",
+      "summaryHash": "0905821a1887b13d690451b1ef1905f36c427021"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1611,
