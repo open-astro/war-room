@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T13:24:01.133Z",
+  "generatedAt": "2026-10-24T14:23:14.287Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1599,
+      "title": "Remove config_get and config_has from the router",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1599",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T13:32:54Z",
+      "additions": 180,
+      "deletions": 153,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is mostly an internal cleanup of how the server reads a device's basic settings (its maker, device type and device number) when a device is added, removed or loaded. Those reads now go through the one shared place that already handles device settings, instead of a separate duplicate copy, so the rules for missing or badly formatted values live in a single spot. One small change is visible to users: a device number written as true/false is now rejected with an error, where before it was quietly treated as device 1. A device saved that way by an older version will now fail to load and appear in the failed-devices list instead. The part of the change to the request-handling code itself was trimmed from what we received, so that part could only be checked against the description, the new shared reader code and the added tests.",
+      "category": "refactor",
+      "summaryHash": "5581866b9eebc71c3c0db0162d1c8b0ac38af78e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1603,
