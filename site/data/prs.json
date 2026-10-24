@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T11:25:36.717Z",
+  "generatedAt": "2026-10-24T12:24:43.198Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1601,
+      "title": "Ask for a seated focus motor in the Celestron calibration confirm",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1601",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T11:34:33Z",
+      "additions": 13,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The warning that appears before calibrating the Celestron focus motor now asks users to check that the motor is firmly seated on the focuser, because a loose fit can make it jam during the roughly five-minute run. Before, it told users to clear away anything the focuser might hit, but a hardware tester pointed out the motor sits inside a closed housing, so there is nothing to hit. Only the warning text changed; calibration itself works the same, and a test was added to check the new wording.",
+      "category": "fix",
+      "summaryHash": "77428e659985bf507692c9ada23f239d3fb4bb8e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1583,
