@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T22:17:06.166Z",
+  "generatedAt": "2026-10-24T22:30:44.461Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1622,
+      "title": "Add catalog keys to the web UI device form and a drift test",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1622",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T22:20:09Z",
+      "additions": 728,
+      "deletions": 253,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Each setting on the web page for adding and editing devices is now tagged with the matching entry in the server's list of device settings. A new automated check fails if the page and that list ever fall out of step, for example a setting that is missing, extra, or shown with the wrong kind of input. Users will see no difference, since the page looks and behaves exactly as before. The change also updates the instructions for adding new drivers and prepares for a planned follow-up where the page will read more of its setup directly from that list.",
+      "category": "tests",
+      "summaryHash": "6c2a849f4a4a7081cc3a76e7af71d5c5f496b015"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1617,
