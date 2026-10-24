@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T14:23:14.287Z",
+  "generatedAt": "2026-10-24T15:22:21.847Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1607,
+      "title": "Fix GCC 13 -O3 stringop-overflow in filter wheel DeviceState",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1607",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T14:59:35Z",
+      "additions": 4,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The nightly build, which had been failing because the compiler wrongly flagged a problem in the filter wheel code, should now build and publish its nightly package again. The fix is a one-line change that sets aside room for the filter wheel's two status entries up front, which avoids the compiler's false alarm. Filter wheels behave exactly as before. This is a build-only fix, and the specific nightly setup that was failing was not tested locally.",
+      "category": "ci",
+      "summaryHash": "a69e24a6bcee38a62f0202fe49722096a2154bbb"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1606,
+      "title": "Fix iOptron and Bisque Connected waiting behind the connect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1606",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T14:41:35Z",
+      "additions": 278,
+      "deletions": 94,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For iOptron and Bisque telescope mounts, asking whether the mount is connected now gets an immediate answer. Before, with an iOptron mount, that question could hang until the whole connection process had finished. The answer now stays \"not connected\" until a connection has fully completed, and Bisque still reports \"not connected\" when its link is lost. The PR also adds timing tests for both mounts, corrects outdated notes and comments, and updates an internal check that makes sure no telescope driver goes back to the old blocking behaviour.",
+      "category": "fix",
+      "summaryHash": "00e7e0fdff01f6d1ff6d92371caeca611cf02ec9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1599,
