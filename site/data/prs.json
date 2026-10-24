@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T22:30:44.461Z",
+  "generatedAt": "2026-10-24T23:16:34.840Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1616,
+      "title": "Add the CaptureSession module for camera exposures",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1616",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T23:13:50Z",
+      "additions": 1600,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds one shared building block for taking camera exposures. It is meant to replace five separate, slightly different copies of the same exposure code in the camera drivers, and it lets a driver tell the user when an exposure failed and never leaves a stuck background task running. No camera uses it yet, so nothing changes for users today. The Player One camera is planned to switch over in the next pull request, with the other camera brands after that, and the change comes with a large set of new tests.",
+      "category": "refactor",
+      "summaryHash": "9b3b06eaaa9f9ff0b91cfeae692298bf10953c48"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1609,
+      "title": "Add util::read_until and use it in four serial wrappers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1609",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T22:44:43Z",
+      "additions": 808,
+      "deletions": 143,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Replaces four nearly identical pieces of code that read replies from serial devices with one shared, tested version. The four devices are the Gemini focuser, the Gemini flat panel, and the iOptron focuser and filter wheel. The main user-facing gain is that an unplugged cable or adapter now shows up right away as \"serial link lost\" instead of looking like a slow timeout. Other read errors also now stop at once instead of retrying until time runs out. This only applies on Linux and macOS, since the Windows code keeps its old behavior, and other devices such as mounts will move to the shared version in later changes.",
+      "category": "refactor",
+      "summaryHash": "3a27d2cc9d77c52ab88e9fb2d2a0a9a54c003cc7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1622,
