@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T09:27:22.604Z",
+  "generatedAt": "2026-10-24T11:25:36.717Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1583,
+      "title": "Fix Sky-Watcher getters waiting behind serial and UDP exchanges",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1583",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T11:08:22Z",
+      "additions": 1110,
+      "deletions": 289,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "With Sky-Watcher telescope mounts, apps can now read basic information such as the site location, the time, and whether the mount is connected while the mount is busy parking, homing, slewing, or syncing. Before, those reads could stall for about a second and a half until the command finished. One visible behavior change is that while the mount is still connecting, it now reports \"not connected\" right away instead of making the app wait. The change includes new tests that confirm the fix, but it has not been tried on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "f4bded4c19685a9ddf30524ee264e5e833d60896"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1598,
