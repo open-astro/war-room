@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T00:49:12.636Z",
+  "generatedAt": "2026-10-24T01:34:02.842Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1580,
+      "title": "Move ToupTek AAF focuser and thermal switch device I/O off mutex_",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1580",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T01:31:31Z",
+      "additions": 609,
+      "deletions": 182,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ToupTek autofocuser and the ToupTek camera heater/fan switch no longer make simple questions like \"what is your name\" wait behind slow conversations with the hardware. Before this change, a slow device reply could make those basic requests take up to almost a second, and client apps sometimes gave up. Now they answer right away, and disconnecting can no longer cut off the hardware in the middle of a command. The switch also briefly reuses recent heater and fan readings instead of asking the device every time, and a separate bug where disconnecting during a focuser move could produce a misleading error was fixed along the way.",
+      "category": "fix",
+      "summaryHash": "cb51c0a1a5ad4309bce60169393db0d154cdc5ce"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1573,
+      "title": "fix(http): reject COM-only ImageArrayVariant requests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1573",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-24T01:07:40Z",
+      "additions": 373,
+      "deletions": 82,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Camera apps that ask for a picture in an old, Windows-only format now get an immediate \"not supported\" (or \"not connected\") reply, as the Alpaca standard requires. Before, the server actually read and copied the whole image first, which was slow and wasteful for large frames. Apps keep getting pictures through the normal method, which is unchanged. The pull request also adds a full passing compatibility test report for the ZWO ASI6200MM Pro camera and adds it to the supported devices list, bringing the validated count to 94.",
+      "category": "fix",
+      "summaryHash": "3f7251503bb5787fc632336c354660026507561d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1579,
