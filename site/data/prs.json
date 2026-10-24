@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T07:29:53.141Z",
+  "generatedAt": "2026-10-24T09:27:22.604Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1598,
+      "title": "Fix Celestron initiators joining the old slew body instead of superseding it",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1598",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T09:03:17Z",
+      "additions": 1109,
+      "deletions": 186,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron telescopes now respond to a new movement command (stop, park, unpark, find home, manual move, or a new slew) right away. Before, the driver first waited for the previous movement to finish shutting down. A movement that has been replaced now steps aside quietly, so it can no longer send a late \"go to\" command to the mount after the stop, or overwrite status, targets or errors that belong to the newer command. The diff matches the description: the driver change comes with a large set of new tests and updated design notes, while disconnecting and shutting down still wait for the old movement to finish as before.",
+      "category": "fix",
+      "summaryHash": "6a15cd678e7006f7482aec03a4d95e27c7eb364b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1594,
