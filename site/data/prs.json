@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T15:22:21.847Z",
+  "generatedAt": "2026-10-24T17:20:40.974Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1611,
+      "title": "Move the ZWO telescope tests onto FakeZwoMount and the task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1611",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T16:40:57Z",
+      "additions": 2024,
+      "deletions": 891,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal testing change. The telescope itself behaves exactly as before. The automated tests for the ZWO telescope used to rely on four separate pretend mounts and real waiting. They now share one pretend mount that runs on a simulated clock, so the tests can skip ahead in time instead of actually sleeping. That means a failing test will now flag any code that goes back to using the real clock for a timed wait. It also fixes five existing tests that were failing because of a subtle ordering issue in a date check. Six cache-timing spots are still only checked by reading the code, with no test of their own, and the change was not tried on real hardware.",
+      "category": "tests",
+      "summaryHash": "66bed990378888b90c37dbebe5325858e9302a0e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1607,
