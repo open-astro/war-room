@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T23:35:49.654Z",
+  "generatedAt": "2026-10-24T00:34:56.874Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1574,
+      "title": "Stop cameras reporting made-up values and add mount gps_status",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1574",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T00:21:52Z",
+      "additions": 731,
+      "deletions": 76,
+      "changedFiles": 35,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Several camera drivers (ZWO, ToupTek, Altair, SVBONY, Player One and digital cameras via gphoto) no longer report invented values for sensor gain and well capacity. When a camera can't supply a real number, it now says \"not available\". Unknown sensor names are left blank instead of a generic placeholder like \"ZWO Sensor\". Player One cameras still report gain when the camera actually provides it. iOptron and Celestron mounts also gain a new GPS status check that tells client programs whether the mount has a real GPS fix, and gives the GPS location only when it does. This matters because programs save these values as fact, so honest gaps are better than made-up numbers, and users can now trust a mount's location when it truly came from GPS.",
+      "category": "fix",
+      "summaryHash": "23e6037bd96259a1dfac5669cc597e5d3d0ba39f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1578,
+      "title": "Update ConformU standard to 4.5.3",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1578",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-23T23:54:41Z",
+      "additions": 16,
+      "deletions": 12,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's official compatibility-testing tool, ConformU, moves from version 4.5.2 to 4.5.3. The install instructions and their download check are updated to match, and older test reports remain valid. This is tooling and documentation only, with no change to the drivers themselves. The new version has not yet been run on real hardware, so it is adopted provisionally until a camera and telescope test is recorded.",
+      "category": "chore",
+      "summaryHash": "9caca8240d1a8058c666ef6c36688ecb1a1050c4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1577,
