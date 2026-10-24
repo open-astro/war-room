@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T06:29:47.196Z",
+  "generatedAt": "2026-10-24T07:29:53.141Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1594,
+      "title": "Harden decision records: retired status, review ratchet, carve-out check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1594",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T07:12:03Z",
+      "additions": 280,
+      "deletions": 46,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Tightens the rules for the project's written design decisions, which the automated review bot checks every pull request against. New decisions must now pass three tests (hard to undo, surprising without context, a real trade-off), a decision that simply stops applying can now be marked \"retired\", and rules the bot checks by reading must say what evidence to look for. An automatic check now blocks new vague rules, makes sure the number of old vague rules can only go down, and stops exceptions from quietly creeping into rules; seven existing rules that already had legitimate exceptions were marked as allowed. This is documentation and tooling only, with no change to how the software behaves.",
+      "category": "docs",
+      "summaryHash": "eaa2d810774c39408b09ac69914b41e12156c87c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1592,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The SynScan telescope driver now tracks the time a user set on the mount using the project's shared timekeeping helper, the same one other telescope drivers already use, instead of its own separate copy of that logic. One visible change: a time a user set is now forgotten when the telescope disconnects, not only when it reconnects, so apps should set the time again after connecting. A new test checks that the reported time moves forward correctly, without waiting in real time. The Celestron CGX driver was originally planned to switch too, but was left out on purpose because switching would remove an existing safety check on its pointing time.",
+      "category": "refactor",
+      "summaryHash": "ce12826838ed886a37ef8abda43b04df42d82752"
     },
     {
       "repo": "open-astro/AlpacaBridge",
