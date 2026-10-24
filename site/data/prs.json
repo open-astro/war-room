@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T05:30:42.863Z",
+  "generatedAt": "2026-10-24T05:55:40.018Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1591,
+      "title": "Serve iOptron iEFW Position from a cache",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1591",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T05:39:16Z",
+      "additions": 487,
+      "deletions": 55,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron filter wheel driver now remembers its last reported position for a tenth of a second, so repeated position checks no longer each wait on a slow serial exchange. Simple lookups like filter names also no longer get stuck behind a wheel exchange or a connection in progress. A wheel that is moving is never reported from memory, and any move clears the remembered position right away, so a reading is never more than 100 ms stale. This finishes the effort to bring all supported filter wheels to the same responsiveness standard and adds new automated tests; it has not yet been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "b290448a5116f8e8c53de82f7440b68e65dd5a74"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1588,
