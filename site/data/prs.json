@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T05:55:40.018Z",
+  "generatedAt": "2026-10-24T06:29:47.196Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1592,
+      "title": "Adopt util::UtcOffset in the SynScan telescope driver",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1592",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T05:58:44Z",
+      "additions": 55,
+      "deletions": 26,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1591,
