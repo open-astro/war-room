@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T01:34:02.842Z",
+  "generatedAt": "2026-10-24T02:33:12.204Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1564,
+      "title": "OnStep: latch a link fault for a mount that stops answering, and lose the link when it stands (#1414)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1564",
+      "author": "kern2011",
+      "mergedAt": "2026-10-24T02:11:31Z",
+      "additions": 772,
+      "deletions": 30,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1580,
