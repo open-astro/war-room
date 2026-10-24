@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T03:33:25.431Z",
+  "generatedAt": "2026-10-24T04:31:41.196Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1582,
+      "title": "Fix ZWO AM UTC clock adoption and timer tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1582",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-24T04:12:15Z",
+      "additions": 1294,
+      "deletions": 981,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO AM mount driver now forgets its stored date and time whenever a connection starts, ends, fails to set up, or drops, so a stale clock from an earlier session can no longer carry over. This is a behavior change: clients that relied on the old remembered time must set the mount's date and time after connecting, or turn on automatic time sync from the host at connect. The driver now uses the project's shared time-keeping helper instead of its own copy, and the related tests use a simulated clock instead of waiting in real time. Most of the visible changes are refreshed compatibility test reports and documentation; the main driver code changes were not shown in the trimmed diff, so they could not be checked directly.",
+      "category": "fix",
+      "summaryHash": "e2af06887213a9d07b6868ce53cb87a346cfc726"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1586,
+      "title": "Serve ZWO, Player One and ToupTek wheel Position from a cache",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1586",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T03:48:56Z",
+      "additions": 1224,
+      "deletions": 246,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO, Player One and ToupTek filter wheel drivers now briefly remember the wheel's current position for about a tenth of a second instead of asking the hardware on every request. Other requests, such as reading filter names, no longer have to wait behind a slow position check or a connection in progress. A wheel that is still moving is always reported as moving right away and is never held in this short-term memory, and any move request clears it so the next read is fresh. The trimmed diff shows the shared timing helper update and documentation notes, but the driver changes themselves were not visible to confirm.",
+      "category": "feature",
+      "summaryHash": "aa8e4d0c65d45c9cdf26649715fe98eab3a3792b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1585,
