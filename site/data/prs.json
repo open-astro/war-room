@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T04:31:41.196Z",
+  "generatedAt": "2026-10-24T05:30:42.863Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1588,
+      "title": "Fix camera LastExposure rules and GPhoto actual duration",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1588",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T04:52:31Z",
+      "additions": 513,
+      "deletions": 51,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Most supported cameras (ZWO, QHY, SVBONY, Player One, GPhoto and iOptron iGuider) now report the \"last exposure\" length and start time only after a picture has actually been taken successfully. Before, these values were filled in as soon as an exposure began, so a failed shot could still show them. Asking for them before any good image now returns the error the astronomy standard expects, and asking while the camera is disconnected returns a \"not connected\" error. For GPhoto cameras the reported length is now the shutter speed the camera really used rather than the one requested, and SVBONY's start time is recorded closer to when the camera truly begins collecting light. ToupTek and Altair cameras are not covered yet, and the change has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "473f75c29f64e6835b97f334c713d1770605edf9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1582,
