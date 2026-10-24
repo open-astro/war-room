@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T02:33:12.204Z",
+  "generatedAt": "2026-10-24T03:33:25.431Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1585,
+      "title": "Fix empty DeviceState responses across all ten device types",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1585",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-24T03:14:03Z",
+      "additions": 148,
+      "deletions": 73,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a connected device can't read any of its live values, its \"current status\" report now comes back as an empty list instead of a list holding only a timestamp. This applies to all ten device types (cameras, mounts, focusers, domes, and so on) and follows the official ASCOM standard. Devices that do have some readings still report them with a timestamp. Client software may notice the change, and tests and internal guidance were updated to match.",
+      "category": "fix",
+      "summaryHash": "13c8388f9c8c82d320218300ff3eb8543d297c22"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1584,
+      "title": "Add Calibrate and Abort controls to the Celestron focuser card",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1584",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T02:43:06Z",
+      "additions": 391,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron focus motors can now be calibrated straight from their card in the web interface. Before, users had to send commands by hand from a terminal. The card has a Calibrate button that warns the motor will travel end to end, a live status line that updates every couple of seconds, and an Abort button that only appears while calibration is running. The setup hint now points to this button, and the change was tested with simulated devices rather than real hardware.",
+      "category": "feature",
+      "summaryHash": "2e83a8443b9fa9cf77d990abafdb846b29959413"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1564,
@@ -22,9 +56,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "OnStep telescope mounts that go silent while the USB adapter stays plugged in, for example because the mount lost power or a cable came loose at the mount end, are now reported as having a problem. Before, the software kept showing the mount as connected with stale positions forever. Now, after three missed replies, reads report an error and movement commands are refused, though stop commands are still attempted. If the silence lasts 30 seconds, the mount is shown as disconnected until the user reconnects. The change also fixes a rare timing bug where a Home command issued during a Park could report success without actually homing, which the description mentions only in passing.",
+      "category": "fix",
+      "summaryHash": "90d487845516e9ea711fc7f3786d6f9a2ba11886"
     },
     {
       "repo": "open-astro/AlpacaBridge",
