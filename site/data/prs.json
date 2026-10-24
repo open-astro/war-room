@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T12:24:43.198Z",
+  "generatedAt": "2026-10-24T13:24:01.133Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1603,
+      "title": "Add the Sky-Watcher EQM-35 Pro ConformU report for the getter lock change",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1603",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-24T12:59:22Z",
+      "additions": 523,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds the official compatibility test report (from the ASCOM ConformU checker) for the Sky-Watcher EQM-35 Pro mount, run on a Raspberry Pi 5. It confirms that an earlier, already-merged change making the mount answer status questions faster passed with no errors, warnings, or issues. The supported-drivers list was updated to point to this latest test run. No code changed. The author also noticed that after a restart the mount showed as not connected for about 30 seconds until an app connected, but did not link this to the earlier change.",
+      "category": "docs",
+      "summaryHash": "42c6856d91721d656235d5ecb81913a432f26873"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1601,
