@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T11:08:15.725Z",
+  "generatedAt": "2026-10-25T14:05:36.246Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1654,
+      "title": "Gemini and Celestron focusers lose the link past the staleness bound",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1654",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T13:31:50Z",
+      "additions": 403,
+      "deletions": 298,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Gemini and Celestron focusers now report themselves as disconnected when their connection has been dead for 30 seconds, matching how the Astroasis and QHY focusers already behave. Before, a dead focuser kept saying it was connected and just returned errors on every request. Now it lets go of the USB port, and the user has to connect again because nothing reconnects by itself. Both focusers also now show a link problem in the management listing and stamp their status with when it was last measured. The driver code itself was trimmed from the diff, but the visible test and documentation changes match the description.",
+      "category": "fix",
+      "summaryHash": "f49495c80076dd85d0a62c47781595654225d9d1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1649,
