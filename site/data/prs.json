@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T23:16:34.840Z",
+  "generatedAt": "2026-10-25T00:15:33.815Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1610,
+      "title": "OnStep: rate getters, PulseGuide, SiteElevation, UTCDate and argument order follow the #1513 and #1563 rules (#1478)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1610",
+      "author": "kern2011",
+      "mergedAt": "2026-10-25T00:00:43Z",
+      "additions": 278,
+      "deletions": 74,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope driver now reports errors instead of quietly giving wrong answers, matching the rules the other telescope drivers already follow. A guiding pulse longer than about 10 seconds is now refused instead of being silently cut short and reported as done. Site elevation is no longer reported as sea level when nobody set it. The mount's date and time is no longer filled in from the computer's clock when the mount's own clock can't be read. Bad coordinates or guiding requests are now rejected before connection problems are reported, and the rate readings report 'not connected' when the mount is offline. The automated rule checks now cover OnStep instead of skipping it, and the diff matches the description.",
+      "category": "fix",
+      "summaryHash": "044cddae2c04c0b51dba7f05f42264ae0757db81"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1615,
+      "title": "Fix ZWO Auto probing of held network endpoints",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1615",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-24T23:41:49Z",
+      "additions": 1160,
+      "deletions": 974,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a ZWO AM mount connects in automatic mode, it no longer pokes at a network address and port that another configured mount is already using. That extra connection could disrupt the mount already in use. Now each address is reserved while in use, busy ones are skipped, and the search moves on to free ones. The PR also refreshes the published AM5 test reports for USB and Wi-Fi, which make up most of the line changes; the code changes themselves were mostly not shown, so they could only be partly checked against the description.",
+      "category": "fix",
+      "summaryHash": "fbd34e6d1f7dcd16f854dab1214cebe3b3e435f1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1616,
