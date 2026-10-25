@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T03:12:53.831Z",
+  "generatedAt": "2026-10-25T04:13:12.609Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1608,
+      "title": "Fix camera acquisition metadata timing and publication (#1477)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1608",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-25T04:06:01Z",
+      "additions": 2331,
+      "deletions": 282,
+      "changedFiles": 42,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "All seven supported camera brands now report more accurate information about the last successful photo, including when it started and how long it actually lasted. Failed, cancelled, retried or late shots no longer overwrite that record, and setup steps like mirror settling or file download are no longer counted as exposure time. For the iOptron guide camera, the start time is now reported as unavailable instead of being guessed. The code changes for most brands were not visible in the trimmed diff, which mostly showed updated developer notes, but many new tests were added; the description notes that timing accuracy has not yet been confirmed on real hardware, ToupTek/Altair cooler work is still on hold, and the main issue remains open.",
+      "category": "fix",
+      "summaryHash": "efdcdbe73ed008bf02f44045707d9daef182d216"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1632,
