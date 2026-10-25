@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T02:13:56.208Z",
+  "generatedAt": "2026-10-25T03:12:53.831Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1632,
+      "title": "Move the camera ImageArray and ImageBytes encoders into one module",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1632",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T02:41:34Z",
+      "additions": 670,
+      "deletions": 341,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal reorganization of how the server packages camera images before sending them to client software. The code that builds those image responses was moved out of a large, general file into its own section, where it can now be tested on its own, and new tests were added for it. The author checked that the images sent out are exactly the same as before, so users should see no difference.",
+      "category": "refactor",
+      "summaryHash": "423843e3f004b7821e27404e78c62b30114ec7c2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1627,
+      "title": "Fill the web UI edit form from the device catalog schema",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1627",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T02:14:58Z",
+      "additions": 800,
+      "deletions": 531,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When you edit an existing device in the web interface, the form is now filled in automatically from the server's shared list of device settings, replacing about 500 lines of separate code for each brand. Settings that don't apply to the current choice (for example, options for a connection type you didn't pick) are now hidden. A saved 'off' or zero now shows as saved instead of falling back to the default. If the device list fails to load, the error now appears on the Configure tab. About 21 fields that need special handling, such as unit conversions, are still filled in by hand. This means adding a new brand should no longer need its own edit-form code.",
+      "category": "feature",
+      "summaryHash": "a305194e5e8e54afd144956168786f4235169c27"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1623,
