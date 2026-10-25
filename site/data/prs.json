@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T20:53:46.360Z",
+  "generatedAt": "2026-10-25T23:17:40.731Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1657,
+      "title": "Add verified ZWO camera USB bandwidth configuration",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1657",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-25T23:01:47Z",
+      "additions": 726,
+      "deletions": 315,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO cameras now have a \"USB Limit\" setting in the setup page that controls how much USB bandwidth the camera uses. When it is left blank, the camera is set to a conservative 40 when it connects. The driver then checks that the camera accepted the value: if it did not, a blank setting only logs a warning, but a value the user typed in stops the connection. This responds to reports of failed image downloads and cameras dropping off USB, but the author is clear it gives users a safer setting to try and is not a proven fix. Automatic USB recovery is not included. Most of the large line count comes from tests, documentation, and a replaced camera test report, not from the feature itself.",
+      "category": "feature",
+      "summaryHash": "fbd201cee39ee13d56c4f07a7ac372bc05125a75"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1650,
