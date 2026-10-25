@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T08:10:45.027Z",
+  "generatedAt": "2026-10-25T09:09:58.209Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1645,
+      "title": "Update the device form to hide types without a catalog entry",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1645",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T08:31:48Z",
+      "additions": 78,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Add Device form in the web interface now only lists device types that actually have a supported driver, so Dome no longer appears. Before, picking Dome left the vendor list empty and the form could not be saved. New types will show up on their own once a driver for them is added. Editing an already saved device still shows its type, and the type list stays greyed out if the list of supported devices fails to load.",
+      "category": "fix",
+      "summaryHash": "e9c72c02d0bebbb785a6302f527d656394d6cf6b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1640,
+      "title": "Move the Player One camera exposure onto CaptureSession",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1640",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T08:11:08Z",
+      "additions": 616,
+      "deletions": 378,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Player One camera driver now takes exposures using a shared, tested building block instead of its own custom background-task code, and it is the first of five cameras planned to move over. For users, a failed exposure now reports a clear error instead of silently never finishing, and stopping or disconnecting mid-exposure cleans up more reliably. It also tightens a few edge cases, such as keeping a finished image when a disconnect attempt fails. The change intentionally differs from the original issue in a few documented ways, including no option to keep a partial image when stopping early.",
+      "category": "refactor",
+      "summaryHash": "011b024ab3bcbd1730cc75970082c7a87e704368"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1639,
