@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T01:15:34.086Z",
+  "generatedAt": "2026-10-25T02:13:56.208Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1623,
+      "title": "Add PolledState module and move two focusers onto it",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1623",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T01:46:49Z",
+      "additions": 978,
+      "deletions": 407,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two focuser drivers, Astroasis and QHY Q-Focuser, now share one common piece of code for checking the device on a timer, noticing repeated failures, and deciding when the connection has been lost. Before, each driver had its own copy of these rules, and copies like this had already drifted apart in other focusers. There is one small behavior change: a move command is now refused if the focuser's last reading is too old. New tests and documentation updates are included, and the Gemini and Celestron focusers are planned to move onto the shared code next.",
+      "category": "refactor",
+      "summaryHash": "de5799da431d9ba936d5f1946a32a98666ca669c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1621,
