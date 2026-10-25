@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T07:11:42.834Z",
+  "generatedAt": "2026-10-25T08:10:45.027Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1639,
+      "title": "Clarify ZWO mandatory telemetry timestamp semantics (#1531)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1639",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-25T07:42:24Z",
+      "additions": 90,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This change adds no new behavior. It adds tests and clearer documentation explaining how the ZWO telescope driver reports how fresh its position readings are. The new tests confirm that a partial or delayed update from the mount cannot make an older position look newer than it really is. The changelog files this under \"Fixed\", but the diff shows no change to the driver itself, only tests, docs, and a small adjustment to a documentation check.",
+      "category": "tests",
+      "summaryHash": "39deaf8f78601d0d1a259f374ee97cfbf25ce9f4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1636,
+      "title": "Add a shared filter wheel move-model test over ZWO EFW and QHY CFW3",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1636",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T07:18:45Z",
+      "additions": 288,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test change. It adds one shared set of checks that runs against both the ZWO and QHY filter wheel drivers to see whether they behave the same way while the wheel turns. The QHY driver passes every check. The ZWO driver fails two of them, so the team recorded that the two drivers should not be merged into a single shared piece of code until ZWO is fixed. No driver behavior changes, and the two known ZWO gaps are flagged so the build will alert the team once they are fixed.",
+      "category": "tests",
+      "summaryHash": "57b3502643c36e4bb13df6ad80fbafbd75ad493f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1633,
