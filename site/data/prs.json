@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T10:09:02.036Z",
+  "generatedAt": "2026-10-25T11:08:15.725Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,41 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1649,
+      "title": "Fix QHY SDK version hook waiting on an in-flight open",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1649",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T11:00:40Z",
+      "additions": 183,
+      "deletions": 52,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For QHY cameras, asking the server for the camera software's version number no longer gets stuck waiting while a camera is in the middle of connecting. Before, the device list and driver info pages could stall for the whole time it took to open the camera over USB. Now they answer right away. A new test checks this using a stand-in camera, but the real camera code was only checked by reading it, and nothing was tried on actual hardware.",
+      "category": "fix",
+      "summaryHash": "c2af5d735de3629a14b81da9ec7f74223ec2636d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1397,
+      "title": "ToupTek camera: keep the stream running between exposures",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1397",
+      "author": "shahal-dev",
+      "mergedAt": "2026-10-25T10:10:36Z",
+      "additions": 112,
+      "deletions": 44,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review",
+        "on hold"
+      ],
+      "summary": "ToupTek and Altair cameras now keep their image stream running between back-to-back exposures. Before, the stream was stopped and restarted before every frame. On at least one camera model this produced black, empty frames during guiding loops in PHD2. The stream is still restarted after an abort, failure, timeout, settings change or disconnect. A user's hardware tests showed steady frames with stars, and frame time fell from about 1.5 seconds to about 0.6 seconds.",
+      "category": "fix",
+      "summaryHash": "7f5cb79ca5af7f0c025bf5179ea108a541149992"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1648,
