@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T04:13:12.609Z",
+  "generatedAt": "2026-10-25T06:13:35.469Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1635,
+      "title": "Move the pointing math of eight mount drivers into util/pointing.h",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1635",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T06:06:38Z",
+      "additions": 660,
+      "deletions": 618,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The eight supported telescope mount brands (including Celestron, iOptron, Sky-Watcher, ZWO and others) each kept their own copy of the same sky-position math, like working out the current star time and checking that target coordinates are valid. That math now lives in one shared place, so a fix made once reaches every mount. Users may notice that the error message for an out-of-range coordinate now reads the same on every mount, and ZWO mounts handle one edge case of the position-around-the-meridian math slightly differently. A few smaller bits of duplicated math inside some drivers are not converted yet, as the description openly notes.",
+      "category": "refactor",
+      "summaryHash": "77a74827c15cfc0a81abe30240be8745af2b369b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1608,
