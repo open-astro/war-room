@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T23:17:40.731Z",
+  "generatedAt": "2026-10-25T23:57:00.391Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1658,
+      "title": "OnStep link-fault follow-ups and OnStep docs (#1626, #1653)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1658",
+      "author": "kern2011",
+      "mergedAt": "2026-10-25T23:19:08Z",
+      "additions": 454,
+      "deletions": 111,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This makes OnStep telescope mounts behave more safely and quickly when the mount stops responding. Changes to the observing site and clock are now refused while the connection is faulty, instead of being sent to a mount that isn't listening. Status checks on an unresponsive mount now fail fast, within about one reply timeout instead of tens of seconds. It also fixes a bug that put the mount's reported time off by twice its time-zone offset when the time zone was set from a handset or app, and rejects garbled date replies instead of recording them as January 1, 2000. The pull request also bundles documentation updates, including a note that OnStep has no way to report whether it has a GPS fix. The parts of the code diff shown match the description, though the main driver changes were left out of the diff provided.",
+      "category": "fix",
+      "summaryHash": "149c07b8fcb670af04714d0486b4fe63a41d3d3b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1657,
