@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T14:05:36.246Z",
+  "generatedAt": "2026-10-25T20:00:20.361Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1652,
+      "title": "Move the mount read_response loops onto util::read_until",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1652",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T19:12:33Z",
+      "additions": 1168,
+      "deletions": 366,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1654,
