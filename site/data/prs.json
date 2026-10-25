@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T00:34:36.060Z",
+  "generatedAt": "2026-10-25T01:15:34.086Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1621,
+      "title": "Add a hardware-free ConformU job over the fake Sky-Watcher mount",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1621",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T01:07:57Z",
+      "additions": 909,
+      "deletions": 3,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Every automated build now runs the official ASCOM compatibility checker (ConformU) against a simulated Sky-Watcher telescope mount, so changes to that driver or the web server get checked automatically without real hardware. The results from this run are clearly labeled as coming from a fake mount and are never treated as proof the real hardware works. Setting this up also surfaced a real bug, which the PR fixes: right after a short north or south guiding nudge, the telescope could briefly report a position slightly short of where it actually was. A similar issue in two related spots is left for a follow-up.",
+      "category": "ci",
+      "summaryHash": "e8134734a824e10dae583f165f21667d28132e53"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1625,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Add and Edit Device form in the web page now gets its list of available vendors from the server instead of keeping its own separate copy, so the two can no longer fall out of sync when a vendor is added. If the list fails to load, the form shows a plain message, keeps the vendor choice disabled, and tries again when the form is reopened. Editing a device whose vendor is not in the current build now keeps that vendor selected instead of dropping it. Adding a new vendor now needs less manual setup, and the developer guides were updated to match.",
+      "category": "refactor",
+      "summaryHash": "7430bee593a6f26a66d5ce8ff64c1f22c2bc271d"
     },
     {
       "repo": "open-astro/AlpacaBridge",
