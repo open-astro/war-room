@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T20:00:20.361Z",
+  "generatedAt": "2026-10-25T20:53:46.360Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1650,
+      "title": "OnStep: refuse a slew while a GOTO runs and an Alt/Az slew while tracking, and read the mount's refusals (#1379, #1377)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1650",
+      "author": "kern2011",
+      "mergedAt": "2026-10-25T20:16:43Z",
+      "additions": 2782,
+      "deletions": 547,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For OnStep telescope mounts, the server now refuses a new slew request while the mount is already moving to a target, so a second request no longer stops the first one short or interrupts a park or home in progress. It also refuses to point the mount by altitude and azimuth while tracking is on, because a tracking mount would drift away from that spot. When the mount turns down a request, users now see the real reason, such as 'parked' or 'above the overhead limit', instead of a generic 'below horizon' message. Refusals of sync, park-position, unpark and tracking commands that used to be silently treated as success now show up as errors. The PR also adds a copy of the OnStep command reference to the project.",
+      "category": "fix",
+      "summaryHash": "8202da24f870134f1467fbcb7e80a06bf2458ee0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1652,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Behind-the-scenes cleanup for the iOptron, Celestron, SynScan and ZWO mount drivers: four near-identical copies of the code that reads replies from the mount were replaced with one shared reader. One change users may notice is that an unplugged or dropped connection is now reported right away as a lost link, instead of looking like the mount simply went quiet. OnStep mounts are not included in this change, and new tests cover the new behavior.",
+      "category": "refactor",
+      "summaryHash": "5bfc3feb93cfea2820d25f52eef9d64b5f47ade0"
     },
     {
       "repo": "open-astro/AlpacaBridge",
