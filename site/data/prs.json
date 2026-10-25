@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T09:09:58.209Z",
+  "generatedAt": "2026-10-25T10:09:02.036Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1648,
+      "title": "Move iOptron UTC age and iEAF status cache onto the TaskClock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1648",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T09:46:39Z",
+      "additions": 90,
+      "deletions": 40,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two timers in the iOptron drivers now use the project's shared, swappable clock instead of reading the computer's clock directly. One tracks how long ago the telescope's date and time was set, and the other controls how often the focuser is asked for its status. Automated tests can now fast-forward these timers instead of waiting in real time, and the new tests do that. Real-world behavior should be unchanged. The PR also raises the code-size figure shown in the README from 247k to 260k lines so a documentation check keeps passing, and the telescope part of the code change was not visible for review.",
+      "category": "refactor",
+      "summaryHash": "7fa5f88f639aa338718011dabbfda9520a08af59"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1651,
+      "title": "Fix Astroasis failed-move tests for the overlapped poll",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1651",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T09:13:25Z",
+      "additions": 17,
+      "deletions": 6,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes two automated tests for the Astroasis focuser that sometimes failed at random. The driver itself is unchanged. The tests now accept either of two valid position readings right after a failed move or stop command, and they still check that the next reading reflects the actual device. The trade-off is that the tests no longer directly check one specific clean-up step after a failure.",
+      "category": "tests",
+      "summaryHash": "3dad9903f568ad58d3f1c9ba1d607c2f70a5b193"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1645,
