@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T06:13:35.469Z",
+  "generatedAt": "2026-10-25T07:11:42.834Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1633,
+      "title": "Update serial probes and CFW3 reads to use util::read_until",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1633",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T06:58:43Z",
+      "additions": 298,
+      "deletions": 319,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the server scans serial ports to find connected telescope gear, about fifteen device checks and the QHY filter wheel now share one tested piece of code for reading replies, instead of each having its own copy. Devices are recognized or rejected the same way as before. Some detection waits are now shorter and more exact, for example 2 or 3 seconds where the old checks could stretch to 4 to 6 seconds. WandererAstro power boxes and rotators now fail to connect right away if the cable drops mid-connect, instead of retrying for several seconds. This was tested only with simulated devices, not real hardware, and much of the code change was too large to check here, so this summary relies partly on the description.",
+      "category": "refactor",
+      "summaryHash": "acbaa482fa13c6733c53247737566aa1a09ab71c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1638,
+      "title": "Move the fake Sky-Watcher ConformU job out of PR CI",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1638",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-25T06:30:06Z",
+      "additions": 164,
+      "deletions": 76,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal CI change: a 20-minute automated compatibility check against a simulated Sky-Watcher mount no longer runs on every pull request. It now runs only when a pull request touches files that can change the simulated mount's answers, plus once each night and on demand. A failed nightly run opens an issue automatically. This should make most pull requests finish their checks much faster, with the trade-off that a broader core change that breaks compatibility will be caught by the nightly run rather than on its own pull request.",
+      "category": "ci",
+      "summaryHash": "694a92f25813532b8750a2eaf845907461f6cb7a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1635,
