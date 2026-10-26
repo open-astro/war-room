@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T05:52:16.165Z",
+  "generatedAt": "2026-10-26T06:51:16.882Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1677,
+      "title": "Remove the x86-64 Generic OnStep ConformU report",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1677",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T06:42:21Z",
+      "additions": 16,
+      "deletions": 463,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Removed one telescope test report, the Generic OnStep mount, from the project's list of validated devices. The report was filed as if it ran on the small ARM-based computers the project targets, but it actually came from an ordinary Intel/AMD desktop PC, so it was misleading. The supported-devices pages now point to the TeSeek HM-17 report as the OnStep validation, list the four other reports that were also run from a desktop PC, and drop the device count from 94 to 93. This is a documentation and records change only; no driver behavior changed.",
+      "category": "docs",
+      "summaryHash": "cf93a6c71457361ce81263aa41a59e12260f39b0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1671,
+      "title": "Harden Sky-Watcher lock handling and fix decision 0016 wording",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1671",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T06:14:00Z",
+      "additions": 109,
+      "deletions": 12,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Made the Sky-Watcher telescope driver more reliable when it disconnects. On every disconnect path, it now marks the mount as disconnected before closing the link, so a status check that arrives mid-disconnect gets a clear \"not connected\" answer instead of reading a half-closed connection. It also adds safety checks, active only in developer and test builds, that catch misuse of the driver's internal locking, plus a new test for the disconnect timing and clearer code comments. A sentence in a design-decision document was also corrected so it no longer says that no driver has adopted the rule yet.",
+      "category": "fix",
+      "summaryHash": "6a5d4044e414c222ae86afa3d6d2833bd0c81483"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1676,
