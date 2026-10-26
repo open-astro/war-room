@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T04:52:49.614Z",
+  "generatedAt": "2026-10-26T05:52:16.165Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1676,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1676",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T05:47:14Z",
+      "additions": 689,
+      "deletions": 567,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings the 5.0.1 fix from the stable release line into the main development line, so the next release made from main does not lose it. Telescopes that can slew are once again reported as able to, and the older \"slew and wait until done\" commands now work instead of being refused. That is what lets tools like NINA's manual control and TPPA move the mount again. Each such request waits up to 90 seconds for the move to finish and reports an error if it is still moving, without stopping the mount; the version number, changelog, release notes and setup docs are also updated to 5.0.1.",
+      "category": "fix",
+      "summaryHash": "d1b6934c67a87b2003dacaa9e06bea3eb2fd3d5b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1672,
