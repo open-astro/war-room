@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T23:57:00.391Z",
+  "generatedAt": "2026-10-26T01:45:55.088Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1656,
+      "title": "Fix ZWO EAF focuser staying dead after a USB replug",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1656",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T01:09:15Z",
+      "additions": 1468,
+      "deletions": 202,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO EAF focuser can now recover after being unplugged and plugged back into USB. Before, it kept claiming to be connected while every command failed, and only restarting the whole service fixed it. Now the server notices the device is gone right away and reports it as disconnected. A single reconnect from the user's software finds the same focuser again by its serial number, and it will not accidentally control a different focuser that took its place. The visible code covers only the focuser; the same fix for the ZWO camera, dew heater, filter wheel and rotator is planned in later pull requests.",
+      "category": "fix",
+      "summaryHash": "a633785d3e14a0085401021ffcacc6fec2ca6277"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1658,
