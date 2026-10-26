@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T03:53:37.650Z",
+  "generatedAt": "2026-10-26T04:52:49.614Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,74 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1672,
+      "title": "docs: record ZWO SDK exposure-start reset evidence (#1665)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1672",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-26T04:48:57Z",
+      "additions": 276,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a written investigation report into why ZWO cameras do a brief USB reset at the start of every exposure. Tests on one camera and board traced the reset to ZWO's own camera software, which does it every time an exposure starts. The report also says this does not explain the original user's camera dropping off behind a USB hub. No software behavior changed, and the issue stays open until ZWO explains why the reset is there.",
+      "category": "docs",
+      "summaryHash": "ec0cef80ac3d524844cb466eeab1c9c84748275f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1674,
+      "title": "Release 5.0.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1674",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T04:44:15Z",
+      "additions": 28,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Prepares the 5.0.1 release. Its main purpose is to deliver the fix that restores telescope slewing from NINA's manual control and the TPPA polar-alignment tool, which version 5.0.0 had broken. This PR only updates the version number, changelog, README badge and plain-language release notes; the actual code fix was merged separately.",
+      "category": "chore",
+      "summaryHash": "e399d9191ce71266e073fe15222ab04ab637f0e3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1664,
+      "title": "Fix QHY camera cached-getter stalls during SDK initialization",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1664",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-26T04:20:09Z",
+      "additions": 1758,
+      "deletions": 703,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes QHY cameras briefly freezing, for about two seconds, when a client asked for basic camera information while the camera was changing settings such as readout mode. Along the way it also makes cooling and temperature updates keep running after a failed mode change. A request to turn the cooler off is no longer lost if the camera disconnects at the same time, and guiding pulses no longer wait on settings changes. One visible change: while a mode change is in progress, asking for the camera's exposure-time limits now returns an error, and clients should retry afterward instead of waiting.",
+      "category": "fix",
+      "summaryHash": "6513c6eaa134d9beb67b835c85dc22987a43b4a8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1663,
+      "title": "Fix CanSlew and serve synchronous telescope slews",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1663",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T04:11:33Z",
+      "additions": 665,
+      "deletions": 567,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Restores telescope slewing from NINA's manual control and the TPPA polar-alignment tool. Version 5.0.0 told every program that no mount could slew and refused the related commands. The bridge now reports what the mount can actually do, and runs the slew commands for mounts that support them. It waits up to 90 seconds for a slew to finish, and if it takes longer it tells the client the slew is still running rather than stopping it. The fix was confirmed on a real Sky-Watcher mount, with a clean result from the standard compatibility checker.",
+      "category": "fix",
+      "summaryHash": "d5643ec63ec20ed7b851f882cfecbc6bf6f88914"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1669,
