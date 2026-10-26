@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T01:45:55.088Z",
+  "generatedAt": "2026-10-26T01:55:14.599Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1661,
+      "title": "Fix the review bot dropping a review over one left-out checklist rule",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1661",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T01:48:45Z",
+      "additions": 83,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated review bot that comments on every pull request was sometimes losing its entire review because it left out a single line from its required rules checklist, and nothing was posted until someone re-ran the job. Now the bot is handed a ready-made checklist with one line per rule to fill in, and it is told to run the same check the final gate uses on its own review and fix any problems before it finishes. The final gate is just as strict as before, so a review that still misses a rule is blocked rather than posted. The bot is also given permission to run that one checking script and nothing else, and this new behavior won't be seen in practice until the next pull request after this one is merged.",
+      "category": "ci",
+      "summaryHash": "6e5217e490592891e90941fea2842efd370a6fcd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1656,
