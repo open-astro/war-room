@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T22:38:07.397Z",
+  "generatedAt": "2026-10-26T23:54:56.208Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1685,
+      "title": "OnStep: move the reply reads onto util::read_until",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1685",
+      "author": "kern2011",
+      "mergedAt": "2026-10-26T23:37:16Z",
+      "additions": 315,
+      "deletions": 116,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope mount driver now reads the mount's replies with the same shared reading code the other supported mounts already use, instead of its own byte-by-byte loop. For users the commands, timeouts and error messages are meant to stay the same, and one small pacing delay between bytes is removed. One behavior change applies only to the network connection used for testing: if the other side hangs up, the driver now reports it right away instead of waiting out the full timeout. The PR also updates internal docs and corrects a changelog note so it accurately describes when OnStepX turns tracking on after a GOTO.",
+      "category": "refactor",
+      "summaryHash": "d85ff6a10c6c1c7b340b18f845bb1b4402626960"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1680,
