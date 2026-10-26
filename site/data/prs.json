@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T07:50:07.134Z",
+  "generatedAt": "2026-10-26T08:50:14.443Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1679,
+      "title": "Fix QHY readout mode change resetting the ROI unbinned",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1679",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-26T08:16:16Z",
+      "additions": 45,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a bug with QHY cameras: if a user had binning (combining pixels) turned on and then switched the camera's readout mode, the next exposure would fail with an error. The camera now keeps the user's binning setting across a readout mode change and sizes the image area to match, so exposures work as expected. This also stops an automated stress test that had been failing on and off. A new test covers the case; it has not yet been tried on a real camera.",
+      "category": "fix",
+      "summaryHash": "e342a4f5d7351fe12ceb347b89bc184e49da04f4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1675,
@@ -22,9 +37,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Changes how the 12V power ports on supported boards (ZWO ASIAIR, ToupTek StellaVita, iOptron iMate) behave when the server starts or a client connects. Connecting now reads and reports each port's real on/off level instead of assuming every port is on, and never switches power on or off. The server also remembers the last setting a user chose for each port. A new per-device \"power-on state\" option in the web setup page (leave as is, restore last settings, or turn off) is applied once when the server starts, with \"off\" applied only after a reboot. The result is that gear like dew heaters comes back the way the user left it, and a client reconnecting or a service restart no longer causes surprise power changes. One board (the ASIAIR Plus RK3568) cannot read its port levels, so it still reports ports as on when connecting, but it does gain saved settings and the start-up option.",
+      "category": "feature",
+      "summaryHash": "cfbd233cf54eddfcf82564c358264f249ea0956b"
     },
     {
       "repo": "open-astro/AlpacaBridge",
