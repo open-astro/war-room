@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T01:55:14.599Z",
+  "generatedAt": "2026-10-26T03:53:37.650Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1669,
+      "title": "OnStep: homing, pulse-guide, park/home and clock-read follow-ups",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1669",
+      "author": "kern2011",
+      "mergedAt": "2026-10-26T03:31:12Z",
+      "additions": 416,
+      "deletions": 40,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes six small cases where the OnStep telescope mount driver gave a misleading error or a stale answer. A slew or sync sent while the mount is homing with home sensors is now refused cleanly. The guiding indicator turns off as soon as a stop command ends a guide pulse, instead of staying on for up to 10 seconds. Parking an already-parked mount is now treated as done; asking for home on a parked mount, or reading location details while the mount connection is down, now gives a proper error instead of a wrong error, a long wait, or a made-up default; and a garbled mount clock reading is rejected. The main driver code changes were not visible in the trimmed diff, so those fixes are taken from the description, while the clock-reading checks and documentation updates were confirmed.",
+      "category": "fix",
+      "summaryHash": "8ed3bcc7af56ef81d92657fd41dfd703d2139754"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1147,
+      "title": "Update the ToupTek SDK to 20260519",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1147",
+      "author": "kern2011",
+      "mergedAt": "2026-10-26T03:04:53Z",
+      "additions": 1172,
+      "deletions": 6767,
+      "changedFiles": 89,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Updates the bundled ToupTek camera software kit to its newest version (May 2026). This kit runs ToupTek cameras, focusers and filter wheels, plus some rebadged SVBONY cameras, so they pick up the maker's latest fixes and model support with no changes to our own driver code. The maker's demo programs, which nothing used, are no longer included, which is why most of the change is deleted files. The update was checked on real cameras, and new standard compliance test results were recorded.",
+      "category": "chore",
+      "summaryHash": "b9be19e0e536c7408f268da91e313099a6581af9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1661,
