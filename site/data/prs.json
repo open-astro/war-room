@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T08:50:14.443Z",
+  "generatedAt": "2026-10-26T22:38:07.397Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1680,
+      "title": "OnStep: faulted reads throw, and park and pulse-guide follow-ups",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1680",
+      "author": "kern2011",
+      "mergedAt": "2026-10-26T21:54:16Z",
+      "additions": 268,
+      "deletions": 20,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the OnStep telescope mount stops answering, the server now reports that problem for every reading an app asks for, such as the site location, time and pier side, rather than quietly giving back older values it had saved when it first connected. Park and home commands now correctly show that any guiding nudge has ended once they stop the mount, and a mount that reports it is already parked now shows as parked even if the follow-up check fails. After a long connection dropout, the server also no longer interrupts a park that was still in progress, which before left the mount stuck partway. One small extra not highlighted up front: the tracking-rate reading now reports \"not connected\" when the mount is disconnected instead of answering zero.",
+      "category": "fix",
+      "summaryHash": "2a8851f12b435b14e2daaedd5c92c509bc053e68"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1679,
