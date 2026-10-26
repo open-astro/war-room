@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T06:51:16.882Z",
+  "generatedAt": "2026-10-26T07:50:07.134Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1675,
+      "title": "Fix #300: power-port power-on state and real port levels at connect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1675",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-26T07:11:10Z",
+      "additions": 2275,
+      "deletions": 519,
+      "changedFiles": 56,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1677,
