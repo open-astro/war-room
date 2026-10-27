@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T18:21:16.347Z",
+  "generatedAt": "2026-10-27T20:19:48.180Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1454,
+      "title": "A parsed XISF header keeps only the file's own metadata (#1148)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1454",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-27T20:17:55Z",
+      "additions": 60,
+      "deletions": 9,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "When Ara reads the header of an XISF astronomy image file, it now keeps only the information that was actually in that file. Previously, Ara also mixed in its own default details, such as a fresh creation time and itself listed as the program that made the file, so the header ended up with two competing sets of information. Changes made to a loaded header now carry through when it is saved, and the original data passed in is left untouched. The code matches the description, loaded images look the same as before, and new tests cover the change.",
+      "category": "fix",
+      "summaryHash": "9b560861306a48179e9352b22d4e8f6a794e9828"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1453,
