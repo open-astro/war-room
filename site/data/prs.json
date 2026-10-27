@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T04:32:43.010Z",
+  "generatedAt": "2026-10-27T05:07:55.505Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1447,
+      "title": "Sequence slew centres on its target when \"Center target after slew\" is on (#1446)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1447",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-27T04:39:28Z",
+      "additions": 234,
+      "deletions": 17,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the \"Center target after slew\" setting is on (it is on by default), the slew step in an imaging sequence now checks where the telescope actually ended up by taking a picture and matching it against the sky, then corrects its aim until it is on target. Before this, the step only sent the telescope to the coordinates and trusted it, so on one recent night a run to the Helix Nebula ended up about 5° off without anyone noticing. Because this check is now on by default, a target whose position can't be confirmed (for example, no star catalog installed or a field that won't match) now fails that step instead of quietly imaging the wrong patch of sky. Also, a sequence that already has its own centering step after the slew will now center twice. The code matches the description, and the fix has passed automated tests but has not yet been tried as part of a real sequence on actual telescope hardware.",
+      "category": "fix",
+      "summaryHash": "ff40a5304d93f904a307a9bad0815cfe1cbfe675"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1449,
