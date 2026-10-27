@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T20:19:48.180Z",
+  "generatedAt": "2026-10-27T21:18:36.292Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1731,
+      "title": "Fix QHY camera control getter stalls and cooler OFF delivery",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1731",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-27T20:45:24Z",
+      "additions": 1020,
+      "deletions": 587,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1454,
