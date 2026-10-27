@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T06:31:33.852Z",
+  "generatedAt": "2026-10-27T07:30:26.293Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1733,
+      "title": "Fix HTTP YAML thread pool size validation",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1733",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-27T07:04:51Z",
+      "additions": 62,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The web server's setting for how many requests it can handle at once is now kept within its intended range of 1 to 256 when it comes from the settings file, matching what already happened when it was set another way. Before, setting it to zero in the file left the server unable to answer any requests, and a negative number could stop it from starting at all. Now zero means one worker, and a negative value is treated as the maximum of 256 rather than the minimum. Normal settings and the default of 32 behave exactly as before, and new tests cover the edge cases.",
+      "category": "fix",
+      "summaryHash": "7dd847e0e013137d1e75a73d0ce13a45f7146b5e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1728,
