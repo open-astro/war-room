@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T16:22:55.053Z",
+  "generatedAt": "2026-10-27T18:21:16.347Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1453,
+      "title": "The mount settles after a slew before the next frame (#1445)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1453",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-27T17:37:38Z",
+      "additions": 197,
+      "deletions": 15,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "After the telescope finishes moving to a new target, Ara now waits a short settling time (5 seconds by default) before taking the next picture. This applies to a sequence's slew step, centring, and polar alignment, so the first frames are no longer blurred by a mount that is still shaking. That shaking had misled an autofocus run into spending 8 minutes hunting for focus that was already correct. The meridian flip keeps its own separate wait, and the autofocus log now records an extra sharpness reading for each early test shot. The author notes that 5 seconds alone would not have covered the roughly 47-second bad stretch in the original report, so the root cause is still unknown and the new log entries are meant to help find it.",
+      "category": "fix",
+      "summaryHash": "845280669cf4eac046fc61469e0e8c152262933b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1452,
