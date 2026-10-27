@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T23:54:56.208Z",
+  "generatedAt": "2026-10-27T01:35:28.020Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1687,
+      "title": "Skip the OnStepX copy in the link check; set INDI AM5 and LibRaw baselines",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1687",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-27T00:50:27Z",
+      "additions": 28,
+      "deletions": 10,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is internal housekeeping with no change to the software users install. The weekly check for broken links now skips one document copied unchanged from another project, because its links point to files that were never copied over and so always failed. It also records two outside updates as reviewed: a change to another project's ZWO AM5 mount driver that ours already matched, and a bug-fix release of the camera raw-image library that we still get through Debian at the older version. The diff matches the description, including a small wording update so future automatic update notices describe the recorded version correctly.",
+      "category": "ci",
+      "summaryHash": "b8ee29b59ddb98ee8ecd76a9a42ace95ad17e34a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1685,
