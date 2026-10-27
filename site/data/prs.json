@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T10:27:53.391Z",
+  "generatedAt": "2026-10-27T11:27:03.230Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1744,
+      "title": "Write settings files atomically and keep a corrupt device list",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1744",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-27T11:08:06Z",
+      "additions": 411,
+      "deletions": 77,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server's settings files (the list of registered devices, the main configuration, and the saved log level) are now saved safely, so a crash or a full disk can no longer leave them half-written or empty. If a save fails, the previous file stays as it was and the failure is reported. For example, changing the server description now returns an error instead of falsely reporting success. If the device list is found damaged at startup, it is set aside under a new name instead of being silently overwritten, so it can still be recovered. Some other settings files mentioned in the linked issue are not covered yet and are left for later work.",
+      "category": "fix",
+      "summaryHash": "3bb07cb26a9ee8c848092a38188d1a8b1fb0da63"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1743,
+      "title": "OnStep: follow-ups from the #1728 reviews",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1743",
+      "author": "kern2011",
+      "mergedAt": "2026-10-27T10:41:14Z",
+      "additions": 532,
+      "deletions": 45,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This tidies up several small gaps left by an earlier rework of how the OnStep telescope driver handles simultaneous requests. A request for the observing site that overlaps a disconnect now reports \"not connected\" instead of giving a stale answer. The mount will no longer get a stray command to resume tracking right after another user has started a new slew, park or home. Setting a target position or the refraction option no longer waits behind a command that is in progress, and a target set during a slew is no longer overwritten. If the site location from the settings can't be sent to the mount when connecting, this is now logged as a warning instead of being silently ignored. The change also adds twelve tests and updates comments and developer notes.",
+      "category": "fix",
+      "summaryHash": "a3b8ddcae744895b4cc18ee70867dea7160113bf"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1742,
