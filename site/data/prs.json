@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T03:33:31.686Z",
+  "generatedAt": "2026-10-27T04:32:43.010Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1449,
+      "title": "The Imaging tab's Exposure field takes sub-second exposures",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1449",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-27T03:35:26Z",
+      "additions": 172,
+      "deletions": 8,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "The exposure time box on the Imaging tab now accepts fractions of a second, such as 0.5. Before, typing a value like that quietly snapped back to the old number, even though the rest of the system could already handle it. The box now accepts a comma as the decimal mark and shows a decimal key on phones. It also keeps values within what the connected camera says it supports (or 24 hours if the camera doesn't say), and when someone enters zero, a negative number, or junk, it puts back the exposure that is actually in use.",
+      "category": "fix",
+      "summaryHash": "5a2c325be487bd12105ce75ed5ecca0d11439627"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1727,
