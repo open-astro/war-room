@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T21:18:36.292Z",
+  "generatedAt": "2026-10-27T23:18:01.847Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,89 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1750,
+      "title": "Fix ZWO accessory enumeration isolation and SDK slot binding",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1750",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-27T23:09:07Z",
+      "additions": 378,
+      "deletions": 121,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO filter wheels, focusers and rotators are now found reliably even when one connected unit fails to report its details. Before, a single unreadable unit could hide all the healthy ones or cause the bridge to connect to the wrong device; now the bad unit is skipped with a warning and each remaining unit keeps its original position number. One behavior change is flagged as breaking: connecting by position number now refuses a unit whose details can't be read, instead of trying anyway, so users should fix that device and retry rather than renumber.",
+      "category": "fix",
+      "summaryHash": "59d8df35f6284cb0f42d0679534689e865b96ce0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1747,
+      "title": "Round serial waits up and move the late byte into util::read_until",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1747",
+      "author": "kern2011",
+      "mergedAt": "2026-10-27T22:42:42Z",
+      "additions": 335,
+      "deletions": 154,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Mount drivers that talk over serial or network cables (Celestron, iOptron, SynScan, OnStep) no longer burn CPU in a tight loop during the final millisecond of every timed-out read. The rule for catching a reply byte that arrives just after the timeout, which was copied separately into each of the four drivers, now lives in one shared place. Replies, error messages and lost-connection handling are meant to stay the same for users.",
+      "category": "fix",
+      "summaryHash": "0dd5e054646cc70d3d405b45385532d89832123f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1732,
+      "title": "Fix ZWO AM premature GOTO completion during setup",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1732",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-27T22:16:00Z",
+      "additions": 227,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO AM mounts no longer report a GOTO as finished while the mount is still being set up for it or retrying after a rejection. Programs that wait for a slew to complete will now wait for the real end of the move instead of continuing before the mount has even started. Unpark also now cancels any GOTO that is still being set up. It was checked on a real ZWO AM5 as well as in simulated tests.",
+      "category": "fix",
+      "summaryHash": "0e16f04dd0382d12720831fe2bfc8b995045933f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1455,
+      "title": "Drop the dead RAW, TIFF and bitmap-source image paths (#1147)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1455",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-27T21:52:00Z",
+      "additions": 50,
+      "deletions": 422,
+      "changedFiles": 24,
+      "labels": [],
+      "summary": "Ara drops leftover, never-working code for decoding DSLR RAW files, saving TIFF images and loading other image types. These were all placeholders that only produced errors. DSLR RAW files are already decoded upstream by AlpacaBridge, and Ara only ever saves FITS or XISF. The camera's \"raw converter\" setting is removed, trying to save any other format now fails with a clear message naming the format, and older saved profiles still load.",
+      "category": "refactor",
+      "summaryHash": "5047f9f2504d7532d6c669577cae2e048cacf939"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1752,
+      "title": "Add nightly all-vendors ASan + UBSan job",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1752",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-27T21:20:51Z",
+      "additions": 119,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal testing change: a new nightly automated job builds every camera and device driver with extra memory-safety and undefined-behavior checks, then runs the full test suite. Until now, most driver-specific tests never ran under these checks. The job does not block the nightly release; a failure opens an issue instead. It has not run yet and will first run on the night after merge.",
+      "category": "ci",
+      "summaryHash": "116a9f15011864584c96c4823318acaec42acdc3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1731,
@@ -22,9 +105,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "QHY cameras now answer questions like gain, offset and maximum binning right away instead of freezing until a long image download finishes, because those values are stored when connecting and refreshed after changes. A request to turn the cooler off is no longer lost if the camera disconnects right afterward; the bridge now makes sure the cooler-off command actually reaches the camera. A plain disconnect still leaves the cooler as it was. Reconnecting is briefly refused while a cooler-off is still finishing.",
+      "category": "fix",
+      "summaryHash": "8a224f2871f8a1e313a049e23c94f1f99c76b13e"
     },
     {
       "repo": "open-astro/openastro-ara",
