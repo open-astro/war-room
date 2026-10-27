@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T15:23:46.396Z",
+  "generatedAt": "2026-10-27T16:22:55.053Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1452,
+      "title": "Ara's Dec guide mode always reaches the guider, and Guiding Assistant Apply lands in Ara's profile (#1448)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1452",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-27T16:20:37Z",
+      "additions": 469,
+      "deletions": 52,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Ara's Dec guiding setting now always reaches the guider. Before, Ara never sent its default \"Auto\" setting, so if the guider had been set to North-only (which the Guiding Assistant can do for mounts with a lot of slack), it stayed that way even though Ara showed Auto, and drift needing a south correction went unfixed all night. Ara now sends this setting every time it connects or re-tunes the guider. After you apply the Guiding Assistant's recommendations, Ara also saves the values the guider actually took into its own settings and refreshes the Settings screen, so what Ara shows matches what the guider runs and a later save won't undo them. The full Guiding Assistant Apply has not yet been tested on real hardware under the stars.",
+      "category": "fix",
+      "summaryHash": "f980ad81847ad521db37a209f8459a113b34d94c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1746,
