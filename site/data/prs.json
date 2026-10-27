@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T01:35:28.020Z",
+  "generatedAt": "2026-10-27T03:33:31.686Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1727,
+      "title": "Count only identity queries in the Sky-Watcher redundant-connect check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1727",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-27T02:38:12Z",
+      "additions": 7,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "bug",
+        "P3"
+      ],
+      "summary": "Internal test fix with no change to how the Sky-Watcher telescope driver behaves. One automated check sometimes failed for no real reason. It counted every message sent to a simulated telescope, and the driver's routine status checks every tenth of a second could slip in and change the count. The check now counts only the specific message a real connection attempt sends, so it stays stable but still catches a genuine unwanted reconnect.",
+      "category": "tests",
+      "summaryHash": "e1086adff254d341f836df3613f921d875a709e4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1687,
