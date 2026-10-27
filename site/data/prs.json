@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T05:07:55.505Z",
+  "generatedAt": "2026-10-27T06:31:33.852Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1728,
+      "title": "Fix OnStep getters waiting behind serial exchanges",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1728",
+      "author": "kern2011",
+      "mergedAt": "2026-10-27T06:21:08Z",
+      "additions": 1821,
+      "deletions": 628,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStep telescope mounts now answer status questions (is it moving, where is it pointing, is it parked, and similar) right away, even while the mount is busy parking, homing, slewing or connecting. Before, those questions waited in line behind whatever command was talking to the mount, which could make apps feel frozen or slow. A status reading that is more than a couple of seconds old still asks the mount, and that one check can wait briefly. OnStep was the last telescope family to get this treatment, and the change adds safeguards against mix-ups when someone disconnects, reconnects or starts a new move at the same moment, plus new tests and updated docs.",
+      "category": "fix",
+      "summaryHash": "9da08059ac1c2a71cf42fdee2d2f044f21edcddb"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1447,
