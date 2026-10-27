@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T14:24:43.087Z",
+  "generatedAt": "2026-10-27T15:23:46.396Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1746,
+      "title": "Fix Player One download error after a driver stop",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1746",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-27T14:52:51Z",
+      "additions": 122,
+      "deletions": 5,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Player One cameras no longer report a false image download error when the user aborts an exposure or disconnects mid-exposure. Stopping the exposure on purpose made the image download fail, and that failure was sometimes reported to imaging software as a real error. The driver now flags that it is stopping the exposure itself, so this expected failure is ignored, and if the stop itself fails the exposure carries on and real errors are still reported. The code matches the description, but the author notes it was not tested on real hardware and one rare timing case is accepted as a known limit.",
+      "category": "fix",
+      "summaryHash": "de419ddc7848d50a58df8d241ba0b1397ee09305"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1451,
