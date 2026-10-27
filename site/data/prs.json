@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T11:27:03.230Z",
+  "generatedAt": "2026-10-27T14:24:43.087Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1451,
+      "title": "Take One with no storage disk says so at once instead of timing out (#1450)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1451",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-27T14:14:41Z",
+      "additions": 369,
+      "deletions": 12,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "When someone presses \"Take One\" with no storage drive plugged in, or with the disk full under a stop-on-full setting, the app now says so right away with a clear message such as \"No storage disk: nothing is mounted at …\". Before, it looked like the picture had started, then waited out the exposure plus 20 seconds before giving a vague \"couldn't confirm the frame arrived\" message. If the drive goes away just after the request is accepted, the camera now also reports the failure with the same reason, so the wait ends early instead of timing out. The server changes are visible in the code, but the app-screen changes were cut from the diff and could not be checked, and the change has not yet been tried on the real hardware with the drive unplugged.",
+      "category": "fix",
+      "summaryHash": "23baf89aae1e4ac7411998089d2b3545891f9699"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1744,
