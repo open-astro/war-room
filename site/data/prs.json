@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T01:15:42.495Z",
+  "generatedAt": "2026-10-28T02:14:50.317Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1775,
+      "title": "Fix QHY cooler test hangs in the coverage job",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1775",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T01:47:09Z",
+      "additions": 34,
+      "deletions": 6,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes some automated tests for the QHY camera's cooler that sometimes froze and stalled one of the project's automated check runs until it hit its 30-minute limit. The tests now keep their simulated clock moving while the cooler is switched on, and two waiting points now give up after 30 seconds. A test that goes wrong now fails quickly instead of hanging. Only test code and the changelog changed; the camera driver itself is untouched.",
+      "category": "tests",
+      "summaryHash": "c9c6f76eb5ae8422d35da46c56826cc578fea413"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1767,
+      "title": "Fix power-port, troubleshooting, Wi-Fi API and AlpacaHTTP docs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1767",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T01:28:18Z",
+      "additions": 53,
+      "deletions": 49,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Corrects several setup guides that gave steps which no longer work on current builds. The fixes cover the power-port, troubleshooting, Wi-Fi hotspot and web server guides. The power-port guide now gives the right network port (6800 instead of 11111) and says only the newer Trixie operating system is supported. It also names the correct switch types for the ZWO ASIAIR Plus (Pi CM4) and StellaVita, and fixes some commands and file locations. The Wi-Fi guide now explains that 5 GHz hotspots need the country set first, and the other guides were brought in line with how the software actually behaves. These are documentation changes only, so people following the guides should now end up with a working setup.",
+      "category": "docs",
+      "summaryHash": "40436922ea798b2bbb02185e7d99147a692057b1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1768,
