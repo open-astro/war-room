@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T09:09:11.044Z",
+  "generatedAt": "2026-10-28T11:07:32.609Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1790,
+      "title": "Share driver test helpers in driver_rig.h",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1790",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T11:01:26Z",
+      "additions": 523,
+      "deletions": 873,
+      "changedFiles": 78,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test cleanup with no change to how the software behaves. Many driver test files each kept their own copy of the same small checking helpers, so those copies were replaced with one shared version that has its own tests. Some checks now stop at the first failure instead of carrying on. The developer guidelines were also updated to say that some of the required per-driver test cases are now handled by an existing shared check across all drivers, and that new tests must use the shared helpers.",
+      "category": "tests",
+      "summaryHash": "91cc5f7d17f2524e75764145c29ee0ba2bcffc8a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1793,
+      "title": "Fix hotspot edits that return early leaving the field changed",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1793",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T10:36:31Z",
+      "additions": 136,
+      "deletions": 12,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In the web page's WiFi settings, a hotspot change that cannot be saved now snaps back to what was saved before. This covers the system being busy, an empty name, or 5 GHz chosen with no country set. Before, the field or on/off switch stayed as the user left it and looked saved when it was not. On a hotspot that is not set up yet, typed values are kept so the name and password can be entered one at a time. New tests cover each of these cases.",
+      "category": "fix",
+      "summaryHash": "8a36ba09826ba935c08f0fa72c76e000e83b09b9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1795,
+      "title": "Fix update channel helper leaving its drop-in when stopped",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1795",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T10:12:56Z",
+      "additions": 126,
+      "deletions": 1,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Switching between the Stable and Beta update channels is now safe if the switch is interrupted partway through. The system goes back to the previous channel and cleans up its temporary files, instead of wrongly showing Beta after a failed switch. Fully uninstalling the package now also removes its log folders. A note explains why a shared hardware-access user group is deliberately left in place. A new test simulates the interruption for each kind of switch.",
+      "category": "fix",
+      "summaryHash": "c2066a251096c9a34f39f7595bfc749611b73f6c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1792,
