@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T07:10:49.754Z",
+  "generatedAt": "2026-10-28T08:10:01.423Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1789,
+      "title": "Write wifi_country and AlpacaCore stores atomically",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1789",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T07:59:43Z",
+      "additions": 65,
+      "deletions": 48,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Several settings files saved on the device's SD card, including the Wi-Fi country and the saved device locations, are now written safely. A power cut or a full card can no longer leave one of them empty or half-written. If saving the Wi-Fi country fails, the user now gets an error instead of a false success message. A new test covers the Wi-Fi country case, and the code matches the description.",
+      "category": "fix",
+      "summaryHash": "95efc2c374245480d4c07b6faddd1cfd1a203042"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1787,
+      "title": "Fix core util tests that pass with their behaviour removed",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1787",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T07:33:52Z",
+      "additions": 98,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test change with no change to how the software behaves. A review found five existing tests that would still pass even if the feature they check were broken. This change rewrites them so they now catch those problems.",
+      "category": "tests",
+      "summaryHash": "3cfb2ce797ba65726c8cfd86cc6256aaaf000016"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1785,
+      "title": "Update new-vendor checklist to one descriptor and check its paths",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1785",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T07:12:58Z",
+      "additions": 70,
+      "deletions": 55,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The guide for adding support for a new hardware vendor has been rewritten and shortened. It used to list nine steps, and some pointed to code that no longer exists. It now has six steps built around one central device description, and the other copies of the guide simply point to it. The description also says an automatic check now flags file paths in the docs that don't exist, but that part of the code was cut from the diff we received, so it could not be confirmed here.",
+      "category": "docs",
+      "summaryHash": "940b85d0788d0e3b7eb83f7475cb906cab2ad076"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1788,
