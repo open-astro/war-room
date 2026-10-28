@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T19:08:30.602Z",
+  "generatedAt": "2026-10-28T21:07:07.000Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1800,
+      "title": "Fix nightly ASan job leak, SkyWatcher limits race and test hang",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1800",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T21:04:40Z",
+      "additions": 71,
+      "deletions": 10,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This gets the nightly memory-checking test run passing again after it failed 20 tests and once ran out of time. Most failures came from a memory leak inside a third-party camera library the project bundles, so the checker is now told to ignore leaks from just those two library spots. Two SkyWatcher mount tests had a timing problem and now run on a simulated clock. Each test also now has a 15-minute time limit, so a stuck test fails by name instead of stalling the whole run. Only tests and build scripts changed, not the drivers.",
+      "category": "ci",
+      "summaryHash": "d5744010d0fa898092e2a5b984a2bbc655a8c276"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1810,
+      "title": "Fix QHY tests that pass with their behaviour removed",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1810",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T20:31:41Z",
+      "additions": 124,
+      "deletions": 23,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This strengthens tests for the QHY filter wheel and focuser drivers. A check found eight tests that still passed even when the behaviour they were meant to check was removed, which gave false confidence. They were tightened so each one now fails if that behaviour breaks, and a new test covers the filter wheel being disconnected while it is still connecting. Only tests changed, not the drivers, and one tightened test now takes about 53 seconds to run.",
+      "category": "tests",
+      "summaryHash": "ea93f1a55017d18ddd99819313d251c1776ad9af"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1805,
