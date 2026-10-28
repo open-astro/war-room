@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T11:07:32.609Z",
+  "generatedAt": "2026-10-28T14:05:09.345Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1794,
+      "title": "Fix TtlStatusCache fault() waiting for a refill in flight",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1794",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T14:01:19Z",
+      "additions": 189,
+      "deletions": 9,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Asking a ZWO CAA rotator whether its direction is reversed now gets an answer right away, even while the rotator is moving or the server is reading its status. Before, that question waited for any device read already running, which took about a quarter of a second against a 20 ms target. The server now keeps a separate, always-ready copy of the device's error state, which may lag behind by at most one status read. The code matches the description: the other driver files only got updated comments, and new tests cover the change.",
+      "category": "fix",
+      "summaryHash": "69055f5a9a13edf1a97dc478dc4645b86f224697"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1790,
