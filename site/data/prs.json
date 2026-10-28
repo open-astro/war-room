@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T17:25:43.645Z",
+  "generatedAt": "2026-10-28T18:10:41.682Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1457,
+      "title": "#1148 follow-ups: NaN rotator card, cross-format name de-dup, XISF compatibility copy",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1457",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-28T17:54:04Z",
+      "additions": 108,
+      "deletions": 18,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Saving camera frames is now more robust. If the rotator reports a broken angle reading, the frame is still saved and only that one piece of information is left out; before, the whole frame was lost. After switching between the FITS and XISF file formats, a new frame that would have the same name as an existing one in the other format now gets a \" (2)\" suffix, so the two no longer share thumbnails and previews. The change also stops binning values from being stored in a wrong form in XISF files, and updates the settings text to name the stacking programs that need FITS and to explain that backup file extensions follow each frame's own format.",
+      "category": "fix",
+      "summaryHash": "01781ad01cd688769819a4006b27c1edaf0c2672"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1804,
