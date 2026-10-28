@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T15:04:24.727Z",
+  "generatedAt": "2026-10-28T16:03:35.338Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1801,
+      "title": "Fix AlpacaHTTP tests that pass with their behaviour removed",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1801",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T15:38:48Z",
+      "additions": 461,
+      "deletions": 233,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test work only, with no change to how the server behaves for users. An audit had found tests that would still pass even if the feature they were checking was broken, so this tightens them so they now catch those breakages, and adds three new checks for tricky situations when the server restarts or shuts down. It also adds small hooks that let tests pause the server at precise moments; these exist only in test builds. This covers one part of a larger cleanup, and the related issue stays open for the rest.",
+      "category": "tests",
+      "summaryHash": "65cdfb54fa614f0ac160299cf01579e8b5c7e8c1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1802,
+      "title": "Fix rotator angle wrap returning exactly 360",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1802",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T15:12:11Z",
+      "additions": 39,
+      "deletions": 7,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a small rounding bug in the ZWO and WandererAstro camera rotator drivers. An angle just barely below zero could be reported as exactly 360 degrees (or the rotator's maximum on limited ZWO models), which breaks the astronomy standard that angles must stay below 360. Reported angles now always stay in the allowed range, and a new test for each driver confirms it. The ZWO fix was only tested in a simulated setup, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "78400e57d9fa319e573d2ce77701fbc1aba3d0fa"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1797,
