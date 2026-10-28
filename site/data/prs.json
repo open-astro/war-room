@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T03:15:19.864Z",
+  "generatedAt": "2026-10-28T04:13:16.348Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1749,
+      "title": "Fix ZWO Park and Home completion during startup guard",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1749",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-28T04:07:29Z",
+      "additions": 143,
+      "deletions": 15,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1748,
+      "title": "Fix ZWO AM Sync target transactions racing GOTO setup",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1748",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-28T03:25:44Z",
+      "additions": 259,
+      "deletions": 17,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1776,
