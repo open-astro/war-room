@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T06:12:35.267Z",
+  "generatedAt": "2026-10-28T07:10:49.754Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1788,
+      "title": "OnStep: log a failed time sync and site read, and make the audit's OnStep tests fail",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1788",
+      "author": "kern2011",
+      "mergedAt": "2026-10-28T06:49:35Z",
+      "additions": 324,
+      "deletions": 31,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When an OnStep mount refuses or fails to answer the clock update sent at connect, or fails to report its location, the bridge now writes a warning to the log saying why, instead of failing silently. The connection still goes ahead as before. The location warning appears only once per connection, so a program that keeps asking does not flood the log. Most of this change is test work: the OnStep tests now use a simulated mount that actually accepts slews and moves, so they will catch real breakage, and new tests cover guide rate, telescope size settings and which axes can be moved.",
+      "category": "fix",
+      "summaryHash": "98e32ec432161088589f956eb45270b98bdd12a0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1777,
+      "title": "Fix unavailable telescope UTCDate and ZWO getter guards",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1777",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-28T06:13:49Z",
+      "additions": 576,
+      "deletions": 172,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Four mount types (SynScan, iOptron, Celestron CGX over USB and ZWO) no longer quietly report the bridge computer's own clock as the telescope's date and time when the real mount time is unknown. They now return a clear 'not available' error until the time is read from the mount or successfully set. ZWO mounts also stop answering some readings, such as target position and guide speed, while disconnected, though the settings that are allowed offline still work. This is marked as a breaking change for client software, and the PR also changes how guide-speed updates are passed to every mount driver, adds tests and updates the documentation.",
+      "category": "fix",
+      "summaryHash": "1c64fd2d6dd808299e741f09df8edca4988a8f16"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1778,
