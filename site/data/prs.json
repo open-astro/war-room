@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T21:07:07.000Z",
+  "generatedAt": "2026-10-28T22:09:07.556Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1464,
+      "title": "Sequence frames are saved in the background while the next exposure runs",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1464",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-28T22:00:04Z",
+      "additions": 1282,
+      "deletions": 37,
+      "changedFiles": 17,
+      "labels": [],
+      "summary": "During a sequence, the camera now starts its next exposure as soon as a frame is downloaded, while the previous frame is saved to disk in the background. On the test setup this cuts about a third of a second off every frame. If a save fails, the frame is kept in memory and retried; if the drive is still unavailable, the run pauses until the user resumes it, so no images are lost. While a frame is still being saved, the storage drive can't be switched, checked or ejected, and the image catalog can't be rebuilt. One-off captures like Take One still save before returning, as before.",
+      "category": "feature",
+      "summaryHash": "b1972fb5e7ce02cdf2d6c15998f91fd8312fe117"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1800,
