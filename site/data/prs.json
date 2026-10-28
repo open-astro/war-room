@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T04:13:16.348Z",
+  "generatedAt": "2026-10-28T05:13:08.249Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -22,9 +22,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a timing glitch in the ZWO AM telescope mount support where the mount could report \"finished parking\" or \"at home\" while still telling apps it was moving during the first few seconds after the command. Now those finished states only appear after the startup window ends and the mount actually reports that it has stopped, so astronomy software sees a consistent picture. Park errors still show up right away. The same rule now also covers ordinary slews, manual nudges and unparking, and cancelling a move now shows \"stopped\" one status check later rather than instantly. Several tests were also updated to remove timing flakiness.",
+      "category": "fix",
+      "summaryHash": "dfbf9d486c04d228f5a612e81970988464fd74ad"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -39,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a safety bug in the ZWO AM telescope mount support where a retried \"go to\" command could fire after a Sync and send the telescope to the Sync position instead of its intended destination. Sync now cancels any pending go-to retry before changing the target, each retry re-sends its own original coordinates, and target changes from different commands can no longer interleave halfway. A Sync that is rejected because its target is incomplete no longer disturbs an in-progress guiding correction. It was checked on a real AM5 mount without problems, though the specific race was only reproduced in simulated tests.",
+      "category": "fix",
+      "summaryHash": "292ef925260f9f22ca562c3a26f9f6bcf14f91a8"
     },
     {
       "repo": "open-astro/AlpacaBridge",
