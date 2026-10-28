@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T00:03:30.371Z",
+  "generatedAt": "2026-10-28T01:15:42.495Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1768,
+      "title": "Fix QHY cooler cleanup bounds and failure reporting",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1768",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-28T00:55:04Z",
+      "additions": 544,
+      "deletions": 315,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes several small problems in how the QHY camera driver shuts down its cooler in the background. Repeated failures to switch the cooler off no longer flood the log with errors: the first failure per connection is a warning, and later ones are quieter notes. An unusual internal error in the cooler worker can no longer crash the whole server. Disconnecting now waits at most about two seconds for the cooler workers instead of four to six. Changing the readout mode while the camera is disconnecting now correctly reports \"not connected\" instead of falsely succeeding. The main driver code change was too large to show here, so these points come from the description and the new tests. One known two-second delay when turning the cooler back on is left for a separate, larger change.",
+      "category": "fix",
+      "summaryHash": "e7743fbcc58ef66f8ddd8df422ea2d36d25f218d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1771,
+      "title": "Serial reader follow-ups: cap the OnStep drain, Length(0) reads",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1771",
+      "author": "kern2011",
+      "mergedAt": "2026-10-28T00:27:25Z",
+      "additions": 120,
+      "deletions": 23,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStep telescope mounts can no longer freeze the driver for hours when the connection keeps sending stray data. The step that clears leftover incoming data now gives up after 2 seconds. Before, a constant trickle of data could keep it running for hours, and every other command had to wait behind it. The PR also fixes a rarely used reading option that could wrongly take one byte meant for the next reply (nothing uses it today), makes two timing tests more reliable on slow machines, and updates the documentation.",
+      "category": "fix",
+      "summaryHash": "76f3d17b8f9a3e96baf4c43fd04e026d949d6094"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1751,
