@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T02:14:50.317Z",
+  "generatedAt": "2026-10-28T03:15:19.864Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1776,
+      "title": "Fix faulted SynScan and NexStar state reads",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1776",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-28T03:06:41Z",
+      "additions": 311,
+      "deletions": 0,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher SynScan and Celestron NexStar mounts now report a communication error, instead of a normal-looking answer, when their handset has stopped replying. Before this, an app could be told the mount was tracking, parked, or done moving when the bridge had actually lost contact with it. Stop commands still go through, and service resumes on its own once the mount answers a position request again. This is a deliberate breaking change: apps talking to these mounts need to handle the new error and retry or reconnect. It only partly addresses the wider issue, since the ZWO driver and the main branch are still to come.",
+      "category": "fix",
+      "summaryHash": "5e4f8848bf728af373e8e1965febb4d8159bfe3f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1766,
+      "title": "Document mid-exchange mutex_ release and full lock table rule",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1766",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T03:03:23Z",
+      "additions": 37,
+      "deletions": 15,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update to the internal rules for writing telescope drivers. It adds two rules for how a driver handles its internal locking while it waits for a reply from the mount, and notes that the Sky-Watcher driver and part of the OnStep driver do not follow the second rule yet, which separate code fixes will address. It also tidies wording left over from the ZWO mount identity change. One user-facing note: the docs now say that re-saving a device in the web interface also lets a deliberately swapped ZWO mount connect, not only restarting the service.",
+      "category": "docs",
+      "summaryHash": "47a18e006abb2f62e35a07a5498157827aaf6acd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1772,
+      "title": "Fix ZWO AM reconnect identity and Auto refusal logging",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1772",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-28T02:35:33Z",
+      "additions": 319,
+      "deletions": 14,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO AM telescope driver now remembers which physical mount it first connected to and refuses to connect if a different mount shows up at the same address later, even after a disconnect or dropped link. This stops the software from quietly controlling the wrong mount. To use a mount you replaced on purpose, restart the service. Later docs also say re-saving the device in the web interface works. Separately, the routine 'no ZWO mount found' message during automatic detection is now a quiet debug note instead of a warning, which cuts log noise.",
+      "category": "fix",
+      "summaryHash": "6cb1a56aa1a42c512dba786f6097df3160b9908c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1775,
