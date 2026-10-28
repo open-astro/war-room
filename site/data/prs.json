@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T05:13:08.249Z",
+  "generatedAt": "2026-10-28T05:44:22.151Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1778,
+      "title": "Share the decision 0016 lock gate between OnStep and Sky-Watcher",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1778",
+      "author": "kern2011",
+      "mergedAt": "2026-10-28T05:41:01Z",
+      "additions": 744,
+      "deletions": 404,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1749,
