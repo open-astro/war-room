@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T18:10:41.682Z",
+  "generatedAt": "2026-10-28T19:08:30.602Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1805,
+      "title": "Fix ToupTek tests that stop at the disconnected path",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1805",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T18:30:34Z",
+      "additions": 315,
+      "deletions": 108,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a testing improvement for the ToupTek camera, focuser and temperature-switch drivers, with no change to how they behave for users. Several tests had names suggesting they checked a working, connected device, but they only checked the not-connected case, so real bugs in those features could slip through. They now run against a simulated connected camera, and the simulator was made stricter so it catches mistakes the real hardware might quietly allow. The bookkeeping that lets two drivers share one physical camera was also moved into a common piece that both the real code and the simulator use; the diff matches the description, and it was not tested on real hardware.",
+      "category": "tests",
+      "summaryHash": "93d86f78f27986962956feec42ecde81d043c84a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1457,
