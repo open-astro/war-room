@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T23:18:01.847Z",
+  "generatedAt": "2026-10-28T00:03:30.371Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1751,
+      "title": "Fix test_server_socket teardown races",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1751",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-27T23:36:49Z",
+      "additions": 32,
+      "deletions": 39,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test-only change that targets a test that sometimes crashes in the automated build system. The test now keeps its shared data alive until background work finishes, and it waits for a leftover server thread to fully stop before cleaning up. The real cause of the original crash is still unknown and has not been reproduced, so the related issue stays open until the builds stay green. The server itself is not changed.",
+      "category": "tests",
+      "summaryHash": "396d4263933d2cf0e96026633ec2c799046f6436"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1750,
