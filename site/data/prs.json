@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T08:10:01.423Z",
+  "generatedAt": "2026-10-28T09:09:11.044Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1792,
+      "title": "Fix PolledState start to fail when the poll does not start",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1792",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T09:01:10Z",
+      "additions": 20,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Some focusers (Gemini, Celestron, QHY and Astroasis) check their status in the background. If that background checking failed to start, the focuser still reported a successful connection but then showed the same stale readings forever. Now the connection fails, so users get a clear error instead of a device that looks connected but never updates. A test was added that forces this failure. The change was not tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "e2940ed96f0c2b3460dad03a54a3990363d053d8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1791,
+      "title": "Fix SynScan landing and Celestron PulseGuide test flakes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1791",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T08:32:43Z",
+      "additions": 83,
+      "deletions": 37,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change. It fixes automated tests for SynScan and Celestron telescope mounts that failed at random in a slow build, and one of them could crash the whole test run. The tests now wait on real elapsed time and properly finish their background work, so they no longer depend on how fast the build machine is. The Celestron changes are visible in the code shown and match the description, but the SynScan part was cut from the provided changes, so it could not be checked.",
+      "category": "tests",
+      "summaryHash": "b650310d58c89f97e67fbfcbed1efebce0e62e5b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1789,
