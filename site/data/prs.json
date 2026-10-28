@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T14:05:09.345Z",
+  "generatedAt": "2026-10-28T15:04:24.727Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1797,
+      "title": "Remove dead AlpacaCore placeholder files",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1797",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T14:27:36Z",
+      "additions": 11,
+      "deletions": 356,
+      "changedFiles": 27,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup: removed 16 empty placeholder files from the core device library that contained no real code, and took them out of the build. Notes and guides for contributors that pointed to those files were updated so they only mention files that actually exist. Nothing changes for people using the server or their telescope equipment. The diff matches the description.",
+      "category": "refactor",
+      "summaryHash": "c4e2d5e341a57a07217f609681cca382498053a5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1794,
