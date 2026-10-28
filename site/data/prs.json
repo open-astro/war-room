@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T17:02:34.377Z",
+  "generatedAt": "2026-10-28T17:25:43.645Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1804,
+      "title": "Fix ZWO dew heater getters answering NotImplemented on disconnect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1804",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T17:07:32Z",
+      "additions": 8,
+      "deletions": 6,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a misleading error from the dew heater control on ZWO cameras. If someone asked about the heater at the exact moment the camera was disconnecting, the server could wrongly answer that the dew heater isn't supported, when it should have said the device isn't connected. Now it reports \"not connected\" as the astronomy software standard requires, and the stress test that had been tolerating the wrong answer now accepts only the correct one. It was verified with simulated hardware, not on a real camera.",
+      "category": "fix",
+      "summaryHash": "dc0234268b1996d74f4b3469d12ce5e185fadbd5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1456,
