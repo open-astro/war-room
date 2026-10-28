@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T22:09:07.556Z",
+  "generatedAt": "2026-10-28T23:08:15.360Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1815,
+      "title": "Add HoldWindow and move Sky-Watcher slew and pulse deadlines onto it",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1815",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T22:51:27Z",
+      "additions": 297,
+      "deletions": 21,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal cleanup of the Sky-Watcher telescope driver. Its two timers, one that keeps a telescope reporting \"moving\" for a few seconds after a goto and one that tracks how long a guiding nudge lasts, now use a single shared, tested building block instead of hand-written code. How the telescope behaves for users should not change. The new building block is also meant as a template for six other telescope drivers, and it is built so it cannot accidentally make the system wait for the mount to finish arriving, which caused an earlier bug. The code change also resets the guiding timers on reconnect, which the description does not mention, though that should not change what users see.",
+      "category": "refactor",
+      "summaryHash": "edc99eb292fe224b75b401d6752fa73babdb7028"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1465,
+      "title": "Each frame writes only the camera settings that differ",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1465",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-28T22:40:34Z",
+      "additions": 156,
+      "deletions": 13,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Before each exposure, Ara used to resend every camera setting, including binning, gain, offset and the image area, even when nothing had changed, and some of those sends are slow. It now checks what the camera already has and only sends the settings that differ. On a small Raspberry Pi-class computer with a common astronomy camera, this cut the settings step from about 0.3 seconds to a few hundredths of a second, so each 1-second dark frame now takes about 3.1 seconds instead of 3.3. Because it checks the camera directly each time, it still corrects settings after a restart, a reconnect or a change made by another program.",
+      "category": "feature",
+      "summaryHash": "2a4a8f26dcccce521637d9c1a7fa1531a55d2cff"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1814,
+      "title": "Add connected switch member tests over the existing fakes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1814",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T22:24:58Z",
+      "additions": 241,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds tests only, with no change to how anything works. The new tests check the power and accessory switch controls of three device drivers (Gemini PDH, WandererAstro box and the ToupTek camera's heater and fan controls). They confirm that read-only switches refuse changes, that names, descriptions and value ranges are reported correctly, and that invalid switch numbers are rejected.",
+      "category": "tests",
+      "summaryHash": "20fb11911c78ebb22e25384302bc7b6baa1ba8c1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1464,
