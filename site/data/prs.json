@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T16:03:35.338Z",
+  "generatedAt": "2026-10-28T17:02:34.377Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1456,
+      "title": "Storage's file format reaches disk: XISF with Zstandard, FITS plain (#1148)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1456",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-28T16:12:18Z",
+      "additions": 2056,
+      "deletions": 435,
+      "changedFiles": 50,
+      "labels": [],
+      "summary": "The file format and compression choices in Settings → Storage now actually take effect. Before this, every frame was saved as an uncompressed FITS file no matter what was selected. Choosing XISF now saves XISF files with lossless compression, which cuts a typical frame to less than half its size (52 MB down to 22.5 MB) and takes about half a second to save on the Pi. The library, previews, plate-solving and catalog scans can all read these files. The two compressed FITS options were removed because PixInsight can't open them, so profiles that used them now save plain FITS, and the slow zlib option for XISF is gone, though Ara can still open zlib files made by other software. FITS remains the default and is unchanged, and the change also fixes object names with apostrophes (like \"Barnard's Loop\") reading back incorrectly from FITS files.",
+      "category": "fix",
+      "summaryHash": "b8ee8a6430e4b31b8a9ebf938bc155b1f94fd3c0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1803,
+      "title": "Fix log level spellings, port range and loglevel type",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1803",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T16:08:00Z",
+      "additions": 198,
+      "deletions": 110,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Log level names now work the same way everywhere they can be set. Previously, writing \"warn\", \"trace\" or \"critical\" in the config file was silently treated as the normal level. An invalid port number set through the environment is now ignored with a warning instead of quietly turning into a different port. Sending a badly formed log level through the API now returns a clear \"invalid value\" error instead of a server error. The change also removes some duplicate internal helper code and adds tests.",
+      "category": "fix",
+      "summaryHash": "876a572f85ed5913dba0732c0b54d0256ecd32d6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1801,
