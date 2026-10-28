@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T05:44:22.151Z",
+  "generatedAt": "2026-10-28T06:12:35.267Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -22,9 +22,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The OnStep and Sky-Watcher telescope drivers each had their own copy of the safety logic that stops two commands from talking to the mount at once and keeps status questions from waiting on the mount. That logic now lives in one shared, tested piece that both drivers use. It also fixes a rare edge case in the Sky-Watcher driver: when its internal record of held locks fills up, it now cleanly refuses the request, as OnStep already did, instead of carrying on in a way that could make status checks stall. The PR also updates the related developer docs and adds tests, and the description notes this situation is not known to happen in practice.",
+      "category": "refactor",
+      "summaryHash": "fbcf78020900cbe30b664e2ab21df8077e6833d7"
     },
     {
       "repo": "open-astro/AlpacaBridge",
