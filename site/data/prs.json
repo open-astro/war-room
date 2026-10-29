@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T09:10:02.751Z",
+  "generatedAt": "2026-10-29T10:09:08.388Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1856,
+      "title": "Fix Gemini flat panel, focuser and PDH tests that stop at the disconnected path",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1856",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T10:05:59Z",
+      "additions": 173,
+      "deletions": 43,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change for the Gemini flat panel, focuser and power hub drivers. An audit found some tests kept passing even when the behavior they claimed to check was broken. Those tests now actually connect to simulated devices and run the timing-sensitive cases in a fixed order, so they fail when something real breaks. No driver behavior changes.",
+      "category": "tests",
+      "summaryHash": "be213857e0ed8416487128a2fd0f4319bd749834"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1820,
+      "title": "Fix HTTP worker permit lost when a stale worker exits after a restart",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1820",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T09:45:46Z",
+      "additions": 145,
+      "deletions": 6,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a test for a rare server bug. After a restart, a new client's request could be left waiting with no response because a leftover worker from before the restart took its wake-up signal and exited. Despite the \"Fix\" title, the actual fix was already in the code before this change. This PR only rewrites code comments and adds a test that reliably reproduces the problem, which adds about 12 seconds to that test run.",
+      "category": "tests",
+      "summaryHash": "d251f6dfe0be61c85e3b86a791406fde84fa2df3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1849,
+      "title": "Fix Sky-Watcher motion-limits tests on the real clock (#1799)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1849",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T09:15:26Z",
+      "additions": 306,
+      "deletions": 231,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change for the Sky-Watcher telescope's motion-limit and tracking-guard checks. Twenty-six tests used to wait on real time. They now run on a simulated clock shared by the driver and the simulated mount, so they are faster and less likely to fail at random. No product code or telescope behavior changes.",
+      "category": "tests",
+      "summaryHash": "cd90eb7b844b2a0cb7788854e838470c24483276"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1854,
