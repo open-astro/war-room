@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T06:09:20.604Z",
+  "generatedAt": "2026-10-29T07:11:56.036Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,59 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1461,
+      "title": "build: Bump the gradle group in /client/openastroara_client/android with 2 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1461",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-29T06:28:24Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "java"
+      ],
+      "summary": "Routine automated update of the build tools used to package the Android version of the app. The Android build plugin and the Gradle build tool each move up a minor version. Nothing changes for users; this is internal upkeep.",
+      "category": "chore",
+      "summaryHash": "3fce7a7faaf4f97889cf5091e25886705021f0c2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1826,
+      "title": "Show one Sky-Watcher vendor entry with a Connection choice",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1826",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T06:28:17Z",
+      "additions": 450,
+      "deletions": 65,
+      "changedFiles": 36,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When adding a device in the web interface, the vendor list now shows a single \"Sky-Watcher\" entry instead of two long, confusing ones, with a new Connection choice to pick between the hand-controller and direct-connection drivers (hand controller is the default). The brand is now spelled \"Sky-Watcher\" everywhere, and the test reports for both drivers are filed in one folder. Devices that were already saved keep working and reopen with their original connection selected. The description and driver info that the direct driver reports to astronomy software also change wording; the author notes this was not tested on real hardware.",
+      "category": "feature",
+      "summaryHash": "b089ba9fedafc85c1bf7343636dce1608a854fb6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1460,
+      "title": "build: Bump third_party/supernovas from `d4479a8` to `f0c1b11` in the astrometry-sources group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1460",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-29T06:11:18Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "submodules"
+      ],
+      "summary": "Routine automated update of a bundled astronomy calculation library to a newer snapshot, which upstream labels as a pre-release (version 1.8.0 release candidate 4). The upstream changes are mostly documentation edits and cleanup. The code changes were not available to confirm what changed in this project.",
+      "category": "chore",
+      "summaryHash": "9d8f9f5af9c1022525f8f0e385f00af65bbf576b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1852,
