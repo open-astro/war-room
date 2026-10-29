@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T05:11:01.498Z",
+  "generatedAt": "2026-10-29T06:09:20.604Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,59 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1852,
+      "title": "Update README Authored code badge to 274k lines",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1852",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T05:44:47Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's front page now shows the correct size of the code it has written, raising the figure from 260,000 to 274,000 lines. The old number had fallen out of date. An automatic check that compares it with the real count was failing on every open pull request. This is a one-line documentation fix that clears that check again.",
+      "category": "docs",
+      "summaryHash": "01f2630e8f18cffede2245c3bc7be7083bd83b3a"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1459,
+      "title": "build: Bump the pub group in /client/openastroara_client with 3 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1459",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-29T05:42:19Z",
+      "additions": 32,
+      "deletions": 30,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "dart"
+      ],
+      "summary": "Routine automated update of three outside building blocks used by the client app: the charting library, the location library, and the embedded web view. All are small version steps. The charting update brings a number of upstream bug fixes for chart drawing and touch handling. The project's list of third-party licenses was refreshed to match, with notes confirming the license terms did not change.",
+      "category": "chore",
+      "summaryHash": "d7b9a6d043fbf8a786235f4ea58e233145cfa749"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1458,
+      "title": "build: Bump dotnet-sdk from 10.0.402 to 10.0.403",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1458",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-29T05:15:50Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "dotnet_sdk_package_manager"
+      ],
+      "summary": "Routine automated update of the .NET toolkit used to build the project, moving from version 10.0.402 to 10.0.403. This is internal only, with no visible change for users.",
+      "category": "chore",
+      "summaryHash": "fb1beee2cba4a17d8c991a02295ab29248e05e62"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1824,
