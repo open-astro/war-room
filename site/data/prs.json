@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T00:07:28.466Z",
+  "generatedAt": "2026-10-29T01:11:01.983Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,36 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1469,
+      "title": "Smart Focus reads a rim-vs-core asymmetry to tell the side of focus (#1139)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1469",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-29T00:48:37Z",
+      "additions": 401,
+      "deletions": 34,
+      "changedFiles": 22,
+      "labels": [],
+      "summary": "Smart Focus can now better tell which side of focus a blurry star is on by comparing how bright each star's outer edge is against its centre. During calibration the system learns what that reading means for each telescope, so refractors whose two sides of focus differ only in this way get a real direction instead of a guess. The value now appears in the focus-curve chart's hover labels and in the Smart Focus logs; older calibrations ignore it until the next calibration run. It has only been checked on simulated stars so far, and a small extra tweak to an error message about sweeps that are too wide is mentioned but not visible in the trimmed code.",
+      "category": "feature",
+      "summaryHash": "5c60e8c1b45b20a4c726495645e9a4473fd138c8"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1468,
+      "title": "An autofocus sweep wider than the focuser's travel fails up front (#1467 follow-ups)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1468",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-29T00:11:54Z",
+      "additions": 50,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "If an autofocus sweep is set wider than the focuser can physically travel, it now stops before moving and gives a clear message suggesting a smaller step size or fewer steps. Previously the top of the sweep could be sent past the focuser's maximum position. The check only applies when the focuser reports both a lowest and highest position. The PR also adds a test confirming that a failure to read the focuser's range during Smart Focus falls back to the regular autofocus safely.",
+      "category": "fix",
+      "summaryHash": "2fa59ec097dcb786004241dd3630953e385e7b94"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1813,
