@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T14:06:51.776Z",
+  "generatedAt": "2026-10-29T21:59:58.614Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1876,
+      "title": "Answer NotConnected when a disconnect races a QHY CFW3 Position read (#1699)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1876",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T21:27:25Z",
+      "additions": 56,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing problem in the QHY CFW3 filter wheel driver. If someone disconnected the wheel at the exact moment a program asked for its current filter position, the program got a confusing \"position unknown\" error instead of the standard \"not connected\" answer. The driver now checks the connection a second time at the right moment, so programs get the correct error. This also removes an intermittent automated-test failure that had been breaking unrelated pull requests.",
+      "category": "fix",
+      "summaryHash": "057877ecbc6860bd87550c0aeebb9c50994d1fcb"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1473,
+      "title": "Integration budget: stackSnr beside requiredIntegrationSeconds; a lightless target is infinite, not NaN (#1472 follow-ups)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1473",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-29T21:10:49Z",
+      "additions": 44,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Tidies up the math behind the integration time planner, which estimates how long you need to image a target. When a target gives off no light, the planner now says it would take forever and marks it as impractical, instead of showing a meaningless \"not a number\" result. The code also does this when the target's brightness value is itself invalid, which the description does not mention. The reverse calculation, which estimates how clear an image gets after a given amount of time, is now part of the real app instead of being copied into a test, and a helper script gained clarifying comments.",
+      "category": "fix",
+      "summaryHash": "d4f0b174c9d391e912e192d6bdaef84fac76d0c4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1872,
