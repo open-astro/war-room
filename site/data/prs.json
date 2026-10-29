@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T22:58:42.939Z",
+  "generatedAt": "2026-10-29T23:59:03.563Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,57 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1880,
+      "title": "Rerun failed nightly tests alone and fix the SynScan fault cases' poll race",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1880",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T23:55:45Z",
+      "additions": 41,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The nightly automated test run now gives any failed tests a second try, one at a time, and only reports failure if they fail again. For several nights the nightly run had been failing on a different timing-sensitive test each time, even though nothing was actually broken. Real problems, like memory errors found by the nightly safety checks, fail again on the retry, so the nightly should now turn red only when something is genuinely wrong. It also fixes the real timing problem in two SynScan mount tests, and the regular checks on each code change are unchanged.",
+      "category": "ci",
+      "summaryHash": "197c1549d7420f887eb8fbbca425709eb6b08141"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1877,
+      "title": "Fix CGX Connect refusing when no site is set",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1877",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T23:22:30Z",
+      "additions": 94,
+      "deletions": 13,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron CGX mounts can now connect even when no observing location (latitude and longitude) has been set yet. Before, the driver refused to connect at all. Now, anything that actually needs the location, such as pointing, slewing, tracking, homing, syncing and guiding, gives a clear 'set the site first' message until both coordinates are entered. This lets an app connect, fill in the location, and use the mount without reconnecting. A new test checks this behaviour on simulated hardware.",
+      "category": "fix",
+      "summaryHash": "ae611ae6459900cf13979c3f6ec5b1c095c7b085"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1878,
+      "title": "Fix Gemini focuser Disconnect waiting for a whole state poll",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1878",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T23:03:08Z",
+      "additions": 154,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Disconnecting a Gemini focuser, or removing it while connected, no longer gets stuck for up to about 10 seconds when the focuser stops responding. The background status check now stops after the one request it is already waiting on, so a disconnect waits for at most one timeout instead of three. The tests add a further check that a failed temperature reading is reported correctly after an earlier good one. That check covers existing behaviour, and the driver code for it was not changed.",
+      "category": "fix",
+      "summaryHash": "b9ab1ebbefba76e21eaabe5ab975c347b431721d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1875,
@@ -22,9 +73,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a case, shared by every device driver, where a Disconnect request could be silently ignored. This happened when the user asked to disconnect while a connection attempt was still in progress and the device's link dropped in the meantime. The Disconnect is now always carried out, so the dropped session gets properly cleaned up. The design notes also record why a related idea was rejected: some apps send a Disconnect on their own after a failed reconnect, and that idea could have let a mount keep moving unsupervised.",
+      "category": "fix",
+      "summaryHash": "96fe918479fbf51f96e675e95f5c8d87904e3e66"
     },
     {
       "repo": "open-astro/AlpacaBridge",
