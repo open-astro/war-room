@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T04:05:50.480Z",
+  "generatedAt": "2026-10-29T05:11:01.498Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1824,
+      "title": "Fix SynScan Tracking after a failed tracking restore",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1824",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T04:58:39Z",
+      "additions": 234,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where SynScan mounts could report that they were tracking the sky when they actually weren't. After certain stop or guiding actions, the software tries to turn tracking back on. If that command failed, it still claimed tracking was on. Now it either asks the mount for its real state or reports tracking as off until the situation is cleared, which also blocks GoTo moves in the meantime. The fix is covered by new automated tests against a simulated mount but has not yet been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "650cb2431d938c1ff92471e3182d025b3f76cb7b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1472,
+      "title": "The integration budget's equation is pinned to STScI's Pandeia engine (#1140)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1472",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-29T04:32:56Z",
+      "additions": 132,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Adds a check that Ara's exposure-time estimate gives the same answers as the space telescope institute's (STScI) professional calculator, called Pandeia. In three sample cases, from bright targets to very faint ones, the results match within a fraction of a percent. The reference numbers are stored in the test, so the automated checks do not need that calculator installed. The formula was moved into its own named piece of code without changing results, so users see no difference.",
+      "category": "tests",
+      "summaryHash": "022a6903df545f354fedd572eeb0368f9edc4d60"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1847,
+      "title": "Add Adoption rosters to decisions 0016 and 0022",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1847",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T04:26:34Z",
+      "additions": 109,
+      "deletions": 28,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only, with no change to how the software behaves. Two of the project's design-rule documents now include a table showing which device drivers follow each rule. One rule was audited across all 44 drivers: 32 fully comply and 12 partly comply, and each of those 12 is linked to a tracking issue. A few related notes and references to issues were also corrected.",
+      "category": "docs",
+      "summaryHash": "58f59982176fc84af02e906df43afa6cbed25b5e"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1470,
+      "title": "A starless Smart shot reports no asymmetry (#1469 follow-ups)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1470",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-29T04:09:20Z",
+      "additions": 34,
+      "deletions": 6,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "When an autofocus shot finds no stars, the software no longer shows a misleading \"+0.00\" focus-direction reading for it. That value is now left out because there was nothing to measure. The example message in the developer guide was also updated to match what the software actually sends.",
+      "category": "fix",
+      "summaryHash": "8bf165a8d61ffe66d4bc9a967eacdb3b34f85ce2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1806,
