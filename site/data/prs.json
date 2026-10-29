@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T08:10:50.687Z",
+  "generatedAt": "2026-10-29T08:32:08.760Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1811,
+      "title": "OnStep telescope: serve state from util::StateSnapshot (decision 0010) (#1783)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1811",
+      "author": "kern2011",
+      "mergedAt": "2026-10-29T08:18:50Z",
+      "additions": 2380,
+      "deletions": 1732,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope driver now checks the mount's status in the background about once a second, and answers questions like position, tracking, parked or slewing from that latest reading instead of asking the mount each time. This means those answers no longer stall while the mount is busy with another command, and the reported timestamp now shows when the reading was actually taken rather than when it was asked for. The change also stops the driver from silently ignoring a lost connection after a slew, makes location questions report an error until the site is known, and avoids sending a tracking restore while a park or home is still underway. Most of the code changes match the description; a large part of the change is also new and updated tests, docs, and a refreshed compatibility test log.",
+      "category": "refactor",
+      "summaryHash": "d2879c8f6aa75f32b43613724025b9b29901ab83"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1850,
