@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T01:11:01.983Z",
+  "generatedAt": "2026-10-29T01:49:04.311Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1819,
+      "title": "Fix Park reporting AtPark when the mount never reached the target",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1819",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T01:21:08Z",
+      "additions": 337,
+      "deletions": 8,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron and SynScan telescopes no longer claim to be parked when the mount never actually moved to its park position. After a park, the software now checks where the mount ended up. If it is more than about 10 arcminutes from the saved park spot, the park is reported as failed instead of successful. On SynScan mounts, a missed park is retried once before it fails, so a failed park there can take up to twice as long. The visible code changes match the description, but the main driver changes were trimmed from the diff, and the change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "dc021d92013293ace6bce435f8b9b8cae0e5cb46"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1469,
