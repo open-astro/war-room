@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T12:07:33.183Z",
+  "generatedAt": "2026-10-29T13:06:32.162Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1874,
+      "title": "Fix ZWO blocking slew retry test timing out behind its held SMTI",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1874",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T12:29:20Z",
+      "additions": 13,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1855,
