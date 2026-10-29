@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T07:11:56.036Z",
+  "generatedAt": "2026-10-29T08:10:50.687Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,76 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1850,
+      "title": "Add connected camera member tests over the existing fakes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1850",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T07:52:50Z",
+      "additions": 443,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds automated tests for many camera settings and readings on the QHY, ToupTek and camera-via-gphoto drivers that no test checked before, so future changes that break them will now be caught. The simulated ToupTek camera used in testing also gained two adjustable settings, with defaults that keep its old behaviour. No driver behaviour changes. While writing the tests, the author found a small ToupTek problem that is not fixed here: a camera without a cooler reports the cooler as off at zero power instead of saying cooling is unsupported.",
+      "category": "tests",
+      "summaryHash": "a73f7686a20aee33c8f7d9652b662765efc2639f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1463,
+      "title": "ci: Bump the github-actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1463",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-29T07:39:22Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Internal update to the automated build tooling: the AI code-review helper and GitHub's security-scanning tool were moved to their latest minor versions. No change to the product itself.",
+      "category": "ci",
+      "summaryHash": "76ca0dfe7c698979d4259c4bd3954dd3fbd280ea"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1462,
+      "title": "build: Bump Microsoft.AspNetCore.OpenApi and 7 others",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1462",
+      "author": "app/dependabot",
+      "mergedAt": "2026-10-29T07:17:03Z",
+      "additions": 43,
+      "deletions": 43,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine update of several third-party building blocks, mainly Microsoft's web, database and serial-port libraries and an image-drawing library, to newer minor versions, along with the matching license list. One small mismatch: the description says the API documentation library moves to version 2.18.5, but the code actually moves it only to 2.18.3. No intended change in behaviour.",
+      "category": "chore",
+      "summaryHash": "84d69efac3bbb98bd92b18d28faa33ab104403fa"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1812,
+      "title": "Fix ZWO faulted site reads and AM5 Park completion",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1812",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-29T07:15:20Z",
+      "additions": 707,
+      "deletions": 450,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes two issues with ZWO AM-series telescope mounts. Park now finishes properly on the AM5, which sometimes reports that parking is complete without sending the separate \"stopped\" signal; before this fix, Park could wait forever. The mount's site location (latitude and longitude) can now only be read while the mount is connected and talking normally, instead of returning old saved values after a communication problem. This is flagged as a breaking change: client apps must connect before reading the site location, though they can still set it while offline. The PR also adds more tests, makes some timing-sensitive tests more reliable, and refreshes the AM5 hardware compatibility report, which shows no errors.",
+      "category": "fix",
+      "summaryHash": "1bd6a867227eb74979eaf46bd1ff07204b12dfe8"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1461,
