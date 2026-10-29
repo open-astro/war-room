@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T08:32:08.760Z",
+  "generatedAt": "2026-10-29T09:10:02.751Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1854,
+      "title": "Release 5.0.2",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1854",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T08:52:56Z",
+      "additions": 29,
+      "deletions": 15,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This publishes version 5.0.2, a small bug-fix release for people using the 5.0 line, which they can get with a normal system update. It ships three mount fixes that were already merged: stopping or restarting the bridge no longer hangs for up to 90 seconds when a long slew or connect is in progress, SynScan mounts no longer claim tracking is on after the command to turn it back on failed, and SynScan and Celestron mounts now report a communication error instead of old values when the handset stops answering. The changes are only the version number, dates, changelog and release notes; one of these fixes was moved from \"breaking change\" to an ordinary fix in the notes so the release can stay a patch update.",
+      "category": "chore",
+      "summaryHash": "adcf8b3665245614e1a2614428425cac6e5ef6aa"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1809,
+      "title": "Fix Bisque UTCDate source and connection semantics",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1809",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-29T08:44:51Z",
+      "additions": 337,
+      "deletions": 8,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For Bisque (TheSkyX) mounts, the reported date and time now come from the computer running TheSkyX instead of the bridge's own clock, which matters when the two machines' clocks differ. It only reads that clock when TheSkyX is set to use the computer clock, and gives a clear error if TheSkyX is in manual time mode or the mount is disconnected; previously it returned the bridge's time even while disconnected. Attempts to set the time, which used to be silently ignored, are now refused as unsupported. The change includes many new tests and documentation updates, but it was only checked against a simulated mount, not real TheSkyX or hardware.",
+      "category": "fix",
+      "summaryHash": "247442742a93add8ffa42768160c14aededf7ab1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1811,
