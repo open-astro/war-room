@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T10:09:08.388Z",
+  "generatedAt": "2026-10-29T11:08:13.932Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1871,
+      "title": "Fix OnStep snapshot test reading its Park gate after scope",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1871",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T11:01:02Z",
+      "additions": 5,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a flaw in one of the automated tests for the OnStep telescope driver. It was causing the nightly memory-safety check to fail every time. The test used a stop signal that was thrown away too early, while a background task was still checking it. The signal is now set up earlier so it stays around until that task finishes. This is a test-only change with no effect on how the driver behaves for users.",
+      "category": "tests",
+      "summaryHash": "5d6efebe03bfd52f7731ced5ed5a6a06fe28560a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1856,
