@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T11:08:13.932Z",
+  "generatedAt": "2026-10-29T12:07:33.183Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,26 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1855,
+      "title": "Decisions 0016 and 0022 wording, vendored-SDK notes and SVBONY libusb leftovers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1855",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T11:24:52Z",
+      "additions": 24,
+      "deletions": 8,
+      "changedFiles": 10,
+      "labels": [
+        "documentation",
+        "safe-to-review",
+        "P5",
+        "XS"
+      ],
+      "summary": "This is mostly a documentation tidy-up. It clarifies how two of the project's design rules are checked, saying where a human reviewer has to confirm a rule instead of relying on an automated test. It also corrects the 4.0.0 release notes to point to the \"Server Info\" tab for turning off automatic clock syncing. The notes on bundled camera software now record that the project will keep shipping some vendors' files without written permission, and that the ToupTek and Altair camera libraries contain their own hidden copy of a USB component that normal system updates never patch. It also deletes an unused copy of that USB component from the SVBONY camera files, which the build never used, so nothing should change for users.",
+      "category": "docs",
+      "summaryHash": "820530d83af15ae3850e6ab98205612cd2660c5e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1871,
