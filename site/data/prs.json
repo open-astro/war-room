@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T23:08:15.360Z",
+  "generatedAt": "2026-10-29T00:07:28.466Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1813,
+      "title": "Fix a stale read latching a new connection lost and add Astroasis link_alive",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1813",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T23:54:08Z",
+      "additions": 239,
+      "deletions": 18,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem where reconnecting to a device could be wrongly marked as lost right away because of an old reading left over from before the reconnect, which then dropped the new connection. It also makes the Astroasis Oasis focuser report itself as disconnected right away when it is unplugged or its USB link fails, instead of taking up to 30 seconds to notice. A simple timeout does not count as a failure, and reconnecting clears the state. This has not been tested on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "2e8a921f179d1351976f15725ef2566027c526b0"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1467,
+      "title": "Autofocus landings: the sweep entry stops at the travel's top (#1466 follow-ups)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1467",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-28T23:45:45Z",
+      "additions": 36,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "A small follow-up to the autofocus backlash work. On a focuser whose range of travel is too short for the full focus sweep, the first move could ask the focuser to go past its upper limit. That move is now capped at the top of the range. It also puts back the earlier error handling for Smart Focus's first step, where a failure there returns the focuser to where it started, and updates a comment.",
+      "category": "fix",
+      "summaryHash": "bca10ebae3d76e866a0bc52e6e22d3497d40a0a2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1817,
+      "title": "Fix Wi-Fi profile save dropping static IP and 802.1x settings",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1817",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-28T23:20:57Z",
+      "additions": 229,
+      "deletions": 108,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Saving an existing Wi-Fi network in the web interface, for example to change its priority or auto-connect setting, used to erase other settings on that network. A board could lose its fixed IP address, and WPA3 or enterprise networks could stop working. Now only the changed settings are updated and everything else is kept. One side effect is that a new password typed for a non-standard secured network (such as an enterprise network) no longer switches it to a normal password network, so the new password has no effect there. This has only been tested against a simulated network service, not real hardware.",
+      "category": "fix",
+      "summaryHash": "0a28e685d87442e2881d4cc46b9131c121724b22"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1466,
+      "title": "Smart Focus lands upward moves from above; every overshoot clears the measured backlash (#1139)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1466",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-28T23:19:55Z",
+      "additions": 218,
+      "deletions": 106,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Smart Focus no longer stops short of its target when it moves the focuser upward. Focusers with slack in their gears (backlash) stopped about 48 steps short on the team's test rig, so those moves now overshoot and come back down, like the rest of autofocus already does. The overshoot is now at least 1.5 times the slack measured during calibration, instead of a fixed step that could be too small. This finally puts the calibration's slack measurement to use, and the design docs and changelog are updated to match.",
+      "category": "fix",
+      "summaryHash": "63c74d01dc9b3479a8b1a49e0cd356ce7339a664"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1815,
