@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T13:06:32.162Z",
+  "generatedAt": "2026-10-29T14:06:51.776Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1872,
+      "title": "Merge stable/5.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1872",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T13:21:23Z",
+      "additions": 756,
+      "deletions": 38,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings the fixes from the recent 5.0.2 release into the main line of development, so future versions keep them. When the connection to a SynScan or Celestron telescope mount has failed, the server now reports an error instead of handing back possibly stale answers like whether the mount is parked or tracking. Other fixes it carries: shutting the server down no longer leaves waiting slew or connect requests hanging, and SynScan mounts now report tracking as off after a failed attempt to resume it. It also updates the version number and release notes to 5.0.2, and it has not yet been tested on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "16dd8827ed651353d136627c1511b8a593d07173"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1874,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This is a test-only change that fixes an automated test for ZWO mounts that sometimes failed in the nightly checks when the machine was busy. The test now waits longer for replies from its simulated mount and waits for the simulator to settle before starting, so it reliably checks the retry behaviour it was written for. The mount driver itself is unchanged. The author also flagged a possible real issue for later: the driver treats a missing reply to a move command as success, and this change leaves that as it is.",
+      "category": "tests",
+      "summaryHash": "8190c0a99031165f763994dacb5f8b552efb8e82"
     },
     {
       "repo": "open-astro/AlpacaBridge",
