@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T01:49:04.311Z",
+  "generatedAt": "2026-10-29T03:05:48.207Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1827,
+      "title": "Fix QHY abort skipping the cancel on a watchdog-failed exposure",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1827",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T02:54:40Z",
+      "additions": 176,
+      "deletions": 123,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Stopping a QHY camera exposure now actually works when the exposure has hung. Before, if a frame took too long, the driver marked the exposure as failed but left the camera still working on it, so a later abort reported the camera as idle without telling the camera to stop. Abort now cancels the stuck exposure and waits a limited time for it to finish, so the next exposure does not collide with the old one. Several existing timing tests were also changed to use a simulated clock instead of real waiting, and the fix has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "749a4e58850a3981248062d29a99621d5202bb27"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1823,
+      "title": "Fix server stop waiting for synchronous slews and connects",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1823",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T02:28:07Z",
+      "additions": 105,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Stopping or restarting the server no longer gets held up by a telescope that is in the middle of a slew, or by a device that is still connecting. Before, the server could wait up to 90 seconds for a slew to finish, long enough for the system to force-kill it during a restart. Now any request still waiting gets an immediate error saying the server is stopping, while the telescope keeps moving and is not aborted. A device that was still connecting is told to cancel the connection, and a normal restart afterward behaves as before.",
+      "category": "fix",
+      "summaryHash": "2cb1c5f54146a9b70cb2dea9fd1febde895d285a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1819,
