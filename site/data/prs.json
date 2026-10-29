@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T03:05:48.207Z",
+  "generatedAt": "2026-10-29T04:05:50.480Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1806,
+      "title": "Add bounded ZWO TCP waits for discovery probes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1806",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-29T03:56:35Z",
+      "additions": 1276,
+      "deletions": 863,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the bridge starts up and a ZWO mount is set to connect over the network, it no longer fails straight away if the automatic device search happens to be checking that same mount at that moment. It now waits up to 1.5 seconds for the search to finish, then connects, so users don't have to retry by hand. It still refuses at once if another automatically connected entry already owns that mount, and cancelling during the wait stops the connection cleanly. The change also touches the bridge's web server code and some unrelated tests, which the description only mentions in passing as a follow-up to fix the automated checks.",
+      "category": "fix",
+      "summaryHash": "1e5d206a7091d1f25dcc859b2c4b6b558645e1ec"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1471,
+      "title": "GuiderStarLostWatchTest: the fake guider's stop events can no longer overtake the restart's",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1471",
+      "author": "joeytroy",
+      "mergedAt": "2026-10-29T03:48:56Z",
+      "additions": 13,
+      "deletions": 7,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Test-only change that fixes the star-lost recovery tests, which were randomly failing about 2 runs in 5 and blocking other PRs. The pretend guider used in these tests sent its \"stopped\" messages late, so they could arrive after the \"guiding again\" message and confuse the test. It now sends them in the right order, and the test waits longer before giving up. The app itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "706691bca347e49917b56afdb48272c17d5669ef"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1825,
+      "title": "Bring decision records in line with main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1825",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-29T03:16:11Z",
+      "additions": 53,
+      "deletions": 50,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update that corrects the project's written design rules so they match the current code. The automated reviewer and human reviewers check every change against these rules. Two rules whose trial runs are finished are now marked as accepted, written-in exceptions were removed, and descriptions of code that no longer exists were fixed. Some rules now cover more of the code, which brings existing problems into view, such as a known issue with how the server shuts down and restarts. No program behavior changes.",
+      "category": "docs",
+      "summaryHash": "96e69ce5b6906aeabcb8c39370191e821ffac923"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1827,
