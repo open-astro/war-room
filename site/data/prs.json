@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T21:59:58.614Z",
+  "generatedAt": "2026-10-29T22:58:42.939Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1875,
+      "title": "Run a queued Disconnect even when the link was lost meanwhile (#1289)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1875",
+      "author": "kern2011",
+      "mergedAt": "2026-10-29T22:31:52Z",
+      "additions": 41,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1876,
