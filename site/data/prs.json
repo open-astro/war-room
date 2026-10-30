@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T06:51:52.651Z",
+  "generatedAt": "2026-10-30T07:51:04.800Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1888,
+      "title": "Refuse an AsyncOperation start while cancel_all_and_join() joins",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1888",
+      "author": "kern2011",
+      "mergedAt": "2026-10-30T07:24:46Z",
+      "additions": 320,
+      "deletions": 37,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing bug where disconnecting a telescope could leave a background task still running even though the system believed everything had stopped. Now, if something tries to start a new background task while a disconnect is shutting the old ones down, it is turned away with a 'try again' error. OnStep mounts also clean up leftover guiding work at the start of every new connection, so nothing from an old session leaks into the next one. For Sky-Watcher mounts, the description says turning tracking on during this shutdown window could leave the mount tracking without its safety limit check, and that this is now prevented; that part of the code was not shown, so it could not be confirmed from the diff.",
+      "category": "fix",
+      "summaryHash": "1e98dcec47f8ab3e2a15639c25de39a527c6d418"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1891,
