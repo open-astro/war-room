@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T08:50:16.037Z",
+  "generatedAt": "2026-10-30T09:49:22.336Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1899,
+      "title": "Fix unbounded registry keys from non-uint32 ClientIDs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1899",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T09:03:57Z",
+      "additions": 82,
+      "deletions": 9,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem where a single client could make the telescope server slowly use up memory. The server keeps a short-lived list of which client apps are connected to each device, and it used to store whatever ID text a client sent, even very large or malformed values, for up to 10 minutes. Now it only accepts IDs that are normal whole numbers in the expected range, and treats anything else as if no ID was sent, which keeps memory use bounded on the small computer at the telescope. Well-behaved clients see no change, though two badly behaved clients from the same address will now share one connection slot. New tests cover the change.",
+      "category": "fix",
+      "summaryHash": "3d608b70d1b0612c4de791aedc4fb998f5f0db2c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1892,
