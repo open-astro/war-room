@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T04:53:38.041Z",
+  "generatedAt": "2026-10-30T05:52:43.799Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1885,
+      "title": "Fix CGX getters and Sync holding mutex_ across serial exchanges",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1885",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T05:50:38Z",
+      "additions": 302,
+      "deletions": 96,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX mount driver no longer makes quick status questions wait while it is talking to the mount. Before, asking for the telescope's position or syncing it to known coordinates blocked simple requests like the guide rate until the mount replied. Now those requests should answer promptly even when the mount is busy. The driver also double-checks afterward that nothing changed, such as a disconnect, before it uses a reading. This is a partial fix: tracking changes, goto, stop, home and meridian-flip slews still have the old waiting behavior and are left for a follow-up, and the change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "b42d8ffd16e76b20f4cbb0b6e985a1294884bd02"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1890,
