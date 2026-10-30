@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T05:52:43.799Z",
+  "generatedAt": "2026-10-30T06:30:05.860Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1896,
+      "title": "Fix Sky-Watcher tests that pass with their behaviour removed",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1896",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T06:20:10Z",
+      "additions": 105,
+      "deletions": 10,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change for the Sky-Watcher mount support. An audit found that several checks would still pass even if the feature they were meant to protect was broken. Those checks now actually fail when the feature breaks, covering where the mount says it is pointing, tracking speed, finding the home position, and disconnecting cleanly. The driver itself is unchanged, and the code matches the description.",
+      "category": "tests",
+      "summaryHash": "c1460af975a4443e489373523ed42943691c29f7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1885,
