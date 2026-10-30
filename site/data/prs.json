@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T12:46:46.405Z",
+  "generatedAt": "2026-10-30T14:45:10.500Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1907,
+      "title": "Add Sky-Watcher connected CanMoveAxis and ApertureArea tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1907",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T14:32:06Z",
+      "additions": 49,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds tests for the Sky-Watcher telescope driver while it is connected to a simulated mount. The tests check that the driver correctly reports which directions the telescope can be moved in and that it calculates the telescope's light-collecting area correctly from its lens or mirror size. Before this, these answers were only checked while the driver was disconnected, so a wrong answer during normal use could have gone unnoticed. Tests only; the driver itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "6d82fd606612f42ff97263744d5bd737ddc9980b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1898,
