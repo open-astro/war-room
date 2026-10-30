@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T03:54:33.166Z",
+  "generatedAt": "2026-10-30T04:53:38.041Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1890,
+      "title": "Fix README env vars, udev path and PWM comment drift",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1890",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T04:52:01Z",
+      "additions": 6,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes three spots in the documentation that no longer matched how the software behaves. The setup guide for the ZWO ASIAIR Plus power ports now lists both places where a device permission file can end up, depending on whether you install from the ready-made package or build it yourself. The web server's instructions now list four of the settings you can override through the system environment instead of two, and point to where the rest are defined. A code comment now gives the correct 50 Hz default for the power-port pulse rate. The program itself does not change.",
+      "category": "docs",
+      "summaryHash": "9f758096ab0855fcb6c3e3a2b30ea846ca02e5ed"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1881,
