@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T23:59:03.563Z",
+  "generatedAt": "2026-10-30T01:56:11.092Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1883,
+      "title": "Fix Bisque slews sent while a park runs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1883",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T01:30:53Z",
+      "additions": 223,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Mounts controlled through TheSkyX (the Bisque driver) will now refuse a request to move the telescope while it is still parking, which can take up to two minutes. Before, a move sent during that window could reach the mount. The same block also covers other movement commands during a park, while stopping or unparking clears it right away. A slew that coincides with a disconnect now fails cleanly instead of being sent, and the code matches the description. The fix was checked with new automated tests but not on real hardware, and the author notes a very small remaining gap if two clients park and unpark at the same instant.",
+      "category": "fix",
+      "summaryHash": "d0b7d6cfb8298e6fc4113948ab5f543ae4b99be8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1880,
