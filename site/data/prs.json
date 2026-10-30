@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T14:45:10.500Z",
+  "generatedAt": "2026-10-30T19:40:45.805Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1909,
+      "title": "Add contract sweep tier 3 failure-after-start cases",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1909",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T19:27:08Z",
+      "additions": 1242,
+      "deletions": 62,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a new round of automated checks that simulate a device failing partway through a job, such as a camera exposure, a telescope slew, or a focuser, rotator or filter wheel move. Each check makes sure the driver never reports the job as finished cleanly when it actually failed, so a driver that hides a mid-job failure is now caught by the tests. Only tests and the simulated devices used by the tests changed, and no real driver code was touched. Some of the checks for camera brands that only build on the telescope computer's chip type were not run on that hardware before merge and are being checked for the first time in the project's automated build.",
+      "category": "tests",
+      "summaryHash": "c6dfee116d6db9f75ea99a1fc3688d63dc75f518"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1907,
