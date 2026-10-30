@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T06:30:05.860Z",
+  "generatedAt": "2026-10-30T06:51:52.651Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1891,
+      "title": "Fix contract sweep tier 1 cases with no subject",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1891",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T06:40:12Z",
+      "additions": 134,
+      "deletions": 35,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change that makes the project's automated driver checks more honest; no driver behavior changed. Two shared checks were previously run on every device driver even when there was nothing to test for that driver, so they passed without actually checking anything. Now those checks only run where there is something real to verify, and new checks were added for switches, weather-monitoring devices and one focuser model. A safeguard now fails if a check is ever set up with nothing to test, and the change also notes that two focuser models deliberately correct an out-of-range move instead of rejecting it.",
+      "category": "tests",
+      "summaryHash": "b05b8a22db21122cc8732dbf3f12407d782e98cf"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1896,
