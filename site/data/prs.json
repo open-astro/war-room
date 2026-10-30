@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T02:55:26.214Z",
+  "generatedAt": "2026-10-30T03:54:33.166Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1881,
+      "title": "Fix ToupTek and Altair camera connect holding the state lock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1881",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T03:31:57Z",
+      "additions": 289,
+      "deletions": 88,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ToupTek and Altair cameras no longer freeze basic status questions, such as the camera's name or whether it is connected, while the camera is slowly connecting or disconnecting. Before this fix, a client that kept checking the camera during a slow connect could tie up the server until the connect finished. The camera's name and details now stay available after a disconnect instead of being wiped, and new automated tests cover these cases. It has not yet been tried on real camera hardware.",
+      "category": "fix",
+      "summaryHash": "ce6441cca8e71813bf93b8afbb6c04b621488761"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1886,
+      "title": "Fix a relinked SkyWatcher session closed by an old link verdict",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1886",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T03:06:47Z",
+      "additions": 181,
+      "deletions": 10,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing problem in the Sky-Watcher mount driver. If the connection to the mount dropped and was quickly re-established, a leftover check on the old connection could wrongly mark the new one as lost or shut it down. The driver now re-checks that it is judging the current connection before acting, so a reconnected mount stays connected and reports its status correctly. New automated tests cover this, but it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "bbd4ee6024875780cb37c1b329e21b1f8ba60ca2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1882,
