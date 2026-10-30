@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T07:51:04.800Z",
+  "generatedAt": "2026-10-30T08:50:16.037Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1892,
+      "title": "Fix Sky-Watcher in-flight workers ignoring the link-fault latch",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1892",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T08:14:44Z",
+      "additions": 204,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a safety gap in the Sky-Watcher telescope driver. When the connection to the mount's controller board fails or the board restarts, the driver is supposed to stop sending it commands, but a few background tasks that had started before the failure could still send movement commands. These are a speed-correction retry, a park or go-home move, the end of a short guiding nudge, and the end of a manual stop. They now check for the fault first and send nothing that would start motion, while commands that stop the mount still go through, so a restarted mount is no longer moved by an outdated instruction. One related step, resuming tracking after a slew, is still not checked, which the author notes is covered by earlier checks, and the change was tested in simulation only, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "c6f913fbfd91cc32c6e458f82a435efe2d2c37e8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1888,
