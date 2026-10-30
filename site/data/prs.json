@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T10:48:30.511Z",
+  "generatedAt": "2026-10-30T11:47:34.669Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1902,
+      "title": "docs: a device that did not answer is a DriverException (decision 0010 rule 8)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1902",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T11:02:12Z",
+      "additions": 5,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a documentation-only change that settles which error a telescope or camera driver should report when the device itself fails to answer, for example because of a timeout or because it has not yet sent a reading since connecting. The new rule says that case is a general driver error, which matches the official ASCOM standard's note that driver errors include communication problems. A separate error stays reserved for things the user can fix but has not yet set, such as the observing site or the date. The goal is that client software sees the same error for the same problem on every driver, so it can safely retry temporary link failures. No driver code changes yet: a pending OnStep change and the QHY camera still use the other error and will need their own fixes.",
+      "category": "docs",
+      "summaryHash": "859493717c715fd423bb187d686141cada9f02d7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1900,
