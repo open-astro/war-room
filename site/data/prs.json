@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T09:49:22.336Z",
+  "generatedAt": "2026-10-30T10:48:30.511Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1900,
+      "title": "Fix log archive download memory use and concurrency",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1900",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T10:36:55Z",
+      "additions": 173,
+      "deletions": 2,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"download all logs\" option now uses far less memory and only builds one log bundle at a time, so several people grabbing logs at once can no longer exhaust memory on a small telescope computer and crash the bridge along with every connected device. The bundle is now capped at 32 MiB instead of 200 MiB, so older days get left out when logs are large (each day can still be downloaded on its own). A second download requested while one is being built is turned away with a \"try again shortly\" message. The web page now shows that message, or any other server error, instead of saving the error as if it were a log file.",
+      "category": "fix",
+      "summaryHash": "e6d03a86ab4d7d50326599fc45468fc85b52a2a3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1901,
+      "title": "Fix GPhoto bulb tests to wait on the fake task clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1901",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-30T10:04:02Z",
+      "additions": 123,
+      "deletions": 34,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test-only change for the GPhoto camera driver, with no change to how cameras behave. The tests for long \"bulb\" exposures used to wait in real time with fixed pauses. They now use a simulated clock, which makes them faster and less likely to fail at random on a busy machine. Tests that wait for an abort now fail cleanly instead of running forever if the stop never arrives.",
+      "category": "tests",
+      "summaryHash": "978e93b8b3403a4ec510ebf15d40e5c16a9c0717"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1899,
