@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T01:56:11.092Z",
+  "generatedAt": "2026-10-30T02:55:26.214Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1882,
+      "title": "OnStep telescope: slew and pulse deadlines on util::HoldWindow (#1835)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1882",
+      "author": "kern2011",
+      "mergedAt": "2026-10-30T02:39:38Z",
+      "additions": 394,
+      "deletions": 75,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope driver now reports a finished slew as soon as the mount actually stops, instead of always waiting out a fixed 2-second grace period, so short moves and blocking slews finish faster. Guiding pulses are now tracked separately for each direction, so a short correction in one direction no longer makes it look like a longer correction in the other direction has ended. The driver also stops newer telescope status readings from being thrown away when several arrive close together, so reported position and guiding state stay fresher. This moves OnStep onto the shared timing approach the team adopted (Sky-Watcher went first) and comes with new tests and updated docs.",
+      "category": "fix",
+      "summaryHash": "204107d1d1e2f6acef17b1f3455e0390fa2c195d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1884,
+      "title": "Fix/cap weewx response size and timeoutms upper bound upstream 1718",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1884",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-30T01:56:02Z",
+      "additions": 86,
+      "deletions": 19,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The WeeWX weather station driver now gives up cleanly if the station's web address sends back more than 1 MB of data, instead of storing an unlimited amount in memory. The longest wait allowed for each fetch is now one minute; before, it could be set high enough to block for weeks. This protects the server from a broken or hostile weather address. One side effect: a saved WeeWX device with a wait time above one minute will fail to load after the upgrade until the value is lowered, though it stays editable.",
+      "category": "fix",
+      "summaryHash": "ac44ba449247b61839fa769990d17e9b562357f5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1883,
