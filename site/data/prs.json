@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T00:36:34.244Z",
+  "generatedAt": "2026-10-31T01:35:42.051Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1911,
+      "title": "Add PolledRig to the driver test rig and adopt it in focuser tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1911",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T01:15:57Z",
+      "additions": 907,
+      "deletions": 926,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal testing change with no effect on the product or its users. It adds one shared, reusable setup for testing the focuser drivers and switches the tests for four focuser brands (QHY, Gemini, Astroasis and Celestron) to use it, replacing roughly 75 copies of the same setup code. The tests still check exactly the same things as before, and the new shared setup comes with its own tests.",
+      "category": "tests",
+      "summaryHash": "df39b90e82355b0f4576b6b18e66432ee310f1d1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1908,
