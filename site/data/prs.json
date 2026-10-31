@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T12:26:55.076Z",
+  "generatedAt": "2026-10-31T15:21:10.459Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1923,
+      "title": "Fix MoveAxis dropping a PulseGuide on the other axis",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1923",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T14:33:24Z",
+      "additions": 425,
+      "deletions": 18,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem with Sky-Watcher mounts where moving one axis by hand (for example, nudging the mount east-west) could silently cancel a small guiding correction that was about to start on the other axis. The correction was simply dropped and never sent. Now a guiding correction survives a move or stop on the other axis, so users can jog one axis and keep guiding on the other. Commands that take over the whole mount, such as goto, park, or abort, still cancel it as before. This was tested with a simulated mount only, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "ebbb0ffecc5d0eff443ff92d29355c64051b83cd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1912,
