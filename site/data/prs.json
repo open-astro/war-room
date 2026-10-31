@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T02:24:35.127Z",
+  "generatedAt": "2026-10-31T03:33:52.282Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1916,
+      "title": "Move Player One thermal switch connect off mutex_",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1916",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T02:35:37Z",
+      "additions": 247,
+      "deletions": 62,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1915,
