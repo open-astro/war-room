@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T05:32:41.429Z",
+  "generatedAt": "2026-10-31T06:31:52.046Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1922,
+      "title": "Fix NotConnected before NotImplemented on driver members",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1922",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T06:29:48Z",
+      "additions": 448,
+      "deletions": 89,
+      "changedFiles": 30,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When an app asks a device for a feature it doesn't support while the device is disconnected, drivers for Celestron, iOptron, OnStep, Player One, QHY, SVBONY, ToupTek, gPhoto and WeeWX now answer \"not connected\" first instead of \"not supported\". This gives astronomy apps one consistent answer while a device is offline; answers once connected are unchanged. A new automated check tries every optional feature on a disconnected device to catch this. A few drivers (ZWO, Sky-Watcher, Bisque, SynScan and part of the Gemini panel) still need the same fix in a follow-up, and the new code has not been tried on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "48e7060b46fec28f6756ad221c47b7a8fd048b9a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1917,
+      "title": "Gemini flat panel: a pulled cable loses the link at once",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1917",
+      "author": "kern2011",
+      "mergedAt": "2026-10-31T05:52:40Z",
+      "additions": 425,
+      "deletions": 59,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "If someone pulls the USB cable from a Gemini flat panel (Cover Lite, Automatic FlatPanel v2 or Motorized Flat Panel V3), the server now marks the panel as disconnected right away and frees the port. Before, it kept saying the panel was connected even though every command failed. Apps such as NINA can now see the panel is gone and reconnect with one Connect, and the management screen shows why the link was lost. Only the flat panels are covered here, not the other devices in the same issue, and testing used simulated devices only, not real hardware.",
+      "category": "fix",
+      "summaryHash": "ca47181a1b68c978c1c1769e75b23dcca50072a2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1906,
