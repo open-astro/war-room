@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T19:40:45.805Z",
+  "generatedAt": "2026-10-31T00:36:34.244Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1908,
+      "title": "Add a configurable per-day log file size cap",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1908",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-31T00:04:20Z",
+      "additions": 301,
+      "deletions": 4,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server now limits how big a single day's log file can grow on the telescope computer's memory card, with a default of 10 MB. When the limit is reached, it writes one note saying so and stops adding to that day's file until the next day or until the file is deleted. Other log outputs keep working as before. This prevents a runaway log from filling the card and breaking settings saves, and operators can raise, lower, or turn off the limit (setting it to 0), though limits above 10 MB make the file too big for the built-in log viewer and download to show.",
+      "category": "feature",
+      "summaryHash": "bc72c23893895e54040b2fac2e1b762d5ce186e5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1909,
