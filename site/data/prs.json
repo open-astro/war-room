@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T08:54:41.617Z",
+  "generatedAt": "2026-10-31T10:28:18.955Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1927,
+      "title": "Run the ZWO telescope GOTO, pulse and disconnect bodies in operation slots",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1927",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T09:37:24Z",
+      "additions": 902,
+      "deletions": 438,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1926,
