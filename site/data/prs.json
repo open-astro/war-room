@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T10:28:18.955Z",
+  "generatedAt": "2026-10-31T11:28:42.098Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1928,
+      "title": "iOptron iEAF: a pulled cable loses the link at once",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1928",
+      "author": "kern2011",
+      "mergedAt": "2026-10-31T11:18:36Z",
+      "additions": 357,
+      "deletions": 21,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the USB cable to an iOptron iEAF or iAFS2/3 focuser is pulled, the server now notices right away and treats the focuser as disconnected. It releases the port, stops showing old position readings and firmware info, and lets imaging apps like NINA reconnect with a single Connect. Before this, the focuser kept claiming to be connected after the cable was gone, and a move or stop command could even report success on an unplugged focuser. The code changes match the description, and new automated tests cover the pulled-cable cases.",
+      "category": "fix",
+      "summaryHash": "4279351d069434d58aac97d165f0ccb78c187c7a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1927,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This reworks how the ZWO mount driver handles slews (GOTO), guiding pulses and disconnecting in the background, moving them onto the project's standard shared mechanism for background work. Users should see a second slew request return immediately instead of waiting for the first to finish talking to the mount. Commands like Park, Home, manual moves and Abort now cleanly stop an in-progress slew setup so no leftover slew instruction reaches the mount after them. It comes with 14 new automated tests and documentation updates; the description also mentions a change to the Celestron driver that does not appear in the visible code.",
+      "category": "refactor",
+      "summaryHash": "f5e242511cc3e25093e6f3b7483e0b10941d6bbf"
     },
     {
       "repo": "open-astro/AlpacaBridge",
