@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T08:30:07.646Z",
+  "generatedAt": "2026-10-31T08:54:41.617Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1926,
+      "title": "Gemini focuser: a pulled cable loses the link at once",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1926",
+      "author": "kern2011",
+      "mergedAt": "2026-10-31T08:48:28Z",
+      "additions": 393,
+      "deletions": 45,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the USB cable to the Gemini focuser is pulled, the server now notices right away and reports the focuser as disconnected, instead of claiming it is still connected for up to 30 seconds. The port is released so that one Connect from an app like NINA can reopen it once the cable is back, and the reason for the loss is kept until then. A cable pulled while connecting now makes that Connect fail with a clear disconnected error. The visible code matches the description, and the change also adds tests and moves one comment in the flat panel code; the main focuser driver changes were too large to be shown in full.",
+      "category": "fix",
+      "summaryHash": "eb299323e417d671ba97656cdb218442b8d2f653"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1924,
