@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T07:30:58.173Z",
+  "generatedAt": "2026-10-31T08:30:07.646Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1924,
+      "title": "Rotate the log file at the size cap instead of dropping lines",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1924",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T07:47:44Z",
+      "additions": 131,
+      "deletions": 67,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server's log no longer goes quiet when a day's log file gets too big. Before, once the file hit its size limit, every later line that day was thrown away. Now the full file is set aside as a numbered part and logging carries on in a fresh file, keeping up to 20 files (about 100 MB) per day. The default size per file drops from 10 MB to 5 MB so each one can be opened directly in the web log viewer. The main logging code was too large to include here, but the visible settings, documentation and tests match the description; on a heavy day the log viewer will list several files for that date.",
+      "category": "fix",
+      "summaryHash": "7405676a8c33b3be64642a0e3b8e20b345344247"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1921,
