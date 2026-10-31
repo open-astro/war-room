@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T01:35:42.051Z",
+  "generatedAt": "2026-10-31T02:24:35.127Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1915,
+      "title": "Fix ToupTek CoolerOn and CoolerPower without a cooler",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1915",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T02:10:32Z",
+      "additions": 42,
+      "deletions": 12,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ToupTek and Altair cameras that have no cooler now say plainly that cooler controls are not available, instead of reporting a cooler that is switched off at 0% power. Before, astronomy software could think these cameras had a cooler that just wasn't running. Now any attempt to read or set the cooler on such a camera returns the standard \"not implemented\" answer and never touches the cooling hardware. Cameras that do have a cooler behave as before, and the change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "da1526335946577f59a3ee9c781b7ebdc341d429"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1910,
+      "title": "Fix ASIAIR Plus connect driving PWM ports on without reading them",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1910",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T01:41:03Z",
+      "additions": 130,
+      "deletions": 8,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On the ZWO ASIAIR Plus, connecting no longer switches the adjustable power ports to full power on its own. Before, simply connecting turned these ports on, which could disturb connected equipment and on real gear dropped other power ports to 0 volts. Now a port stays untouched until a user sets it or the server's start-up power-on step does, and disconnecting also leaves untouched any port nobody set. After a reconnect, the port also reports the power level it is actually holding. The change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "3d0ac36d9c96457981abd33c0c39e079230dad28"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1911,
