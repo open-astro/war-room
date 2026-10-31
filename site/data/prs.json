@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T11:28:42.098Z",
+  "generatedAt": "2026-10-31T12:26:55.076Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1912,
+      "title": "Refuse an empty hotspot passphrase without a secured profile",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1912",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T12:20:56Z",
+      "additions": 111,
+      "deletions": 39,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The bridge's settings API can no longer create or switch on an unprotected WiFi hotspot. Before, leaving the password blank could set up an open hotspot that anyone nearby could join and use to reach the bridge, which has no login. A blank password is now refused unless the hotspot already has a stored password, though it can still be used to turn an old open hotspot off, and a system permission that allowed open hotspots was removed. One gap remains, as the PR itself notes: a device that already has an open hotspot from an earlier version will still start it on boot until the owner sets a password or turns it off.",
+      "category": "fix",
+      "summaryHash": "cabbd5acf11abe2210f2f12cc63368be55786422"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1928,
