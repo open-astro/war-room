@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T03:33:52.282Z",
+  "generatedAt": "2026-10-31T04:33:59.036Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1920,
+      "title": "Fix Bisque SiderealTime and DestinationSideOfPier clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1920",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T04:22:35Z",
+      "additions": 100,
+      "deletions": 23,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For telescopes driven through TheSkyX (the Bisque driver), the reported sidereal time and the predicted side of the pier for a slew now use the clock on the computer running TheSkyX, the same clock already used for the reported date and time. Before, they used the bridge's own clock, so if the two computers' clocks disagreed, astronomy software could get mismatched answers and pick the wrong pier side. One behaviour change: if TheSkyX is set not to use the computer clock, these two values now return an error instead of quietly falling back to the bridge's clock. The setup guide already requires that setting to be on. The fix was not tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "ba953793bf8d122d821c74eb1ae74b43ce2f25c9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1913,
+      "title": "Fix ZWO camera connect holding mutex_ across the SDK open (#1843)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1913",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-31T03:57:29Z",
+      "additions": 169,
+      "deletions": 64,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "While a ZWO camera is connecting, basic questions like its name and ID are now answered right away instead of waiting for the whole connection to finish. On a Raspberry Pi this wait was close to a second. The driver now does the slow camera setup without blocking those questions, then saves the results at the end, with safeguards so an overlapping name lookup cannot overwrite the fresh details. The project's tracking document now marks the ZWO camera as following its \"don't make simple questions wait on the device\" rule. The fix was not yet tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "8d8f16ae198b2408f86e1302eb1c9559e9d32a4c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1916,
@@ -22,9 +56,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Player One camera heater and fan control now answers simple questions, like its ID and number of controls, immediately while it is connecting, rather than waiting for the camera setup to finish. Disconnecting is also safer: it now waits for any heater or fan change already in progress instead of closing the camera in the middle of it. Status checks caught by a disconnect now report \"not connected\" rather than looking like a broken link. Tests and documentation were updated to match, but the change was not tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "3a097b370fdf941ab923a80be7ba83697c64246f"
     },
     {
       "repo": "open-astro/AlpacaBridge",
