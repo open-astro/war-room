@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T16:23:25.302Z",
+  "generatedAt": "2026-10-31T18:21:42.135Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1930,
+      "title": "Fix shutdown and restart threads outliving the Server",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1930",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T17:59:22Z",
+      "additions": 252,
+      "deletions": 34,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a crash that could happen when the bridge was told to shut down or restart through its management web page. Before, the delayed shutdown or restart step ran on its own and could try to use parts of the server that had already been torn down. Now the server keeps track of that step and cancels it cleanly when it closes, and a new test checks this. One small behavior change: a second shutdown or restart request sent within a tenth of a second of the first still gets a success reply, but only the first one is carried out.",
+      "category": "fix",
+      "summaryHash": "b2e8c01ed0f0776622cab4b86354d8aec83368b3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1929,
