@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T06:31:52.046Z",
+  "generatedAt": "2026-10-31T07:30:58.173Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1921,
+      "title": "Fix ZWO AM Sync coordinate and GOTO abort races",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1921",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-31T07:01:51Z",
+      "additions": 105,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes two timing problems with ZWO AM telescope mounts when two programs send commands to the same mount at once. A \"sync\" (telling the mount where it is actually pointing) now always uses the exact position it was given, so another program changing the target at the same moment can no longer cause the mount to sync to the wrong spot. A sync that is waiting for the mount to stop moving will also no longer cancel a newer slew that started in the meantime; it now gives up with an error instead. The change mainly covers newer slews, and as the description notes, a waiting sync can still briefly interrupt some other newer movements like parking or homing.",
+      "category": "fix",
+      "summaryHash": "c315db26fad2579882843bd7399e4a58bae2b9d8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1922,
