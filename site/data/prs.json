@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T04:33:59.036Z",
+  "generatedAt": "2026-10-31T05:32:41.429Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1906,
+      "title": "Fix HTTP request framing desync on malformed header lines",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1906",
+      "author": "pauleyj",
+      "mergedAt": "2026-10-31T05:27:40Z",
+      "additions": 119,
+      "deletions": 2,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server that runs telescope drivers now rejects incoming web requests whose header lines are oddly formatted, for example with a stray space before the colon or an unexpected line break. Before, two parts of the server could disagree about how long a request was, so leftover data could be mistaken for a second request on the same connection. Such requests now get a clear 'bad request' error and the connection is closed. Requests that claim more data than they actually send are also refused instead of being handled half-complete, and normal, well-formed requests work as before.",
+      "category": "fix",
+      "summaryHash": "8af768faf09410ea7ea998474871a11bb64325ff"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1920,
