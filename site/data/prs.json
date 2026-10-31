@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T15:21:10.459Z",
+  "generatedAt": "2026-10-31T16:23:25.302Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1929,
+      "title": "Move SynScan handset exchanges off the driver state lock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1929",
+      "author": "diegopereiran",
+      "mergedAt": "2026-10-31T16:18:01Z",
+      "additions": 1202,
+      "deletions": 696,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The SynScan telescope driver no longer makes basic status questions wait while it is talking to the handset. Before, asking whether the mount was tracking or parked could stall for almost 4 seconds during a connect, and disconnecting could take nearly 6 seconds. Now those answers come back almost at once, and disconnecting a handset that responds finishes within 5 seconds. A few visible behaviours also change: the connection-error message now gives a generic reason instead of the specific failure, the mount reports as connected only once its first status reading is in, and syncing the mount now waits for any other move in progress; a disconnect from a handset that has gone completely silent can still be slow, which the authors note is left for later work.",
+      "category": "fix",
+      "summaryHash": "4c24f87f7645081eda2aa38e69aa04552361dd81"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1923,
