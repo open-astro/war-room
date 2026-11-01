@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T00:20:43.862Z",
+  "generatedAt": "2026-11-01T01:22:29.941Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1933,
+      "title": "Add anti-framing and nosniff headers to every HTTP response",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1933",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-01T01:04:42Z",
+      "additions": 85,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server's web control page can no longer be secretly embedded inside another website. This closes a known security gap where a malicious page on the local network could hide the control page behind fake buttons and trick someone into changing settings with a single click. Every reply from the server now carries instructions telling browsers not to allow this, and not to guess at file types. A new test checks the change, and the security notes now list this gap as fixed.",
+      "category": "fix",
+      "summaryHash": "3ef63f83ad9d2d3349998b839775cfa09cf89f18"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1932,
