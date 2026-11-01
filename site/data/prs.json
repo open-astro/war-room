@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T02:15:51.672Z",
+  "generatedAt": "2026-11-01T03:19:43.753Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1934,
+      "title": "Share one build across parallel ImageArray GETs and cap builds at one",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1934",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-01T03:16:10Z",
+      "additions": 272,
+      "deletions": 4,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When several requests ask for the same camera's image at the same moment, the server now prepares the image once and shares it with all of them, instead of doing the full, memory-heavy work separately for each request. It also allows only one image to be prepared at a time across the whole server. This stops large colour images from using up all the memory on a small 4 GB Raspberry Pi. The trade-off is that a slow image on one camera makes image requests for other cameras wait. Commands that start, stop or reconnect the camera end the sharing, so later requests always get the newest image.",
+      "category": "fix",
+      "summaryHash": "3f4a51f6d24b9f780cc8de147f5d2c0a81ab084c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1939,
