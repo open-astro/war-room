@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T19:06:23.487Z",
+  "generatedAt": "2026-11-01T20:05:14.053Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1943,
+      "title": "Update ToupTek thermal poll and pulse timer to AsyncOperation slots",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1943",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-01T19:34:54Z",
+      "additions": 161,
+      "deletions": 83,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup in the ToupTek camera driver, which also runs Altair cameras. Two background jobs, the regular temperature check and the timer that ends a guiding nudge, now run under the project's shared background-task helper instead of hand-managed threads. Cameras should behave the same: a new guiding nudge cleanly replaces one already running, and disconnecting still stops the temperature checks before the camera is released. The exposure thread is left for a later change, and this was checked with new automated tests but not on real camera hardware.",
+      "category": "refactor",
+      "summaryHash": "06cbbba94f075bcd493e79b02db75a3922309d7d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1941,
+      "title": "iOptron mount: a pulled cable loses the link at once",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1941",
+      "author": "kern2011",
+      "mergedAt": "2026-11-01T19:15:32Z",
+      "additions": 966,
+      "deletions": 45,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the USB cable to an iOptron mount is pulled, the server now reports the mount as disconnected right away and frees the port, so apps like NINA notice and can reconnect with a single Connect after the cable is plugged back in. Before, the mount stayed marked as connected indefinitely and the dead port stayed locked. A mount that stops answering for 30 seconds is now also treated as disconnected, and position and status checks retry about every 5 seconds so a mount that starts answering again recovers on its own. Over Wi-Fi a dropped connection is still handled the old way, and the main driver changes were not visible in the trimmed diff, so only the connection-handling part could be confirmed against the code.",
+      "category": "fix",
+      "summaryHash": "8ab81c070d419feb63ae971b52e774304307e217"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1942,
