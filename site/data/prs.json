@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T05:17:53.316Z",
+  "generatedAt": "2026-11-01T06:18:14.717Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1479,
+      "title": "Pick the switch and port by name; remember one flat panel per group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1479",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-01T05:52:27Z",
+      "additions": 642,
+      "deletions": 31,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where a flat panel could be connected twice at startup or on Reconnect, because the app remembered it under two different device types. It now keeps only one entry per panel, and settings saved by older versions connect the panel that was used last. In the sequence editor, the Set Switch Value step now lets you choose a connected switch and its port by name instead of typing raw numbers, and it falls back to number fields when no switch is available; saved sequences are unaffected. The switch-picker code was trimmed from what we could see, so only the panel fix was checked against the code, and the PR notes that one requested item (handling several devices of the same type) is still not done.",
+      "category": "feature",
+      "summaryHash": "ed091318d21b4065724072863970099051873aaf"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1477,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The setup wizard now asks how dark the observing site's sky is, using a Bortle class from 1 to 9, plus an optional sky-brightness meter (SQM) reading between 16 and 22.5. Both fields are pre-filled with the current values when the wizard is run again, and leaving the SQM field empty clears any saved reading. Out-of-range entries show an error and are not saved. The wizard and the Settings screen now use the same range checks, so the two places stay consistent.",
+      "category": "feature",
+      "summaryHash": "ba79b698963a36f74b304eb7831f64d86f013141"
     },
     {
       "repo": "open-astro/AlpacaBridge",
