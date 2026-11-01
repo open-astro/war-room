@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T09:15:29.166Z",
+  "generatedAt": "2026-11-01T19:06:23.487Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1942,
+      "title": "Fix ZWO dew heater fake parity and add ASI6200MM Pro ConformU reports",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1942",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-01T18:45:31Z",
+      "additions": 512,
+      "deletions": 452,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This mostly tightens the tests for ZWO cameras and their built-in dew heaters, which share one connection to the same physical camera. The test version of the dew heater now behaves more like the real hardware library and rejects commands sent outside an active connection, so mistakes that were slipping through will now be caught. There is one small real change: the camera driver now fully forgets which camera it was using after a disconnect, though the author notes this only changes the wording of an error message. It also adds clean compatibility test results from a real ASI6200MM Pro camera and its dew heater, and updates the supported-hardware notes to match.",
+      "category": "tests",
+      "summaryHash": "f2e37a8af0ecd28d3fa4b2104da692b09c8324eb"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1475,
