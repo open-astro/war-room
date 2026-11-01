@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T06:18:14.717Z",
+  "generatedAt": "2026-11-01T08:15:11.775Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1476,
+      "title": "client: iOS finds rigs through Apple's Bonjour API (same rigs as the Mac); pull down to rescan",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1476",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-01T09:09:52Z",
+      "additions": 169,
+      "deletions": 18,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1479,
