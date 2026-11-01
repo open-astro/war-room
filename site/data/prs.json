@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T03:19:43.753Z",
+  "generatedAt": "2026-11-01T04:18:52.825Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1937,
+      "title": "Fix CGX tracking, stop and slew writes holding mutex_ over AUX",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1937",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-01T04:07:14Z",
+      "additions": 586,
+      "deletions": 474,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX mount driver now keeps answering simple status questions, such as whether it is tracking, whether it is at home, and its guide rate, while the mount is busy replying to a tracking change, a stop, a home move or a slew. Before, those questions could stall until the mount finished talking. This means a client that polls the mount often gets quick answers. The change also adds tests for each of these cases and records a fresh compatibility test pass with the guide rate set to 0.25x. At the default 0.5x guide rate, that compatibility test reported a small guiding-accuracy issue, which is noted as a known limit. Most of the driver code changes were not visible in the trimmed diff, so the code side is confirmed mainly through the updated docs and the description.",
+      "category": "fix",
+      "summaryHash": "d693c1a5767de7c72e7dfe49ec9263f775aed773"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1935,
+      "title": "Move ZWO camera and dew heater opens to the shared open table",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1935",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-01T03:38:30Z",
+      "additions": 1014,
+      "deletions": 394,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO camera and the ZWO dew heater now open and close the camera through the same shared bookkeeping the ZWO focuser already uses. This prevents one of them from accidentally closing the connection the other is still using. It is groundwork for an upcoming fix to camera unplug-and-replug recovery, and is not meant to change how connecting or errors behave. There are a few small side effects, which the description calls out. A failed close now lets the next connect fully re-initialise the camera. The camera and dew heater share one connection and check its serial number. Listing cameras now fully initialises any camera nobody is using.",
+      "category": "refactor",
+      "summaryHash": "6ce9ff95a64d37da71c9fade44acd37e00ad06c1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1934,
