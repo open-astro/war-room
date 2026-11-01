@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T18:21:42.135Z",
+  "generatedAt": "2026-11-01T00:20:43.862Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1932,
+      "title": "Fix url_decode keeping invalid percent escapes literal",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1932",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-01T00:10:09Z",
+      "additions": 99,
+      "deletions": 37,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server now handles stray percent signs in incoming requests correctly. Before, text like \"50%off\" or a malformed code like \"%4G\" was turned into garbage characters, and a parameter whose name had a bad percent code could not be found. Now a percent sign stays as written unless it is followed by a valid two-character code, so devices receive exactly what clients sent. The two places that read request data now share one decoding routine, so they behave the same, and new tests cover both.",
+      "category": "fix",
+      "summaryHash": "c8ae04fdd9362eeee0d4dac06ca805c6cbaff94c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1930,
