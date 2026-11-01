@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T01:22:29.941Z",
+  "generatedAt": "2026-11-01T02:15:51.672Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1939,
+      "title": "Update decision records for the owned delayed-callback thread",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1939",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-01T01:59:18Z",
+      "additions": 4,
+      "deletions": 5,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update to two internal design records so they match how the server now handles shutdown and restart requests. They used to say each such request started a loose background task with no limit, and listed that as an open problem. They now say at most one is pending at a time and that the server cleans it up properly, since an earlier change fixed this. No code or behavior changed.",
+      "category": "docs",
+      "summaryHash": "1ccfb78a278bfbe1c944ccc26ac7b6832b716163"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1931,
+      "title": "iOptron iEFW: a pulled cable loses the link at once",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1931",
+      "author": "kern2011",
+      "mergedAt": "2026-11-01T01:36:13Z",
+      "additions": 807,
+      "deletions": 74,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron iEFW filter wheel now notices right away when its USB cable is pulled. It reports itself as disconnected, frees the port, and lets an app like NINA reconnect with a single Connect. Before, the wheel kept claiming to be connected and could even report a filter change as successful after the cable was gone. A wheel that stops answering while still plugged in now refuses filter moves instead of pretending they worked, and is treated as disconnected after about 30 seconds. The change also touches a shared status-tracking component used by other devices, but those devices should see no difference.",
+      "category": "fix",
+      "summaryHash": "2b1b3936a2e66ca46f61abfa2bbb1e5e993bd518"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1933,
