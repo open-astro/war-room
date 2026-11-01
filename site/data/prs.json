@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T20:05:14.053Z",
+  "generatedAt": "2026-11-01T20:51:03.997Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1948,
+      "title": "Update ConformU standard to 4.6.0-rc.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1948",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-01T20:43:40Z",
+      "additions": 70,
+      "deletions": 30,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project now uses a newer test version (4.6.0-rc.1) of ConformU, the official tool that checks whether drivers follow the astronomy device standard, for all new driver reports. The setup instructions, the automated test run, and the docs were updated to install and expect this version. The tool that watches for new ConformU releases also had to learn to look at test versions, since it previously ignored them. The project switched before its usual check on one real camera and one real telescope, and the new version runs stricter checks, so some drivers may show new findings on their next run. Older reports stay valid.",
+      "category": "chore",
+      "summaryHash": "f52959bf9125e50220fb8a7a30ff5ff88137a430"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1943,
