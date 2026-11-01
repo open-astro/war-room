@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T04:18:52.825Z",
+  "generatedAt": "2026-11-01T05:17:53.316Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1477,
+      "title": "Add Bortle class and SQM to the setup wizard site step",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1477",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-01T04:51:06Z",
+      "additions": 118,
+      "deletions": 3,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1938,
+      "title": "Celestron: a pulled cable loses the mount link at once",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1938",
+      "author": "kern2011",
+      "mergedAt": "2026-11-01T04:26:59Z",
+      "additions": 467,
+      "deletions": 22,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For Celestron NexStar mounts connected by cable, pulling the cable now marks the mount as disconnected right away instead of after a 30-second delay. Apps like NINA immediately see that the mount is gone, the port is freed so a replugged cable can be used again, and one Connect brings it back. Mounts connected over Wi-Fi keep the old, slower detection, and other Celestron devices are not affected. The change comes with a set of new automated tests that simulate unplugging the cable.",
+      "category": "fix",
+      "summaryHash": "f715b2ce5f729cbba759c3b13bfd86b7f5f5679f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1937,
