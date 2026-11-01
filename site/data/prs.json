@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T08:15:11.775Z",
+  "generatedAt": "2026-11-01T09:15:29.166Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1475,
+      "title": "client: ⌘K opens the command palette again; ⌘, opens Settings (§61)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1475",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-01T09:21:59Z",
+      "additions": 126,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The keyboard shortcut for the command palette (Cmd+K on Mac, Ctrl+K elsewhere) works again. It had silently done nothing because the night-mode shortcut layer grabbed keyboard focus first, so the main window never saw the keypress. The PR also adds Cmd+, (Ctrl+, elsewhere), the usual shortcut for jumping to Settings, which opens the Options tab. The night-mode shortcut keeps working, and new tests cover both shortcuts.",
+      "category": "fix",
+      "summaryHash": "1d51803f9340dd95494b4c4018d1ff3cee11aab0"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1476,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The iPhone and iPad app now finds the same rigs the Mac does, including rigs on a different part of the network that it used to miss. Before, iOS could only scan the phone's own local network range, and when that came up empty it wrongly warned that iOS was blocking network access. The app now asks Apple's built-in device discovery to find rigs and falls back to the old scan if that finds nothing. You can also now pull down on the connect screen's list to rescan, the same as tapping the refresh button.",
+      "category": "fix",
+      "summaryHash": "d98f6cef736782533afe43af3b014ab5d02a1c1d"
     },
     {
       "repo": "open-astro/openastro-ara",
