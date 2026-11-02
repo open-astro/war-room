@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T04:57:26.523Z",
+  "generatedAt": "2026-11-02T05:56:37.795Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 95,
+      "title": "Release 2.2.0",
+      "url": "https://github.com/open-astro/openastro-guider/pull/95",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T05:06:16Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This marks the official release of version 2.2.0 of the guider, so the package repository can build and publish it for users to install. It doesn't change how the software works. It only bumps the version number and files the pending change notes under the new release. Those notes cover new features already merged: a way for other apps to read and choose the imaging equipment the guider reports, and the ability to run the Guiding Assistant's drift and alignment measurements without opening its window.",
+      "category": "chore",
+      "summaryHash": "5cd4044271d34635d496028c3a0c27931d81f07d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1474,
