@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T05:56:37.795Z",
+  "generatedAt": "2026-11-02T06:55:26.735Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1944,
+      "title": "Add HTTP send deadline and per-address connection cap",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1944",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-02T06:44:42Z",
+      "additions": 727,
+      "deletions": 18,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope server now limits how much one misbehaving or very slow client can tie up, so apps like NINA and the web interface stay usable for everyone else. A response that the client stops reading for 30 seconds, or that takes longer than 2 minutes (more for big downloads such as images, based on a modest minimum speed), now gets its connection closed. In addition, one network address can hold at most 32 open connections by default; the operator can change this or turn it off. The author notes that one address can still occupy every worker until those time limits kick in, and that many clients behind one shared router could hit the cap.",
+      "category": "fix",
+      "summaryHash": "816f5293bbb2a91078f2505e0b98546cddefa5b0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1957,
+      "title": "CI: support the merge queue on main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1957",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T06:16:12Z",
+      "additions": 110,
+      "deletions": 21,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This prepares the project's automated checks for a GitHub \"merge queue\" on the main branch. With the queue, each change is tested once against the latest code just before it lands, instead of every open change having to be refreshed and re-tested each time something else merges. Two of the slowest checks (a concurrency stress test and the install-package build) now run only in the queue, not on every update to a change. The team's merge helper instructions were also updated to use the queue when it is on. This is internal tooling only, and the queue itself still has to be switched on in the repository settings after merge.",
+      "category": "ci",
+      "summaryHash": "0e429cfd512f1db593af10666cb0ece260af9537"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 95,
