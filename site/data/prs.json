@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T07:55:03.302Z",
+  "generatedAt": "2026-11-02T08:56:27.479Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1955,
+      "title": "ZWO EAF: lose the link when a fault outlasts the 30 s staleness bound",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1955",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T08:23:01Z",
+      "additions": 380,
+      "deletions": 47,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO EAF focuser now reports itself as disconnected when a communication problem lasts longer than 30 seconds. Before this, the focuser could stay marked as connected for as long as the server ran, even though it had stopped answering. Now the client app sees that the focuser is gone and can recover with a single reconnect. While a problem is active, focus moves are also refused, but a stop command still works so a runaway focuser can always be halted.",
+      "category": "fix",
+      "summaryHash": "e21ef4b2d6d3783e1d729b607a0c3d42fefd06eb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1956,
@@ -22,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "SynScan and Sky-Watcher telescope mounts now give the right error when someone sets an invalid guide rate. Before, a disconnected mount said \"not connected\" instead of \"invalid value.\" Setting the guide rate for one direction no longer overwrites the other direction, even when two changes arrive at the same time. The change also goes a bit beyond what the title suggests: reading the guide rate and reading or setting slew targets now return an error while the mount is disconnected or having communication problems, where before they quietly worked.",
+      "category": "fix",
+      "summaryHash": "95d29e81b6b1ab57abbd3949163a393014a29aff"
     },
     {
       "repo": "open-astro/AlpacaBridge",
