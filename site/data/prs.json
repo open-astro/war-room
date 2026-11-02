@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T20:51:03.997Z",
+  "generatedAt": "2026-11-02T02:00:01.689Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1953,
+      "title": "Fix Celestron AbortSlew test hang when the slew thread starts late",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1953",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-02T01:55:06Z",
+      "additions": 60,
+      "deletions": 15,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes some automated tests for the Celestron telescope driver that could freeze for up to 15 minutes on slower build machines instead of finishing. The tests now wait for all the pieces they are checking to be ready before moving forward, and if something is truly wrong they fail within seconds instead of hanging. The pretend mount used in one test also now answers an extra status question, so that test can no longer pass when it should fail. Only test code changed. The telescope software itself is untouched.",
+      "category": "tests",
+      "summaryHash": "dc83978600321677d2374c2dd5c174afd4e42cd5"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 94,
+      "title": "Prune auto-named saved frames (#93)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/94",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T01:06:31Z",
+      "additions": 324,
+      "deletions": 1,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The guider now automatically deletes old image files it saved under names it chose itself. It keeps only the 10 newest, removes any older than 15 minutes, and also cleans up leftovers when it starts. This fixes a real problem where a polar alignment session saving about one frame a second filled an ASIAIR's storage overnight. Files saved to a location the user picked are never touched. Apps that fetch these auto-named frames now need to grab them promptly, or they will be gone.",
+      "category": "fix",
+      "summaryHash": "be28ec42c7398778b2b40835d59f7dc6b0c14533"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1948,
