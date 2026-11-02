@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T20:46:25.030Z",
+  "generatedAt": "2026-11-02T21:45:29.330Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1963,
+      "title": "CI: run the ten scan jobs as one Static checks job",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1963",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T21:35:49Z",
+      "additions": 110,
+      "deletions": 164,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "This is an internal change to the automated checks that run on every proposed change. Ten small, quick checks (for things like hidden characters, shell script mistakes, docs consistency and web page code) now run together as one \"Static checks\" job instead of ten separate ones. This cuts the jobs per run from 19 to 10, which should mean less waiting in line for the limited free build machines. It also makes all ten checks block a merge when they fail, where before only two of them did; the rest of the change updates documentation to use the new name, and the main workflow file's diff was not shown, so the claim that the commands are unchanged could not be checked here.",
+      "category": "ci",
+      "summaryHash": "270b332c6adb49479fd09530ad9e974f6eea1bce"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1483,
