@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T02:00:01.689Z",
+  "generatedAt": "2026-11-02T02:59:09.685Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1951,
+      "title": "SynScan: a pulled cable loses the mount link at once",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1951",
+      "author": "kern2011",
+      "mergedAt": "2026-11-02T02:56:41Z",
+      "additions": 513,
+      "deletions": 21,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the USB cable to a Sky-Watcher SynScan mount is pulled, the server now notices right away and reports the mount as disconnected, instead of pretending it was still connected for about 30 seconds. It also lets go of the dead connection at once, so a replugged cable can be reconnected with a single Connect from apps like NINA. Mounts connected over SynScan Wi-Fi keep the old, slower behavior. This finishes the same fix already rolled out to the other mount and accessory drivers; it was checked with simulated hardware only, not on a real mount.",
+      "category": "fix",
+      "summaryHash": "6e6e8a84688587f682cd0a5233ec2cd9f46e2721"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1954,
+      "title": "iOptron mount: refuse an Alt/Az slew while tracking (#1377)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1954",
+      "author": "kern2011",
+      "mergedAt": "2026-11-02T02:17:47Z",
+      "additions": 101,
+      "deletions": 1,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "iOptron mounts now refuse a request to point at a horizon-based position (altitude and azimuth) while tracking is switched on, and report a clear error instead of starting the move. This follows the official telescope standard and matches what the OnStep driver already does, because a tracking mount would drift away from the requested spot. Any app that sent this kind of move with tracking on now has to turn tracking off first, which the standard compliance checker already does. It was tested against a simulated mount only.",
+      "category": "fix",
+      "summaryHash": "e18b8dc4f85dd297a0ecb513ad9d6c4758e0e9bd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1953,
