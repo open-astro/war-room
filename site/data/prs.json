@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T02:59:09.685Z",
+  "generatedAt": "2026-11-02T04:57:26.523Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1474,
+      "title": "Settings in the top bar, clearer rail and device names, and the guider set up like every other device",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1474",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-02T04:41:46Z",
+      "additions": 1709,
+      "deletions": 476,
+      "changedFiles": 72,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The app's layout got a broad reorganization. Settings now open from a gear in the top bar, the left-side tabs are renamed to follow the night (Planning, Checklist, Sequence, Live), and the device buttons show full names in a sensible order with a green blinking dot while a device is busy. Phones now get a proper phone layout with tabs along the bottom. The guider is now set up from its own Settings page like the camera and mount, with changes saved automatically and a real profile picker replacing a text box that was being ignored. Two status bugs are also fixed: a device stuck showing \"exposing\" after a long exposure, and polar alignment losing its Checklist tick. The Mac app is now called \"OpenAstro Ara\", and existing settings carry over.",
+      "category": "feature",
+      "summaryHash": "001bc44409c87cf3acd941de7ee985f7762b3840"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1947,
+      "title": "Fix ZWO SiteElevation read and write while disconnected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1947",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-02T04:06:19Z",
+      "additions": 81,
+      "deletions": 6,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For ZWO mounts, asking for the site's elevation while the mount isn't connected now returns a clear \"not connected\" error instead of quietly handing back a saved number. This matches how latitude and longitude already behave and what the ASCOM standard requires. An elevation change attempted after the connection drops is now refused rather than saved for later, but setting it before the first connection still works as before. This was checked with a simulated mount only, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "c697568f1a5ac299ce0eca054afe7978d8041f40"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1951,
