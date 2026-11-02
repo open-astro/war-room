@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T15:50:09.582Z",
+  "generatedAt": "2026-11-02T17:06:07.185Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1962,
+      "title": "Skills: queue PRs into main with enqueuePullRequest",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1962",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T16:52:10Z",
+      "additions": 45,
+      "deletions": 20,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixes the team's automated pull request helpers so they can merge changes into the main branch again. Since the main branch started using a merge queue (a line that tests changes together before they land), the helpers' old merge command stopped working. They now add an approved change to the queue directly, but only after confirming that the review bot approved the exact latest version of the change. The update also warns against switching on GitHub's automatic merging as a workaround, because that could let a change land before it has been reviewed. This only affects internal tooling instructions, not the software itself, and the diff matches the description.",
+      "category": "fix",
+      "summaryHash": "806efd0c79ba16b5d428f0e02d72ef9d1b25a339"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1961,
