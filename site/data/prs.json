@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T13:51:44.139Z",
+  "generatedAt": "2026-11-02T14:50:55.825Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1481,
+      "title": "Design context: PRODUCT.md, DESIGN.md and the Simple Mode brief",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1481",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-02T13:52:00Z",
+      "additions": 2070,
+      "deletions": 10,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds written design guidance for the Ara app: who it is for and its guiding principles, how its screens should look (colours, night mode, text, layout), and plans for the simpler, picture-first 'Simple Mode' and its on-screen message bubbles, plus a sample page showing the look. It also records two policy changes: phones can now handle setup, sky browsing and plate-solve and autofocus settings, with only building observing sequences kept on the desktop, and the accessibility target is raised to the WCAG 2.2 AA standard, checked by the team rather than formally certified. One known gap is noted (white text on the red warning colour is slightly too low in contrast) and is planned for a later fix. Apart from the docs, the only change is a small test-setup tweak so changes to the sample page are treated as documentation; the sample page itself still shows an older version of Simple Mode.",
+      "category": "docs",
+      "summaryHash": "4a2644068b73dedaad5f38d89582d9640a9e1a5b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1952,
