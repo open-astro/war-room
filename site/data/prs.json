@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T14:50:55.825Z",
+  "generatedAt": "2026-11-02T15:50:09.582Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1961,
+      "title": "CI: start the all-vendors job's slowest tests first",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1961",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T15:31:52Z",
+      "additions": 233,
+      "deletions": 2,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "This is an internal change to the automated testing that should make the longest test run finish sooner on every pull request. That run's tests used to start in the order they were added, so the slowest one (about four and a half minutes long) began roughly seven minutes in and was the last to finish. The test run now remembers how long each test took last time and starts the slowest ones first. A simulation suggests this could save several minutes per run, though the real saving is less certain. Nothing changes for people using the software.",
+      "category": "ci",
+      "summaryHash": "80e98fae4c7d941d8b85af744e7bd4767f16e5a8"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1481,
