@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T08:56:27.479Z",
+  "generatedAt": "2026-11-02T13:51:44.139Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1952,
+      "title": "Fix ZWO camera link loss after unplug and replug",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1952",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-02T13:42:59Z",
+      "additions": 1551,
+      "deletions": 587,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO camera driver now notices right away when the camera reports it has been removed or closed: it shows as disconnected instead of pretending to still be connected, and stops retrying the exposure. One reconnect then brings the same camera back, even if it comes back under a different number. Disconnecting now always switches off any guiding pulse in progress and finishes even if the camera is stuck. Note that the updated docs say real-rig tests of a pulled cable got a generic error or no error at all, never these removal codes, so a plain cable pull is not yet caught; the dew heater part of the original issue also remains open.",
+      "category": "fix",
+      "summaryHash": "ae9a001fe22f7545c2c1896256e8caa2d21b2966"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1480,
+      "title": "Simple Mode (experimental): image-first shell with Autopilot, Focus, Polar align and Plan",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1480",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-02T13:34:14Z",
+      "additions": 12454,
+      "deletions": 605,
+      "changedFiles": 97,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds an experimental Simple Mode, off by default, where the latest image fills the screen and a few floating controls cover preview, focusing, polar alignment, a quick night planner with a live queue and scheduled start, and an Autopilot that runs these in order. Several changes also apply to the normal interface even with Simple Mode off. The Emergency Stop button now needs a 2-second hold and also turns off the camera cooler. Imaging runs start cooling the camera while they get ready, focus each target before centring on it, describe their steps in plain words, and the mount turns tracking on before a GoTo.",
+      "category": "feature",
+      "summaryHash": "6d988a19de7b51ff8ee2d17e044aa6f0a58eab78"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1955,
