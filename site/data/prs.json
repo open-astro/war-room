@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T06:55:26.735Z",
+  "generatedAt": "2026-11-02T07:55:03.302Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1956,
+      "title": "Fix SynScan and Sky-Watcher guide-rate validation order",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1956",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-02T07:29:03Z",
+      "additions": 600,
+      "deletions": 60,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1944,
