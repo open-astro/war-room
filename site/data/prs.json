@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T17:06:07.185Z",
+  "generatedAt": "2026-11-02T20:46:25.030Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1483,
+      "title": "fix(client): Simple Mode's Add target sheet no longer traps the screen on a touchscreen",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1483",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-02T20:31:18Z",
+      "additions": 48,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem in Simple Mode on touchscreens like the iPad: after opening the \"Add target\" panel from the plan's queue, there was no way to close it or switch modes by tapping, and only the Escape key on a Mac got out. Now tapping the mode name closes that panel and opens the mode list, and tapping the settings button simply closes it. A new automated test checks both ways out, and the fix was tried on an iPad.",
+      "category": "fix",
+      "summaryHash": "ab2d1e86945f1c72c806debd2adc444505c55b36"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1962,
