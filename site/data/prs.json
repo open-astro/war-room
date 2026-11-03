@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T13:32:59.614Z",
+  "generatedAt": "2026-11-03T15:31:07.133Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1971,
+      "title": "Fix ZWO camera binding: pick the attached camera, warn when unbound",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1971",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T15:19:29Z",
+      "additions": 1047,
+      "deletions": 24,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adding a ZWO camera in the web setup page now works reliably. Instead of typing a slot number, you pick the camera from a list of the ones actually plugged in, and the bridge remembers that camera by its serial number. Before, the form guessed the slot number from how many ZWO cameras were already saved, so a new entry could quietly point at no camera at all with no explanation. Now, if an entry still isn't tied to a specific camera, the bridge says so in its logs, on the device card, and in the save message, and lists which cameras it could see.",
+      "category": "fix",
+      "summaryHash": "c3fbc2d94bd2245c79e0036239952ebad5d2744e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1488,
