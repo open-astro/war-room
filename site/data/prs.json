@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T02:41:18.782Z",
+  "generatedAt": "2026-11-03T06:37:46.783Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1975,
+      "title": "Shard the all-vendors CI tests over three runners",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1975",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T05:51:43Z",
+      "additions": 151,
+      "deletions": 44,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's main automated test run for all hardware vendors is now split across three machines working in parallel instead of one, so results on each change come back in about 7 minutes instead of 15. The same tests still run, the same pass/fail check still gates merging, and the combined test-coverage report comes out the same as before. To keep the split even, one very slow test that simulates a telescope parking while reconnecting now repeats 20 times instead of 60, so it checks a bit less on each run. This is internal tooling only and changes nothing for people using the software.",
+      "category": "ci",
+      "summaryHash": "8c8249406eab51c27ee10d390b5e5b9f78d9b29a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1968,
