@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T21:00:18.944Z",
+  "generatedAt": "2026-11-03T23:26:12.660Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,53 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2007,
+      "title": "Add iOptron iFR focuser-rotator driver (Focuser + Rotator, one link)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2007",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T23:00:54Z",
+      "additions": 3758,
+      "deletions": 11,
+      "changedFiles": 37,
+      "labels": [],
+      "summary": "AlpacaBridge now supports the iOptron iFR, a single unit that combines a focuser and a camera rotator on one USB cable, so owners can control both halves from NINA or any other compatible astronomy app. It shows up in the setup page as its own \"iOptron iFR\" choice with a size setting (2\", 3\" or 4\"), and it is the first time two devices in this project share one cable connection, a pattern meant to make the next combined unit easier to add. Only the 3\" model was tested on real hardware, which iOptron lent briefly, so the related issue stays open until the other sizes are checked. The pull request also adds automated tests and documentation.",
+      "category": "feature",
+      "summaryHash": "8e66d1223b63a88c1f21b8776aa6986774aaca5e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2006,
+      "title": "Fix ZWO EFW and CAA link loss and rebind after a USB replug",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2006",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T22:40:16Z",
+      "additions": 2314,
+      "deletions": 1104,
+      "changedFiles": 38,
+      "labels": [],
+      "summary": "ZWO filter wheels and ZWO rotators now recover properly when their USB cable is unplugged and plugged back in. Before, the app kept saying they were connected while every command failed, and only restarting the service helped. Now they correctly show as disconnected, and a single reconnect brings the same unit back, even if two units were swapped. It also fixes a regression where a certain ZWO filter wheel could not be found or connected at all, and includes a small build fix for a compiler warning plus new tests and updated test reports.",
+      "category": "fix",
+      "summaryHash": "36e3f55580b98fbf861e14e5ba414e6ddc7f696a"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1486,
+      "title": "Simple Mode: Focus results, Bahtinov and guide focus; Guided Run plan-first; Polar align visuals; guide optics",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1486",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-03T22:31:26Z",
+      "additions": 7380,
+      "deletions": 886,
+      "changedFiles": 79,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A large update to the app's Simple Mode. The focus screen now shows full autofocus results, a manual Bahtinov-mask helper and focusing for the guide camera. \"Autopilot\" is renamed \"Guided Run\" and now starts with the plan, and imaging only begins when you tap \"Done · Start imaging\". The polar alignment screen gets bigger, clearer visuals, and the rig settings now show the guide scope's details. The server also fills in missing guide scope details automatically when the guider connects, which fixes polar alignment being refused on rigs where those were never set. Beyond what the title says, it also bundles a batch of review fixes: sending the location to the mount more safely, remembering the last rig by its unique id, a crash fix for messages, park and unpark status fixes, and a new automated check that the translation files stay up to date.",
+      "category": "feature",
+      "summaryHash": "f6bf94d2e1a8212928321ab5cd0cdd8773dcc78e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2003,
