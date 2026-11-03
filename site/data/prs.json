@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T16:30:17.901Z",
+  "generatedAt": "2026-11-03T17:29:29.350Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1972,
+      "title": "Fix Player One camera connect holding mutex_ across the SDK open",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1972",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-03T17:00:57Z",
+      "additions": 249,
+      "deletions": 127,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "While a Player One camera is connecting, the server now answers basic questions about it, like its name and ID, right away instead of making the asking app wait several seconds for the connection to finish. Before, an app that kept checking the camera's name during connect could tie up the server. The change also stops a background name lookup from overwriting newer camera details picked up during connect, and still cleanly closes the camera if setup fails partway. It was checked with automated tests but not on a real Player One camera.",
+      "category": "fix",
+      "summaryHash": "61de3dcf651e2b5f62a56a708b4df01988b9b155"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1959,
