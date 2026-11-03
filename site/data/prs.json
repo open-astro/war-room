@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T06:37:46.783Z",
+  "generatedAt": "2026-11-03T07:36:54.367Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1976,
+      "title": "Run the TSan stress shards in parallel and cache the dep builds",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1976",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T07:07:45Z",
+      "additions": 227,
+      "deletions": 77,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the automated checks that run before code is merged, with no effect on the product itself. The slowest check, a long concurrency stress test, now runs in several parallel pieces instead of one long sequence. Two libraries that were rebuilt from scratch on every run are now saved and reused. The final pre-merge check also skips the code-coverage report, which the pull request's own run already produces, so merging should take about 6 minutes instead of 8.5.",
+      "category": "ci",
+      "summaryHash": "26798450d204e3d11e5bff37bdf61e1a300b094c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1975,
