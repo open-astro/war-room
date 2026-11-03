@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:43:03.704Z",
+  "generatedAt": "2026-11-03T01:42:13.326Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1967,
+      "title": "Review bot: skip draft PRs, review on ready_for_review",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1967",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T01:24:32Z",
+      "additions": 32,
+      "deletions": 16,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The automated review bot no longer reviews pull requests that are still marked as drafts. Instead, it waits until the author marks the work as ready and then reviews it once. Before this change, every update to an unfinished draft waited for the automatic checks and then ran a full review, mostly flagging things the author was about to change anyway. This is an internal tooling change: the maintainers' merge helper instructions and the docs were also updated to mark drafts ready first and to mention drafts as a reason a review was skipped. The code matches the description.",
+      "category": "ci",
+      "summaryHash": "fd54ca1e82ecd4a488ecf2b27f7276582e0ea57a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1965,
