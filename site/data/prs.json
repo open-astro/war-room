@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T15:31:07.133Z",
+  "generatedAt": "2026-11-03T16:30:17.901Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1959,
+      "title": "Move ToupTek camera exposure onto CaptureSession",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1959",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-03T16:10:25Z",
+      "additions": 538,
+      "deletions": 356,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ToupTek and Altair cameras now handle exposures using the same shared mechanism the other supported cameras already use, replacing the driver's own hand-built version. Users will notice a few behavior changes. Starting a new exposure while one is running is now refused instead of cancelling the first one. A failed exposure keeps reporting its error until the next exposure or a reconnect, and aborting no longer erases that error. Abort and disconnect also stop the camera's wait for a frame right away, so they return promptly instead of hanging. The changes are checked only with simulated-camera tests, and the standard compatibility test suite was not re-run.",
+      "category": "refactor",
+      "summaryHash": "4f62644f4f6348564e7953700991d51d71de5526"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1971,
