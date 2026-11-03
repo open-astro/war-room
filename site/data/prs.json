@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T10:35:32.432Z",
+  "generatedAt": "2026-11-03T13:32:59.614Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1488,
+      "title": "Live stacking engine: star-registered sigma-clipped stack and preview endpoints",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1488",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-03T12:35:22Z",
+      "additions": 1540,
+      "deletions": 3,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server can now do live stacking during Live View. Once turned on, it lines up each new camera frame with the first one using the stars, then combines them into a cleaner, deeper image, throwing out satellite trails and cosmic-ray hits. The app can start, reset, or stop the stack, check its progress, and fetch the current stacked picture. Stacking is off by default and clears whenever Live View ends. Very large frames (over about 12 megapixels) and some colour cameras at full resolution are refused for now, the on-screen panel comes in a later change, and it has only been tested with simulated frames, not real equipment.",
+      "category": "feature",
+      "summaryHash": "ba79c63531bb92ef34c1e9762bb910778593e575"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1978,
