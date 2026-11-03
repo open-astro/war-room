@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T01:42:13.326Z",
+  "generatedAt": "2026-11-03T02:41:18.782Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1968,
+      "title": "CI: run the vendor-neutral test job on Debian 13 (trial)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1968",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T02:37:24Z",
+      "additions": 53,
+      "deletions": 15,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Internal testing change: the main automated test run now happens on Debian 13, the same system the server is shipped for, instead of on Ubuntu. Before this, nothing tested the code on the setup users actually run at the telescope, so problems specific to Debian's newer compiler and libraries could slip through. The tests now run as an ordinary user rather than an administrator, because some tests check that blocked file writes really fail, and that only works without admin rights. This is a trial on one job only; the larger and more thorough test jobs still run on Ubuntu for now, and the code matches what the description says.",
+      "category": "ci",
+      "summaryHash": "17804f8eac29d401fdf835c6bfb9994599fc8189"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1967,
