@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T17:29:29.350Z",
+  "generatedAt": "2026-11-03T18:28:37.243Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1977,
+      "title": "iOptron telescope: move slew and pulse deadlines onto util::HoldWindow",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1977",
+      "author": "kern2011",
+      "mergedAt": "2026-11-03T17:42:30Z",
+      "additions": 557,
+      "deletions": 118,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron mount driver now tracks its short \"still moving\" and \"still guiding\" timers the same shared way the Sky-Watcher and OnStep drivers already do, with timer lengths unchanged. Along the way it fixes two glitches: a slew command that fails no longer leaves the telescope wrongly reporting it is moving for about five seconds, and a failed guiding nudge no longer leaves guiding wrongly shown as active. Disconnecting now also resets the guiding status, which before only happened on connect. One part of the plan is deliberately left undone, so the driver still waits out the full five seconds after a move before trusting the mount's own report; the change adds 16 tests and updates the docs to mark this work as partial.",
+      "category": "fix",
+      "summaryHash": "11db067b1194bf5cd23050fd165700179a7c21ed"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1972,
