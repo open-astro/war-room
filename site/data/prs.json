@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T18:28:37.243Z",
+  "generatedAt": "2026-11-03T21:00:18.944Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,21 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2003,
+      "title": "Fix ZWO camera and dew heater link loss on a bare cable pull",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2003",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-03T20:44:46Z",
+      "additions": 881,
+      "deletions": 105,
+      "changedFiles": 17,
+      "labels": [],
+      "summary": "When someone simply unplugs the USB cable from a ZWO camera, the server now notices the camera is gone and reports it as disconnected within about a second of the next failed request, instead of acting as if it were still connected and failing exposures with a confusing error. The camera's attached dew heater now also marks itself disconnected when its camera disappears. This lets imaging software such as NINA see the loss and reconnect, and reconnecting after plugging the cable back in reopens the same camera. A camera unplugged while idle is only noticed at its next failing action (typically the next exposure), and the change was checked on real hardware, where a second camera kept working while the first one was unplugged.",
+      "category": "fix",
+      "summaryHash": "9754dbab65e603e95b83413de79395732ff3a735"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1977,
