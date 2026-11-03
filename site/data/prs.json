@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T21:45:29.330Z",
+  "generatedAt": "2026-11-03T00:43:03.704Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,55 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1965,
+      "title": "Keep the CGX AUX link fault until the mount replies",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1965",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-03T00:07:08Z",
+      "additions": 38,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For the Celestron CGX mount connected directly over USB, the software no longer reports the connection as healthy just because it reset the link after a timeout. It now waits until the mount actually answers. Before this, a mount that had gone silent could briefly look fine while the software kept retrying a stop command, which hid a real problem from users. The fix also stops one automated test from failing at random, and the code matches what the description says.",
+      "category": "fix",
+      "summaryHash": "1e49ac99107c996b85e1db904ba4f97e4904cd21"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1966,
+      "title": "CI: revert slowest-first ctest ordering (#1961)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1966",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T23:57:10Z",
+      "additions": 4,
+      "deletions": 234,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "This is an internal change to the automated test system. It undoes a recent change that ran the slowest tests first to try to finish the test run sooner. In practice the test run got slightly slower, and several tests that are sensitive to timing started failing at random on changes that had nothing to do with them. Tests now run in their original order again.",
+      "category": "ci",
+      "summaryHash": "511e3afbbaf7471130891277b714e8a75e31bdf1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1964,
+      "title": "Skills: leave SUPPORTED-DRIVERS.md's Updated date to /bump-release",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1964",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-02T23:53:49Z",
+      "additions": 25,
+      "deletions": 17,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"last updated\" date at the top of the supported-drivers list will now only change when a new release is made, instead of with every driver change. Many people were editing that one line at the same time, which caused constant clashes that kicked changes out of the merge line and forced them to be redone. The same change also corrects a project document that wrongly said the stable release branch has the same protection rules as the main branch. This is an internal process and documentation change with no effect on the software itself.",
+      "category": "docs",
+      "summaryHash": "bebaa6f3fc0fc95d6631b0c9fbdd655763c8193f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1963,
