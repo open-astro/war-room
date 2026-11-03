@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T07:36:54.367Z",
+  "generatedAt": "2026-11-03T09:36:13.833Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1974,
+      "title": "Fix SVBONY camera connect holding mutex_ across the SDK open",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1974",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-03T09:11:29Z",
+      "additions": 292,
+      "deletions": 78,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "SVBONY cameras no longer make the server freeze up while they connect or disconnect. Before, simple questions like the camera's name had to wait the full several seconds it takes to open or close the camera, which could stall apps that ask often; now they get an answer right away. A connection attempt that fails partway also no longer leaves behind a half-set-up camera, so reconnecting works cleanly. This follows the same fix already made for ZWO cameras, and the code matches what the description says, with new tests covering it.",
+      "category": "fix",
+      "summaryHash": "cc542d0ba3e5280f69ed63948f12e0c3dd8d7f1a"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1484,
+      "title": "Simple Mode: its own Settings, device windows, search and translation; reopen straight to imaging",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1484",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-03T08:56:04Z",
+      "additions": 20049,
+      "deletions": 1203,
+      "changedFiles": 158,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode gets its own Settings sheet, separate windows for the camera, mount, focuser and guider, and a search that stays inside Simple Mode. All of Simple Mode's text can now be translated, starting with a draft Brazilian Portuguese version, and reopening the app now goes straight back to imaging on the last-used rig. The server side can now report more version and driver details, sends the observing site's location to the mount, and finally uses the stored temperature-change autofocus setting. No code changes were provided to check against, so this is based only on the description; it also notes known gaps, such as the Portuguese still being under review and a few screens that still open the full Settings page.",
+      "category": "feature",
+      "summaryHash": "027dd6f8fd72b2ad50da47484a8f8db83b2c7118"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1976,
