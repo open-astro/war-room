@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T09:36:13.833Z",
+  "generatedAt": "2026-11-03T10:35:32.432Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,41 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 1978,
+      "title": "ci: bump anthropics/claude-code-action from 1.0.262 to 1.0.266 in the github-actions group",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/1978",
+      "author": "app/dependabot",
+      "mergedAt": "2026-11-03T10:28:20Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update to the tool that runs automatic AI code reviews on pull requests, moving it from version 1.0.262 to 1.0.266. This is internal housekeeping with no effect on the product itself.",
+      "category": "ci",
+      "summaryHash": "82cd79bf84fe2e3f916291a054d6b1bbb24cecfd"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1487,
+      "title": "Tonight's Sky: moon factor and optional magnitude floor",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1487",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-03T10:28:10Z",
+      "additions": 2281,
+      "deletions": 553,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Tonight's Sky, the list of suggested targets to photograph, now lowers a target's score when a bright moon is up and close to it, by up to 20% (or 10% if your filters include narrowband ones), and shows why, for example \"moon 25° away, 80% lit (−11%)\". There is also a new optional setting under Imaging Defaults that hides targets fainter than a chosen brightness level, which you can set from 6 to 15 (12 when first turned on). The setting is off by default, and targets with no known brightness always stay listed. Much of the code change is reformatting with no effect on behavior, and the work also adds automated tests.",
+      "category": "feature",
+      "summaryHash": "9ca421899c019002878f6f2995212f6e445de053"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 1974,
