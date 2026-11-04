@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T02:23:48.256Z",
+  "generatedAt": "2026-11-04T03:22:46.470Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,36 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2012,
+      "title": "Share one encoded frame across parallel imagearray responses",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2012",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T02:41:10Z",
+      "additions": 215,
+      "deletions": 32,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "When several people or programs download the same camera image at once, the server now keeps just one copy of the image in memory and shares it between them. Before, each download made its own full copy, and a large colour frame downloaded six times at once could use enough memory to crash a 4 GB Raspberry Pi. Each download still gets its own small piece of tracking information, and the data sent over the network is unchanged. One small difference from the description: the code shares the image this way for every download, not only when several happen at once.",
+      "category": "fix",
+      "summaryHash": "7d1affdb21228fb9d829dd19e50eb87e8044a4f1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2011,
+      "title": "Hide update-URL credentials and stop parking update-check callers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2011",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T02:25:29Z",
+      "additions": 190,
+      "deletions": 52,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "If someone puts a username and password in the software update mirror address, those details are now hidden everywhere the address is shown or logged. Before, anyone on the local network and the logs could see them. Also, pressing Check for Updates while a check is already running no longer ties up the server for up to 30 seconds. It now answers right away that a check is in progress, and the web page shows \"Checking for updates...\" and keeps checking until the result arrives. Scripts that start a second check will now get this in-progress answer and must ask for the status again to see the result.",
+      "category": "fix",
+      "summaryHash": "a581f6865243b2c43e6b7a93b68a2f5828036a2b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2010,
