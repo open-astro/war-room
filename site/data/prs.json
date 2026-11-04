@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:37:50.917Z",
+  "generatedAt": "2026-11-04T16:19:33.814Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1503,
+      "title": "fix(client): DSS fetch cap stays exact when the queue outlasts the backstop",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1503",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-04T16:03:39Z",
+      "additions": 27,
+      "deletions": 18,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The planetarium's sky-photo downloads now stay within their limit on how many can run at once, even on a slow connection with a long queue. Before, a download that had been waiting too long (about 40 seconds in the app) would give up waiting and start anyway, so on a slow hotspot many queued downloads could start together and overload the link. Now queued downloads simply wait their turn, since each download already has its own time limits and the queue always moves. The test that caught this on Windows was made tougher so it reliably catches the old problem on any machine.",
+      "category": "fix",
+      "summaryHash": "75469705115263968e86d6f187ada07fe3529720"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2023,
