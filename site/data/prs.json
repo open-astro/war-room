@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T18:17:57.408Z",
+  "generatedAt": "2026-11-04T19:21:24.567Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1507,
+      "title": "build: Bump crypto from 3.0.7 to 3.0.8 in /client/openastroara_client in the pub group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1507",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-04T19:13:34Z",
+      "additions": 6,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "dart"
+      ],
+      "summary": "Routine dependency update: the app's hashing library moves to a newer minor version, which is faster and fixes a small bug upstream. The project uses it to check that downloaded backup frames are intact. The license list was updated to match. No change in how the app behaves is expected.",
+      "category": "chore",
+      "summaryHash": "581b722d4cbacaa11480b0fc1c6220acc8d61f9c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1508,
+      "title": "ci: Bump anthropics/claude-code-action from 1.0.262 to 1.0.266 in the github-actions group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1508",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-04T18:47:39Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine update to the automated code-review tool used in the project's build pipeline, moving it to a slightly newer version. Internal only, with no effect on the app.",
+      "category": "ci",
+      "summaryHash": "5beac7b24765fd1135845989d738119e9de7c8bd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2029,
+      "title": "Move a focuser to the limit instead of refusing a position outside 0..MaxStep",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2029",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-04T18:43:17Z",
+      "additions": 437,
+      "deletions": 365,
+      "changedFiles": 22,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Five focuser models (iOptron iFR and iEAF, QHY Q-Focuser, ToupTek AAF and ZWO EAF) now move to the nearest end of their travel when asked to go past it, instead of rejecting the request with an error. This matches what the standard compatibility test expects and how the other focusers already behave. The problem went unnoticed because released versions of that test skipped this check on most focusers. After the fix, the iFR, ZWO and ToupTek units passed a newer version of the test cleanly on real hardware. The iEAF was only tested in simulation, and the QHY still fails that test for separate reasons. The ZWO focuser still refuses all moves if its maximum travel has never been set. The internal rules, tests and docs were updated to match.",
+      "category": "fix",
+      "summaryHash": "0f9d4339187e63d4eb274087f3ae08e7eea60cbb"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1510,
+      "title": "Test stubs: a response the listener closed during teardown is not a test failure",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1510",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-04T18:29:45Z",
+      "additions": 20,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes an occasional false test failure on the Linux build machine. Several fake devices used in tests could crash while the test was shutting down, and that crash was being counted as a failure. They now ignore it, the same way an earlier fix already did for another fake device. The change touches test code only and does not affect the app.",
+      "category": "tests",
+      "summaryHash": "1ce8a36e6554abbee9e4b2385942e5fbd94e90f7"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1504,
