@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T19:21:24.567Z",
+  "generatedAt": "2026-11-04T20:20:18.766Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1511,
+      "title": "Test stubs: swallow a submitted-response write only while shutting down",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1511",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-04T20:19:51Z",
+      "additions": 6,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "A test-only tightening. The fake devices used in automated tests had been set to quietly ignore a certain error that shows up when a test is shutting down on Linux, but they ignored it at all times, which could hide real mistakes in the test setup. Now that error is ignored only during shutdown, so genuine problems surface right away with a clear failure. The code matches the description, and nothing changes for users.",
+      "category": "tests",
+      "summaryHash": "ac2ec13a2bb5881bad9b3aacfa262d15202ef16d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1506,
+      "title": "build: Bump third_party/supernovas from `f0c1b11` to `c7a2462` in the astrometry-sources group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1506",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-04T19:56:35Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "submodules"
+      ],
+      "summary": "Routine update of the bundled astronomy calculation library (SuperNOVAS) from a pre-release snapshot to its official 1.8.0 release. The project's license and credits notices were updated to match. No changes to the app's own behavior.",
+      "category": "chore",
+      "summaryHash": "d44e54f865d5b14898dadde5cb4cdf484fce54b5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1509,
+      "title": "build: Bump the nuget group with 1 update",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1509",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-04T19:37:13Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine minor version update of the library that provides the interactive API documentation page (Scalar, 2.18.3 to 2.18.7), with the license list updated to match. No release notes were published for this range, and no app behavior changes are expected.",
+      "category": "chore",
+      "summaryHash": "f8c906359d838709cb9645101d24b53538182bc8"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1507,
