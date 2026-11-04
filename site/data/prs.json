@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T11:20:47.776Z",
+  "generatedAt": "2026-11-04T12:22:33.587Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2024,
+      "title": "SynScan: log a pulse stop that fails after a cancel and mark the axis as possibly moving",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2024",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-04T12:17:59Z",
+      "additions": 76,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For SynScan telescope mounts, when a small guiding nudge is cut short (by a new nudge, an abort, a disconnect or shutdown), the software tries to stop the motor. If that stop failed, for example because the connection had dropped, the failure used to be ignored silently, and the mount could keep moving with nothing in the log. Now the failure is logged as an error and the mount is reported as possibly still moving until someone aborts, stops the axis, or disconnects. The new test only checks the error message, not the 'still moving' report, and the change has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "9a85f7bbdb1e5faa1973e77df2db92c7adbc916d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1494,
