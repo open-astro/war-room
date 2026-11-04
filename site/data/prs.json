@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T13:21:12.207Z",
+  "generatedAt": "2026-11-04T14:20:22.252Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,23 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1490,
+      "title": "Simple Mode: Guide mode, one status colour rule, stacked status pills, messages, panel fixes, #1486 follow-ups (ALP-4935, ALP-4937, ALP-4982)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1490",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-04T13:51:23Z",
+      "additions": 4692,
+      "deletions": 1128,
+      "changedFiles": 95,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode gains a new Guide mode that starts and stops the guiding routine with one button, shows how well guiding is going, and lets you adjust the guide camera's exposure, gain and dithering. Guide also becomes a step in Night Setup, after Polar align. Status colours now follow one rule across the whole app (green good, blue in progress, amber warning, red error, grey off), and Simple Mode shows several stacked status pills at once. Error messages now fade after a short time, and tapping a message or pill opens the screen it came from. Other changes include panel layout fixes from iPad testing and server fixes found on the real rig: Stop and Emergency Stop now actually stop the guider early in its routine, and it no longer gets stuck showing \"star lost.\"",
+      "category": "feature",
+      "summaryHash": "bc3dc32dd1bd0bb3ea4fc63ffd189076d817b33f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2025,
