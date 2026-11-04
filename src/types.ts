@@ -5,6 +5,8 @@ export interface PullRequest {
   title: string;
   url: string;
   author: string;
+  /** Branch the PR was merged into, e.g. "main" or a long-lived feature branch like astap's "ara". */
+  base: string;
   mergedAt: string; // ISO 8601
   additions: number;
   deletions: number;

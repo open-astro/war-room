@@ -10,6 +10,7 @@ export interface RawPr {
   body: string;
   url: string;
   author: { login: string };
+  baseRefName: string;
   mergedAt: string;
   additions: number;
   deletions: number;
@@ -18,7 +19,7 @@ export interface RawPr {
 }
 
 const FIELDS =
-  "number,title,body,url,author,mergedAt,additions,deletions,changedFiles,labels";
+  "number,title,body,url,author,baseRefName,mergedAt,additions,deletions,changedFiles,labels";
 
 /**
  * Fetch merged PRs for one repo via the gh CLI.

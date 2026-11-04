@@ -118,6 +118,7 @@
   .pr .summary.pending { color: var(--text-3); font-style: italic; }
   .pr .foot { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; }
   .badge { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-2); text-transform: capitalize; }
+  .badge.branch { text-transform: none; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; border-color: var(--c, var(--border)); color: var(--text); }
   .add { color: var(--series-6); } .del { color: var(--series-8); }
   .empty { color: var(--text-3); text-align: center; padding: 32px; }
   .more { display: block; margin: 12px auto; }
@@ -149,6 +150,7 @@
         <option value="all">All time</option>
       </select>
       <select id="author"><option value="">All developers</option></select>
+      <select id="branch" hidden><option value="">All branches</option></select>
       <select id="category">
         <option value="">All types</option>
         <option value="feature">Features</option>
@@ -186,7 +188,7 @@
 (async function () {
   const $ = (s) => document.querySelector(s);
   const state = {
-    repos: new Set(), range: "30", author: "", category: "", q: "", view: "cards", limit: 100,
+    repos: new Set(), range: "30", author: "", branch: "", category: "", q: "", view: "cards", limit: 100,
   };
   try { state.view = localStorage.getItem("wr.view") || "cards"; } catch {}
   try { const t = localStorage.getItem("wr.theme"); if (t) document.documentElement.dataset.theme = t; } catch {}
@@ -233,8 +235,20 @@
     const o = document.createElement("option"); o.value = a; o.textContent = a; $("#author").appendChild(o);
   }
 
+  // Branch select: only shown once some PR was merged somewhere other than main/master
+  // (e.g. astap's long-lived "ara" branch). Those PRs also get a branch badge.
+  const DEFAULT_BRANCHES = new Set(["main", "master"]);
+  const isFeatureBranch = (p) => p.base && !DEFAULT_BRANCHES.has(p.base);
+  const branches = [...new Set(data.prs.map((p) => p.base).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  if (branches.some((b) => !DEFAULT_BRANCHES.has(b))) {
+    for (const b of branches) {
+      const o = document.createElement("option"); o.value = b; o.textContent = b; $("#branch").appendChild(o);
+    }
+    $("#branch").hidden = false;
+  }
+
   const bind = (id, key, ev = "change") => $(id).addEventListener(ev, (e) => { state[key] = e.target.value; state.limit = 100; render(); });
-  bind("#range", "range"); bind("#author", "author"); bind("#category", "category"); bind("#search", "q", "input");
+  bind("#range", "range"); bind("#author", "author"); bind("#branch", "branch"); bind("#category", "category"); bind("#search", "q", "input");
 
   $("#viewToggle").onclick = () => {
     state.view = state.view === "cards" ? "table" : "cards";
@@ -257,6 +271,7 @@
       state.repos.has(p.repo) &&
       new Date(p.mergedAt).getTime() >= cutoff &&
       (!state.author || p.author === state.author) &&
+      (!state.branch || p.base === state.branch) &&
       (!state.category || p.category === state.category) &&
       (!q || p.title.toLowerCase().includes(q) || (p.summary || "").toLowerCase().includes(q) || String(p.number) === q)
     );
@@ -375,7 +390,7 @@
       html += `<article class="pr" style="--c:${repoColor(p.repo)}">
         <div class="stripe"></div>
         <div>
-          <div class="top"><span class="repo">${shortRepo(p.repo)}</span><span>#${p.number}</span><span>by ${esc(p.author)}</span>${p.category ? `<span class="badge">${p.category}</span>` : ""}</div>
+          <div class="top"><span class="repo">${shortRepo(p.repo)}</span><span>#${p.number}</span><span>by ${esc(p.author)}</span>${isFeatureBranch(p) ? `<span class="badge branch">→ ${esc(p.base)}</span>` : ""}${p.category ? `<span class="badge">${p.category}</span>` : ""}</div>
           <div class="title"><a href="${p.url}" target="_blank" rel="noopener">${esc(p.title)}</a></div>
           <div class="summary${p.summary ? "" : " pending"}">${p.summary ? esc(p.summary) : "Summary not generated yet."}</div>
           <div class="foot"><span class="add">+${p.additions.toLocaleString()}</span><span class="del">−${p.deletions.toLocaleString()}</span><span>${p.changedFiles} files</span>${p.labels.map((l) => `<span class="badge">${esc(l)}</span>`).join("")}</div>
@@ -394,7 +409,7 @@
       <thead><tr><th>Merged</th><th>Repo</th><th>PR</th><th class="hide-sm">Developer</th><th>What it did</th><th class="num hide-sm">+/−</th></tr></thead>
       <tbody>${prs.slice(0, state.limit).map((p) => `<tr>
         <td>${p.mergedAt.slice(0, 10)}</td>
-        <td>${shortRepo(p.repo)}</td>
+        <td>${shortRepo(p.repo)}${isFeatureBranch(p) ? ` <span class="badge branch">→ ${esc(p.base)}</span>` : ""}</td>
         <td><a href="${p.url}" target="_blank" rel="noopener">#${p.number}</a> ${esc(p.title)}</td>
         <td class="hide-sm">${esc(p.author)}</td>
         <td>${p.summary ? esc(p.summary) : "<i>pending</i>"}</td>

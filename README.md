@@ -9,7 +9,7 @@ repos.json  ──►  src/collect.ts  ──►  site/data/prs.json  ──► 
                  (gh CLI + Claude)                              (GitHub Pages)
 ```
 
-- **`repos.json`** lists the repos to track. Add a line, commit, and the next run picks it up.
+- **`repos.json`** lists the repos to track. Add a line, commit, and the next run picks it up. Every merged PR in a repo is collected whatever branch it was merged into, so long-lived branches such as astap's `ara` need no extra configuration. Each PR records its `base` branch; PRs merged somewhere other than `main`/`master` get a branch badge on the dashboard, and a branch filter appears once any exist.
 - **`src/collect.ts`** fetches merged PRs with the `gh` CLI (incrementally once everything is summarized), then asks Claude for a plain-English summary and a category for every PR that does not have one yet. Each summary is based on the PR description **and** a trimmed copy of the code diff (`src/diff.ts` drops lockfiles, vendored and generated files, and caps size), so it reflects what actually changed. Summaries are cached in the JSON and only regenerated if a PR's title or body changes, or when `SUMMARY_VERSION` in the collector is bumped.
 - **`site/index.html`** is a dependency-free page: filters by repo, developer, type, date range and search; a weekly stacked bar chart; a developer leaderboard; and a card or table list of PRs.
 - **`.github/workflows/collect.yml`** runs the collector hourly, commits the refreshed JSON, and deploys `site/` to GitHub Pages. GitHub's cron is best-effort and has proven unreliable here, so the hourly cadence comes from **`heartbeat.yml`**: a self-re-arming workflow that triggers the collector, sleeps an hour, and dispatches itself again. The cron entries in both workflows are fallbacks that restart the chain if it breaks.
@@ -65,6 +65,7 @@ Each entry in `site/data/prs.json` looks like:
   "title": "test: cross-driver contract sweep, tier 1",
   "url": "https://github.com/open-astro/AlpacaBridge/pull/654",
   "author": "diegopereiran",
+  "base": "main",
   "mergedAt": "2026-09-25T15:17:42Z",
   "additions": 1200,
   "deletions": 40,

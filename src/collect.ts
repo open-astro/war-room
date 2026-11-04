@@ -102,6 +102,7 @@ async function main(): Promise<void> {
         title: r.title,
         url: r.url,
         author: r.author?.login ?? "unknown",
+        base: r.baseRefName,
         mergedAt: r.mergedAt,
         additions: r.additions,
         deletions: r.deletions,
