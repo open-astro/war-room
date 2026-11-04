@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T23:26:12.660Z",
+  "generatedAt": "2026-11-04T02:23:48.256Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,74 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2010,
+      "title": "Raise the CGX link fault from Slewing while a stop is pending (#1950)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2010",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-04T01:39:52Z",
+      "additions": 91,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX telescope driver now reports a connection problem when asked whether the mount is moving, even if a stop command is still being carried out. Before, if the link to the mount went quiet during a stop, the driver kept saying the mount was \"still moving\" instead of reporting the fault, so client software could not tell something had gone wrong. When the connection is healthy, a pending stop still shows the mount as moving, as before. Several existing tests and two lines of internal guidance were updated to match.",
+      "category": "fix",
+      "summaryHash": "3ae03e47700d27d0db9e996a4e2090c7504bbd36"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2009,
+      "title": "Read the CGX UTC anchor and discipline re-check from the task clock (#1983)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2009",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-04T01:34:15Z",
+      "additions": 102,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX telescope driver now uses its replaceable internal timer for two time checks: spotting a sudden jump in the computer's clock after a client sets the date and time, and re-checking every 30 seconds whether the computer's clock is synced to internet time. This lets automated tests control time and check both behaviors reliably, and three such tests were added. Nothing changes for users, because the real timer is the same one used before. The project's internal records now list this driver as fully moved onto the shared timer.",
+      "category": "refactor",
+      "summaryHash": "0d50cf5c0796f8cf14eda2ee1d39b0521b3dd097"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2004,
+      "title": "Fix gphoto camera connect holding mutex_ across the SDK open",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2004",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-04T01:31:10Z",
+      "additions": 394,
+      "deletions": 175,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "DSLR and mirrorless cameras (the gphoto driver) no longer make other requests wait while the camera is connecting or disconnecting. Before, simple questions like the camera's name were stuck until the whole connect or close finished, which could tie up the server for client software that checks often. Connects and disconnects now wait their turn instead, which replaces an older, more complicated workaround, and a background name check no longer talks to the camera during a connect. New tests cover these cases, and the related internal docs were updated.",
+      "category": "fix",
+      "summaryHash": "3d4ad9f5b8adee66daa8cef53029dba46224a0fd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2008,
+      "title": "Keep the CGX slew-start error when the tracking restore fails (#1945)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2008",
+      "author": "pauleyj",
+      "mergedAt": "2026-11-04T01:29:49Z",
+      "additions": 95,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a Celestron CGX telescope fails to start a slew and then also fails to turn tracking back on, the user now sees the real reason the slew did not start. Before, that reason was hidden by the less useful tracking error. The tracking failure is now written to the log instead. The fix covers both ways of starting a slew. The pull request notes this situation is rarer than first reported, because most communication failures skip the tracking restore entirely, and a test covering both outcomes was added.",
+      "category": "fix",
+      "summaryHash": "3ad3d2246bd6bc7e5913c08abbd126c2d88dca5b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2007,
