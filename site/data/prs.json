@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T07:23:54.909Z",
+  "generatedAt": "2026-11-04T11:20:47.776Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1494,
+      "title": "Simple Mode: the Queue reads its own ref and reports rig failures once",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1494",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-04T11:13:29Z",
+      "additions": 418,
+      "deletions": 79,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, when adding, editing, reordering, starting, pausing or stopping targets in the imaging queue fails because the rig can't be reached, the app now shows a single message pill that stays until dismissed, rather than an error inside the plan sheet that might already be closed. Quick refusals the sheet can catch before contacting the rig, such as a target already being in the queue, still show inline, and the missing-storage case still offers the Open Storage button. These error messages are now translated, including full Portuguese wording. One side effect: Simple Mode now always uses the basic plan without opening a plan-choice dialog, which also fixes a case where cancelling that dialog wrongly reported the rig as unreachable.",
+      "category": "fix",
+      "summaryHash": "ae7259d3afc92cb64c3b9ba92f6657137d99778d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1493,
+      "title": "Agent skills config: AGENTS.md, docs/agents and a first GLOSSARY.md",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1493",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-04T10:28:22Z",
+      "additions": 178,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only, with no changes to the app. It adds setup notes telling AI coding assistants where this project's issues live, which triage labels to use, and where to find project terminology. It also starts a glossary that defines key terms such as Session, Target, Queue, Control Slot, Simple Mode and Night Setup, the new name for what the code still calls Guided Run or Autopilot.",
+      "category": "docs",
+      "summaryHash": "26a17246e977425dcfa2d7476ef9aa6defc9be79"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2021,
