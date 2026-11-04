@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T20:20:18.766Z",
+  "generatedAt": "2026-11-04T21:18:50.667Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1515,
+      "title": "docs: Sky Album v1 spec",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1515",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-04T21:05:23Z",
+      "additions": 161,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds the written plan for Sky Album, an upcoming collector's album in the app where each catalog (Messier and Caldwell) is a book of cards that fill in with your own best photo once you've imaged that object, earning bronze, silver or gold based on how much time you've put in. It spells out how photos are matched to sky objects, that only photos taken by Ara itself count, how the album ties into Tonight's Sky, and what is deliberately left out of the first version. This is documentation only; nothing is built yet, and the work will follow in six later pieces.",
+      "category": "docs",
+      "summaryHash": "f6f5edbac15b1ef39fedc301055df5abcb3d267d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1511,
