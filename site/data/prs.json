@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T12:22:33.587Z",
+  "generatedAt": "2026-11-04T13:21:12.207Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2025,
+      "title": "SynScan: cover the possibly-moving mark after a failed cancel-path pulse stop",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2025",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-04T13:11:45Z",
+      "additions": 20,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change for the SynScan telescope driver. It adds a check that if a cancelled guiding nudge fails to stop the mount, the driver then refuses a new guiding request while the mount might still be moving. An earlier fix added that safety behavior but nothing tested it, so a future change could have quietly removed it. No driver behavior changes.",
+      "category": "tests",
+      "summaryHash": "2ce577fe2a9845c6ce2499ebbbbd0f93582bc333"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1496,
+      "title": "Simple Mode: Night Setup owns what shows; Guided Run / Autopilot renamed Night Setup",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1496",
+      "author": "diegopereiran",
+      "mergedAt": "2026-11-04T12:59:56Z",
+      "additions": 1058,
+      "deletions": 777,
+      "changedFiles": 27,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the step-by-step evening walkthrough previously labeled \"Guided Run\" is now called \"Night Setup\" everywhere, with the short sidebar label \"Setup\" (\"Preparar a noite\" and \"Preparo\" in Brazilian Portuguese). Behind the scenes, the tracking of which screen is showing was simplified into a single shared value. This brings two small behavior changes. Pressing \"Image this\" during Night Setup's Plan step no longer silently exits Night Setup, and reopening Simple Mode always starts on Preview and ends any leftover Night Setup. One gap: the Portuguese start button still reads \"Iniciar sessão guiada\" (start guided session) and was not updated to the new name.",
+      "category": "refactor",
+      "summaryHash": "0a4e31d79fd608fceef2fa200cdeda2bcaa85f0e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2024,
