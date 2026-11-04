@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T04:25:08.091Z",
+  "generatedAt": "2026-11-04T05:24:15.127Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,68 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2018,
+      "title": "Keep a Player One camera's cooler settings across a reconnect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2018",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T04:53:34Z",
+      "additions": 121,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Player One cooled cameras now keep cooling after a reconnect. Before, if a program like NINA dropped and reconnected mid-session, the camera quietly reset to cooler off and a target temperature of 0, so the sensor warmed up without warning. The server now remembers the last cooler on/off and target temperature a user set and reapplies them on reconnect. These settings are kept only until the server restarts, the camera's gain setting is still not restored, and the fix was checked in automated tests but not on a real camera.",
+      "category": "fix",
+      "summaryHash": "018f879e4e5f251526e8455f565d4f7d5f2632de"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2015,
+      "title": "Give source installs the dialout and gpio groups build_and_run.sh sets up",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2015",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T04:42:40Z",
+      "additions": 357,
+      "deletions": 236,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Installing AlpacaBridge as a background service from source now sets up the system permissions it needs, just like the other install method already did. Before, the service install skipped this, so on a fresh system the service could fail to reach serial-connected mounts and ASIAIR power ports. Both install methods now share one setup routine so they cannot drift apart, and a new automated check tests the service install path. Most of the script changes were not visible in the provided diff, so this summary relies mainly on the description.",
+      "category": "fix",
+      "summaryHash": "4416e73e324c73ab44088710cc8f74d17594d918"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2017,
+      "title": "End iOptron IsPulseGuiding 500 ms after the pulse, not 1 s",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2017",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T04:37:19Z",
+      "additions": 40,
+      "deletions": 10,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "iOptron mounts now report that a guide pulse is finished about half a second sooner. The driver used to wait a fixed 1 second after each pulse before saying it was done. Measurements on an HAE29C mount showed the real finish comes 70 to 380 ms after the pulse, so the wait is now 500 ms. Guiding software like PHD2 and NINA can correct more often, and a separate calibration step keeps its original 1 second wait.",
+      "category": "fix",
+      "summaryHash": "fce73326135e5aa8f7deae71f851df14f3ace5f3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2016,
+      "title": "Turn iOptron tracking back on after an aborted equatorial GOTO",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2016",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T04:36:46Z",
+      "additions": 197,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Stopping an iOptron mount in the middle of a move to a sky position now leaves it tracking the sky. Before, the mount stayed stopped and refused the next move. If a manual axis move is aborted, tracking now returns to whatever it was before that move. Other kinds of moves, such as parking, homing, and moves by altitude and azimuth, are unchanged. This was confirmed on real HAE29C hardware.",
+      "category": "fix",
+      "summaryHash": "efb9605b98ae618da2f03a63e4690ddf61a8781a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2013,
