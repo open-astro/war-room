@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T05:24:15.127Z",
+  "generatedAt": "2026-11-04T06:25:49.140Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,36 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2020,
+      "title": "Check http.port in the config file like the other port settings",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2020",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T06:13:06Z",
+      "additions": 40,
+      "deletions": 15,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The server now checks the web port number in its settings file the same way it already checks the other port settings. Before, a port of 0 made the server listen on a random port that no app could find, and a mistyped value was quietly ignored. Now any value outside the normal range is rejected with a warning and the server keeps the standard port (6800). One small catch: a value with extra characters after the number, like \"6810.0\", used to be read as 6810 but is now rejected, so users should write the port as a plain number.",
+      "category": "fix",
+      "summaryHash": "e7d9eaacff3c9a8d1add1300964cf4366948f36a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2019,
+      "title": "Keep a ToupTek abort that races a StartExposure still in flight",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2019",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T05:49:41Z",
+      "additions": 93,
+      "deletions": 6,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a timing problem with ToupTek and Altair cameras where a request to cancel an exposure could be lost. If the cancel arrived while a new exposure was still getting started, which can take up to about 2 seconds after a stuck earlier exposure, the camera reported the cancel as successful but then took the full picture anyway. The driver now remembers the cancel and carries it out as soon as the exposure has actually begun, so apps may briefly see the camera as busy before it goes idle. This was tested with automated tests only, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "82b0b9f75d32d132d56d2749b2260e5eeebd56e3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2018,
