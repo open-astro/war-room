@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T16:19:33.814Z",
+  "generatedAt": "2026-11-04T17:18:51.352Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1505,
+      "title": "GuiderStarLostWatchTest: a guide step that must land inside a window gets 2 s, not 300 ms",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1505",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-04T16:57:05Z",
+      "additions": 13,
+      "deletions": 7,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Test-only fix for a test that sometimes failed on busy build machines, even though nothing was wrong with the guiding code. Two guiding tests had only 300 milliseconds to simulate a star briefly disappearing and coming back, and on a slow machine that message sometimes arrived too late. Those two tests now get a 2-second window, and they still wait long enough afterward to catch a real problem. No change to the app itself.",
+      "category": "tests",
+      "summaryHash": "a51abf6bbe8913e349af5260f0e5fa03edcd5e5f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2027,
+      "title": "Serve CGX coordinates from a polled state snapshot (#1940, PR 1 of 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2027",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-04T16:54:54Z",
+      "additions": 1144,
+      "deletions": 489,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX/CGX-L mount driver now checks the mount's position four times a second in the background, so position questions are answered right away. Before, they could get stuck waiting behind a sync, slew or stop. If the mount stops answering for about 30 seconds, the driver now reports it as disconnected and lets go of the USB port, so client apps notice and can reconnect. Before, it claimed to be connected forever. This is the first of two planned parts and comes with many new and reworked tests plus updated design notes; the 'is pulse guiding' status now comes from the driver's own record instead of asking the mount.",
+      "category": "feature",
+      "summaryHash": "ca4075f573c80ff604799895156425bcfef955a0"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1503,
