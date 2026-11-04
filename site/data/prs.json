@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:35:55.826Z",
+  "generatedAt": "2026-11-04T15:37:50.917Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -21,9 +21,9 @@
       "deletions": 1121,
       "changedFiles": 10,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The ZWO camera driver now takes pictures the same way the Player One driver already does: each exposure runs in the background, with a deadline. Before, checking the camera's status or fetching an image could stall while the server waited on the USB connection, and an exposure that never finished stayed stuck on \"exposing\" forever. Now status checks answer right away, and a stuck exposure fails with a clear error once its time limit passes. Some behaviour visible to apps also changes: a camera error at the start of an exposure is reported when the app checks for the image instead of right away, the image counts as ready only after it has fully downloaded, and changing the image size or binning throws away a finished image that has not been read yet.",
+      "category": "refactor",
+      "summaryHash": "e8398a46f8bfd7d1904daeaf81f1bd5070fbcc7a"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -9445,9 +9445,9 @@
       "deletions": 3,
       "changedFiles": 7,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The app has a new icon in place of the old magnifying glass: blue and orange guiding lines that swing wide and settle into the OpenAstro logo, on a dark blue rounded square. It comes with a small script that redraws the icon at every size needed for Mac, Windows and Linux. The description says the main PNG icon is now 1024 pixels, but in the code the Mac version is a separate 1024-pixel file and the shared Linux icon is 512 pixels.",
+      "category": "feature",
+      "summaryHash": "f9e9c69081d127657e56b1fd1224cdc7c4143255"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9461,9 +9461,9 @@
       "deletions": 1,
       "changedFiles": 11,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When you open a guiding log, the assessment now compares tonight with the most recent earlier night that used the same equipment, using the other logs in the same folder. It shows how much the guiding accuracy changed, which settings changed between the two nights, and the trend over the last few nights. If no settings changed, it says the difference likely came from the sky or the setup. Each log is read only once and read again only if the file changes, so reopening stays quick.",
+      "category": "feature",
+      "summaryHash": "0df5ba7c79693f4190433f572ce5f623fdfa09c4"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9477,9 +9477,9 @@
       "deletions": 11,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The guiding assessment now spots many more common problems. These include guiding that pushes almost entirely one way, a calibration that was too short or does not match the guide speed, a slow guide speed, a guide camera that would benefit from binning, a minimum-move setting that does not fit the measured noise, and dithers that are too small, too big or slow to settle. It also recognises whether the mount is a strain-wave or geared type, so its advice fits the mount. Each check is tested against a made-up log that has the problem and one that does not; guide-scope flexure is still to come.",
+      "category": "feature",
+      "summaryHash": "8cc7cdbdede5146b38fe7fe382b27bf3583f9e31"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9493,9 +9493,9 @@
       "deletions": 9,
       "changedFiles": 4,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The guiding assessment now uses the same limits as PHD2's own Guiding Assistant for polar alignment and exposure advice. It also flags four new problems: a guide loop that runs much slower than the exposure, a guide star that fades during the night, a saturated star, and signs of backlash in the declination axis. On the sample RedCat 51 log it now reports the slow frames, the fading star and likely backlash.",
+      "category": "feature",
+      "summaryHash": "5cb4fa9e8a2831546faf21321b7740c5b10481fe"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9509,9 +9509,9 @@
       "deletions": 5,
       "changedFiles": 15,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The inspector panel now opens with an assessment of the guiding session or selection. It gives a verdict on how good the guiding was compared with the imaging camera's pixel size, explains why the error is what it is, lists what to improve with specific settings to try, and notes what is going well. A link on each finding jumps to the frames it is about on the timeline. The verdict only appears for logs from the OpenAstro guiders, which record the imaging camera; session details now also show the imaging telescope, camera and filter when the log includes them.",
+      "category": "feature",
+      "summaryHash": "3289f20d87cb6accfcbc1150062a5a8801298730"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -9807,9 +9807,9 @@
       "deletions": 44,
       "changedFiles": 22,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "You can now select two or more guiding sessions in the sidebar and view them as one continuous stretch, with markers where each session starts and statistics covering the whole span. Calibration runs are left out of such a selection. A new Running RMS option draws how steady the guiding was over the last 1, 2, 5 or 10 minutes, so you can see it improve or worsen through the night. The logic is tested, but the author could not capture screenshots, so someone still needs to check how the combined view and the new line actually look on screen.",
+      "category": "feature",
+      "summaryHash": "c04704bd0ebe39793abb36de191680634e0d06d9"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9823,9 +9823,9 @@
       "deletions": 45,
       "changedFiles": 11,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Drift analysis can now remove a curved drift as well as a straight-line one, or none at all, using a three-way choice that replaces the old on/off checkbox and is remembered between runs. This matters because drift from a polar alignment error is often curved, and removing it cleanly makes periodic error easier to spot in the frequency chart. Modelling the actual mount geometry, which the original request also suggested, was not attempted.",
+      "category": "feature",
+      "summaryHash": "5534781e56893bdff8c4719156734398e7067bc1"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9839,9 +9839,9 @@
       "deletions": 0,
       "changedFiles": 4,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Adds an automated release process: pushing a version tag builds and tests every platform, then publishes a GitHub release with the Windows, macOS and Linux downloads, checksums, and that version's notes from the changelog. It first checks that the tag matches the project's version number and that release notes exist for it. No release has been made yet; that is a separate step.",
+      "category": "ci",
+      "summaryHash": "c859d5990f8b382fb3495df47cb7acae791fbfce"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9855,9 +9855,9 @@
       "deletions": 105,
       "changedFiles": 9,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Documentation only: a rewritten README with screenshots, download and build instructions, credits and licence details, a new contributor guide describing the test-first way of working, and a standard checklist for pull requests. The old change log is replaced by a newer-format changelog that keeps the full history.",
+      "category": "docs",
+      "summaryHash": "707ef9b9b2a8ef6d5e21f3a429b3d88b2199a4ee"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9871,9 +9871,9 @@
       "deletions": 78,
       "changedFiles": 12,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Linux users now get a single self-contained download (an AppImage) for both regular PCs and ARM machines such as Raspberry Pi, meant to run on most current distributions. The old Debian packaging is removed, and the app gains a command-line option to print its version. The builds are checked automatically to make sure they start, but nobody has yet tried them on the actual Linux distributions listed.",
+      "category": "feature",
+      "summaryHash": "d54fc14ff6fa56a5a5de1d87dc9a2a9a2551411c"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -9887,9 +9887,9 @@
       "deletions": 99,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Windows now has modern installers for both standard 64-bit PCs and ARM PCs, requiring Windows 10 or later, with a choice of installing for one user or everyone. Support for old 32-bit Windows is dropped. Each installer is automatically tested to install and uninstall cleanly, but nobody has yet opened the installed app on a real Windows machine.",
+      "category": "feature",
+      "summaryHash": "91888056c8684d3d32c1b172e840498390466e45"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -9921,9 +9921,9 @@
       "deletions": 3,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Mac version now ships as a downloadable disk image: you open it and drag the app into Applications. The app has a proper Mac icon, and the automated build checks each disk image before saving it. The app carries only a basic signature for now; full Apple signing and approval are planned separately. The icon is still the old low-resolution artwork with \"PHD\" on it.",
+      "category": "feature",
+      "summaryHash": "e94d9ad07ebe50f52851756ef92f34c33598721d"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -9955,9 +9955,9 @@
       "deletions": 130,
       "changedFiles": 8,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The app's version number is now written in one place, and the About box, the Mac app details and the Windows installer all pick it up from there. Before, it was typed separately in several spots and could drift out of sync. New checks catch a mismatch, and an old Windows build script that scraped the number from the code was retired. Users will see no change.",
+      "category": "chore",
+      "summaryHash": "7357ba47d16c62f2c2348eca6b4de2ebf8a178f3"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -9989,9 +9989,9 @@
       "deletions": 11897,
       "changedFiles": 83,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This brings the complete redesign into the main version of the app. The old window and the separate analysis window are replaced by a list of sessions on the left, one chart that switches between Timeline, Scatter, Drift and Frequency, and a collapsible details panel on the right. Every old feature has a new home, existing settings carry over, and several long-standing bugs are fixed, including RA being plotted with the wrong sign. It was hand-checked only on Mac; Windows and Linux were only built automatically, and the Windows display improvements have not been tried on a real Windows machine.",
+      "category": "feature",
+      "summaryHash": "1ce84f694449845e226240215d47f4ce928b83f4"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -10023,9 +10023,9 @@
       "deletions": 78,
       "changedFiles": 11,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This is the finishing pass on the redesign. Right-clicking the timeline brings back the full set of commands, new keyboard shortcuts move between sessions, and the session list keeps its place instead of jumping when it updates. Screen readers on Windows can now understand the view switcher and the panel headings, and the Help text was rewritten for the new window. The Windows build should now look sharp and modern on high-resolution screens, but nobody has actually run it on Windows yet.",
+      "category": "feature",
+      "summaryHash": "e5a4a284ce6af5ab0b3f00bc980f23e917ebe47e"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -10039,9 +10039,9 @@
       "deletions": 11740,
       "changedFiles": 31,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Drift and Frequency analyses now live inside the main window as chart views, replacing the old separate analysis window. They work on the selected frames or the whole session, and pointing at the Frequency chart snaps to the nearest peak. A new menu command finds the stretches where guiding was paused for PHD2's Guiding Assistant. The old windows and the outdated tool used to design them were removed, which is most of the roughly 11,700 deleted lines.",
+      "category": "feature",
+      "summaryHash": "ce8db21c8f9e22db05fea3229576785012483e67"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -10055,9 +10055,9 @@
       "deletions": 40,
       "changedFiles": 22,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This adds full-size Calibration and Scatter views. The Calibration view plots each calibration step with labelled distance rings and can be panned and zoomed. The Scatter view shows the guiding spread with labelled rings and an outline of any stretching, for either the selected frames or the whole session. The details panel gains a Calibration section with rates, angles and alignment error, and long values there now end in \"…\" with the full text shown on hover.",
+      "category": "feature",
+      "summaryHash": "9e73337ac59aaa3680f397fa222b132b93d74d55"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -10089,9 +10089,9 @@
       "deletions": 125,
       "changedFiles": 30,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The new window now has its real guiding chart, replacing the placeholder. It shows the guiding over time, guide corrections, star brightness, events and limits, with a miniature overview of the whole session underneath for moving around quickly. You can zoom, scroll, select a stretch of frames to see its statistics, and mark frames to leave out or put back, using the mouse, keyboard shortcuts or menus. It also fixes several old chart bugs, including RA being drawn upside down relative to its labels and limits that ignored an adaptive optics unit, and the vertical scale is now saved only when the app closes instead of on every drag step.",
+      "category": "feature",
+      "summaryHash": "8776d9cc1f77b98c35b098e65eeaeba4f62ac45b"
     },
     {
       "repo": "open-astro/phdlogview",
@@ -10105,9 +10105,9 @@
       "deletions": 157,
       "changedFiles": 31,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The app gets a brand new main window that replaces the old one, with a toolbar, a session list on the left, a panel of statistics and settings on the right, full menus with keyboard shortcuts, and a Preferences window for colours and settling distance. Logs can be opened from the menu, a recent-files list, drag and drop, or the Finder, and opening a log in a text editor now works for file names with apostrophes. Existing saved settings carry over, and window layout and display choices are remembered between runs. The chart area is still a placeholder at this stage, and drift and frequency analysis will not return until a later step.",
+      "category": "feature",
+      "summaryHash": "246baa0eef89b1367f0fe4bf6c2901c1cf890cf0"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -10157,9 +10157,9 @@
       "deletions": 33,
       "changedFiles": 19,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This adds the behind-the-scenes groundwork for the redesigned app, covering zooming and scrolling, grid and time markings, session details, statistics for any chosen stretch of frames, and tracking what the user has open and selected. Nothing visible uses it yet, and it comes with a large set of new tests. It does fix a few behaviours for when it is hooked up: changing the exclusion rules now updates every session, a log that cannot be read no longer replaces the one already open, and zooming out stops once the whole session fits.",
+      "category": "refactor",
+      "summaryHash": "a27f7d324233e71d4d79b50b6e268c3633cd3dd3"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -10191,9 +10191,9 @@
       "deletions": 135,
       "changedFiles": 41,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The app is renamed from PHD2 Log Viewer to OpenAstro Guide Insight everywhere users see it, including the app and installer names on macOS, Windows and Linux, the About box and the downloadable builds. On first launch, settings saved under the old name are copied over automatically so nobody loses their preferences. Credit to the original author is kept in every file and in the About box, which now also states the open-source licence, and the README was rewritten with build instructions.",
+      "category": "chore",
+      "summaryHash": "f28d48ba7eeac8869497ba6b90e560a19c4a829b"
     },
     {
       "repo": "open-astro/AlpacaBridge",
