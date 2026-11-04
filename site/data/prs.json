@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T06:25:49.140Z",
+  "generatedAt": "2026-11-04T07:23:54.909Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,36 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2021,
+      "title": "Let CaptureSession::start take a per-start watchdog margin",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2021",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T06:36:39Z",
+      "additions": 110,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Camera drivers can now set their own safety time limit for each exposure, instead of every exposure using one fixed allowance. This matters because some cameras need more or less extra time depending on the shot, for example retrying a failed exposure or waiting for a long exposure's file to arrive, and one fixed allowance could not suit both short shots and hour-long ones. Existing cameras behave exactly as before, and this prepares the way for moving the ZWO camera onto the same system before the 6.0 release. The code matches the description, with new tests confirming the custom limit applies to one exposure only.",
+      "category": "feature",
+      "summaryHash": "4747a03f04d87d8fe2a270aa83e56084e31058c6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2022,
+      "title": "Order the gphoto MLU deadline test's hook readings with atomics",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2022",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T06:26:50Z",
+      "additions": 16,
+      "deletions": 10,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "This is a test-only fix: one automated test for the gphoto camera's mirror lock-up exposures could occasionally fail by chance because two parts of the test running at the same time were reading and writing the same values without coordinating. The test now safely shares those values and waits until the last one is recorded before checking results. Nothing changes in the camera driver or for users. It simply makes the test reliable ahead of the 6.0 beta.",
+      "category": "tests",
+      "summaryHash": "2920850ba677b95c8400b72e254b7e0baba3dfed"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2020,
