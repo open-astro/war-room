@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T21:18:50.667Z",
+  "generatedAt": "2026-11-04T22:17:55.407Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2033,
+      "title": "Poll Q-Focuser telemetry best effort, refuse the no-probe sentinel, bound the drain",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2033",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-04T22:16:12Z",
+      "additions": 471,
+      "deletions": 135,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "Fixes three problems with the QHY Q-Focuser that showed up during a full standard compatibility test. Long focuser moves no longer trigger false connection errors: the device goes quiet on temperature readings for about 10 seconds after a move, and the server now only treats a failure to read the focuser's position as a real problem. When no temperature probe is plugged in, the server now reports that temperature is unavailable instead of passing along a fake reading of -111 C. A focuser that has stopped accepting data now fails to connect within a few seconds with a message suggesting a replug, instead of freezing the server. The parts of the code change shown here confirm the new connection time limit and an updated test report, which now passes with temperature left out on a unit without a probe.",
+      "category": "fix",
+      "summaryHash": "562d6edeaa246925e4773b89a7845db2d325117b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1515,
