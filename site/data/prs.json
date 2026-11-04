@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T03:22:46.470Z",
+  "generatedAt": "2026-11-04T04:25:08.091Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2013,
+      "title": "Keep a disconnected ZWO camera's name off another camera at its id",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2013",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T03:38:46Z",
+      "additions": 85,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For people with several ZWO cameras, a camera that is unplugged or swapped no longer shows another camera's model name on its Devices card. Before, the system could hand that camera's slot number to a different camera and the card picked up the wrong name (for example, an ASI432MM entry labelled \"ASI533MC Pro\"). Now the card keeps the model name saved for that entry, and shows it instead of the generic \"ZWO Camera\" when nothing could be read. Only the displayed name changes, since connecting already found the right camera by its serial number; tests and notes were added, and it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "0a36118f45ae0906b446be10eb7bc9b68720a6db"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2014,
+      "title": "Refuse ToupTek fan off while the camera cooler runs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2014",
+      "author": "joeytroy",
+      "mergedAt": "2026-11-04T03:23:28Z",
+      "additions": 78,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For ToupTek (and Altair) cooled cameras, turning the camera fan off is now refused while the cooler is running, with a message telling the user to switch the cooler off first. On the ATR2600M, turning the fan off silently stopped the cooler, and turning the fan back on did not restart it, so users could lose cooling without noticing. This is a deliberate behaviour change: a fan-off request that used to succeed now fails while cooling is on. The main code change was not shown in full, but the visible test and notes changes match the description; it has not yet been tested on hardware with this build.",
+      "category": "fix",
+      "summaryHash": "ebf3d98ca475e07661359f62b07e05ad1f453d70"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2012,
