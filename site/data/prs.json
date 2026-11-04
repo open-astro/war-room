@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T17:18:51.352Z",
+  "generatedAt": "2026-11-04T18:17:57.408Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1504,
+      "title": "build(client): update Flutter to 3.47.9",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1504",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-04T18:07:59Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies"
+      ],
+      "summary": "Routine update of the toolkit used to build the app, moving to a newer minor version (3.47.5 to 3.47.9). The change is a single version number, and it was opened automatically after the project's checks and tests passed on the new version. Nothing changes for users.",
+      "category": "chore",
+      "summaryHash": "62170ab0f2c392a66e3aba1484ff9b2949f3ab53"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1491,
+      "title": "Bundled plate solver: ASTAP v2026.11.01 with the OpenAstro front-end threading",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1491",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-04T17:42:55Z",
+      "additions": 250,
+      "deletions": 27,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "The star-pattern solver bundled with the app, which works out where the telescope is pointing from a photo, now builds on the solver author's own new multi-core release plus a small OpenAstro add-on that speeds up the early steps of loading and analysing the image. On a 4-core Raspberry Pi this keeps quick solves at about 0.6 seconds instead of 1.6 seconds with the author's version alone, makes solves with no starting position faster and lighter on memory, and fixes a weakness of the previous custom version, which could fail on very faint images that the new version handles. A new automated check now builds the solver and solves a real sample image to confirm the answers are correct and the same no matter how many processor cores are used. The documentation and license notices were updated to match, and the app's own code is unchanged.",
+      "category": "feature",
+      "summaryHash": "d4829725d9f6a94d9d908ba0751c130cbbea1f4b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1505,
