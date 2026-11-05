@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T13:19:34.253Z",
+  "generatedAt": "2026-11-05T14:18:49.922Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1609,
+      "title": "fix: the status bar collapses its launchers on narrow windows",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1609",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T14:18:12Z",
+      "additions": 511,
+      "deletions": 260,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On narrow windows and iPads, the status bar buttons (Image Library, Calibration, Stats, Launchpad and Run profile wizard) no longer get cut off under the Backup chip. As space runs out, they first shrink to icons that show their name when you hover, and then any that still don't fit move into a \"More\" menu. On very narrow screens the bar scrolls sideways, while help and notifications stay at the right edge. New tests check the layout at several window widths. It has not yet been tried by hand on a real device, and part of the change is just reformatting of existing code.",
+      "category": "fix",
+      "summaryHash": "d5dfe680c1a34cb40a474f54eb9a3776d2f6bec9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1606,
