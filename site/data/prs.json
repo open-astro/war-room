@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T01:23:33.395Z",
+  "generatedAt": "2026-11-05T02:20:17.888Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2045,
+      "title": "Lose the CGX link at once on a pulled cable (#1940, PR 2 of 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2045",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-05T01:55:16Z",
+      "additions": 1087,
+      "deletions": 457,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the USB cable to a Celestron CGX mount or Celestron focus motor is pulled, the server now notices right away and reports the device as disconnected, instead of showing a vague \"communications problem\" for about 30 seconds. Apps learn within one request that the cable is out and can reconnect once it is plugged back in; a slow reply is still treated as a temporary hiccup, not a lost connection. It also fixes a brief window during Sync where the mount could report a mismatched pair of old and new coordinates. Docs and the published validation report were updated too, including a note that a guiding overshoot seen on some test runs comes from the mount itself.",
+      "category": "fix",
+      "summaryHash": "3d1a52677c98d03e9f2ecd11411249328a8d0753"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1524,
+      "title": "Guider Stop and Emergency Stop stop a paused guider (ALP-5018)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1524",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T01:26:25Z",
+      "additions": 10,
+      "deletions": 6,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The guider's Stop and Emergency Stop buttons now work when PHD2 guiding is paused. Before, they were ignored in that state and the only way out was the Live View stop; the automatic safety reaction had the same gap and is fixed too, since it uses the same stop. The code change is a one-line addition backed by a new test, and the author notes it has not yet been tried against real PHD2 on the rig.",
+      "category": "fix",
+      "summaryHash": "4f918dcbeffab55919793c00796a5c0e8219fbfb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2050,
