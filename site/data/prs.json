@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T09:22:44.086Z",
+  "generatedAt": "2026-11-05T11:21:08.670Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1598,
+      "title": "Fix 19 ready-for-agent bugs: Polar Align, focus, camera, guider, sequencer status, Simple Mode",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1598",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T10:37:03Z",
+      "additions": 3678,
+      "deletions": 173,
+      "changedFiles": 97,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A large batch of 19 bug fixes across the telescope app: Polar Align now handles mounts that report a position past the pole and no longer settles on a wrong, mirrored axis near the pole, autofocus no longer overshoots on its first move, and the focuser backlash set in the setup wizard is finally applied. Guiding gets a clearer Guiding Assistant with a Find star button, and multi-star guiding is now on by default. Live View shuts itself off after 30 seconds with no one watching, run status explains why a run skipped or paused, several Simple Mode glitches are fixed, and the Emergency Stop button is now a darker red with a readable white label everywhere. A few changes still need testing on real equipment before release (the polar-align direction fix is flagged as highest risk), and one part of the run-status fix (Center & Rotate) is not done yet.",
+      "category": "fix",
+      "summaryHash": "a6ea5b658aae707477618db8a56c002a4b994ecf"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1599,
