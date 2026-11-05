@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T03:38:00.721Z",
+  "generatedAt": "2026-11-05T04:27:27.737Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1528,
+      "title": "feat(client): Sky Album screen with binder grid, card flip and tonight shelf",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1528",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T04:22:29Z",
+      "additions": 1680,
+      "deletions": 6,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2036,
+      "title": "Fix iOptron telescope holding mutex_ across connect, refills and commands",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2036",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T04:04:55Z",
+      "additions": 1815,
+      "deletions": 1042,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes the iOptron mount driver so that simple questions, such as the mount's name, its target, or the date, are answered right away instead of waiting while the mount is busy connecting or carrying out a command. Before, one slow operation could hold up every other request from client apps, causing stalls. iOptron now follows the same approach already used for the OnStep and Sky-Watcher mounts, and a fresh compatibility test run on a real iOptron mount came back clean, with no errors and no timing problems. New timing and stress tests are included, and the docs are updated to match.",
+      "category": "fix",
+      "summaryHash": "cc66ff1c077dcf019dd4daaf486836bfe6ee14ca"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1527,
