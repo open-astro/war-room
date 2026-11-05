@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T16:19:11.338Z",
+  "generatedAt": "2026-11-05T18:02:27.190Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1612,
+      "title": "Polar Align runs the guider's Static PA routine, not Ara's own fit",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1612",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-05T17:58:33Z",
+      "additions": 780,
+      "deletions": 3205,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "Polar alignment now hands the measuring work to the guiding program's own built-in polar alignment tool instead of using Ara's homemade method. Ara starts the tool, shows its live readout of how far off the mount is, and only turns the mount itself when the guider can't move it. The old method has been removed because it could give badly wrong results, such as reporting a nearly perfect alignment when the mount was actually several degrees off. A couple of older settings (image binning and single-shot capture mode) still appear in the settings page but no longer do anything, and the change has not yet been tested on real equipment.",
+      "category": "fix",
+      "summaryHash": "f3d2f154d480933a37a1f1fa40ea0331bbe496f1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1610,
