@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T22:11:52.861Z",
+  "generatedAt": "2026-11-05T23:12:41.406Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,56 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2100,
+      "title": "QHY wheel: fail a move that reads -1 past its deadline",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2100",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T23:02:11Z",
+      "additions": 265,
+      "deletions": 146,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Fixes a problem with the filter wheel built into some QHY cameras. If the USB cable was pulled during a move, the wheel would report \"still moving\" forever, and the astronomy software would wait until it gave up on its own. Now a move that hasn't finished by a time limit (about 2 seconds per filter slot, never less than 15 seconds) is reported as an error, which stays until the next move, connect or disconnect. The description says it was checked on real hardware. However, the changelog note added in this same change still says the hardware test and the standard conformance check were not yet done.",
+      "category": "fix",
+      "summaryHash": "6bc8f36780d9f066f26ab585e351c3b42c8ff898"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2101,
+      "title": "QHY miniCam8M CFW: ConformU report from the #2100 rig check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2101",
+      "author": "pauleyj",
+      "base": "fix/2052-qhy-wheel-move-deadline",
+      "mergedAt": "2026-11-05T22:44:11Z",
+      "additions": 142,
+      "deletions": 142,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Adds an updated compatibility test report for the QHY miniCam8M's built-in filter wheel. The test was run on real hardware with the fix from #2100, and it passed with no errors, warnings or issues. This is a record-keeping change only, and it was merged into #2100's working branch, not straight into the main project.",
+      "category": "tests",
+      "summaryHash": "34266c0fee1c024f752eac6e407dbc84fb4ae2bf"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2092,
+      "title": "Management API: update a registered device's settings in place (aperture, focal length)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2092",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-05T22:12:20Z",
+      "additions": 320,
+      "deletions": 71,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Client software can now change a connected telescope's lens size and focal length without removing the telescope and adding it back, which used to drop the live connection to the mount. The new values take effect right away and are saved. To make this safe while the telescope is in use, six telescope drivers now store these values more carefully and calculate the light-collecting area fresh each time it is asked for. A small side effect is that for one brand (Bisque), setting the lens size to zero now correctly resets the area to zero instead of keeping the old value. It has not yet been tested on real telescopes.",
+      "category": "feature",
+      "summaryHash": "d206add7780c4dccc60f55857736a4be489da27b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1616,
@@ -23,9 +73,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Internal change to the automated checks: the project's design guide is now checked automatically, and the check fails on outright errors or on color pairings that are too hard to read. A pinned copy of the checking tool is added and set up for automatic updates. Most of the added lines come from that tool's version-lock file. The design guide itself does not change, and users will see no difference.",
+      "category": "ci",
+      "summaryHash": "2f8babefb06363c8cf6b9055ffdf1d6f60058416"
     },
     {
       "repo": "open-astro/openastro-ara",
