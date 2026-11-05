@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T14:18:49.922Z",
+  "generatedAt": "2026-11-05T15:17:48.969Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1608,
+      "title": "fix: a plain clock time waits for its next occurrence",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1608",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T15:09:03Z",
+      "additions": 329,
+      "deletions": 26,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1607,
+      "title": "fix: iOS Reduce Motion now stops the client animations",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1607",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T14:43:30Z",
+      "additions": 165,
+      "deletions": 18,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1609,
