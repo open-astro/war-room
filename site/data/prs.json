@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T22:17:55.407Z",
+  "generatedAt": "2026-11-05T01:23:33.395Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,90 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2050,
+      "title": "Fix ZWO camera stops marking a StartExposure that has not run",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2050",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T01:19:57Z",
+      "additions": 126,
+      "deletions": 22,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Fixes a timing problem in the ZWO camera driver where stopping one exposure could accidentally cancel the next one before it even began, leaving the user with the error \"the exposure ended without an image\". A stop now marks only the exposure that is actually running at that moment. This also removes a test failure that hit about one in five automated merge runs; in the author's stress test, failures dropped from 7 in 40 runs to 0 in 80. It has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "ed4eb16dff369729449c71ef7162f0a6226166fc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2048,
+      "title": "Fix ToupTek AFW reading its handle before the I/O lock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2048",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T01:19:57Z",
+      "additions": 27,
+      "deletions": 18,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Fixes a timing problem in the ToupTek filter wheel driver where reading the wheel's position or moving it during a quick disconnect and reconnect could talk to the old, already-closed connection. The driver now looks up the live connection only once it is safe from being closed. The problem showed up once in automated testing and could not be reproduced locally, so the fix rests on reasoning about the code rather than a reproduced failure.",
+      "category": "fix",
+      "summaryHash": "abc2c3753e0dae321f58a00be85982dcae228a15"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2047,
+      "title": "Bound every serial drain and pin the stalled-endpoint paths",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2047",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T01:18:02Z",
+      "additions": 270,
+      "deletions": 28,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Makes sure no serial-connected device can freeze the server forever when its USB link stops accepting data. The QHY CFW3 filter wheel and the iOptron mount now use the same time-limited wait the Q-Focuser already uses, so a stuck link gives a clear error asking for a USB replug instead of hanging. An automated check now blocks any unlimited wait in future code, and new tests simulate a stuck link without hardware. The filter wheel and mount changes have not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "89d526568bcfae7c6ee20b7df14a569cf49be13d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1523,
+      "title": "feat(server): store J2000 pointing, pixel scale and provenance per frame",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1523",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T01:05:09Z",
+      "additions": 511,
+      "deletions": 16,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Each light frame now records where the telescope was pointing, how much sky each pixel covers, and whether Ara itself took the picture. This is groundwork for the upcoming Sky Album. New captures and recovered files fill these in right away, and older frames are filled in once at startup by reading their saved file info. Pointing is only stored when it is in the standard J2000 coordinate system, and the new details are also available through the app's frame lookup.",
+      "category": "feature",
+      "summaryHash": "5053adabf952b58ccc325cf08b238fd8ee3ad0fc"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1522,
+      "title": "fix(client): complete the Messier and Caldwell books in the bundled catalog",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1522",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T00:37:45Z",
+      "additions": 73,
+      "deletions": 5,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Completes the app's built-in Messier and Caldwell catalogs, adding missing objects such as the Pleiades (M45), M40, M102, the Cave Nebula, the Double Cluster, the Hyades and the Coalsack, so all 110 Messier and 109 Caldwell objects can be found by offline search. The two halves of the Double Cluster now appear as a single entry. M40 and the Hyades are searchable but still will not be suggested in Tonight's Sky. The PR also adds Sky Album terms to the project glossary.",
+      "category": "fix",
+      "summaryHash": "bf1ec107018c4aa3886f37cac3c5f805f9bda208"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2033,
