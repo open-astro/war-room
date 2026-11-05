@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T08:23:31.123Z",
+  "generatedAt": "2026-11-05T09:22:44.086Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1599,
+      "title": "docs(design): sync DESIGN.md tokens with the code and refresh the .impeccable sidecar",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1599",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T09:14:01Z",
+      "additions": 251,
+      "deletions": 60,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update that brings the app's written design guide back in line with how the app actually looks today, and refreshes the companion design file that had fallen behind. It now describes the two real versions of the Emergency Stop button (the full-screen one and Simple Mode's large square STOP button), adds Simple Mode's text styles and status/message pills, fixes outdated overlay values, and corrects stale notes that said Simple Mode lived on a separate branch, when it actually ships behind an experimental setting. The only code touched is a comment, so nothing changes for users.",
+      "category": "docs",
+      "summaryHash": "16a2e8d0de1f28287f510942efef8ae9f4af5669"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2061,
+      "title": "Add decision 0023: outbound clients live in vendor wrappers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2061",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-05T09:03:11Z",
+      "additions": 111,
+      "deletions": 16,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Records a new design decision that clarifies a project rule. The core part of the software must never act as a server itself, but it may reach out to other devices or services over the network through a single shared connection point. The old wording seemed to forbid this, even though the weather station driver already does it, and it was blocking a planned feature that would let AlpacaBridge relay devices from another Alpaca server. The PR also updates every copy of the rule across the docs, defines new terms for relayed devices, and writes down why automatic firmware update checks were declined. It is documentation only, apart from one small adjustment to a docs-checking script.",
+      "category": "docs",
+      "summaryHash": "d7a5dde69d35d9f20310560f49eea374cd5e9b10"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2060,
