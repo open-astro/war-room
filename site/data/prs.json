@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T15:17:48.969Z",
+  "generatedAt": "2026-11-05T16:19:11.338Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1610,
+      "title": "The daemon keeps one log, so Polar Align and plate solves reach the bug report",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1610",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-05T15:44:54Z",
+      "additions": 75,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The server now keeps all its activity in a single log, so Polar Align runs and every plate solve finally show up in bug reports. Before this, those messages were quietly sent to a separate log that bug reports never included, which on one rig hid 353 solves and made Polar Align look silent. Routine web-request chatter is also turned down so it no longer buries the useful lines, and log lines lose the quote marks around each value, which matters for anyone who reads them with a tool. Older logs from the separate location are not moved or added to bug reports, and the fix has not yet been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "3d715ef9c176961739fbe8e617b14deb9139816b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1608,
@@ -23,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "In the sequencer, \"Wait For Time\" and the time-based stop condition now treat a plain clock time as the next time the clock reaches it. For example, a wait for 21:47 started at 00:30 now waits until that evening, where it used to skip straight past. This is a deliberate change from how the original NINA software behaves when a sequence starts late. Times tied to the night, like Dusk or Dawn, work as before, a loop set to end at a time still ends then, and a finished wait no longer adds a phantom 24 hours to the run's time estimate.",
+      "category": "fix",
+      "summaryHash": "fc825ac97f2ddedbc968cdb6391495ef3ef36a0c"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -41,9 +57,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The app's animations now stay still when an iPhone or iPad user turns on Reduce Motion, not just when Android's \"Remove animations\" is on. This covers the blinking status dots, Simple Mode pills and transitions, sequencer and Sky Atlas animations, and the album card pop-up. It also responds right away if the setting is changed while the app is open. It was tested with simulated settings but not yet checked on a real iOS device.",
+      "category": "fix",
+      "summaryHash": "30b1db4b747a2a92be3b0ae2b4b59d3dad2cd7cd"
     },
     {
       "repo": "open-astro/openastro-ara",
