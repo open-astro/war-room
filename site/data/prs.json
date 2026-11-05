@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T18:02:27.190Z",
+  "generatedAt": "2026-11-05T22:11:52.861Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1616,
+      "title": "fix: lint DESIGN.md in the sanity job",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1616",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T21:14:03Z",
+      "additions": 1564,
+      "deletions": 1,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1612,
