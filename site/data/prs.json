@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T06:25:21.937Z",
+  "generatedAt": "2026-11-05T07:24:30.440Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2053,
+      "title": "Drop QHY integrated filter wheel Connected on SDK device loss",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2053",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-05T06:44:47Z",
+      "additions": 623,
+      "deletions": 194,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The filter wheel built into QHY cameras now correctly reports itself as disconnected when the camera tells the server it has been unplugged, instead of staying 'connected' and failing moves with confusing errors. It can then be reconnected directly, and doing so does not knock the paired camera offline, since the wheel only gives up its own share of the camera's connection. One important caveat: testing on real hardware showed that the current QHY software reports a pulled USB cable with a generic error rather than the 'device removed' signal, so in practice an unplugged wheel still shows as connected today, and a follow-up issue tracks this. A wheel sitting idle also won't notice the unplug until the next move is requested.",
+      "category": "fix",
+      "summaryHash": "d10411299841631c944212fcb3ee49ca6a738b5c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2056,
+      "title": "Add agent skills configuration for the engineering skills",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2056",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-05T06:41:19Z",
+      "additions": 75,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only change that tells the AI coding assistants used on this project where the issue tracker, triage labels, glossary and design decision records live, so they follow the project's existing conventions instead of guessing. It also adds the commands for linking and blocking issues, and four new triage labels were created on the repository to match. No code or user-facing behavior changes.",
+      "category": "docs",
+      "summaryHash": "64671c94cf501f4387d47cf92834b431da5635c8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2055,
+      "title": "Wait for the Sync's own clock registration in the ZWO sync-fence case",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2055",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T06:26:43Z",
+      "additions": 9,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Test-only fix for an automated test of the ZWO mount's Sync command that occasionally failed on a busy build server. The test sometimes started its timing step too early because it mistook a leftover from a cancelled move for the Sync it was waiting on; it now waits for the Sync itself before continuing. No change to the mount driver.",
+      "category": "tests",
+      "summaryHash": "30e6392421453ac44333c195f864da143d13b7f8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2054,
