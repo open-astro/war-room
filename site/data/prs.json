@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T12:20:21.385Z",
+  "generatedAt": "2026-11-05T13:19:34.253Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1606,
+      "title": "fix: keep the Planning search field usable on an iPad in portrait",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1606",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T13:17:44Z",
+      "additions": 83,
+      "deletions": 24,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On an iPad held upright, the search box on the Planning screen no longer gets squeezed down to a few letters. On narrower screens, the Rotate camera and Tonight's Sky buttons now show only their icons, with a label that pops up when you hover or press, which leaves room for the search box. Wider screens, including an iPad held sideways, look the same as before.",
+      "category": "fix",
+      "summaryHash": "7106a3ec0297f782067d6b71e2c17e57e5739a7e"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1603,
+      "title": "feat(client): OpenAstro Ara mark, Ara sheet and parallax wallpaper in Simple Mode (#1602)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1603",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T12:49:35Z",
+      "additions": 834,
+      "deletions": 31,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now carries the OpenAstro Ara branding. A small constellation logo sits at the start of the status bar, and tapping it shows the app, server and guider versions along with the rig name and the selected profile. Before the first photo is taken, a dark navy starfield replaces the live sky view; the Sky button still switches to tonight's sky, and on phones and tablets the stars shift slightly as you tilt the device, unless the device's reduce-motion setting is on. The \"Rig not connected\" notice is now amber instead of blue, the app gains one new outside component for reading the motion sensor, and the author notes the sideways (landscape) tilt fix has not yet been rechecked on a real iPad.",
+      "category": "feature",
+      "summaryHash": "7cbab4a4b8bc24e2aae698ee879ce32d139b6652"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1605,
+      "title": "fix: Center & Rotate failure names the step and what to check",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1605",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T12:22:46Z",
+      "additions": 115,
+      "deletions": 57,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the Center & Rotate step fails during an imaging run, the error message now says which part went wrong and what to check, instead of a single vague \"did not converge\" message. It names whether the problem was moving the mount to the target, turning the camera to the right angle, or centering the target, and this works whether or not a camera rotator is connected. Other steps that use the same centering routine keep their existing messages.",
+      "category": "fix",
+      "summaryHash": "e29f640727668f1519d0002dc7971307946ad83d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2090,
