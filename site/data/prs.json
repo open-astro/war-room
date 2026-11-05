@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T04:27:27.737Z",
+  "generatedAt": "2026-11-05T05:27:35.782Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1531,
+      "title": "Simple Mode: an autofocus that failed before this launch posts no pill (ALP-4998)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1531",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T05:23:29Z",
+      "additions": 41,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, an old \"Autofocus failed\" message no longer comes back every time the app starts or reconnects. The rig remembers its last autofocus run until it restarts, so the app kept treating an old failure as new, and closing the message did not keep it away. Now the message appears only when autofocus fails while the app is open and watching. The Focus panel still shows the last run, and polar alignment has a similar pattern that this change does not touch. It has not yet been tried on real equipment.",
+      "category": "fix",
+      "summaryHash": "2ce65fb10eca1a0b9601e699ffa16ff4453f795c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1537,
+      "title": "docs(spec): Sky Album cards use premade Art, a client collection cache and the baseball-card back",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1537",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T05:02:02Z",
+      "additions": 57,
+      "deletions": 13,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a documentation-only update to the Sky Album plan; no app behaviour changes. Cards will now show ready-made, freely licensed artwork instead of the user's own photos. Each device will keep its own permanent record of what has been collected, so cards and their bronze, silver or gold levels are not lost when photos are deleted from the rig. The update also describes the new 'baseball card' style back, with per-night details, and records why this design was chosen over the alternatives.",
+      "category": "docs",
+      "summaryHash": "c65ba959dfd4706c9776c60a3bfeeeaac7dbabe0"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1530,
+      "title": "Simple Mode: a guider Stop the rig doesn't act on says so in a pill (ALP-5018)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1530",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T04:46:56Z",
+      "additions": 52,
+      "deletions": 0,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, if you press Stop on the guider and it keeps running, the app now shows an error message naming what the guider is still doing, for example \"still paused\", and asks you to try again. Before, the button just quietly flipped back to running with no explanation. This finishes a fix where an earlier change made the rig actually stop a paused guider. The message is translated into Brazilian Portuguese, and it has not yet been tried on real equipment.",
+      "category": "fix",
+      "summaryHash": "bdfe97853ed2a92c1b1acc53826fd53eb186cdbc"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1528,
@@ -23,9 +77,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This adds the Sky Album screen, a collector's binder of Messier and Caldwell objects that shows which you have photographed and at what level: bronze, silver or gold. You can filter to collected or missing cards, flip a card to see details like total exposure time and hours to the next level, and use an \"Image this target\" button. A shelf also suggests missing objects that are well placed tonight. Nobody can open the screen yet, because the menu entry comes in a later step. The card fronts show the user's own photo, which the newer plan in #1537 replaces with ready-made artwork.",
+      "category": "feature",
+      "summaryHash": "6e8b733018813936ae72bc9051e058139b94beff"
     },
     {
       "repo": "open-astro/AlpacaBridge",
