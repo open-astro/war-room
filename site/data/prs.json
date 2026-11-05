@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T02:20:17.888Z",
+  "generatedAt": "2026-11-05T03:38:00.721Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,76 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1527,
+      "title": "Tonight's Sky: Up now waits for the site's twilight line, not nautical dark",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1527",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T03:33:00Z",
+      "additions": 38,
+      "deletions": 10,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Tonight's Sky's \"Up now\" filter no longer switches on at dusk and shows an empty list. It used to turn on once the sun was 12° below the horizon, but targets only appear once the site's chosen darkness level is reached (18° below by default), which left a gap of 20 minutes or more each evening with nothing listed. The filter now waits for the same darkness level the list uses. The separate pre-session prompt still appears at the earlier point on purpose.",
+      "category": "fix",
+      "summaryHash": "773d5f8e587afeeb3efe1e06b0f163b930c26101"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2046,
+      "title": "Fix Q-Focuser reconnect after a move and the one-tick position lag",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2046",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T03:06:19Z",
+      "additions": 248,
+      "deletions": 26,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Fixes two problems with the QHY Q-Focuser. Reconnecting right after a focus move used to fail, because the focuser stops reporting its power supply for about 10 seconds after a move. The connection now succeeds, and the settings that depend on the supply are applied as soon as the focuser starts reporting again. It also fixes a delay on some firmware where the focuser's position and \"is it moving\" status ran one update behind, so a finished move now shows up right away. Both fixes are covered by simulated tests only and have not yet been checked on real hardware.",
+      "category": "fix",
+      "summaryHash": "e5966fcb9eeb73c3518d6f4520975a72e73f897b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1526,
+      "title": "feat(server): GET /api/v1/stats/album-frames for the Sky Album",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1526",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T02:58:02Z",
+      "additions": 339,
+      "deletions": 1,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server can now hand the upcoming Sky Album a list of every light frame Ara itself captured, with where the telescope was pointing, image size, exposure, filter, target, quality score and equipment profile. Frames taken by other programs are left out. The app can ask for only what changed since its last check, which keeps repeat loads fast. This is groundwork only; nothing new appears on screen yet.",
+      "category": "feature",
+      "summaryHash": "0ba077dce06f989d763df4a785ea487f959767b3"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1525,
+      "title": "feat(client): Sky Album state, matching, aggregates and tiers",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1525",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T02:33:54Z",
+      "additions": 646,
+      "deletions": 19,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds the behind-the-scenes logic in the app for the upcoming Sky Album, which has no screen yet. It works out which Messier and Caldwell objects appear in your photos, either by where the telescope pointed or by the target's name when that is missing. For each object it totals the photos and hours, picks the best shot, and awards bronze, silver or gold for 1 photo, 1 hour or 5 hours. The app also keeps a copy of the photo list and only downloads what changed, falling back to a full reload when the totals don't add up.",
+      "category": "feature",
+      "summaryHash": "5fd209f90cd784f5b7451e6e7b5d0b6bfa923c85"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2045,
