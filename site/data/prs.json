@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T05:27:35.782Z",
+  "generatedAt": "2026-11-05T06:25:21.937Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2054,
+      "title": "Step the GOTO landing measurement only while the slew thread is parked",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2054",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-05T06:21:25Z",
+      "additions": 20,
+      "deletions": 6,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Fixes an unreliable automated test for the SynScan telescope driver that checks how it waits after a GOTO move. On busy test machines, the test's simulated clock sometimes ran ahead while the driver was still talking to the telescope, so the comparison came out wrong and the test failed at random. The test now waits until the driver is actually idle before moving the clock forward, so both runs give the same timing every time. This is a test-only change and does not affect how the driver behaves for users.",
+      "category": "tests",
+      "summaryHash": "a69dffbbd28438b8182e046b5203b142a9b85532"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1531,
