@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T11:21:08.670Z",
+  "generatedAt": "2026-11-05T12:20:21.385Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2090,
+      "title": "Add ZWO EAF, EFW and CAA firmware to the management listing",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2090",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-05T11:26:34Z",
+      "additions": 434,
+      "deletions": 6,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO focuser, filter wheel and rotator now report their firmware version in the server's device listing, so apps like Ara can show it in their Settings. The version is read once when the device connects and is cleared when it disconnects. If the read fails, the device still connects and simply shows no firmware. ZWO cameras, mounts and switches still show no firmware.",
+      "category": "feature",
+      "summaryHash": "8729794cc2189f8e2535f9ef44d001b285e03db4"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1601,
+      "title": "fix: Guide Camera rename (#1586) and the ASTAP version's trailing comma",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1601",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-05T11:22:00Z",
+      "additions": 3758,
+      "deletions": 206,
+      "changedFiles": 104,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the guide camera's window, tooltip, device row and search section now say \"Guide Camera\" instead of \"Guider\", matching the Guide panel, while \"Guider\" now refers only to the guiding program. Searching for Dither now opens Guide mode, where that control actually is, instead of the camera window. The ASTAP version in Settings no longer shows a stray trailing comma. The change is much bigger than the description says: it touches about 100 files and also brings in many unmentioned fixes, including Polar Align near the pole, the autofocus first move, focuser backlash, Live View stopping itself when no one is watching, multi-star guiding, run status reasons, and a higher-contrast Emergency Stop button.",
+      "category": "fix",
+      "summaryHash": "fcc6779b9e26c1626331901035af63dce91bda28"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1598,
