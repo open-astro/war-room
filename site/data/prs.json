@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T23:12:41.406Z",
+  "generatedAt": "2026-11-05T23:39:09.184Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2098,
+      "title": "ZWO AM: order Park, FindHome, MoveAxis and AbortSlew against a racing SlewAsync",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2098",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-05T23:20:58Z",
+      "additions": 198,
+      "deletions": 7,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2100,
