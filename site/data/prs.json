@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T07:24:30.440Z",
+  "generatedAt": "2026-11-05T08:23:31.123Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2060,
+      "title": "Fix CGX link loss reporting Disconnected before the port is released",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2060",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-05T08:08:43Z",
+      "additions": 6,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the connection to a Celestron CGX telescope mount drops, the software now frees up the cable connection before it tells other programs that the mount is disconnected. Before, there was a brief moment where a program could see \"disconnected\" but still be unable to reconnect, because the connection was not yet released; this showed up once as an intermittent test failure. The code change matches the description and only covers the CGX mount, while several other mount and accessory drivers with the same issue are left for later.",
+      "category": "fix",
+      "summaryHash": "1d09e94f673a29f9d5851a8291f0e13de2888d3b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2053,
