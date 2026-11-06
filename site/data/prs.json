@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T10:50:47.496Z",
+  "generatedAt": "2026-11-06T11:33:29.683Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2163,
+      "title": "Fix stale Player One connect release note",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2163",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T11:19:19Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This corrects a release note for the Player One camera driver. One sentence described a behaviour that an earlier change had already removed, so it was deleted and the note now matches what the software actually does. No code changed.",
+      "category": "docs",
+      "summaryHash": "c82c20d7cf1ffa929a755e6cd0029899f24c493c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2153,
+      "title": "Fix Sky-Watcher MoveAxis wait superseded by a pulse on the other axis",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2153",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-06T10:52:04Z",
+      "additions": 115,
+      "deletions": 20,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug in the Sky-Watcher telescope mount driver. A manual move on one axis could fail with a \"motion superseded\" error if a small guiding nudge started on the other axis at the same moment, even though the two should not interfere. Now the manual move carries on and reaches its requested speed, while commands that really should cancel it, such as a goto, an abort, or a newer command on the same axis, still do. The change also fixes a related case where a cancelled move could wipe out the guiding nudge's bookkeeping, adds tests for both cases, and notes it has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "97a9591a33bd78876ed6cba8817617c5b5984d1e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2160,
