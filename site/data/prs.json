@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T08:51:47.745Z",
+  "generatedAt": "2026-11-06T09:51:00.166Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,96 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2157,
+      "title": "Fix iOptron clock sync site publication race",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2157",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T09:36:43Z",
+      "additions": 164,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing problem in the iOptron telescope driver. When the mount connects, it syncs its clock and location in the background, and a date, latitude, longitude or elevation the user set during that sync could be silently replaced with the older value. The user's latest setting now always wins. Also, when the time command has to be resent, it now sends the current time instead of a time captured earlier. New automated tests cover both cases, but it has not been tried on a real mount.",
+      "category": "fix",
+      "summaryHash": "68491a7b786b05a0a9047b40a57ee192f6e90623"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2155,
+      "title": "Fix SynScan pulse end sending its stop outside a wire turn",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2155",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T09:33:34Z",
+      "additions": 141,
+      "deletions": 44,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a SynScan telescope bug where finishing a small guiding correction could undo a user's change to the tracking setting made at the same moment, so tracking showed a value the user never chose. The 'stop' and 'resume tracking' commands at the end of the correction now go out together, using the tracking setting in effect at that moment. One side effect: if resuming tracking fails, tracking briefly shows as off (up to about a tenth of a second) until it is retried. This has been checked with automated tests but not on real hardware.",
+      "category": "fix",
+      "summaryHash": "cc6d33f005f9f3dfd161899f1571c9135bbe407e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2091,
+      "title": "Review and audit follow-ups: drivers, AlpacaHTTP, CI scripts, decision records and tests",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2091",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T09:01:54Z",
+      "additions": 2413,
+      "deletions": 968,
+      "changedFiles": 137,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A large cleanup that addresses many small issues found in earlier reviews and audits, across several device drivers (SynScan, Sky-Watcher, ZWO, QHY, Gemini, WeeWX, Player One, Celestron), the web server, the build and check scripts, and the design documents. Server changes include software updates that only download over secure connections, better handling of static web files, and a fix where a user-set time on ZWO mounts is no longer overwritten by the automatic time sync on connect. It also adds a new, not-yet-required automated check for copy-pasted code, and makes about 300 tests check for the exact error they expect. While adding tests, the team found and fixed a Player One switch crash risk after a sudden disconnect, which no issue had asked for. Most of the code changes were too large to show, so this summary relies mainly on the description.",
+      "category": "fix",
+      "summaryHash": "bc67312fea6511bc3ba1fd053dba17e47554ccbf"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1643,
+      "title": "fix: drop deprecated saveFile() arguments for file_picker 13.3",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1643",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T08:56:39Z",
+      "additions": 0,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup that removes outdated file-type options from four 'save file' dialogs, which the newer version of the file picker library now flags as deprecated. The library was already ignoring these options, so nothing changes for users. Comments that wrongly said the dialogs limited saves to certain file types were removed too. This clears the way for the pending library upgrade.",
+      "category": "chore",
+      "summaryHash": "693b08f4e7f6845c933bfbdfce8fb07dc948f70d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2150,
+      "title": "Fix ZWO AM MoveAxis leaving a guide pulse running",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2150",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T08:53:29Z",
+      "additions": 24,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a safety issue on ZWO AM mounts. Stopping or manually moving an axis did not cancel guiding corrections that were already running or waiting, so the mount could move again right after being told to stop. Manual moves and stops now cancel those corrections, as other motion commands already did. A new automated test covers this, but it was left to the build system to run rather than run locally, and it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "5d80056313f4beaf3913f67879d8a0c57b809bb4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2151,
