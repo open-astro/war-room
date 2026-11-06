@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T11:33:29.683Z",
+  "generatedAt": "2026-11-06T11:49:30.723Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1656,
+      "title": "build: Bump file_picker to 13.3.2 and re-verify its licence pin",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1656",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T11:33:28Z",
+      "additions": 18,
+      "deletions": 18,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Routine internal update: the app's file-selection component was upgraded to a newer version (13.1.0 to 13.3.2), taking over an earlier automated update request. The team confirmed the component's licence terms are unchanged and refreshed the project's list of third-party licences so the automated licence check passes. Nothing changes for users.",
+      "category": "chore",
+      "summaryHash": "454091a97a3c323794c04514e91bd67c8874b502"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2163,
