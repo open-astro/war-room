@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T04:52:53.873Z",
+  "generatedAt": "2026-11-06T05:54:28.115Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1626,
+      "title": "Sky Album in Simple Mode with card art and baseball-card backs (#1521, #1594, #1595)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1626",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T05:48:48Z",
+      "additions": 5559,
+      "deletions": 594,
+      "changedFiles": 259,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now has a Sky Album button that opens a collectible card binder of the Messier and Caldwell objects. Each card shows a bundled picture of the object (219 pictures, all licensed for commercial use and credited on the card and the About page), grey until you have imaged it and in colour once you have. The back of each card lists your recent nights on that object, totals and a short fact, with a button that jumps straight into planning a session for it. Your collection is saved on the device and combined across every rig, so deleting frames never takes a card away. The changelog also records a change the description doesn't mention: Simple Mode's \"Guide\" mode is renamed \"Guider\".",
+      "category": "feature",
+      "summaryHash": "7fd280b6324eff85a3975e59b42d49aee88937c0"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1621,
+      "title": "docs: record three rejected requests in .out-of-scope",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1621",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T05:23:08Z",
+      "additions": 86,
+      "deletions": 9,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Docs only: adds a new folder recording three feature requests the team has turned down, with the reasons, so they don't get debated again. The three are a deeper offline star map, a remote internet access mode (users should use a VPN instead, which also rules out encrypted backups), and two scoring and points ideas for Tonight's Sky. The internal design guide now says remote access is \"not planned\" rather than \"deferred\".",
+      "category": "docs",
+      "summaryHash": "275f0f81a8c8dfdcad7016441971bd4a399b339e"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1631,
+      "title": "fix: bind SuperNOVAS remainder() to the base glibc symbol version",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1631",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T04:55:53Z",
+      "additions": 49,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Build and test fix with no change for users. After the build machines moved to a newer Linux version, one of the bundled astronomy libraries was built in a way the app's server image could not load, and that blocked every code change from passing its checks. The build now produces a library that works on the older system, and a new check fails early with a clear message if this ever happens again. It also fixes a test that wrongly counted shortcut entries as disk drives on the new build machines.",
+      "category": "ci",
+      "summaryHash": "cad44b718073c95dd41bbb4e99620ae1a136f9a8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2111,
