@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T18:30:21.475Z",
+  "generatedAt": "2026-11-06T19:43:57.367Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When you open the Sky Album, any cards you've collected or upgraded to a higher tier since your last visit now appear on their own row at the top, with a heading like \"2 new cards · 1 tier up since your last visit\". Each of these cards plays a short one-time animation, fading from grey into full colour, so new progress is easy to spot even if the card sits far down the album. The row disappears on the next visit if nothing has changed, screen readers announce which cards are new or upgraded, and desktop users can now drag the rows sideways with a mouse. The visible changes cover the new wording (English and Portuguese), design notes and changelog; the main screen and card changes were cut from the provided diff, so the animation behaviour itself couldn't be checked against the code.",
+      "category": "feature",
+      "summaryHash": "38cbbba76009e4fcb22ddce257d833f69e4484bc"
     },
     {
       "repo": "open-astro/AlpacaBridge",
