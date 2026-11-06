@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T06:53:16.448Z",
+  "generatedAt": "2026-11-06T07:53:24.257Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,79 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2149,
+      "title": "Tests: forward the gphoto version read outside LockedGPhotoSDK's shared mutex (sweep flake)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2149",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-06T07:46:31Z",
+      "additions": 71,
+      "deletions": 14,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a test that failed at random on unrelated changes. The test checks that the gphoto camera driver reports its software version quickly while a camera is still connecting, but a test helper made that version check wait for the slow connect to finish. Only test code changed: the helper now behaves like the real driver, which never makes that check wait, and a new test makes sure the problem does not come back. Nothing changes for users.",
+      "category": "tests",
+      "summaryHash": "bd5f93302c707d645c4d8543f28789f19fa3dc97"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2112,
+      "title": "ZWO AM: port the Slewing and IsPulseGuiding deadlines onto util::HoldWindow (0022 row partial)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2112",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-06T07:46:31Z",
+      "additions": 113,
+      "deletions": 41,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO mount driver tracks how long it should report \"slewing\" after a move command and \"pulse guiding\" until a guide pulse ends. It now does this with the same shared timer that the other telescope drivers use, instead of its own hand-written version. Nothing should change for users: the timings and the moments the timers start and stop stay the same. The project's design notes now mark the ZWO driver as partly converted and list the gaps still open. The code matches the description.",
+      "category": "refactor",
+      "summaryHash": "523c29268775e527dbd1030293c1a0a284f6d819"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2104,
+      "title": "Report the PR-body and ADR gates in the merge queue",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2104",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-06T07:40:19Z",
+      "additions": 43,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal CI change. It prepares four pull-request checks, including the one that requires approval before anyone edits a design decision record, to become mandatory before code can merge into the main branch. Before this change, making them mandatory would have blocked every merge. The new merge-queue step does not re-check anything: it always passes, on the grounds that the check already passed before the pull request entered the queue. Making the checks mandatory is a separate manual settings change after this merge.",
+      "category": "ci",
+      "summaryHash": "1b88f60f5bb2f9358d63482f93d4bb7e428498f6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1617,
+      "title": "build: Bump com.android.application from 9.5.0 to 9.5.1 in /client/openastroara_client/android in the gradle group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1617",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-06T07:37:16Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "java"
+      ],
+      "summary": "Routine automated update of the Android build tooling for the OpenAstro ARA client app, from version 9.5.0 to 9.5.1. It is a one-line maintenance change with no visible effect for users.",
+      "category": "chore",
+      "summaryHash": "438de24d951800ff2ce1ddcf592d2515ab92a2e6"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1636,
