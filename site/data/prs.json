@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T05:54:28.115Z",
+  "generatedAt": "2026-11-06T06:53:16.448Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,43 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1636,
+      "title": "ci: Bump the github-actions group across 1 directory with 4 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1636",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-06T06:52:40Z",
+      "additions": 9,
+      "deletions": 9,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine automated update of tools used by the project's build and checking pipeline: the .NET setup step, the AI code-review step, and the security-scanning step each move to a newer minor version. Nothing in the app itself changes. One small leftover: a note beside the .NET setup step still says it is version 4, even though it now points to version 6.1.",
+      "category": "ci",
+      "summaryHash": "05ad401972b62e4f1e8800f2e549f4b99b3a7d57"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1625,
+      "title": "fix: skip symlinked /dev nodes as storage-switch stand-ins",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1625",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T06:19:36Z",
+      "additions": 18,
+      "deletions": 3,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a test so that storage-switching tests stay reliable on newer Ubuntu build machines. On those machines, some tests picked a shortcut (a link pointing to a real drive) as a pretend drive. That made 4 of them fail. The actual fix that ignores these shortcuts was already made in an earlier change, so despite its \"fix\" title, this one only adds the guard test and a comment explaining the issue. The app's storage-switching behavior itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "699c1a8df62a6336811b0b7b770e1f0512e5fa02"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1626,
