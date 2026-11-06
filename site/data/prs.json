@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T11:49:30.723Z",
+  "generatedAt": "2026-11-06T12:48:31.156Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1654,
+      "title": "Simple Mode Plan: stop at dawn and park at the end",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1654",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T12:04:01Z",
+      "additions": 919,
+      "deletions": 53,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2161,
+      "title": "Document and test the UTCDate host-clock contract",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2161",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T11:59:55Z",
+      "additions": 63,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This change writes down and tests an existing rule. When a user's app sends the current time to the telescope, the small computer at the telescope sets its own clock from that time even if the telescope itself rejects it. Any error from the telescope is still passed back to the app. Only an explanatory note, documentation and new tests were added, and nothing behaves differently, even though the changelog entry files it under \"Fixed\".",
+      "category": "tests",
+      "summaryHash": "8ddbd8f6850ffc3f23ba2dc48a0a1a76e8a13abd"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1656,
