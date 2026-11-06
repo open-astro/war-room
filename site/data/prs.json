@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T13:49:14.215Z",
+  "generatedAt": "2026-11-06T16:45:17.144Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2164,
+      "title": "Fix Gemini focuser connect probe timeout",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2164",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T16:21:55Z",
+      "additions": 119,
+      "deletions": 1,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Connecting to a Gemini focuser on a port that answers at first and then stops responding now gives up in about 2 seconds instead of about 10, and disconnecting during that attempt also waits about 2 seconds instead of 10. This keeps connection attempts inside the expected 5-second limit, so software controlling the telescope is not left hanging. Only the first check during connection waits less for replies; normal operation is unchanged. It has been tested only against a simulated focuser, not real hardware, and a focuser that is slow to report its temperature may show no temperature reading for about 30 seconds after connecting.",
+      "category": "fix",
+      "summaryHash": "f296f92b218a903c3456fd7caf95977c8a05bd7b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1614,
