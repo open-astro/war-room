@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T09:51:00.166Z",
+  "generatedAt": "2026-11-06T10:50:47.496Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2160,
+      "title": "Fix Player One Name enumerating cameras while disconnected",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2160",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T10:03:48Z",
+      "additions": 44,
+      "deletions": 58,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Asking a Player One camera for its name no longer makes the server talk to the camera hardware, so the answer can no longer get stuck waiting behind other camera activity. The name is now remembered when the server starts and each time the camera connects, and it is kept after a disconnect. One side effect: a camera that is unplugged when the server starts shows a generic \"Player One Camera\" name until it is first connected. The change is covered by new automated tests but has not yet been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "8b5e678b141edc64864c6f1647ebc40e0af380f5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1653,
+      "title": "build: Bump Scalar.AspNetCore to 2.19.0 and regenerate licence notices",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1653",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T09:55:41Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Routine internal update of one third-party library (Scalar.AspNetCore, from 2.18.7 to 2.19.0), along with the matching update to the list of third-party licences so the build checks pass. There is no change users will notice. It replaces an earlier attempt at the same update that could not pass those checks.",
+      "category": "chore",
+      "summaryHash": "8b96e991e0ee7506e9916388a95f7b5800196ae1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2159,
+      "title": "Remove unbuilt QHY SDK static library, demo apps and PDF",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2159",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T09:54:26Z",
+      "additions": 10,
+      "deletions": 16049,
+      "changedFiles": 108,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup that deletes about 16,000 lines of unused files from the QHY camera maker's software bundle stored in the project: sample programs, a library file nothing uses, and a PDF manual. New rules stop these files from being added back the next time that bundle is updated. Nothing about the build, the installed package, or how cameras behave changes.",
+      "category": "chore",
+      "summaryHash": "2251d0a83beee973273f4ca1390919d44e167c6c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2157,
