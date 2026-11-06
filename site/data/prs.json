@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T00:11:25.648Z",
+  "generatedAt": "2026-11-06T01:54:24.338Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2106,
+      "title": "ZWO AM: Park a tracking AM5, and fail a Park that did nothing",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2106",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-06T01:18:56Z",
+      "additions": 164,
+      "deletions": 26,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Parking a ZWO AM mount now works properly when the mount is tracking the sky. The mount used to say it was safely parked when it had not moved. The software now turns tracking off before asking the mount to park, because some AM5 mounts ignore the park request while tracking. If a mount (other than the AM5N model) never moves and does not confirm it parked, the park is now reported as failed instead of as parked. This matters because other tools rely on the 'parked' signal before closing a roof or shutting down, so a false 'parked' was a safety risk.",
+      "category": "fix",
+      "summaryHash": "23df3615d88c98b8de046a9bc6f7f9f5cafb6e1f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2098,
