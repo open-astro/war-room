@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T03:42:07.002Z",
+  "generatedAt": "2026-11-06T04:52:53.873Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,56 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2111,
+      "title": "Merge stable/6.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2111",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-06T04:25:13Z",
+      "additions": 255,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "This brings the 6.0 beta 1 release notes and two corrected change-log entries from the 6.0 beta branch back into the main branch. The main branch keeps its current version number, 5.0.2, so it does not show a beta version. It also refreshes the code-size badge and the 'last updated' date on the supported-hardware list. One correction changes how a ZWO camera behaviour is described: changing the image area is refused only while an exposure runs, and a change made after an exposure throws away the unread image.",
+      "category": "docs",
+      "summaryHash": "18aeb136d6517304b22d0ae18d22bb050bf728d0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2110,
+      "title": "ZWO AM: an initiator's command no longer overtakes a guide pulse step being sent",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2110",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-06T04:14:12Z",
+      "additions": 103,
+      "deletions": 11,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a timing problem on ZWO AM mounts. A small guiding nudge could reach the mount just after a stop, park or go-home command, so the mount got a stale nudge after the command that should have cancelled it. Now these commands, along with sync, unpark, set-park and go-to, wait for any nudge already on its way to finish before they send their own command. A new automated test checks the stop, park and go-home cases.",
+      "category": "fix",
+      "summaryHash": "3e843896fd10ddd03dfc339c010f948c34b0023e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2109,
+      "title": "Dispatch the apt release from the Release workflow",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2109",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-06T04:03:07Z",
+      "additions": 51,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "New releases and betas should now reach the apt install repository a minute or two after they are tagged. Before this, they could wait several hours for a scheduled check. The release process now signals the apt repository directly, using a narrowly scoped access that can only start its publishing job. The new step stays switched off until a project setting is configured and has not yet run for real, and the old scheduled check remains as a backup.",
+      "category": "ci",
+      "summaryHash": "0c7784d04de65c8e0e263ffb194dd11902399616"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2108,
