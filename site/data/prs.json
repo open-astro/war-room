@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T07:53:24.257Z",
+  "generatedAt": "2026-11-06T08:51:47.745Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2151,
+      "title": "Log parked and slaved refusals at DEBUG, not ERROR",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2151",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T08:29:14Z",
+      "additions": 80,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When an app asks a parked or slaved telescope mount to do something it can't do in that state, the server now records it as a low-priority debug note instead of an error. These refusals are normal and caused by the user's app, so the error log stays focused on real problems. What the app receives back is unchanged. A related, broader type of refusal still shows up as an error, because it is sometimes a real fault, and that part is left for later work.",
+      "category": "fix",
+      "summaryHash": "ecc0cc401138494a5980df48d21aa0fe58c14a77"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2152,
+      "title": "Fix ZWO camera stress coverage check under CPU starvation",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2152",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-06T08:03:27Z",
+      "additions": 14,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change that stops two ZWO camera stress tests from failing at random on busy test machines. Each test now takes one short, undisturbed exposure before the stress run starts, so the check that an image was downloaded no longer depends on timing. A similar intermittent problem in the focuser tests is not addressed here and is still being investigated.",
+      "category": "tests",
+      "summaryHash": "cf480cce95021a3afc66f29acc4fa4b38f9e92ca"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2149,
