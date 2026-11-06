@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T16:45:17.144Z",
+  "generatedAt": "2026-11-06T18:30:21.475Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1658,
+      "title": "Sky Album: new cards since your last visit play a one-time reveal on their own shelf",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1658",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-06T17:50:43Z",
+      "additions": 453,
+      "deletions": 37,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2164,
