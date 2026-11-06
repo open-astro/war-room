@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T23:39:09.184Z",
+  "generatedAt": "2026-11-06T00:11:25.648Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a timing bug in the ZWO AM mount driver where two people (or programs) controlling the telescope at once could get the wrong result. Before, if someone asked the mount to park, go home, move manually, or stop, and someone else asked it to slew to a target at almost the same moment, the mount could end up slewing to the target even though the park or stop looked like it finished last. Now those four commands hold the mount's slew lock until their own instruction has actually been sent, so the mount does what the requests' finishing order suggests. The code matches the description; it also adds tests for these cases, including checks that disconnecting is never held up and that unparking was already safe.",
+      "category": "fix",
+      "summaryHash": "572cab4aa6d0460f23f785e09e856c31646e8d76"
     },
     {
       "repo": "open-astro/AlpacaBridge",
