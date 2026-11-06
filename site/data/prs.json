@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T12:48:31.156Z",
+  "generatedAt": "2026-11-06T13:49:14.215Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,56 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1614,
+      "title": "Polar Align turns tracking on before the guider's RA turn",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1614",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-06T13:23:50Z",
+      "additions": 242,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Polar alignment now switches the mount's tracking on before the guider starts turning the telescope, because some mounts (an iOptron in testing) refuse to move while tracking is off, which made the routine fail. If tracking drops partway through, for example after a mount reconnect, Ara turns it back on, and when the routine ends it puts tracking back the way the user had it. If the mount won't start tracking at all, the routine stops with a clear message telling the user to turn it on themselves. The version that re-enables tracking mid-run has not yet been tried through a real mount reconnect on the rig.",
+      "category": "fix",
+      "summaryHash": "15a9b5d07ff79f7cda1e4d8944659cb2949d39ab"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1613,
+      "title": "Polar Align panel describes the guider's routine, not plate solves",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1613",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-06T12:59:52Z",
+      "additions": 216,
+      "deletions": 523,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "The Polar Align screens in the app now describe what actually happens: the guider follows a star while the mount turns, instead of the old wording about plate solves. The Loop/Single switch, the Take Frame button and the per-frame solve details are gone from both the full screen and Simple Mode, since they no longer did anything. A lost star now reads \"The guider cannot see the star\" instead of \"No solve\", in English and Brazilian Portuguese. The live view now refreshes every two seconds while the routine runs.",
+      "category": "refactor",
+      "summaryHash": "5d1d4d949731e092d70fc73635ef7c13271c3c19"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2154,
+      "title": "Fix Bisque own-state reads and writes answering on a faulted link",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2154",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-06T12:48:46Z",
+      "additions": 164,
+      "deletions": 50,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the connection between the bridge and TheSkyX (Bisque mount software) breaks, the mount driver now answers every status question and every command with one clear error. Before, it kept giving out-of-date information or tried to send commands over the broken link. The emergency stop for slewing still tries to reach the mount. Separately, the Celestron and SynScan drivers now report \"not connected\" instead of a made-up value when asked about tracking speed while disconnected.",
+      "category": "fix",
+      "summaryHash": "8068f365536a44786b92b90fd4e73b271467b6f6"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1654,
@@ -23,9 +73,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Sessions planned in Simple Mode now park the mount after the last target. A session that starts in the dark also stops at dawn, based on the site's twilight setting. Targets that haven't started by dawn are skipped, and no new exposure starts if it would run past dawn. The plan sheet shows \"Stops at dawn\" with the time, the last queue square says \"Parks\", and the end-of-night summary says \"stopped at dawn\" when dawn cut the run short. A session started in daylight (for indoor testing) still parks but has no dawn stop. The author confirmed the server's dawn handling by reading the code, not with a server-side test.",
+      "category": "feature",
+      "summaryHash": "a460559b31f0d82baeca3e80f016200246a8eed5"
     },
     {
       "repo": "open-astro/AlpacaBridge",
