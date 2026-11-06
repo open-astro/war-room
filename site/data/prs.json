@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T02:53:23.814Z",
+  "generatedAt": "2026-11-06T03:42:07.002Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2108,
+      "title": "Release 6.0.0-beta.1",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2108",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-06T03:37:20Z",
+      "additions": 257,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Prepares the first public beta of AlpacaBridge 6.0 by setting the version number to 6.0.0 beta 1 and adding plain-language release notes for testers. It also updates the release date and code-size badges on the project page and corrects two out-of-date change notes, one about how ZWO cameras handle frame-size changes and one that wrongly said no camera driver used the new capture code. No program code changed; the beta tag and the beta package still need to be published after the merge.",
+      "category": "chore",
+      "summaryHash": "accdebeafc1f1bcca90547da9eacc54693e2983f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2107,
+      "title": "ZWO AM: an older Sync no longer stops a newer MoveAxis, FindHome, Park or Unpark",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2107",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-06T03:22:32Z",
+      "additions": 151,
+      "deletions": 36,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing bug in the ZWO AM mount driver where an older Sync command that was still waiting for the mount to settle could stop a newer move, home, park or unpark command. Each of those commands now marks itself as the newest one before it talks to the mount, so the older Sync steps aside instead of halting it. The error message a superseded Sync returns is also reworded to be neutral, since the newer command (for example, an abort) may not have started any motion. A similar gap for guiding pulses is not covered here and is tracked separately.",
+      "category": "fix",
+      "summaryHash": "acdb40ef06b1eb366a8506cd1a537606b875992a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2105,
@@ -23,9 +57,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Telescope drivers for OnStep, iOptron, Celestron, Bisque, SynScan and SkyWatcher now correctly report \"not connected\" when an app asks for the target position or tries to slew or sync to it before connecting, instead of the misleading \"no target set\". This lets imaging apps tell a disconnected mount apart from a connected one with no target. On OnStep, Celestron and iOptron, reading the target is also refused while the link to the mount has failed, matching how other similar readings behave. An automated check across all telescope drivers now guards this behaviour.",
+      "category": "fix",
+      "summaryHash": "7a85fa41c1cdc5df2588327b3497fa75305c66f3"
     },
     {
       "repo": "open-astro/AlpacaBridge",
