@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T03:17:03.384Z",
+  "generatedAt": "2026-11-07T03:36:02.338Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2176,
+      "title": "Fix SynScan tracking restore after a refused slot start",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2176",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-07T03:30:56Z",
+      "additions": 111,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a case where SynScan telescope mounts could stop tracking the sky while the software still reported them as tracking. When the system can't start a new move or guiding nudge, the driver stops the mount, and that stop also turns tracking off; the driver now turns tracking back on right after, the same way a normal abort already does. If turning tracking back on fails, the software now honestly reports that the mount is not tracking until a later attempt works. The code matches the description, and new tests cover these cases, though it has not been tried on a real mount.",
+      "category": "fix",
+      "summaryHash": "e66359b856f71452743b3d9eaa2a1519d7e147e7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2171,
