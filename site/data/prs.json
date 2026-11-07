@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T05:36:59.381Z",
+  "generatedAt": "2026-11-07T06:37:59.987Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2177,
+      "title": "Let client exchanges go ahead of the ZWO AM telemetry poll (#2165)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2177",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-07T06:29:37Z",
+      "additions": 95,
+      "deletions": 4,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Commands sent to a ZWO AM mount, including stopping it mid-move, no longer get stuck waiting behind the mount's routine background status checks. Over the AM5's Wi-Fi link those checks could delay a setting change or a stop by 2 to 3.5 seconds; now a command waits for at most the one status check already in progress. The background checks pause for up to a second to let commands through, so status updates may slow slightly under heavy use, and nothing changes for other mounts or for USB timing. Confirmation on real hardware over Wi-Fi is still pending.",
+      "category": "fix",
+      "summaryHash": "482b59e02b67caebd402da324568c3b69f643c84"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1670,
+      "title": "Simple Mode: a Rotator window, coarse and fine focus knobs (#1662)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1670",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-07T06:28:28Z",
+      "additions": 3367,
+      "deletions": 371,
+      "changedFiles": 35,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode gets a new Rotator window: you turn a dial to choose an angle, tap Start in the middle to rotate (it becomes Stop while turning), or use Sync to tell the rotator where it already is without moving it. The Focuser window is redesigned with two roll-style knobs, Coarse and Fine, in place of the old round dial and step picker, and Autofocus becomes a full-width button below them. It also fixes a safety gap: Emergency Stop now actually halts a turning rotator, where before a rotator kept moving after the stop. The server gains a matching \"halt rotator\" command, and this is the second of six planned Simple Mode device windows.",
+      "category": "feature",
+      "summaryHash": "05a6121cd20bd92384389fce29df79043719f369"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2173,
