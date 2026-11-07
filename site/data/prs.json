@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T19:43:57.367Z",
+  "generatedAt": "2026-11-07T01:37:41.550Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2169,
+      "title": "ZWO AM: a timed-out :G query returns no reply, not a cut one (#2103)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2169",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-07T00:51:58Z",
+      "additions": 103,
+      "deletions": 8,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where a ZWO AM mount that failed to answer one question could cause the bridge to misread its next status report. The driver was treating a reply cut off after its first letter as the full answer, so with tracking off it could wrongly think the mount was moving and lose other information such as whether it was stopped or at home. Now a reply that runs out of time counts as no answer, and the leftover data is cleaned up before the next question. The code change is a single line and matches the description. Most of the PR is new tests, and the changelog notes the problem only shows up when the response timeout is set to about 600 ms or less, not with the default 5 seconds.",
+      "category": "fix",
+      "summaryHash": "a50e31c8b9c39ce42e5300da497858891d6424a6"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1658,
