@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T03:36:02.338Z",
+  "generatedAt": "2026-11-07T04:38:31.003Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1666,
+      "title": "Simple Mode: a Filter wheel window (#1662)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1666",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-07T03:43:35Z",
+      "additions": 1057,
+      "deletions": 37,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now has its own Filter wheel window: tapping the filter wheel's status dot opens a small panel over the image instead of jumping to the full app's Settings page, and the same window appears under Settings › Devices. It shows which filter is in place, lets you tap another filter to switch (showing \"Moving to Ha…\" until it arrives), asks before changing while a plan is running, and guides you through a hand swap on manual wheels. It also tidies up some shared controls so locked buttons are announced properly to screen readers and long filter names are shortened neatly. This is the first of six planned device windows; the code changes to the window itself were trimmed from the diff, so only the wording, translations (English and Portuguese) and notes could be checked directly.",
+      "category": "feature",
+      "summaryHash": "08d987e2ea508fd924ac5cc9b6e174b7e56e3288"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2176,
