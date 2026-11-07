@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T17:28:53.761Z",
+  "generatedAt": "2026-11-07T18:29:21.082Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1688,
+      "title": "Stop the guider handshake test racing the profile query",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1688",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-07T17:55:29Z",
+      "additions": 14,
+      "deletions": 11,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "This fixes a test that sometimes failed for no real reason. The test was checking for a step in the connection process before that step had happened. Because that test must pass before anything can be merged, the random failures were knocking pull requests out of the new merge queue. It also makes the team's pull-request helper report clearly, and count it as a failure, when a pull request does not actually land, and it corrects one line in the project guide so it matches the rest. This is internal only and changes nothing for users.",
+      "category": "tests",
+      "summaryHash": "fa3219ccbde5b96e71d0076d4d80a2475093b9d3"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1687,
@@ -21,9 +37,9 @@
       "deletions": 75,
       "changedFiles": 10,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This gets the main branch ready for GitHub's merge queue, which checks each pull request against the very latest code before merging it. The automated checks now run inside the queue and skip the full test run when a change only touches documentation. The team's merge helper and written rules were also updated to send work through the queue instead of merging directly. The queue itself is not turned on by this change and still has to be switched on separately in the repository settings. After that, every merge will be combined into a single commit, and the old habit of deleting the branch as part of the merge command will no longer work.",
+      "category": "ci",
+      "summaryHash": "26fd91fd34d34b3b630e31de3208e1155a5894d9"
     },
     {
       "repo": "open-astro/openastro-ara",
