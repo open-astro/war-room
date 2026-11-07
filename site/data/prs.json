@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T01:37:41.550Z",
+  "generatedAt": "2026-11-07T02:38:08.756Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2168,
+      "title": "Read Celestron CGX UTCDate from the pointing time source (decision 0001)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2168",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-07T02:13:44Z",
+      "additions": 447,
+      "deletions": 412,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX and CGX-L telescope mounts, connected directly over USB, now report the current date and time as soon as they connect, using the same computer clock that already drives their sky-position math. Before this, asking for the time gave an error until a program first set it, which stopped the standard compatibility checker at its very first test and left the time out of step with the positions. If the computer's clock is already kept accurate automatically over the network, attempts to set the mount's time are now politely refused rather than accepted. A fresh compatibility test run on real hardware now passes with no errors or warnings, and the code changes visible in the diff (mostly test updates and documentation) match what the description claims.",
+      "category": "fix",
+      "summaryHash": "bc77c2c2c553b76d3fd7c14166611a51038667cb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2169,
