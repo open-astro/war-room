@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T18:29:21.082Z",
+  "generatedAt": "2026-11-07T23:59:28.030Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2183,
+      "title": "Fix OnStep SideOfPier past the meridian; model DestinationSideOfPier; settable SideOfPier (#2179)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2183",
+      "author": "kern2011",
+      "base": "main",
+      "mergedAt": "2026-11-07T23:58:15Z",
+      "additions": 1921,
+      "deletions": 508,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Automatic meridian flips in NINA now work on OnStep telescope mounts with the default firmware settings. Before, the bridge guessed which side of the pier the telescope was on from where it was pointing in the sky. With the firmware's default setting the mount actually stays on its side for a while past the meridian, so NINA thought the flip had already happened, skipped it, and let the mount run into its limit and stop. The bridge now reports the side the mount says it is on, predicts which side the mount will choose for its next move, and lets NINA ask for a flip directly on newer OnStep German-style mounts, using the mount's own built-in flip command. The visible code changes match the description, which reports a successful test on real hardware; other mount types, older OnStep firmware, and mounts with flips turned off keep the old behaviour.",
+      "category": "fix",
+      "summaryHash": "3e9e7970e89cd3c02f5e9378dd26915008248a98"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1688,
