@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T16:29:45.076Z",
+  "generatedAt": "2026-11-07T17:28:53.761Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1687,
+      "title": "Get master ready for a merge queue",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1687",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-07T17:17:29Z",
+      "additions": 113,
+      "deletions": 75,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1686,
