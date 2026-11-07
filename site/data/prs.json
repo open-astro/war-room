@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T07:36:02.335Z",
+  "generatedAt": "2026-11-07T09:34:57.997Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2174,
+      "title": "Fix iOptron Slewing during a pulse after an unpolled GOTO",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2174",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-07T08:43:23Z",
+      "additions": 175,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug in the iOptron telescope driver where the mount could wrongly report that it was still moving to a target during a short guiding nudge. This happened when an app started a move to a target and never checked whether the move had finished. Before a guiding nudge, the driver now checks with the mount whether that earlier move is done, so the 'moving' status is correct, and a later manual move no longer counts the finished move as still running. The change has only been tested against a simulated mount, not real hardware, and a communication error during that new check now makes the guiding nudge fail instead of going ahead.",
+      "category": "fix",
+      "summaryHash": "c199ab8aca4481059cd036c02fcfee7551ad153a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2175,
