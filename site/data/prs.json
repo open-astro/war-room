@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T13:32:22.684Z",
+  "generatedAt": "2026-11-07T15:30:46.665Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1682,
+      "title": "Simple Mode: a Weather window (#1662)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1682",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-07T15:02:45Z",
+      "additions": 2246,
+      "deletions": 96,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now has its own Weather window: tapping the weather station's dot opens a read-only panel over the image instead of jumping to the full app's Settings page. It shows the station's readings as tiles (cloud cover, sky quality, temperature, dew point, humidity, rain, wind with direction and gusts, plus the moon's phase), marks any reading past the rig's safety limit in amber when weather is set to trigger safety, shows how old the data is, and refuses to show stale numbers if the sensor read fails. The same change also tidies the Switches and Flat panel windows so a slider's level sits on one line after the slider and the slider no longer changes width, and the Switches sensor readings now show units like \"12.4 V\". Most of the code changes weren't visible in the trimmed diff, but the visible parts (wording, design notes and changelog) match the description.",
+      "category": "feature",
+      "summaryHash": "b51174db7750293b30002af0dd8912efba01da98"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1678,
