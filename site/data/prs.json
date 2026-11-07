@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T12:31:57.484Z",
+  "generatedAt": "2026-11-07T13:32:22.684Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1678,
+      "title": "Simple Mode: a Switches window for power and dew outputs (#1651)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1678",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-07T12:59:34Z",
+      "additions": 2091,
+      "deletions": 82,
+      "changedFiles": 35,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now has its own Switches window for power and dew-heater outputs, opened from the Switches dot or from Settings, instead of jumping to the full app's Switch page. Each connected power box lists its switchable ports by name, with On/Off buttons, sliders for dew heaters and other levels, and Auto/Manual choices for dew channels; read-only values like voltage and temperature appear in Settings instead. While a change is being sent, the other controls wait and the status pill says what is being set, and a refused change explains why. Behind the scenes, the server now tells the app each port's step size so sliders stop only on values the device accepts, and it can report a switch device's driver and firmware versions.",
+      "category": "feature",
+      "summaryHash": "4dab239eb5ff977e0bb3b8b96dae8af2ecfce917"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1681,
@@ -23,9 +41,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Simple Mode now has its own Flat panel window, opened from the flat panel's dot or from Settings, instead of jumping to the full app's Settings page. It has Open/Closed buttons for the cover, On/Off for the light, and a brightness slider, beside a small drawing of the panel that opens and glows to match; panels without a cover or a light only show what they have. Every change asks for confirmation while a plan is running, the status pill shows when the cover is moving or the light is warming up, and the flat panel icon is now round instead of square. This uses existing app controls with no server changes, and it has not yet been tried on a real panel.",
+      "category": "feature",
+      "summaryHash": "81c8a71949fa77095c057805647fb7eda9737b8e"
     },
     {
       "repo": "open-astro/AlpacaBridge",
