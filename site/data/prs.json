@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T02:38:08.756Z",
+  "generatedAt": "2026-11-07T03:17:03.384Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2171,
+      "title": "Fix QHY CFW3 link loss to the decision 0009 policy",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2171",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-07T02:49:48Z",
+      "additions": 119,
+      "deletions": 4,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY CFW3 filter wheel now handles a lost connection the same way the project's other drivers do. When its cable or port drops, it keeps a single readable reason (for example \"link lost on\" that port) and records once when the loss happened, clearing both on the next connect or disconnect. Before this, the wheel already reported itself as disconnected but gave no reason or time. Two new tests cover it, and it has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "d7497ce5c4444971729c7a4209eb9c9de2e35290"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2170,
+      "title": "Pin SynScan cancelled pulse stop order with a test",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2170",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-07T02:49:48Z",
+      "additions": 81,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds a test, plus a code comment, for the SynScan telescope's guiding corrections, which are short timed nudges to the mount. It checks that when a new nudge replaces one already running, the stop for the old nudge reaches the mount before the new one starts. There is no change in behaviour; it only makes sure a later change cannot quietly break that order.",
+      "category": "tests",
+      "summaryHash": "b2cd6c9735f0540e987b304afc5b79fe049a8ff0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2168,
