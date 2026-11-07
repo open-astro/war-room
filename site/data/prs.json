@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T09:34:57.997Z",
+  "generatedAt": "2026-11-07T12:31:57.484Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1681,
+      "title": "Simple Mode: a Flat panel window, and a round flat panel icon (#1662)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1681",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-07T12:09:31Z",
+      "additions": 1586,
+      "deletions": 18,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2174,
