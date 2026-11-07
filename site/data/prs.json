@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T15:30:46.665Z",
+  "generatedAt": "2026-11-07T16:29:45.076Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1686,
+      "title": "Polar Align goes back to Ara's plate-solve routine, and keeps tracking on for its seed turn",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1686",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-07T15:45:36Z",
+      "additions": 3878,
+      "deletions": 1210,
+      "changedFiles": 34,
+      "labels": [],
+      "summary": "Polar Align goes back to Ara's own plate-solving method instead of the guider program's built-in tool. The guider's tool follows a single star, and turning the mount's adjustment bolts could push that star out of view, so the live reading froze or jumped right when users needed it. The older per-frame controls and settings come back with it. Polar Align still turns tracking on for its first mount turn and restores the user's setting afterwards, and a mount that will not track now gives a clear 'tracking off' error. The previously reported false 'Excellent' result comes back with this change and is not fixed yet; a follow-up is planned.",
+      "category": "fix",
+      "summaryHash": "a9e2f7858d63a0d84f96958d36423025084f5b66"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1682,
