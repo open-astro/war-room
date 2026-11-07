@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T06:37:59.987Z",
+  "generatedAt": "2026-11-07T07:36:02.335Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2175,
+      "title": "Fix Sky-Watcher stops refused while the link is faulted",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2175",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-07T07:00:31Z",
+      "additions": 280,
+      "deletions": 24,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher telescope mounts can now be told to stop even when the connection to the mount is only partly working. Before, once the bridge noticed a communication problem it refused every command, including \"stop moving\" and \"stop tracking,\" so a stop the mount would have obeyed was never sent. Now stop requests are sent anyway, and the automatic safety guard that halts the mount at its movement limits keeps retrying a stop that didn't get through. Commands that start motion are still blocked while the connection is faulty, nothing is sent if the connection is fully lost, and the change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "656039fcdcde733ebc13670630513b79a6105a06"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2177,
