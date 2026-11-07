@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T04:38:31.003Z",
+  "generatedAt": "2026-11-07T05:36:59.381Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2173,
+      "title": "Fix ZWO AM pulse ownership against Sync, redundant connect and stale starts (#2093, #2095, #2096)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2173",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-07T05:33:06Z",
+      "additions": 334,
+      "deletions": 25,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes three timing problems in the ZWO AM mount driver on the 6.0 release line where a guide pulse the mount had already accepted could be cut short or overlapped by another command. A Sync that was waiting for the mount to stop moving could stop a newer guide pulse, a repeated \"connect\" request while already connected could let the next pulse start on top of one still running, and an old pulse start delayed by a reset could wipe out a newer pulse. The code matches the description and adds tests for each case. As the description itself notes, a similar issue with manual moves, homing, parking and unparking against Sync is still open on this release line.",
+      "category": "fix",
+      "summaryHash": "b1c63355f6546ba9e486ab759616e0c9fca05464"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1666,
