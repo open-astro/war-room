@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T15:11:19.090Z",
+  "generatedAt": "2026-11-08T22:05:21.505Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,56 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2188,
+      "title": "Fix iOptron Tracking reading false while the mount pulse guides or flips (#2186)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2188",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-08T21:58:43Z",
+      "additions": 86,
+      "deletions": 14,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "iOptron mounts now keep reporting that they are tracking while they make small guiding corrections or flip sides at the meridian. Before, the bridge briefly reported tracking as off during each guide correction, which made OpenAstro Ara raise false \"tracking lost\" alarms (eleven in 50 minutes on one night). A side effect is that some slew commands that check tracking now treat these moments as tracking on. The change is backed by new automated tests but has not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "c3545ee1c7d9e55ea848ce5c51d81d5616dcf407"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 101,
+      "title": "Keep the RPC servers answering while a dark build captures a frame (#100)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/101",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-08T21:51:35Z",
+      "additions": 179,
+      "deletions": 16,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "The guider now keeps answering requests while it builds its library of dark calibration frames. Before, it could not respond while each frame was being taken, so Ara timed out, decided the guider was down, and reconnected in the middle of the build. To keep this safe, changes that could disturb the camera are now refused until the build finishes, including switching profiles, changing camera settings, and shutting down. The description says automatic camera reconnects are left alone, but the code actually holds a reconnect until the build has ended.",
+      "category": "fix",
+      "summaryHash": "c899ed1c1003cd9ea7d40279b72f9ea18873f72c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2189,
+      "title": "Bound ZWO exposure retries by the client's exposure wait (#2187)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2189",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-08T21:27:19Z",
+      "additions": 159,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "When a ZWO camera exposure fails briefly, the bridge now retries it only if the retry can finish before the guiding software gives up waiting, which is about 10 seconds past the exposure. Otherwise it reports the failure right away so the guider can simply retake the frame. Before, slow retries led the guider to disconnect the camera, 24 times in one night on a shared USB hub. This is flagged as a breaking change: long exposures that fail late are no longer retried and now show an error.",
+      "category": "fix",
+      "summaryHash": "58a20b4ff74d3e4003fefeb4b162458640d35428"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1708,
