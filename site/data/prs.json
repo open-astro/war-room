@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T07:16:55.823Z",
+  "generatedAt": "2026-11-08T08:16:13.065Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1695,
+      "title": "Record the architecture decisions in docs/adr",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1695",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T08:05:24Z",
+      "additions": 516,
+      "deletions": 48,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project's major design decisions now each have a single written record in one place. The decisions covered include: the telescope computer runs the equipment while the app shows the screens, equipment is limited to one standard, and Simple Mode works on the same setup as the full app. Before this, the same decisions were repeated across several long planning documents. Those documents now just point to the matching record, so there is one source of truth that reviewers and the automated review bot can check changes against. This is documentation only and does not change the app; three of the records are proposals for work that has not been built yet.",
+      "category": "docs",
+      "summaryHash": "4a7ff79146d71375274264fefbf01b0d543b5a80"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1691,
+      "title": "Start guiding that fails says why: the Guider's reason in a pill (#1664)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1691",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T07:36:01Z",
+      "additions": 462,
+      "deletions": 22,
+      "changedFiles": 23,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When guiding fails to start, the app now tells the person why. For example, it shows \"Guiding didn't start: Stopped capturing\" when the guide camera isn't connected. Before, the app silently waited about 30 seconds and then went back to Start with no message, which left people guessing on the night. A failed start now ends right away, and a slow settle after guiding has already begun is no longer treated as a failure. The message appears in Simple Mode, Night Setup and the guiding strip, in English and Brazilian Portuguese.",
+      "category": "fix",
+      "summaryHash": "990b353696930d65d92ce89a8ab96395c6382974"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1694,
