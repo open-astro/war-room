@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T05:18:44.921Z",
+  "generatedAt": "2026-11-08T06:04:02.671Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1693,
+      "title": "Simple Mode: a device window, the Ara sheet and Search close each other (#1674)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1693",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T05:45:16Z",
+      "additions": 68,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode on a wide screen, a device window, the OpenAstro Ara info sheet and Search no longer stay open on top of each other. Opening any one of them now closes the others. Before, they all opened in the same top-left corner, so one could hide the other; a user found the Ara sheet covering most of a switch's controls. The rest of the planned work, moving these panels to a new spot, is left for a later change.",
+      "category": "fix",
+      "summaryHash": "6eb30fb72c54194f5d435c6b5aa63d3ee50f797c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1615,
+      "title": "The bug report can carry the whole rig's logs for a night",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1615",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-08T05:45:16Z",
+      "additions": 1318,
+      "deletions": 80,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"Send me a bug report\" option can now cover a time range: last night (the default), the last 3 days, the last 7 days, or Ara's own logs only. With a range, the rig gathers the logs from all of its parts into one download, along with a list of what was included or left out and why. Until now these logs had to be copied off the rig by hand. Very large files are trimmed, everything still goes through the chosen privacy scrub, and the app shows progress while the rig packs it in the background. One planned check on real hardware with the final build was not yet done at merge time.",
+      "category": "feature",
+      "summaryHash": "0c392dd9416249fdefd04a97b7996ea94ee65595"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2184,
