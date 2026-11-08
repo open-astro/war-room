@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T23:59:28.030Z",
+  "generatedAt": "2026-11-08T04:19:34.494Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1690,
+      "title": "Simple Mode: Dome and Safety monitor windows (#1662)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1690",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T03:48:38Z",
+      "additions": 4704,
+      "deletions": 23,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now has its own Dome and Safety monitor windows, so no device dot sends people to the full app's Settings page any more. The Dome window shows which way the dome faces, a drawing of the dome opening and closing, and a dial you can drag to pick a direction and press play to turn there. It also has buttons for the shutter, Park and Home, and shows only what the dome can actually do. The Safety monitor window shows Safe or Unsafe and since when, and explains what Ara will do about it, including any weather reading that is past its safety limit. The status strip gains matching messages like \"Dome · Parking…\" and \"Safety monitor · Unsafe since 02:14\", and the dome is checked more often while it moves so the end of a move shows right away. Most of the window code was too large to show here, so the details come mainly from the description and the changelog.",
+      "category": "feature",
+      "summaryHash": "48a9c0c99054018ca9424d55fe08fa16b2613fde"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2183,
