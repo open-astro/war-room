@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T12:14:07.485Z",
+  "generatedAt": "2026-11-08T15:11:19.090Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1708,
+      "title": "Simple Mode: fixes from the first real night",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1708",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T14:28:28Z",
+      "additions": 2204,
+      "deletions": 224,
+      "changedFiles": 45,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a batch of problems in Simple Mode, the screen people use at the telescope, that showed up during the first real night of use. Emergency Stop now also halts the guide-camera focus loop, the focus-assist readout, autofocus and polar alignment, and a guide-camera loop left running after reopening the app can now always be found and stopped. Searching for a target now actually sets it so it can be queued, objects outside tonight's top list show their real height in the sky instead of being wrongly called below the horizon, and plans no longer pause for a filter change on setups without a filter wheel. It also makes the autofocus chart large enough to read, adds a thin outline so panels don't vanish against similar backgrounds, and adds several requested extras, such as guiding adjustment sliders, a camera picker in Preview and a fix for the frame counter resetting to 0 during a run.",
+      "category": "fix",
+      "summaryHash": "2543836f1c97bec416630fe319066db1d5ad3fa5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1704,
