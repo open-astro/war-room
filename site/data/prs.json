@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T06:04:02.671Z",
+  "generatedAt": "2026-11-08T07:16:55.823Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1694,
+      "title": "Add the PR body gates and the decision-record authorization check",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1694",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T07:01:51Z",
+      "additions": 3078,
+      "deletions": 42,
+      "changedFiles": 23,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This changes how pull requests are reviewed, not the observatory app itself. It adds a new pull request form and automatic checks that fail if a section is missing, or if a new test does not say what change would make it fail. Edits to the project's written design decisions now need a named team member's sign-off before merging. The review bot now gives a pass or problem verdict for each design rule a change touches, and the one existing decision document was rewritten into the new format with the same decision.",
+      "category": "ci",
+      "summaryHash": "8fa19e9173f06bee9c851a058716a317bde9140b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1693,
