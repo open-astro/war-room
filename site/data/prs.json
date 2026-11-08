@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T09:16:21.836Z",
+  "generatedAt": "2026-11-08T12:14:07.485Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1704,
+      "title": "Make the Guider follow a new active profile and refuse when out of step",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1704",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T12:00:11Z",
+      "additions": 537,
+      "deletions": 53,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When you create a new profile and make it the active one, the Guider now switches over to that profile's own guider setup, instead of staying on the previous profile's. If the Guider rejects the new settings, then guiding, polar alignment, building dark frames and defect maps, and focusing the guide camera all stop before taking any pictures and show a clear reason and fix. Before, they could fail with vague messages or quietly use the previous setup's guide camera. The PR also bundles some unrelated behind-the-scenes fixes: automatic retries for flaky downloads in the build system and a fix for a test that sometimes failed at random.",
+      "category": "fix",
+      "summaryHash": "78908ce8a033350836d882c3a95d1c136f49845c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1703,
