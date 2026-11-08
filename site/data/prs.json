@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T04:19:34.494Z",
+  "generatedAt": "2026-11-08T05:18:44.921Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2184,
+      "title": "Fix Gemini cover missing reply latching Error (#2181)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2184",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-08T04:51:57Z",
+      "additions": 216,
+      "deletions": 36,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem with the Gemini v2 flat panel: some panels open or close their dust cover but never confirm it, and the software then wrongly showed the cover as broken. Telescope control programs then dropped the panel. Now a missing confirmation is not treated as a failure. The software checks the panel's live status to report whether the cover is open or closed, and it ignores the late confirmation if it shows up afterward. Real failures and lost connections still show as errors. Tested only with a simulated panel so far, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "71a83c65b2c5b0dcfd09494eea782c6d19eabf32"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1690,
