@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T08:16:13.065Z",
+  "generatedAt": "2026-11-08T09:16:21.836Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1703,
+      "title": "Stop the mount where it is on Emergency Stop",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1703",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-08T09:10:47Z",
+      "additions": 188,
+      "deletions": 78,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Pressing Emergency Stop no longer sends the telescope mount to its parking position. Instead, it halts any movement and turns tracking off, so the mount stays exactly where it is. Parking is itself a movement, and it could repeat the very problem the user was trying to stop. Users now need to park the mount themselves afterwards, and the unsafe-weather reaction still parks as before. This has only been tested in software, not on real hardware, and older versions of the app may show the mount result in a confusing way.",
+      "category": "fix",
+      "summaryHash": "231a193ee87b22fa208453b9465f03ffca4e076e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1695,
