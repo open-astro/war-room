@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T05:01:34.322Z",
+  "generatedAt": "2026-11-09T07:01:02.523Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2190,
+      "title": "Update decision records 0006, 0016, 0017 and their checks",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2190",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-09T06:56:08Z",
+      "additions": 76,
+      "deletions": 29,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings a cleanup already made on the main line over to the stable 6.0 release line. Three of the project's written design rules, covering background tasks, slow device reads and who may use a serial port, were rewritten so they no longer carry special exceptions. The automatic checks were tightened so they fail if such an exception creeps back in, and they now also catch one more way code could talk to a serial port directly. Only documents and check scripts changed; the product itself behaves the same.",
+      "category": "docs",
+      "summaryHash": "c23c40c0c09eee6d8374ea3fa01a0a0424f21e2c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2192,
+      "title": "Fix Sky-Watcher sync goto supersede and pulse hold clear",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2192",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-09T06:42:40Z",
+      "additions": 113,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes two timing problems in the Sky-Watcher telescope driver. A regular \"go to this spot\" command used to wait for an earlier slew to fully finish; now it takes over right away, so a second move no longer stalls behind the first. When a small guiding nudge ended or failed to start, the driver also kept a lock on that axis open; it now releases it properly. New tests cover all three cases, and the author notes it was not tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "d7274f32001dce9abf66597150b7172fad666433"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1743,
+      "title": "Dawn stop is pinned; the rig list shows one row per rig",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1743",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-09T06:14:07Z",
+      "additions": 308,
+      "deletions": 21,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On iPhone and iPad, a telescope rig that shows up on both the home network and its own hotspot now appears once in the rig list, using the address the device can actually reach. In Simple Mode, the Stop button for a running guide loop no longer disappears when the guider status briefly drops out. The PR also adds tests proving a run stops at dawn and the mount still parks, plus a test that Emergency Stop has all its parts wired up; the dawn behaviour itself was already correct and did not change. Smaller items include Simple Mode reusing the planner's altitude math, fuller API docs for Emergency Stop results, and two corrected code comments.",
+      "category": "fix",
+      "summaryHash": "97d9879d1a35db6ec5178784e2b589b26cf601c2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2191,
+      "title": "Fix LastExposure early read logged as ERROR",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2191",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-09T06:09:42Z",
+      "additions": 63,
+      "deletions": 2,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When imaging software like NINA connects to a camera, it asks for details of the last exposure before any picture has been taken. The bridge answered correctly but wrote an error into the log each time, which made normal connections look broken. That answer is now logged as a quiet debug message, and the reply sent to the software is unchanged. This covers ZWO, ToupTek, Player One, QHY, SVBONY, GPhoto and iOptron iGuider cameras.",
+      "category": "fix",
+      "summaryHash": "977141618425e8a134f53edd580a9e40f71c8b50"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1740,
