@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T14:54:48.511Z",
+  "generatedAt": "2026-11-09T22:48:10.010Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1750,
+      "title": "Guiding fixes: GoTo stops guiding, RMS leaves out settling, guider settings push, false tracking faults",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1750",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-09T22:27:30Z",
+      "additions": 1734,
+      "deletions": 160,
+      "changedFiles": 37,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes several guiding problems found during a real night of use. Moving the telescope to a new target now stops guiding first, as parking already did. Guide pulses no longer set off false 'tracking lost' alarms, and the guiding accuracy figure no longer counts the unsteady moments while the guider settles. Polar alignment now stops a guide camera that is still taking frames instead of failing, and its accuracy estimate now accounts for guide corrections the mount did not carry out. Guider settings are now sent in the form the guider expects, out-of-range values are refused when you save them, and any setting the guider rejected is listed on screen instead of raising an equipment error. The change also adjusts how message pop-ups are laid out in Simple Mode so they no longer cover the Emergency Stop button, and it has not yet been tested on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "0702ae10d7eb2d05d6cd8fa41a01b84b51c6bc7b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1746,
