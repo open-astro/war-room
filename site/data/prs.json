@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T22:05:21.505Z",
+  "generatedAt": "2026-11-09T00:03:30.765Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1735,
+      "title": "Polar Align in three stages: rough on the main camera, fine on the guide camera, a three-point check",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1735",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-08T23:19:50Z",
+      "additions": 4451,
+      "deletions": 394,
+      "changedFiles": 47,
+      "labels": [],
+      "summary": "Polar alignment, which lines the telescope mount up with the sky's pole, now runs in three steps: a rough pass using the main camera, a fine pass using the guide camera, and a final check that measures the alignment fresh and shows how much it disagrees with the fine pass's reading. Before this, the routine could report \"Excellent\" while the mount was actually degrees off, and a bad alignment only shows up later as a night of smeared images. The rough step also no longer gives a false \"zero\" reading, which on the first real night was off by about 75 arcminutes. The change also adds many safety and usability fixes, including refusing to start when the main camera is unavailable, Emergency Stop working at every step, and the setup checklist no longer treating the rough reading as a finished alignment.",
+      "category": "feature",
+      "summaryHash": "670c81348d4f7dd6e0aba4a0b15f369ed95ad007"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2188,
