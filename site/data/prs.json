@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T00:03:30.765Z",
+  "generatedAt": "2026-11-09T05:01:34.322Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1740,
+      "title": "Fix the 19 open bugs: profile devices, focus offsets, Simple Mode, wizard, Sky Album",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1740",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-09T04:25:36Z",
+      "additions": 13812,
+      "deletions": 3689,
+      "changedFiles": 198,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A large bug sweep fixing 19 reported problems across the telescope control software, the simplified interface (Simple Mode), the setup wizard and the Sky Album collection. Notable safety and behaviour fixes: each profile now remembers its own equipment, so switching profiles changes the connected devices (the safety monitor disconnects first, and a running plan blocks the switch). The Emergency Stop confirmation no longer wrongly says it parks the mount. The cooling fan is now picked by hand instead of found by a device name, but existing profiles have no fan linked to the camera cooler until someone picks one, and the app asks once. It also adds optional focus adjustment when changing filters, removes six older star-matching tools in favour of the one the project uses, makes unattended shutdown less trigger-happy (30-minute default wait), and includes many Simple Mode screen, accessibility and Portuguese translation fixes, with new tests for most of them.",
+      "category": "fix",
+      "summaryHash": "2748314201b2927f6758d4c31a8ee8d9d77a2486"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1735,
