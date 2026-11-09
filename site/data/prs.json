@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T08:02:44.866Z",
+  "generatedAt": "2026-11-09T08:59:50.798Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1744,
+      "title": "Simple Mode quick fixes: Preflight, Full UI button, pills, Focus height",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1744",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-09T08:45:16Z",
+      "additions": 2725,
+      "deletions": 959,
+      "changedFiles": 48,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A bundle of small fixes to Simple Mode, the app's simplified, image-first screen used in the dark. The guided pre-imaging walk is renamed from Night Setup to Preflight everywhere, the two cameras are now called Camera (Main) and Camera (Guide), and a new Full UI button in the status strip replaces the old switch buried in settings. Status messages now stay on screen for at least a second, fade out, show full text on two lines, and also cover waiting Preflight steps and failed stops. The change also steadies the Focus panel so it no longer changes height, enlarges the polar alignment arrows, removes repeated details from the running plan panel, and makes hidden buttons ignored by screen readers.",
+      "category": "fix",
+      "summaryHash": "be46619c3800f83197dfe893996b0744e7ad266a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2196,
+      "title": "Merge stable/6.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2196",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-09T08:24:58Z",
+      "additions": 2234,
+      "deletions": 608,
+      "changedFiles": 61,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings 45 fixes from the 6.0 beta line into the main line that nightly builds come from. The urgent one is for the Gemini flat panel: its cover showed an error after a move that had actually worked. Users on the nightly build were still seeing that error because the fix had not reached them yet. The merge also carries earlier fixes for Sky-Watcher, SynScan, ZWO, iOptron, Celestron CGX and Bisque mounts and a camera logging tweak, while keeping main's version number unchanged.",
+      "category": "chore",
+      "summaryHash": "38727a6bd6d07b93761e8d899fb645d661bb5f93"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2195,
