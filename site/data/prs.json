@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T07:01:02.523Z",
+  "generatedAt": "2026-11-09T08:02:44.866Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2195,
+      "title": "Wait for both axis GOTOs in the Celestron completion-poll test",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2195",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-09T07:57:49Z",
+      "additions": 4,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This changes only a test; the Celestron mount driver itself is untouched. The test checks what happens when a mount stops responding partway through a slew, but it sometimes cut the fake mount off too early, after only one of the two axes had been told to move. That made it fail at random and block unrelated pull requests. It now waits until both axes have received their move command before simulating the outage.",
+      "category": "tests",
+      "summaryHash": "2c92aaf41241bcb7e33256fadb341fb4bc1142b9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2194,
+      "title": "Fix ZWO EAF stress staleness-loss check under CPU starvation",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2194",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-09T07:36:50Z",
+      "additions": 20,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a stress test for the ZWO focuser that sometimes failed on slow or busy build machines. The test expected the focuser to drop its connection at least once during a burst of parallel activity, but on a slow machine that did not always happen in time. The test now forces one connection drop in a controlled, predictable way before the busy part starts. Only the test changed. The trade-off is that a drop happening during the busy part itself is no longer separately required.",
+      "category": "tests",
+      "summaryHash": "3fd8b6d79dbed86075fef0169b5d0b0d6952208b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2193,
+      "title": "Refresh the ZWO ASI533, ASI120 and EAFN ConformU reports for 6.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2193",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-09T07:25:08Z",
+      "additions": 636,
+      "deletions": 648,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The official compatibility test reports for the ZWO ASI533MC Pro and ASI120MM Mini cameras and the EAFN focuser were replaced with fresh runs on the upcoming 6.0 release, using the latest version of the standard ASCOM test tool. All three passed with no errors or warnings on the Raspberry Pi 5 test rig. The supported-drivers list and one internal reference note were updated to match. There are no code changes. One known gap remains: the new focuser report does not include the moves to its end limits, which were checked by hand only in the upward direction.",
+      "category": "docs",
+      "summaryHash": "981df02a3075bef7651dbc28fe9642c731bdbe65"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1742,
+      "title": "Emergency Stop stops the mount first; proposed records bind their pilot PR",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1742",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-09T07:12:15Z",
+      "additions": 230,
+      "deletions": 47,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Emergency Stop now halts the telescope mount almost immediately, right after cancelling running tasks. Before, it waited behind slower steps, so a stuck step could delay the mount stop by over a minute. If a polar alignment was running, the mount is also stopped a second time once that alignment ends, and the app now waits up to 150 seconds for the full stop to report back instead of giving up at 60. Separately, Preview gains an \"Already in focus\" button for a guide camera stuck waiting on focus, and the review tooling now applies draft project rules only to the pull requests that explicitly name them. The updated design notes also say Preview switches back to the guide camera by itself when guiding stops, which the description does not list as a change.",
+      "category": "fix",
+      "summaryHash": "a97febda5c57c396a62be268b9e3a21c118723fd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2190,
