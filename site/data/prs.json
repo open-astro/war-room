@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T10:39:47.845Z",
+  "generatedAt": "2026-11-10T12:36:40.556Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1760,
+      "title": "Client architecture and storage: exFAT refusal, drive contents, Screen modules, shared client modules, failure words, size and colour tokens",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1760",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T12:12:27Z",
+      "additions": 5332,
+      "deletions": 2998,
+      "changedFiles": 134,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Erasing a drive is now safer. On telescope computers that cannot read exFAT drives, ARA now refuses an exFAT erase before touching the drive, where before it wiped the drive's data and then failed. Before any erase, the disk chooser also shows how many frames are on the drive, the date of the newest one, and a warning if some were never copied to another drive. Alongside this, the PR includes a large behind-the-scenes reorganization of Simple Mode and the app's shared pieces, plus a few visible changes: the full app now asks before changing a filter while a plan is running, error messages are worded the same way everywhere, first-run setup now saves exactly which guide camera was picked, and new automatic checks catch stray colours and sizes.",
+      "category": "fix",
+      "summaryHash": "8460467e74e3a4b1032227971c17c8d2e82e34ec"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1762,
