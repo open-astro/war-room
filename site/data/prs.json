@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T04:43:17.271Z",
+  "generatedAt": "2026-11-10T05:43:55.361Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1758,
+      "title": "Refresh the Impeccable sidecar after the Guider tabs",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1758",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T04:47:08Z",
+      "additions": 10,
+      "deletions": 2,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The design team's reference file used by their design tools was brought back in line with the main design guide after a recent change made it out of date. It now includes the Guider page's Guide, Tuning and Tools tabs, and one color rule about how equipment drawings are shaded was reworded to match the guide's wording. The app itself is unchanged, so users will not see any difference.",
+      "category": "docs",
+      "summaryHash": "29ff3db496cf6a06cb0a7d8dc62c8eb343787563"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2209,
+      "title": "CI: lock closed issues and PRs after 14 days without activity",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2209",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-10T04:44:01Z",
+      "additions": 72,
+      "deletions": 1,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Closed issues and pull requests are now locked automatically once they have had no activity for 14 days, so people report new problems in a fresh issue instead of commenting on an old thread nobody watches. This came up after a bug in version 5.0.2 was reported on a long-closed pull request and nearly missed. Threads closed from today onward get a short note pointing to where to open a new issue. The roughly 1,600 older closed threads are locked quietly over about a week so subscribers are not flooded with notifications. Project maintainers can still comment on locked threads, and the change also adds the matching documentation and failure alerts.",
+      "category": "ci",
+      "summaryHash": "ccc05882cff0dce6df590344e5f7fb250588b268"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1754,
@@ -23,9 +59,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes a mismatch between the app's two layouts. If a Bahtinov mask focus readout was already running and a focuser was connected, the full layout showed the readout but Simple Mode wrongly showed autofocus and hid the focus image. Three shared answers are now worked out in one place and used by both layouts: what the guider is currently doing, which focus method applies, and whether the main camera is busy. This should stop the two layouts from disagreeing again. Most of the work is internal reorganization with new tests, and one small side effect is that some guider controls now also check that the guider is actually connected.",
+      "category": "fix",
+      "summaryHash": "ddf46cdbff228ea6c9e702c9208a7f40967ad974"
     },
     {
       "repo": "open-astro/AlpacaBridge",
