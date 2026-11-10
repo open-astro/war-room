@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T22:48:10.010Z",
+  "generatedAt": "2026-11-10T00:46:21.906Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2205,
+      "title": "Update CI tools, libgpiod and INDI baselines; drop SDK folder versions",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2205",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-09T23:53:46Z",
+      "additions": 259,
+      "deletions": 110,
+      "changedFiles": 188,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This bundles eight pending dependency updates into one change, mostly internal: newer versions of three automated checking tools, a newer copy of the GPIO pin-control library (which now builds differently in the automated pipeline), and renamed camera SDK folders for ToupTek, Altair, QHY and Player One so future SDK upgrades no longer require renaming paths everywhere. A new check also flags when the recorded version of a bundled SDK does not match what its files say. The one user-facing change is for the WandererAstro rotator: if the device reports it has no motor power or has hit a position limit, the move now stops right away with a clear reason instead of waiting until it times out, and older firmware gets a note at connect. That rotator behavior was based on another project's source code and has not yet been tested on real hardware.",
+      "category": "chore",
+      "summaryHash": "02e5cf2b07472e9604d690ae65bec84864181f26"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1750,
