@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T02:45:44.551Z",
+  "generatedAt": "2026-11-10T02:58:33.896Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2207,
+      "title": "Release 6.0.0-beta.2",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2207",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-10T02:57:25Z",
+      "additions": 288,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This prepares the second beta test release of AlpacaBridge 6.0, so testers can try the 17 fixes made since the first beta. It updates the version number and dates shown in the project's main pages and adds a plain-language release notes page for testers. No program code changed. A full 6.0 release is not ready yet because the required four-week beta period has not passed.",
+      "category": "chore",
+      "summaryHash": "37650a6591c49ff0a27e857e902621b3c6e17767"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1752,
