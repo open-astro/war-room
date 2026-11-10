@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T14:35:29.833Z",
+  "generatedAt": "2026-11-10T15:34:25.353Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1766,
+      "title": "Rig link and Guider follow-ups: Connect card, failed-connect pills, 15 s return, late Guider start failures, recovery and copy-marker fixes, #1760 review follow-ups",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1766",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T15:23:59Z",
+      "additions": 2217,
+      "deletions": 105,
+      "changedFiles": 40,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1768,
