@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T15:34:25.353Z",
+  "generatedAt": "2026-11-10T17:34:23.144Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This makes the app handle a lost connection to the telescope, or a device that won't connect, much more gracefully. In Simple Mode, a card now appears while the telescope computer is unreachable, offering Reconnect, other telescopes found nearby or saved, or connecting by address. A device that fails to connect shows a clear warning with Reconnect and Devices buttons. In the Full UI, the app now goes back to the profile screen after 15 seconds without the telescope, and a guiding start that fails partway through calibration is now reported instead of staying silent. It also fixes two behind-the-scenes problems: automatic recovery no longer reconnects a device the user removed, and erasing a disk now cancels any record that frames were safely copied to it, so the app no longer wrongly says frames are backed up. A few error messages were reworded into plain sentences too.",
+      "category": "feature",
+      "summaryHash": "8baa3d9f55fa010feccccac64212d4853f6fbb77"
     },
     {
       "repo": "open-astro/openastro-ara",
