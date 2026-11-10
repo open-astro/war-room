@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T12:36:40.556Z",
+  "generatedAt": "2026-11-10T14:35:29.833Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1768,
+      "title": "Guiding PA residual checked against Polar Align; a 0×0 guide frame is unknown (#1731, #1730)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1768",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T14:19:22Z",
+      "additions": 166,
+      "deletions": 121,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The app's estimate of how far off the telescope's polar alignment still is, measured while guiding, is now greyed out as unreliable when it comes out far above (more than 2 arcminutes, after allowing for its own uncertainty) what the most recent Polar Align measured. In that case the display says \"above Polar Align\" and points to slack in the mount's Dec axis, instead of blaming noisy guiding. This fixes a night where a 0.9′ alignment was followed by a guiding estimate of 45′ or more. It also removes an earlier attempt to correct for this, which could never work, and treats a 0×0 frame size from the guiding software as unknown so that clicking a star in the guide view is no longer refused before the camera has sent a frame.",
+      "category": "fix",
+      "summaryHash": "0b1846cb34de403e9082004c8e8f09a3311760ae"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1760,
