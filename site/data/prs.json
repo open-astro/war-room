@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T09:39:03.887Z",
+  "generatedAt": "2026-11-10T10:39:47.845Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,44 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1762,
+      "title": "Keep ImageBytes Byte values unscaled (biases saved ×256)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1762",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T10:21:46Z",
+      "additions": 25,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where some calibration frames, mostly short bias frames, were saved with every pixel value 256 times too large. This happened when the camera server sent a very dark image in a compact format. Ara now keeps those values as they are, so bias and dark-flat frames come out correct and match the other image download path. Frames already saved wrongly are not changed, but dividing each value by 256 restores them exactly. New tests cover this case.",
+      "category": "fix",
+      "summaryHash": "4ab1641a403f8c0c14cc06ccb7149e955ed771d3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2210,
+      "title": "ci: bump the github-actions group with 5 updates",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2210",
+      "author": "app/dependabot",
+      "base": "main",
+      "mergedAt": "2026-11-10T10:12:26Z",
+      "additions": 5,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "dependencies",
+        "github_actions",
+        "safe-to-review"
+      ],
+      "summary": "Internal maintenance only. This is an automated update of five tools used by the project's build and check pipelines, including the Java setup, the automated code review bot, and the security scanner. Nothing changes for users.",
+      "category": "ci",
+      "summaryHash": "8181e533571e144ad7dc4f6f0a2f174c7e0c0df9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1761,
@@ -23,9 +61,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The rotator and the dome now share one common set of code for connecting, disconnecting, and checking on their health, instead of each having its own copy. This is the first of four steps toward moving all ten device types onto it. Users will notice two changes. Automatic fault recovery no longer reconnects a rotator or dome that the user deliberately disconnected, even if they disconnected it just before a retry. A dome whose readings keep failing while it still looks connected now shows a warning. The change also removes some unused placeholder code and adds tests for the new shared module.",
+      "category": "refactor",
+      "summaryHash": "77cc21d8166b5abf375bcb5e23eba8f229d1c91b"
     },
     {
       "repo": "open-astro/openastro-ara",
