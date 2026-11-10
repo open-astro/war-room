@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T02:58:33.896Z",
+  "generatedAt": "2026-11-10T04:43:17.271Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1754,
+      "title": "Derived rig facts live once in client state: guider phase, focus method, main camera",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1754",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T04:27:02Z",
+      "additions": 383,
+      "deletions": 156,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2208,
+      "title": "Merge stable/6.0 into main after 6.0.0-beta.2",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2208",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-10T04:02:53Z",
+      "additions": 2009,
+      "deletions": 1026,
+      "changedFiles": 69,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Routine merge that brings the fixes from the 6.0.0-beta.2 release branch into the main line of development, so main stays in step with the beta. Fixes coming across: ZWO, iOptron, Gemini, WandererAstro and Celestron devices whose exact model is not on the known list can now connect under a generic name instead of being refused. Also included: ZWO camera registration, a ZWO mount no longer briefly reporting it is moving after unparking, and better auto-detection of WandererAstro rotators. It also adds a fix for an unreliable Celestron test, refreshed ZWO compatibility test reports and the beta.2 release notes, while main keeps its own version number.",
+      "category": "chore",
+      "summaryHash": "0fb48d8d93951d30538409e62ee220177d6ca0a0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2207,
