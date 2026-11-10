@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T00:46:21.906Z",
+  "generatedAt": "2026-11-10T02:45:44.551Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1752,
+      "title": "Each-night guider calibration and Guider tabs in Simple Mode; focuser stop and nudge; focus calibration reset",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1752",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T02:20:06Z",
+      "additions": 2642,
+      "deletions": 48,
+      "changedFiles": 50,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, unattended plans now recalibrate the guider at the start of each night and after each meridian flip, instead of reusing an old calibration that could give poor guiding. If a recalibration fails, the plan is meant to carry on with the earlier calibration and show an amber warning, but that fallback depends on a guider update that has not shipped yet, so for now a failed calibration still pauses the run. The focusing pane also gains buttons to nudge the focuser in or out and to stop it, Settings gains a 'Reset focus calibration' button, and the Simple Mode guider panel is reorganized into Guide, Tuning and Tools tabs with one-tap Recalibrate and Guiding Assistant. The Full UI keeps its current behavior.",
+      "category": "feature",
+      "summaryHash": "2c919b503e3dbe9a46606ee44fa3351aa4805392"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2206,
+      "title": "Connect unlisted models; fix ZWO Unpark, rotator Auto and camera registration",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2206",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-10T01:57:26Z",
+      "additions": 1083,
+      "deletions": 375,
+      "changedFiles": 60,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes four reported problems for the 6.0 release. Devices from supported families (ZWO mounts like the AM3N, iOptron focusers and filter wheels, Gemini power hubs, WandererAstro accessories and Celestron mounts) are no longer refused just because their exact model isn't on a list. They now connect under a generic name, and are refused only if they identify as a different product. Unlisted rotators and Celestron models connect with movement blocked for safety. It also fixes the WandererAstro rotator not being found automatically right after power-up, ZWO mounts wrongly reporting they were moving after an unpark that didn't move, and ZWO camera setup opening cameras another program might be using.",
+      "category": "fix",
+      "summaryHash": "6a40864c27c5d2c47be14aa5f84dce0a9f6f42eb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2205,
