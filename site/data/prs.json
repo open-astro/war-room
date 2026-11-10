@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T05:43:55.361Z",
+  "generatedAt": "2026-11-10T09:39:03.887Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1761,
+      "title": "Rotator and Dome share one device lifecycle module; recovery leaves a user-disconnected device alone",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1761",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-10T09:23:59Z",
+      "additions": 1383,
+      "deletions": 1106,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1758,
