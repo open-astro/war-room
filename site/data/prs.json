@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T17:34:23.144Z",
+  "generatedAt": "2026-11-11T06:21:50.322Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1771,
+      "title": "Session watch: Monitor, the meridian wait, camera pills, stacked question pills, polar Stop",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1771",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-11T05:37:13Z",
+      "additions": 7454,
+      "deletions": 213,
+      "changedFiles": 61,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode gains Monitor, a full-screen, read-only view of the whole night, built to be read from across the room. It shows one top line saying whether all is well or naming the biggest problem, tiles for the current activity, target, next meridian flip, safety, weather, guiding and last-frame quality, tonight's timeline, and a large Emergency Stop; it keeps the screen awake and freezes with a 'last known' age if the link drops. The app now also says clearly when a plan is waiting for the meridian flip, with a countdown, so the wait no longer looks like imaging. Camera progress pills now follow the main camera, long question pills stack their answers underneath, and the polar alignment Stop button works even while another polar action is running. The code also changes more than the title suggests: pausing a plan now interrupts in-progress work such as autofocus and repeats it on resume, the Info item leaves the left rail, and picking a mode now opens its panel directly.",
+      "category": "feature",
+      "summaryHash": "f49d50feca8a3b59f9d6abd9e7521d599de2f402"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1766,
