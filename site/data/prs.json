@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T18:42:33.168Z",
+  "generatedAt": "2026-11-11T20:09:54.662Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,25 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1793,
+      "title": "build: Bump gradle-wrapper from 9.8.2 to 9.9.0 in /client/openastroara_client/android in the gradle group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1793",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-11T19:14:53Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "java"
+      ],
+      "summary": "Routine maintenance: the Android app's build tool was updated to a newer version (9.8.2 to 9.9.0). The change is a single line and affects only how the app is built, not what users see or do. It was proposed automatically by a dependency-update bot.",
+      "category": "chore",
+      "summaryHash": "ff11ca072ff038683bbce721d9296573d1b18bf1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1792,
