@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T09:19:12.986Z",
+  "generatedAt": "2026-11-11T13:15:49.720Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2216,
+      "title": "Device names are brand + model; details move to the Description",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2216",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-11T12:36:06Z",
+      "additions": 750,
+      "deletions": 159,
+      "changedFiles": 85,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Every device AlpacaBridge exposes now has a consistent name made of just the brand and model, such as \"Sky-Watcher EQM-35 Pro\" or \"ZWO EAFN\", instead of a mix of bare model codes, generic labels like \"Mount\", and extra technical notes in brackets. Those extra details, like the connection method, calibration state or circuit board type, now go into a separate description that the web interface shows on each device card. This makes it easier for users to tell which device is which, and new automated checks will fail any future driver that breaks the naming rule. The visible code changes match the description, though most of the driver code was trimmed from what was provided, so the per-device details could not all be confirmed.",
+      "category": "feature",
+      "summaryHash": "6f36e81b4d1e92ad5a4dd33eae77e905c60c1a66"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1785,
