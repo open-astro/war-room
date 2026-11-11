@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T20:09:54.662Z",
+  "generatedAt": "2026-11-11T21:09:05.171Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,25 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1794,
+      "title": "build: Bump the pub group in /client/openastroara_client with 2 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1794",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-11T20:10:10Z",
+      "additions": 28,
+      "deletions": 12,
+      "changedFiles": 5,
+      "labels": [
+        "dependencies",
+        "dart"
+      ],
+      "summary": "Routine update of a shared library the client app uses to manage its internal state, moving to a newer version that includes several upstream bug fixes. To keep working with the new version, one small line in the emergency stop button had to change. It still checks whether camera status is being tracked before refreshing it, so the stop button's behavior should be unchanged. The list of third-party licenses was also updated to the new version numbers. The description doesn't mention that code edit, and the pinned minimum for one of the two libraries was left at its older value.",
+      "category": "chore",
+      "summaryHash": "1f61a9ff328529ab659500eba96221327a710a4e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1793,
