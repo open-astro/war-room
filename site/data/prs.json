@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T14:14:59.663Z",
+  "generatedAt": "2026-11-11T18:42:33.168Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,25 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1792,
+      "title": "ci: Bump the github-actions group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1792",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-11T18:25:30Z",
+      "additions": 4,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "Routine internal maintenance with no effect on the app itself: this updates the versions of two automated tools that run on the project's code, the AI code-review assistant and GitHub's security scanner. The security scanner update fixes a bug where it could wrongly hide warnings in files whose names contain spaces or unusual characters. The code changes match the description.",
+      "category": "ci",
+      "summaryHash": "fd590e2403f9f19bdb3ccd54f3ae5b848c316395"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2217,
