@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T13:15:49.720Z",
+  "generatedAt": "2026-11-11T14:14:59.663Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2217,
+      "title": "Report OnStep AlignmentMode from the :GU# mount type (#2214)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2217",
+      "author": "kern2011",
+      "base": "main",
+      "mergedAt": "2026-11-11T13:42:56Z",
+      "additions": 147,
+      "deletions": 15,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope driver now tells astronomy software what kind of mount it is actually controlling, instead of always claiming it is a German equatorial mount. Fork mounts now report as polar, and alt-az and alt-alt mounts report as alt-az, so software will no longer plan meridian flips for mounts that never do them. German mounts, older firmware that does not report a mount type, and a disconnected driver behave exactly as before. The code matches the description; the new behavior has only been checked on a German mount, not yet on real fork or alt-az hardware.",
+      "category": "fix",
+      "summaryHash": "be1e14771c4a2f2adecffffd5d7f9bcf23f96b7b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2216,
