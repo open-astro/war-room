@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T21:09:05.171Z",
+  "generatedAt": "2026-11-11T22:08:16.350Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,26 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1795,
+      "title": "build: Bump the nuget group with 10 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1795",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-11T21:40:51Z",
+      "additions": 63,
+      "deletions": 47,
+      "changedFiles": 3,
+      "labels": [
+        "dependencies",
+        ".NET",
+        "safe-to-review"
+      ],
+      "summary": "Routine maintenance that updates about ten outside software libraries the server relies on, including its database, documentation, imaging and serial-port components, to newer minor versions. Nothing should look different to users. The automated description says the database library jumps to a new major version (11.0), but the actual change keeps it on the current .NET 10 line (10.0.15). The PR also adds a rule telling the update bot not to make major-version jumps for these core .NET packages until the whole server moves to .NET 11, which the description does not mention.",
+      "category": "chore",
+      "summaryHash": "c90c4f3289883386335a65a0631651a774db6fc7"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1794,
