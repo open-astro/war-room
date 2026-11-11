@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T06:21:50.322Z",
+  "generatedAt": "2026-11-11T09:19:12.986Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1785,
+      "title": "Mount by hand: direction pad on a lease, Home, Tracking speed, and Check / Center / Sync in the Mount window (#1649, #1650)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1785",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-11T08:56:40Z",
+      "additions": 4714,
+      "deletions": 90,
+      "changedFiles": 42,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Mount window in Simple Mode can now move the telescope by hand. It has a direction pad with Slow, Medium and Fast speeds, plus Home, a Tracking speed choice (Sidereal, Lunar, Solar or King, also added to the full Mount panel), and a Check button that takes a quick photo to show where the scope is really pointing. From there the user can Center on the target or Sync the mount to the result. As a safety measure, a hand move only continues while the app keeps confirming it, so a dropped connection or a sleeping tablet cannot leave the mount moving. Most of the code changes were not visible for review, but the parts shown match the description.",
+      "category": "feature",
+      "summaryHash": "c7decf1e4771d784d3162d4c01a656c42c654149"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1771,
