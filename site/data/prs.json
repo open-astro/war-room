@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T22:08:16.350Z",
+  "generatedAt": "2026-11-11T23:07:22.762Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2226,
+      "title": "Backfill .deb assets onto Releases v3.0.0-v4.1.0",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2226",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-11T22:09:49Z",
+      "additions": 175,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Older versions of AlpacaBridge (3.0.0 through 4.1.0) had no installable package attached to their release pages, and the main download server only keeps the newest version, so anyone needing to roll back to one of them had nothing to install. This adds a manually triggered build job that rebuilds the package for one chosen older version from that version's own source code and attaches it to the existing release page, with a signed record of how it was built. It never overwrites a package that is already there. The packages are not actually added yet: a maintainer still has to run the job once for each of the 14 versions after merge, and it has not been tested end to end.",
+      "category": "ci",
+      "summaryHash": "bf20e54e604672bf5dc6b01eb8805c91b8454054"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1795,
