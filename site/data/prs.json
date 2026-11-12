@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T10:09:45.557Z",
+  "generatedAt": "2026-11-12T11:08:59.733Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1810,
+      "title": "Decision records: event declaration, client profile section, Guide Camera custody and the device command",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1810",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T10:45:22Z",
+      "additions": 169,
+      "deletions": 0,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only, with no change to how the app behaves. The team wrote down four design decisions that upcoming work will follow: messages the telescope computer sends to the app should each be defined in one place, a settings section must be loaded before the app can save it (so defaults never overwrite real settings), one part of the system should decide who is using the guide camera at any moment, and device commands like moving a focuser should share one way of waiting and timing out. All four are marked as proposed, and the glossary gains matching terms.",
+      "category": "docs",
+      "summaryHash": "6b9bb0a23b35dfd1959f8f218e77f33c82ff2ebb"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1801,
+      "title": "Dome follows the mount",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1801",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T10:45:22Z",
+      "additions": 3071,
+      "deletions": 107,
+      "changedFiles": 55,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A motorised dome can now automatically turn to follow the telescope, so the dome opening stays in front of it and does not block the view. It is switched on per equipment profile from the Dome window in Simple Mode or the full Dome panel, which also gets a new section for entering the dome's size and where the telescope sits inside it. Light exposures wait for the dome to arrive before starting, and following switches itself off when someone moves or parks the dome by hand, hits emergency stop, or the weather becomes unsafe. It has been tested in software but not yet on real hardware.",
+      "category": "feature",
+      "summaryHash": "0967c743ae0ce778dadb6b259fc61a8a90b84449"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1800,
+      "title": "Companion Mode: phones always use Simple Mode and have no way into the full UI",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1800",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T10:33:22Z",
+      "additions": 520,
+      "deletions": 39,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On phones (iPhone or Android with a small screen), the app now always opens in the simplified Simple Mode, and every way into the full interface is hidden: the Full UI button, the Experimental setting, and search or command-palette shortcuts that would jump to full-interface screens. This gives phone users a screen that always fits, and it does not change their saved preferences. Tablets and desktops behave as before, except that a tablet running in a narrow split-screen window counts as a phone. It has not yet been checked on a real phone.",
+      "category": "feature",
+      "summaryHash": "1ce02475841f3162e59c40fe05a711eee1956cc8"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1817,
+      "title": "Apply to guider refuses to write after a failed settings load",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1817",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T10:24:30Z",
+      "additions": 42,
+      "deletions": 8,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where pressing \"Apply to guider\" after the guider settings failed to load could overwrite the person's real guider settings on the telescope computer with blank defaults. Now the button saves nothing in that case and shows a \"Not saved\" message instead. New tests check this case, and normal use is unchanged.",
+      "category": "fix",
+      "summaryHash": "c645c275f74b83e6759a9fd4dc1bda5dd7c54811"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1799,
