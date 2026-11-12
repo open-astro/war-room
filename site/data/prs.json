@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T08:22:06.104Z",
+  "generatedAt": "2026-11-12T09:10:40.559Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1830,
+      "title": "Keep backlash_compensating until a read after the dispatch settles it",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1830",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T09:05:50Z",
+      "additions": 143,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a timing glitch where the focuser could stop reporting that it was compensating for backlash partway through a move and show plain \"moving\" instead. A status check that began just before the move was sent could finish afterward and wrongly clear the flag. Now only a check that starts after the move has been sent can end that state. Clients and the sequencer get the correct focuser status, and a test that failed at random in the merge queue should stop failing. New tests cover the fix.",
+      "category": "fix",
+      "summaryHash": "ff688e059cd678ba85ce890429ee75af6c7f5cb8"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1829,
+      "title": "CI: shard the macOS and Windows client tests three ways",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1829",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T08:57:26Z",
+      "additions": 191,
+      "deletions": 115,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Internal CI change. The app's client tests on macOS and Windows now run split across three machines each, the same way Linux tests already were. Before, the macOS run alone took 19 to 20 minutes and set the length of every merge-queue run, so merges should land sooner. One side effect: a failure on any Windows or macOS shard marks both the macOS and Windows checks as failed. Each run also uses more macOS machines, which may cause waits if few are available.",
+      "category": "ci",
+      "summaryHash": "542c7b5b32b5ca51fc86c3b8173098ca4d298da1"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1822,
+      "title": "CI: the review bot queues an approved PR and dequeues one with issues",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1822",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T08:23:13Z",
+      "additions": 266,
+      "deletions": 3,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Adds an automation that puts a pull request into the merge queue as soon as the review bot approves it, and pulls it back out if the bot reports issues. Before, someone turned on merging by hand, so a change could enter the queue before review finished, fail there, and need to be re-queued by hand. People no longer turn on auto-merge themselves, except for the few pull requests the bot never reviews. The automation only takes effect once it is on the main branch. It is not yet confirmed that the merge-queue checks will start when the automation, rather than a person, turns on auto-merge.",
+      "category": "ci",
+      "summaryHash": "a2bbe0a295a411f661d16adff42ed1792ce4c93d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1827,
