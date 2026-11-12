@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T07:12:06.833Z",
+  "generatedAt": "2026-11-12T08:11:46.515Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1821,
+      "title": "WebSocket event catalog matches what the daemon emits",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1821",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T07:38:36Z",
+      "additions": 234,
+      "deletions": 99,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The daemon on the telescope computer publishes a list of the live updates it can send to the app, and that list no longer matched reality. It was missing 12 updates the daemon actually sends, such as backup progress, failed sequences, and guider calibration builds. It also hid 15 more that were defined but never shown, and it advertised 36 that nothing ever sends. This change corrects the list and adds an automatic check that fails if it drifts again, so apps can trust it. Users should see no change in behavior, since the removed updates were never sent in the first place.",
+      "category": "fix",
+      "summaryHash": "cf6b08d237eb83cac4bdc242f3be4b6ea2730a26"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1828,
+      "title": "Skip the native client builds in the merge queue",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1828",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T07:36:24Z",
+      "additions": 15,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the automated build system. The full app builds for each platform no longer run in the final queue that lines changes up before they merge. They still run on every proposed change and after each merge. Each batch in the queue had been waiting about 30 minutes for one of the few shared Mac build machines, so the queue should now move faster. The trade-off is that a build problem that only appears when two changes are combined will now be caught just after merging, not before.",
+      "category": "ci",
+      "summaryHash": "b37d3f8552f4d7fcb9d31c7d39186ea04fbd451a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1824,
