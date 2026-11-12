@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T11:08:59.733Z",
+  "generatedAt": "2026-11-12T12:11:50.311Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1823,
+      "title": "Dew heater row and a filter wheel of glass cells in Simple Mode",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1823",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T12:03:47Z",
+      "additions": 1994,
+      "deletions": 194,
+      "changedFiles": 22,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode's Camera window now has a Dew heater control for cameras with a built-in anti-dew heater: an On/Off switch, or a slider when the heater has power levels. The app matches the heater to the main camera by serial number only, so it never pairs with the guide camera or the wrong camera of the same brand, and the control appears only while the heater is connected. The Filter wheel window is also redrawn as a wheel of colored glass cells that you tap to change filter, with a larger wheel for wheels with more than 8 slots. The heater pairing has not yet been tried on real hardware.",
+      "category": "feature",
+      "summaryHash": "583e27146472e76916de84019262ef2d3a91e8d5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1820,
+      "title": "Status card at the top left, Check actions per 409 cause, 44 px chips",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1820",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T11:54:38Z",
+      "additions": 573,
+      "deletions": 289,
+      "changedFiles": 22,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now shows status lines and messages together in one card at the top left, instead of two separate stacks that pushed each other around. When the Mount window's Check can't run, it now says what went wrong: a missing camera still offers Camera settings, a busy camera says to check again once it finishes, and a stuck capture says to restart. Simple Mode buttons (chips) are also now at least 44 px tall on desktop and iOS, making them easier to tap.",
+      "category": "feature",
+      "summaryHash": "3d0d3f03fc3f095ced812c073d6c1f347bf97d61"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1802,
+      "title": "Simple Mode Sky Map with a dark chart and Album Art, and a Stats button",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1802",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T11:28:51Z",
+      "additions": 798,
+      "deletions": 101,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the Sky button is renamed Sky Map and has a new chart icon, and the sky view is now a dark star chart that is easier to read at night, while the full app's planetarium is unchanged. Tapping a Messier or Caldwell object now shows its Sky Album picture and credit, working offline. A new Stats button opens a trimmed Stats page with the overview, best frames, achievements and calendar, while detailed charts and export stay in the full app. The look on real devices still needs to be checked at the telescope.",
+      "category": "feature",
+      "summaryHash": "7c966da9986cc60e4a26ed6fa6750aedfe44a57b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1810,
