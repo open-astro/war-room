@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T08:11:46.515Z",
+  "generatedAt": "2026-11-12T08:22:06.104Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1827,
+      "title": "Client: remove macOS CocoaPods, refresh pubspec.lock, cache the Android NDK in CI",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1827",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T08:12:23Z",
+      "additions": 104,
+      "deletions": 224,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes build cleanup for the app's client, with no visible change for users. The Mac build drops an old packaging tool that no longer did anything useful, and the automated checks now save and reuse a roughly 1 GB Android toolkit instead of downloading it on every run, which should make Mac and Android builds faster. It also updates 32 libraries to newer minor and patch versions within the existing limits, and refreshes two app icon images and the third-party license list to match. Not every changed file was shown, but what was shown matches the description.",
+      "category": "chore",
+      "summaryHash": "c436ee615632331ab4153fbde50f5916c3888765"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1821,
