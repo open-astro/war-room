@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T14:09:34.424Z",
+  "generatedAt": "2026-11-12T15:13:11.919Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1841,
+      "title": "Fix Calibration panel copy, camera-off reason and filter wheel offsets from the UI audit",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1841",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T15:06:45Z",
+      "additions": 162,
+      "deletions": 43,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Cleans up wording and small layout problems on the Calibration screens that an earlier review flagged. The darks and bias list now reads naturally, like \"taken today · 1 frame\" or \"3 weeks old · 30 frames\" instead of \"today old · 1 frames\", and \"no plan queued\" is shown in a dim color rather than as a warning. When the camera is off, the panel now says \"Connect the camera first.\" so people know why the buttons are disabled. In the filter wheel focus settings, unnamed slots are labeled in the app's chosen language, the drift warning gets a warning icon, and negative numbers show a proper minus sign.",
+      "category": "fix",
+      "summaryHash": "494596250fdce4a774775b3743751aa9cab8daf0"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1834,
