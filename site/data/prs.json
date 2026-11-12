@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T05:07:59.991Z",
+  "generatedAt": "2026-11-12T06:13:12.921Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1818,
+      "title": "Move six peripherals onto the shared device lifecycle module (slice 2)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1818",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T06:03:04Z",
+      "additions": 1592,
+      "deletions": 2371,
+      "changedFiles": 25,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Six more pieces of observatory equipment (flat panel, weather station, power switches, safety monitor, filter wheel and focuser) now use the same shared connect, health-check and disconnect logic that the rotator and dome already use. The practical change is that the flat panel, weather station, switches and safety monitor will now be flagged as faulted and automatically reconnected when they stop responding, which they did not do before. A safety monitor that stops answering is treated as unsafe after one failed check, and equipment the user deliberately disconnected is left alone. This is part 2 of 4 (camera and telescope come later), and the new fault behavior has only been tested with simulated devices, not real hardware.",
+      "category": "refactor",
+      "summaryHash": "9c9b58c81ebe2db4f453bd2be35b70f5e3892888"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1796,
+      "title": "Every string in pt-BR, slice 1: hard-coded string ratchet and whole-language error sentences",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1796",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T06:03:03Z",
+      "additions": 1989,
+      "deletions": 92,
+      "changedFiles": 54,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Users who choose Brazilian Portuguese now see the safety alert popup and many \"Couldn't ...\" error messages fully in Portuguese, instead of a mix of Portuguese and English. This covers errors in the image library, calibration, storage, settings, support, time sync, GPS and backup areas. It also adds an automatic check that counts English text still written directly into the app (about 3,000 pieces across 165 files) and blocks any new ones, so the count can only go down in later rounds. The Portuguese translations were written by an AI agent and are flagged for a person on the team to review.",
+      "category": "feature",
+      "summaryHash": "4d4d9c722743c2d04f5e8278be75f7f407305d18"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1816,
+      "title": "CI: pull request runs finish sooner (cancel replaced runs, test shards, fewer runners)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1816",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T05:11:49Z",
+      "additions": 388,
+      "deletions": 97,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal change to the automated build-and-test system so that results come back faster on each pull request, which previously took 21 to 46 minutes. A new push now cancels the outdated run it replaces, the app tests are split across three Linux machines in parallel, and two small checks were folded into an existing job so they no longer wait in line for their own machine. One slow solver build is now reused between runs instead of being rebuilt each time. The Mac and Windows test runs no longer happen on pull requests; they only run in the merge queue and on the main branch, so problems specific to those systems will show up later than before.",
+      "category": "ci",
+      "summaryHash": "50b4871616accdb69445452b4e2c0ea390e17b68"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1815,
