@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T01:01:43.374Z",
+  "generatedAt": "2026-11-12T02:04:49.655Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1803,
+      "title": "Merge queue: every check green and an approved review before a PR merges",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1803",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T01:19:22Z",
+      "additions": 283,
+      "deletions": 5,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Pull requests can no longer slip into the main branch with problems still open. When a pull request reaches the merge queue, a final check now confirms that every automated check that ran on it passed, including optional ones, and that the review bot's most recent verdict says \"✅ Approved\". Before this, that final step only printed a message, so a pull request could merge with a failing optional check or with the bot flagging issues. Dependency-update pull requests from the automated updater are exempt from the approval step, as are those that change the review setup itself. The new check also waits up to about 50 minutes for checks that are still running, and it comes with its own tests.",
+      "category": "ci",
+      "summaryHash": "97e6eaec60a6028021dc5b06569336663d74c92b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2228,
