@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T03:04:04.801Z",
+  "generatedAt": "2026-11-12T05:07:59.991Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1815,
+      "title": "Decision records: daemon privilege, sequence format, planetarium and guider",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1815",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T04:18:15Z",
+      "additions": 201,
+      "deletions": 0,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds four new written records that explain long-standing design choices the app already follows, with no change to how the software behaves. They cover keeping the telescope computer's background service from ever running with full administrator power (the few tasks that need it are handed to small, tightly limited helpers), saving observing sequences in the same file format as NINA so existing NINA files still load, using the Stellarium sky engine for the planetarium view, and running guiding as a separate service. The reasoning for some of these previously lived only in code comments or a retired document, so this gives it one current home, and the automated reviewer will now check future changes against the rules in these records. The author notes that part of the reasoning (why Stellarium replaced the earlier sky viewer, and why guiding sits in its own service) was reconstructed because it was never written down, and asks maintainers to correct it if needed.",
+      "category": "docs",
+      "summaryHash": "f4472a65dc5c12b75190f2663f538502921ce4e9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1813,
