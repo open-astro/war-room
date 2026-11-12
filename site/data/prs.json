@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T13:10:24.699Z",
+  "generatedAt": "2026-11-12T14:09:34.424Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1834,
+      "title": "Adaptive controls: iOS sliders, spinners, checkboxes and dialogs",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1834",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T13:23:31Z",
+      "additions": 1020,
+      "deletions": 190,
+      "changedFiles": 101,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On iPhone and iPad, the app's sliders, loading spinners and checkboxes now look like normal iOS controls instead of Android-style ones, and several pop-up questions also use the iOS style, including the Emergency Stop confirmation, where Stop stays the main choice. Not every pop-up has switched yet; the rest still use the old look on iOS for now. Android, Mac, Windows and Linux look the same as before, with one deliberate exception: the list of faults now shows the full fault name on every platform, because on Android it used to be cut off. The changes are covered by automated tests but have not yet been tried on a real iPhone or iPad at the telescope.",
+      "category": "feature",
+      "summaryHash": "c59e6129e50a738fd48df8c7ffdc1d691e4eeded"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1819,
