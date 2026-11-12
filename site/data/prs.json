@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T02:04:49.655Z",
+  "generatedAt": "2026-11-12T03:04:04.801Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1813,
+      "title": "Changelog fragments: each PR adds changelog.d/<branch>.md instead of editing CHANGELOG.md (#1812)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1813",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T02:54:45Z",
+      "additions": 1776,
+      "deletions": 1177,
+      "changedFiles": 57,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Changes how the project keeps its list of changes for each release. Instead of every pull request adding a line to one shared changelog file, which kept causing clashes when several were merged around the same time, each pull request now adds its own small note in a dedicated folder, and an automatic check makes sure each note is written correctly. A new tool gathers these notes into the official changelog only when a release is made, so the first release will take one command. The existing list of unreleased changes was moved into these notes word for word, and the contributor guides were updated; the app itself is unchanged.",
+      "category": "chore",
+      "summaryHash": "31bf2e6148a2c3f59ae30a05e94097c30512924b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2231,
+      "title": "Decision records: daemon privilege and vendored SDK binaries",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2231",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-12T02:34:47Z",
+      "additions": 135,
+      "deletions": 1,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds two written records explaining existing design choices: how the server is allowed to do tasks that need full system permissions while staying locked down, and why third-party camera and device software from hardware makers is stored in the project and shipped with it. These rules were previously scattered or missing, so the automated reviewer can now check future changes against them. This is documentation only, and the author notes that two of the reasons given were pieced together because nothing was written down and may need correcting.",
+      "category": "docs",
+      "summaryHash": "c252a6449e5913cfd4829701a329a701f5027eaa"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1803,
