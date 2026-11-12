@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T22:46:34.360Z",
+  "generatedAt": "2026-11-12T23:07:46.047Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2235,
+      "title": "OnStep: ask :GVC# only on firmware that answers it (#2232)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2235",
+      "author": "kern2011",
+      "base": "main",
+      "mergedAt": "2026-11-12T23:01:50Z",
+      "additions": 123,
+      "deletions": 9,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Connecting to some OnStepX telescope mounts is fast again. A recent change made the bridge ask every OnStepX mount for its product name, but older firmware never answers that question, so each connect sat waiting about 5 seconds. That was slow enough to make the standard compatibility test (ConformU) give up on mounts like the TeSeek HM-17. The bridge now checks the firmware version first and only asks for the name on versions known to answer; older mounts connect in well under a second and simply keep the default name \"OnStep Telescope\".",
+      "category": "fix",
+      "summaryHash": "d9089419cd27ac6706a8c92b46bddebe326fd0f3"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1840,
+      "title": "Dome: Stop says once that following is off, and the docs match",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1840",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T22:48:29Z",
+      "additions": 78,
+      "deletions": 21,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In the Simple dome window, pressing Stop while the dome is following the mount now shows a one-time message that following has been turned off, the same way turning the dial, Park and Home already did. The help text and docs now list Stop among the actions that turn following off, and also explain that a dropped connection leaves following on and it resumes when the dome reconnects. This restores six finishing touches that were left out when the original dome-follow feature was merged early. It also adds a behind-the-scenes test that switching profiles mid-move doesn't show a false error.",
+      "category": "fix",
+      "summaryHash": "ec7ac920238a7b3274120c059f612170cb5eb708"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1845,
