@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T15:13:11.919Z",
+  "generatedAt": "2026-11-12T22:06:57.044Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1839,
+      "title": "Companion docs and phone mock follow the board picks",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1839",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T21:58:47Z",
+      "additions": 625,
+      "deletions": 523,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The design notes and clickable phone mockup for the Companion (the phone version of the app) now match the six choices the board approved. Monitor becomes a sixth option in the phone's bottom menu. Device icons appear in the top bar. The screen stays awake only while Monitor is showing. The STOP button appears greyed out only on first use, before any telescope has connected. Emergency Abort on the safety alarm now needs a 2-second hold instead of a tap. These answers were left out when an earlier docs update merged, so this brings the main branch up to date; it changes no app behaviour.",
+      "category": "docs",
+      "summaryHash": "1f658509227794de6a4264420568574100e8554f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1838,
+      "title": "Guider Tools lists the Assistant's suggestions to tick before Apply",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1838",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T21:58:47Z",
+      "additions": 343,
+      "deletions": 28,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the Guiding Assistant finishes, the Guider panel's Tools tab now lists each suggested setting change with its value and a checkbox. Users can untick the ones they don't want, and Apply only changes the ticked ones. Before, the panel offered \"Apply 2 suggestions\" without showing what would change. It also fixes two small text problems: Brazilian Portuguese users now see suggested guide directions in Portuguese, and a declination near zero shows \"0°\" instead of \"-0°\". The author notes that on a phone-sized screen with two suggestions, the Apply button is cut off until you scroll.",
+      "category": "feature",
+      "summaryHash": "2416efd3ed609be83360b8ddf43c1d765236f8a0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2224,
+      "title": "Record the CGX ConformU pass on v6.0.0-beta.2 on the OPi6 (#2119)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2224",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-12T21:41:05Z",
+      "additions": 386,
+      "deletions": 378,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This records a fresh, fully passing compatibility test of the Celestron CGX telescope mount over direct USB, run on the exact v6.0.0-beta.2 release. It replaces an older test result from before the mount's driver was changed. The supported-hardware list and related notes are updated to match, and they still note the known mount-side guiding quirk that stopped several earlier attempts. Only test records and documentation change, not code. A separate USB problem found on the Raspberry Pi 5 was logged as a new issue.",
+      "category": "docs",
+      "summaryHash": "e56d148327c98b2660b2e0b4f22dfed6ecd0875d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1841,
