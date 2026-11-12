@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T06:13:12.921Z",
+  "generatedAt": "2026-11-12T07:12:06.833Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1824,
+      "title": "Give the Sync cancel test a timing margin a loaded CI runner can meet",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1824",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T06:59:33Z",
+      "additions": 5,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only change that makes one automated check less likely to fail by accident when the build servers are busy. The check confirms that cancelling a mount sync during telescope centering stops it quickly instead of waiting on a slow mount. It recently failed by a fraction of a second on an overloaded server while testing an unrelated change, which knocked good work out of the merge line. The time allowed has been doubled from one to two seconds, and the simulated slow mount now takes longer to match, so the check still catches the real bug it was written for.",
+      "category": "tests",
+      "summaryHash": "b7f0eddd096fdcc04225221e540a03a3330c2337"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1818,
