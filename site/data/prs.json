@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T09:10:40.559Z",
+  "generatedAt": "2026-11-12T10:09:45.557Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1799,
+      "title": "First-time rig setup sheet and AlpacaBridge setup routes",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1799",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T09:58:35Z",
+      "additions": 2768,
+      "deletions": 5,
+      "changedFiles": 25,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When Simple Mode opens on a new telescope setup that is missing things a first night needs (the site location, the main camera and telescope details, and, if a guider is used, the guide scope and guider calibration), it now shows a Rig setup checklist. Each item has a button that opens the right setting to fix it. Choosing \"Not now\" hides the list on that device and leaves a Rig setup entry in Settings. The telescope computer also gained the behind-the-scenes pieces a future setup wizard needs to add devices to a fresh device bridge, but the wizard screens themselves are not in this change and wait on design approval.",
+      "category": "feature",
+      "summaryHash": "38ae5bc4cca4e0e854cefb745af99bbb3e4ed2cb"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1798,
+      "title": "Sky Album RCW Book and common names",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1798",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T09:47:18Z",
+      "additions": 1058,
+      "deletions": 81,
+      "changedFiles": 28,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Sky Album gains a third collection, RCW, which covers 181 glowing gas clouds in the southern Milky Way. This gives southern-sky photographers many more objects to collect, and photos saved under the objects' other common catalog numbers (such as \"Gum 15\") are matched too. Search and the plan now show well-known nicknames next to catalog numbers, for example \"NGC 246 (Skull Nebula)\", and typing the nickname finds the object. The new RCW cards show a placeholder picture until real photos are added, and the hand-picked nickname list is very small for now (two entries).",
+      "category": "feature",
+      "summaryHash": "2a4cf673a52a00ac9616e746343971f08796da70"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1797,
+      "title": "docs: Companion Mode is Simple Mode on phones; Sky Atlas docs follow Stellarium",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1797",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T09:25:00Z",
+      "additions": 664,
+      "deletions": 112,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only, with no change to the app. The design documents now describe the agreed plan for phones: they get the simpler Simple Mode screen with controls gathered at the bottom, instead of a separate phone layout. The approved phone mockup was added, and outdated mentions of a sky-map component the app no longer uses were corrected.",
+      "category": "docs",
+      "summaryHash": "c86fc05a74aaa2c11a727a2e4e56767bf433dca4"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1830,
