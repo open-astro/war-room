@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T12:11:50.311Z",
+  "generatedAt": "2026-11-12T13:10:24.699Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1819,
+      "title": "Plan squares on every Screen and a Bias chip in the Darks & bias picker",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1819",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T12:49:51Z",
+      "additions": 474,
+      "deletions": 56,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the small squares that show the night's imaging plan now appear on every screen, not just the queue screen, so you can follow the run from anywhere. Tapping them opens the queue. The calibration screen also gains a Bias option, so bias frames can be shot again even when some are already saved, or shot on their own without redoing the darks. These changes were checked against simulated equipment only, not yet on a real telescope.",
+      "category": "feature",
+      "summaryHash": "7fb4501d22168fbf6bed573ba39a2c6adeef669c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1831,
+      "title": "Guider Tools tab is one row per tool",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1831",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T12:41:54Z",
+      "additions": 924,
+      "deletions": 116,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Tools tab in the Guider panel now shows one tidy row per tool, for Calibration and the Guiding Assistant. Each row explains what the tool does and shows a clear status, such as \"Calibrated at Dec +12°\", \"Measuring drift…\" or \"Done. 2 suggestions to apply.\" When something blocks both tools, the reason now appears once instead of twice. The Assistant can no longer be started before the guider is calibrated, and its row explains why. English and Portuguese wording was updated to match.",
+      "category": "feature",
+      "summaryHash": "6c865c1b3b9ec4beb40b62c4d6cb169a597e53ef"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1832,
+      "title": "Sky Album tidy-up, pull to refresh and context menus on iOS",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1832",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T12:17:47Z",
+      "additions": 659,
+      "deletions": 65,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This bundles four small Sky Album improvements. The album's \"nights\" are now counted using the telescope site's local time instead of the tablet's time zone, so one night no longer gets split in two. The art credit link is now announced as a link to screen-reader users, and it shows a message if the page can't be opened. On iPhone and iPad, you can pull down to refresh the album and the list of telescopes, and a long press on an album card or a queued target opens the familiar iOS menu. A few other refreshable screens still use the old style and will be updated later.",
+      "category": "feature",
+      "summaryHash": "e88cd8e9c2f35676f5b7fca5d6c1590fc0ddaee5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1823,
