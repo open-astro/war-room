@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T23:07:22.762Z",
+  "generatedAt": "2026-11-12T01:01:43.374Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2228,
+      "title": "Serve OnStep tracking rates, rate offsets and guide rate; add SyncToAltAz (#2214)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2228",
+      "author": "kern2011",
+      "base": "main",
+      "mergedAt": "2026-11-12T00:47:40Z",
+      "additions": 1438,
+      "deletions": 124,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Telescopes running newer OnStep controllers (OnStepX) can now track the Moon, the Sun and the King rate, not just the stars, and can be nudged with small rate offsets to follow comets and asteroids. On both old and new OnStep controllers, the speed reported for autoguiding now comes from the mount itself rather than a fixed guess, so guiding software calibrates more accurately. The mount can also now be synced to a position given as altitude and azimuth, and turning tracking back on keeps the chosen rate instead of resetting it to star speed. It also makes the mount-type reading report an error instead of guessing when the mount has not answered, a change beyond the four features named in the title.",
+      "category": "feature",
+      "summaryHash": "238b707da9c24dcc7b1751bd2297e072c8aa7a34"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2229,
+      "title": "Merge gate: every check green and an approved review before a queued PR merges",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2229",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-12T00:43:51Z",
+      "additions": 302,
+      "deletions": 0,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds an automatic final check in the merge queue so a change only merges when every automated check on it passed and the review bot's latest verdict is \"Approved\". Before this, a change could slip in even if the review bot found problems or a non-mandatory check failed. It is internal tooling, and it will not actually block anything until a maintainer marks the new check as required.",
+      "category": "ci",
+      "summaryHash": "1c6c2116707d8e9f7736cccf2dbbd0a722d8a1b3"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1788,
+      "title": "Calibration: a Calibration mode, Night done's missing frames, Light / Flat plan rows, the Queue's Calibration block, and Focus › Offsets (#1757, #1563, #1675)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1788",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T00:25:49Z",
+      "additions": 12273,
+      "deletions": 2128,
+      "changedFiles": 93,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode, the tablet-friendly view, gains a new Calibration mode for taking flats, darks and bias frames, plus a way to measure and save focus differences between filters, so a night can end with matching calibration frames without switching to the full app. The plan screen now lets each target take flats right after it or at the end of the night, the end-of-night summary offers whatever calibration frames are missing, and every calibration run shows up in the queue with progress and a Resume prompt when it needs the user. Behind the scenes, the system now records which camera took each frame so its library of darks can be matched to the right camera, and a bug that stopped edited imaging runs from loading on the telescope computer is fixed.",
+      "category": "feature",
+      "summaryHash": "56320da9cb0c17fb7750df5e03c6bb772543f12f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2227,
+      "title": "Pin the CGX state-frame writers and test the frame age (#2035)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2227",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-12T00:10:23Z",
+      "additions": 152,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal safeguards only, with no change in how the Celestron CGX mount driver behaves. A new automated check flags any added or removed code that updates the mount's position record, and a new stress test confirms that frequent updates during slews do not make the driver wrongly report a lost connection. The point is to catch a future mistake before it reaches users.",
+      "category": "tests",
+      "summaryHash": "92ed9ee97aca9dbc0a7d2987cc0a3bac37cf6da8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2226,
