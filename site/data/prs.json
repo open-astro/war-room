@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T22:06:57.044Z",
+  "generatedAt": "2026-11-12T22:46:34.360Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1845,
+      "title": "Run status shows the first-flip wait and Paused; repeated fault drops fold into one row",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1845",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T22:43:48Z",
+      "additions": 749,
+      "deletions": 32,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The run status now tells the truth in two cases where it used to show stale text: during the 60-second wait before a profile's very first meridian flip it shows a live countdown, and a run paused by hand now simply reads \"Paused\" instead of the last step's leftover countdown. Pauses that need the user to do something, such as putting on a lens cap or pressing Resume after a failure, still keep that instruction on screen. The fault log also gets tidier: when the same device drops out repeatedly within a short time, those entries fold into a single row showing how many times it happened, when, and whether it recovered, and tapping it reveals every individual entry. Not yet checked on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "fcd31e9a53b06f9dd7ad5cd6a6313ed0923c48c9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2225,
+      "title": "Name the pending CGX axis when a home times out (#2213)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2225",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-12T22:37:35Z",
+      "additions": 187,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds extra diagnostic information for a rare problem where a Celestron CGX mount's homing never finishes and times out, losing its position reference. It does not fix the problem, which could not be reproduced in testing. Instead, the timeout error now reports what each axis was doing at the time, and with detailed logging switched on the same information is recorded every 10 seconds while homing is in progress, so the next failure should show what went wrong. Normal mount behaviour is unchanged.",
+      "category": "chore",
+      "summaryHash": "f26088d9df01ed4c32991a30f63ab15f01c287e1"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1842,
+      "title": "Mosaic picker framing rank",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1842",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T22:23:02Z",
+      "additions": 530,
+      "deletions": 5,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Users planning a mosaic can now tell Tonight's Sky how big it will be, from 1 to 4 tiles across and down, in the imaging settings. Target suggestions are then ranked by how well each object fits that larger combined area instead of a single camera frame, and the list shows a note like \"Framing for a 2×3 mosaic\" whenever the size isn't the default single frame. Some small help text in these screens was also made easier to read by using a darker grey. The setting is stored only on the user's own device.",
+      "category": "feature",
+      "summaryHash": "019d87d3649e651525ee5d025dd76b347ef91746"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1839,
