@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T04:02:31.825Z",
+  "generatedAt": "2026-11-13T05:01:51.503Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1852,
+      "title": "The broadcaster accepts only a declared WebSocket event",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1852",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T04:33:11Z",
+      "additions": 801,
+      "deletions": 420,
+      "changedFiles": 68,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes safety change to how the telescope computer sends live updates to the app: it can now only send update types from one official list, so a typo or an unlisted update type is caught before the software is built. The app's list of update names is now generated from that same official list, so the two sides can no longer drift apart. What users receive is unchanged, except that one unused entry (a flats-generated notice that nothing ever sent) is removed from the published list. Some older design notes still mention that removed entry; the author left them on purpose for a separate approval.",
+      "category": "refactor",
+      "summaryHash": "0232288f880921cb19dd1a868b17290b86c24e15"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1851,
+      "title": "Simple Mode: Rig setup header in Settings › Rig, clearer setup fixes, devices by name, Sky Map horizon and credit mark, Stats pull to refresh",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1851",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T04:11:55Z",
+      "additions": 1171,
+      "deletions": 329,
+      "changedFiles": 46,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes eight small Simple Mode problems found while testing on a real rig. Rig setup is now a progress header at the top of Settings › Rig (how many items are done, a progress bar, and the next missing item with a button to fix it) instead of a separate menu row. In the setup sheet, each missing item now sits in an amber box with its own fix button. Devices in Settings are listed alphabetically, the Sky Map shows the horizon again, and its image credit now sits behind a small info mark. The Stats page now refreshes with one pull-down instead of a refresh button per section, its tiles are all the same height, and its title has an icon like Sky Album's. The change also includes a fix to the automated test setup, not mentioned in the title, so Windows test runs no longer fail on an overly long command.",
+      "category": "feature",
+      "summaryHash": "ddd3965eb48f5ab0cf5d9a970e254ca9f0c1fc48"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1854,
