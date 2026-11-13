@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T01:06:03.825Z",
+  "generatedAt": "2026-11-13T02:04:27.987Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1853,
+      "title": "Simple Mode: darks folded by gain and temperature, Guide Camera files unknown instead of missing, status card beside the Preflight steps, filter letters in the wheel",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1853",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T01:31:18Z",
+      "additions": 743,
+      "deletions": 50,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes four problems found during a rig check in Simple Mode. A large collection of dark calibration frames is now grouped into one row per camera setting (gain and temperature) instead of overflowing the panel. The Guide Camera tab now says 'Checking' or 'Couldn't read the Guider's files', with a Try again button, when it can't get the guider's status, instead of wrongly saying a file is missing and offering a rebuild that takes minutes with the scope covered. The filter wheel now shows standard short names like G and L instead of slot numbers, and the status card stays near the top during Preflight when there's room; the new Guide Camera behaviour was not tried on the real rig.",
+      "category": "fix",
+      "summaryHash": "b42f14246186b62e708e4707dc532a1fcc6068a2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2238,
+      "title": "Remove the iMate row from the decision 0009 Adoption table",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2238",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-13T01:16:44Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only fix that removes an incorrect iMate entry from the project's written policy on handling lost device connections. The iMate power box is wired directly to the computer, so it has no connection that can drop, and the listed safety behaviour never existed in its driver. No software behaviour changes.",
+      "category": "docs",
+      "summaryHash": "73146bc4397adecd58fd63fca46e346e22b35dc1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2233,
