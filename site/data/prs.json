@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T08:00:36.791Z",
+  "generatedAt": "2026-11-13T09:58:52.017Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2240,
+      "title": "Add SetZero action to ZWO EAF, ToupTek AAF and iOptron iEAF focusers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2240",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-13T09:40:38Z",
+      "additions": 275,
+      "deletions": 50,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Owners of ZWO EAF, ToupTek AAF and iOptron iEAF focusers can now set the focuser's current position to zero from the OpenAstro Ara app, without needing the manufacturer's own software. The focuser does not move when this is done. The request is turned down if the focuser is disconnected or currently moving. Visible changes show this for the iOptron unit; the ZWO and ToupTek parts were mostly trimmed from the provided changes but are described as working the same way, and the author notes they were only tested against simulated hardware so far, with the full build on the actual Pi-type hardware left to the automated checks.",
+      "category": "feature",
+      "summaryHash": "b7afb34456d0749df4a51444c4ef7ecdd976088e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1867,
