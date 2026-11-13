@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T00:05:58.836Z",
+  "generatedAt": "2026-11-13T01:06:03.825Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2233,
+      "title": "Answer NotConnected before NotImplemented on disconnected drivers (#1919)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2233",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-13T00:57:13Z",
+      "additions": 321,
+      "deletions": 80,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Several device drivers (ZWO cameras and mounts, Sky-Watcher, Bisque, SynScan, the Gemini Cover Lite and GPhoto cameras) now give a consistent answer when an app asks for something before connecting: they say \"not connected\" instead of \"not supported\" or another misleading error. This tells astronomy apps to connect first rather than wrongly concluding a feature is missing. The Player One camera also now answers an out-of-range readout mode request as an invalid value. The automated check that covers every driver was tightened, so any driver that gets this order wrong will now fail the tests.",
+      "category": "fix",
+      "summaryHash": "83fcec04ace8185b309f92b85ddaf501d26c5d5b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1849,
+      "title": "Keep the filter wheel's tap targets and drawn angle right",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1849",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T00:50:23Z",
+      "additions": 125,
+      "deletions": 54,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The filter wheel in the app now picks the filter you actually tap, even when you tap near a filter's edge, instead of sometimes picking the one next to it. When the wheel's number of filter slots changes, the drawing is redone so the filter in use still sits under the top marker. This PR restores four follow-up fixes that were left out when the filter wheel window was first merged, plus a small doc comment move, and adds tests for each fix.",
+      "category": "fix",
+      "summaryHash": "0f0eb7e5f6cfdfc487093bf69b712b0ab2ea2267"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1848,
+      "title": "Decision records: the Prompt module and the Refusal declaration",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1848",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T00:50:23Z",
+      "additions": 111,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only, with no code changes: the team recorded two proposed design decisions for future work. One says all the messages the observatory raises for the user (such as a filter to swap or a device that failed to connect) should be managed in one place in the app, shown as a dialog in the full interface and as a pill in Simple Mode. The other says each reason the observatory turns down a command should have one fixed cause code that the app turns into words. The glossary gains the terms \"Prompt\" and \"Refusal\".",
+      "category": "docs",
+      "summaryHash": "a36f83c59341a112686df803a07b413795b09810"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1844,
