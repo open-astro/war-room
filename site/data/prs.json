@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T21:48:44.867Z",
+  "generatedAt": "2026-11-13T22:47:54.403Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1877,
+      "title": "Run Sequencer rotator moves through one device command module",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1877",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T22:06:10Z",
+      "additions": 602,
+      "deletions": 123,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When an automated observing sequence tells the camera rotator to turn, the rules for waiting on it now live in one shared, tested place instead of being written out inside the rotator's own code. These rules cover giving up if the rotator stops answering, checking that it has finished moving, and reporting a problem if it gets stuck or reports an error. The rotator should behave the same as before, but there are now tests proving a stuck rotator fails on time, and other devices such as the dome are planned to move onto this shared approach later. It was checked only with simulated devices, not on real telescope hardware.",
+      "category": "refactor",
+      "summaryHash": "9a89ac0423dba99c22637a6b9dc41cc86db6ebaa"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1876,
