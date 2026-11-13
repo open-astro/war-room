@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T14:58:41.516Z",
+  "generatedAt": "2026-11-13T21:48:44.867Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1876,
+      "title": "Camera exposure WebSocket events get typed payload records",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1876",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T21:32:39Z",
+      "additions": 384,
+      "deletions": 71,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The messages the telescope computer sends to the app when a camera exposure starts, finishes, or fails now follow a single, formally declared format that both sides share, instead of being assembled by hand and read piece by piece. Nothing changes for users: a test confirms the messages are exactly the same as before. The benefit is that if the format ever changes on one side without the other, an automated check now fails instead of the app quietly breaking. The app is also stricter now: an exposure message with missing or wrong information is ignored rather than causing an error. This is the first of several similar changes planned for other kinds of messages.",
+      "category": "refactor",
+      "summaryHash": "0470d1b5a9f9bfaf9d1e37112cec84b58df31c36"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1856,
