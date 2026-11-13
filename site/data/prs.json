@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T05:01:51.503Z",
+  "generatedAt": "2026-11-13T06:02:46.227Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2239,
+      "title": "Run the QHY camera's polling, cooler-off and pulse bodies in slots (#1736)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2239",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-13T05:59:49Z",
+      "additions": 599,
+      "deletions": 600,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY camera's background jobs for cooler control, status checks, turning the cooler off and guiding pulses now run in a safer, managed way, so none of them can keep running after the camera is removed. Turning the cooler on now responds right away instead of sometimes stalling for up to 2 seconds, and an older guiding pulse that finishes late no longer wrongly reports that a newer pulse has ended. Disconnecting still waits at most 2 seconds, but removing the camera or stopping the server will now wait for a stuck camera call to finish instead of leaving it running. The camera's exposure work is not changed yet; that comes in a later update. The main code change was not shown in full, so these details come from the description, the docs and the changelog.",
+      "category": "refactor",
+      "summaryHash": "77d8b446aff98b5229f8601ed5ab4658d9478f2f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1855,
+      "title": "Declare each profile section once in a table",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1855",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T05:37:11Z",
+      "additions": 861,
+      "deletions": 607,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Each part of a saved observatory profile (site, optics, guider settings and so on) is now listed in one place instead of being copied by hand into six. This prevents bugs like an earlier one where switching profiles kept the old setup's guiding settings because one list had missed a section. Users will notice that shared profile files now leave out more personal details, such as saved targets, observer and telescope names, guider camera, mount and PHD2 connection choices, and focuser backlash, so the person receiving the file sets their own. New profiles also start with empty values instead of blank ones for calibration state, equipment identity and saved targets. The main new code was not shown in full, so those details come from the description.",
+      "category": "refactor",
+      "summaryHash": "6dbd7cd8825230bde62d287181830d6361c0a877"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1852,
