@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T06:02:46.227Z",
+  "generatedAt": "2026-11-13T08:00:36.791Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1867,
+      "title": "Decision records: accept 0012 and bring five records back in line with the code",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1867",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T07:08:55Z",
+      "additions": 21,
+      "deletions": 18,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a documentation-only update to the project's written architecture decisions, the rules that reviewers and the automated review bot check new work against. One decision, that each section of a saved equipment profile is defined in a single place, is now officially adopted because the work behind it is finished, and its rules now point to the specific automated checks that enforce them. Two other decisions were reworded so they can only be read one way: Simple Mode may not add features the full app cannot reach, and the Emergency Stop button keeps its hold-to-confirm safety step while ordinary stops (a run, a device, or polar alignment) are treated as normal actions. Several records also now say when their description of the code was written, so the review bot should stop flagging work that was never meant to be covered. The parts of the change shown match the description, and no app behavior changes.",
+      "category": "docs",
+      "summaryHash": "9a583ca95226eb59a86c67cd37866699034cfffd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2239,
