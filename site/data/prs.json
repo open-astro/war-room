@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T02:04:27.987Z",
+  "generatedAt": "2026-11-13T04:02:31.825Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1854,
+      "title": "Guider socket drop while connecting ends in Error and starts recovery",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1854",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-13T03:38:36Z",
+      "additions": 91,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a case where the app said the guiding software was connected when the link to it had actually dropped. If the connection was lost while the app was still finishing its setup, it would show \"connected\" anyway, and every guiding command would then fail. Now the app notices the lost link, shows an error, and starts its automatic reconnect. The change matches the description, includes a new automated test using a simulated guider, and has not yet been tried on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "f9ded6a60a0be4f6d2015a2cbf0f13bedb242ba7"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1853,
