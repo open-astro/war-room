@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T23:07:46.047Z",
+  "generatedAt": "2026-11-13T00:05:58.836Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1844,
+      "title": "Sync preferences through the rig and remember tonight's progress",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1844",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-12T23:37:27Z",
+      "additions": 4026,
+      "deletions": 279,
+      "changedFiles": 70,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When several phones, tablets or computers are connected to the same telescope, they now share more of the same settings: planetarium display choices, planning options, and which end-of-night summaries have already been answered or dismissed. Open screens also update right away when another device changes a profile setting, instead of showing old values. Night Setup now remembers tonight's focus run and the last polar alignment even if the app is restarted, and there is a new Permanent pier switch in the location settings so a permanently mounted telescope can skip polar alignment. The visible code matches the description. The author notes it has only been tested with simulated equipment, not on real hardware yet.",
+      "category": "feature",
+      "summaryHash": "82c9a173ca484e9b678acf07cd453245cead4a8c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2236,
+      "title": "Move filter wheel slot data into util::FilterWheelSlots (#1991)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2236",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-12T23:11:37Z",
+      "additions": 720,
+      "deletions": 576,
+      "changedFiles": 22,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The seven supported filter wheel brands each had their own copy of the code that handles filter names and focus offsets, and those copies had drifted apart. This change replaces them with one shared version, so every wheel now follows the same rules, and adds tests that check every wheel against those rules. Users will see a few small differences: Player One wheels now expand short names like \"LRGBH\" into separate filters, a ZWO wheel opened by its device ID now accepts a list of any length while disconnected, iOptron wheels no longer expand short names while disconnected, and the resize warning message now reads the same on every brand. The maintainer approved these differences in advance.",
+      "category": "refactor",
+      "summaryHash": "c76d9b4d5b24630260ff69526dcfa6d073e963f2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2235,
