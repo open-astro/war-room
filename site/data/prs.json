@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T13:55:25.090Z",
+  "generatedAt": "2026-11-13T14:58:41.516Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "A large bundle of Simple Mode improvements. The filter wheel now shows Red, Green and Blue filters in their colours and the clear/luminance filter as a dim rainbow instead of a bright white disc at night, and a new Focuser settings section lets you set the focuser's current spot as zero or run a travel calibration. Plan now takes any typed frame count (such as 47) instead of a short preset list, the Stats page becomes a denser dashboard, the Sky Map is loaded ahead of time so it opens faster, Versions moves to the end of Settings › Rig, and the Camera window shows a 'warming' state so you know when it is safe to power off. The focuser zero only works with drivers that offer it, and the description says the ZWO, ToupTek and iOptron drivers do not offer it yet, so for now it mainly helps Celestron focusers (calibration).",
+      "category": "feature",
+      "summaryHash": "91fd99f317a509edf4e745e2804c51896c898016"
     },
     {
       "repo": "open-astro/AlpacaBridge",
