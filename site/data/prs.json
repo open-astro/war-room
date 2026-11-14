@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T10:59:13.151Z",
+  "generatedAt": "2026-11-14T11:58:24.942Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2255,
+      "title": "Run the SynScan snapshot cases on PolledRig (#1992)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2255",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T11:47:30Z",
+      "additions": 501,
+      "deletions": 439,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "This is an internal test cleanup with no change for users. The tests for the SynScan telescope driver now use the same shared test setup as the focuser tests, instead of building their own clock, fake handset and driver in every case. To make that possible, the shared setup gained a way to pause the driver's background status checks and to run one check on demand. The three tests added recently by another change were moved over as well.",
+      "category": "tests",
+      "summaryHash": "bdd6a39475e68170de8806a2f166c8791c537003"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1893,
+      "title": "The daemon serves the queued plan with loop counts",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1893",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T11:21:17Z",
+      "additions": 794,
+      "deletions": 2,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope-side server can now tell any connected device the queued observing plan, including how many frames each step needs and how many are done, plus which block is running right now. Before, each device worked out the plan from its own copy, so a second phone or tablet could show a different queue and wrong counts. A plan with a negative repeat count no longer causes a crash. Nothing changes on screen yet; the app update that uses this comes in a later change.",
+      "category": "feature",
+      "summaryHash": "790ab920cd921163625f77769acd1f5688d545ea"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1884,
+      "title": "Simple Mode guider status and pills (#1875 slice 3)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1884",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T11:21:00Z",
+      "additions": 1390,
+      "deletions": 109,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode now notices when a plan starts the guider. Before, guiding stayed hidden until someone opened Advanced Mode. The status pills are cleaner: during autofocus only the Focus pill shows, and guider calibration inside a plan shows as one pill that says which step it is on. The Guiding Assistant gets its own pill with a countdown, and the Guider panel draws a live calibration chart, grows to fit the tab it shows, and stays where it opened. In Preview, the Guide shutter now loops the guide camera's normal frames at the guider's exposure, instead of starting the focus loop.",
+      "category": "fix",
+      "summaryHash": "9c5ce932330f3c2d27fc54e1d3733eadadb4723d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1879,
