@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T05:08:17.435Z",
+  "generatedAt": "2026-11-14T07:05:01.884Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2244,
+      "title": "Gemini: drop the power hub's Connected on link loss and read focuser MaxStep once at connect",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2244",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T06:57:42Z",
+      "additions": 777,
+      "deletions": 136,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two fixes for Gemini equipment. When the Gemini power hub's USB cable is pulled, or the hub stays silent for about 30 seconds after it is flagged as faulty, the software now reports it as disconnected and frees the port. Before, it claimed to be connected forever and gave confusing errors. Astronomy apps can now notice the hub is gone and reconnect with a single Connect. Separately, the Gemini focuser now reads its maximum travel limit once when it connects instead of asking the device every time, so those reads never wait on the hardware, and a focuser that does not report its limit is refused at connect.",
+      "category": "fix",
+      "summaryHash": "26f645d84f0c08b028168eaac3b3c8a1ac6d7289"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2242,
+      "title": "Remove audit leftovers, add stale, Scorecard and badge workflows",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2242",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T06:50:26Z",
+      "additions": 685,
+      "deletions": 314,
+      "changedFiles": 69,
+      "labels": [],
+      "summary": "Mostly internal cleanup and new automation for the repository. It removes unused leftover code, requires every code-checker exception to state its reason, and adds checks that every automated job has a time limit, so no job can run for hours. The README's 'lines of code' badge now updates itself after each merge, so pull requests no longer fail over a number that other merges changed. It also adds a weekly supply-chain security score and a job that flags inactive issues and pull requests; for now that job only logs what it would do and does not mark or close anything.",
+      "category": "ci",
+      "summaryHash": "1643304432a8aa0c1db654db3e2ed261a0c4b05c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1883,
+      "title": "Plan run: one autofocus after guiding, guider connect and retry, one pause pill",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1883",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T06:29:46Z",
+      "additions": 328,
+      "deletions": 57,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Makes Simple Mode imaging plans more reliable after problems on a recent observing night. A guided plan now starts guiding first and then runs a single autofocus, instead of focusing twice. Starting the guider now connects its camera and mount first and tries once more before pausing the run. If it still pauses, the message plainly says the guider's camera or mount is not connected. Tapping Pause repeatedly no longer stacks duplicate error messages, and status text now says 'Guider' instead of 'PHD2'. This has been tested with simulated equipment only, not on real hardware.",
+      "category": "fix",
+      "summaryHash": "04fbb2619b8aa578bf119883c246251407f1605c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1881,
