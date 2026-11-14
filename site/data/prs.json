@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T08:04:08.596Z",
+  "generatedAt": "2026-11-14T09:01:15.575Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,108 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1885,
+      "title": "Move the camera onto the shared device lifecycle",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1885",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T08:56:05Z",
+      "additions": 751,
+      "deletions": 512,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The camera now uses the same shared connect, health-check and recovery code that the other nine telescope devices already use, instead of its own separate copy. This also fixes a bug where the app could reconnect a camera the user had deliberately disconnected while it was recovering from a fault. After a dropped connection, the camera is now only counted as recovered once it gives a good reading. This has not yet been tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "efe5fe6814fd74c58f2d6100e7ba293f918ac1ab"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2253,
+      "title": "Strengthen telescope and stress tests, add ASIAIR switch storms",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2253",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T08:38:15Z",
+      "additions": 1179,
+      "deletions": 459,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "Test-only change that makes existing mount and stress tests stricter, so they fail if the behavior they check is broken. Before, some only passed because they accepted any answer or never connected to the device. It also adds new tests for the two ZWO ASIAIR power-switch boxes, which had none that ran while connected. The program itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "a40a1cd8b13d4159922aacc372af4909913205ae"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2252,
+      "title": "Add connected telescope cases and missing state machine cases",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2252",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T08:24:28Z",
+      "additions": 475,
+      "deletions": 1,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change that adds checks for many mount settings and readings while the mount is connected, using simulated mounts so no hardware is needed. It also adds missing tests for the moving and parked states of several mounts, filter wheels, focusers and rotators. Two of the simulated mounts were improved to behave more like the real ones. The program itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "eb6d962cb6b7a92a4c9d8e408ef03f231bf048db"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2249,
+      "title": "WandererAstro: drop Connected on a lost link (decision 0009) and log rotator scan skips",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2249",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T08:22:02Z",
+      "additions": 1711,
+      "deletions": 121,
+      "changedFiles": 23,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Four WandererAstro devices (the cover, the filter wheels, the WandererBox and the rotator) now show as disconnected when their USB cable is pulled or their link goes dead. Before, they kept saying they were connected. Apps like NINA can now tell the user to reconnect, and the dead port is freed. Separately, when the rotator's automatic search skips a USB port, it now writes the reason to the log, which helps when troubleshooting.",
+      "category": "fix",
+      "summaryHash": "7df72f0daea28798512da3ee16e4e2b24b073f5d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2243,
+      "title": "Web UI field use: in-page dialogs, tab semantics, client activity dot (#1764)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2243",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T08:18:39Z",
+      "additions": 1305,
+      "deletions": 109,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "The bridge's web page is now easier to use in the field. Bright browser pop-ups are replaced with dark, in-page dialogs and messages, and the tabs work with the keyboard and screen readers. The device status dot is now green only if an app actually used the device in the last minute, and yellow if the device is connected but idle. Smaller changes: an 'Add device' button when the list is empty, a shorter clock on small phone screens, and a warning that turning on the 'Restrict Host names' setting can lock out other apps. Four of the nine items in the original request are still to be done.",
+      "category": "feature",
+      "summaryHash": "7f7fe1628571520ae8d907a39570abd8524c015b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2246,
+      "title": "SVBONY camera: run the exposure in a CaptureSession and drop Connected on SDK removal",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2246",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T08:08:21Z",
+      "additions": 1220,
+      "deletions": 576,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "The SVBONY camera now takes pictures the same way as the Player One and ZWO cameras, so exposures stop and fail more reliably. It also now shows as disconnected when the camera reports that it has been removed, so apps learn the camera is gone. It is not yet known whether pulling the cable on a real SVBONY camera sends that 'removed' report, so the related issue stays open until someone with the hardware checks.",
+      "category": "fix",
+      "summaryHash": "fb7d57955738322cfd4e79c2332032631a290030"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2250,
