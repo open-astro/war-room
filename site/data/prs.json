@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T11:58:24.942Z",
+  "generatedAt": "2026-11-14T12:57:27.342Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1886,
+      "title": "Every profile section answers an ETag and refuses a stale If-Match",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1886",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T12:37:28Z",
+      "additions": 659,
+      "deletions": 83,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope computer now protects every group of saved rig settings, not only storage, from being overwritten by an out-of-date copy. If one device tries to save settings that another device has changed since it loaded them, the save is refused and nothing is changed, so a newer change is not lost by accident. Saves that do not say which copy they loaded still go through as before, and the client app will move to this check in later changes. One side effect is that a device holding an old storage settings copy will see one refused save and need to reload.",
+      "category": "feature",
+      "summaryHash": "9f6b38d9531b0f884f18ade7f523827ce512c5ee"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2254,
+      "title": "Share one fake hand controller per SynScan and Celestron test family",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2254",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T12:01:55Z",
+      "additions": 1119,
+      "deletions": 1223,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "This is an internal test change with no change to the telescope drivers themselves. The tests for SynScan and Celestron mounts each used their own pretend hand controller, and those copies had drifted apart. Each mount family now shares one pretend hand controller that follows the official protocol documents. This makes results consistent from test to test, makes some tests faster, and the description says it exposes one real driver bug that the old copies had hidden.",
+      "category": "tests",
+      "summaryHash": "af270e99a324c3f334bb530092172458ba82c33d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2255,
