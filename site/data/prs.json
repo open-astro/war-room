@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T22:47:54.403Z",
+  "generatedAt": "2026-11-14T01:45:16.282Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1880,
+      "title": "Companion Mode portrait shell: one bottom deck on an upright phone",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1880",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T01:00:56Z",
+      "additions": 1309,
+      "deletions": 125,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On a phone held upright in Companion Mode, the app's two side menus now fold into a single deck at the bottom of the screen, within thumb reach. The deck holds the section names, which you can swipe through, plus Sky Map, Info, Library, the shutter, settings and a large STOP button, and it splits into two rows when space is tight so nothing gets cut off or crowded, even with larger text. The Monitor page, which phones could not reach before, now opens from the deck and shows its information as one scrolling column, and STOP appears dimmed until a telescope rig has been connected. Phones turned sideways, tablets and desktops keep their current layout; most of the code changes were too large to show, so the details come mainly from the description and the design notes.",
+      "category": "feature",
+      "summaryHash": "2313871f29bc40e8188c4f6313fe8b1ac0ba019b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1877,
