@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T10:00:05.750Z",
+  "generatedAt": "2026-11-14T10:59:13.151Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1879,
+      "title": "Guide Camera custody is one daemon module (#1809 slice 1)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1879",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T10:32:28Z",
+      "additions": 814,
+      "deletions": 378,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Decisions about who can use the guide camera now follow one rule, set in one place. Guiding always wins, and setup tools (polar alignment, guide-camera focusing and the guider live view) are turned away with a clear reason while guiding is in progress. Before this, those tools followed conflicting rules, so a setup tool could take the camera away from active guiding, and the live view had no check at all. Starting guiding now also closes any open polar alignment, and the author notes that testing on real telescope hardware was still pending.",
+      "category": "fix",
+      "summaryHash": "f88e530c9fb29637b15ff5407fa8689e558431f1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2247,
