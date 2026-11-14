@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T01:45:16.282Z",
+  "generatedAt": "2026-11-14T05:08:17.435Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1881,
+      "title": "AGENTS.md: Flutter client state rules (Riverpod watch/read/listen, AsyncValue states)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1881",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T04:12:28Z",
+      "additions": 7,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal documentation only: this adds a short section to the rules file that AI coding assistants follow in this project, explaining how the app's screen data should be written. It says the app builds this by hand without automatic code generation, and that screens which wait on data must show a loading state and an error state as well as the result. The aim is to stop assistants from following generic online guides that don't match how this app is built. Nothing in the app itself changes.",
+      "category": "docs",
+      "summaryHash": "4c987d7ca5a255a21594c9c3c3a54983b9e2bad4"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1880,
