@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T12:57:27.342Z",
+  "generatedAt": "2026-11-14T14:55:43.090Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1902,
+      "title": "Simple Mode: five fixes from the third rig night (#1898)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1902",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T14:27:42Z",
+      "additions": 242,
+      "deletions": 151,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes five Simple Mode problems found during the third night of testing at the telescope. Choosing \"Image this\" from the sky view or the Sky Album while a plan is running now opens the panel to add the target to the queue; before, nothing useful happened. The hints that tell you to connect the guider now point to the setting that actually exists, \"Camera (Guide)\" under Devices, in both English and Brazilian Portuguese. The Guider panel no longer shows its status twice, and the focus chart no longer has overlapping labels or changes size during an autofocus run. Advanced Mode is unchanged.",
+      "category": "fix",
+      "summaryHash": "c296432c3edd3a419ace2ac0e7b22f5bc1e55d76"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1896,
+      "title": "The merge queue runs only the Linux client tests, and the gate trusts a check's conclusion",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1896",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T14:23:46Z",
+      "additions": 72,
+      "deletions": 30,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the automated merge process. Changes should now get through the merge queue faster. The Mac and Windows tests now run earlier, while a change is still under review, instead of in the queue, so the queue no longer waits on the few available Mac machines. It also fixes two bugs in the final merge check: one made it wait a full 50 minutes for a test that had already finished, and the other made it crash when a change had many test results.",
+      "category": "ci",
+      "summaryHash": "146578e6ceaa63c3a3b3749409ef123ea9feaa80"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1886,
