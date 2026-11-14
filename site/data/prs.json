@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T14:55:43.090Z",
+  "generatedAt": "2026-11-14T20:50:35.854Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2265,
+      "title": "Refuse telescope optics while disconnected and keep SynScan tracking after a failed restore",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2265",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T19:59:12Z",
+      "additions": 324,
+      "deletions": 45,
+      "changedFiles": 23,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Seven telescope mount drivers now report \"not connected\" when asked for the telescope's aperture, focal length or settle time while the mount is offline, instead of quietly answering with the saved settings. This makes them follow the same rule as the eighth driver and as the ASCOM standard. The PR also fixes a SynScan bug where, if the command to resume tracking after a manual move or guide pulse timed out, the mount could stay stopped even though the user had asked it to track. Now the next move or stop restores the tracking the user asked for. Only part of the code was visible for review: the Bisque driver change and the documentation match the description, but the other drivers' code was not shown.",
+      "category": "fix",
+      "summaryHash": "a5302d6ecd2ead1cef9394ebfdaf801f75b7e2ee"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1902,
