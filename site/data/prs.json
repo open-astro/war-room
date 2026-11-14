@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T09:01:15.575Z",
+  "generatedAt": "2026-11-14T10:00:05.750Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2247,
+      "title": "Fix telescope guide-rate order, stale Park poll, pulse restore, SynScan disconnect, iOptron :GUT#",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2247",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T09:36:06Z",
+      "additions": 950,
+      "deletions": 65,
+      "changedFiles": 26,
+      "labels": [],
+      "summary": "Fixes several small but disruptive problems across five supported telescope mounts (Celestron CGX, TheSkyX/Bisque, Sky-Watcher, SynScan and iOptron). A cancelled park no longer later reports the mount as parked, which had been blocking slews. Guiding no longer leaves the mount tracking at the wrong speed, disconnecting from an unresponsive SynScan handset is now quick, iOptron mounts connect with one less round trip, and bad guide-rate settings get the error that testing tools expect. It also adds a write-up of a manual setup workaround for a Raspberry Pi 5 USB crash with the Celestron CGX. Most of the code changes were not visible in the trimmed diff, so only the documentation updates could be checked against the description.",
+      "category": "fix",
+      "summaryHash": "3aa1fd4100dc6f52cec56c7a1f72af66f8b4e549"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2245,
+      "title": "Add an HTTP header deadline; fix the clock error, tab indent and router log text",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2245",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T09:34:26Z",
+      "additions": 405,
+      "deletions": 95,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "Closes a gap where a slow or hostile device on the local network could tie up the server by sending a request very slowly, which could freeze out imaging apps like NINA. The server now gives a request's opening part 10 seconds to arrive and then drops it. The PR also stops the web page's clock display from showing an old error after a failed refresh, makes the settings file handle tab-indented lines correctly, and cleans error messages and hidden text characters before they go into the logs so they cannot fake or scramble log lines. The code shown matches the description.",
+      "category": "fix",
+      "summaryHash": "88d3493963e038e170c7ef7561d98b7a4bcf6c0b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1885,
