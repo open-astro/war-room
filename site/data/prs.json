@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T07:05:01.884Z",
+  "generatedAt": "2026-11-14T08:04:08.596Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,112 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2250,
+      "title": "Drop WeeWX Connected when the station feed stops answering (#1984)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2250",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T07:54:22Z",
+      "additions": 768,
+      "deletions": 72,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a WeeWX weather station stops answering, the bridge no longer keeps quietly handing out its last reading as if nothing were wrong. After three failed checks in a row, weather readings are refused with an error that explains the problem. If the problem lasts long enough (about the fifth failed check at the default 15-minute interval), the station is shown as disconnected. Nothing reconnects by itself: the user has to connect again. This was tested against a simulated feed only, not a real station.",
+      "category": "fix",
+      "summaryHash": "2feb6617156461564a5565ac69cf8894fb79fa64"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1882,
+      "title": "Companion Mode device windows and swipeable device icons on an upright phone",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1882",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T07:42:51Z",
+      "additions": 696,
+      "deletions": 96,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Companion Mode on a phone held upright, the top bar stays a single row and its device icons now scroll sideways. Each icon is a finger-sized target, so all 11 device windows can be opened. Device windows now open full width between the top bar and the bottom controls, so the STOP button stays visible and can still be held. The \"No devices connected\" message now gets its own row so it is no longer cut off with large text. Landscape phones, tablets and desktop are unchanged.",
+      "category": "feature",
+      "summaryHash": "39642eefb6f60698ed20c1f9d6ecc5a6207e8547"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2248,
+      "title": "ToupTek camera: firmware and SDK version in the web UI; closing_ test",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2248",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T07:41:22Z",
+      "additions": 445,
+      "deletions": 35,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "ToupTek and Altair cameras now show their firmware details (including hardware version, FPGA version and production date) and the camera software library version in the web interface. Before, these fields were empty. The values are read once at connect, so the status page adds no extra load on the camera. The PR also strengthens a test so it now actually catches a bug where a camera could start an exposure while it is disconnecting.",
+      "category": "feature",
+      "summaryHash": "c611ab72885c91151507a981c195cc4582d675cc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2251,
+      "title": "Port the Bisque, Celestron and SynScan telescope deadlines onto util::HoldWindow",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2251",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-14T07:38:18Z",
+      "additions": 322,
+      "deletions": 130,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup for the Bisque, Celestron and SynScan telescope drivers. They now use the same shared timing tool as the other telescope drivers to track how long \"slewing\" and \"pulse guiding\" should keep showing as active. Users should see no change in behaviour. New tests were added, and the design notes now list the gaps that remain for later work.",
+      "category": "refactor",
+      "summaryHash": "1561f44f3c8062f596213201196c6251001c7caa"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1878,
+      "title": "Move the telescope onto the device lifecycle module and gate recovery on a clean read",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1878",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T07:29:08Z",
+      "additions": 1194,
+      "deletions": 671,
+      "changedFiles": 27,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope now uses the same shared connect-and-recover system as most other devices in the app. Automatic recovery also got stricter for all nine devices that use this system: a device only counts as recovered once it has actually returned a good reading. Before, a device that claimed to be connected while every reading failed could end recovery too early. Now that case triggers another reconnect attempt. This has not been checked on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "d35b60819a4e7257dcd2b0ab5b28e97c352c9b5b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1869,
+      "title": "Storage settings load before they save",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1869",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-14T07:17:18Z",
+      "additions": 3439,
+      "deletions": 1324,
+      "changedFiles": 42,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Storage settings can no longer be wiped out by accident when the rig fails to answer. Before, a failed load left made-up default values on screen, and pressing Save could write them over the user's real settings. Now the Storage and File naming panels show \"Not loaded\" with a Retry button (or \"Rig not connected\"), and Save refuses to write anything that was not loaded from the rig. Save also refuses to overwrite a newer change made from another device, keeping your edits on screen and offering a Reload button. This is the first step, covering Storage only; other settings sections will follow later.",
+      "category": "fix",
+      "summaryHash": "d4efcf5469cb2a7e2739cf11b79526613060ff72"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2244,
