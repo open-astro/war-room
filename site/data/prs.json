@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T22:29:19.184Z",
+  "generatedAt": "2026-11-15T23:28:20.782Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1948,
+      "title": "Strip the share-table fields when a profile share file is imported",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1948",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T22:39:00Z",
+      "additions": 31,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Importing a shared observing profile now removes the machine-specific details, such as the plate-solving program location, notification app tokens, and the folder where images are saved, before the profile is stored. Exporting already removed these, but importing did not, so a hand-edited share file could slip them onto another telescope computer. Now a share file can only bring in the general judgement settings, and normal exported files behave exactly as before. A new test confirms the fix.",
+      "category": "fix",
+      "summaryHash": "323bba70869a476b9b0fbd35f84aa58e1e0c386c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1938,
