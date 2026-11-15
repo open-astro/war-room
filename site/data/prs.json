@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T10:39:29.386Z",
+  "generatedAt": "2026-11-15T12:37:46.165Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1934,
+      "title": "fix: restart when idle restarts the daemon",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1934",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T12:33:01Z",
+      "additions": 171,
+      "deletions": 22,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"Restart when idle\" button on the telescope computer's Restart card now actually restarts the observatory software. Before, it reported success but did nothing. If nothing is imaging, it restarts right away. If a sequence is running, it sends a \"restart pending\" notice and waits for the run to finish, checking once more just before restarting so that a follow-up run that starts at the last moment (such as end-of-night calibration frames) is not cut off. Pressing the button again while a restart is already waiting does not add a second one, and the waiting request lives only in memory. The app itself only learned the name of the new \"pending\" notice and does not yet show anything for it.",
+      "category": "fix",
+      "summaryHash": "cc9208ec04fc8be3876018a22c8c5cb187f19358"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2268,
