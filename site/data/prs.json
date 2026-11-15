@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T09:56:41.676Z",
+  "generatedAt": "2026-11-15T10:39:29.386Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2268,
+      "title": "Require the low level the ASIAIR Pro destruction wait saw (#2267)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2268",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-15T10:32:19Z",
+      "additions": 9,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a flaky automated test that kept failing the nightly checks, with no change to the driver itself. The test for the ZWO ASIAIR Pro power switch checked a signal line twice in a row, and the line could legitimately flip between the two checks, so the test failed even though the driver was fine. It now trusts the first reading it waited for, as the similar ASIAIR Plus test already does, which should get the nightly run back to green.",
+      "category": "tests",
+      "summaryHash": "e8789d8a47639e416d559c8d4829b66d84eb3159"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1909,
+      "title": "Notifications, file names and diagnostics mode load before they save",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1909",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T10:03:42Z",
+      "additions": 1088,
+      "deletions": 407,
+      "changedFiles": 34,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Notifications, File names and Diagnostics mode settings screens now wait to load the real values from the telescope computer before showing or saving anything. Before, they could show made-up defaults when the rig did not answer, and pressing Save could overwrite good settings or a newer change made from another device. Now they show \"Not loaded\" with a Retry button, or \"Rig not connected\", and they warn you and offer a reload if someone else changed the settings first. The change also makes the safety alarm sound when notification settings could not be loaded, makes screen readers announce the three diagnostics modes as a single choice, and lays groundwork for moving the other settings screens to the same safer behavior later.",
+      "category": "fix",
+      "summaryHash": "34fb2239e46a05f7cc477987877fb6563a049bd9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1913,
