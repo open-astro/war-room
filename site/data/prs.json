@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T21:51:37.131Z",
+  "generatedAt": "2026-11-15T22:29:19.184Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1938,
+      "title": "fix: resume re-centers and refocuses a Simple Mode run",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1938",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T21:55:24Z",
+      "additions": 272,
+      "deletions": 22,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When you resume a paused Simple Mode imaging run with the \"Re-center and refocus\" option, the telescope now actually re-centers on the target and refocuses before taking the next picture. Before this fix it silently skipped both and went straight back to imaging, because it could not find the target in plans built by Simple Mode. The app now also writes a log note explaining why whenever it skips this step. It also no longer swings back to a target that has already finished. As a side effect, the automatic safety resume, recovery after losing the guide star, and the meridian-flip check now also work with Simple Mode targets.",
+      "category": "fix",
+      "summaryHash": "81411fb701e0718eafc48fc6f7084b4f6f9f7628"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2285,
