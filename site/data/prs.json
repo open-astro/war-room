@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T04:43:53.606Z",
+  "generatedAt": "2026-11-15T05:42:53.664Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1907,
+      "title": "A dither settle timeout no longer pauses the run",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1907",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T04:51:06Z",
+      "additions": 72,
+      "deletions": 60,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the guider is slow to settle after a dither (a small deliberate nudge of the telescope between photos), the observing run no longer stops and waits for someone to press Resume. Before, a settle timeout triggered a second dither, and a second timeout paused the whole night's plan; now it just logs a warning, shows a 'carrying on' message, and starts the next photo. This keeps unattended runs going, with the trade-off that a photo may occasionally start while the star is still drifting; a lost star or a runaway guider is left to a separate star-lost watch. The code matches the description, and also includes small tidy-ups, comment and design-doc updates, and new tests.",
+      "category": "fix",
+      "summaryHash": "13340e88b5db71fe636e97939bc1186e2554b7ca"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1904,
