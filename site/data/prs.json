@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T09:40:10.638Z",
+  "generatedAt": "2026-11-15T09:56:41.676Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1913,
+      "title": "Plan window: target card, Tonight's Best for the rest of tonight, Recent list",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1913",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T09:42:52Z",
+      "additions": 1354,
+      "deletions": 118,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode's Plan window, the target you pick now appears as a card at the top, showing how high it is right now and how many hours it stays above 30° before dawn (or that it won't get that high tonight). Tonight's Best now ranks targets by the time left from now until dawn instead of the whole night, and refreshes every 5 minutes. This helps people who start late. A new Recent list shows your last 5 imaged or saved targets, and the frames line warns when your planned frames won't all fit in the time left, without changing the number you typed. Recent includes targets from the full app's custom-target list but not ones found with Simple Mode's own search yet, even though the changelog note calls them 'searched'.",
+      "category": "feature",
+      "summaryHash": "9e8e67fc1a5064a0f62a7ddef563a2de672aa3c2"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1905,
