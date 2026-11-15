@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T13:36:56.437Z",
+  "generatedAt": "2026-11-15T15:35:12.866Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1916,
+      "title": "fix: a lost guide star stops the frame and the run resumes only once guiding has settled",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1916",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T15:24:25Z",
+      "additions": 295,
+      "deletions": 39,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the guide star is lost during an imaging run, the app now stops the photo being taken right away and retakes it later, instead of finishing and saving a frame shot without a guide star. The run now resumes only after guiding has stayed steady for the profile's settle time, rather than on the first sign the star is back, and the waiting period before pausing counts from the first loss. A star that is found but stays far from where it should be now also counts as lost and can pause the run. Pausing by hand still lets the current photo finish, and the change has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "c932e51d85aaaa374b62b50ae3eb644d3a63542b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1937,
+      "title": "feat: Session Live Stack for OSC cameras (daemon)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1937",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T14:50:06Z",
+      "additions": 1271,
+      "deletions": 8,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds the server side of a new Live Stack for one-shot-colour cameras: when it is switched on, each light saved during a queued run is added to a growing colour picture of the current target, without slowing captures or saves. The stack starts over when the target, filter, session or frame size changes, and it is cleared if the camera disconnects. Only the server part is included, so users will not see it until the follow-up app screen ships. The written API description lists every new action as a plain success, which is less detailed than the actual responses described in the PR.",
+      "category": "feature",
+      "summaryHash": "6c2e5792aae1b8552546d23deea71c8690f37332"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1935,
