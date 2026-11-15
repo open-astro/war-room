@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T05:42:53.664Z",
+  "generatedAt": "2026-11-15T06:42:08.566Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1908,
+      "title": "fix: restart the daemon by exiting, not by systemctl",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1908",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T06:14:38Z",
+      "additions": 120,
+      "deletions": 28,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Restart button in the app now actually restarts the telescope computer's background service on a packaged setup. Before, the request was accepted but nothing happened, because the service was not allowed to restart itself through the system. Now it shows the usual two-second warning, shuts itself down cleanly, and the system starts it again automatically, without granting any extra permissions. One side effect: anyone running it in Docker without an automatic-restart setting will see it stop instead of restart, and the release notes explain how to avoid that.",
+      "category": "fix",
+      "summaryHash": "c13efeadc74d1dd24574a694527ad702d5613842"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1910,
+      "title": "Guide Camera capture seam and an in-process fake for guide focus tests",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1910",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T06:12:24Z",
+      "additions": 1125,
+      "deletions": 94,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal restructuring with no change users should notice. Polar alignment and guide-camera focusing now reach the guide camera through a smaller, purpose-built connection instead of the whole guider system, which also keeps them tied to the right connection after a reconnect. The guide-focus tests now use a simulated camera that runs entirely in memory instead of a network-based fake with timed waits, so they should be faster and more reliable. Polar alignment's own tests will be moved over in a separate follow-up.",
+      "category": "refactor",
+      "summaryHash": "b171f86b49a3033bc074c235aea739bc2df0ba40"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1907,
