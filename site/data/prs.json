@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T16:34:21.132Z",
+  "generatedAt": "2026-11-15T19:31:46.858Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1941,
+      "title": "Polar align stepper, Done in the rough step, Verify, and Polar align settings",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1941",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T19:00:26Z",
+      "additions": 1848,
+      "deletions": 219,
+      "changedFiles": 26,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The polar alignment guide in Simple Mode now shows a Rough, Fine, Verify progress bar so people can see which step they are on. The old \"Check it\" button is now \"Verify\", with a note that it moves the mount and takes three frames. You can now press Done during the rough step if the alignment is already close enough, instead of being forced through the fine step. A new Polar align settings page lets you set the tolerance and related options, and it will not save over the telescope's stored values if they failed to load. The server change for Done matches the description, but most of the app changes were too large to show, and the settings work is only partly finished.",
+      "category": "feature",
+      "summaryHash": "ba23b139f6361166ad7e6ce79426b94028de29d4"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1940,
+      "title": "Monitor Now tile fits a phone during the meridian flip",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1940",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T18:42:52Z",
+      "additions": 477,
+      "deletions": 53,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On phones, the Monitor screen's \"Now\" tile was too cramped: the meridian flip countdown was unreadable, \"Flipping\" broke across two lines, and filter frame counts were cut off. Now the \"Up next\" list sits below the countdown on phones, and the tile is twice as tall, so a busy session fits without scrolling. Each filter's frame count now shows in full at the end of its progress bar. That count change also applies on tablets, but the rest of the tablet and desktop layout is unchanged.",
+      "category": "fix",
+      "summaryHash": "07997a54be8324c2e37d2073899b15dedd2131ae"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1936,
