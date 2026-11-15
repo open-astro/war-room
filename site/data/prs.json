@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T07:42:31.300Z",
+  "generatedAt": "2026-11-15T08:40:58.975Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1912,
+      "title": "fix: a light with no profile pixel size takes the camera's, optics PUTs name their client, and a queued reconcile keeps a saved preference",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1912",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T08:06:32Z",
+      "additions": 240,
+      "deletions": 25,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Telescope photos now keep their image-scale information even if the saved setup loses its camera pixel size, because the app falls back to the pixel size reported by the connected camera. On a test rig, 175 photos over two nights were saved without this information, which meant the Sky Album could only match them by target name. The app now also logs who changed the telescope and camera settings, and from which device, so the next time the value gets wiped the logs should show which device did it. It also fixes a separate timing bug in the app where a background sync could overwrite a setting the user had just saved with an older value. The diff for that sync fix was not visible for review.",
+      "category": "fix",
+      "summaryHash": "48cf0e84fb887f38799e450a506a94960c9bdc9b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2266,
