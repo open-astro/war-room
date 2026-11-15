@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T01:46:21.417Z",
+  "generatedAt": "2026-11-15T04:43:53.606Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1904,
+      "title": "Companion Mode time offer, phone safety alarm and resume refresh",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1904",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T04:36:45Z",
+      "additions": 1127,
+      "deletions": 48,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the app runs on a phone (Companion Mode), it now offers to send the phone's time and location to a telescope rig that hasn't had its clock set recently. The user can tap Send or Not now, and Not now stops it asking again until the next session. On a phone with sound alerts turned on, the safety alarm now rings and vibrates, says that it does, and shows an Emergency Abort button you hold for two seconds, the same as the regular STOP button. Coming back to the app after it was in the background now refreshes the equipment status, so the screen doesn't show old information.",
+      "category": "feature",
+      "summaryHash": "8c0d1e58c4cba09a5ea4a3fefc6db610391940fc"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1906,
+      "title": "Retry a failed autofocus, then park the run for the user",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1906",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T04:18:34Z",
+      "additions": 344,
+      "deletions": 10,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "If automatic focusing fails during an imaging plan, the system now tries up to three times. If all three fail, it pauses the run and waits for the user, instead of carrying on and taking a night of blurry photos without telling anyone. The pause message explains what went wrong, and when the focuser has reached the end of its range it tells the user to reset or adjust it, then press Resume to try again. One side effect the author points out: if a user cancels the focus step, the app now skips the rest of that target, the same as when the telescope fails to move into position.",
+      "category": "fix",
+      "summaryHash": "28f48cf459471dacf51c5a46a6be9051e73eb155"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1903,
