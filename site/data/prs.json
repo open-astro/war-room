@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T12:37:46.165Z",
+  "generatedAt": "2026-11-15T13:36:56.437Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1935,
+      "title": "fix: a template body is schema-checked on instantiate and built-in templates are real sequences",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1935",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T13:31:46Z",
+      "additions": 139,
+      "deletions": 17,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Creating a sequence from a template now checks that the result is a valid sequence first, and refuses with a clear error if it is not. Before, a broken template on disk could be saved as a sequence that the telescope software could not load. The three built-in templates (LRGB, narrowband, and all-night roster) are now real, runnable sequences that switch to each filter and take a set number of exposures, instead of empty placeholders. In the code, the exposure step points to a different program name (\"NINA\") than the other steps, which may stop it from loading. The \"all-night roster\" template is also just a single-target filter sequence that does not cycle through targets, and the LRGB template does not include the dithering its description promises.",
+      "category": "fix",
+      "summaryHash": "453616482c6cbef0895cfcb997cab3c464d81bc4"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1934,
