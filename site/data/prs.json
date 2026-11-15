@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T08:40:58.975Z",
+  "generatedAt": "2026-11-15T09:40:10.638Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1905,
+      "title": "Simple Mode turns tracking on before it starts guiding",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1905",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T09:21:23Z",
+      "additions": 217,
+      "deletions": 14,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the app now switches the telescope mount's tracking on before it starts guiding. Polar alignment can leave tracking off, and guiding on a mount that isn't tracking quietly fails. The app asks up to five times, a second apart. If the mount keeps refusing, guiding does not start and an error message explains why, while setups with no mount connected or a mount that can't control tracking start guiding as before. One detail the description leaves out: if the app can't read the mount's status within two seconds, it skips the tracking request and starts guiding anyway.",
+      "category": "fix",
+      "summaryHash": "5cdb69c1b67abe3fe2ddedeafc8aec16b9ffbcee"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1914,
+      "title": "Monitor says Waiting for flip, not Moving, during the meridian wait",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1914",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T09:20:45Z",
+      "additions": 93,
+      "deletions": 4,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "During a meridian flip, the Simple Mode Monitor screen now says \"Waiting for flip\" with a countdown while the mount waits to pass the meridian. Before, it said \"Moving…\" even though the mount was standing still. Once the countdown ends, it shows \"Moving…\" and the current step as before. This is a display change only, so users now see what the mount is really doing.",
+      "category": "fix",
+      "summaryHash": "f436dd764811a28e09a20296a462aca3764cbcdb"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1912,
