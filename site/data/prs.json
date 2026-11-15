@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T20:50:35.854Z",
+  "generatedAt": "2026-11-15T01:46:21.417Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1903,
+      "title": "Every string in pt-BR, slice 2: first-run, launch, app shell and setup wizard",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1903",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T01:05:55Z",
+      "additions": 6192,
+      "deletions": 2613,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Brazilian Portuguese users now see the app's opening screens in Portuguese: the first-time server connection screen, the launch and offline-planning screens, the main app's tabs and status bar, and much of the profile setup wizard. This is the second batch in an ongoing effort to translate the whole app, so some wizard steps and other screens are still English only. It also fixes the wizard's bottom bar on phones, where the Next button used to run off the edge and the Skip button's text was cut short. On narrow screens the bar now hides the step name, since the heading already shows it.",
+      "category": "feature",
+      "summaryHash": "85fa3a8c0de898a93b16e2dd859c24528506c056"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2265,
