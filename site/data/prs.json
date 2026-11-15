@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T06:42:08.566Z",
+  "generatedAt": "2026-11-15T07:42:31.300Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2266,
+      "title": "Hold the ZWO destructor test's GOTO on :SMTI so the pulse queues (#2256)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2266",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-15T07:40:30Z",
+      "additions": 18,
+      "deletions": 7,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes an automated test for the ZWO telescope mount driver that had started failing in the nightly checks on November 14 and 15. After an earlier change, the test was waiting about 15 seconds for a slew to finish before checking anything, so it no longer tested what it was meant to test: shutting the driver down safely in the middle of a slew. The test now pauses the slew at an earlier step and confirms that a guiding pulse is accepted right away, which makes the test meaningful again and brings its run time down from about 16 to 18 seconds to under half a second. Only the test and a changelog note changed; the driver itself is untouched and was not at fault.",
+      "category": "tests",
+      "summaryHash": "53b71ae661d86836af62f97635237a64bb8662c0"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1908,
