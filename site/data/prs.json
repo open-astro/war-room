@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T19:31:46.858Z",
+  "generatedAt": "2026-11-15T21:51:37.131Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2285,
+      "title": "Fix OnStep offset position lag and add Network connection type",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2285",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-15T21:30:55Z",
+      "additions": 2011,
+      "deletions": 237,
+      "changedFiles": 26,
+      "labels": [],
+      "summary": "OnStep telescope mounts can now be connected over Wi-Fi or Ethernet by typing in an IP address and port in the web setup page, in addition to USB. A dropped network connection is treated as a lost link right away, using the same rules as a USB connection. This change also fixes a bug where, during small deliberate tracking speed adjustments, the reported telescope position lagged the actual mount by up to a second or missed very small adjustments, which gave wrong answers to software measuring that speed. The visible code changes are mostly documentation and tests, and the notes say the network option has not yet been tried on a real Wi-Fi or Ethernet mount.",
+      "category": "feature",
+      "summaryHash": "56ed656b691db874639857520d788647c37b99f2"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1941,
