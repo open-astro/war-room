@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T15:35:12.866Z",
+  "generatedAt": "2026-11-15T16:34:21.132Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1936,
+      "title": "Companion Mode Ara sheet and Sky Map card fit an upright phone",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1936",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T16:28:01Z",
+      "additions": 544,
+      "deletions": 10,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On a phone held upright in Companion Mode, the Ara panel (where you change rig and profile) now uses the full screen width, matching Settings, instead of staying at its narrower desktop size. The card that appears when you pick an object on the Sky Map, with its 'Image this' button, now sits above the bottom control bar instead of covering it, so the bar and the STOP button stay visible. Landscape and desktop layouts are unchanged. Most of the change is a large set of new automated checks confirming that Settings, search, Plan and these panels fit and scroll at text sizes from normal to double, in English and Brazilian Portuguese; the code itself only adjusts these two layouts.",
+      "category": "fix",
+      "summaryHash": "3d263f38e3fd9ddbb0fbf939724b04df12c7dabc"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1916,
