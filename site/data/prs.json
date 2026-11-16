@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T09:24:17.444Z",
+  "generatedAt": "2026-11-16T12:25:52.981Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1979,
+      "title": "Polar Corrector: the daemon drives a motorised polar alignment device (#1971)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1979",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T12:21:26Z",
+      "additions": 2955,
+      "deletions": 33,
+      "changedFiles": 41,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope computer can now control motorised polar alignment devices, such as OAPA, OpenAstroTracker or MLAstro bases. During the polar alignment routine, it moves the motors in small steps until the error is within tolerance, instead of the person having to turn the bolts by hand or use a separate vendor app. Any problem stops the motors and the routine carries on by hand. Problems include a wrong direction, a growing error, a lost connection, a mount that starts moving, or the user pressing Stop. The device can also be stopped or homed on its own, Emergency Stop now includes it, and the feature can be switched off in settings. This is the behind-the-scenes half; the screens that show it came in a separate pull request.",
+      "category": "feature",
+      "summaryHash": "6b55af2eab0355859595cfad55e03a5065bfbab8"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1980,
+      "title": "Polar Corrector: the app shows the motors, their stops, and Stop / Resume / Home (#1971)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1980",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T12:16:32Z",
+      "additions": 6665,
+      "deletions": 48,
+      "changedFiles": 72,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The app now shows the motorised polar alignment device during polar alignment, in both Simple and Advanced Mode. Users can watch each move and settle, see when alignment is reached, and use Stop motors, Home and Resume buttons. When the motors stop, the app explains why in a plain sentence. A new setting under Settings › Devices chooses whether the motors or the person turns the mount, and the text is translated into English and Brazilian Portuguese. This pull request was built on top of the earlier one that added the behind-the-scenes support, so its changes also include all of that work. A progress bar and a few more detailed stop messages were left out because that information is not available yet.",
+      "category": "feature",
+      "summaryHash": "46ca9b797c52451546253ad68806dff5d499cb85"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1982,
+      "title": "Template instantiate answers 422 as problem details, with tests",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1982",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T11:26:16Z",
+      "additions": 193,
+      "deletions": 5,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Creating a sequence from a saved template that fails the format check now returns its error in the same standard format the system's documentation already promised, and still creates no sequence. Only that specific failure is now reported this way, so other unrelated errors are no longer mistaken for it. Tests were added for this case, for a template with the wrong format version, and for a template name that does not exist. The app itself does not read this error message, so users should see no difference.",
+      "category": "fix",
+      "summaryHash": "e3422a1625b5e9da48f48da5cf6bbb136baecf53"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2291,
