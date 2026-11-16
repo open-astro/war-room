@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T19:17:34.470Z",
+  "generatedAt": "2026-11-16T19:55:25.443Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The power-port switches on the ZWO ASIAIR Pro, ASIAIR Plus and ToupTek StellaVita now reject an impossible setting (too high, too low, or not a real number) with an \"invalid value\" error even when the device is not connected. Before, they answered \"not connected\" instead, which went against the astronomy device standard and against how the iOptron iMate already behaved. A valid setting sent while disconnected still gets \"not connected\", so all four boards now respond to bad settings the same way. This also clears the way for a planned follow-up that merges the ASIAIR and iMate code without changing any error messages, and the code matches the description; new tests cover each board.",
+      "category": "fix",
+      "summaryHash": "3523512510bc68f925d0ea9ebf53bbfc519d9757"
     },
     {
       "repo": "open-astro/openastro-ara",
