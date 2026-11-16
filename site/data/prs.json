@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T19:55:25.443Z",
+  "generatedAt": "2026-11-16T23:14:06.898Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1988,
+      "title": "Polar Aligner: rename from Polar Corrector to match ASCOM's draft Aligner interface (#1971)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1988",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T22:39:33Z",
+      "additions": 1863,
+      "deletions": 1824,
+      "changedFiles": 71,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The motorised device that turns the mount during polar alignment is now called the \"Polar Aligner\" everywhere in Ara (on screen, in settings, in the documents, and in the Portuguese translation as \"alinhador polar\"), replacing the name \"Polar Corrector\". This matches the name in a new draft standard that the wider astronomy-software community just published, so Ara, device makers' pages and the standard all use the same word. Apart from the name, nothing changes in how it works, except that saved alignment records are carried over automatically to the new name so their move counts are kept. Because the app and the telescope computer now use new names to talk to each other, both must be updated together, but this feature has not been released yet.",
+      "category": "refactor",
+      "summaryHash": "74950e6ecb0ce115894560840bcc4c4187394e25"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2298,
