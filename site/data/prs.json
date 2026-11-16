@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T03:25:00.092Z",
+  "generatedAt": "2026-11-16T04:24:02.776Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1963,
+      "title": "Simple Monitor phone Now tile keeps filter counts full size with many or long filters",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1963",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T03:50:52Z",
+      "additions": 259,
+      "deletions": 17,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On phones, the Simple Monitor's \"Now\" card now keeps every filter name and its done/total count readable, even with many filters or long names. Before, a run with seven filters and three-digit totals made the counts shrink too small to read, which hid progress during a session. Now up to four filters sit side by side, while five or more are laid out in a grid with the name above the count, using fewer columns when the phone's text size is larger. To keep the card from scrolling, the \"Up next\" list shows only one item when there are more than four filters; the desktop layout is unchanged.",
+      "category": "fix",
+      "summaryHash": "52b185050d744f0e80d185b4e1684b1295ecbc4b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1949,
+      "title": "Move Polar Align tests to the in-process guide capture fake",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1949",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T03:37:44Z",
+      "additions": 745,
+      "deletions": 870,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test change with no effect on the app itself. The Polar Align tests now use a fast in-memory stand-in for the guide camera instead of a simulated network connection. They also wait for real signals instead of fixed timed pauses, which makes them quicker and less likely to fail at random. The checks that cover how the app talks to the PHD2 guiding software were moved into their own separate test file, and one test was tightened so it actually catches the problem it is meant to guard against.",
+      "category": "tests",
+      "summaryHash": "7b79cd7e6fbec235465f9cb9e898d69e2fb2d3b1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1961,
