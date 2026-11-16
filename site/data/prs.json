@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T23:28:20.782Z",
+  "generatedAt": "2026-11-16T00:27:33.251Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1943,
+      "title": "fix: unguided, plate solve, camera electronics and custom horizon load before save",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1943",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T00:16:17Z",
+      "additions": 1241,
+      "deletions": 570,
+      "changedFiles": 41,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Four Settings sections (unguided imaging, plate solving, camera electronics, and the custom horizon) now load their current values from the telescope computer before you can save them. Before, saving too early could wipe the rig's saved skyline or reset the camera electronics to zeros. Now a Save that was never loaded, or that follows a failed load, writes nothing and says why, and a change saved from another device in the meantime is refused with an offer to reload. When no rig is connected, these panels say the settings are not loaded instead of showing an offline copy; that copy is used for planning only and is never saved back.",
+      "category": "fix",
+      "summaryHash": "8696196dc2c0fba0ec45d4ef159cb521d4106eaa"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1950,
+      "title": "Glossary: the NINA-like presentation is Advanced Mode",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1950",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T23:59:51Z",
+      "additions": 5,
+      "deletions": 5,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only: the project glossary now calls the full, NINA-like view of the app \"Advanced Mode\" instead of \"Full UI\", matching the maintainer's decision. Several other design documents still use the old name and will be updated separately.",
+      "category": "docs",
+      "summaryHash": "38bfa7a521754cb5a24d902cca7b4ec7a75f446a"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1939,
+      "title": "fix: a PA residual is not measured from guiding that was not holding the star",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1939",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-15T23:59:51Z",
+      "additions": 235,
+      "deletions": 13,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The app no longer records a polar alignment error reading from a guided run where guiding was not actually holding the star. This covers runs where the guide corrections maxed out while the star kept drifting further away, where settling failed, or where the mount was not tracking at the start. Such runs used to log huge, misleading figures. Now they are marked as having no reading, nothing is written to the alignment log, and the app shows a short message explaining why.",
+      "category": "fix",
+      "summaryHash": "449dc8da17f8bf4577469ad4089b097dc8bcbc06"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1948,
