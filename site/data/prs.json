@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T08:25:14.313Z",
+  "generatedAt": "2026-11-16T09:24:17.444Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2291,
+      "title": "ToupTek and Altair: wait for the frame event, then pull the frame (#1973)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2291",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-16T08:51:08Z",
+      "additions": 319,
+      "deletions": 142,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ToupTek and Altair cameras now wait for the camera's own \"frame is ready\" signal before collecting each picture, instead of sitting inside a blocking call that only the camera software could interrupt. This means cancelling an exposure, disconnecting, or the built-in safety timer can now stop a stuck exposure right away. One visible difference: if a frame never arrives, the error now appears a few seconds later than before (at the 15-second safety limit). This has only been tested with simulated cameras, not real hardware, so the work is not considered finished until someone tries it on an actual camera.",
+      "category": "fix",
+      "summaryHash": "b0c9b705ae973d8c6d18a83fdcb4e611a780a26d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1970,
+      "title": "docs(out-of-scope): the Plan target card keeps its 40 px square Art",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1970",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T08:32:53Z",
+      "additions": 27,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only: this records the decision to keep the small square, slightly cropped picture of the chosen target on the Plan screen, rather than showing the full picture as someone requested. The maintainer compared three layouts and kept the square because it keeps titles neatly lined up, and the full picture is already shown elsewhere in the app. Writing this down means future requests for the same change can point to the answer instead of reopening the discussion.",
+      "category": "docs",
+      "summaryHash": "ce6c48fd18165b0c8682c6f23c56250a9c797fb4"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1969,
