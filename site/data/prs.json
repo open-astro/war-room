@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T06:23:53.243Z",
+  "generatedAt": "2026-11-16T07:24:35.892Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1967,
+      "title": "Polar Align leaves tracking to the last writer and a sequence start ends an open run",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1967",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T07:08:36Z",
+      "additions": 233,
+      "deletions": 9,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem where starting an imaging sequence while a polar alignment session was still running could leave the telescope imaging with tracking turned off. Starting a sequence now closes any open polar alignment session first, without saving a result from that session. Polar alignment also no longer resets tracking when it ends if something else, such as the sequence or the user, changed tracking in the meantime. The author notes two small timing gaps remain where another change could still be missed, and the fix has not been tried on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "75246a77c2450f86af7ddeadef445e94df429f9c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1956,
