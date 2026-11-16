@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T04:24:02.776Z",
+  "generatedAt": "2026-11-16T05:23:03.066Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1964,
+      "title": "Simple Focus is the Autofocus panel, with Tools rows and an exposure picker",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1964",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T04:47:15Z",
+      "additions": 1047,
+      "deletions": 139,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1963,
