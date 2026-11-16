@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T05:23:03.066Z",
+  "generatedAt": "2026-11-16T06:23:53.243Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1956,
+      "title": "fix: Plan window opens without a freeze; tiles carry nicknames; target card shows Album Art",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1956",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T05:27:47Z",
+      "additions": 273,
+      "deletions": 61,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the Plan window no longer freezes for several seconds when it opens. The Recent list now looks names up in a ready-made index instead of searching the whole 17,000-object catalog for each one. Target tiles in Plan and in the Monitor's Tonight's Best list now show the friendly name, like \"NGC 246 (Skull Nebula)\" instead of \"NGC0246\", and the selected target's card shows the object's picture and photo credit, as the Sky Map already did. One trade-off: a target saved only under part of a common name (for example \"Rosette\") no longer appears in Recent.",
+      "category": "fix",
+      "summaryHash": "3113a698aee45b36e9dd7d77deb5d5281d489b54"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1964,
@@ -23,9 +41,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Simple Mode's Focus screen now centers on Autofocus. Focus by hand and Filter offsets have moved into a \"Tools\" section, where each shows a short status and opens in place with a Back arrow. A new exposure picker (2, 5, 10 or 15 seconds) saves the same setting Advanced Mode uses, so the next autofocus run uses it, and a failed save shows an error. The old Auto/Manual/Offsets switch and Info toggle are removed, and the focus chart is shorter so the screen fits an iPad without scrolling. The diff also shortens the warning shown after a weak autofocus result, which the description does not mention.",
+      "category": "feature",
+      "summaryHash": "5f5b1b3437cb2649627b5fb6a0be6bbb0649b427"
     },
     {
       "repo": "open-astro/openastro-ara",
