@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T02:10:54.750Z",
+  "generatedAt": "2026-11-16T03:25:00.092Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1961,
+      "title": "The service unit's syscall filter allows clock_settime so a time push sets the clock",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1961",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T03:09:18Z",
+      "additions": 57,
+      "deletions": 9,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When someone sends the correct time from the app to the telescope computer, it can now actually change that computer's clock. Before this fix, a security setting on the background service quietly blocked every attempt to set the clock, even though the service had the right permission, so all 30 time pushes in six days of logs failed. The warning shown when it fails now also names this security setting as a possible cause, and a new check fails if the setting is ever left out again. It has not been tested on real telescope hardware yet.",
+      "category": "fix",
+      "summaryHash": "64d30fe9e97affead0ea10c2d2e5d78e586cad15"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1962,
+      "title": "Set aside an unreadable profile file at load and flush profile writes",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1962",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T03:07:53Z",
+      "additions": 85,
+      "deletions": 12,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "If a saved equipment profile file is empty or damaged, the telescope software now renames it once, keeping it as a backup instead of deleting it, and logs a single warning. Before, it left the file in place and warned about it at every start. Saving profiles now also makes sure the data is fully written to disk before it replaces the old file, so a power cut is less likely to leave an empty profile behind. The damaged profile will disappear from the profile list, and the app itself does not yet tell the user about it (that is tracked separately).",
+      "category": "fix",
+      "summaryHash": "8b7d0010f28da87577e1b4d386685287352324d6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2289,
+      "title": "Close the decision 0022 rule 2 gaps in the Celestron, ZWO and SynScan telescopes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2289",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-16T02:54:00Z",
+      "additions": 1583,
+      "deletions": 61,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "For Celestron, ZWO and SynScan telescope mounts, the \"is it moving?\" and \"is it guiding?\" status the server reports to astronomy apps now updates at the right moments. Before, a failed move or guide command could leave the status wrongly showing \"moving\" for up to 8 seconds, and while a command was being sent the status could briefly show \"not moving.\" The status now switches on before a command is sent and clears when a command fails, is cancelled or is replaced. If a Celestron go-to command fails partway through, the mount is now also told to stop. Ending the \"moving\" status as soon as the mount reports it has arrived still needs testing on real hardware and is not part of this change.",
+      "category": "fix",
+      "summaryHash": "8bb5e355f64675dbe08a0954f05b22df3d878de1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2288,
