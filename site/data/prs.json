@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T13:22:14.975Z",
+  "generatedAt": "2026-11-16T14:24:05.128Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Sky Album, the screen that shows a card for each sky object you have photographed, now has three more catalogs alongside Messier, Caldwell and RCW: NGC, IC and Sharpless. That adds roughly 13,600 new cards, so people who photograph fainter nebulae and clusters can finally see that work in their album, and photos they already took fill in the new cards automatically. Ten popular nicknames such as Heart Nebula, Soul Nebula and Thor's Helmet now appear on their cards and can be searched. The matching was also sped up so the much larger album still opens quickly (a speed test went from about 27 seconds to around 1 second), and the 'tonight's sky' suggestions no longer get rebuilt every time you tap a filter.",
+      "category": "feature",
+      "summaryHash": "06f226a0fed9f9ff38b333d9fba7d09f7d2bfa40"
     },
     {
       "repo": "open-astro/openastro-ara",
