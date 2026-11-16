@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T12:25:52.981Z",
+  "generatedAt": "2026-11-16T13:22:14.975Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1986,
+      "title": "Sky Album: NGC, IC and Sharpless Books with nicknames",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1986",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T12:27:23Z",
+      "additions": 538,
+      "deletions": 50,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1979,
