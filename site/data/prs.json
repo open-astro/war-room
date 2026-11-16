@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T00:27:33.251Z",
+  "generatedAt": "2026-11-16T02:10:54.750Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2288,
+      "title": "Make a client's UTCDate the ZWO AM time source until disconnect (#2286)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2288",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-16T01:58:17Z",
+      "additions": 179,
+      "deletions": 26,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a pointing problem with ZWO AM mounts. When an astronomy app sets the time, the mount now uses that time for every pointing calculation until the next connect or disconnect. Before, the server's own clock kept taking over, and each slew wrote that clock back to the mount, so a server with no internet time source could point badly off (one real case was 80 minutes of error) with no way for the app to correct it. The server now also logs a warning once per connection if it sends the mount a clock that isn't synced. The main code change was not shown in full, but the tests and docs match the description, and it was checked only against simulated hardware, not a real mount.",
+      "category": "fix",
+      "summaryHash": "925a6aa0b0686726ef07c4097354d39de2f38a99"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1943,
