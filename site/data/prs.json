@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T14:24:05.128Z",
+  "generatedAt": "2026-11-16T19:17:34.470Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2298,
+      "title": "Check the switch value before the connection on ASIAIR and StellaVita (#2264 slice 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2298",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-16T18:58:50Z",
+      "additions": 98,
+      "deletions": 12,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1986,
