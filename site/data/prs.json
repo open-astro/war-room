@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T07:24:35.892Z",
+  "generatedAt": "2026-11-16T08:25:14.313Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1969,
+      "title": "fix(sky-atlas): the full UI keeps a curated region's catalog number",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1969",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T08:19:14Z",
+      "additions": 85,
+      "deletions": 38,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In the full (Advanced Mode) interface, the 23 hand-picked imaging regions show their catalog number again, so Tonight's Sky lists, their detail pop-ups and session plan cards read \"Skull Nebula (NGC 246)\" instead of just \"Skull Nebula\". The numbers had disappeared after the previous change that tidied up these names, and now both interfaces title these regions the same way. One side effect: the number shown is the object's highest-ranked catalog entry, so a few regions change slightly, for example the Rosette now shows NGC 2239 instead of NGC 2244 and the Question Mark region no longer mentions Ced 214. The rest of the change is internal reshuffling that does not alter Simple Mode.",
+      "category": "fix",
+      "summaryHash": "9b63301587bf56016dce3311db7d681376f2d2f6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1968,
+      "title": "Refill a blank solver path with the bundled solver",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1968",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T07:43:22Z",
+      "additions": 52,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Imported shared profiles can plate solve again. Sharing a profile removes the solver location, and nothing put it back after import, so every attempt to work out where the telescope is pointing failed with no warning. Now a missing location is filled in with the solver that ships with the app when it is installed. If that solver is not installed, the app shows a clear startup warning naming where it should be. Locations that users set themselves are left alone.",
+      "category": "fix",
+      "summaryHash": "7414b74863ca1a0b9020a3f655fb170e824eff45"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1966,
+      "title": "fix(plan): targets read name first, Skull Nebula (NGC 246), on every pick path",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1966",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T07:39:35Z",
+      "additions": 213,
+      "deletions": 74,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Targets in Simple Mode now show their common name first, then the catalog number, for example \"Skull Nebula (NGC 246)\", everywhere: search, the plan card, Tonight's Best, Recent and the monitor. Before, the same object could appear three different ways depending on which list it was picked from, and some Recent entries such as \"Helix Nebula\" showed no number at all. The 23 hand-picked imaging regions also lead with their best-known number, so the Orion region reads \"(M 42)\" rather than \"(NGC 1976)\". As a side effect, these regions lost their numbers in the full Advanced Mode interface, and a separate later change (#1969) fixed that.",
+      "category": "fix",
+      "summaryHash": "9bb60f8b125f80fc7617215e9b0e5fc66bec70a7"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1967,
