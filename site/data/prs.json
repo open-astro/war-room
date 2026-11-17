@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T13:21:47.044Z",
+  "generatedAt": "2026-11-17T14:24:30.275Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2305,
+      "title": "Refuse a negative or out-of-range ZWO AM guide rate (#2257)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2305",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T14:04:33Z",
+      "additions": 24,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO AM mounts now reject a guide speed that is negative or outside the mount's supported range (0.1 to 0.9 times the star-tracking speed), whether or not the mount is connected. Before, a negative speed was quietly flipped to positive, and an out-of-range speed was silently capped once connected. Apps now get the same 'bad value' error from this mount as from every other one. One side effect: if the mount's actual guide speed can't be read at connect, the driver assumes 1.0 times the tracking speed, and writing that value back is now refused instead of capped.",
+      "category": "fix",
+      "summaryHash": "f5234b13947682c7a346563a49b085a553f1346a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2308,
+      "title": "Check NexStar slew coordinates first; refuse a negative guide rate (#2257)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2308",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T14:01:46Z",
+      "additions": 17,
+      "deletions": 10,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron NexStar mounts now check slew target coordinates before anything else, so an impossible position is reported as a bad value even when the mount is disconnected or parked. Before, it reported 'not connected' or 'parked' instead. A negative guide speed is now refused instead of being sent to the mount, but only when connected with an autoguider port; otherwise the old behavior stays on purpose. A similar ordering fix for the sync command is left for later work.",
+      "category": "fix",
+      "summaryHash": "378d10ce326d78e106f818138af06a08c2df962b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2011,
