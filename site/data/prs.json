@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T22:26:40.529Z",
+  "generatedAt": "2026-11-17T23:30:28.637Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2324,
+      "title": "Add the telescope command gate; OnStep adopts it (#2258 PR 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2324",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T22:34:26Z",
+      "additions": 663,
+      "deletions": 49,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Before carrying out a command such as a slew, a guiding nudge or a manual axis move, every telescope mount driver runs the same safety checks: is the request valid, is the mount connected, is it parked, is the link healthy, is it tracking. Until now each of the eight mount drivers wrote those checks out separately. This change puts the checks and their order in one shared, tested place, and switches the OnStep mount over to it, so future rule changes need only one edit and new mounts start out correct. OnStep should behave the same as before. This is the first of eight planned steps, and the other mounts will move over in later changes.",
+      "category": "refactor",
+      "summaryHash": "936d8b4203fe3c8bc2497e72a7660d5e6b405bbf"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2335,
+      "title": "Move the CoverCalibrator dispatch into routes/covercalibrator_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2335",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T22:32:51Z",
+      "additions": 80,
+      "deletions": 47,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is internal tidying with no change in behavior. The code that handles requests for cover/flat-panel calibrator devices has been moved, unchanged, out of one very large shared file into its own file, so future changes to that device type are easier to review. It is the second of ten planned moves, one per device type, and the architecture notes were updated to match.",
+      "category": "refactor",
+      "summaryHash": "4def0c30f01d37dc35ae1081995236713bd9691c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2325,
