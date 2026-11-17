@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T11:56:14.431Z",
+  "generatedAt": "2026-11-17T12:24:18.287Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2008,
+      "title": "Polar Align: the live readout maps the camera shift back to the polar axis (#1983)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2008",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T12:05:52Z",
+      "additions": 121,
+      "deletions": 17,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes the polar alignment live readout so it shows the true remaining error when the camera points well away from the celestial pole. Before, the readout under-reported altitude moves by roughly a quarter at 30° from the pole, so the routine (or an automatic aligner) could stop early with several arcminutes of error left. Readings now match the real adjustment to within 2% from 5° to 30° from the pole in both hemispheres, which means users starting far from the pole will see larger, but correct, numbers. The code matches the description.",
+      "category": "fix",
+      "summaryHash": "650a414bd539728d6f44f1f31bbce7e7adba8ade"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1981,
+      "title": "Monitor session graphs and deviation flags (slice 7a)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1981",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T12:01:58Z",
+      "additions": 1591,
+      "deletions": 161,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Simple Mode Monitor screen now shows how the night is going over time, with graphs of focus quality, star count with sky brightness, guiding accuracy, target altitude and the night's timeline including meridian flip and park times. If focus, star count or sky brightness gets 15% or more worse than at the start of the session, the screen raises a \"Drifting\" flag, so slow problems are visible before they ruin images. It also tidies up frame and filter text, for example no filter label for cameras without filters, and makes several tiles taller on phones. This is part one of a larger Monitor rework, and the main screen and state code were not visible in the trimmed diff to confirm in detail.",
+      "category": "feature",
+      "summaryHash": "5b90021259bd72ac355acaad0470d2d6e8b15472"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1965,
+      "title": "Filter set and filter wheel policy load from the rig before they save",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1965",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T12:01:58Z",
+      "additions": 1022,
+      "deletions": 346,
+      "changedFiles": 34,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The filter list and filter wheel settings now load from the telescope computer before they can be saved, so a save can no longer overwrite the real settings with defaults the user never saw. If loading fails or there is no connection, these settings panels say \"not loaded\" and offer Retry instead of showing editable defaults. If someone else saved changes in the meantime, the panel offers Reload. A filter wheel switch whose save fails flips back to the saved value. Planning features treat an unloaded filter list as empty rather than guessing filters.",
+      "category": "fix",
+      "summaryHash": "dee8bdad37830853e61c0de794b592345d008c19"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2311,
@@ -43,9 +97,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Choosing a guide camera now goes through one shared piece of code in all three places it can be picked (both setup wizards and Guider settings), so the camera name, its ID and its network server are always saved together. Before, a screen that forgot one of these could save a camera not tied to its server. It also fixes a bug where switching to a different telescope during a network search could copy the old telescope's servers into the new one. One small visible change: the list of servers found by a search now stays on the settings screen after leaving and coming back, even if the search ran from a wizard.",
+      "category": "refactor",
+      "summaryHash": "f74d73e2af4e8ac6a62acdd2fc1a83ad879a8f34"
     },
     {
       "repo": "open-astro/openastro-ara",
