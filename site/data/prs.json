@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T01:12:56.093Z",
+  "generatedAt": "2026-11-17T02:12:25.850Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2300,
+      "title": "Merge the ASIAIR and iMate power-port switches into one driver (#2264 slice 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2300",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T01:46:50Z",
+      "additions": 589,
+      "deletions": 963,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "The power-port controls for three telescope power boxes (the ZWO ASIAIR Pro and Plus models and the iOptron iMate PowerBox) were nearly identical copies of the same code. They now share a single implementation, so future fixes only need to be made once instead of three times, which keeps the boards from drifting apart. Users and connected apps should see no difference: names, behavior, error messages and saved settings stay the same. The ToupTek StellaVita power box deliberately keeps its own separate version, and the change also updates internal checking scripts and design notes to point at the new shared code.",
+      "category": "refactor",
+      "summaryHash": "ed89d8179d63964c94013101817732ca68947335"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2299,
