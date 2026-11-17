@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T12:24:18.287Z",
+  "generatedAt": "2026-11-17T13:21:47.044Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2011,
+      "title": "fix: match a partial common name in Plan Recent without a catalog scan",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2011",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T13:06:24Z",
+      "additions": 101,
+      "deletions": 6,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Recent list on the Plan screen shows targets saved under a shortened name again. For example, a target saved as \"Rosette\" now matches the Rosette Nebula, where before it was left out of the list. The app also skips looking up older targets that could no longer reach the top five, so the Plan screen still opens without freezing.",
+      "category": "fix",
+      "summaryHash": "a2db11aadd662077e635d0aa15b7cd7f9961c385"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2010,
+      "title": "Polar Align Advanced row on the Start card",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2010",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T13:04:43Z",
+      "additions": 1141,
+      "deletions": 52,
+      "changedFiles": 17,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Polar Align start card in Advanced Mode now has a collapsible \"Advanced\" section, so users can change the routine's four main settings right where they start it instead of going to Settings. Changes save at once and stay in sync with the Settings page. Out-of-range values are refused, and a failed save puts the old value back. The single shared help entry for these settings is replaced with one help entry per setting, in English and Brazilian Portuguese, plus a new test and an accessibility label for the exposure field.",
+      "category": "feature",
+      "summaryHash": "f4c17b8ad042589a2e180ad92065b2d0d6e44a77"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2012,
+      "title": "Note why app_pt.arb is empty in l10n.yaml",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2012",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T12:52:18Z",
+      "additions": 1,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only. This adds a one-line note to the translation setup explaining why an empty Portuguese file must stay, and that only Brazilian Portuguese is translated. Other Portuguese variants show English. There is no change in app behavior.",
+      "category": "docs",
+      "summaryHash": "aad5aff89b7cf273697c96292df8a7303b568f5f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2009,
+      "title": "Move the rotator onto the shared device-command module",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2009",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T12:29:48Z",
+      "additions": 1450,
+      "deletions": 358,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The camera rotator now follows the same shared rules as the filter wheel when it is moved. In Advanced Mode it asks for confirmation if an imaging plan is running, and both modes now warn \"Couldn't move the rotator\" when a move never starts. This is the first step in moving several devices onto one shared set of rules; the dome, flat panel and mount come later. The description says the filter wheel's behavior is unchanged, but the changelog notes one change: a filter wheel still turning at its 10-second check now gets more time instead of failing right away.",
+      "category": "refactor",
+      "summaryHash": "7e014aec0e702702d695c323ecb9978a9aaacf0a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2008,
