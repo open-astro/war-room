@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T08:24:56.087Z",
+  "generatedAt": "2026-11-17T11:22:17.595Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1999,
+      "title": "Write a Guider camera pick through the choice module",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1999",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T11:02:04Z",
+      "additions": 379,
+      "deletions": 76,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2002,
