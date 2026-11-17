@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T21:29:02.699Z",
+  "generatedAt": "2026-11-17T22:26:40.529Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,186 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2325,
+      "title": "Probe every camera in the contract sweep; fix ZWO, Player One, SVBONY order (#2259 PR 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2325",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T22:22:31Z",
+      "additions": 439,
+      "deletions": 39,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Cameras from different brands now answer a bad request, such as an impossible exposure length or frame size, with the same error in the same order, so apps only need one way to handle it. This first step fixes ZWO, Player One (and iCAM) and SVBONY cameras, and extends the automatic checks to cover every camera when disconnected, connected and mid-exposure. The checks track the four brands still to be fixed in a follow-up. One visible change on ZWO cameras: a zero-length or very short exposure now runs at the camera's shortest allowed time instead of being refused.",
+      "category": "fix",
+      "summaryHash": "93edb3398fdec11eab58177d3b2be71ca5126bb1"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2016,
+      "title": "docs: add the native sequence format v2 spec",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2016",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T22:21:52Z",
+      "additions": 429,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a design document for a new way of saving observing sequences in Ara's own format, instead of borrowing NINA's file format. It covers how files from NINA will be imported and how existing saved sequences will be converted. Nothing is built yet; this is a plan for the maintainer to approve before coding starts.",
+      "category": "docs",
+      "summaryHash": "04d77da449283f6dc7267df9bf5c0fdeeae2a74c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2337,
+      "title": "Let the capture session own the start reservation; Player One adopts it (#2260 PR 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2337",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T22:21:08Z",
+      "additions": 536,
+      "deletions": 58,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug on Player One (and iCAM) cameras where pressing Abort just as a new exposure was starting was ignored. The exposure ran to the end and delivered a picture even though the user had been told it was aborted. The abort is now remembered and stops the exposure once it begins. The fix lives in shared camera code so ZWO, SVBONY and ToupTek cameras can switch to it in a follow-up change.",
+      "category": "fix",
+      "summaryHash": "22c1f593d125234439f149d4e0b03f814750c6de"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2336,
+      "title": "Share the NexStar mode, axis-pair and location helpers (#1757 slice 4)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2336",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T22:11:20Z",
+      "additions": 187,
+      "deletions": 148,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "SynScan and Celestron mounts use the same communication format, and three pieces of code for it were copied in both places. They now live in one shared place and have their own tests. The copies had drifted apart: Celestron lacked an earlier SynScan fix, so a leftover stray character in a precise position reply could shift a Celestron mount's reported position. Both mounts now handle that case correctly, and SynScan behaves exactly as before.",
+      "category": "refactor",
+      "summaryHash": "27f9aeead699a5a20f46c59dab470daf999c5200"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2327,
+      "title": "Give AlpacaDriver the ASCOM not-implemented defaults (#1757 slice 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2327",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T22:11:20Z",
+      "additions": 118,
+      "deletions": 745,
+      "changedFiles": 47,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal cleanup that removes about 700 lines of repeated code. Almost every device driver had its own copy of the same standard \"this feature is not supported\" replies, and those copies are now defined once in a single shared place. Error codes are unchanged, but a few drivers now use slightly different wording in their error messages so all drivers match. A new test checks the shared replies.",
+      "category": "refactor",
+      "summaryHash": "780ef619088d60636ef3bfb130c5772da40534b6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2020,
+      "title": "Warn and ask before a run starts on a rig clock that could not be set",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2020",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T21:59:14Z",
+      "additions": 653,
+      "deletions": 8,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "If the telescope computer's clock is off by a minute or more and the app could not correct it, Ara now warns the user when they connect. The warning says how far off the clock is and whether it is slow or fast. Starting a run in Simple or Advanced Mode first asks \"Start anyway?\". Before this, a run could start on a wrong clock with no warning, which throws off timing and target positions. Calibration shots skip the question because they do not depend on the clock. The new text is in English and Brazilian Portuguese.",
+      "category": "fix",
+      "summaryHash": "5d7643be549bc219a1dcd78c707424c8962aa3e9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2328,
+      "title": "Add the util::HttpClient seam and move WeeWX onto it (#1753)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2328",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T21:48:08Z",
+      "additions": 922,
+      "deletions": 434,
+      "changedFiles": 25,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The project now has one shared, tested way for device drivers to talk to other web servers, and the WeeWX weather-station driver has been moved onto it with no change in how it behaves for users. The shared piece keeps the same safety limits WeeWX already had: responses are capped at 1 MB, only ordinary web addresses are allowed (including when a server redirects elsewhere), and every request has a time limit. The redirect limit had no test before and now does. This groundwork lets an upcoming feature, connecting AlpacaBridge to another Alpaca server such as the ASCOM simulators, reuse the same code instead of copying it.",
+      "category": "refactor",
+      "summaryHash": "b3a9ec73aee7fcbc166344f957f4cbc6485dc39b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2322,
+      "title": "Move the serial lost-link verdict into SerialLink (#2262 PR 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2322",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T21:48:08Z",
+      "additions": 578,
+      "deletions": 81,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The decision about when a USB or serial cable connection counts as lost now lives in one shared place instead of being copied separately into each of nineteen device drivers, where the copies disagreed. The Gemini focuser and the QHY Q-Focuser use the shared version first. As a result, the Gemini focuser now correctly reports itself as disconnected in one failure case where it used to keep claiming it was connected, and the Q-Focuser stops reporting a dead link after the user has already disconnected. The other serial drivers will be switched over in later pull requests.",
+      "category": "fix",
+      "summaryHash": "dedf8314ba3369990ad5635d39c1aec3617725ae"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2320,
+      "title": "Arm the Bisque slew hold before SlewToRaDec and undo it on a refusal (#1832)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2320",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T21:47:31Z",
+      "additions": 220,
+      "deletions": 8,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For telescopes controlled through TheSkyX (Bisque), the mount now reports that it is slewing from the moment a slew command is sent, instead of briefly reporting not slewing while the command is still in transit. If TheSkyX rejects a new slew, any earlier slew already in progress is left exactly as it was. Disconnecting or a slew finishing now also properly clears the short waiting period that follows a slew command. One remaining gap, recognizing a slew that finishes early, is still open because it needs testing against real TheSkyX software.",
+      "category": "fix",
+      "summaryHash": "374b32aa713e5aec80459e03a76811c4cf30f1ae"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2317,
+      "title": "Check NexStar SyncToCoordinates coordinates first (#2287)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2317",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T21:34:11Z",
+      "additions": 8,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On Celestron NexStar mounts, a sync request with impossible coordinates now always returns the standard \"invalid value\" error. Before, it could come back as \"not connected\" or \"parked\" depending on the mount's state. This makes the mount give the same error as every other supported mount, so client software can handle bad input the same way everywhere. The tests were updated to match.",
+      "category": "fix",
+      "summaryHash": "8a8c0eaa2cd817b05724ef1dfc7f553f0a8ae144"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2331,
