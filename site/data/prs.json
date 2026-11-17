@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T04:11:55.741Z",
+  "generatedAt": "2026-11-17T05:28:17.329Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,97 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1994,
+      "title": "Fill empty telescope optics from the mount in the daemon",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1994",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T05:10:07Z",
+      "additions": 169,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When a telescope mount connects, the background service on the telescope computer now fills in the telescope's focal length and aperture from what the mount reports, but only if those settings are still blank. Before this, those values were filled in only when the app was open, so the system could otherwise start planning without basic telescope details. Values a user has already entered are never overwritten, and if saving fails the problem is logged and connecting carries on. This is the first of several planned steps for this work and has only been tested against a simulated mount, not real hardware.",
+      "category": "feature",
+      "summaryHash": "3946ec05583812eea4bdeac3aba19739b73f0212"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2001,
+      "title": "ci: bump anthropics/claude-code-action from 1.0.269 to 1.0.276 in the github-actions group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2001",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-17T04:52:28Z",
+      "additions": 2,
+      "deletions": 2,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "github_actions"
+      ],
+      "summary": "This is a routine update to the AI code-review tool used in the project's automated checks, moving it to a newer version. Users are not affected. The newer version has stricter safety defaults upstream, such as limiting what it can run on contributions from outside the project.",
+      "category": "ci",
+      "summaryHash": "064d0a92cc1e0c52b4a9ee2e4ee18a8c958dc3dd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2302,
+      "title": "Probe the telescope refusal order in the contract sweep (#2257 PR 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2302",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T04:46:24Z",
+      "additions": 173,
+      "deletions": 11,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This expands the automated checks that make sure every supported telescope mount rejects bad commands in the right order, as the industry standard requires. Examples of bad commands are an impossible guiding direction or a target position off the sky. The checks now cover more commands and run with the mount disconnected, connected and parked. Mounts that currently get this wrong are listed as known exceptions so the checks still pass, and each upcoming fix must remove its own entry. No mount behavior changes yet; this is groundwork for those per-mount fixes.",
+      "category": "tests",
+      "summaryHash": "1cdd717b0b5193814c9c531a259747030e76a4f2"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2000,
+      "title": "docs: ADR 0023, the Sequencer owns its equipment seam",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2000",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T04:36:53Z",
+      "additions": 75,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds a new design rule, still marked as proposed, for how the automated imaging sequence should talk to equipment. It also says a device that can't do something should clearly refuse rather than quietly do nothing. An existing related rule was broadened so it keeps applying as the code is reorganized. This is documentation only and lays out the plan that later code changes will follow.",
+      "category": "docs",
+      "summaryHash": "022bad49162d5668511a3b3e7ff4ba9966acb08d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1998,
+      "title": "Fix two flaky Windows client tests",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1998",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T04:12:24Z",
+      "additions": 22,
+      "deletions": 6,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes two automated tests in the app that kept failing at random on Windows. One failed when Windows refused to delete a temporary folder that was still in use. The other mistook a normal startup event for a real problem. Only test code changed, and the app itself is not affected. The haptics test now also explicitly closes its open resources before cleaning up, which the description mentions only in passing.",
+      "category": "tests",
+      "summaryHash": "0659c43c5007f1d83137ae47670b8c84f7396b3e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1997,
