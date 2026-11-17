@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T02:12:25.850Z",
+  "generatedAt": "2026-11-17T02:56:35.536Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2301,
+      "title": "Move the ToupTek StellaVita onto the shared power-port driver",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2301",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T02:45:44Z",
+      "additions": 104,
+      "deletions": 351,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "The power-port control for the ToupTek StellaVita observatory box now uses the same shared code as the other GPIO-based power boards (the ZWO ASIAIR models and the iOptron iMate). Before, it had its own copy of the same rules, so every fix had to be made twice; now a fix lands once for all four boards. The change is meant to be invisible to users: names, descriptions and error messages stay the same. It was checked with the existing automated tests but not on real hardware.",
+      "category": "refactor",
+      "summaryHash": "17c892f368d03318804879d6542d9ecbbdde8130"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1993,
+      "title": "One sky brightness input: SQM or Bortle",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1993",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T02:40:52Z",
+      "additions": 817,
+      "deletions": 168,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When setting up a site, users now give the sky brightness one way only: either a Bortle darkness class or an SQM meter reading, picked with a switch. Before, the app asked for both, the two could disagree, and different features could give conflicting advice. Exposure advice, Tonight's Sky and filter advice now all use the same sky value and say which one you entered. Switching from one option to the other clears the old value, and when an SQM reading is entered the app shows the matching Bortle class. Existing profiles open in the matching mode.",
+      "category": "feature",
+      "summaryHash": "e489cbc124580f7147953a83c0e9feb7e5b76ff5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1995,
+      "title": "Add guide log stats and per-frame flags from PHD2 logs",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1995",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T02:27:51Z",
+      "additions": 483,
+      "deletions": 19,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This adds the behind-the-scenes groundwork for a planned Guide Stats screen. When the app reads PHD2 guiding logs, it now marks frames taken during dithering, settling or after losing the guide star, and a new module computes guiding accuracy, worst error, drift and RA back-and-forth swinging from those logs. Nothing visible changes yet, since this is part 1 of 3 and no screen uses it. The new accuracy figure is calculated differently from the one shown in Simple Mode, so the two can differ; the later screen work still has to decide which one to show. The code change also reflows the formatting of some existing log-reading code, which the description does not mention.",
+      "category": "feature",
+      "summaryHash": "ff15ec34ccda9c790a20b76c79e692b64c98785f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2300,
