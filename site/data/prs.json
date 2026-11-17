@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T06:26:25.932Z",
+  "generatedAt": "2026-11-17T07:26:03.003Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,96 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2304,
+      "title": "Check every probe exemption row names a real id and probe (#2257)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2304",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T07:25:19Z",
+      "additions": 26,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test-only change. The automated checks now confirm that every entry in the list of known, tolerated driver test failures points to a real driver and a real test, and gives a reason. This stops that list from quietly going stale if a test is renamed or a name is mistyped. No behavior changes for users.",
+      "category": "tests",
+      "summaryHash": "2246fe81dc9ad8e585f4a84c1ee3792ca647c983"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2306,
+      "title": "Refuse an out-of-range iOptron guide rate instead of clamping it (#2257)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2306",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T07:24:21Z",
+      "additions": 61,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "iOptron mounts now reject a guide rate that is zero, negative, or outside what the mount supports, with a clear 'invalid value' error. Previously the driver quietly adjusted such a rate to the nearest allowed value, and while disconnected it reported 'not connected' instead. This gives client software the same error for a bad setting on iOptron as on other mounts, and nothing is sent to the mount when the value is refused. One visible change: a rate of zero, which used to be silently bumped up to the minimum, is now refused.",
+      "category": "fix",
+      "summaryHash": "938cbbc74b08c4fddb38ddef07faccc991a01097"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2307,
+      "title": "Check OnStep MoveAxis arguments before connected and parked (#2257)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2307",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T07:22:40Z",
+      "additions": 25,
+      "deletions": 11,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On OnStep mounts, a manual-move command with a bad axis or speed is now refused as an 'invalid value' right away. Previously it was reported as 'not connected' or 'parked', depending on the mount's state. This matches the rule the project is applying to every mount driver, so client software sees consistent errors. A valid move on a parked mount is still refused because the mount is parked.",
+      "category": "fix",
+      "summaryHash": "935b3e72a9fce11aca92de44051bd7b6437c7555"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2310,
+      "title": "Probe the telescope members #2257 deferred in the contract sweep (#2287)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2310",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T07:18:08Z",
+      "additions": 179,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change that extends the automated checks to more telescope commands, including pier side, tracking rate, target settings, alt/az slews, syncs and rate offsets. Each command is tested with bad input to confirm the mount reports 'invalid value' before any other error. The new checks found that Sky-Watcher and Celestron NexStar still answer in the wrong order in some cases. Those are recorded as known issues for upcoming fixes, and every other driver passed. The diff also updates the project's internal contributor guidance to list these new checks, which the description does not mention, but no driver behavior changes.",
+      "category": "tests",
+      "summaryHash": "f23fa538a672b0cf05ac4b46990ce27365e72261"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2309,
+      "title": "Check Sky-Watcher PulseGuide, MoveAxis and slew arguments first (#2257)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2309",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T07:18:08Z",
+      "additions": 14,
+      "deletions": 37,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts now check guide pulses, manual moves and go-to slews for bad input first and refuse it as an 'invalid value'. Previously they reported 'not connected', a link fault, or 'parked' instead. This brings Sky-Watcher in line with the consistent error rule being applied to all mounts. Valid commands behave as before, including stops still being sent when the connection is faulty.",
+      "category": "fix",
+      "summaryHash": "763af6066b80436621e89d22d61a60fec07d935d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2003,
