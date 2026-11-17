@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T17:18:33.655Z",
+  "generatedAt": "2026-11-17T18:46:57.252Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2319,
+      "title": "Move the SafetyMonitor dispatch into routes/safetymonitor_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2319",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T18:21:08Z",
+      "additions": 120,
+      "deletions": 35,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Internal reorganization with no change for users: the code that answers requests for safety monitors (the device that reports whether it's safe to observe) was moved out of one very large file into its own file, unchanged. This is the first of ten planned moves, one per device type, so future changes to one device type are easier to review and less likely to collide. An automated check that guards a coding rule was also widened to cover the new files, and the docs were updated to match. The visible code matches the description; the checker script's changes were not shown in the diff, so they could not be confirmed directly.",
+      "category": "refactor",
+      "summaryHash": "69b9b2908da1917ab834709652730582ba9ae6dd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2318,
