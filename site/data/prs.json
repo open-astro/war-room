@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T18:46:57.252Z",
+  "generatedAt": "2026-11-17T21:29:02.699Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2331,
+      "title": "Disconnect asynchronously in the last fourteen drivers (#1757 slice 2a)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2331",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T21:26:07Z",
+      "additions": 188,
+      "deletions": 138,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fourteen device drivers (focusers, filter wheels, rotators, flat panels and power boxes from Astroasis, Celestron, Gemini, iOptron, QHY and WandererAstro) now disconnect in the background, the same way every other driver already does. Before, asking one of these devices to disconnect while it was still in the middle of a slow connect would make the request hang until the connect finished. The tradeoff is that right after a disconnect request, the device can briefly still report itself as connected while it shuts down. New tests check that a disconnect during a connect returns right away. The changes were not tried on real hardware.",
+      "category": "refactor",
+      "summaryHash": "4a155d5e66d6414f77ad4eb11d31a707104d2ce0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2316,
+      "title": "Refuse NaN Sky-Watcher rate offsets; check TrackingRate and sync first (#2287)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2316",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-17T21:21:03Z",
+      "additions": 26,
+      "deletions": 22,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts now refuse invalid tracking-speed adjustments, like a 'not a number' or infinite value. Before, such a value could be accepted and actually fed into the motor's drive speed. Bad tracking-rate settings and bad sync coordinates are also now rejected as invalid input first, instead of reporting 'not connected' or 'parked'. That gives the same error as every other mount. Tests were updated to match, and the fix was checked only with simulated devices, not a real mount.",
+      "category": "fix",
+      "summaryHash": "12180327c283f759a1345875837582a862d629cc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2319,
