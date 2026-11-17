@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T07:26:03.003Z",
+  "generatedAt": "2026-11-17T08:24:56.087Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,26 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2002,
+      "title": "build: bump dotnet-sdk from 10.0.403 to 11.0.100",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2002",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-17T08:12:11Z",
+      "additions": 72,
+      "deletions": 39,
+      "changedFiles": 15,
+      "labels": [
+        "dependencies",
+        "safe-to-review",
+        "dotnet_sdk_package_manager"
+      ],
+      "summary": "The project now builds with the newer .NET 11 developer toolkit, but the app itself still runs on .NET 10, so nothing changes for people using it. The newer toolkit added stricter automatic code checks, so a handful of small code tweaks were made to pass them. These include a cleaner way to time out stuck steps in the emergency-stop sequence, which the author says behaves the same as before. Developers building from source now need both .NET 11 and .NET 10 installed, and the automated build pipeline, test bench setup, and docs were updated to match. The new checks were switched off for test code only, and the bench setup was not tried locally.",
+      "category": "chore",
+      "summaryHash": "b700a3aa402c9396a7695b2f38bd99ad44d500dd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2304,
