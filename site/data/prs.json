@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T14:24:30.275Z",
+  "generatedAt": "2026-11-17T15:20:42.431Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2015,
+      "title": "Fix default-theme contrast and add text-tertiary token",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2015",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T15:17:02Z",
+      "additions": 554,
+      "deletions": 26,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Makes text easier to read in the app's standard look, which matters when working at the telescope in the dark. Text buttons now use a lighter link blue and error messages use a lighter red, so both meet the common readability standard against panels and input boxes. The strong red stays for warning icons, alarm and emergency buttons, and other filled areas, and a new softer grey is used for the times on the dark-window timeline. The change also swaps Simple Mode's error text to the lighter red (noted in the changelog but not called out in the description's summary), and two known low-contrast spots are left for later.",
+      "category": "fix",
+      "summaryHash": "8ce3db50b7011e9de9f7d5486df3f04eda3a45a7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2305,
