@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T15:20:42.431Z",
+  "generatedAt": "2026-11-17T17:18:33.655Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2318,
+      "title": "Close the leftover review notes from the OnStep limit-stop and power-port PRs",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2318",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T17:14:50Z",
+      "additions": 1220,
+      "deletions": 126,
+      "changedFiles": 25,
+      "labels": [],
+      "summary": "This cleans up leftover review notes from several recent changes to the OnStep telescope mount support and the shared power-port switch support. For OnStep mounts, a \"find home\" on mounts with a tangent arm or sector gear is no longer wrongly reported as failed. The time allowed for a park or home now scales with how fast the mount moves, so slow mounts are not cut off early. Repeated goto attempts into the same limit now produce one warning in the logs instead of many. Power-port boards now refuse to start if the number of ports on the hardware doesn't match the configuration, a check that previously only covered one board. The rest is clarified documentation and added tests. Much of the OnStep driver change was not visible in the trimmed code, so those parts rest on the description.",
+      "category": "fix",
+      "summaryHash": "c3fe31decb19f6966ebfeae8ca77fe4b9674eb0c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2015,
