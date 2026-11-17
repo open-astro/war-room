@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T00:14:09.873Z",
+  "generatedAt": "2026-11-17T01:12:56.093Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2299,
+      "title": "Fix the SynScan failed-restore pulse test race",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2299",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T00:45:16Z",
+      "additions": 90,
+      "deletions": 5,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Fixes an automated test for the SynScan telescope mount that sometimes failed at random on busy build machines, even when nothing related had changed. The test's simulated clock could run ahead before the part of the driver it was checking had even started, so that step was skipped and a check sometimes failed. A similar check in a related test could pass without testing anything. The tests now wait for that exact step to be ready before moving the clock forward. This is a test-only change: the driver itself is untouched and users will see no difference. The project's testing guidelines were also updated to explain when to use this approach.",
+      "category": "tests",
+      "summaryHash": "7f41946d15e77de82f0d2b55a2652c88a128ed9d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1991,
