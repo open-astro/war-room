@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T23:14:06.898Z",
+  "generatedAt": "2026-11-17T00:14:09.873Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1991,
+      "title": "Remove wall-clock margins from two flaky star-lost tests",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1991",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T00:10:37Z",
+      "additions": 37,
+      "deletions": 19,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two automated tests for the guiding and sequencing features sometimes failed on busy test machines because they depended on precise real-time waits, which blocked unrelated pull requests. The tests now trigger the timed events directly instead of waiting on the clock, so they should pass reliably while still catching the bugs they guard against. This is a test-only change with no effect on the app itself.",
+      "category": "tests",
+      "summaryHash": "f4c3d1e500e16a81c51970faf252d599cbdf3ea7"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1990,
+      "title": "Bound the Emergency Stop rung probe and blocking action",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1990",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-16T23:52:18Z",
+      "additions": 115,
+      "deletions": 8,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Emergency Stop button works through a list of steps, each stopping one device, and each step already had a 10-second time limit. However, the quick check of whether a device is connected was not covered by that limit, and a device call that froze right away could stall the whole sequence. Now both the check and the stop call fall under the limit and run separately from the rest, so one stuck device is reported as a failed step and the other devices still get stopped. If the computer is heavily overloaded, a stuck step may be reported later than 10 seconds, but it should no longer hang the button.",
+      "category": "fix",
+      "summaryHash": "c032496e7e4e22a819bdbb11fe3b1b96ec2361b9"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1988,
