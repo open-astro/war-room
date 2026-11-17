@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T02:56:35.536Z",
+  "generatedAt": "2026-11-17T04:11:55.741Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1997,
+      "title": "Remove unreachable NINA GPS and generic SDK camera code",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1997",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T04:06:24Z",
+      "additions": 5,
+      "deletions": 1344,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup with no change for users. It deletes old leftover code, inherited from the app this project grew out of, that could never run: support for reading a GPS receiver directly and a generic way of driving cameras through manufacturer software. One outside library used only by that code is also dropped, so there is less to build, review and keep up to date.",
+      "category": "chore",
+      "summaryHash": "d460cc1ecdff834c2e770dc1ad7db31a2abaf314"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1996,
+      "title": "Root helpers refuse an oversized request file",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1996",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T03:32:43Z",
+      "additions": 39,
+      "deletions": 1,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A small security hardening on the telescope computer. The two helper scripts that run with full system rights, one for storage tasks and one for software updates, now refuse any request file larger than 4 KB before reading it. Real requests are far smaller, so normal use is unaffected, and an oversized file can no longer make these helpers read without limit.",
+      "category": "fix",
+      "summaryHash": "801f2dd9889ca0b9aa7e0af44f107b604b0a7f73"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 1992,
+      "title": "Restart when idle: queued or restarting answer, cancel, PendingRestart",
+      "url": "https://github.com/open-astro/openastro-ara/pull/1992",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T03:11:40Z",
+      "additions": 338,
+      "deletions": 17,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"restart when idle\" option on the telescope computer is now clearer and safer. When asked to restart, the system now says whether it will restart right away or is waiting for an imaging run to finish, and a waiting restart can now be cancelled and shows up in the system's status. Paused runs and runs that are in the middle of stopping now also hold off the restart, so no run gets cut off. This is only the behind-the-scenes half: the app does not show or use any of this yet, and a separate change will add that.",
+      "category": "feature",
+      "summaryHash": "a9ec31b002fa48bc7d281afd03f1990479a419be"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2301,
