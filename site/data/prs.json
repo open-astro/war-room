@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T05:28:17.329Z",
+  "generatedAt": "2026-11-17T06:26:25.932Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,62 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2003,
+      "title": "build: Bump the nuget group with 5 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2003",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-17T06:16:25Z",
+      "additions": 12,
+      "deletions": 12,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        ".NET"
+      ],
+      "summary": "Routine update of five outside software libraries to newer versions, with no changes to the project's own code. Most are small fixes, but one, the tool that generates the interactive web API documentation page, jumps a major version (2.20 to 3.0) with no release notes provided, so that page is worth a quick check. The bundled license list was updated to match.",
+      "category": "chore",
+      "summaryHash": "4150757daacdbaab2820e603a64f18cbda239711"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2303,
+      "title": "Advance upstream document baselines; fail OnStep motions a limit stops (#2294-#2297)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2303",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-17T06:15:35Z",
+      "additions": 1170,
+      "deletions": 45,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a safety gap for OnStep telescope mounts. Before, if the mount stopped on its own partway through a slew, park or return-to-home because it hit a safety limit (such as the horizon), the software treated the move as finished normally and could turn tracking back on, pushing the mount further past the limit. Now these interrupted moves are reported as failed with a clear reason, tracking is not restarted, and a park or home that never finishes is marked failed after 20 minutes. The PR also records that four upstream reference documents the drivers are based on were reviewed and refreshed, and updates the related notes and tests; the description says this behavior comes from reading the firmware source and has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "b3ae082a867ef006b725c5fbc2707e4566ec7827"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2004,
+      "title": "build: bump gradle-wrapper from 9.9.0 to 9.9.1 in /client/openastroara_client/android in the gradle group",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2004",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-17T05:36:27Z",
+      "additions": 1,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [
+        "dependencies",
+        "java"
+      ],
+      "summary": "Internal maintenance: updates the build tool used for the Android app to a minor new version (9.9.0 to 9.9.1). It does not change how the app works for users.",
+      "category": "chore",
+      "summaryHash": "ce9ed190a840f73ab165de37d6047b033b5104df"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1994,
