@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T11:22:17.595Z",
+  "generatedAt": "2026-11-17T11:56:14.431Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,26 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2311,
+      "title": "ci: bump the github-actions group with 2 updates",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2311",
+      "author": "app/dependabot",
+      "base": "main",
+      "mergedAt": "2026-11-17T11:38:59Z",
+      "additions": 11,
+      "deletions": 7,
+      "changedFiles": 2,
+      "labels": [
+        "dependencies",
+        "github_actions",
+        "safe-to-review"
+      ],
+      "summary": "Internal maintenance of the automated build and review setup; nothing changes for users. It updates two outside tools used by the automated checks, and pins the AI code-review helper to a matching newer version. It also explicitly locks that review helper to a strict list of allowed actions, so it cannot quietly gain extra permissions if the tool's defaults change later. The newer Java setup tool no longer adds compiler warnings as inline notes on pull requests by default, and this change does not turn them back on, so those inline notes may stop appearing in this project's checks.",
+      "category": "ci",
+      "summaryHash": "6c0cee38690ed4161828a8d56cdf1dea42f746fe"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 1999,
