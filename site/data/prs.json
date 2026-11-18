@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T21:42:07.032Z",
+  "generatedAt": "2026-11-18T22:41:09.497Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 111,
+      "title": "Static PA: start rotation progress at zero; guard degenerate detection grids (#109, #110)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/111",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T22:13:38Z",
+      "additions": 131,
+      "deletions": 10,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The polar alignment tool's progress readout for mount rotation now starts at zero at the beginning of each run. Before, it could show random garbage numbers or the previous run's numbers until the first measurement was taken. The rest is internal cleanup with no visible change: a safety check so star detection skips image areas too thin to search (a size no real camera produces), a simpler way of tidying up camera error messages, and an explanatory code comment, along with new tests.",
+      "category": "fix",
+      "summaryHash": "78e84ce87f93d653fd59288960525355ae7f5966"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 106,
