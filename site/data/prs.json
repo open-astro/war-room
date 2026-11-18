@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T19:38:42.843Z",
+  "generatedAt": "2026-11-18T19:43:46.034Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2392,
+      "title": "Run three filter wheels in fake ConformU (#2078 slice 4)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2392",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T19:41:18Z",
+      "additions": 572,
+      "deletions": 21,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "The automated compatibility checks now cover three more drivers: the ZWO, QHY and Player One filter wheels are tested against the standard ASCOM conformance tool using simulated wheels, with no real hardware needed. The checks run on pull requests that touch these drivers or shared code, and nightly, taking under half a minute each. A fourth wheel, from WandererAstro, is wired in but stays switched off because its simulator never actually moves, so it cannot pass yet. No driver bugs were found, and this does not change which hardware is officially listed as supported.",
+      "category": "ci",
+      "summaryHash": "cf620598841bc963359eb998220affe5cb00b707"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2391,
