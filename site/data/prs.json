@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T19:43:46.034Z",
+  "generatedAt": "2026-11-18T20:43:01.264Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2393,
+      "title": "Run two cameras in fake ConformU (#2078 slice 5)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2393",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T20:16:58Z",
+      "additions": 742,
+      "deletions": 16,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "The automatic compatibility checks (ConformU run against simulated devices) now cover cameras, with two of the eight camera drivers, the iOptron iGuider and the GPhoto (DSLR) camera, tested on every relevant change. The other six stay switched off, each with a written reason: their simulators finish exposures or guide pulses instantly, or accept settings real hardware refuses, so the gaps are in the test simulators rather than in the drivers. The two passing checks are also limited, since the iGuider simulator does not reflect real frame timing and the GPhoto one only produces a tiny test image. This is internal test infrastructure and changes nothing for users.",
+      "category": "ci",
+      "summaryHash": "d52a50d7e288c7d96d01decda56c5e792f158b29"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2387,
+      "title": "Add the OnStepX auxiliary features as a Switch on the shared link (#2222)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2387",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T19:59:27Z",
+      "additions": 1922,
+      "deletions": 32,
+      "changedFiles": 39,
+      "labels": [],
+      "summary": "OnStepX controllers can now expose their auxiliary outputs, such as power switches, adjustable power outputs and dew heaters, as a switch device. This lets imaging software like NINA turn a camera or dew heater on and off through the controller, sharing the same connection as the mount, focusers and rotator. It can be set up from the web settings page, and older OnStep 4.x firmware is turned away with a clear message. Beyond what the title says, it also fixes a timing bug in the existing OnStep focuser and rotator, where disconnecting at just the wrong moment could produce a confusing error instead of a clean \"not connected\" answer; the feature has only been tested against simulated hardware so far.",
+      "category": "feature",
+      "summaryHash": "3ab7e692d8318fbff08cf643c0494ab2edd017a8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2392,
