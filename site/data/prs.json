@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T09:50:35.739Z",
+  "generatedAt": "2026-11-18T10:52:30.876Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,148 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2370,
+      "title": "Judge a lost Sky-Watcher serial link with the SerialLink verdict (#2262)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2370",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T10:40:45Z",
+      "additions": 64,
+      "deletions": 6,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The Sky-Watcher mount controller now uses the shared, project-wide rule for deciding when its cable connection has died, instead of keeping its own private copy of that rule in three places. Users should see no difference: the same kinds of failures still mark the mount as disconnected and free the port, with one extra error line in the log for one rare case that points to a software bug. The point is to stop the copies from slowly drifting apart, and a new test checks that the shared rule is the one actually in use.",
+      "category": "refactor",
+      "summaryHash": "7d84031501db941dea3f5f7f8c0d785c2375232b"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2024,
+      "title": "Simple Mode Tonight's Best screen",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2024",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T10:40:24Z",
+      "additions": 4202,
+      "deletions": 6,
+      "changedFiles": 22,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode gets a new Tonight's Best page that shows the full ranked list of good targets for the rest of the night, not just the four tiles on the plan sheet. You can sort the list, filter it by object type, by what is up right now, by how high it climbs, and by whether it fits your camera's view. Each row shows whether the target is already queued or already captured, and has an Image this button. The page opens from a new Best button on the left rail, a new Best item on the phone's bottom bar, or See all on the plan's Tonight's Best row. Your filter choices are remembered on the device, and the new text is in English and Brazilian Portuguese.",
+      "category": "feature",
+      "summaryHash": "afb57b1d60b2da6a33bc9aaba7e3c251332ced01"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2364,
+      "title": "Write the AsyncConnectable forwarders with one macro (#1757 slice 2b)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2364",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T10:33:44Z",
+      "additions": 119,
+      "deletions": 263,
+      "changedFiles": 47,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup across all 43 device drivers: three identical lines that every driver had to copy by hand for connecting and disconnecting are now written as one shared shortcut. An automated check now fails any driver that leaves it out, because a driver that forgot one of those lines used to build and pass its tests while quietly misbehaving. Nothing changes for users.",
+      "category": "refactor",
+      "summaryHash": "776de1c787823acc24a2c10c40c4bdc680f45569"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2369,
+      "title": "Move the Celestron serial links onto the SerialLink verdict (#2262)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2369",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T10:26:05Z",
+      "additions": 128,
+      "deletions": 41,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "The Celestron NexStar mount, the Celestron CGX mount and the Celestron focus motor now correctly report themselves as disconnected when one more kind of broken cable connection happens. Before, that case made every command fail with a generic error while the device still claimed to be connected, which could mislead control software. These devices now follow the same shared rule as the other updated brands, freeing the port and showing a clear reason until the user reconnects or disconnects. New tests cover the case for each of the three devices, and network connections are unchanged.",
+      "category": "fix",
+      "summaryHash": "6f8f645e07f44a58ca0db30cb1918c2d14da39dd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2365,
+      "title": "Move the QHY CFW3 onto the SerialLink verdict (#2262 PR 5)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2365",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T10:23:08Z",
+      "additions": 82,
+      "deletions": 23,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY CFW3 filter wheel now reads and writes through the shared connection code and uses the project-wide rule for deciding when its cable connection has died, instead of its own private list. Users should see no change, except one extra log line for a rare failure that points to a software bug. This keeps the filter wheel's rule from drifting away from the other devices, and a new test confirms the shared rule is actually being used.",
+      "category": "refactor",
+      "summaryHash": "2adc45dac9883d0fe50aa09bbb642ff9acf9ad80"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2363,
+      "title": "Move the Focuser dispatch into routes/focuser_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2363",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T10:22:19Z",
+      "additions": 80,
+      "deletions": 47,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup: the code that handles web requests for focusers was moved unchanged out of one very large file into its own smaller file. This is one step in an ongoing effort to split that large file up by device type. Nothing changes for users.",
+      "category": "refactor",
+      "summaryHash": "4313307909716cb455e175648003aab3779b10ce"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2043,
+      "title": "Sky Album: bronze at 15 min of lights, not at the first frame",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2043",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T10:13:54Z",
+      "additions": 60,
+      "deletions": 23,
+      "changedFiles": 10,
+      "labels": [
+        "enhancement",
+        "dart",
+        "safe-to-review"
+      ],
+      "summary": "In the Sky Album, an object's card now only counts as collected (bronze) once it has at least 15 minutes of total exposure, instead of after a single frame. This stops stray or test frames from filling the album with cards the user never really imaged. Cards that drop below the new bar go back to 'not collected', but their frames are kept and still count toward bronze, and they show up again as suggested targets for tonight. The collected counts and the Collected/Missing filters now follow this rule; silver (1 hour) and gold (5 hours) are unchanged.",
+      "category": "feature",
+      "summaryHash": "c3a22ae1d33587cdd3c57764ad1c06c4dcdfeb71"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2030,
+      "title": "Guider faults enter the shared fault hub",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2030",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T10:08:10Z",
+      "additions": 1121,
+      "deletions": 1160,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the guider (the camera and software that keep the telescope locked on a star) loses its connection, its camera, or its guide star, the app now handles it through the same shared fault system as every other device, instead of a separate guider-only path. In practice, the user's 'on guider lost' setting (pause, skip target, or abort) is applied consistently, and when the guider recovers, the app automatically resumes only the imaging runs it paused. The 'reconnected' message now also says whether runs will resume on their own or are still waiting for the guide star. This is the first of three planned parts of this work and was not tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "38cf20f70614e41f4f36f8df24c7b3fbd0971917"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2019,
