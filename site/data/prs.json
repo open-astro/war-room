@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T16:46:25.798Z",
+  "generatedAt": "2026-11-18T17:45:24.175Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2385,
+      "title": "Move ToupTek, QHY, GPhoto and the iGuider onto the frame-request module (#2261 PR 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2385",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T16:54:53Z",
+      "additions": 193,
+      "deletions": 122,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Four more camera drivers (ToupTek and Altair, QHY, GPhoto for DSLRs, and the iOptron iGuider) now use the shared set of checks for exposure and image-area requests, instead of each carrying its own copy. With this, all seven camera drivers get those checks from one place, so a future fix only needs to be made once. Users should see no difference, with one small exception: a GPhoto request that is wrong in two ways at once can now get a different error message, though the type of error stays the same. A few vendor-specific limits stay in individual drivers on purpose, and a new build-time safeguard catches any missing error message.",
+      "category": "refactor",
+      "summaryHash": "052994df2aecd9b3a41a9312213216d37b21d827"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2384,
