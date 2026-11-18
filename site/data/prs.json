@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T15:47:06.681Z",
+  "generatedAt": "2026-11-18T16:46:25.798Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2384,
+      "title": "Add the OnStepX rotator on the controller's shared link (#2221)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2384",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T16:11:50Z",
+      "additions": 2173,
+      "deletions": 105,
+      "changedFiles": 36,
+      "labels": [],
+      "summary": "AlpacaBridge now supports the rotator on OnStepX telescope controllers, so imaging programs like NINA can turn the camera to a chosen framing angle through the bridge. The rotator shares the same connection to the controller as the telescope and focusers, works only with the newer OnStepX firmware, and gets its own section in the web setup form. The docs show one deviation from the original request: the standard requires a reverse option and OnStepX has none, so the bridge mirrors the angles in software instead. It was tested only against a simulated controller, not real hardware.",
+      "category": "feature",
+      "summaryHash": "4a74e9f227e71267ec5b176a0d29310f3011d6df"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2383,
+      "title": "Move ZWO, SVBONY and Player One onto one camera frame-request module (#2261 PR 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2383",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T15:57:40Z",
+      "additions": 541,
+      "deletions": 147,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "This is an internal cleanup that moves the ZWO, SVBONY and Player One camera drivers onto one shared set of checks for exposure and image-area requests, instead of each driver keeping its own copy. Future fixes to these checks only need to be made once, and the remaining four camera brands will follow in a second change. Users should see no difference in error messages. There are two tiny edge cases: a ZWO exposure a fraction of a microsecond over the camera's maximum now runs at the maximum instead of being refused, and Player One's limit for absurdly long exposures shifts by a rounding step.",
+      "category": "refactor",
+      "summaryHash": "840f976c57d19320c6b0d428702fa9920e23dca6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2380,
