@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T14:47:49.140Z",
+  "generatedAt": "2026-11-18T15:47:06.681Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2380,
+      "title": "Move the Telescope dispatch into routes/telescope_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2380",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T14:56:34Z",
+      "additions": 622,
+      "deletions": 542,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "This is an internal reorganization with no change in how the server behaves: the code that handles telescope requests was moved out of one very large file into its own separate file, unchanged. Telescope was the last of the ten device types to get this treatment, so this finishes the cleanup effort and makes future telescope changes easier to find and review. A few shared helper pieces are now made available to the new file without being duplicated, and a security guideline was widened so the safety checks on changing the telescope's clock and site location stay covered in their new home.",
+      "category": "refactor",
+      "summaryHash": "49cfbb635de01c04bdb208f04176d82dd996fbf5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2378,
