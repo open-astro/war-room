@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T02:33:25.752Z",
+  "generatedAt": "2026-11-18T03:23:29.453Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2347,
+      "title": "Move the iOptron serial wrappers onto the SerialLink verdict (#2262 PR 3)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2347",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T02:39:10Z",
+      "additions": 131,
+      "deletions": 39,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "iOptron mounts, focusers (iEAF, iAFS2/3, iFR), filter wheels (iEFW) and the iFR rotator now correctly notice when their USB/serial connection has become unusable while sending a command. Before, the software showed an error but still claimed the device was connected. Now it marks the device as disconnected and frees the port so it can be reconnected cleanly. This brings iOptron in line with other brands already moved to the shared connection-loss check; the code matches the description, and network-connected mounts are unaffected.",
+      "category": "fix",
+      "summaryHash": "e67690df7ee8840c7922886fdb2c995bd141a4fd"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2330,
@@ -113,9 +131,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Dome commands (open and close shutter, park, find home and turn to an azimuth) now use the same shared command-handling code the rotator already uses, instead of the dome's own copy. Timeouts and error types stay the same, and new tests cover cases such as a dome that never responds or loses its connection mid-move. The one visible difference is that a command which is already finished now reports back about a tenth of a second later. Focuser, filter wheel, switch and telescope are planned to follow in later changes.",
+      "category": "refactor",
+      "summaryHash": "aa98e2ba19c8d8a4b61986569918054b03a0046a"
     },
     {
       "repo": "open-astro/AlpacaBridge",
