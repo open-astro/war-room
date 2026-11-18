@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T01:34:51.957Z",
+  "generatedAt": "2026-11-18T02:33:25.752Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,114 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2330,
+      "title": "Fix three HTTP-side audit leftovers (#2292)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2330",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T02:25:05Z",
+      "additions": 189,
+      "deletions": 32,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes three small problems in the server's web side that turned up in an earlier audit. If a request names the same setting twice in its web address, the server now uses the first value, matching how it already handled settings sent in the request body. If someone's clock jumps far into the future (for example a client sets a wrong time), the server no longer deletes all of its older log files at once; they are kept until enough new days of logs build up. Wi-Fi passwords containing a hidden 'null' character are now rejected instead of being silently cut short when saved.",
+      "category": "fix",
+      "summaryHash": "7545690bb1d46d1838b9af078e5d48f0ed9fb42a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2340,
+      "title": "Move the SynScan checks onto the telescope command gate (#2258 PR 4)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2340",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T02:21:18Z",
+      "additions": 90,
+      "deletions": 81,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes cleanup for the SynScan telescope mount driver: its safety checks before guiding, moving, slewing and changing guide speed now go through a shared, already-tested checking module instead of its own copy. Users should see no difference except one error message: if a guiding command has both a bad direction and a negative duration, the error now mentions the direction first. This is the fourth of eight planned steps moving telescope drivers onto the shared module.",
+      "category": "refactor",
+      "summaryHash": "65491b0a359ac045a4ae1417f2531091e07094bf"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2329,
+      "title": "Document the Oasis GetConfig layout of the 2.1.0.1 SDK (#2082)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2329",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T01:52:43Z",
+      "additions": 61,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation only: records how the Astroasis Oasis focuser reports its settings, based on a study of the maker's newest driver software. The finding is that the newer software did not change the size of that settings reply, so our existing driver keeps working with current focuser firmware and needs no code change. The notes also flag one open question to check on real hardware: how newer firmware responds to the older-style settings request our driver sends first.",
+      "category": "docs",
+      "summaryHash": "25085b442e216b35a362cc03abd07215160a2df6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2326,
+      "title": "Accept a period after a decision-record verdict in the review checklist gate",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2326",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T01:52:43Z",
+      "additions": 10,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal fix to the automated code-review bot. Its approval checklist was being rejected when it wrote a period instead of a colon after a verdict, which blocked an approved change (#2315) from being merged. The checker now accepts either, while still requiring a reason after the verdict.",
+      "category": "ci",
+      "summaryHash": "b28161ba6ced0f2ac70d4580d609cda91bd4ece8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2315,
+      "title": "Raise DriverException for an unread ZWO AM guide rate (#2314)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2315",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T01:52:43Z",
+      "additions": 51,
+      "deletions": 9,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For ZWO telescope mounts, if the server cannot read the mount's guiding speed when connecting, it now reports an error for that value instead of making up a default of 1x. The made-up value was misleading and, after a recent change, could even be rejected if a guiding program read it and sent it back. The error clears as soon as a later connection reads the real speed or a user sets one, so guiding software never calibrates against a number the mount did not actually report.",
+      "category": "fix",
+      "summaryHash": "941fb318c8643ac975a28d3f77a5011c15cc5c54"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2017,
+      "title": "Move the dome onto the shared device-command module",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2017",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T01:52:04Z",
+      "additions": 219,
+      "deletions": 118,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2344,
