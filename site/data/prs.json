@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T12:50:28.168Z",
+  "generatedAt": "2026-11-18T13:48:44.913Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2375,
+      "title": "Move the Dome dispatch into routes/dome_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2375",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T13:22:43Z",
+      "additions": 115,
+      "deletions": 82,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Internal code reorganization with no change in behavior. The code that handles requests for observatory domes was moved, unchanged, out of one very large file into its own file, making it easier to find and work on. This is part of an ongoing series doing the same for each device type, with switches, cameras and telescopes still to go.",
+      "category": "refactor",
+      "summaryHash": "4a12dd649210a083f55ddd31e546f569cb5049ea"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2338,
+      "title": "Add the OnStepX focuser on one shared link per controller (#2223)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2338",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T12:55:56Z",
+      "additions": 2791,
+      "deletions": 262,
+      "changedFiles": 39,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStepX controllers can now serve their focusers (up to six per controller) alongside the telescope, configurable from the web setup page. Previously the bridge could only talk to one OnStep device at a time, so the connection code was reworked to let the telescope and its focusers share the controller's single cable or network connection, which also prepares the way for rotators and switches later. The telescope should behave as before, but it now runs on this new shared connection. The focuser has only been checked against a simulated controller so far, not real hardware.",
+      "category": "feature",
+      "summaryHash": "aae80d7f13c3e4b3711835b29255cc4833526967"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2373,
