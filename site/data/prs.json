@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T03:23:29.453Z",
+  "generatedAt": "2026-11-18T05:52:37.499Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,184 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2022,
+      "title": "OS-disk data partitions can be mounted as the store but never erased",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2022",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T05:47:41Z",
+      "additions": 448,
+      "deletions": 39,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On telescope computers with only one built-in drive, users can now store their images on the spare space of that drive. Before, the whole drive was off limits. The section that runs the operating system stays fully blocked. The other sections on that drive can be used for storage but can never be wiped, and the app and the behind-the-scenes setup script both enforce this. This is the server half only; the screens in the app that use it come in a later change, and it has not been tested on real hardware.",
+      "category": "feature",
+      "summaryHash": "054ad1a05569ea4385f5777b2720b5042f686d04"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2032,
+      "title": "Add your AlpacaBridge devices from the setup wizard and Simple Mode",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2032",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T05:36:12Z",
+      "additions": 4796,
+      "deletions": 73,
+      "changedFiles": 35,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "New users can now add their AlpacaBridge equipment directly inside Ara, from the setup wizard and from Simple Mode's empty Devices section, instead of going to the bridge's separate web page. The app lists the cameras it detects as tick boxes and adds the ticked ones one at a time, showing whether each one worked. A failed one can be retried or edited. There is also a form for adding any device by hand, and cameras already set up are hidden from the list. It has only been tested with simulated devices, not on a real rig.",
+      "category": "feature",
+      "summaryHash": "d754dddf874646f7bb22d04be57470dcb7533059"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2352,
+      "title": "Share the sexagesimal wire text of the OnStep and ZWO mounts (#1757 slice 3)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2352",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T05:32:43Z",
+      "additions": 500,
+      "deletions": 309,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep and ZWO telescope mount drivers now share one piece of code for writing and reading sky positions, instead of each keeping its own copy. The two copies had drifted apart, so a future fix now reaches both mounts. One small visible effect: in a rare edge case OnStep could send an invalid time of \"24:00:00\", and it now sends \"00:00:00\" instead. Otherwise behaviour is meant to stay the same, and it has not been tested on hardware.",
+      "category": "refactor",
+      "summaryHash": "b40f78b615d8c54abd005530f9bf77dd0ec962f4"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2034,
+      "title": "Move the focuser onto the shared device-command module",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2034",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T05:32:13Z",
+      "additions": 219,
+      "deletions": 146,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is behind-the-scenes cleanup. Focuser moves now use the same shared code as the rotator and dome for timeouts and error reporting, replacing focuser-specific code. The time limits and error messages users see are unchanged. Only the wording of a couple of internal log lines differs.",
+      "category": "refactor",
+      "summaryHash": "a63e6fe337e41061835fa91c1e6d90342658d108"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2029,
+      "title": "Pin the Linux client build to ubuntu-24.04 and gate glibc",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2029",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T05:32:13Z",
+      "additions": 40,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This changes only the automated build process. The Linux version of the app is now always built on a fixed Ubuntu version, and the build fails if the result would need newer system libraries than some supported Linux systems have. It also removes an unneeded Java-related file from the package and saves the finished Linux build so it can be used for later testing.",
+      "category": "ci",
+      "summaryHash": "9c9f89221a67726582d2a4667864e6cad2d71d5f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2023,
+      "title": "Simple Mode: modes as tabs on the right rail (slice 1a)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2023",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T05:18:47Z",
+      "additions": 1106,
+      "deletions": 219,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode on larger screens, the six modes (Preview, Focus, Polar align, Guider, Plan, Calibration) now appear as labelled tabs down the right side, in the order of a typical night. Changing mode takes one tap instead of two, and screen readers announce the modes as a list of tabs. Phones and small windows keep the old mode grid, and the Emergency Stop button is unchanged. This is the first step of a larger redesign, and Preflight keeps a temporary row below the tabs for now.",
+      "category": "feature",
+      "summaryHash": "0712668366b02eeba8743fe81f2cf0ef8a2ac6b4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2349,
+      "title": "Move the SynScan serial link onto the SerialLink verdict (#2262 PR 6)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2349",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T05:10:25Z",
+      "additions": 36,
+      "deletions": 8,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The SynScan telescope mount now treats one more kind of serial-port failure as a lost connection, matching how other mount brands already behave. Before, when this specific error hit while sending a command, the driver reported a generic error but still claimed the mount was connected; now it releases the port and reports itself as disconnected. The change is part of a series moving every brand onto one shared rule for deciding when a serial link has died, and the code matches the description. Wi-Fi connections are unchanged.",
+      "category": "fix",
+      "summaryHash": "634d201113a6fdbd4e87caf985d9fef42604033f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2345,
+      "title": "Move the Sky-Watcher argument checks onto the command gate (#2258 PR 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2345",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T05:04:10Z",
+      "additions": 22,
+      "deletions": 34,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal cleanup for the Sky-Watcher mount: its checks on incoming request values (guiding pulses, manual axis movement and guide speed) now go through a shared checking module instead of the driver's own code. The allowed ranges and error messages stay the same, so users should notice no difference. The one exception is a request with two bad values at once, which now names the direction problem first instead of the duration. It is one step in moving all eight mount drivers onto the same checks, and it shrinks the driver's code slightly.",
+      "category": "refactor",
+      "summaryHash": "0d651c3de2c111dc55f482dfaac6a99f5b914b9a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2332,
+      "title": "Walk a fake ConformU run list kept in step with the roster (#2078 slice 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2332",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T04:56:55Z",
+      "additions": 514,
+      "deletions": 182,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated, hardware-free compatibility test (ConformU) used to be built only for the simulated Sky-Watcher mount. It can now run against any simulated device listed in a new list of devices. For now Sky-Watcher is still the only device actually tested; every other simulated device is listed as waiting for a later step, and drivers without a simulator are recorded too. A new automatic check fails a change if someone adds a simulated device without adding it to this list, so future work can turn on testing for each device with a one-line edit. This is internal testing and build-pipeline work with no change for users.",
+      "category": "ci",
+      "summaryHash": "2af86bc88cc1d31bbe611567ae87f7ace1404c1b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2351,
+      "title": "Let a capture-session body extend its watchdog deadline, never shorten it (#1736)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2351",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T04:46:26Z",
+      "additions": 96,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Camera exposures now have a way to push back their safety timeout (the deadline after which a stuck exposure is treated as failed) once the exposure is running. The deadline can only move later, never earlier, and only the exposure that is currently running can change it. This lays groundwork for QHY cameras, whose slow download modes only learn how long the download will take after the exposure ends and would otherwise time out. No camera uses it yet, so nothing changes for users today; the PR adds the capability and its tests.",
+      "category": "feature",
+      "summaryHash": "ad417a7b13e83252616af4345411cdb888329a59"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2347,
