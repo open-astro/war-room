@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T18:44:38.378Z",
+  "generatedAt": "2026-11-18T19:38:42.843Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2391,
+      "title": "Run five focusers in fake ConformU; pick rows by changed files (#2078 slice 3)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2391",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T19:07:47Z",
+      "additions": 1111,
+      "deletions": 255,
+      "changedFiles": 18,
+      "labels": [],
+      "summary": "The automated compatibility check that tests drivers against simulated hardware now also covers five focusers (ZWO, OnStepX, two iOptron models, and QHY), each taking under a minute. Three other focusers (Celestron, Astroasis, Gemini) are set up but left switched off, with the reasons written down: two simulators never finish a move on their own, and the Gemini driver sometimes responds too slowly in one check, which needs a maintainer decision to fix. Pull requests now run only the checks their changed files can affect, so a focuser-only change no longer waits on the roughly 20-minute telescope checks. The check was also renamed to \"ConformU fake\" since it is no longer just for the Sky-Watcher mount. This is testing and build automation work only; no driver behavior changes.",
+      "category": "ci",
+      "summaryHash": "fe01991c8e057c03a43a6469ea2fae999e6adc2d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2390,
