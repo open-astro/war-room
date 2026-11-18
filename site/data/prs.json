@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T20:43:01.264Z",
+  "generatedAt": "2026-11-18T21:42:07.032Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 106,
+      "title": "Capture-failure reasons, connect retry, and Static PA step gate + field tracking (#97, #98, #99, #104)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/106",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T21:22:11Z",
+      "additions": 7600,
+      "deletions": 159,
+      "changedFiles": 46,
+      "labels": [],
+      "summary": "When a camera picture fails, the guider now explains why, for example that the camera is not connected, instead of a vague 'see debug log' message. When the guider runs unattended, a camera, mount or rotator that failed to connect is now retried in the background, and starting guiding tries to connect missing equipment first. A device the user disconnected on purpose is never retried. The static polar alignment tool also now skips pictures taken while the mount is still moving, and it keeps following the stars while you turn the adjustment bolts. The rig test on real hardware, the desktop app build, and the rotator retry have not been tested yet.",
+      "category": "feature",
+      "summaryHash": "9c32d7194884870d1eb0ff9e11ccb6c83b8d7f30"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 108,
+      "title": "Keep the review agent from delegating to background subagents",
+      "url": "https://github.com/open-astro/openastro-guider/pull/108",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T21:11:05Z",
+      "additions": 11,
+      "deletions": 1,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Internal fix to the automated AI code review. On the large PR #106, the review bot handed its work to background helpers and stopped waiting for them, so no review was ever posted. Those delegation and scheduling tools are now switched off, and the bot is told to finish and post its review in one go.",
+      "category": "ci",
+      "summaryHash": "44fa663cca1571bde0f769c1794d1e1b8170498e"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 107,
+      "title": "Keep the review agent's execution log; tell it how to work within its tools",
+      "url": "https://github.com/open-astro/openastro-guider/pull/107",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T20:53:26Z",
+      "additions": 22,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Internal change to the automated AI code review, after it twice failed to post anything on PR #106. Each run now saves the bot's full working log for 7 days, so failures can be diagnosed. The bot also gets clearer instructions on which commands it is allowed to use. Its actual permissions are unchanged.",
+      "category": "ci",
+      "summaryHash": "90cda2d12b9e141df0ce35ed65af3cb62b2de77e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2393,
