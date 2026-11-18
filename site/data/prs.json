@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T22:41:09.497Z",
+  "generatedAt": "2026-11-18T23:41:08.045Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2047,
+      "title": "Simple Mode rail tab keys and marks",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2047",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T22:42:16Z",
+      "additions": 649,
+      "deletions": 135,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the mode tabs on the right side of the screen now show the state of the night at a glance. A tick appears on Focus and Polar align once they are done tonight and disappears if a later attempt fails. A steady dot marks whichever mode is running, and the open Plan tab shows how many frames have been taken, for example 12/40. Keyboard users can also press 1 to 6 to jump to a mode or use the arrow keys to move between tabs, but not while typing in a text box or on a phone. The main screen and state code was too large to include here, so only the text labels, Portuguese translations and design notes could be checked against the description, and they match it.",
+      "category": "feature",
+      "summaryHash": "11e4791f74fe3ca18c1579e641206c1241f18b0d"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 111,
