@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T08:53:10.707Z",
+  "generatedAt": "2026-11-18T09:50:35.739Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2019,
+      "title": "Keep the sign of the Polar Align cos psi floor",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2019",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T08:54:14Z",
+      "additions": 9,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug in the Polar Align live readout, which tells the user how far the telescope's mount axis is from the celestial pole. At sites at high latitudes (around 60° or more), when the camera was pointed past a certain angle from the pole, the up-down (altitude) correction could show the wrong direction and be exaggerated by up to ten times, so users might turn the adjustment knob the wrong way. The readout now keeps the correct direction in that case, and new tests cover a northern and a southern high-latitude site. The change is pure math and was not tried on real hardware; a narrow band of camera positions still gets a capped, less accurate altitude reading, as before.",
+      "category": "fix",
+      "summaryHash": "a7088d6e31f90f68deedc839a3f8024391ca0edc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2362,
