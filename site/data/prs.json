@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T13:48:44.913Z",
+  "generatedAt": "2026-11-18T14:47:49.140Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2378,
+      "title": "Move the Camera dispatch into routes/camera_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2378",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T14:24:08Z",
+      "additions": 287,
+      "deletions": 245,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Internal cleanup with no change for users: the code that answers requests to cameras was moved, unchanged, out of one very large file into its own separate file. This is part of an ongoing effort to split that large file up by device type, and only the telescope part is left after this one. The existing tests still pass, and the moved code was checked to be an exact copy of the original.",
+      "category": "refactor",
+      "summaryHash": "593a749efc0538b33471f289778b2e00beb9abbc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2376,
+      "title": "Move the Switch dispatch into routes/switch_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2376",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T13:53:13Z",
+      "additions": 123,
+      "deletions": 90,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Internal cleanup with no change for users: the code that answers requests to switch devices was moved, unchanged, out of one very large file into its own separate file. This is part of the same ongoing effort to split that file up by device type, with camera and telescope still to go at the time. The existing tests still pass, and the moved code was checked to be an exact copy of the original.",
+      "category": "refactor",
+      "summaryHash": "fc04d7e7756fbdadb7471d483cef812d925cdd58"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2375,
