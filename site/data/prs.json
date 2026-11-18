@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T11:45:57.616Z",
+  "generatedAt": "2026-11-18T12:50:28.168Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,56 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2373,
+      "title": "Move the ObservingConditions dispatch into routes/observingconditions_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2373",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T12:43:18Z",
+      "additions": 122,
+      "deletions": 88,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Internal cleanup with no change in behavior: the code that answers weather-station (observing conditions) requests was moved, unchanged, out of one very large file into its own file. This is the sixth of ten planned moves that split that large file up by device type, so future changes for each device type are easier to find and review.",
+      "category": "refactor",
+      "summaryHash": "22040ff979c56a784ae7c26e4487f8a9e89b377d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2366,
+      "title": "Move the ZWO mount serial link onto the SerialLink verdict (#2262)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2366",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T12:13:23Z",
+      "additions": 86,
+      "deletions": 14,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO AM mount now uses the same shared rule as other recently updated devices to decide when a USB serial connection has died, instead of keeping its own separate copy of that rule. Users should see no difference, since the mount already treated the same errors as a lost connection. The point is to stop the copies drifting apart over time. A new test checks the behavior, and Wi-Fi connections are unaffected.",
+      "category": "refactor",
+      "summaryHash": "234a136ed01366cb63b9444498d25b506b5b2128"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2372,
+      "title": "Bound PulseGuide; catch the QHY frame read (#2292)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2372",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T11:56:46Z",
+      "additions": 199,
+      "deletions": 12,
+      "changedFiles": 21,
+      "labels": [],
+      "summary": "Guiding pulses are now capped at 60 seconds on the Sky-Watcher, SynScan and ZWO AM mounts and on ZWO, Player One, SVBONY, ToupTek and QHY cameras. A longer request is now refused with a clear error, where before it could move a mount for as long as asked or was silently shortened. Separately, a QHY camera unplugged during image download now fails just that exposure instead of crashing the whole server. Mounts that already had their own hardware limits keep them, and new tests cover each change.",
+      "category": "fix",
+      "summaryHash": "65c266b012ba0cab2fa5c0f16dded5d6cf085126"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2368,
