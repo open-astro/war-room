@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T10:52:30.876Z",
+  "generatedAt": "2026-11-18T11:45:57.616Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2368,
+      "title": "Move ZWO, SVBONY and ToupTek onto the session start reservation (#2260 PR 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2368",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T11:37:35Z",
+      "additions": 187,
+      "deletions": 140,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "The ZWO, SVBONY and ToupTek camera drivers now use the same shared handling for the moment just after an exposure is requested but before it actually begins, replacing three slightly different home-made versions. The visible fix is for ZWO and SVBONY: if a user hit Abort during that brief window, the abort was quietly ignored and the exposure ran to the end and delivered an image anyway; now the abort is honored and no exposure runs. The Player One driver, already on the shared approach, also gets a small ordering fix so an abort arriving at just the wrong instant is not missed. New automated tests cover the ZWO and SVBONY case, but the change was tested only with simulated cameras, not real hardware.",
+      "category": "fix",
+      "summaryHash": "a46f0bc7625324d01d20b489e21761c95241d33a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2371,
+      "title": "Move the Rotator dispatch into routes/rotator_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2371",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T11:36:12Z",
+      "additions": 92,
+      "deletions": 59,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Internal cleanup with no change in behavior: the code that answers rotator commands was moved unchanged out of one very large file into its own smaller file. It is part of an ongoing effort to split that file up one device type at a time, which makes future rotator changes easier to find and review.",
+      "category": "refactor",
+      "summaryHash": "418dcf88e9153e78e6e1971e70afb47be1e305eb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2370,
