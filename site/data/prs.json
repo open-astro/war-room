@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T00:29:23.197Z",
+  "generatedAt": "2026-11-18T01:34:51.957Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2344,
+      "title": "Fix the abort-at-start race in CaptureSession (#2337 regression)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2344",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T00:38:12Z",
+      "additions": 38,
+      "deletions": 27,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Fixes a timing bug that could let a cancelled camera exposure slip through. If someone pressed abort while an exposure was still starting, the camera sometimes began the exposure anyway and delivered the image the user had cancelled. Now a cancel that arrives during startup stops the exposure before it begins, so the camera is idle with no image. This affects the Player One cameras (and the iCAM driver that is built on them), and it also removes a test that had been failing at random in other teams' automated checks.",
+      "category": "fix",
+      "summaryHash": "4ce0085fa6e18b9c40c5391ad3255507c82ebde8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2341,
+      "title": "Move the Gemini flat panel and PDH onto the SerialLink verdict (#2262 PR 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2341",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T00:28:50Z",
+      "additions": 160,
+      "deletions": 66,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Gemini flat panels and the Gemini Power & Data Hub now treat one more kind of broken serial connection as a lost link, the same way the Gemini focuser already does. Before, this kind of failure left the flat panel showing as connected while every command failed, and left the hub retrying forever while it still appeared connected. Now the device reports as disconnected, releases the port, and keeps a note of why, so the user can simply reconnect. The change also adds tests and updates the related documentation.",
+      "category": "fix",
+      "summaryHash": "ff45d3bf5cbf6d79f70cce1d9d88fb7ca2ee29b9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2343,
