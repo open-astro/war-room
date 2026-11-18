@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T05:52:37.499Z",
+  "generatedAt": "2026-11-18T06:50:51.110Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2031,
+      "title": "Settings switch rows: readable hint and a named switch",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2031",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T06:23:47Z",
+      "additions": 170,
+      "deletions": 33,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Settings, the small hint text under each on/off switch, the little info icon, and the \"Related settings:\" caption in the help popup now use a lighter grey that is easier to read against the dark panel; before, they were too faint to meet the app's own readability standard. For people using a screen reader, each switch now announces its setting name and hint, without reading the name twice, and the help popup's close button is now announced as \"Close\" instead of just \"button\". Nothing about the layout or behaviour changes.",
+      "category": "fix",
+      "summaryHash": "581a482a0cc1ff60f971589396275a690c54eb47"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2350,
+      "title": "Move the WandererAstro wrappers onto the SerialLink verdict (#2262 PR 4)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2350",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T06:18:51Z",
+      "additions": 174,
+      "deletions": 29,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The four WandererAstro devices (dust cover, filter wheel, accessory box and rotator) now recognise one more kind of broken connection to the computer and report themselves as disconnected right away. Before, that kind of failure looked like the device had simply gone quiet, so the app kept showing it as connected for up to about half a minute, or showed a confusing generic error on the next command. This brings these devices in line with other brands that already got the same treatment. The change also relaxes one timing check in an unrelated Gemini test that had failed by chance on the automated test servers.",
+      "category": "fix",
+      "summaryHash": "2cc02470b675a7233c14146d373d572bf7de6b08"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2035,
+      "title": "Post a Critical notice when a profile file is set aside",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2035",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T06:18:11Z",
+      "additions": 214,
+      "deletions": 6,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the telescope computer starts and finds a saved equipment profile it cannot read, it already moved that file aside and quietly noted it in a log nobody sees, so the profile seemed to disappear. Now the app also puts a Critical message in the notification inbox for each such file, saying which profile was affected and where the file was moved, so it can be restored from a backup. The message appears only once, not on every restart.",
+      "category": "fix",
+      "summaryHash": "d76f26ab26fbad72d997912f8effb3f12d47d2c6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2018,
+      "title": "Filter wheel slot labels load from the rig before they save",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2018",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T06:18:11Z",
+      "additions": 669,
+      "deletions": 414,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The filter wheel's slot names in Settings are now read from the telescope computer before they can be edited, and an edit is only saved if those names actually loaded. Before, if loading failed, the app filled in its own default names (L, R, G, B and so on) and a single edit could overwrite the real names stored on the telescope. Now the panel says \"Rig not connected\" until the names load, warns and offers Reload if another device changed them in the meantime, and other screens that pick filters no longer fall back to the made-up default names.",
+      "category": "fix",
+      "summaryHash": "ca5542f9072ec35aff9fa80f4982abf9155dc6b0"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2022,
