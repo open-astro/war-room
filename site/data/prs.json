@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T06:50:51.110Z",
+  "generatedAt": "2026-11-18T07:49:32.598Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2339,
+      "title": "Add the remotealpaca upstream Alpaca client (#1753 slice 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2339",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T07:13:31Z",
+      "additions": 1171,
+      "deletions": 18,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds the groundwork for letting AlpacaBridge pass through devices that live on another Alpaca server (starting with the official ASCOM simulators), so they appear as if they were attached locally. This step only adds the shared piece that talks to the other server and handles its errors, timeouts and bad replies, plus a fake server for testing; no device type uses it yet, and it is switched off by default. It also changes the existing web request helper so that a command sent to a device is no longer silently resent to a different address if the server redirects it.",
+      "category": "feature",
+      "summaryHash": "434393774e32ba332b39bbe2dcc7a42ad9b65a10"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2354,
+      "title": "Bound client strings, client registrations and configured devices (#2292)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2354",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T07:10:22Z",
+      "additions": 477,
+      "deletions": 29,
+      "changedFiles": 22,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Puts size and count limits on several things a computer on the local network can send to the server, closing gaps found in a recent audit. Overly long commands, action text, device names, filter names, locations and profile names are now refused, each device accepts at most 256 connected clients, the device setup list holds at most 128 entries, and over-long host names or device paths are rejected. Several network-connected telescope mounts (Bisque, Celestron, iOptron, Sky-Watcher, SynScan and ZWO) now refuse an invalid network port number instead of quietly turning it into a wrong one. Together these stop one machine on the network from bloating the server's memory or feeding a driver nonsense values.",
+      "category": "fix",
+      "summaryHash": "085c37ad02dfd65109c68171bc2da692325509df"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2031,
