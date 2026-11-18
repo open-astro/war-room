@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T23:30:28.637Z",
+  "generatedAt": "2026-11-18T00:29:23.197Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,148 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2343,
+      "title": "Fix the camera argument order on ToupTek, Altair, QHY, GPhoto and iGuider (#2259 PR 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2343",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T00:24:07Z",
+      "additions": 110,
+      "deletions": 90,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Four more camera brands (ToupTek/Altair, QHY, GPhoto and the iOptron iGuider) now check a bad setting in the same order as every other camera, so an app gets the same error for the same mistake whatever brand is attached. This finishes the work started in an earlier change, and the automated checks now hold all of these cameras to that rule. Two behavior changes are visible to users: on QHY, a zero-length (bias) exposure now runs at the camera's shortest supported time instead of zero, and on the iGuider, starting a second exposure or changing frame settings while one is running is now refused instead of replacing the running exposure. That second change could affect guiding software that started new frames without waiting.",
+      "category": "fix",
+      "summaryHash": "6ef33019a6ebff929f54bde43e60e0113820eea3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2342,
+      "title": "Move the FilterWheel dispatch into routes/filterwheel_routes.cpp (#2081)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2342",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T00:24:07Z",
+      "additions": 102,
+      "deletions": 67,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup with no change in behavior. The code that handles filter wheel requests was moved, unchanged, out of one very large file into its own file. This is the third of ten planned moves to make that large file easier to work with.",
+      "category": "refactor",
+      "summaryHash": "9f99bf1f1ce313c0a26c8722a326b85869d63a51"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2321,
+      "title": "Show a stale-data banner when the bridge stops answering (#1764)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2321",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T00:01:25Z",
+      "additions": 597,
+      "deletions": 23,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The web interface now shows a warning banner when the bridge stops responding, saying how long ago the last good update arrived. Before, the green device status dots kept showing old information with no sign it was out of date. Requests now give up after 4 seconds instead of hanging, the dots switch to a hollow \"stale\" look, retries slow down gradually up to every 15 seconds, and the check runs on every tab instead of only on the Devices tab. Everything clears on its own once the bridge answers again, and the device list now shows a placeholder outline while it loads instead of a line of text.",
+      "category": "feature",
+      "summaryHash": "37eb90a01ed53ae89d9329d8e314e728f6ee63fe"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2333,
+      "title": "List plugged-in devices for setup: GET /management/v1/attacheddevices (#2312)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2333",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T00:00:07Z",
+      "additions": 1568,
+      "deletions": 33,
+      "changedFiles": 61,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The bridge can now report everything plugged into it (USB serial devices, other USB devices such as the Astroasis focuser, and cameras) together with the device types each one could be. A setup screen can use this to show what is connected and let the user tick the devices to add, instead of adding them blindly or picking each port by hand. Serial ports are identified without being opened, so devices already in use are not disturbed, and the list marks hardware that is already set up. Cameras are still found the same way as before, which can briefly open a camera.",
+      "category": "feature",
+      "summaryHash": "b05e444fa8360cf4e6dfa529f2153d37e82e83f8"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 105,
+      "title": "Reconnect an Alpaca camera the server reports as not connected",
+      "url": "https://github.com/open-astro/openastro-guider/pull/105",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-17T23:57:13Z",
+      "additions": 672,
+      "deletions": 85,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The guider now recovers on its own when its Alpaca guide camera drops off USB. Before, it kept treating the camera as connected and every frame failed until someone reconnected it by hand. It now disconnects and reconnects automatically right away when the server says the camera is not connected, and after three image failures in a row. The same change makes the connection events reported to other apps more reliable: a failed reconnect is now always reported, and a reconnect that waited for a dark-frame build to finish no longer starts an exposure nobody asked for.",
+      "category": "fix",
+      "summaryHash": "a16efb2d23ce182f3cd135d8c11bbf8704e50aca"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2021,
+      "title": "Focus settings in two tiers with one Advanced toggle",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2021",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T23:47:10Z",
+      "additions": 3186,
+      "deletions": 740,
+      "changedFiles": 53,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Focus settings across the app are now split into a basic set and an advanced set, with one Advanced switch in the settings panel. Values the app works out on its own, such as the autofocus step size, now appear next to the setting that overrides them. The Simple Mode focuser window replaces its \"Refocus every\" slider with an autofocus-during-plans switch and Relaxed, Normal, Tight or Custom presets. Bahtinov and guide-camera focusing now use the profile's autofocus exposure unless one is set. Note that the Advanced switch is on by default, so users still see every setting until they turn it off, even though the description presents a shorter default view as the benefit.",
+      "category": "feature",
+      "summaryHash": "1e907c181f748161cb198ea87a20781690f1be2a"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 102,
+      "title": "Add restore_calibration: put back the saved calibration after a failed recalibrate",
+      "url": "https://github.com/open-astro/openastro-guider/pull/102",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-17T23:44:34Z",
+      "additions": 380,
+      "deletions": 6,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The guider can now put back the last good telescope calibration when a fresh calibration attempt fails, so an unattended night can carry on instead of stalling. Before, asking for a fresh calibration wiped the old one first, and if the new attempt failed the mount was left uncalibrated, with the stuck request blocking any further guiding. The new command restores the saved calibration, clears the stuck request so guiding can start again right away, and refuses to act if the equipment is disconnected, busy, or has no saved calibration. It also fixes a related bug where a cancelled calibration left a 'keep the old star position' setting switched on for the rest of the session.",
+      "category": "feature",
+      "summaryHash": "03a7c74343339a9822fec91ebd9c920459f565f2"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2013,
+      "title": "Add root poweroff helper unit, polkit rule and starter",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2013",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-17T23:32:22Z",
+      "additions": 277,
+      "deletions": 7,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This lays the groundwork for an 'End Night' button that shuts down the telescope computer. It adds a small system helper that powers the machine off, plus a tightly limited permission that lets the app start that one helper and nothing else, so the app itself still never needs full administrator rights. Nothing uses it yet: this is the first of three steps, and the actual button and the connection to it come in later changes. It also adds automatic checks that every permission rule stays this narrow, and updates the matching design record.",
+      "category": "feature",
+      "summaryHash": "95754acb4c5144494f5db754142bf67917b95ef5"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2324,
