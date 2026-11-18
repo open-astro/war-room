@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T17:45:24.175Z",
+  "generatedAt": "2026-11-18T18:44:38.378Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2390,
+      "title": "Run the Sky-Watcher serial board in fake ConformU; one job per run row (#2078 slice 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2390",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T18:15:26Z",
+      "additions": 743,
+      "deletions": 101,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "The automated compatibility check that runs the standard ASCOM test tool against simulated devices now also covers the Sky-Watcher mount over its serial (cable) connection, alongside the network connection it already covered. Each simulated device now gets its own parallel test job, since a single mount test takes about 20 minutes and running them one after another would soon exceed the time limit. The other mount brands stay switched off, and the list now records the plain reason for each one, which is that their simulators do not yet behave enough like a real mount to pass honestly. This is test and CI work only, and no real-hardware support claims changed.",
+      "category": "ci",
+      "summaryHash": "b713434f34998e629fed555793e297dc8e31834d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2389,
+      "title": "Hold a connect until the test releases it, and act only once it is inside (#1757)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2389",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T18:02:39Z",
+      "additions": 271,
+      "deletions": 54,
+      "changedFiles": 28,
+      "labels": [],
+      "summary": "This fixes flaky tests that were randomly failing on busy build servers and had knocked pull requests out of the merge queue four times. The tests check that cancelling a device connection mid-way returns right away. Previously they relied on timing, so a slow machine could make a correct driver look broken. Now the simulated devices pause the connection until the test explicitly lets it go, and the test waits until the connection is really in progress before cancelling, so timing no longer changes the outcome. This is a test-only change across about 20 simulated devices, and the drivers themselves are unchanged.",
+      "category": "tests",
+      "summaryHash": "1bb6c83a2a356c9be30b5a6f2df9ce28fd9d9f56"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2385,
