@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T07:49:32.598Z",
+  "generatedAt": "2026-11-18T08:53:10.707Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,169 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2362,
+      "title": "Tie each contract-sweep exemption row's state to its id list and reject duplicate rows (#2360)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2362",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:48:26Z",
+      "additions": 25,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test change only. The automated check that reviews the list of known, allowed test failures for each telescope and camera driver is now stricter. It catches entries that were misfiled or duplicated and so could never actually apply, which used to slip through. No driver behaviour changes, and every existing entry passes the new check.",
+      "category": "tests",
+      "summaryHash": "039cb18d1383120dd8fa2d75c0ee7aab18151172"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2346,
+      "title": "Move Sync Time, Restart and Shutdown into a Server Actions card (#1764)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2346",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:48:26Z",
+      "additions": 129,
+      "deletions": 9,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review",
+        "testing"
+      ],
+      "summary": "In the AlpacaBridge web page, the bar under every tab now holds only the Refresh button, with some space from the screen edge. Sync Time, Restart Server and Shutdown Server have moved to a new Server Actions card on the Server Info tab, and Shutdown sits in its own row below a divider. On a phone, in the dark or with gloves, this makes an accidental shutdown much less likely. The clock-error message and the troubleshooting guide now point to the new location, and the confirmation prompts work as before.",
+      "category": "feature",
+      "summaryHash": "db31357bd8a8bc8c68736f8ab3a228dfcc5bc734"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2033,
+      "title": "Refuse pointing requests with a declared cause (ADR 0022 pilot)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2033",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-18T08:40:07Z",
+      "additions": 1632,
+      "deletions": 262,
+      "changedFiles": 36,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the rig refuses a Check, Solve or Center request in the Mount window, the server now sends a clear, named reason, for example no camera connected, camera busy, or optics or plate solver not set up. The app shows a matching message and the right settings button, in English and Brazilian Portuguese. Before, the app guessed the cause from status codes and message wording, and unrelated problems could show up as \"no camera\". This is a first trial of the approach for pointing requests only, with other areas to follow.",
+      "category": "fix",
+      "summaryHash": "740fcec0e4b551667ff374898897bd72ee072a15"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2361,
+      "title": "Add the per-axis motion owner module (#2263 PR 1)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2361",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:32:18Z",
+      "additions": 410,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a shared building block that sets one rule for every mount when a new movement command arrives while another is running. A command takes over only the axes it moves, guiding pulses are refused during a slew, park or home, and a stop affects only its own axes. No mount driver uses it yet, so nothing changes for users for now. Later changes will switch the individual mount drivers over to it, replacing their separate home-grown versions of this logic.",
+      "category": "refactor",
+      "summaryHash": "93e092c0ea6c21d50c0ad6f71bb9c2bdf6c7dad4"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2359,
+      "title": "Move the ZWO AM checks onto the telescope command gate (#2258 PR 6)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2359",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:22:27Z",
+      "additions": 76,
+      "deletions": 35,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO AM mount driver now runs its basic safety checks through the shared checker that other mounts already use. These checks cover bad values, not connected, parked and not tracking, for guiding, manual axis moves, coordinate slews and guide-rate settings. One small visible difference: if a request has two bad values at once, the error may now name the other one first. Unlike most changes in this series, it adds slightly more code than it removes, and the author leaves it to the maintainer to decide whether ZWO should adopt it at all.",
+      "category": "refactor",
+      "summaryHash": "1637a0d7779c2ee3641ee06c8f200388cabef221"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2358,
+      "title": "Move the iOptron checks onto the telescope command gate (#2258 PR 5)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2358",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:22:27Z",
+      "additions": 58,
+      "deletions": 41,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron mount driver now runs its basic safety checks through the same shared checker as the other mounts, for guiding, manual axis moves, coordinate slews and guide-rate settings. Error messages, limits and the order of checks are meant to stay exactly the same, and existing tests pass unchanged, so users should see no difference. The change slightly increases the amount of code rather than reducing it, and the author notes the maintainer may prefer to leave iOptron as it was.",
+      "category": "refactor",
+      "summaryHash": "acb54f25459249c557802083f4f65ae10aae9ee9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2357,
+      "title": "Move the Bisque checks onto the telescope command gate (#2258 PR 7)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2357",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:22:27Z",
+      "additions": 65,
+      "deletions": 47,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes cleanup for the Bisque (TheSkyX) telescope driver: its checks that refuse bad or unsafe commands (guiding pulses, manual axis moves, slews to coordinates, and guide-rate changes) now go through the shared rule set that all mount drivers are being moved onto. Users should see no difference, with the same limits, error messages, and order of refusals. The code grew slightly rather than shrank, which goes against a stated maintainer condition for these changes, and the author leaves that decision to the maintainer.",
+      "category": "refactor",
+      "summaryHash": "fd03841166d757bff007f82c35bcbfe51faa2429"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2356,
+      "title": "Move the NexStar checks onto the telescope command gate (#2258 PR 3)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2356",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:11:10Z",
+      "additions": 57,
+      "deletions": 59,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes cleanup for the Celestron NexStar telescope driver: its checks that refuse bad or unsafe commands (guiding pulses, manual axis moves, slews, and guide-rate values) now use the shared rule set that all mount drivers are being moved onto, so the order of refusals lives in one place. Users should see no difference in limits, messages, or behaviour. The code also simplifies how a guiding pulse picks its direction and drops a duplicate coordinate check. The author confirmed the new direction logic matches the old one with a separate test program, since the existing tests only covered two of the four directions.",
+      "category": "refactor",
+      "summaryHash": "1be1f2778d761f2450f1e7bc501f0e0b05162a39"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2355,
+      "title": "Move the Celestron CGX checks onto the telescope command gate (#2258 PR 8)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2355",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-18T08:02:28Z",
+      "additions": 25,
+      "deletions": 24,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes cleanup for the Celestron CGX telescope driver: its checks on command values (guiding pulse length and direction, slew coordinates, and guide-rate ranges) now use the shared rule set that all mount drivers are being moved onto. Its other safety checks, such as whether the mount is connected, parked, or tracking, stay as they were because the CGX checks them in its own order. Users should see no change in limits, messages, or behaviour.",
+      "category": "refactor",
+      "summaryHash": "d804e31020aed6556075aab3b32d94308f9c9c24"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2339,
