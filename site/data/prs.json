@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T07:36:43.173Z",
+  "generatedAt": "2026-11-19T08:35:37.760Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,61 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2397,
+      "title": "Bisque adopts the per-axis motion owner (#2263 PR 6)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2397",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T08:27:15Z",
+      "additions": 274,
+      "deletions": 48,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The driver for Paramount mounts run through TheSkyX now handles overlapping motion commands the same way as the other mount drivers. When a new command takes over from one already running, the mount can now tell whether the older one was stopped or replaced. Two behaviour changes come with this. A guiding nudge sent while the mount is slewing or finding its home position is now refused rather than accepted. And a home search that another command interrupted no longer wrongly reports the mount as at home.",
+      "category": "fix",
+      "summaryHash": "ac0897bd08bd25a2089a62628eda38c08592fb76"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2400,
+      "title": "ZWO AM mount adopts the per-axis motion owner (#2263 PR 5)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2400",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T08:00:31Z",
+      "additions": 613,
+      "deletions": 215,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO AM mounts now treat their two axes separately during guiding. Moving the mount by hand on one axis no longer cancels a guiding correction on the other axis, so a guider correcting one direction keeps working while someone nudges the other. Guiding corrections sent while the mount is moving to a target, parking or finding home are now refused instead of being mixed in with that motion. The change also fixes a bug where a guiding correction made during a manual move could leave the moved axis showing a stale position.",
+      "category": "fix",
+      "summaryHash": "7d6102ca484d65a0c293bacaf944b8ddb3a5ead2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2353,
+      "title": "Let the Wi-Fi panel choose the client adapter by its permanent MAC (#856)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2353",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T07:58:27Z",
+      "additions": 679,
+      "deletions": 18,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review",
+        "testing"
+      ],
+      "summary": "On boards with two Wi-Fi radios, the web interface can now choose which one joins your home network, for example a USB adapter while the built-in radio keeps running the hotspot. The choice is saved using the adapter's fixed hardware address rather than its name, which can change, so it keeps working after the adapter is replugged. Saved networks are moved over to the chosen adapter, and if that adapter is unplugged the system falls back to its automatic choice. One side effect: a network someone had tied to a particular radio by hand will be moved to the chosen adapter the next time it is connected from the web page. This has not yet been tested on real hardware.",
+      "category": "feature",
+      "summaryHash": "61f6273f6ab5850ff7e841a6c149b83f8da1d8cf"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2401,
