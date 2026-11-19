@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T08:35:37.760Z",
+  "generatedAt": "2026-11-19T11:34:01.217Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2063,
+      "title": "Polar Align: motor moves and three solves, NINA's way (10° steps)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2063",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-19T11:01:22Z",
+      "additions": 1230,
+      "deletions": 333,
+      "changedFiles": 36,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Polar alignment now moves the telescope in small, direct motor turns of 10° instead of large automatic slews. This follows the approach used by the popular NINA astronomy software: three sky photos are taken two turns apart, and the mount's axis is worked out from all three. The change was prompted by a real incident where an automatic slew swung the telescope toward its own support post. The whole measurement now stays within about 20° of the starting position, the motors stop promptly if the user hits Stop, and the result no longer relies on the mount reporting how far it turned.",
+      "category": "fix",
+      "summaryHash": "5c062c7458dcdd53af5e3d8d91da3a5862ce47f5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2062,
+      "title": "Fix Settings text, number and dropdown field screen reader names",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2062",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T10:53:32Z",
+      "additions": 123,
+      "deletions": 38,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Screen readers now announce the name of each text, number and dropdown setting in the Settings screens, and they no longer read the visible label a second time. Before this, someone using a screen reader could not tell which setting a field or dropdown would change. The visible layout is unchanged; this matches an earlier fix for the on/off switches.",
+      "category": "fix",
+      "summaryHash": "acbd3fad0586bb5d021eba32fa9605d16e18117d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2397,
