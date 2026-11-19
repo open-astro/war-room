@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T00:39:37.420Z",
+  "generatedAt": "2026-11-19T01:31:04.157Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2051,
+      "title": "End Night: daemon service, routes and progress event",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2051",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T01:11:46Z",
+      "additions": 1556,
+      "deletions": 213,
+      "changedFiles": 25,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope computer can now run an \"End Night\" action on request. It stops any running imaging plan, stops guiding, sends the mount home and parks it, disconnects the equipment, warms up the camera cooler, and then, if the user chose it, shuts the telescope computer down. Each step reports its progress live and can be cancelled between steps, but not once the computer has started powering off. The shutdown only happens if the mount ended up parked or stopped tracking. The steps are now shared with the existing automatic end-of-night shutdown, so the two cannot drift apart. The app on the user's side only gets the new error message (in English and Brazilian Portuguese) for when End Night is already running; the actual screen comes in a later change, and nothing has been tried on real hardware yet.",
+      "category": "feature",
+      "summaryHash": "ac65e24247f71ec5f2cea7f59486baa081c0e55d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2050,
