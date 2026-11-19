@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T21:37:04.346Z",
+  "generatedAt": "2026-11-19T22:42:18.585Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2426,
+      "title": "iOptron: set the mount clock only from a trusted host clock, and re-sync it when the host clock steps (#2419)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2426",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T22:22:08Z",
+      "additions": 935,
+      "deletions": 34,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "iOptron telescope mounts now only take their time from the small computer running AlpacaBridge once that computer's own clock is known to be correct (set from the internet, or set or confirmed by a user or app). They are also corrected automatically if that clock changes later. Before, a Raspberry Pi with no built-in clock could boot with an old time and pass it to the mount, which left one rig almost 7 hours off and would have sent the telescope to the wrong part of the sky. Other mount brands still copy the clock without this check and are left for follow-up work.",
+      "category": "fix",
+      "summaryHash": "a4cc205bf340dc6c29727b9897a2a6655fb1e6be"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2427,
+      "title": "Cap the log directory by total size, oldest files first (#2422)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2427",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T22:12:23Z",
+      "additions": 436,
+      "deletions": 43,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "Log files now have an overall size limit across all days, 1 GB by default and adjustable. When that limit is reached, the oldest files are removed first. Before, each day kept only about 100 MB, so detailed logging held roughly 3 hours, and a night that ran past midnight could lose its after-midnight half. The new default keeps about 34 hours of the most detailed logs while still limiting disk use, and log file names are unchanged so the web viewer and bug reports keep working.",
+      "category": "fix",
+      "summaryHash": "87472a3b52ee07f0a9962316351e02d26d2f364a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2425,
+      "title": "Run the :MSH# zero sensor search for FindHome on the HAE29C (#2420)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2425",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T22:12:23Z",
+      "additions": 372,
+      "deletions": 57,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "On the iOptron HAE29C mount, the Home button now runs the mount's built-in sensor search, which finds its true home position. After a power loss this mount wrongly reports that it is already home, so Home used to do nothing even though the mount's idea of where it was pointing was wrong. While the search runs, apps now correctly see the mount as moving and not yet home, and the search is stopped with an error if it takes longer than 2 minutes. Other iOptron models keep the old behaviour until the search is tested on them.",
+      "category": "fix",
+      "summaryHash": "b9cf82e63e66bebd777d3c712ae6e0784c64ad9a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2423,
+      "title": "Fix iOptron PulseGuide blocking 300 ms on an ack :Z never sends",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2423",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T22:12:23Z",
+      "additions": 105,
+      "deletions": 11,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Small guiding corrections sent to iOptron mounts now finish in about 20 milliseconds instead of 300. The software had been waiting for a reply that these mounts never send. On the test rig this made a 1-second guiding cycle take about 1.9 seconds, so guiding should now respond noticeably faster. Other mount commands keep the longer wait.",
+      "category": "fix",
+      "summaryHash": "0831b622d73cdee270fba28618df4b5f832aa531"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2399,
