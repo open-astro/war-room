@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T04:37:31.929Z",
+  "generatedAt": "2026-11-19T05:36:39.488Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2058,
+      "title": "Simple Mode wheel: a row tap picks the value, no Done button",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2058",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T05:19:36Z",
+      "additions": 156,
+      "deletions": 48,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, picking a value from the scrolling wheel under a tile (exposure time, filter and so on) now takes a single tap on the row you want, and the Done button is gone. If you spin the wheel instead, nothing is set until you tap the tile to close it, and then the new value is set once. The open wheel is also shorter, showing exactly three full rows, which saves space on small screens. The code matches the description, and the team's design notes were updated to describe the new behavior.",
+      "category": "feature",
+      "summaryHash": "1ac23a717b2560d8f38c439e00ecbbb26cad83d0"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2061,
+      "title": "Contract-test Ara against a pinned AlpacaBridge",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2061",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T05:09:36Z",
+      "additions": 362,
+      "deletions": 0,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal testing change with no effect on what users see. It adds the first automated check that runs the app against a real, fixed version of the device-communication software instead of a stand-in. The check shuts that software down, confirms the app reports the connection as lost, restarts it, and confirms the app reconnects. It now runs on every relevant code change, so a mismatch between the two programs should be caught before release.",
+      "category": "tests",
+      "summaryHash": "56ad81ebaacab78ae9b4913b61296915dcd5d4c6"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2057,
