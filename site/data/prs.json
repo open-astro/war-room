@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T03:40:59.488Z",
+  "generatedAt": "2026-11-19T04:37:31.929Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,114 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2057,
+      "title": "Hold any shutter or Stop for 2 s for Emergency Stop",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2057",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T04:26:53Z",
+      "additions": 1171,
+      "deletions": 380,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, holding any camera shutter button (or the Stop button) for 2 seconds now triggers an Emergency Stop. A quick tap still works as normal, and letting go early cancels it. On desktop and iPad, the big red Stop block is replaced by a single Stop button at the bottom of the right-hand column, while phones keep their existing STOP button and also get the shutter hold. Stopping an imaging plan is now a separate Stop plan… button that asks first, says how many frames were taken, and keeps those frames and the mount tracking. Not yet tested on real hardware.",
+      "category": "feature",
+      "summaryHash": "99cc76653163eacfbbefaa553cdbe7c25d12de3c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2055,
+      "title": "Equipment connection, cooling fan and dome load from the rig before they save",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2055",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T04:16:32Z",
+      "additions": 1342,
+      "deletions": 379,
+      "changedFiles": 43,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The equipment auto-connect switches, the camera cooling fan choice and the dome settings now read their current values from the telescope computer before anything can be saved. Before, a failed read could leave app defaults showing, and saving could overwrite the real settings with them; this matters because auto-connecting the dome moves its shutter. If the settings can't be read, the screens now say \"Not loaded\" and offer Retry instead of showing a guess. If someone else changed the settings in the meantime, the app asks you to reload, and other failed saves put the switch back to its real value.",
+      "category": "fix",
+      "summaryHash": "5a5d198417fd369953f7b913bd4a014a321cdd40"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2045,
+      "title": "build: Bump the nuget group with 3 updates",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2045",
+      "author": "app/dependabot",
+      "base": "master",
+      "mergedAt": "2026-11-19T04:11:47Z",
+      "additions": 12,
+      "deletions": 8,
+      "changedFiles": 3,
+      "labels": [
+        "dependencies",
+        ".NET",
+        "safe-to-review"
+      ],
+      "summary": "Routine dependency update: two server libraries (the API documentation page and the image drawing library) move to newer minor versions, and the license list is updated to match. One logging library is deliberately kept on its current version, because its next major release would pull in a newer .NET than the server uses. No user-facing change is expected.",
+      "category": "chore",
+      "summaryHash": "3ae87c545a3d546fc5cd0742af45ac38e23f93fa"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2053,
+      "title": "Sequence format v2: kind table, field table, validator and schema",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2053",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T04:00:31Z",
+      "additions": 3899,
+      "deletions": 266,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Groundwork for a new, cleaner way of saving observing sequences (version 2). It adds a master list of every sequence step type with a stable name, a checker that verifies a saved sequence follows the new rules, and an automatically generated description of the format. Nothing uses the checker yet, so sequences are still saved and loaded the old way. The existing sequencer setup now reads from the new list but registers the same steps in the same order, and a few corrections were made to the written spec.",
+      "category": "feature",
+      "summaryHash": "d6c5843d987ddcfba3953c786eae68a10636da51"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2046,
+      "title": "Move the filter wheel and the switch onto the shared device-command module",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2046",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T04:00:31Z",
+      "additions": 394,
+      "deletions": 139,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Filter wheel changes and switch commands run by the sequencer now use the same shared code for timeouts and error handling as the rotator, dome and focuser. Timeouts are unchanged, but a failed filter change now shows a slightly different error message. If the connection drops mid-change, users will now see an extra \"timed out\" warning alongside the \"disconnected\" one, and the PR admits that this extra warning's wording is misleading. Filter changes started directly from the app's controls (rather than the sequencer) are deliberately left as they were.",
+      "category": "refactor",
+      "summaryHash": "bf801e9b01a97ce50007b4695fa3931818379469"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2394,
+      "title": "Judge OnStep's lost serial link with the util::SerialLink verdict (#2262)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2394",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T03:59:30Z",
+      "additions": 115,
+      "deletions": 40,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "OnStep telescope controllers connected over USB now use the same shared logic as every other device to decide when the cable connection has been lost. This was the last device type still using its own copy of that rule, so it is mainly a cleanup and users should see no difference. The only visible addition is one extra error line in the log when the connection becomes unusable. It also includes small comment and test-helper tidy-ups, and was tested only with simulated devices, not real hardware.",
+      "category": "refactor",
+      "summaryHash": "b22cb244c40250fcb18a718e3b9cdc78c2a789bc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2388,
