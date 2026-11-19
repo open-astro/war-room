@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T12:33:36.629Z",
+  "generatedAt": "2026-11-19T13:32:22.164Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2417,
+      "title": "fix(zwo): write a short exposure before USB Limit and format writes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2417",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-19T13:00:44Z",
+      "additions": 76,
+      "deletions": 0,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a problem where some ZWO cameras, notably the ASI120MM Mini on a Raspberry Pi 4, failed 10 to 30 percent of exposures after anyone had used long exposures with them. The camera's own software remembers the last long exposure and then sends image data faster than the connection can handle, which corrupts frames, and restarting or rebooting did not clear it. The driver now briefly sets a very short exposure when it connects and whenever binning or the image area changes, so the camera settles on the safe data rate; each real exposure still uses the time the user asked for. The code matches the description, and it was confirmed on a Raspberry Pi 5 showing the correct data rate, but the original Raspberry Pi 4 setup where frames were dropping was not re-tested.",
+      "category": "fix",
+      "summaryHash": "b91ccea8de6b730a96f45e176bfafcfdb7f16d24"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2059,
