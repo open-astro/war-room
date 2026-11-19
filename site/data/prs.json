@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T13:32:22.164Z",
+  "generatedAt": "2026-11-19T20:39:59.351Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 123,
+      "title": "Retry a calibration frame after a transient camera error",
+      "url": "https://github.com/open-astro/openastro-guider/pull/123",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T20:30:19Z",
+      "additions": 347,
+      "deletions": 8,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "A single failed photo from the guide camera no longer ruins a calibration run. While calibrating, if the camera has a brief hiccup (a generic acquisition failure or a request that timed out), the guider now quietly takes the photo again, up to twice in a row, without moving the mount again; other kinds of errors still stop the calibration as before. This addresses a real case where four calibrations in a row were lost after minutes of good progress because of one bad frame, and a limit is built in so a camera that keeps failing still gives up instead of retrying forever.",
+      "category": "fix",
+      "summaryHash": "7e8920c475e57168a5c6047de72c7c38d7592ace"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 122,
+      "title": "Back off the Alpaca ImageReady poll during the readout",
+      "url": "https://github.com/open-astro/openastro-guider/pull/122",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T20:13:11Z",
+      "additions": 219,
+      "deletions": 5,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The guider now checks far less often whether the camera has finished sending an image, which cuts the flood of network requests (about 50 a second) during long camera readouts. It still checks rapidly right when the photo is expected, then gradually slows down, so a 1-second readout needs about 20 checks instead of about 54. The trade-off is that an image may be noticed slightly later, by at most a quarter of the readout time and never more than a quarter second, which mainly helps third-party camera servers that do real work on every check.",
+      "category": "feature",
+      "summaryHash": "633c603d8444d5174148910174e92d5852f566c5"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 121,
+      "title": "Answer a JSON-RPC request refused before dispatch with its own id",
+      "url": "https://github.com/open-astro/openastro-guider/pull/121",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T19:49:39Z",
+      "additions": 453,
+      "deletions": 38,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "When an app sends the guider a badly formed command, the error reply now includes the command's own reference number, so the app can match it up instead of waiting until it times out. Badly formatted settings now get a clearer \"invalid settings\" error, and an empty list of commands, which used to get no reply at all, now gets a proper error. No changes are needed in the apps that talk to the guider.",
+      "category": "fix",
+      "summaryHash": "555cb447d75f84e4f35cd0b27da376e37d18e97e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2417,
