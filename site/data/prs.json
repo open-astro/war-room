@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T23:41:08.045Z",
+  "generatedAt": "2026-11-19T00:39:37.420Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2050,
+      "title": "feat: queue a framed Target at the framed angle in Simple Mode",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2050",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T00:32:03Z",
+      "additions": 421,
+      "deletions": 6,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, a target that the user has framed in the planetarium is now queued at the framing they chose. The telescope centres on the framed spot and turns the camera to the chosen angle, instead of doing a plain centred move to the catalogue position. The framing is kept when the target is edited, moved to the front with Start now, or put back with Undo, and targets with no framing (or a framing for a different object) work as before. It also fixes Undo after removing a target, which used to drop that target's end-of-target flats. This is the first of three planned parts.",
+      "category": "feature",
+      "summaryHash": "6a19afb348326e0166079bdbcb09fd16fac58e5a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2047,
