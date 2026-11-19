@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T05:36:39.488Z",
+  "generatedAt": "2026-11-19T06:36:48.877Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,61 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2323,
+      "title": "Install udev rules as plugdev 0660; record why polkit stays (#2290)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2323",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T06:33:44Z",
+      "additions": 363,
+      "deletions": 24,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review",
+        "testing"
+      ],
+      "summary": "USB cameras, filter wheels and focusers on an AlpacaBridge box can now only be opened by user accounts in the \"plugdev\" group. Before, any account on the machine could open them. This applies to both the installable package and the from-source installers, which now create that group if it is missing, and an automatic check stops anyone from accidentally loosening the access again later. One side effect is that other astronomy programs on the same board need to run under an account in that group. The Wi-Fi permission part of the original request was not narrowed, because the network software offers no way to limit it to Wi-Fi only, and the design notes now explain why. The description said not to merge until someone confirmed on a real Pi that every device still works, and the PR does not show that this check was reported.",
+      "category": "fix",
+      "summaryHash": "3706e2f3d5b669d12982af4cb954cf9bca14a5e1"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2060,
+      "title": "Hide the Polar Aligner row in Devices when none is found",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2060",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T05:51:50Z",
+      "additions": 86,
+      "deletions": 20,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode's Settings › Devices list, the Polar Aligner row is now hidden when no polar aligner is found, instead of showing a grey \"None\" entry. This matches how every other device that isn't set up already behaves, so the list only shows equipment the rig actually has. When a polar aligner is found, it still appears as before, and a failed read still shows its red error row.",
+      "category": "fix",
+      "summaryHash": "7b2f0cd624fe04c8c84d794fe3c8fa86339d109e"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2049,
+      "title": "Refuse a GoTo to a target under the horizon",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2049",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T05:42:10Z",
+      "additions": 318,
+      "deletions": 57,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope will now refuse a GoTo to a target that is currently below the horizon limit set in the profile, instead of driving the mount toward the ground or a building. The check uses either the flat default limit or the custom skyline if one is set, and the \"force\" option does not override it. The same shared check now also handles the existing resume and re-center cases, so all three can no longer disagree. Two things to note: if the site isn't set or the calculation fails, the GoTo is still allowed, and the app does not yet show the new friendly \"below the horizon\" message, because that display work is planned as a follow-up.",
+      "category": "feature",
+      "summaryHash": "bf53962b52d95fb9b971d009ffe48ffbb55e642b"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2058,
