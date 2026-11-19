@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T01:31:04.157Z",
+  "generatedAt": "2026-11-19T02:37:50.341Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2054,
+      "title": "Label the meridian pause setting Stop before meridian",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2054",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T02:23:45Z",
+      "additions": 62,
+      "deletions": 7,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The meridian setting in the advanced safety options was labelled \"Pause after flip\", but the number actually sets how many minutes before the meridian imaging stops and waits for the flip. It is now called \"Stop before meridian (min)\", and its help text and settings search entry explain what it really does, including that 0 turns the early stop off. This matters because the old label could lead someone to set a safety margin for the wrong moment. Saved settings are untouched, and new tests confirm the number behaves as the new label says.",
+      "category": "fix",
+      "summaryHash": "9951ecaad4df0b9c0bb1e3a4aad16520bb3026d5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2052,
+      "title": "fix: text on the selection tint reads 4.5:1 or better",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2052",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T01:45:41Z",
+      "additions": 321,
+      "deletions": 2,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, some text on highlighted items could be hard to read when a bright image sat behind it, so two spots now use a darker, higher-contrast text colour: the detail line on the selected camera row and the number of the current Preflight step. A third spot, the \"Pick in Sky\" button on the target card, now has its colour fixed on the button itself, but as the description notes, the real app already showed it in a readable colour, so users will see no change there. The highlight colour itself and the layout are unchanged, and new tests check that each of these texts meets the standard readability level.",
+      "category": "fix",
+      "summaryHash": "73a7dff9d225f0e3bb2a5c5c74a15c9e57f891cd"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2051,
