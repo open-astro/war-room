@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T02:37:50.341Z",
+  "generatedAt": "2026-11-19T03:40:59.488Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,97 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2388,
+      "title": "Run the QHY exposure in a CaptureSession and detach no thread (#1736)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2388",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T03:34:13Z",
+      "additions": 774,
+      "deletions": 1080,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY camera's picture-taking now runs on the same shared, safer machinery already used by the Player One, ZWO, SVBONY and ToupTek cameras. Before, a stuck exposure could be left running in the background after the camera was disconnected, which risked crashes. Now disconnecting or aborting always waits for it to finish cleanly. Users will notice two behavior changes: starting a second exposure while one is running is now refused instead of replacing the first, and an abort no longer wipes out an earlier error message (the next exposure or a reconnect clears it). It has not yet been tested on a real QHY camera, which is planned as a follow-up.",
+      "category": "refactor",
+      "summaryHash": "b1956e97540fb0b3483e915d6ced977f0f3b97a0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2348,
+      "title": "Give the web UI 44 px touch targets and a 13/14/17 px type scale (#1764)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2348",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T03:34:13Z",
+      "additions": 189,
+      "deletions": 52,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review",
+        "testing"
+      ],
+      "summary": "The web control page is easier to use on a phone in the field. Tabs and buttons are now at least 44 pixels tall, and small controls like info buttons and switches get a larger invisible tap area without changing how they look. Small hint and label text has been raised to at least 13 pixels, except for three tiny code-style badges (version, build and WiFi signal). Buttons and card headers will look a bit taller, and a check on a real phone was still pending when the change was written.",
+      "category": "feature",
+      "summaryHash": "6c1e293dbf58cbbb5e7caf7e18e1414a2558a4c2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2382,
+      "title": "Sky-Watcher adopts the per-axis motion owner (#2263 PR 2)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2382",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T03:28:38Z",
+      "additions": 583,
+      "deletions": 255,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts now use the project's shared rule for deciding which command controls each axis of the mount, replacing a home-grown tracking scheme. Two things change for users. A guiding nudge sent while the mount is slewing, parking or finding home is now refused instead of being accepted. A manual move on one axis now takes over from a guiding nudge on that same axis right away, instead of waiting for the nudge to finish. Nudges on the other axis keep running, and stop, disconnect and abort behave as before.",
+      "category": "refactor",
+      "summaryHash": "ff7c9b3dc6b6263e59048691a0acdc4139545e5b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2381,
+      "title": "Refuse a non-finite NexStar per-axis guide rate before the connection (#2379)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2381",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T03:28:38Z",
+      "additions": 36,
+      "deletions": 0,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes an inconsistency on Celestron NexStar mounts. Setting the guide speed separately for one axis to an impossible value (not a number, or infinite) while the mount is disconnected used to be rejected as \"not connected.\" It is now rejected as an invalid value, matching the main guide-speed setting and the other mount drivers. Negative values still get the \"not connected\" answer, and a new test covers both cases.",
+      "category": "fix",
+      "summaryHash": "eb82ba9c9b6ef6cad7132311696a7690cd4cc071"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2377,
+      "title": "Name all eight telescope command gate adopters in the ASCOM contract topic file (#2258)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2377",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T03:28:38Z",
+      "additions": 4,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update. A developer guide said only one mount driver (OnStep) used the shared command-checking module. It now lists all eight drivers that use it. It also notes that a few kinds of commands, such as syncing and some slew types, are still checked by each driver on its own.",
+      "category": "docs",
+      "summaryHash": "48b2d939cb860e52001164b1e79dc06399f69eda"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2054,
