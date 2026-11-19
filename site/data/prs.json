@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T20:39:59.351Z",
+  "generatedAt": "2026-11-19T21:37:04.346Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,91 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2399,
+      "title": "Celestron CGX adopts the per-axis motion owner (#2263 PR 7)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2399",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T21:33:30Z",
+      "additions": 1198,
+      "deletions": 130,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX mount now follows the same rule as the other supported mounts when a new movement command arrives while one is already running. Before, it refused a second slew, park or go-home. Now the newer command takes over and the older one stops quietly. Guide pulses on the two axes can also now run at the same time, and a new pulse on one axis simply replaces the older pulse on that axis, which gives guiding software more freedom on this mount.",
+      "category": "refactor",
+      "summaryHash": "1c79f566bb4fcd0ecd7dfd331b123e78adb13cbc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2367,
+      "title": "Add the remotealpaca ObservingConditions proxied device (#1753 slice 3)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2367",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T21:33:30Z",
+      "additions": 2870,
+      "deletions": 38,
+      "changedFiles": 49,
+      "labels": [
+        "safe-to-review",
+        "testing"
+      ],
+      "summary": "AlpacaBridge can now take a weather-station type device (ObservingConditions) served by another Alpaca server and offer it as if it were its own. It can be set up from the web page with the other server's address, port, device number and how often to check it. It refuses to point at itself so it cannot loop forever, and it handles a lost connection cleanly. The main purpose is a hardware-free way to run the standard ASCOM conformance checker against this server; so far it has only been tested against simulated data, and the real conformance run is still pending.",
+      "category": "feature",
+      "summaryHash": "f6d4152f3ca7425f4da0127b85cf28e13e386e61"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 125,
+      "title": "Report each guide step's move time and time Alpaca pulses from the send",
+      "url": "https://github.com/open-astro/openastro-guider/pull/125",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T21:07:02Z",
+      "additions": 203,
+      "deletions": 17,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Each guide correction now reports how long the mount took to carry it out, so the team can see how much idle time each correction adds between exposures. It also fixes a timing bug where, with some Alpaca mounts, the guider waited for a guide pulse twice. That fix only helps mounts that hold the request open for the length of the pulse and cannot report when the pulse ends. It does not speed up the RC51 iOptron rig, which is limited by AlpacaBridge's own half-second wait after each pulse; the guide log file format is unchanged.",
+      "category": "fix",
+      "summaryHash": "1c617bc6c1cd0494353e7f85f5d4239939be163b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2428,
+      "title": "[6.0] Cap the log directory by total size, oldest files first (#2422)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2428",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-19T21:00:41Z",
+      "additions": 448,
+      "deletions": 42,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "This brings a fix into the 6.0 release line so AlpacaBridge keeps much more log history. Before, the server kept only about 3 hours of detailed logs per day, and a night's session could be cut in half at midnight. Now all logs together are capped at about 1 GB by default (a new setting), and the oldest files are deleted first. That keeps roughly 34 hours of detailed logging, with whole nights kept intact and disk use still bounded. Log file names are unchanged, so the web viewer and Ara's bug-report collector keep working.",
+      "category": "fix",
+      "summaryHash": "7f3e6b31b9deb62376ba4892751f0f1e31b085d6"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 124,
+      "title": "Apply set_profile_setup to the live mount and camera without a restart (#117)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/124",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-19T20:48:13Z",
+      "additions": 234,
+      "deletions": 18,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Changing calibration and camera settings through the guider's remote control interface now takes effect right away, without restarting the guider. Before, new values such as a longer calibration step or a different pixel size were saved but ignored until a restart. For example, on the RC51 rig a step changed from 750 to 1500 ms kept pulsing 750 ms. Deleting the profile currently in use also now loads the equipment of the profile that takes its place, instead of leaving the deleted profile's camera and mount active. Client apps need no changes.",
+      "category": "fix",
+      "summaryHash": "1eedea796cb8f96427cc45d5d062708da77ccaf4"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 123,
