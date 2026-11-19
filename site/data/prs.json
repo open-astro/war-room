@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T06:36:48.877Z",
+  "generatedAt": "2026-11-19T07:36:43.173Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2401,
+      "title": "SynScan adopts the per-axis motion owner (#2263 PR 4)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2401",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T07:36:18Z",
+      "additions": 609,
+      "deletions": 255,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For SynScan telescope mounts, a new guiding nudge or manual move on an axis now takes over that axis right away, instead of first stopping and waiting for the earlier nudge to finish. This removes a brief, unwanted stop between the two motions, and the older nudge no longer sends anything once it has been replaced. Behind the scenes, SynScan now uses the same shared system for tracking which command controls each axis that the Sky-Watcher driver already uses. The code matches the description; one small behavior change noted in the changelog is that a guiding nudge sent while an earlier one is retrying its return to tracking is now accepted instead of refused.",
+      "category": "refactor",
+      "summaryHash": "40a310cc0e692e7041c776dd0bae6d11133ea586"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2404,
+      "title": "Fix three test flakes: Gemini PDH staleness, flat panel cable pull, AsyncConnectable queued disconnect (#2402)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2404",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T06:47:39Z",
+      "additions": 49,
+      "deletions": 23,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test fix: three automated tests that occasionally failed for no real reason now wait for the actual event they check, instead of relying on lucky timing. They covered the Gemini power hub, the Gemini flat panel, and the shared connect/disconnect logic. No driver or user-facing code changed, so automated check failures should be more trustworthy and need fewer re-runs.",
+      "category": "tests",
+      "summaryHash": "9d7a87b2d613f5c1c283eca2e6a8d476afaf6e70"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2403,
+      "title": "Say which lock a driver holds when it calls the telescope gate (#2258)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2403",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-19T06:45:53Z",
+      "additions": 7,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Comment-only change that corrects a code note about how telescope drivers should call the shared safety-check step. The old wording said drivers always hold a certain lock when doing so, which was not true for every driver. Nothing about how the software behaves has changed.",
+      "category": "docs",
+      "summaryHash": "bc93ff41a6e628476ac2736c0dcc6fc1681292c6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2323,
