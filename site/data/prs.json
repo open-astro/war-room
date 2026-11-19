@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T11:34:01.217Z",
+  "generatedAt": "2026-11-19T12:33:36.629Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2059,
+      "title": "Monitor Conditions tile merges weather and gear readings",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2059",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-19T12:14:00Z",
+      "additions": 945,
+      "deletions": 302,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Monitor screen, the at-a-glance view of the night's session, now combines the weather readings and the camera and focuser temperatures into a single Conditions tile. So users can see the state of the sky and their equipment in one place, and a fully equipped setup now fits without scrolling on common tablet, laptop and phone screen sizes. Tonight's Best target suggestions were removed from Monitor so it stays focused on the running plan; they remain on the Plan screen. Monitor also gets a title with its icon at the top, and the visible screen changes appear to match the description, though most of the screen code was not shown and a small known scrolling issue in Portuguese is left for a follow-up part.",
+      "category": "feature",
+      "summaryHash": "0a5fcdcf0004584ea24ba6f943412bb649c210a1"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2063,
