@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T07:38:46.903Z",
+  "generatedAt": "2026-11-20T08:34:18.087Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,72 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2101,
+      "title": "The daemon announces its own profile writes so clients reload (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2101",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T08:06:33Z",
+      "additions": 632,
+      "deletions": 27,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "When the telescope computer changes a settings section by itself (for example after a time sync, a plate solve, connecting the camera or mount, or the guider updating its values), it now tells every open app about it, the same way it already did when a person saved from an app. The settings panel then reloads the new values, so the person's next Save works instead of being wrongly refused with \"changed on the rig\". Switching to a whole different profile still sends no such notice, as before. The changes are on the telescope computer side; the app only got updated comments.",
+      "category": "fix",
+      "summaryHash": "53a500ebfba3c4bc249049048a2264caf600d7c4"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2100,
+      "title": "Imaging defaults and autofocus load from the rig before they save (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2100",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T08:06:33Z",
+      "additions": 1525,
+      "deletions": 643,
+      "changedFiles": 47,
+      "labels": [],
+      "summary": "The imaging defaults (gain, offset, cooler target and similar) and the autofocus settings now load from the telescope computer before the app lets anyone save them. Before, the app could save its own built-in values over the rig's real settings when loading had failed or never ran. Now a save without a successful load writes nothing and explains why, Simple Mode shows \"Not loaded\" with a Retry button, and a run started while connected stops with a message instead of quietly using built-in values. This is the first part of a larger effort; other settings sections follow in later changes.",
+      "category": "fix",
+      "summaryHash": "d55204615049ce605613143d82f5a410ba968aa1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2450,
+      "title": "Celestron CGX: bound Sync and check the encoders in the AbortSlew stop (#2411)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2450",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-20T08:06:00Z",
+      "additions": 481,
+      "deletions": 48,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX mount driver now refuses a Sync to a position more than 5 degrees away from where the mount thinks it is pointing, because such a Sync would silently throw off every later move by that amount. When a person stops the mount or unparks it, the driver now also waits until the motor position readings stay still before it reports the stop as done, since the mount's own status could say \"stopped\" while an axis was still moving. These use the same limits as the other supported mounts. The work also adds tests confirming two related behaviors that needed no change.",
+      "category": "fix",
+      "summaryHash": "9114cb05e62a16a902b2581725b76051d5033455"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2095,
+      "title": "Version and release system like AlpacaBridge, source-only releases (#2093)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2095",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T08:00:18Z",
+      "additions": 5551,
+      "deletions": 398,
+      "changedFiles": 93,
+      "labels": [],
+      "summary": "OpenAstro Ara now has one shared version number that the app, the telescope computer, logs and saved image files all report. Saved image files now name OpenAstro Ara as their creator instead of N.I.N.A. The project also gets a release process modeled on AlpacaBridge: release branches, tags, release notes, and automatic checks, with releases published as source code only for people to build themselves. The app now shows a gentle warning when it is connected to a telescope computer from a different release line. This sets things up for the first public beta, 1.0.0-beta.1.",
+      "category": "feature",
+      "summaryHash": "b5845db7a032e5c95317539f3f46f190d6492fc2"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 131,
@@ -21,9 +87,9 @@
       "deletions": 2642,
       "changedFiles": 38,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The guider's two old built-in polar alignment tools, Polar Drift and Drift Align, have been removed because Ara's own polar alignment is now the only one used, and nothing was calling them. As a result, the guider can no longer move the mount to a new position at all: the only command it sends the mount is the small guiding nudges. The Guiding Assistant now tells people with a large polar alignment error to redo their polar alignment instead of pointing them to the removed tool. Any program still calling the ten removed commands will now get a \"method not found\" error, so this is marked as a breaking change.",
+      "category": "refactor",
+      "summaryHash": "312f1069d63a4c9b45216f1a1d9bcfaa328f9497"
     },
     {
       "repo": "open-astro/openastro-guider",
