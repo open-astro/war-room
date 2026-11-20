@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T06:34:36.366Z",
+  "generatedAt": "2026-11-20T07:38:46.903Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 131,
+      "title": "Remove the polar drift and drift align tools; the guider no longer slews",
+      "url": "https://github.com/open-astro/openastro-guider/pull/131",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T07:03:33Z",
+      "additions": 75,
+      "deletions": 2642,
+      "changedFiles": 38,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 130,
