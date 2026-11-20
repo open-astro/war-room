@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T10:33:04.702Z",
+  "generatedAt": "2026-11-20T11:35:30.117Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2452,
+      "title": "Run tighten_udev_rules.sh with BSD sed too",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2452",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-20T11:20:07Z",
+      "additions": 9,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A setup script that locks down which users can open connected devices now also works on Macs, not just Linux. Before this, one of the project's documentation consistency checks always failed on a Mac because the script used a command option that behaves differently there. The rules actually installed with the Linux package are unchanged. This is an internal tooling fix with no effect on users.",
+      "category": "fix",
+      "summaryHash": "02cdb4d13432010729633e4e7b9d453a3d4a8c68"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2094,
+      "title": "Simple Mode: a connect no longer erases the optics sensor, and Set up optics stays in Simple Mode",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2094",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-20T11:08:06Z",
+      "additions": 389,
+      "deletions": 98,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug in the app's Simple Mode where connecting to the telescope could wipe the saved camera sensor size and pixel size, which then made the setup checklist ask for the optics again. The app no longer saves these settings on its own when equipment connects; it just reloads them, since the telescope computer already fills them in from the mount and camera. The aperture and focal length controls now also refuse to save until the real settings have been loaded. The \"Set up optics\" button now stays inside Simple Mode, taking you to the telescope section of the rig settings, which now shows the main camera's sensor and pixel size as read-only (with English and Brazilian Portuguese text).",
+      "category": "fix",
+      "summaryHash": "356e2165e2114197f990389c35fd32f5e9318ab5"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2449,
+      "title": "Merge stable/6.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2449",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T10:59:13Z",
+      "additions": 777,
+      "deletions": 259,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Routine merge that brings three recent fixes from the 6.0 release line into the main development line, so the next test build includes them. The main fix helps Celestron CGX mounts: if finding the home position takes too long because the mount missed its home sensor, it now stops that axis and tries homing one more time instead of crawling until it times out. It never tries a third time, and it stops if the user cancels or disconnects. The other changes remove an unused log-size setting, correct the log-size documentation, and fix a test that failed when it ran across midnight.",
+      "category": "chore",
+      "summaryHash": "f3549270203431e1d3ebc45633b3ec0043373818"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2106,
