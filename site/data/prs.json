@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T17:31:16.870Z",
+  "generatedAt": "2026-11-20T18:30:31.606Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2111,
+      "title": "Stop guiding when Dec runs away under correction (#1589)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2111",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T18:10:44Z",
+      "additions": 1084,
+      "deletions": 42,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "The observatory app now watches for the telescope's north-south guiding running away, which can happen after the mount flips sides at the meridian if the guider pushes in the wrong direction. When it sees about 20 seconds of corrections that keep making things worse, it stops guiding and raises a guider fault, so the user's chosen safety setting pauses, skips or aborts the imaging run. The alert tells the user to recalibrate the guider before resuming. Normal slack in the mount's gears should not trigger it. Previously such a runaway was only noted quietly and the run kept going, ruining frames. The app does not recalibrate on its own.",
+      "category": "fix",
+      "summaryHash": "676701e163d8a3f46d6bda27481a18d07235d5a9"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 143,
+      "title": "Keep the instance lock in /run and never block on a startup error box (#135)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/143",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T18:09:31Z",
+      "additions": 251,
+      "deletions": 20,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Fixes the guider freezing at startup after a power loss. A leftover file meant to stop two copies running together survived the reboot and wrongly made the guider think it was already running. It then showed an error box on a hidden screen and waited forever, so the system never restarted it. The file now lives in a temporary location that is wiped whenever the service stops, and startup errors are logged and make the program quit so it gets restarted automatically. It has been tested on a development machine but not yet on the real telescope rig.",
+      "category": "fix",
+      "summaryHash": "1eb56508b75debd957987e5b18571fdafee645f8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2457,
+      "title": "Validate iOptron HAE29C MoveAxis signs and ConformU over USB (#2424)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2457",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T17:40:03Z",
+      "additions": 516,
+      "deletions": 511,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Records a hands-on test on a real iOptron HAE29C mount over USB. It confirmed that the bridge moves the telescope in the correct direction on both axes and both sides of the mount, which matters because a wrong direction would send every polar-alignment move the wrong way. It also adds a fresh, fully passing run of the standard compatibility checker and updates the notes that said this was unverified. The only code edits are comments, so nothing behaves differently, and the same check over Wi-Fi is still to be done.",
+      "category": "docs",
+      "summaryHash": "273e91d1df0506110cdab8e69f883fdeec31d8e5"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2099,
