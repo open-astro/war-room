@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T19:29:54.552Z",
+  "generatedAt": "2026-11-20T20:29:00.718Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2087,
+      "title": "Set the mount's clock after a trusted time sync and gate GoTo on it (#2071)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2087",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T20:12:25Z",
+      "additions": 2227,
+      "deletions": 58,
+      "changedFiles": 31,
+      "labels": [],
+      "summary": "Ara now sets the telescope mount's own clock from the trusted, synced time whenever the time is synced or the mount connects, and then checks that the mount's sky position math agrees. Until that check passes, pointing the telescope, syncing its position, centering on a target, and polar alignment are refused with a clear \"Mount clock not verified\" message instead of slewing to the wrong part of the sky. This fixes the problem seen on the RC51 test rig, where the mount's clock was nearly seven hours slow and every move missed its target. Parking, homing, and safety stops are deliberately left unblocked, and a computer clock kept accurate by internet time counts as trusted, so the check can pass even without the app connected.",
+      "category": "feature",
+      "summaryHash": "5d6fe3dbce44b2d2d35f9513f8150e5651f08442"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2471,
+      "title": "[6.0] Port the iOptron HAE29C fixes from main for the Ara beta",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2471",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-20T20:00:03Z",
+      "additions": 3729,
+      "deletions": 713,
+      "changedFiles": 31,
+      "labels": [],
+      "summary": "Brings two weeks of fixes for the iOptron HAE29C mount over to the 6.0 release line, so the Ara beta runs on a driver that has them. The fixes include: the mount's clock is only set from the computer's clock once that clock is known to be correct; \"find home\" actually searches for the home position instead of silently doing nothing; guiding nudges no longer stall for 300 ms; and some false \"still moving\" readings during guiding after a slew are gone. These were checked on real hardware over both USB and Wi-Fi. The driver code was copied over from the main branch unchanged, and only tests and documentation needed adjusting for 6.0.",
+      "category": "fix",
+      "summaryHash": "82947494596e4caa53137aba0e58829350cad544"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2112,
+      "title": "Polar Align stop fixes: reconnect retry, fenced takeover, pad stop (#2066)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2112",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T19:33:46Z",
+      "additions": 1573,
+      "deletions": 110,
+      "changedFiles": 16,
+      "labels": [],
+      "summary": "Closes several gaps that could leave the mount moving after someone asked it to stop during polar alignment, which risks hitting the tripod or pier. A stop sent while the mount has briefly disconnected now keeps retrying and goes through once the mount reconnects. A stuck polar alignment can no longer send a late stop that cancels an emergency or safety park. Tapping the direction pad mid-run now ends the alignment instead of letting the motor start up again. A slew command that was already on its way when a stop landed is also stopped again, unless the user or the sequence sent a newer move after the stop. These changes are tested against a simulated mount but have not been tried on real hardware.",
+      "category": "fix",
+      "summaryHash": "7ee9eb20b35048e37db835cb07d896a7dac51500"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 149,
+      "title": "Keep the calibration edge margin when guide recalibrates on a calibrated mount (#140)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/149",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T19:32:42Z",
+      "additions": 287,
+      "deletions": 17,
+      "changedFiles": 15,
+      "labels": [],
+      "summary": "When guiding starts on a new target, which always redoes calibration, the guider now picks a star far enough from the edge of the image to survive the calibration movements. Before, it used the smaller edge margin meant for an already-calibrated mount, so the star could drift off the frame during calibration and cause \"Star lost\" failures. A star already chosen beforehand, as Ara does during a meridian flip with full recalibration, is now checked too: if it is too close to the edge, the guider picks a new one. Calibration still happens on every new target as before.",
+      "category": "fix",
+      "summaryHash": "d6f91073ce3b32dd0d028ad8c6ed1961a43dc3fe"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2116,
