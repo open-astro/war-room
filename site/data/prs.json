@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T17:19:19.025Z",
+  "generatedAt": "2026-11-20T17:31:16.870Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2099,
+      "title": "Polar Align says which number to trust: tracking off confirmed, readout caution, both causes named (#2072)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2099",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T17:30:48Z",
+      "additions": 1522,
+      "deletions": 125,
+      "changedFiles": 35,
+      "labels": [],
+      "summary": "Polar alignment now helps users tell which of two numbers to trust when the quick live reading and the later measurement from guiding disagree, after a night where one said 0.2′ and the other said 16′ or more. The app now makes sure the mount has really stopped tracking (and is not slewing) before and throughout the live reading, and stops the run if it starts moving on its own. It also warns when the camera's position makes the live reading unreliable, and the warning on the guiding figure now names both possible causes (mount slack, or a shifted mount or bad reference) and suggests running Polar Align again. Logs gained more detail for checking disagreements; the changed parts of the diff that are visible match the description, though much of it was not shown.",
+      "category": "fix",
+      "summaryHash": "d53573a2c7d39953f1c08eb0596c0fea5bb3e88f"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2109,
