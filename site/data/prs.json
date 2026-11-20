@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T05:34:02.590Z",
+  "generatedAt": "2026-11-20T06:34:36.366Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,88 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 130,
+      "title": "Delete GUI-only features no RPC method reaches (daemon step 1)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/130",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T06:30:49Z",
+      "additions": 46,
+      "deletions": 13310,
+      "changedFiles": 65,
+      "labels": [],
+      "summary": "The guider's old desktop window lost a large set of tools inherited from PHD2 that nothing else in the system could reach. These include the About and Help menus, the update checker, several manual calibration screens, the setup wizard, and tools such as comet tracking and meridian-flip calibration. Ara controls the guider the same way as before, and a fresh install now starts up on its own without a setup wizard. Two things are gone from the desktop window with no replacement: typing calibration values in by hand, and going back to the calibration from before a suspicious one. This is the first step of a larger cleanup.",
+      "category": "refactor",
+      "summaryHash": "4eb77eb1c077cbecdd5a865fb145f8d200df70a9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2444,
+      "title": "Fix four flaky tests from #2431 and the two driver races behind them",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2444",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T06:16:01Z",
+      "additions": 667,
+      "deletions": 62,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Five automated tests that passed or failed at random are now reliable, which stops unrelated changes from being bumped out of the merge queue. Two of those failures came from real driver bugs, and both are fixed. On Sky-Watcher mounts, a tracking-rate change made right as a guide pulse finished could be silently lost, leaving the mount at the old rate. On QHY cameras, disconnecting during an exposure could show a false error. The description says four tests in its title but lists five, and the diff changes all five.",
+      "category": "fix",
+      "summaryHash": "b30d676cbee5085e48eba551ec08c7fbde97cd5d"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 127,
+      "title": "Remove the Static PA tool; Ara's polar alignment replaces it",
+      "url": "https://github.com/open-astro/openastro-guider/pull/127",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T05:45:04Z",
+      "additions": 58,
+      "deletions": 5737,
+      "changedFiles": 33,
+      "labels": [],
+      "summary": "The guider's built-in Static Polar Alignment tool is gone, because Ara's own polar alignment is now the only supported method. Removing it closes a safety risk: in auto mode the old tool could move the mount without checking for the meridian, pier side or hour angle, and it could have done so on one of the rigs today. Any outside program that still asks for this tool now gets a 'method not found' reply. Polar drift and drift alignment are not changed.",
+      "category": "chore",
+      "summaryHash": "6fc2528bc9c12626c40794142e0660a0f9615aad"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2090,
+      "title": "Check every slew target before it reaches the mount (#2075)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2090",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T05:41:31Z",
+      "additions": 483,
+      "deletions": 10,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "Ara now checks every telescope move before sending it to the mount, whether it comes from a sequence, centering, a meridian flip or polar alignment. A target past the celestial pole, or an invalid position, now stops that step with a plain message and moves nothing. Before, the mount's refusal counted as an equipment fault and could escalate to aborting the session and parking the scope. Ara also now handles mounts that report a position just past the pole, so centering and meridian flips near the pole keep working and finish normally.",
+      "category": "fix",
+      "summaryHash": "73d2166533ba948d539aa77bd214c65d1b70c6d5"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 126,
+      "title": "Remove the embedded web UI; keep the HTTP port for Ara's two data routes",
+      "url": "https://github.com/open-astro/openastro-guider/pull/126",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T05:34:24Z",
+      "additions": 73,
+      "deletions": 2613,
+      "changedFiles": 27,
+      "labels": [],
+      "summary": "The guider's built-in web page is gone, because Ara is the user interface. That page let any browser on the local network send control commands to the guider. The guider's web port now only serves the two image feeds Ara uses, for live view and polar-alignment frames, and answers 'not found' to everything else. This breaks any outside tool that relied on the old web page or its control routes. All the same commands remain available through the guider's main control connection.",
+      "category": "chore",
+      "summaryHash": "4e8418da05aedae8009cc205c0108c7875ada2f6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2441,
