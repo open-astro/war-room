@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T02:34:40.954Z",
+  "generatedAt": "2026-11-20T03:34:44.066Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2433,
+      "title": "Add the shared telescope motion guards (#2405)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2433",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-20T03:32:30Z",
+      "additions": 1163,
+      "deletions": 0,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds one shared, tested set of safety checks for telescope movement that all eight mount drivers can use later. The checks cover a stop that is confirmed rather than assumed, time limits on slews and manual moves, a check that a slew really arrived, a limit on how far a sync can shift the pointing, and a stop owed after a dropped connection. No driver uses these checks yet, so nothing changes for users until each mount adopts them in follow-up work. Having one copy avoids eight drifting versions of the same safety logic.",
+      "category": "refactor",
+      "summaryHash": "b22b225bea92699d0792789ebec8223314a82ad1"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2398,
+      "title": "Celestron NexStar adopts the per-axis motion owner (#2263 PR 3)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2398",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-20T03:30:45Z",
+      "additions": 580,
+      "deletions": 156,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron NexStar driver now uses the project's shared rule for deciding which movement command is in charge of the mount, replacing its own homemade version. New movement commands no longer wait for an older guiding pulse to finish, a replaced pulse sends nothing more to the mount, and guiding requests are now refused while a slew, park or homing is running. This brings NexStar in line with the Sky-Watcher and SynScan drivers and makes its movement handling more predictable.",
+      "category": "refactor",
+      "summaryHash": "cc02887264964ceb2cf9c4c32375a493262ffdc6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2086,
+      "title": "Polar Align: Stop really stops the mount, and tracking is off at the end (#2048)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2086",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-20T02:41:51Z",
+      "additions": 1907,
+      "deletions": 109,
+      "changedFiles": 32,
+      "labels": [],
+      "summary": "Fixes a dangerous bug where pressing Stop during Polar Align did not actually stop the mount, which on one rig let the mount drive into the pier. Every way a run can end (Stop, Done, a failure, a lost client or shutting down the app) now sends stop commands to the mount, re-sends them if needed, and checks that the mount has really stopped. If it cannot confirm the stop, the user is told to cut the mount's power. A new setting, on by default, turns tracking off at the end of a run, and Stop and Done can now take a few seconds to respond while the stop is being confirmed.",
+      "category": "fix",
+      "summaryHash": "b67ea19c911f9768a5c68d936aafd0157f731a9c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2080,
