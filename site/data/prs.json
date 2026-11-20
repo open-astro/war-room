@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T09:33:41.996Z",
+  "generatedAt": "2026-11-20T10:33:04.702Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2106,
+      "title": "Fake GEM mount: exact turn landing on the routine's reads; count only live aborts",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2106",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T10:19:55Z",
+      "additions": 84,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "This tightens the simulated telescope mount used to test the Polar Align routine, with no change to the app itself. Two tests that check where a mount turn ends up could fail at random on a busy test machine; the simulated mount now only advances when the routine checks on it, so the result no longer depends on machine load. A test setting meant to make the mount ignore a stop command was also being used up by stop commands sent while the mount was already still, which could let a test pass when it shouldn't; it now only counts stops sent while something is actually moving.",
+      "category": "tests",
+      "summaryHash": "d4f900d584114822668a0f66a4f747ce12d1180f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2453,
+      "title": "CGX re-home AbortSlew test: let the async AbortSlew act before driving the clock",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2453",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-20T10:14:55Z",
+      "additions": 5,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes a test that failed at random, with no change to the app itself. The test checks that cancelling a mount's re-homing stops it from sending another home command, but it sometimes moved its simulated clock forward before the cancel had taken effect. The test now gives the cancel up to two seconds to act first. It was not run locally before merging and relies on CI to confirm the fix.",
+      "category": "tests",
+      "summaryHash": "22d460c4acbb56d693f3bff73c677ade91fe258c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2096,
+      "title": "Simple Mode mount limits: Lowest altitude, meridian timing, and a stop before the meridian with the flip off (#2044)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2096",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-20T09:48:31Z",
+      "additions": 2588,
+      "deletions": 16,
+      "changedFiles": 40,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode's Mount window now has a Limits section where users can set the lowest altitude the telescope may point to and choose when the meridian flip happens, instead of having to go into Advanced Mode. When the meridian flip is turned off, users can now set a \"stop before meridian\" time: the telescope computer will stop tracking and pause any running plan that many minutes before the meridian, so the scope does not drift into its own pier. It never moves or parks the mount, and the app shows a clear message when this happens. A requested highest-altitude limit is not included because the server has no setting for it yet, and the sky diagram is hidden when a custom measured horizon is in use.",
+      "category": "feature",
+      "summaryHash": "01bcf25a016633f1e6eec23e2ac5ddd08a4a579f"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2105,
