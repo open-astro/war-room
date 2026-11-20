@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T00:56:11.428Z",
+  "generatedAt": "2026-11-20T01:35:23.859Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2443,
+      "title": "Name test_log_size_cap files from the date the case started (#2442)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2443",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-20T01:34:52Z",
+      "additions": 302,
+      "deletions": 224,
+      "changedFiles": 2,
+      "labels": [],
+      "summary": "Test-only fix: an automated check of the log size limit could fail if it happened to run across midnight, because it looked for the day's log files under the next day's date. The test now notes the date once at the start of each case and simply reruns that case if midnight passes partway through. This stops the merge queue from failing depending on the time of day; the server itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "8657fc304543c3fce27c1cae1bace6298403bf2c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2440,
+      "title": "[6.0] Celestron CGX: re-home once an axis whose home search misses the sensor (#2213)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2440",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-20T01:08:01Z",
+      "additions": 307,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron CGX mounts connected directly by USB should no longer lose their position reference when the mount's own homing search misses its home sensor. Previously a miss led to a slow crawl of about seven minutes, past the driver's three-minute limit, so homing failed. Now, if one axis has not found home after 60 seconds, the driver stops that axis, waits for it to stand still, and tries homing once more, which costs about a minute instead of a failed home. This applies to Find Home, Park, and the homing step of slews that flip the mount to the other side, and was confirmed on a real mount; a second miss still fails as before, and the change also adds tests and updates the team's driver guidelines to note this one exception to the no-retry rule.",
+      "category": "fix",
+      "summaryHash": "691fca155d59c779f2718e3948ed9057f3806162"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2438,
