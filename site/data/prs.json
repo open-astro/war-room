@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T00:36:45.131Z",
+  "generatedAt": "2026-11-20T00:56:11.428Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2438,
+      "title": "Give the merge gate's check runs to jq on stdin",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2438",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T00:41:00Z",
+      "additions": 28,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "This fixes the automatic merge check, which decides whether a pull request is ready to merge, so it no longer breaks on pull requests with many automated checks. When there were too many check results (around 37 or more), the data passed along was too big, the check crashed, and those pull requests were merged without it ever giving a verdict. Now the data is passed in a way that has no size limit, so every pull request is judged again; the rules themselves are unchanged. A new test with very large check data confirms passing and failing cases still behave correctly.",
+      "category": "ci",
+      "summaryHash": "e309643c49e4e7f070d975d2548725ce55b907c8"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2088,
