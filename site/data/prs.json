@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T01:35:23.859Z",
+  "generatedAt": "2026-11-20T02:34:40.954Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,76 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2080,
+      "title": "Turn tracking on before a REST GoTo and refuse counterweight-up targets (#2073)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2080",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-20T01:55:19Z",
+      "additions": 812,
+      "deletions": 26,
+      "changedFiles": 23,
+      "labels": [],
+      "summary": "A GoTo from the Mount panel now turns tracking on first, so it works right after Find Home instead of being quietly rejected by the mount. When the mount does refuse a move, the log now says why. Because the old tracking rejection had been the only thing stopping two risky moves that would have pointed the counterweight upward, the app now refuses those targets on purpose and shows the reason in English and Portuguese. This check applies only to German equatorial mounts and only to Mount panel GoTos, not yet to every GoTo. A Stop Mount or emergency stop pressed while a GoTo or Park is still starting now cancels it, so the mount no longer moves after being told to stop.",
+      "category": "fix",
+      "summaryHash": "ee0d3e055c8052bf53786acca8de01d414234213"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2445,
+      "title": "iOptron: bound the zero search on its own slot and gate clock re-sync writes on motion",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2445",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T01:55:17Z",
+      "additions": 486,
+      "deletions": 59,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two safety fixes for iOptron mounts. The 120-second time limit on the mount's home-sensor search now runs on its own, so the search is stopped even if no app is checking on the mount; before, a quiet app could leave the mount searching indefinitely. The mount's clock is also no longer updated while the mount is moving, including a case where a failed connection let that slip through. The PR also adds tests and corrects documentation, and has not yet been re-checked on real hardware.",
+      "category": "fix",
+      "summaryHash": "e6cdc4c433c9132355f5165462c25eed1232cb2e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2430,
+      "title": "Write down the iOptron MoveAxis signs and pin them with tests (#2424)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2430",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T01:54:07Z",
+      "additions": 138,
+      "deletions": 6,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A code comment in the iOptron driver said moving the main axis in the positive direction turned the telescope west. Research showed it actually turns east, so the command was right and only the comment was wrong. This PR corrects the comments, writes the direction rules into the docs, and adds tests that lock in the current behaviour on both sides of the mount. Nothing changes for users, but these directions have not yet been confirmed on a real mount.",
+      "category": "docs",
+      "summaryHash": "65c2efa7f16939a079505b4ebefb628fd5ed0631"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2429,
+      "title": "ZWO camera: never serve a frame that began before StartExposure (#2414)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2429",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T01:54:07Z",
+      "additions": 292,
+      "deletions": 46,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Some ZWO guide cameras, notably the ASI120MM Mini, sometimes returned a frame they had started before they were asked to take a picture. That made the guider correct errors it had already fixed, adding lag and noise. The driver now throws away any frame that arrives too early to be fresh and takes it again, using the existing limit of two retries. If the retries run out, the app gets a clear error. Whether the camera can be stopped from starting these early frames at all still needs testing on real hardware.",
+      "category": "fix",
+      "summaryHash": "c72259c88baf8eda95be5626d5e25aab753e6234"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2443,
