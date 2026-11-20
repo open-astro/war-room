@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T23:22:40.769Z",
+  "generatedAt": "2026-11-20T23:26:32.897Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 169,
+      "title": "Raise the limit-reached alert on the 5th clamped step (#153)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/169",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T23:25:04Z",
+      "additions": 58,
+      "deletions": 33,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "The warning that tells you the guider can't make big enough corrections now appears one step sooner. It now shows after 5 corrections in a row that hit the maximum allowed length in the same direction, as the setting always intended, instead of after 6. An off-by-one in how the first such correction was counted caused the delay. Everything else stays the same, including that the warning shows at most once every 30 seconds and what resets the count; the code matches the description, and tests and the changelog were updated to match.",
+      "category": "fix",
+      "summaryHash": "9526ced5b5fd7c7e48b0ba4a7894469e50802855"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 170,
