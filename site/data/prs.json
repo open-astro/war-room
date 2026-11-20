@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T12:34:41.959Z",
+  "generatedAt": "2026-11-20T17:19:19.025Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2109,
+      "title": "PHD2 guider settings load from the rig before they save (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2109",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T16:59:03Z",
+      "additions": 1417,
+      "deletions": 735,
+      "changedFiles": 52,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The guider settings in the app now load the telescope computer's saved copy before they can be changed and saved. Before, Settings → Guider, Tune Guiding, the guider setup wizard and the advanced guider settings could save the app's built-in defaults over the real guiding setup when loading had failed or never happened. Now a failed load saves nothing and shows \"Not loaded\" with a Retry button, and a save made after another device changed things is refused instead of overwriting them. Changes the telescope computer makes by itself, like filling in the guide camera details or applying Guiding Assistant results, now show up in the app without being overwritten. It was not tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "12743b35a4d714adecdf1823aefa76ed872c6f45"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2097,
+      "title": "Emergency Stop latches first; any stop from outside ends Polar Align (#2066, #2067)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2097",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T16:31:58Z",
+      "additions": 1251,
+      "deletions": 81,
+      "changedFiles": 38,
+      "labels": [],
+      "summary": "Stopping the mount now reliably ends Polar Align, so it can no longer start moving the mount again after a stop. Before, a Stop Mount pressed at the wrong moment could be missed, Emergency Stop only took effect after some slower steps that could take several seconds, and the automatic safety park could happen while Polar Align kept running. Now Emergency Stop takes effect immediately, a Park or Find Home also counts as a stop, and Polar Align ends right away on any outside stop without turning tracking back on. While Polar Align is moving the mount, the app also refuses other GoTo, manual direction, Home and Park commands and asks you to stop Polar Align first. Stop Mount and releasing the direction buttons always still work.",
+      "category": "fix",
+      "summaryHash": "558c37578f60818b1b182d20f973de78eb6c37bb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2454,
