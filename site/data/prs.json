@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T21:28:19.579Z",
+  "generatedAt": "2026-11-20T22:27:29.042Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2122,
+      "title": "Stop a raced GoTo at once; newer moves wait for that stop",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2122",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T22:23:46Z",
+      "additions": 344,
+      "deletions": 32,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a timing problem when someone presses Stop while a GoTo is already on its way to the mount. The app now stops that earlier GoTo right away instead of letting the mount keep driving toward it, and any newer move (a sequence slew, Center, meridian flip, park or Find Home) waits until that stop has reached the mount before sending its own command. This guarantees the old move is stopped first and the new one is never cancelled by mistake. The waiting is capped at 15 seconds, and it has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "d27d65e35be52af44a9b63f1146bf498765a5d17"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2119,
+      "title": "Polar Align reads the mount fresh, never a stale or foreign position (#2066)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2119",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T22:03:38Z",
+      "additions": 1218,
+      "deletions": 281,
+      "changedFiles": 39,
+      "labels": [],
+      "summary": "Polar Align now checks where the mount is pointing with a fresh reading straight from the mount every time, instead of a saved value that could be out of date, a blank placeholder, or left over from before a reconnect. If it cannot get a trustworthy reading, it stops before moving the motors or refuses to start. If the mount reports a position past the pole, it also refuses to start, since the mount's orientation would be unclear. This prevents the mount from being driven the wrong way, past a limit or into the pier, and the app shows two new error messages, in English and Portuguese, explaining the reason. It has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "51620d307f85c9a37dc7460bfea75d3bfc6fe214"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2472,
+      "title": "[6.0] Keep an iOptron zero search at a false zero from reading as home",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2472",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-20T21:57:05Z",
+      "additions": 300,
+      "deletions": 20,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Fixes a case on the iOptron HAE29C mount where, after a power loss, a Find Home that never actually moved could still report the mount as home. The mount shows a home status wherever it happens to point after power loss, so the driver now only accepts a home search as finished once it has seen the mount moving. It also checks on the search every second by itself. If the mount ignores the command, the driver tries once more and then reports that the search did not start, and it keeps saying 'not home' until a new search succeeds or the mount moves.",
+      "category": "fix",
+      "summaryHash": "95f885756097e2cc184d3126ea3df0cd127cce59"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2114,
+      "title": "Polar-align settings load from the rig before they save (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2114",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T21:41:41Z",
+      "additions": 1010,
+      "deletions": 594,
+      "changedFiles": 36,
+      "labels": [],
+      "summary": "The polar-alignment settings screens in the app now load the real settings from the telescope computer before showing or saving them. Previously they could show made-up defaults (such as a 1-second exposure or Motors mode) and save those over the real values. Until the settings arrive, the screens show 'Not loaded' with a Retry button, the Done and Check buttons wait, and a failed load saves nothing. If another device changed the settings in the meantime, the app shows the newer version instead of overwriting it.",
+      "category": "fix",
+      "summaryHash": "99bdcfce9c869fe8b9dc03cb85765bf164e2ba7a"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 160,
