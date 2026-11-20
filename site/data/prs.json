@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T08:34:18.087Z",
+  "generatedAt": "2026-11-20T09:33:41.996Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2105,
+      "title": "Location and sky load from the rig before they save (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2105",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T09:13:09Z",
+      "additions": 1215,
+      "deletions": 520,
+      "changedFiles": 69,
+      "labels": [],
+      "summary": "The app's location and sky settings (latitude, longitude, elevation, observer name, twilight choice, permanent pier and related values) now have to be read from the telescope computer before they can be saved. If that read fails or never happened, Save writes nothing and explains why, and the affected rows show \"Not loaded\" with a Retry button. Before this, the app could save its own built-in defaults over the real site, which would throw off planning, the horizon, the meridian limits and polar alignment. Planning screens still work from the offline copy, and turning off the permanent pier switch now saves only that switch, so other unsaved site edits are neither sent nor lost.",
+      "category": "fix",
+      "summaryHash": "a567a11da8d37730193494a511ece94f8d7bf9eb"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2104,
+      "title": "Telescope optics load from the rig before they save (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2104",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T09:04:57Z",
+      "additions": 673,
+      "deletions": 252,
+      "changedFiles": 42,
+      "labels": [],
+      "summary": "The telescope optics settings (focal length, aperture, sensor and pixel size, telescope name) are now read from the telescope computer before the app will save them. A missing or failed read means Save does nothing and says why, instead of overwriting values that a camera connection or plate solve had already filled in. This keeps the field of view and file names from using wrong numbers. The guider setup also refuses to save rather than work out its guide-scope focal length from optics that never loaded.",
+      "category": "fix",
+      "summaryHash": "d34935c77920ea7fe18ac8e13b51d55169fb75ad"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2098,
+      "title": "Polar Align motion safety 1/6: a fake GEM mount with a true-pose ledger (#2064)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2098",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T08:43:11Z",
+      "additions": 2632,
+      "deletions": 13,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Test-only change: adds a simulated telescope mount that tracks where the mount truly is, separately from what it reports, and logs every movement it makes. This lets the team prove in tests that polar alignment never swings the counterweight too far and never moves the mount after a run has ended. It is the groundwork for upcoming polar alignment safety checks, and the app itself does not change.",
+      "category": "tests",
+      "summaryHash": "38aaca3b6066b263fd8e99d765a2cc5182de5d29"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2101,
