@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T04:34:46.164Z",
+  "generatedAt": "2026-11-20T05:34:02.590Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2441,
+      "title": "Merge stable/6.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2441",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T05:04:41Z",
+      "additions": 648,
+      "deletions": 380,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings the fixes made on the 6.0 release branch back into the main development line, so test builds from main now include them. The most user-visible one stops a small ZWO camera from dropping 10-30% of its frames over USB 2.0; the others make Celestron CGX mount homing failures say which axis was stuck (with periodic progress notes in detailed logs) and record a new successful compatibility test run of the CGX mount on the 6.0 beta. The version number on main was deliberately left unchanged, and the latest version of the merge was checked only by the automated build, not on a local test machine.",
+      "category": "chore",
+      "summaryHash": "d8a96f0115e034bfe18e6f53b2756823759341ae"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2089,
