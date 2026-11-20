@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T11:35:30.117Z",
+  "generatedAt": "2026-11-20T12:34:41.959Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2454,
+      "title": "Fix the Remote Alpaca reconnect race and the Gemini PDH pulled-adapter flake (#2446, #2451)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2454",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-20T11:56:23Z",
+      "additions": 72,
+      "deletions": 2,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes two real driver bugs that were making automated tests fail at random and blocking other changes from merging. For the remote weather-station bridge, a settings change that arrived just as the device disconnected and reconnected could leave it showing as connected with no readings until the next update. That change is now skipped locally while disconnected, though it is still sent to the device. For the Gemini power hub, unplugging the adapter at an unlucky moment now correctly reports \"not connected\" instead of a generic communication error. The code matches the description, and a new test covers the weather-station case.",
+      "category": "fix",
+      "summaryHash": "56aa185e2098c402cdb21d75adce800d52e24eb3"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2108,
+      "title": "Unattended running and Calibration settings load from the rig before they save (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2108",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T11:39:35Z",
+      "additions": 1043,
+      "deletions": 395,
+      "changedFiles": 30,
+      "labels": [],
+      "summary": "The app's unattended running settings (bad weather, meridian flip, altitude limit, lost guider, low disk space, shutdown) and calibration and flat settings now load from the telescope computer before they can be saved. Previously the app could save its own built-in defaults when it had not loaded the real settings, which could change what the rig does overnight with nobody watching. Until the settings load, those screens and Simple Mode's meridian flip switch now show \"Not loaded\" with a Retry button, and saving no longer resets the rig's device-loss settings to their defaults. Much of the code change was too large to review here, but the visible parts match the description.",
+      "category": "fix",
+      "summaryHash": "895249a76e4619d1af372a6469203ae790a8f321"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2452,
