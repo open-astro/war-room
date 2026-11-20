@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T03:34:44.066Z",
+  "generatedAt": "2026-11-20T04:34:46.164Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2089,
+      "title": "Polar Align starts like NINA: no Home, no GoTo, a confirm step, parked refused (#2048)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2089",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-20T04:07:44Z",
+      "additions": 2673,
+      "deletions": 1210,
+      "changedFiles": 63,
+      "labels": [],
+      "summary": "Polar alignment no longer sends the telescope mount to its home position or moves it to a remembered spot before starting. It now starts from wherever the user has pointed it, refuses to run if the mount is parked, and only moves after the user confirms a start screen showing which way the mount will turn. This responds to an incident where polar alignment drove a mount into its support pier. It also limits how far the mount can turn across repeated runs (30° from where alignment first started) so it cannot gradually creep toward the pier, and the old \"use home\" setting has been removed.",
+      "category": "fix",
+      "summaryHash": "36ea33526901c6b00b426ebf3693341aa7d57b2c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2433,
