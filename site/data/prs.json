@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T03:23:12.779Z",
+  "generatedAt": "2026-11-21T04:18:03.039Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 177,
+      "title": "Make the atomic-write reader test overlap its writes (flaky under load)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/177",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T04:08:53Z",
+      "additions": 11,
+      "deletions": 3,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Test-only fix for a check that failed at random on busy machines, which could break anyone's automated checks. The test makes sure a program reading the settings file never sees a half-written file. Before, the writing could finish before the reading even started, so the test sometimes failed for no real reason. Now the writing waits for the reader to start and keeps going until the file has been read at least 20 times, with a 10-second limit so the test cannot hang.",
+      "category": "tests",
+      "summaryHash": "8cf86ad510759cc7cfdf0a6f211bec425210ae4c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2126,
+      "title": "Move the mount commands onto the shared device-command module, slice 2d",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2126",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T03:52:15Z",
+      "additions": 535,
+      "deletions": 191,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope mount now follows the same shared rules as the other devices when it parks, unparks, finds home, moves to a target, waits for a move to finish, or syncs its position. Before, the mount had its own separate handling, so time limits, stuck-device detection and error reports could behave differently than for other equipment. This was the last device to move over, and the related design decision is now marked accepted. One visible change is in polar alignment: if the mount is still moving when the time limit runs out, it is now reported as a failed move instead of a general mount error. Existing time limits are kept, and the change has not been tested on real hardware.",
+      "category": "refactor",
+      "summaryHash": "9cb882db02c7d3196bdb8e21e48b7e20c3fc45ad"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2127,
