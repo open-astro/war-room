@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T05:21:23.530Z",
+  "generatedAt": "2026-11-21T06:20:38.466Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2128,
+      "title": "Polar Align turns are guarded: stall, overrun, Dec drift, pier flip (#2067)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2128",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T05:25:51Z",
+      "additions": 1844,
+      "deletions": 92,
+      "changedFiles": 38,
+      "labels": [],
+      "summary": "Polar Align now watches the mount closely every time it turns the telescope between its three measurement photos, and stops within seconds if something goes wrong. It catches a frozen or too-slow mount, a turn that runs past its target or won't stop, the telescope drifting in the other direction, and the mount flipping to the other side of its pier, which could otherwise swing the telescope into the pier. When this happens, the run ends with a clear reason the user can act on, and both apps also show a warning when the mount drifted enough to make the result less reliable. The old single \"turn failed\" error is now split into separate \"stalled\" and \"timed out\" errors with tighter time limits, which may affect anything that relied on the old error, and the change has not yet been tried on a real telescope.",
+      "category": "feature",
+      "summaryHash": "10395c23d544acfce5e8e1244412cb2f6eb2aee1"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 192,
