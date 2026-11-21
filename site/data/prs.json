@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T13:04:56.507Z",
+  "generatedAt": "2026-11-21T16:12:08.684Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2133,
+      "title": "Settings the rig owns show Not loaded, never a made-up default (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2133",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T16:07:03Z",
+      "additions": 2476,
+      "deletions": 1767,
+      "changedFiles": 151,
+      "labels": [],
+      "summary": "The app no longer fills in its own made-up values for settings that belong to the telescope computer, such as site, optics, imaging defaults, autofocus, guiding, safety, file names and notifications. When the rig has not sent a setting, screens now show \"Not loaded\" with a Retry option, or a dash. Saving is blocked so an invented value can never overwrite the real one, and a run won't start until the settings it depends on have arrived. Planning tools work without guessing a field of view or location. Two things to watch for: older offline caches may show some sections as not loaded until the app reconnects, and a rig without a guider now needs an updated telescope-side program before it can run. The changelog also notes that the setup wizard now saves a cleared plate-solver or star-database path as blank, which the description does not mention.",
+      "category": "fix",
+      "summaryHash": "694446e931bee5833234283e5cdd34144347027e"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2131,
+      "title": "Polar Align: each fit's uncertainty, the ± readout, aligned only within error + 2σ (#2072)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2131",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T15:54:53Z",
+      "additions": 1608,
+      "deletions": 91,
+      "changedFiles": 41,
+      "labels": [],
+      "summary": "Polar alignment now shows how uncertain its measurement is, for example \"0.2′ ± 1.1′\", instead of a single number that could look more precise than it really was. This follows a night when the readout said the mount was almost perfectly aligned, but guiding later showed it was off by a lot. The app now only says \"inside your tolerance\" and only gives a top rating when the error stays small after allowing for that uncertainty. Pressing Done is still the user's choice. The uncertainty is also saved with each result, and the later check that compares guiding against the alignment now takes it into account. This prepares for an upcoming test on real equipment but does not fully close the issue.",
+      "category": "feature",
+      "summaryHash": "0d51ae21c9896c7b61f02d5cf0ce992afc4a7ab4"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2115,
+      "title": "Polar Aligner: verified stop, follow check and run caps (#2069, #2102)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2115",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T15:54:53Z",
+      "additions": 1788,
+      "deletions": 136,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": "The motorised Polar Aligner is now held to stricter safety rules. When the app tells it to stop, the app checks for up to three seconds that the motors actually stopped, resending the command if needed. If it cannot confirm the stop, it tells the user, keeps retrying, and refuses to move again until the stop is confirmed and the user chooses to resume. Each move is checked to make sure the device went the right way and roughly the right distance. Each run is also capped on total travel, on number of moves (40), and on move size for devices that cannot stop mid-move. The result is that an aligner that runs away, keeps moving or goes the wrong way gets stopped, and the user is warned to cut power if needed.",
+      "category": "feature",
+      "summaryHash": "42cc7fa5480e7b5b055eb7c39cc4c0322c5a1e61"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2154,
