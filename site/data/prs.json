@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T00:25:57.021Z",
+  "generatedAt": "2026-11-21T01:24:56.968Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2474,
+      "title": "Merge stable/6.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2474",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T00:59:36Z",
+      "additions": 363,
+      "deletions": 24,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "This brings the recent fixes from the 6.0 beta line into the main line of development, so the next release (6.1) won't lose them. The most visible change is for the iOptron HAE29C mount: after a power cut, the mount can wake up at a spot that looks like home but isn't, and Find Home no longer reports success there unless the mount actually moved and arrived. It also fixes Celestron mounts briefly reporting they had stopped moving when a manual move took over from a slew in progress. The rest is fixes to unreliable tests, and the version number on main is left as it was.",
+      "category": "fix",
+      "summaryHash": "175cb247330b067d47c45d823932bb11fde8aaa3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2475,
+      "title": "Release 6.0.0-beta.3",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2475",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-21T00:50:20Z",
+      "additions": 293,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "This publishes the third beta of version 6.0, so testers and the Ara app can start using the fixes made since the second beta. According to the release notes, it makes the iOptron HAE29C mount more reliable (it only sets the mount clock from a trusted time source, finds home correctly after a power cut, and responds to guiding faster), fixes dropped frames on ZWO USB 2 cameras and Celestron CGX homing timeouts, and caps total log size at 1 GiB. The change itself only updates the version number, dates, and release notes; no program code changes.",
+      "category": "chore",
+      "summaryHash": "0f78f2ed7784ca8456bb1e7ccfc3bd6af5a729cb"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 167,
