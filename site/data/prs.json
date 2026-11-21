@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T04:18:03.039Z",
+  "generatedAt": "2026-11-21T05:21:23.530Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,88 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 192,
+      "title": "Count only what the mount moved in a dither's fast recenter (#165)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/192",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T05:20:08Z",
+      "additions": 361,
+      "deletions": 17,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "After a dither, the guider makes a few quick, large moves to bring the star back to where it should be. It used to count each of those moves as fully done the moment it was sent, even when the move was cut short or failed outright. That could leave the star short of its target and slow down recovery. Now it counts only how far the mount actually moved, makes up any shortfall with another move, and gives up after three moves in a row that did nothing (for example when guiding is turned off), instead of sending the same move over and over.",
+      "category": "fix",
+      "summaryHash": "a4c67f9507bc50a6c3bc7f473db5a9bb37c9e1e1"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2136,
+      "title": "ci: backport #2125 so the review bot runs on stable/1.0 PRs",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2136",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T04:57:30Z",
+      "additions": 40,
+      "deletions": 12,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "This is an internal change to the automated build and check setup, with no effect on the app itself. It copies a recent update to the automated code-review bot onto the 1.0 beta branch, so both branches have an identical copy again. Since that earlier update, the bot had been skipping every pull request on the beta branch, and this lets it review them again.",
+      "category": "ci",
+      "summaryHash": "6db0cb2e3bc1c13b41d1361fcec449b57078d1d5"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 179,
+      "title": "Throttle the limit-reached alert per axis, and not on suppressed calls (#164)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/179",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T04:56:11Z",
+      "additions": 166,
+      "deletions": 12,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "The warning that appears when the guider keeps hitting its maximum correction limit is now timed separately for the two directions the mount moves in. Before, a warning about one direction could hide a warning about the other for 30 seconds. Also, a warning that was held back during the quiet period after calibration or the start of guiding could still delay the first real warning afterwards. Both problems are fixed, and the warning text and timing rules are otherwise unchanged.",
+      "category": "fix",
+      "summaryHash": "05d00202bde4440c5817f7bd4b7d9c31b0e6d353"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2113,
+      "title": "Merge stable/1.0 into master (1.0 beta fixes)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2113",
+      "author": "joeytroy",
+      "base": "master",
+      "mergedAt": "2026-11-21T04:40:22Z",
+      "additions": 36772,
+      "deletions": 6401,
+      "changedFiles": 438,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings about 255 fixes from the 1.0 beta branch onto the main development branch, including safety fixes, so the two branches don't drift further apart. Most of the work was resolving overlaps between the two branches, mainly in Simple Mode's optics and mount limit settings, the safety settings, and mount and polar alignment commands. No code changes were provided for this summary, so these details come only from the description.",
+      "category": "chore",
+      "summaryHash": "71b59c428de71643c7d76de717601fc59e44b464"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 180,
+      "title": "Seed random dither once per start instead of repeating rand()'s sequence (#173)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/180",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T04:31:58Z",
+      "additions": 290,
+      "deletions": 5,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Random dithering now produces a different pattern each time the guider starts. Before, outside the simulator, every start gave the exact same sequence of small offsets, so each night repeated the previous night's pattern. The size and spread of the offsets are unchanged, and the spiral dither option is not affected. One automated check was slightly relaxed to allow for rounding now that the offsets vary from run to run.",
+      "category": "fix",
+      "summaryHash": "5a82f918eb8eb7393d694f2704d5c551d0ca234e"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 177,
