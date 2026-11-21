@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T16:12:08.684Z",
+  "generatedAt": "2026-11-21T17:11:15.767Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,142 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 193,
+      "title": "Quote the applied names in guiding_assistant_apply's result (#184)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/193",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T17:10:48Z",
+      "additions": 25,
+      "deletions": 13,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "The guider's \"apply Guiding Assistant recommendations\" command now sends back a properly formatted reply. Before, the list of settings it had applied was malformed, so apps like Ara could not read the answer at all and some could even drop the connection. What actually gets applied is unchanged, and the end-to-end test now checks that the reply can be read.",
+      "category": "fix",
+      "summaryHash": "0b585bcee97d0d7738943b795b83b8a6aa7b06dc"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2158,
+      "title": "fix: Preflight bedtime prompt uses the site twilight line",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2158",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T16:57:50Z",
+      "additions": 56,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Preflight \"go to bed\" prompt now waits until it is dark by your site's own twilight setting, instead of a fixed sun angle. Before, it showed up too early for sites using the default astronomical twilight and too late for sites using civil twilight. It now agrees with the Tonight toggle about when night has started. Two new tests cover both cases.",
+      "category": "fix",
+      "summaryHash": "8f1527e6509f54f3acb1b9f50ecdf82487b809a8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2502,
+      "title": "Decide a refused Remote Alpaca command's answer inside its body (#2456)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2502",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-21T16:53:21Z",
+      "additions": 61,
+      "deletions": 17,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing bug in the Remote Alpaca weather-conditions driver that was making the nightly stress test fail. If a refresh or settings change hit a refused connection while the user was disconnecting and reconnecting, the late failure could knock out the brand-new connection or come back as a generic error instead of \"not connected\". The failure is now handled before any reconnect can slip in, so the new connection stays up. A new test covers this, and the answers users get are otherwise unchanged.",
+      "category": "fix",
+      "summaryHash": "6179a3c3b53800daa5fad8622f722128549024cf"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2155,
+      "title": "Live Stack in Simple Mode",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2155",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T16:52:14Z",
+      "additions": 2532,
+      "deletions": 6,
+      "changedFiles": 25,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Simple Mode, the phone view used at the telescope, gets Live Stack. With a colour camera, users can turn stacking on or off, reset it, and choose to see either the building stacked picture or the latest single frame. A short readout shows how many frames are in the stack and how many were left out. The app checks the telescope computer every 4 seconds while the stack is on and the screen is open, which is more often than the original request asked for, and English and Brazilian Portuguese text is included.",
+      "category": "feature",
+      "summaryHash": "e773e3d9f1dd53fd731c16d1f72376b5914ad0e9"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 178,
+      "title": "Keep fractional seconds in the variable exposure delay settings (#174)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/178",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T16:48:48Z",
+      "additions": 176,
+      "deletions": 7,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "Variable delay times between guide frames now keep fractions of a second when set from other apps. Before, a 2.5-second delay was quietly saved as 2 seconds. Whole-second values read back exactly as before. The old desktop settings window still rounds to whole seconds if someone opens it and clicks OK, but the headless service version nobody can open that window. New tests check the values survive a restart.",
+      "category": "fix",
+      "summaryHash": "66a6e0d47c5e536d7ba94a434c7f233532bf2cc6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2129,
+      "title": "Polar Align pre-flight checks: one list, Start refuses on a fail, counterweight clearance (#2068)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2129",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T16:46:04Z",
+      "additions": 4509,
+      "deletions": 163,
+      "changedFiles": 64,
+      "labels": [],
+      "summary": "Before Polar Align moves the mount, both the full app and Simple Mode now show one checklist of every safety check, and the Start and Check buttons turn off when any check fails. The telescope computer enforces the same list. A new per-mount setting asks the user to confirm, using the hand controller, that the counterweight, tube and cables clear the pier and tripod up to a chosen limit. No motor-driven Polar Align motion happens until that clearance is confirmed. Some checks, such as the counterweight angle and mount pose, still show as \"unknown\" until follow-up work lands.",
+      "category": "feature",
+      "summaryHash": "08e514c4a70517efbbdd02f7b75ddfec215e05b4"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 183,
+      "title": "Pin the daemon's equipment lifecycle, faults and GA in the e2e run (#142, safety net for #115 step 3)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/183",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T16:28:03Z",
+      "additions": 1282,
+      "deletions": 51,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Adds a large set of automated end-to-end tests that record exactly how the guider behaves today when equipment is connected, disconnected or misbehaves. That includes camera and mount errors, the server going away mid-guide, automatic reconnects and the Guiding Assistant. The guider itself is unchanged: these tests are a safety net so an upcoming rewrite of the equipment-handling code can be shown to change nothing. The new tests run alongside the existing ones, so overall test time stays about the same. While writing them the author found eight behaviours that look wrong, such as an invalid reply from one command and no reconnect attempt when the server disappears mid-guide; they are filed separately and not fixed here.",
+      "category": "tests",
+      "summaryHash": "cb2d8607d7f524669347510477adef530fe583dd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2501,
+      "title": "Backport the ZWO destructor test fix to stable/6.0 (#2266)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2501",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-21T16:12:07Z",
+      "additions": 18,
+      "deletions": 7,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Brings an existing test fix from the main line over to the 6.0 stable release line, where one test for the ZWO mount driver had been failing. The test was set up in a way that made it wait about 15 seconds and miss what it was meant to check. It now pauses the simulated mount at an earlier step and adds two extra checks. This is a test-only change with no change to how the driver behaves, and it should get the 6.0 automated checks passing again.",
+      "category": "tests",
+      "summaryHash": "3a9257b27723ed539e2463569e34806172cb439e"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2133,
