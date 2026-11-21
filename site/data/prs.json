@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T22:07:02.040Z",
+  "generatedAt": "2026-11-21T23:06:14.886Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 224,
+      "title": "Time the limit-reached alert on the monotonic clock (#212)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/224",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T22:48:10Z",
+      "additions": 56,
+      "deletions": 23,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "The guider's warning that the mount cannot correct far enough is now timed by a clock that ignores changes to the system time. Before, when the device set its clock after booting with the wrong time, this warning could be held back for a long time, or the two-minute quiet period after calibration or starting guiding could end too early. How often the warning appears, how long the quiet period lasts, and the warning text are unchanged. The change also touches the mount connection code, which the description does not mention, apparently so the existing 'pulse failed' warning uses the same shared clock.",
+      "category": "fix",
+      "summaryHash": "a616645caba6d2b9ccee90732e1df95be327ae69"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 230,
+      "title": "Time the star-found and camera reconnect timers on the monotonic clock (#226)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/230",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T22:34:50Z",
+      "additions": 266,
+      "deletions": 39,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Two more timers now use a clock that ignores system time changes. One notices when the guide star has not been seen for 20 seconds. The other allows at most three camera reconnects per minute. When the device corrected its clock during a session, guiding could briefly report a false large error, which could affect settling, and the reconnect limit could block a reconnect it should have allowed or let one through early. The only other visible change is that the debug log now shows a different kind of time number on its reconnect line.",
+      "category": "fix",
+      "summaryHash": "1c91d3672d16548c1930e6714170215b164d4238"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 203,
+      "title": "Keep guiding on the same star when multi-star is turned back on (#187)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/203",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T22:33:39Z",
+      "additions": 61,
+      "deletions": 24,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "When multi-star mode is turned back on during guiding, guiding now keeps the same star and target position instead of stopping and restarting on a newly picked star. This happens at the end of a Guiding Assistant run and when the lock-shift feature is turned off. Before, the target position could jump to wherever the star had drifted, and connected apps saw an unexpected stop and restart, or guiding sometimes stayed stopped. The helper stars are now found again around the main star once it settles. A reviewer pointed out that this re-measuring can lock in a small leftover offset after a Guiding Assistant run, and the code only notes this in a comment without fixing it.",
+      "category": "fix",
+      "summaryHash": "fafa22b4059ee11b696236c356924be30b9cb8f4"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 205,
