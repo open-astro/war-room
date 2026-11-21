@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T23:26:32.897Z",
+  "generatedAt": "2026-11-21T00:25:57.021Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 167,
+      "title": "Run the daemon end to end in CI under ASan/UBSan; fix the smoke script (#142, #155)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/167",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-20T23:57:14Z",
+      "additions": 863,
+      "deletions": 42,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The automated checks now actually start the guiding program and put it through realistic sessions against a simulated camera and mount: calibrating and guiding, recalibrating after moving to a new target, and carrying on through dropped camera frames. The run is built with extra memory-safety and error detectors switched on, so crashes, hidden memory bugs, or a change in the order of status messages the companion app relies on will now fail the build. It also repairs an older test script that had fallen out of date and was mostly failing, and writes down the expected message order. A few known, harmless issues inherited from the original code are deliberately ignored, each one explained.",
+      "category": "ci",
+      "summaryHash": "4739115d6e02f045247776e0859ea477ee03ede8"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2455,
+      "title": "Fix the stable/6.0 flaky tests: CGX link loss, GPhoto getters, NexStar MoveAxis, and the #2444 port (#2447, #2448, #2431)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2455",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-20T23:48:29Z",
+      "additions": 430,
+      "deletions": 43,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes several tests on the 6.0 release line that failed at random and kept blocking other changes from merging, and along the way fixes two real problems users could hit. Celestron NexStar mounts could wrongly report they had stopped moving when a manual move took over from a slew that was still winding down after a failed go-to. Sky-Watcher mounts could lose a tracking-rate change made at the exact moment a guiding nudge was finishing. The rest are timing fixes inside the tests themselves, and a new test was added to lock in the NexStar fix.",
+      "category": "fix",
+      "summaryHash": "14a66aa3e00bed674859e9c6d08ccefaa1871ac8"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 169,
