@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T12:15:36.881Z",
+  "generatedAt": "2026-11-21T13:04:56.507Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2154,
+      "title": "Monitor tap enlarges a tile and Monitor opens at any width",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2154",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T12:55:14Z",
+      "additions": 1691,
+      "deletions": 584,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Monitor, the read-only overview of the whole night's session, is now available on any screen size. Before, it was hidden on windows narrower than about 900 points, so tablets and phones could not reach it. Tapping a tile now enlarges it to fill the view and a second tap shrinks it back, while a long press opens that tile's full window (previously a tap closed Monitor). The layout also skips tiles for equipment you don't have, splits star-sharpness and star-count readings into their own tiles, adds screen-reader labels for the new actions, and shortens three Brazilian Portuguese labels so the Conditions tile fits without scrolling.",
+      "category": "feature",
+      "summaryHash": "5d3d3f034fd02812e187ae366b32044287ddbd97"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2153,
@@ -23,9 +41,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Tonight's Best list of recommended targets has a new Imaging hours filter. You can pick a start and end time, such as 21:00 to 01:00, and the list then shows only targets that are dark during those hours. The time range can cross midnight and uses the device's local time. Targets with no dark period are hidden while a range is set, the setting is kept after the app restarts, and Clear filters removes it. It is off by default and available in English and Brazilian Portuguese.",
+      "category": "feature",
+      "summaryHash": "d08cc4c159aa91b04f6823ef40418959cd7ac680"
     },
     {
       "repo": "open-astro/openastro-ara",
