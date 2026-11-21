@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T10:18:24.082Z",
+  "generatedAt": "2026-11-21T11:16:16.576Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2497,
+      "title": "Name why Sky-Watcher and ZWO stay on StateSnapshot in decision 0010 (#2490)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2497",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-21T11:00:21Z",
+      "additions": 4,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only update to one of the project's design decision records about how telescope drivers serve status readings. It now explains separately why the Sky-Watcher and ZWO drivers keep their current approach, since each handles connection faults and lost-signal detection in its own way that the shared component wouldn't fit. It also lists which other drivers (Celestron, Bisque, OnStep, remote proxy, and iOptron) are planned to move to the shared component, with links to the follow-up issues. No code or behavior changes.",
+      "category": "docs",
+      "summaryHash": "65fb39a6ddeab6387a1581de49eee23dd20f4df4"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2130,
