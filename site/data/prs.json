@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T09:18:05.599Z",
+  "generatedAt": "2026-11-21T10:18:24.082Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2130,
+      "title": "Every settings write carries a version; the rig refuses one without (#1807)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2130",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T09:20:48Z",
+      "additions": 1248,
+      "deletions": 556,
+      "changedFiles": 35,
+      "labels": [],
+      "summary": "The telescope computer now refuses any settings save that does not say which version of those settings it was based on, and every part of the app (the setup wizard, its offline catch-up when you reconnect, saved sky targets and the advanced guider settings) now sends that version. This stops one device from quietly overwriting settings that another device saved in the meantime. When a save is refused, the app keeps your edits and offers to reload; saved targets retry once, and wizard changes made offline stay on the device until the next connect. This is a breaking change for any older app or script that saves settings without a version.",
+      "category": "feature",
+      "summaryHash": "e167cf1adeac7124034919c0a057ce1e29b88be7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2489,
@@ -23,9 +39,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Documentation only: the project glossary now explains the difference between a computer clock that is kept in sync with internet time and one that is trusted enough to set a telescope mount's own clock, so recent issues and reviews use these terms the same way. It also removes an out-of-date list of which mount drivers use a shared motion-tracking helper, because the list had already fallen behind. No behavior changes.",
+      "category": "docs",
+      "summaryHash": "aa119a0c1c3571de570076201cad19a3c8c8d404"
     },
     {
       "repo": "open-astro/openastro-ara",
