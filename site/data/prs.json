@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T11:16:16.576Z",
+  "generatedAt": "2026-11-21T12:15:36.881Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,114 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2153,
+      "title": "Tonight's Best can be limited to the hours you will image",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2153",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T12:13:17Z",
+      "additions": 438,
+      "deletions": 9,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2152,
+      "title": "Connect Equipment and the Reconnect trigger use a connections port",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2152",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T12:09:55Z",
+      "additions": 761,
+      "deletions": 277,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Connect Equipment step and the automatic Reconnect trigger in a sequence now use the same connection path as auto-connect and the Reconnect button. Before this, Connect Equipment failed for a remembered Safety Monitor or Rotator, and the Reconnect trigger never actually reconnected a device. Now a remembered device is connected, and if nothing is remembered the step refuses with a clear reason. A device the user disconnected on purpose is still left alone. This is the first of 16 planned steps in a larger cleanup of how sequences talk to equipment.",
+      "category": "fix",
+      "summaryHash": "32a4a8f8f2f2196a3d910100640fdf79fb3a7551"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2499,
+      "title": "Stop both NexStar axes on a one-axis MoveAxis stop during a GOTO (#2458)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2499",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-21T11:47:21Z",
+      "additions": 101,
+      "deletions": 5,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a safety fix for Celestron NexStar mounts. Stopping one axis while the mount is slewing to a target now stops both axes, the same way a full abort does. Before, the other axis could keep moving while the app reported the mount as stopped, so guiding or a new command could start on a moving mount. If the stop command itself fails, the driver now reports an error and keeps showing the mount as still moving. It has not been tested on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "3a6570faaaa22bce11f2dfe53dea1152bb71e2ea"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2500,
+      "title": "Move the persisted device list into PersistedConfigStore (#2481)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2500",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-21T11:43:06Z",
+      "additions": 994,
+      "deletions": 408,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal reorganization with no intended change for users. The code that saves and loads the list of configured devices now lives in one dedicated place, with its own tests that run without a full server. It prepares for several follow-up changes. The description notes two small internal timing differences, but nothing visible to users or connected apps.",
+      "category": "refactor",
+      "summaryHash": "8a4b992a3b60465e24ee6b83ea51ec24e4c59fab"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2498,
+      "title": "Answer 405 with Allow for a wrong verb on the log endpoints (#2484)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2498",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-21T11:40:50Z",
+      "additions": 81,
+      "deletions": 51,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server's log-related management endpoints now answer a request sent with the wrong method using the standard \"method not allowed\" response (HTTP 405), along with a list of the methods they do accept. Before, they answered \"OK\" (HTTP 200) with an error buried inside, so a calling program could not tell a wrong request from a failed one. All of the server's own management endpoints now also report the same error code in this case. The built-in web page and the Ara app do not send wrong methods, so they are not affected.",
+      "category": "fix",
+      "summaryHash": "efd8c0f74ab118cab18066db17025fb743dc3abe"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2151,
+      "title": "Framing box on the Simple Mode sky",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2151",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T11:27:51Z",
+      "additions": 838,
+      "deletions": 27,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Simple Mode sky view can now show the camera's framing box on the picked target. It comes with a touch-friendly angle dial, a degrees stepper, and a Snap to catalogue angle button that lines the box up with a galaxy's or nebula's long axis. Add to queue then queues the target at that angle. Picking a different target turns framing off and resets the angle to zero. If no camera optics are set, the card points the user to Settings > Rig. This is part 2 of 3, and a known difference between the box angle and the real camera frame is tracked separately.",
+      "category": "feature",
+      "summaryHash": "ac5a337b83b469e4bc84886879769dcfcf2cce85"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2497,
