@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T20:07:05.699Z",
+  "generatedAt": "2026-11-21T20:12:00.128Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -21,9 +21,9 @@
       "deletions": 108,
       "changedFiles": 38,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Four more telescope mount types (ZWO AM, OnStep, Celestron NexStar and SynScan) now set their internal clock from the computer only when the computer's own time is known to be correct, for example after it has synced with internet time. Before, a computer that started up without network time could push a clock that was hours off into the mount and throw off its pointing. The mounts now also pick up the correct time later once it becomes available, but they wait until the mount stops moving and leave star-aligned hand controllers alone. The change also fixes a Celestron problem where a failed or timed-out slew could leave the mount still moving, tidies a few edge cases in the earlier iOptron version of this fix, and adds tests and docs. Most of the driver code was too large to show in full, so these details come from the description.",
+      "category": "fix",
+      "summaryHash": "1ed466cd9421d8d275f3af9d5814f83fcf142693"
     },
     {
       "repo": "open-astro/openastro-guider",
@@ -37,9 +37,9 @@
       "deletions": 17,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When a camera frame fails badly enough to stop looping or guiding, the guider now sends its \"looping stopped\" notice once instead of twice. The duplicate could confuse apps like Ara, which might count it as a second, separate stop. The order of the other notices is unchanged, and the client-facing documentation and changelog were updated to match.",
+      "category": "fix",
+      "summaryHash": "cd91d76c51c4e8d5780f3462fc758b654d40c9d5"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -53,9 +53,9 @@
       "deletions": 168,
       "changedFiles": 27,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Polar Align now refuses to start, with a clear message, if the observing site's location has not been set, if the mount is an alt-az type rather than equatorial, or if the mount cannot turn its RA axis on its own. On an alt-az mount it would previously have turned the wrong axis, and without a site it could give a wrong result. If the user turns the mount by hand instead, the RA motor limitation only produces a warning. The pre-start checklist also drops five placeholder rows that only ever said \"not checked yet\", and now shows a real \"ok\" for the Polar Aligner accessory. English and Portuguese text and the help pages were updated to match.",
+      "category": "feature",
+      "summaryHash": "2fcd35133cbd5abdf2cdee8f1984ae5dbb8dfe03"
     },
     {
       "repo": "open-astro/openastro-guider",
@@ -69,9 +69,9 @@
       "deletions": 18,
       "changedFiles": 9,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The pause between guide camera exposures is now worked out by the guider's main part, at the moment each exposure is queued. Before, it was worked out on a background task that read settings and status while they could be changing at the same moment, which risked an unreliable result. The rule for which pause to use is unchanged. One small side effect is that a dither or a settings change arriving at just the wrong moment now takes effect one frame later.",
+      "category": "fix",
+      "summaryHash": "c87450a97344e4a98edc0697a5b4514cd1246b1d"
     },
     {
       "repo": "open-astro/openastro-guider",
@@ -85,9 +85,9 @@
       "deletions": 7,
       "changedFiles": 6,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "A guide correction where the east-west (RA) pulse fails but the north-south (Dec) pulse succeeds is now correctly recorded as a failure. Before, the successful second pulse hid the first one's error, so the mount's error count and the debug log both showed the correction as fine. Nothing changes in what apps receive over the guider's interface; tests were added for the rule.",
+      "category": "fix",
+      "summaryHash": "185dcea173f296d08c1a25d29a869ebeba79c116"
     },
     {
       "repo": "open-astro/openastro-ara",
