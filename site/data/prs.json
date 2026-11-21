@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T20:12:00.128Z",
+  "generatedAt": "2026-11-21T21:07:54.284Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2161,
+      "title": "Keep the Simple Mode rail one size on Preview and Calibration",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2161",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T20:46:30Z",
+      "additions": 620,
+      "deletions": 28,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, the column of controls on the right side of the screen (the mode tabs and the shutter button) no longer changes size or shifts when switching between Preview and Calibration. Before, Calibration added a short caption under the shutter button, which made the column grow and moved the buttons under the user's finger. Now that caption appears in a fixed space only on tall enough windows with normal-to-moderately large text, and only when it fits at full size. Otherwise it shows as a hover tip on the button instead of being squeezed to an unreadable size. The change also adds automated checks for many window and text sizes, and was not tried on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "bc4116ca0992f65e15547fd8ae06a66b181473f4"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2505,
