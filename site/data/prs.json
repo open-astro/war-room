@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T17:11:15.767Z",
+  "generatedAt": "2026-11-21T18:10:27.311Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2156,
+      "title": "Meridian clearance limit: refuse and stop above a set altitude (#1589 PR-16)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2156",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T18:01:23Z",
+      "additions": 1630,
+      "deletions": 10,
+      "changedFiles": 45,
+      "labels": [],
+      "summary": "Each telescope setup can now have an optional \"clearance limit\": a highest safe altitude, set in Settings and shown read-only in Simple Mode. It is off by default. When it is on, Ara refuses to point the telescope at anything at or above that height, whether from a manual GoTo, a planned run, a centering step or a meridian flip. If the telescope drifts up to the limit while following a target, Ara stops tracking and guiding, pauses the run and sends a critical alert, without moving the mount itself. This follows a real incident where a camera nearly hit the mount near the top of the sky, and it keeps equipment from crashing into its own pier or tripod.",
+      "category": "feature",
+      "summaryHash": "7ecd50ad106418eaa783eef7f476a1cbb3c0fde4"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 195,
+      "title": "Set TCP_NODELAY on the event server's client sockets (#175)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/195",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T17:54:37Z",
+      "additions": 68,
+      "deletions": 1,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Changing a guider setting from Ara now gets an answer in about a millisecond instead of about 45 ms. A network setting made the guider wait for an acknowledgement before it sent each reply. Ara changes many settings when it connects and when a profile changes, so those steps now finish noticeably faster. A new automated check fails if setting changes become slow again.",
+      "category": "fix",
+      "summaryHash": "8133a84c946724353d12c8716b59cc0f147953a3"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 194,
+      "title": "Read the stored exposure in get_exposure while disconnected (#176)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/194",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-21T17:33:01Z",
+      "additions": 41,
+      "deletions": 9,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The guider now reports the chosen exposure time correctly even when no camera is connected. Before this, it answered zero until a camera was attached, even right after the exposure was set. Ara sets this value before it connects and shows it to the user, so the display is now correct from the start. Nothing changes once a camera is connected, and new automated checks cover this case.",
+      "category": "fix",
+      "summaryHash": "3f6927e9eff68caa1b66bebbcb9945b5431bdee2"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 193,
