@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T08:18:55.705Z",
+  "generatedAt": "2026-11-21T09:18:05.599Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2489,
+      "title": "Glossary: synchronized vs trusted host clock; drop the stale MotionOwner adopter list",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2489",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-21T09:12:45Z",
+      "additions": 22,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2135,
