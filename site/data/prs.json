@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T06:20:38.466Z",
+  "generatedAt": "2026-11-21T07:19:38.363Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2137,
+      "title": "Advanced Mode Settings has no Advanced switch",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2137",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T06:47:08Z",
+      "additions": 202,
+      "deletions": 21,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Advanced Mode, the Settings screen no longer shows the \"Advanced\" switch, because that mode already shows every option and the switch did nothing there. The Autofocus and Focuser settings now always show their full options in Advanced Mode, whatever the switch was last set to. The settings search also stops offering \"Advanced settings\" in that mode. In Simple Mode the switch stays and works as before.",
+      "category": "fix",
+      "summaryHash": "2f10b62695379a2ba4298e1aafcafec08b2af4d5"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2138,
+      "title": "Show a survey picture on the Plan and Sky Map cards without Album Art",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2138",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T06:32:42Z",
+      "additions": 598,
+      "deletions": 15,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "In Simple Mode, targets that have no Album Art now show a real sky survey photo on the Plan target card and the Sky Map pick card. Before, the Plan card showed a drawn placeholder and the Sky Map card showed no picture. It uses the same photo the Sky Atlas preview already downloads and saves, so users can see what a target looks like before imaging it. Planets, moons, comets and other moving objects get no photo, targets with Album Art keep it, and offline the cards look as they did before.",
+      "category": "feature",
+      "summaryHash": "d10e091edccd663e957bf2c6fce9cbe430ad340d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2128,
