@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T02:24:01.456Z",
+  "generatedAt": "2026-11-21T03:23:12.779Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2127,
+      "title": "Fix the flaky autofocus no-backlash test",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2127",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-21T02:33:50Z",
+      "additions": 16,
+      "deletions": 3,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "This fixes a test for the autofocus routine that sometimes failed on busy computers even though the app itself was working correctly. The test used to check a saved focuser position that could lag a moment behind the real one. It now checks that the focuser moved to exactly the positions autofocus asked for. Only the test changed, so users see no difference, but false failures should no longer block merges.",
+      "category": "tests",
+      "summaryHash": "f3435088f9d7aa299a469a1cc7c3ce5408894d98"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2125,
+      "title": "ci: the review runs on a PR with more than 300 changed files",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2125",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T02:23:39Z",
+      "additions": 40,
+      "deletions": 12,
+      "changedFiles": 1,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated code review that every pull request must pass used to crash on very large pull requests with more than 300 changed files, so those could never pass the merge check. It now gets the list of changed files in a way that handles up to 3,000 files. It also tells the automated reviewer how to read the changes on a pull request that large. This is an internal change to the project's build-and-review automation and was not tried on a real large pull request before merging.",
+      "category": "ci",
+      "summaryHash": "a4af19102e8d350fbbb0b33eb421317a3a08378d"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2123,
