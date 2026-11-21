@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T07:19:38.363Z",
+  "generatedAt": "2026-11-21T08:18:55.705Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2135,
+      "title": "The calibration text shows how far each leg has to go",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2135",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T07:54:40Z",
+      "additions": 741,
+      "deletions": 153,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "While the guider is calibrating, the app now shows how far each step of the calibration has to go, for example \"11.9 of 25 px\" instead of just \"11.9 px\". Observers can now tell whether each step is nearly finished or just starting. The change appears everywhere calibration progress is shown, in English and Brazilian Portuguese. If the guider does not report its target distance, the app quietly keeps the old text and calibration carries on as normal.",
+      "category": "feature",
+      "summaryHash": "7e17a7a719dc4cb5350042b312b42fd088bf22e8"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2132,
+      "title": "Write sequence v2 from the client-side NINA importer",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2132",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-21T07:45:16Z",
+      "additions": 4405,
+      "deletions": 503,
+      "changedFiles": 24,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Importing a sequence file from NINA, another astronomy app, now converts it into the app's new sequence format (version 2) instead of the old one. Any steps the app cannot run are kept as placeholders rather than dropped. A dialog lists what will not run before anything is uploaded, and Cancel stops the import. Files that are not NINA sequences, including old-format files, are now refused with a clear message, and these messages are available in English and Brazilian Portuguese.",
+      "category": "feature",
+      "summaryHash": "3e98fb8339a637ef0480df00f27437f268483bb8"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2137,
