@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T17:49:59.706Z",
+  "generatedAt": "2026-11-22T18:49:17.971Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,86 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 221,
+      "title": "Record step 3 of #115 in the API contract and the decisions log (#115 step 3, S9)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/221",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T18:22:23Z",
+      "additions": 99,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Documentation only: the guider's design notes and changelog now record the finished work of moving equipment handling out of an old hidden settings window and into a new behind-the-scenes component. The notes confirm that nothing changes for apps talking to the guider, list the old quirks that were deliberately kept, and note the few small invisible differences, such as calibration loading once instead of twice on a full connect. No code changed.",
+      "category": "docs",
+      "summaryHash": "3c79e7eaef8caa75f23102dc1bcd7db6e008bf6f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2550,
+      "title": "Add a findhomeissensorsearch Action to every telescope driver",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2550",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T18:21:07Z",
+      "additions": 412,
+      "deletions": 30,
+      "changedFiles": 26,
+      "labels": [],
+      "summary": "Every telescope driver can now answer a new question: when the mount is sent Home, does it actually search for its physical home sensors, or does it just drive to where it believes home is? Only a real sensor search proves where the mount is, so Ara can skip asking the user to check by eye on those mounts and keep the eye check everywhere else. Only a few mounts answer yes: certain iOptron, Celestron and Sky-Watcher models. The others, including Bisque/Paramount where it is unconfirmed, answer no. This was tested only against simulated mounts, not real hardware.",
+      "category": "feature",
+      "summaryHash": "860c7d8ac27f834c224bc2f0447abe929222e939"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 220,
+      "title": "Delete AlpacaConfig and the drivers' setup dialogs (#115 step 3, S8)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/220",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T18:18:41Z",
+      "additions": 11,
+      "deletions": 1746,
+      "changedFiles": 22,
+      "labels": [],
+      "summary": "This removes the old setup windows for Alpaca cameras, mounts and rotators, plus the Camera Settings menu item and toolbar button that opened them. They could only be reached in the guider's desktop mode. Equipment and the Alpaca server are now set up only through the guider's remote interface, which works exactly as before. The description says the full set of end-to-end checks had not finished when this was committed, but they were later run and passed on the next change in the series.",
+      "category": "refactor",
+      "summaryHash": "98ad8957e47f17ca51b6ca3283056b386c72025b"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 219,
+      "title": "Delete GearDialog (#115 step 3, S7)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/219",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T18:15:22Z",
+      "additions": 218,
+      "deletions": 154,
+      "changedFiles": 23,
+      "labels": [],
+      "summary": "This deletes the last empty shell of the old Connect Equipment window, now that a new internal component handles everything it used to do. It also removes a few unused helpers and icons. Before the deletion, three new automated test scenarios were added to lock in current behaviour: guiding connects the equipment first, switching Alpaca servers works, and shutting down during a reconnect attempt exits cleanly. Nothing changes for users or connected apps, apart from the wording of one internal log line.",
+      "category": "refactor",
+      "summaryHash": "ef256af2054f48a87f13871a2b727ac9b2b44a1a"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2183,
+      "title": "Mount: a one-off bad reading or Ara's own slew no longer marks the position unverified; Home is the way out",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2183",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T17:53:35Z",
+      "additions": 1568,
+      "deletions": 182,
+      "changedFiles": 32,
+      "labels": [],
+      "summary": "Ara will no longer lock the mount for the night because of a single bad position reading or because of Ara's own slews. A suspicious jump now has to show up on two readings a couple of seconds apart, and any move Ara itself commanded is never counted as a jump. When the mount is flagged, the Home button now stays available on any mount that can find home. If the flag came from an unconfirmed stop, a completed Home is enough to trust the mount again. If it came from a possible power loss or a position jump, the user is still asked to confirm by eye after the Home. This fixes two false alarms seen on the 2026-11-21 rig night.",
+      "category": "fix",
+      "summaryHash": "b859512aaa4bbfdddc99b2d5f7d98533b33ea5f1"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 216,
@@ -117,9 +197,9 @@
       "deletions": 1921,
       "changedFiles": 21,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This removes the old Connect Equipment window inherited from PHD2, along with its profile manager, menu item, toolbar button and keyboard shortcuts. It could only be opened in the guider's desktop mode, so normal (headless) use is unaffected. In desktop mode, equipment now connects only through the remote interface Ara uses, and importing or exporting profile files is no longer possible. Three error messages that could only appear while that window was open are gone.",
+      "category": "refactor",
+      "summaryHash": "0ceab2ea72b4c6d5766474006a204752a176040d"
     },
     {
       "repo": "open-astro/openastro-guider",
