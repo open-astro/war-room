@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T09:56:39.501Z",
+  "generatedAt": "2026-11-22T10:56:06.980Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2524,
+      "title": "OnStep: bound GOTO and MoveAxis, check AbortSlew (motion fails closed, #2406)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2524",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T10:38:53Z",
+      "additions": 508,
+      "deletions": 8,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope driver now makes sure a mount cannot keep moving after the client thinks it has stopped. A slew still running after 2 minutes is stopped, a slew whose start got no reply is stopped, a stop request is checked and re-sent up to three times if the mount keeps moving, and a manual axis move is cut off after 60 seconds. Changing the site location or time is now refused while the driver is moving the mount, and a stop request is no longer wrongly refused when the mount is parked. This has only been tested in simulation, not on a real mount, and users who hold a manual move longer than a minute will need to renew it.",
+      "category": "fix",
+      "summaryHash": "c9120f50b0bc3236a92a84b701b7934afbb41a29"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2523,
+      "title": "iOptron: bound MoveAxis and async GoTos, end an async GoTo only on a confirmed landing (#2396)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2523",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T10:23:43Z",
+      "additions": 634,
+      "deletions": 4,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron telescope driver now stops a manual axis move left running for 60 seconds with no new request, and stops a slew still going after 5 minutes, even if no client is checking on it. It also no longer reports a slew as finished just because the mount says it stopped, since these mounts can say that early: it waits until the position settles, and reports an error if the mount ended up more than 10 arcminutes from the target. This protects against a crashed client or a misleading mount status leaving the mount moving or claiming a missed slew succeeded. It has only been tested in simulation, and clients holding a manual move longer than a minute will need to renew it.",
+      "category": "fix",
+      "summaryHash": "61d97575ce33a2497f514c63d9b83f66b24546df"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2179,
+      "title": "Announce Guide camera back after a drop with no run active (#1871)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2179",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-22T10:14:49Z",
+      "additions": 80,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When the guide camera drops out and reconnects while no imaging sequence is running, Ara now posts a \"Guide camera back\" notice. Before, the critical \"Guide camera dropped\" alert stayed alone in the inbox, making it look like the camera was still down. The drop alert also now reads in plain words instead of showing an internal code. This was found during a rig test, but the fix has not yet been tested on the rig.",
+      "category": "fix",
+      "summaryHash": "147c49dcffcee85f9646c8cb5fa319d120366628"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2526,
+      "title": "Fix ZWO telescope to read the snapshot frame, not cache stamps",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2526",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T10:01:32Z",
+      "additions": 75,
+      "deletions": 42,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO telescope driver now uses one shared, up-to-date record of the mount's state when deciding whether to skip a repeated tracking change or refuse a move because the mount is parked, instead of separate timers that could be misleadingly refreshed. In practice, a repeated tracking on/off request is now sent to the mount when the last reading is more than 2 seconds old, rather than being skipped, and unparking or homing updates that record right away. It has not been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "b592288e9457e05905da0e22ed26330a5b03f278"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2177,
