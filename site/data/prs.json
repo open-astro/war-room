@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T00:05:26.154Z",
+  "generatedAt": "2026-11-22T00:21:33.464Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 239,
+      "title": "Time the Guiding Assistant run and the backlash measurement on the monotonic clock (#235)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/239",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T00:18:23Z",
+      "additions": 149,
+      "deletions": 15,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The Guiding Assistant and the backlash measurement now use a steady internal timer instead of the computer's clock. Before, if the system clock jumped, for example when a device boots with the wrong time and then syncs, a Guiding Assistant run could end early or run too long, and the backlash measurement could come out wrong. The code matches the description. It also fixes the same problem in the Guiding Assistant's on-screen window, which the description notes was not originally asked for. A similar clock use in the simulator was deliberately left unchanged.",
+      "category": "fix",
+      "summaryHash": "5a7c23e6e0fe28b6631b59858feb5b08062cb17b"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 225,
+      "title": "Accept a kill during StartExposure and restart the fake after a failed fake-killed step (#211)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/225",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T00:13:22Z",
+      "additions": 151,
+      "deletions": 28,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "This is a test-only change that stops an automated test from failing at random, and the guider itself is unchanged. The test shuts off the fake camera server mid-guiding, but the outcome depended on exactly when the shutdown landed. A failure also left the server off, which made the next two tests fail as well. The final code goes further than the description, which talks about relaxing one check: it splits the test into two tests that each force one specific timing, adds a new ability to the fake server for this, and always restarts the server if a test leaves it stopped.",
+      "category": "tests",
+      "summaryHash": "bfa76e5bb3f4abf0ab71155e08c82ae9a22dba7c"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 238,
