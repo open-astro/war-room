@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T10:56:06.980Z",
+  "generatedAt": "2026-11-22T11:54:57.504Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,74 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2532,
+      "title": "Bisque: motion fails closed (#2410)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2532",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T11:41:55Z",
+      "additions": 972,
+      "deletions": 9,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "The Bisque (Paramount via TheSkyX) telescope driver now makes sure the mount does not keep moving when something goes wrong: slews that run too long are stopped, a manual jog is stopped if the client does not renew it within 60 seconds, unanswered slew commands trigger a stop, and stop requests are checked and retried. If the connection drops mid-motion, the next connect sends a stop before anything else. This means a dropped link, crashed client or ignored stop no longer leaves the mount moving unseen. It has only been tested against a simulated mount, not real hardware, and a few gaps remain open (Park timeouts, far-off landings and Sync are still unbounded).",
+      "category": "fix",
+      "summaryHash": "1189d2c590df9df94fece0af4e59deb58d64d565"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2529,
+      "title": "Add one error_code_of test helper and use it in 28 test files",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2529",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T11:39:53Z",
+      "additions": 677,
+      "deletions": 872,
+      "changedFiles": 32,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test cleanup: about 28 test files each had their own small helper for checking error codes, and they disagreed on what \"no error\" meant, which could let some checks pass by accident. They now all share one helper where \"no error\" always means zero, plus a variant for background threads. There is no change to how the software behaves for users.",
+      "category": "tests",
+      "summaryHash": "10f23c4052879c5aa9baf6f50da0435fed909195"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2528,
+      "title": "Route Sync Time through HostClock and mark trust in one place",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2528",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T11:39:11Z",
+      "additions": 232,
+      "deletions": 70,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"Sync Time\" button that sets the telescope computer's clock now goes through the same central clock component as other clock changes, and that component is now the one place that decides when the clock counts as trusted. Operators should see no difference in behavior or messages, apart from slightly more detailed log lines, but the Sync Time path can now be tested safely without touching the real system clock. Mostly an internal restructuring.",
+      "category": "refactor",
+      "summaryHash": "55b565b867e0668132824dc0eb06986002e1ce5b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2531,
+      "title": "NexStar: bound MoveAxis, stop on relink, refuse site writes mid-motion (#2409)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2531",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T11:27:38Z",
+      "additions": 334,
+      "deletions": 2,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "The Celestron NexStar telescope driver now stops a manual jog if the client does not renew it within 60 seconds, and after a lost connection it stops any motion that was running as soon as it reconnects. It also refuses changes to the site location or time while the mount is moving, because those changes would disturb the mount's pointing mid-move. This is a breaking change for clients that jog for longer than 60 seconds or set location or time during motion. It has only been tested against a simulated mount, and several related safety items remain open.",
+      "category": "fix",
+      "summaryHash": "b8e4ebfaab6e353f48fcf77cfe6eb762f8da9633"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2524,
