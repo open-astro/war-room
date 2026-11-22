@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T06:59:11.812Z",
+  "generatedAt": "2026-11-22T07:58:24.661Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,72 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 244,
+      "title": "Camera auto-reconnect waits for a frame before reporting the camera back (#243)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/244",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T07:53:55Z",
+      "additions": 147,
+      "deletions": 6,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2171,
+      "title": "PA residual: never sample a guiding start's settle",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2171",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T07:44:04Z",
+      "additions": 595,
+      "deletions": 22,
+      "changedFiles": 28,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2160,
+      "title": "Record 0024: Polar Align moves the mount like NINA, plus the guards that landed (#2048)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2160",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T07:44:04Z",
+      "additions": 180,
+      "deletions": 7,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2517,
+      "title": "Celestron CGX over SkyPortal WiFi (AUX over TCP), with ConformU passes on WiFi and USB",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2517",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T07:34:09Z",
+      "additions": 5744,
+      "deletions": 585,
+      "changedFiles": 51,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2509,
