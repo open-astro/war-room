@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T00:21:33.464Z",
+  "generatedAt": "2026-11-22T01:04:28.874Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 223,
+      "title": "Read the noise reduction when the exposure is scheduled (#210)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/223",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T00:40:42Z",
+      "additions": 122,
+      "deletions": 9,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Fixes a timing bug in the noise reduction setting, which cleans up graininess in camera images. Before, if you changed it while a picture was being taken, the new setting was also applied to that picture, and the program read the setting in an unsafe way that could misbehave. Now each picture keeps the setting that was in place when it was requested, and a change takes effect from the next picture. The main code changes were trimmed from the diff, but the included notes and a new end-to-end test that checks exactly this behavior match the description.",
+      "category": "fix",
+      "summaryHash": "cb9225cfcc2baf13da3a6c675a936fe6db2232de"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 239,
