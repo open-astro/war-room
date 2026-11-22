@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T21:17:20.373Z",
+  "generatedAt": "2026-11-22T21:46:43.755Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,114 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2537,
+      "title": "Add travel mode to the Celestron and Astroasis focuser fakes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2537",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:28:11Z",
+      "additions": 374,
+      "deletions": 10,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated checks can now run the official ASCOM conformance test against simulated Celestron and Astroasis focusers. Before, the simulated focusers never finished a move by themselves, so the test timed out. Now they travel to their target over a few seconds, like a real motor, and stop where they are when told to halt. This is test and build setup only: no real driver behaviour changes, and the travel speeds are placeholder values, not measured on real hardware.",
+      "category": "tests",
+      "summaryHash": "a0f91988d14b5af26fcb11cac78ac96702159c1a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2558,
+      "title": "Host clock: one HostClockWriteGate for the connect-time decision of the five mounts with a clock (#2480)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2558",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:26:42Z",
+      "additions": 326,
+      "deletions": 99,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Five mount drivers (iOptron, ZWO AM, SynScan, OnStep and Celestron NexStar) each had their own copy of the same rule: only set the mount's clock from the computer's clock when that clock is known to be correct, and otherwise warn and wait. That rule now lives in one shared piece that all five use, so a future mount can reuse it instead of copying it again. When the mounts set their clocks does not change, but ZWO AM's log messages come out in a slightly different order. It was checked with tests only, not on a real mount.",
+      "category": "refactor",
+      "summaryHash": "e79972dbcc85bcfa84951363f5ca9d1b94ef1998"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2556,
+      "title": "Telescope gate follow-ups: a slew's Tracking check needs its lock, ZWO stop threshold in the limits (#2415)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2556",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:25:20Z",
+      "additions": 68,
+      "deletions": 23,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is internal safety work on how several mount drivers check commands before acting on them. For Celestron NexStar, Bisque and SynScan, a mistake that could crash the server during a slew check can no longer even be built into the code. SynScan had the same risk and was fixed too, though the issue did not name it. For ZWO, the cut-off between a very slow move and a stop now lives in one place, and a new test confirms it behaves exactly as before. None of these problems could be triggered by users today.",
+      "category": "refactor",
+      "summaryHash": "30ddd3840074a1e00edde4a165e3b7f2da124449"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2555,
+      "title": "PolledState loss_bound; remotealpaca ObservingConditions adopts PolledState (#2496)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2555",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:22:33Z",
+      "additions": 280,
+      "deletions": 197,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The bridge that relays weather-station data from another Alpaca server now uses the project's shared code for regular status checks, instead of its own hand-built version. The shared code also gained an option for drivers that check in slowly to wait longer before treating the device as disconnected. There is a small behaviour change: when the other server goes quiet, the connection is now marked lost three check periods after its last answer, a bit sooner than before. Two existing tests were updated to match this new timing.",
+      "category": "refactor",
+      "summaryHash": "19afa8d57eb06639be2d3c40ced476443580bd5c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2554,
+      "title": "Merge the site and optics writers into PersistedConfigStore::update_fields (#2483)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2554",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:21:23Z",
+      "additions": 186,
+      "deletions": 58,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two places in the server that save device settings to disk now share one routine. One saves a telescope's location sent by a client, and the other saves its optics settings. This routine only writes to disk when a value actually changes. Six redundant reloads of the saved device list were also removed, since the list is already loaded when the server starts, and a new test confirms nothing relied on them. Users should see no change in behaviour.",
+      "category": "refactor",
+      "summaryHash": "2baafc545a7eb09badda2adffbf5ef925ef46641"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2551,
+      "title": "Refuse Sky-Watcher PulseGuide on a jogging axis and in a GOTO's claim gap (#2503)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2551",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:17:13Z",
+      "additions": 258,
+      "deletions": 84,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "With Sky-Watcher mounts driven directly, a guiding nudge is now refused if it targets the axis a manual move is driving. Before, such a nudge was accepted and quietly stopped the manual move. Guiding nudges are also now refused in a brief gap at the very start of a go-to or home move, when they could previously slip through. A nudge on the other axis during a manual move still works, and a nudge right after a go-to is refused until tracking has fully resumed. This covers only Sky-Watcher; the same fix for other mount brands comes in separate changes.",
+      "category": "fix",
+      "summaryHash": "25679702f9866eac8b959b17560f029330139d3d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2549,
