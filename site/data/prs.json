@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T13:53:19.909Z",
+  "generatedAt": "2026-11-22T14:52:28.593Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2539,
+      "title": "NexStar: keep a failed relink stop owed until a Connect completes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2539",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T14:48:42Z",
+      "additions": 125,
+      "deletions": 7,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Fixes a safety gap in the Celestron NexStar telescope driver. If the connection to the mount dropped while it was moving, reconnecting is supposed to send a stop first. Before this fix, if that stop failed and the reconnect also failed, the stop was forgotten and a later reconnect would not send it. Now the stop stays owed until a reconnect fully succeeds, and a repeated failure to stop a long-running manual move is logged once instead of every second; this has been tested only against a simulated mount, not real hardware.",
+      "category": "fix",
+      "summaryHash": "bca02585aa157f94fedc38cefe83d5c8047693c6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2181,
+      "title": "Pause stops the current exposure at once; the stopped frame is retaken on Resume",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2181",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T14:44:26Z",
+      "additions": 682,
+      "deletions": 59,
+      "changedFiles": 39,
+      "labels": [],
+      "summary": "Pressing Pause during an imaging run now stops the current exposure right away, instead of waiting for it to finish, which could take minutes. The interrupted frame is thrown away, not counted, and taken again when the run resumes. A new \"Pause after this frame\" button keeps the old behaviour, and the main Pause button can still stop things immediately after that option has been chosen. Sets of flat frames still finish before pausing, and the change has not been tested on real hardware.",
+      "category": "feature",
+      "summaryHash": "0ea7c22c8faa65210565cfa9a1cda53c4d04766b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2527,
+      "title": "Sky-Watcher: stop driver motion on relink, cap MoveAxis, verify AbortSlew (#2407)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2527",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T14:29:51Z",
+      "additions": 775,
+      "deletions": 22,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "Adds several safety guards so Sky-Watcher mounts are less likely to keep moving on their own when the software thinks they have stopped. After a dropped connection, reconnecting now stops any movement the driver had started, no matter how short the outage. A manual move now stops by itself after 60 seconds unless it is renewed, and a pointing move that still misses badly after three retries now counts as a failure and stops the mount. The driver also checks that an abort really stopped the mount, sending the stop up to three times, and refuses site longitude changes while the mount is moving; this changes an earlier rule on reconnect behaviour and has been tested only against a simulated mount.",
+      "category": "fix",
+      "summaryHash": "c8788eb95c4127c1bd2da23bdc84531b6be64239"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2535,
