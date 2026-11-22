@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T06:00:04.549Z",
+  "generatedAt": "2026-11-22T06:59:11.812Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,76 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2509,
+      "title": "Fail closed on non-finite input in the pointing helpers and motion guards (#2464)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2509",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T06:32:09Z",
+      "additions": 89,
+      "deletions": 12,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The shared telescope pointing and motion-safety checks now handle a garbage position value (such as a corrupt reading from the mount) safely. Before, such a value could freeze the program in an endless loop, or let the safety checks wrongly decide a mount had stopped on target. Now it is treated as a large miss, so the checks refuse it and the usual time limit stops the mount. Normal readings behave exactly as before; the change also adds tests and clarifies some documentation.",
+      "category": "fix",
+      "summaryHash": "63335a71abcb9344a5c781caa292010cb892071f"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2174,
+      "title": "Polar Align: remove the hand-turn (manual) mode; RA always turns with the motor",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2174",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T06:26:52Z",
+      "additions": 334,
+      "deletions": 2908,
+      "changedFiles": 78,
+      "labels": [],
+      "summary": "Polar alignment no longer offers a \"turn RA by hand\" mode, so the mount's motor always does the turning. The maintainers decided a manual mode goes against the app's focus on automation, and no supported mount needs it. As a result, an unconfirmed mount clearance or a mount that cannot drive its RA axis now always blocks a start, with no hand-turn fallback. The mode is removed throughout the server, the app's screens and texts, the tests and the docs; it never shipped in a release.",
+      "category": "refactor",
+      "summaryHash": "ba031aeeb9d7597a0649fdcb19c6f59950c7b71c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2514,
+      "title": "CGX tests: the newer-command re-home case waits on an event, not real time (#2466)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2514",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T06:13:05Z",
+      "additions": 13,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only fix for an unreliable Celestron CGX test that could fail on a slow build machine even when the driver was correct. Instead of waiting a fixed two seconds, the test now waits for the specific mount command it needs to see before moving on. Driver behaviour is unchanged.",
+      "category": "tests",
+      "summaryHash": "332735c0cb2aec170f630f1513ff7336b056d8cb"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2506,
+      "title": "Refuse ZWO AM PulseGuide in a GOTO's claim gap and on a jogging axis (#2459)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2506",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T06:02:32Z",
+      "additions": 191,
+      "deletions": 26,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO AM mount driver now refuses guiding nudges in two cases where they could move the mount in ways nobody asked for. The first is right as a GOTO is starting, if a manual move slipped in at that moment. The second is on an axis that is currently being moved manually. A guiding nudge on the other axis still works, and a refused request changes nothing. The change also tidies a leftover internal flag after homing, adds tests, and updates one existing test to match the new rule.",
+      "category": "fix",
+      "summaryHash": "5cfdca251e700ef83f48979ac614803e64c32b7f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2516,
