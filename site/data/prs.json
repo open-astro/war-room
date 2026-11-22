@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T11:54:57.504Z",
+  "generatedAt": "2026-11-22T12:54:20.391Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2180,
+      "title": "Polar Align: a Move to start position button when the scope is too close to the pole (rig-gated)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2180",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T12:43:13Z",
+      "additions": 3141,
+      "deletions": 55,
+      "changedFiles": 54,
+      "labels": [],
+      "summary": "Polar Align can now move the telescope itself when it is pointed too close to the pole to start. Before, the user had to leave Polar Align and nudge the mount by hand. A new \"Move to start position\" button shows up under the failing check. After the user confirms, it moves only the up-down (declination) axis to about 4° from the pole, with the same safety stops used elsewhere in Polar Align. The button stays off with a plain reason when the move isn't safe, such as a parked mount, no site location, or unconfirmed clearance. Nothing moves without the user's tap and confirmation, and the rig itself also checks that confirmation.",
+      "category": "feature",
+      "summaryHash": "76b62ef74f8d58ab807b2163f603cb6a65440645"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2530,
+      "title": "ZWO AM: fail motion closed (verified stop, slew and MoveAxis bounds, landing check)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2530",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T12:26:33Z",
+      "additions": 595,
+      "deletions": 29,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The ZWO AM3/AM5/AM7 mount driver now makes sure the mount actually stops or arrives where it should, instead of assuming it did. Long-running slews are stopped after 15 minutes, and hand-control style moves stop after 60 seconds unless renewed. Stop commands are checked and resent up to three times, and a slew that ends far from its target is reported as a failure. Unclear or missing replies from the mount now count as failures, and location or time changes are refused while the mount is moving. This lowers the risk of collisions or a mount left moving unwatched, but it has only been tested against a simulated mount, not real hardware.",
+      "category": "fix",
+      "summaryHash": "502c502479e6267e50611fccc00c94ff97737a8c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2532,
