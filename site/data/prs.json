@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T03:02:40.622Z",
+  "generatedAt": "2026-11-22T04:01:51.571Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2515,
+      "title": "Release 6.0.0-beta.4",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2515",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T03:44:38Z",
+      "additions": 317,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "This publishes the 6.0.0-beta.4 test release, so beta testers get the fixes made since beta.3. The most important is a safety fix for iOptron mounts that stops them from being sent somewhere they could hit the pier. Apart from the new version number and dates, the only content is new plain-language release notes, which explain the new behavior and correct download file names that the previous notes had wrong. No program code changes in this PR; the fixes themselves were merged separately.",
+      "category": "chore",
+      "summaryHash": "da4d5807ea75cc600dfe90593c5bbf6117319d0a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2510,
+      "title": "[6.0] iOptron: never re-aim a refused GoTo counterweight-up, and fail an unanswered one (#2395, #2396)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2510",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T03:28:08Z",
+      "additions": 1280,
+      "deletions": 208,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "iOptron mounts no longer get pointed somewhere they have already refused to go. Before, if the mount turned down a move (for example, because the target was below its height limit or past a mechanical limit), the software quietly retried it a different way that could swing the mount into its pier or tripod. Over Wi-Fi, a move that got no answer was also simply assumed to have worked. Now a refused or unanswered move is reported as an error and the mount is told to stop, and a move that ends up far from its target counts as a failure instead of a success. The PR also makes sure an emergency stop is always sent even when a status check fails, sends a stop on reconnect if the mount was moving when the connection dropped, and makes the guiding speed setting read the mount's real value and reject out-of-range values instead of quietly adjusting them, with new tests covering these cases.",
+      "category": "fix",
+      "summaryHash": "39d3915be604649192dcfec88360e1b2235f009c"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2512,
