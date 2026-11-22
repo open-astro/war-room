@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T05:01:02.040Z",
+  "generatedAt": "2026-11-22T06:00:04.549Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2516,
+      "title": "Merge stable/6.0 into main",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2516",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T05:00:39Z",
+      "additions": 2307,
+      "deletions": 314,
+      "changedFiles": 40,
+      "labels": [],
+      "summary": "This is a routine merge that brings the latest 6.0 beta fixes into the main line, so the next major release (6.1) won't miss them. The biggest is a safety fix for iOptron mounts, which now handles unanswered or refused go-to commands by confirming or stopping the mount instead of letting it drift. Several other mounts also stop more safely: SynScan and Sky-Watcher mounts stop when a slew fails or runs out of time, Celestron stops both axes when one axis is told to stop mid-slew, and Bisque mounts no longer keep reporting they are \"at home\" after they start moving. It also includes guide-rate fixes for ZWO mounts, a QHY camera fix so a zero-length exposure is never sent to the camera, and the beta.4 release notes, while the version number stays the same.",
+      "category": "fix",
+      "summaryHash": "7eac5222a3c411c875b7b1aec332d86a7763683c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2157,
