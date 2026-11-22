@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T12:54:20.391Z",
+  "generatedAt": "2026-11-22T13:53:19.909Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2535,
+      "title": "Move the Bisque telescope poll onto PolledState",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2535",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T13:28:29Z",
+      "additions": 553,
+      "deletions": 253,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The driver for telescopes controlled through TheSkyX now uses the project's shared status-checking system, so it detects lost connections and faults the same way the other drivers do. The 'find home' command now starts the move and then checks once a second whether it has finished. Before, it held the connection for up to a minute, which could make the system wrongly think the link was lost. The longest guiding pulse is now capped at 25 seconds instead of 30, and timeouts for homing and parking now report the last error seen instead of hiding it. The new homing approach has only been tested against a simulated TheSkyX, not real hardware.",
+      "category": "refactor",
+      "summaryHash": "633f5cef10f7fe78e082c12951fab95e5b1173b7"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2534,
+      "title": "SynScan: bound MoveAxis, stop lost-link motion on Connect, refuse writes mid-motion (#2412)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2534",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T13:12:21Z",
+      "additions": 712,
+      "deletions": 6,
+      "changedFiles": 7,
+      "labels": [],
+      "summary": "Sky-Watcher (SynScan) mounts are now safer if a client crashes or a cable drops. A manual axis movement now stops by itself after 60 seconds unless the client renews it. Movement that was running when the connection was lost is stopped as soon as the client reconnects. Changing the site location, time or sync position while the mount is moving is now refused, so the mount's pointing calculations cannot shift mid-move. This is a behavior change for clients that made those changes during motion, and it has only been tested in simulation, not on a real mount.",
+      "category": "fix",
+      "summaryHash": "6409633dbae2f192e41a4823b91e077d7dc18387"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2180,
