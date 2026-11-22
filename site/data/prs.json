@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T19:48:07.184Z",
+  "generatedAt": "2026-11-22T21:17:20.373Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,96 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2549,
+      "title": "Refuse OnStep PulseGuide during a slew, park or home and on a jogging axis (#2504, #2503)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2549",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:14:28Z",
+      "additions": 179,
+      "deletions": 17,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStep mounts now turn down a small guiding nudge while the mount is already moving to a target, parking, or finding its home position. They also turn one down on an axis that is being moved by hand with a jog command. Before, these nudges were sent anyway and could make the mount move in ways nobody asked for. A nudge on the other axis during a jog still works, and a few existing tests were reordered to match the new rule.",
+      "category": "fix",
+      "summaryHash": "c9a7eceacb0f93de397f55cfef4b98adc8afdaee"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2548,
+      "title": "Bisque: refuse a PulseGuide on the axis MoveAxis is moving (#2503)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2548",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:14:07Z",
+      "additions": 99,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Paramount mounts controlled through TheSkyX now refuse a guiding nudge on an axis that is being moved by hand. The refusal also covers the brief moment while that hand movement is still starting up. Before, the nudge and the hand movement could drive the same motor at once. The hand movement keeps running, and nudges on the other axis are still accepted.",
+      "category": "fix",
+      "summaryHash": "f4c9006ca4c87c0a64aa8c8bffb673479f11f9ca"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2547,
+      "title": "Refuse NexStar PulseGuide on the axis MoveAxis is moving (#2503)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2547",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:14:07Z",
+      "additions": 49,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron NexStar mounts now refuse a guiding nudge on an axis that is being moved by hand. Before, the nudge was sent into the running movement and the motor ended up at the wrong speed. The hand movement keeps going, and nudges on the other axis still work. This is a small, targeted change with one new test.",
+      "category": "fix",
+      "summaryHash": "a251076d46d9de08ff140bbe7773db29f03f1a53"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2546,
+      "title": "Refuse iOptron PulseGuide during the driver's motion and on a jogging axis (#2504, #2503)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2546",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T21:10:23Z",
+      "additions": 208,
+      "deletions": 20,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "iOptron mounts now refuse a guiding nudge while the mount is moving to a target, parking, or finding home, and on an axis being moved by hand. Before, these nudges were sent and could pull the mount off its target or park position. The change also fixes a case where a nudge could reach a mount that had quietly finished parking, which is now correctly reported as parked. Several existing tests that expected the old behavior were updated.",
+      "category": "fix",
+      "summaryHash": "0017a9d5832f869fad8e0238d8670592ccac4151"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2536,
+      "title": "Share one soft-PWM engine between the ASIAIR switches",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2536",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T20:54:52Z",
+      "additions": 1818,
+      "deletions": 1175,
+      "changedFiles": 35,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO ASIAIR Pro and Plus power-switch drivers now share one common piece of code for switching and dimming their 12 V power ports. Before, each board kept its own copy, and those copies were removed. Users should see the same ports and settings as before. One behavior is new: if a dimmed port fails to update, the problem is now logged and reported on every board, where one board used to stop silently. Two other power-box drivers, iOptron iMate and ToupTek StellaVita, still have their own copies and are planned for a follow-up.",
+      "category": "refactor",
+      "summaryHash": "3c5b5325d377bd83d08e9c20dabf9deec379650c"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2186,
