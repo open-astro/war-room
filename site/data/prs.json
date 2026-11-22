@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T21:46:43.755Z",
+  "generatedAt": "2026-11-22T22:45:33.600Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2564,
+      "title": "Move the per-client Connected bookkeeping into ClientConnectionLedger (#2521)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2564",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T22:19:25Z",
+      "additions": 567,
+      "deletions": 253,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal reorganization with no change in behavior. The code that tracks which apps are connected to each shared device, and only cuts the device link when the last one leaves, now lives in its own separate piece instead of inside the server's main request handler. It can now be tested on its own, and new tests cover its rules, like the 256-client limit and dropping clients that stop checking in after 10 minutes. The diff matches the description.",
+      "category": "refactor",
+      "summaryHash": "0e051e03a8713dd291e7d93d0e005d681d61ad67"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2559,
+      "title": "Contract sweep parks the ZWO, OnStep and CGX fakes; CGX Park crawl case (#2468)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2559",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T22:16:10Z",
+      "additions": 179,
+      "deletions": 32,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change. The automated checks that make sure a parked telescope mount rejects bad commands correctly now also run on the simulated ZWO, OnStep and Celestron CGX mounts, which used to be skipped because their simulators never reported being parked. Those checks now have time limits so a stuck test cannot hold up the whole run. A new test also covers the Celestron CGX recovering from a slow homing search during Park. The iOptron mount is still skipped and is tracked separately. No product code changed.",
+      "category": "tests",
+      "summaryHash": "5aa256899323fe9233ffde4716e5880288bd187c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2544,
+      "title": "Fix NexStar blocking-slew reap test racing the async slew body (#2518)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2544",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-22T22:15:53Z",
+      "additions": 7,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a Celestron NexStar test that sometimes failed on busy build machines even though nothing was wrong with the driver. The test sometimes checked results before the right step had finished. It now waits for the telescope's move command to be sent before going on, so it no longer fails at random. Only the test changed, with no effect on users.",
+      "category": "tests",
+      "summaryHash": "929ae4a45cdc5623f865e22a551203b6d5bba39e"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2537,
