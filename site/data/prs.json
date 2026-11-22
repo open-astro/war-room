@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T15:41:57.912Z",
+  "generatedAt": "2026-11-22T16:50:46.550Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 134,
+      "title": "Move guide history out of the graph window; delete the display windows (daemon step 2)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/134",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T16:41:29Z",
+      "additions": 963,
+      "deletions": 6398,
+      "changedFiles": 58,
+      "labels": [],
+      "summary": "The guider's old built-in display windows from its PHD2 days are gone: the history graph, the guide stats, target, star profile and AO position windows, and the status bar. Ara is now the only user interface. The guiding history that Ara's guide graph shows has moved into a new standalone piece with its own test, and it reports the same data as before. Nothing can now change the history length or clear it while guiding, since only the removed buttons did that, and custom graph colours no longer apply. The description called for a final 10-minute live guiding check with Ara before merging, and it was still unchecked when this merged.",
+      "category": "refactor",
+      "summaryHash": "959bc4ae615137f4b53b5fa852547025ac6f38f3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2545,
+      "title": "Merge stable/6.0 into main (6.0 mount motion-safety train)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2545",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T16:26:33Z",
+      "additions": 4987,
+      "deletions": 103,
+      "changedFiles": 60,
+      "labels": [],
+      "summary": "This brings the 6.0 release's telescope mount safety fixes into the main development line, so the next release from main keeps them. They cover iOptron, OnStep, Sky-Watcher, ZWO, Celestron, Bisque and SynScan mounts. With these fixes a mount stops itself if a slew or manual move runs too long, gets stuck, or loses its connection, and it reports the problem instead of silently carrying on. Because main had reworked the same drivers in the meantime, each fix was adapted to the new code, and the full test suites pass. All of this was tested against simulated mounts only, not real hardware.",
+      "category": "fix",
+      "summaryHash": "ab005c49cd5e98aac9e045d255bb55e830815df8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2538,
