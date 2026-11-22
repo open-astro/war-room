@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T07:58:24.661Z",
+  "generatedAt": "2026-11-22T09:00:26.421Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,106 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2520,
+      "title": "iOptron: drain a late Wi-Fi reply so the link never runs one reply behind",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2520",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T08:37:35Z",
+      "additions": 163,
+      "deletions": 6,
+      "changedFiles": 6,
+      "labels": [],
+      "summary": "Fixes a problem with iOptron mounts connected over Wi-Fi where a reply that arrived too late was mistaken for the answer to the next request, leaving the connection one answer behind for minutes. Users saw the reported position jump by degrees while the mount stood still, status checks failed, and a plate-solve sync could store a wrong correction (one night the mount reported 90.71 degrees at home). The driver now throws away late replies, rejects position answers that are not shaped correctly, and never reports a position past the pole. This has only been tested in simulation and still needs a check on real hardware.",
+      "category": "fix",
+      "summaryHash": "22725563ccd9880eb3d8b1df6c6aa51be149ed36"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 245,
+      "title": "Retry a frame whose call the Alpaca server died during (#237)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/245",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T08:37:24Z",
+      "additions": 141,
+      "deletions": 24,
+      "changedFiles": 10,
+      "labels": [],
+      "summary": "If the server the guider talks to crashes or loses power in the middle of taking a picture, the guider now treats it as a temporary hiccup and tries the frame again, instead of just stopping guiding with a warning. If the server really is gone, the guider now goes through its normal reconnect process and picks up again by itself once the server comes back. Before this change, the camera was never marked as disconnected in this situation, so the automatic reconnect never happened.",
+      "category": "fix",
+      "summaryHash": "79e2391b6f56585c82f82f512fd9a54e625a504c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2178,
+      "title": "Polar Align: key the saved RA motor direction to the mount and its driver, never a blank name",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2178",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T08:34:14Z",
+      "additions": 515,
+      "deletions": 117,
+      "changedFiles": 30,
+      "labels": [],
+      "summary": "Polar alignment runs a short test to learn which way a mount's motor turns, and saves the result. The label it saved under was always blank, so every mount shared one result and a second mount could reuse the first mount's direction. Each saved result is now tied to the specific mount and its driver name and version, so each mount is tested once, and a driver change or upgrade triggers a new test. Settings now shows which mount and driver the result belongs to, and any result saved the old way is ignored, so the next session tests again.",
+      "category": "fix",
+      "summaryHash": "4378cfc36aee4ac5b4bf6983d8cd0f5d62557655"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2175,
+      "title": "Guiding lost mid-frame: abort the frame, restart guiding on reconnect, retake it (#2169)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2175",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T08:23:32Z",
+      "additions": 1356,
+      "deletions": 52,
+      "changedFiles": 17,
+      "labels": [],
+      "summary": "When guiding drops out during a sky exposure (the guider connection or the guide camera is lost), the app now stops and discards that exposure instead of finishing and saving a likely blurred, trailed image. Once the guider is back, it restarts guiding, waits for it to settle, and then resumes the run so the lost frame is taken again, retrying on a schedule with one notice to the user if it keeps failing. Calibration frames that do not need guiding (darks and biases) still finish normally. This has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "a7cd0d9ee99e412a0371c9f641f2e14d37b2c678"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2519,
+      "title": "Refuse a non-finite SetCCDTemperature before the connection check",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2519",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T08:20:32Z",
+      "additions": 127,
+      "deletions": 16,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "All cooled cameras (ZWO, QHY, Player One, ToupTek and SVBONY) now handle a nonsense target cooling temperature, such as \"not a number\" or infinity, the same way: they reject it as an invalid value right away, even when the camera is not connected. Previously some brands replied \"not connected\" instead, and QHY could let such a value through. The check now lives in one shared place, and new automated tests cover every camera. SVBONY already behaved correctly and only switched to the shared check.",
+      "category": "fix",
+      "summaryHash": "9c8e137802fdb48fdb804af88cfb96eb6f6fb137"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2513,
+      "title": "TelescopeDriver: per-axis GuideRate writes no longer lose the other axis (#2465)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2513",
+      "author": "pauleyj",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T08:16:55Z",
+      "additions": 75,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a rare problem where two programs changing a telescope's guide speed for different directions at the same moment could quietly undo one of the changes, leaving one direction at the wrong speed. The two updates now take turns, so each direction keeps the value set last. This affects mounts that use the shared default behavior (such as NexStar, Bisque and Celestron CGX); mounts with their own handling are unchanged.",
+      "category": "fix",
+      "summaryHash": "beb823045518f60cad5e214578a3023c11fc2e15"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 244,
@@ -21,9 +121,9 @@
       "deletions": 6,
       "changedFiles": 8,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "When the guide camera drops out and the guider reconnects it automatically during a capture, the guider now waits until the camera actually delivers a picture before telling the app the camera is back. Before this, the camera server could claim the camera was connected while it was still unplugged, so the app was told it had recovered 8 seconds too early and the guider kept cycling through fake reconnects. Now, if the first picture after a reconnect fails, the guider reports the reconnect as failed, stops capturing, and leaves it to the slower background retry to bring the camera back. The slower background retry can still be fooled the same way, and the camera server's side of the problem is being reported separately.",
+      "category": "fix",
+      "summaryHash": "cb16bb59448ef33a6191f9d515704e65fb71edc7"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -37,9 +137,9 @@
       "deletions": 22,
       "changedFiles": 28,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The polar alignment check that runs during guiding should now give fewer false alarms that the alignment is bad. It now ignores the settling period at the start of guiding. It also pauses measuring after the up-and-down guiding corrections change direction, until the star actually responds, since play in the mount's gears can swallow those corrections. When most corrections push one way and the star keeps drifting away anyway, the result is marked as unreliable and is not compared against the Polar Align result. The description says this closes only part of the gap behind the bad reading seen on the rig, with gear play being the main cause.",
+      "category": "fix",
+      "summaryHash": "5c4845133f42037dc2fefba2d96548aeb61faac2"
     },
     {
       "repo": "open-astro/openastro-ara",
@@ -53,9 +153,9 @@
       "deletions": 7,
       "changedFiles": 5,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This change is documentation only; the app itself does not change. It adds a decision record saying that Polar Align should move the mount the way the NINA astronomy software does, plus a short list of extra safety guards added after the mount drove into its pier on 2026-11-19. It also updates the user guide with the pre-flight checks and the motorised polar aligner's stop behaviour. It corrects the stated turning limit: 30°, or twice the turn size plus 2° for large turns. The record is still marked as a proposal and needs the maintainer's sign-off.",
+      "category": "docs",
+      "summaryHash": "5e4273fb3a1deea582b546e4515630556fc0cbf2"
     },
     {
       "repo": "open-astro/AlpacaBridge",
@@ -71,9 +171,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Celestron CGX mounts can now be controlled over Celestron's SkyPortal WiFi adapter as well as USB, and they pass the same standard compatibility tests either way. The setup form now lets you choose USB or WiFi and has a \"Find adapter\" button that looks for the adapter on the local network. The driver also copes with WiFi's lost replies and slower responses. The same work fixes problems that affect USB users too: more accurate arrival at the target after a GoTo, a safety stop if a homing search turns an axis too far (it could previously spin about 380°), and a reconnect bug that caused checksum errors. It also adds untested support for the larger CGX-L mount.",
+      "category": "feature",
+      "summaryHash": "6a9cbfc9b908e298fec55a27fcf97afe8ac70733"
     },
     {
       "repo": "open-astro/AlpacaBridge",
