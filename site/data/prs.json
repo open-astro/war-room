@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T04:01:51.571Z",
+  "generatedAt": "2026-11-22T05:01:02.040Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,22 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2157,
+      "title": "Polar Align: East/West turn setting and a saved RA motor direction (#2081)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2157",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T04:52:05Z",
+      "additions": 2122,
+      "deletions": 141,
+      "changedFiles": 52,
+      "labels": [],
+      "summary": "Polar alignment now turns the telescope mount in a predictable direction that you choose, instead of guessing from the mount's clock, which could be wrong and send the tube toward the pier or tripod. A new Turn direction setting (Automatic, East or West) decides the first turn, and the first time a mount is used, Ara makes a small half-degree test move to learn which way its motor actually turns and remembers that for that mount and driver. The confirm screen shows this test move before anything moves, settings include a \"Test direction again\" button, and if the mount ever turns the wrong way the run now stops instead of reversing on its own. The visible code matches the description, though much of the diff was trimmed and could not be fully checked.",
+      "category": "feature",
+      "summaryHash": "1978ddc2c46b1d855ab396620b51ca2720a589c9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2515,
