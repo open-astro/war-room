@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T14:52:28.593Z",
+  "generatedAt": "2026-11-22T15:41:57.912Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,38 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2538,
+      "title": "SynScan: bound a MoveAxis whose rate command threw",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2538",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T15:15:36Z",
+      "additions": 80,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Closes a safety gap in the SynScan telescope driver. When a manual move or stop command reports an error while the mount is still connected, the command may still have reached the mount. The driver now treats that axis as possibly moving and stops it automatically once the usual 60-second limit runs out, so a mount can no longer keep moving with no limit. This was tested against a simulated mount only, not real hardware.",
+      "category": "fix",
+      "summaryHash": "cdf3ebaa0432131c3c5b69855f1c35225fcf5c14"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2182,
+      "title": "Edits made while a run is paused are used when it resumes",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2182",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T15:04:19Z",
+      "additions": 2055,
+      "deletions": 58,
+      "changedFiles": 36,
+      "labels": [],
+      "summary": "Settings changed while an imaging run is paused or running, such as a longer exposure time, are now actually used when the run continues. Before, the editor blocked these changes and Resume kept the original plan, so an exposure changed from 5 s to 180 s was quietly ignored. Now every Resume button sends unsaved edits first. Changes the running plan cannot accept, such as a new target or its coordinates, are refused right away with a plain explanation, and the frame being taken at that moment keeps its old settings. The server-side code, tests and some screen code for this were not visible in the trimmed diff, and the change has not been tested on real hardware.",
+      "category": "feature",
+      "summaryHash": "58aa0e89b5f37b0cb8436d4e430972f3a580c9d2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2539,
