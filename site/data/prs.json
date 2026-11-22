@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T18:49:17.971Z",
+  "generatedAt": "2026-11-22T19:48:07.184Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2186,
+      "title": "Mount: check an unverified position with a plate solve, no motion, one-tap Sync",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2186",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T19:20:21Z",
+      "additions": 3325,
+      "deletions": 17,
+      "changedFiles": 38,
+      "labels": [],
+      "summary": "When the app stops trusting the telescope mount's reported position, for example after a power loss, there is now a \"Check position with a plate solve\" button. It takes one short picture of the sky, works out where the telescope is really pointing, and compares that with what the mount says, without moving the mount. If they match, the warning clears. If they don't, the user gets a single tap to correct the mount, which is then confirmed with a second picture. This gives a safe way to recover on any brand of mount without pressing Home or checking by eye.",
+      "category": "feature",
+      "summaryHash": "52f40ae7e0a04d693beeefa4c805ce5381aee46b"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 228,
+      "title": "Report full times and pulse directions in get_guide_history (#133)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/228",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T19:05:04Z",
+      "additions": 124,
+      "deletions": 14,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "The guider's guide-history report now gives the real time of each guiding step and the direction of each correction. Before this, the times were rounded so badly they could be off by hours, and the directions were always blank. Because of that, Ara drew every past correction in the guide graph as going West or North. With this fix the graph's history shows the right timing and the right directions, and no change to Ara is needed.",
+      "category": "fix",
+      "summaryHash": "f5790735cca496cca750762aeb319feecbd7bec6"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2187,
+      "title": "Tests: guide history from the old and the new guider both map (guider #228)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2187",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T19:01:48Z",
+      "additions": 43,
+      "deletions": 0,
+      "changedFiles": 1,
+      "labels": [],
+      "summary": "Test-only change that makes sure Ara reads guide history correctly from both older and newer versions of the guider, so the guide graph keeps working while observatories upgrade. No change to how the app behaves.",
+      "category": "tests",
+      "summaryHash": "b5190f854205e843276528235f4d19edce30d96c"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2185,
+      "title": "Mount: trust a Home on mounts whose driver says it is a real home-sensor search",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2185",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T18:49:25Z",
+      "additions": 560,
+      "deletions": 39,
+      "changedFiles": 32,
+      "labels": [],
+      "summary": "Some mounts, such as the iOptron HAE29C, have a physical sensor that finds their true home position. Ara can now learn this from the mount's driver when it connects. On those mounts, one press of Home is enough to make the app trust the mount's position again after a power loss or a sudden jump, with no need to confirm by eye. Other mounts still need the eye check, and the warnings now tell users of capable mounts that Home will clear the problem by itself. This depends on a matching update to the mount bridge software that has not been released yet, so it has not been tried on real hardware.",
+      "category": "feature",
+      "summaryHash": "059239bca42d47a28c2288061476b44475dcb4b6"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 221,
