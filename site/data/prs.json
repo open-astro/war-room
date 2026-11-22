@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T09:00:26.421Z",
+  "generatedAt": "2026-11-22T09:56:39.501Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,58 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2177,
+      "title": "Polar Align: confirm mount clearance with one tap, for how far the run turns",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2177",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-22T09:40:11Z",
+      "additions": 1124,
+      "deletions": 598,
+      "changedFiles": 45,
+      "labels": [],
+      "summary": "Before Polar Align turns the mount, the app now asks one plain question: it will turn the mount up to a stated number of degrees each way, is there room for the tube, counterweight and cables? The user answers with a single \"Yes, there is room\" button. This replaces a slider that asked for a counterweight angle most people could not know. The answer is saved per mount for that distance, so a later run that turns farther asks again, while a shorter one does not. Confirmations saved in the old slider format are discarded, so those users will be asked once more.",
+      "category": "feature",
+      "summaryHash": "46c35f66375d7a15f106399866dad0548316931d"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2176,
+      "title": "Connect All Equipment and Switch Profile use the connections port",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2176",
+      "author": "diegopereiran",
+      "base": "master",
+      "mergedAt": "2026-11-22T09:06:03Z",
+      "additions": 242,
+      "deletions": 355,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"Connect All Equipment\" step in sequences now really connects the user's saved devices. It connects the safety monitor first and stops with a clear error if that fails. Before, it quietly connected nothing while reporting success, and it could crash on setups with a guider. The \"Switch Profile\" step now refuses right away with a message to switch profiles from the Profiles page, instead of disconnecting everything and then failing. Old sequences that contain it still load.",
+      "category": "fix",
+      "summaryHash": "f15b5ea937c13c40f62e83ff83ad523d853f2817"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2525,
+      "title": "Identify a stored device by type and number in the persisted config store",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2525",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-22T09:05:44Z",
+      "additions": 201,
+      "deletions": 107,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge now uses one consistent rule to identify a saved device: its type and number, the same rule the live device list already uses. Before, different lookups could pick different saved entries when two vendors' devices shared the same slot. Setting up a second vendor in an occupied slot now replaces the old entry. If the saved file already has two entries in one slot, the later one is dropped at startup with a warning.",
+      "category": "fix",
+      "summaryHash": "bfbccc7417a3c95624eb273ce802e4c94976f17a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2520,
