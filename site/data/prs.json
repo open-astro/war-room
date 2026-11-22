@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T02:03:36.344Z",
+  "generatedAt": "2026-11-22T03:02:40.622Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2512,
+      "title": "[6.0] Port ten main fixes for beta.4 (ZWO stale frame #2414, bias frames, QHY, logs, flakes)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2512",
+      "author": "joeytroy",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-22T02:40:26Z",
+      "additions": 1169,
+      "deletions": 189,
+      "changedFiles": 49,
+      "labels": [],
+      "summary": "Brings ten fixes that were already on the main line into the upcoming 6.0 beta 4 release. The biggest one stops ZWO cameras from handing the guider an old frame that was started before the requested exposure, which made the guider correct for an error it had already fixed. The rest are smaller: zero-length (bias) exposures now run at the camera's shortest allowed time instead of being refused, a rare QHY camera error no longer crashes the server, a Gemini focuser connect no longer stalls on a silent port, routine refusals stop filling the logs with errors, a clock set far into the future no longer wipes out all old logs, and several unreliable tests were steadied. Most of the code changes were not visible in the trimmed diff, so these are confirmed mainly from the description and the documentation updates.",
+      "category": "fix",
+      "summaryHash": "24bc29487d78e39123a171ff651e1b64536d9ad1"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 242,
+      "title": "Start each faults-lane scenario from a known state after a failure (#233)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/242",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T02:37:46Z",
+      "additions": 103,
+      "deletions": 18,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Makes one of the automated end-to-end test runs more reliable to read: when one equipment-fault scenario fails, the scenarios after it now first put the guider back into a known good state instead of all failing in a chain or quietly dropping out of the report. If that state can't be reached, the scenario is marked as skipped with a reason, and the summary now counts skips. This only changes the test scripts, not the guider itself.",
+      "category": "tests",
+      "summaryHash": "72b05b45277165810bf65d51c4c3537bdfa850db"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 240,
+      "title": "Point the imaging-gear reader at the new server on set_alpaca_server (#236)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/240",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-22T02:08:44Z",
+      "additions": 171,
+      "deletions": 8,
+      "changedFiles": 9,
+      "labels": [],
+      "summary": "When the user switches the guider to a different Alpaca server, the imaging-gear information (the main camera, filter wheel, focuser and so on) is now read from the new server right away. Before, it kept showing the old server's equipment until something else happened to refresh it. For a moment right after the switch the gear now reads as 'unavailable' until the new server answers, and any late answer from the old server is thrown away. New tests and documentation updates are included.",
+      "category": "fix",
+      "summaryHash": "e0eaee8d773236762d4f51b7f01720eb58dc19a8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2511,
