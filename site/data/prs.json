@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T04:40:38.449Z",
+  "generatedAt": "2026-11-23T05:39:43.341Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,92 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 287,
+      "title": "Ignore JSON-RPC socket events for a client already gone (#270)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/287",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T05:22:17Z",
+      "additions": 47,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "The guider now ignores leftover network messages meant for an app connection that has already closed, instead of trying to handle them. This guards against a possible crash when a client such as Ara drops off and reconnects after a network hiccup. The team could not actually trigger the crash, so this is a cheap safety measure. A new automated test opens and abruptly closes 200 connections while the camera is looping, and checks that the guider stays up and keeps answering.",
+      "category": "fix",
+      "summaryHash": "cdea050abbf2c30a3322dc068a0bcece08569f15"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 288,
+      "title": "Guard the Dec guide mode write and give a new profile valid backlash values (#280)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/288",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T05:22:16Z",
+      "additions": 80,
+      "deletions": 15,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Fixes two follow-ups from earlier safety work. First, changing the declination guide mode while guiding no longer clashes with the guiding work running in the background. Second, a brand-new profile now reports backlash settings that it will also accept back (a 20 ms starting pulse instead of zero), so an app that reads the settings and writes them back no longer gets an error. One small behaviour change: on a new profile, simply switching backlash compensation on now works. The description says the mode change is protected with a lock, but the changelog describes a different approach, and the code for that part was not shown, so the exact method could not be confirmed. This PR also includes the dropped-connection fix from #287.",
+      "category": "fix",
+      "summaryHash": "30ac0929d6f95a7c032cce0d30ff4cbb558985ec"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2557,
+      "title": "Merge stable/6.0 into main (#2550 findhomeissensorsearch)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2557",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T05:21:15Z",
+      "additions": 458,
+      "deletions": 14,
+      "changedFiles": 27,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This brings a feature from the 6.0 release line into the main development line. Every telescope driver can now be asked whether its \"find home\" command really searches for the mount's physical home sensors, or just slews to a remembered position. Apps like Ara can use the answer to decide whether to trust that the mount is truly at home. The answer is yes only for certain iOptron, Celestron and Sky-Watcher models, and no for the other mounts. It has only been tested on simulated mounts, not real hardware.",
+      "category": "feature",
+      "summaryHash": "de1d87d93a72fe3722b03dc4ef5e820b586025d0"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2596,
+      "title": "Review checklist: accept the skeleton's VERDICT: token before a verdict (#2592)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2596",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T04:57:25Z",
+      "additions": 40,
+      "deletions": 2,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes the automated code-review bot, whose reviews (often approvals) were sometimes thrown away. This happened because the bot left a placeholder word, \"VERDICT:\", in its checklist and the format checker then rejected the review. The checker now accepts that word, but it still rejects lines that are missing an actual verdict or a reason. This is an internal tooling change, with new self-checks based on real failed runs.",
+      "category": "ci",
+      "summaryHash": "e7c134cd45500c32fdd2a3d995a51b4c7ddba352"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2594,
+      "title": "Say in the motion owner comments that every mount refuses a pulse on a jogging axis",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2594",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T04:42:49Z",
+      "additions": 7,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This change updates code comments only. They now correctly say that every mount driver refuses a guide pulse on an axis that is already being manually moved, which replaces an older rule described in the comments. There is no change to how anything behaves.",
+      "category": "docs",
+      "summaryHash": "ceaee4a564ce16dc0659922ae9e84655a5bed70a"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 286,
