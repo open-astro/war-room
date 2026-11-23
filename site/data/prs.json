@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T13:32:49.475Z",
+  "generatedAt": "2026-11-23T14:32:23.703Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2616,
+      "title": "Fix motion-owner gaps in NexStar, CGX, Sky-Watcher and SynScan",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2616",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T13:35:14Z",
+      "additions": 1441,
+      "deletions": 72,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Tightens how four telescope mount drivers (Celestron NexStar, Celestron CGX, SynScan and Sky-Watcher) decide which command is in control of each mount axis, so a small guiding nudge can no longer keep running after a newer command has taken over, and safe nudges are no longer wrongly refused. For example, guiding now works again after parking and unparking a Celestron mount, and SynScan accepts guiding on one axis while the other axis is being moved by hand. Most of the change is new tests that check each rule, plus updated notes for developers; the Sky-Watcher changes are minor, mainly logging an expected takeover as normal information instead of a warning. A few remaining CGX checks need a real mount and are left for a later hardware test.",
+      "category": "fix",
+      "summaryHash": "60880aa809a887bffde70bbe84e8583d26c7d26a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2615,
