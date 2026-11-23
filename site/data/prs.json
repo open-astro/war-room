@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T10:48:28.361Z",
+  "generatedAt": "2026-11-23T12:33:46.484Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2612,
+      "title": "Add ZWO, ToupTek and Altair camera rows to fake ConformU",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2612",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T11:51:17Z",
+      "additions": 1120,
+      "deletions": 14,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Three more camera drivers (ZWO, ToupTek and Altair) now go through the automated compatibility check in CI, which runs against simulated cameras rather than real hardware. To make that possible, the simulated cameras were made to behave more like the real ones: their binning options agree with what they advertise, they reject cooling temperatures outside a realistic range, and on ToupTek and Altair an exposure takes its full time instead of finishing instantly. The drivers themselves are unchanged and no driver bug was found. The saved reports were produced on an ordinary PC even though their file names say arm64 (the small-board type the server runs on); the PR says CI produces the real arm64 versions.",
+      "category": "tests",
+      "summaryHash": "a0f66e4d96bf546e0fb3414e78bc2b51ff4d953a"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2611,
+      "title": "Add iOptron test helpers for the connect grace and the latch",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2611",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T11:51:17Z",
+      "additions": 128,
+      "deletions": 128,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only cleanup for the iOptron telescope driver, with no change to how the driver behaves. Repeated steps in many tests were moved into two shared helpers: one that moves the simulated clock forward past the 30-second period right after connecting, and one that simulates a lost connection. The clock helper now moves time in small steps of at most 5 seconds instead of one big jump, which prepares for a planned change where the driver checks the mount in the background. A few checks were also made stricter, so a test now stops at the first failure there instead of carrying on.",
+      "category": "tests",
+      "summaryHash": "2dab91af851528e40b68b847c544751fd89bde82"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2601,
