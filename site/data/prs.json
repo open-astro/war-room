@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T21:26:30.315Z",
+  "generatedAt": "2026-11-23T22:25:38.642Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2619,
+      "title": "Move SyncToCoordinates onto the telescope command gate (#2418)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2619",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T22:23:39Z",
+      "additions": 120,
+      "deletions": 25,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes cleanup for the telescope mount drivers: the checks that decide whether a mount should refuse a \"sync to these sky coordinates\" request now live in one shared place instead of being repeated in each of the eight mount drivers. Mounts should behave exactly as before, with the same error messages in the same order; the visible code matches that, and two drivers (Sky-Watcher and Celestron CGX) still keep their own extra checks. This finishes a series of similar moves, so all the related mount commands now follow one consistent rulebook that is easier to maintain.",
+      "category": "refactor",
+      "summaryHash": "4805e7827e883c4c32d204c961e33b0be15662d3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2630,
+      "title": "Point three OnStep Alt/Az test comments at the command gate (#2418)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2630",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T22:06:48Z",
+      "additions": 11,
+      "deletions": 8,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Comment-only fix in the OnStep mount tests. Three test notes still referred to code that an earlier change had removed, so they now describe how the checks currently work. A previous attempt at this fix was left out when that earlier change merged, so this re-applies it. No test behavior or program behavior changes.",
+      "category": "tests",
+      "summaryHash": "12fab98bfb84c8b18cc2f2a358b6bcfafd493706"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2620,
+      "title": "Sky-Watcher: AbortSlew ends a Park or FindHome it cancels (#2604)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2620",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T22:06:48Z",
+      "additions": 252,
+      "deletions": 7,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes Sky-Watcher mounts so that stopping a park or \"find home\" move takes effect right away. Before, after you hit stop, the mount could keep reporting that it was still moving and refuse a change to its longitude setting for a short time, and the cancelled move could send extra stop commands to the mount. Now, as soon as the stop command finishes, the mount reports it is not moving, accepts the setting change, and the cancelled move sends nothing more. New tests cover these cases, including the case where the stop command itself fails and the cancelled move still stops the mount as a safety backup.",
+      "category": "fix",
+      "summaryHash": "62fa4a0ea8828c3e9bf30c7021f90c8d87d010f7"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2622,
