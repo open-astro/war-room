@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T23:44:58.024Z",
+  "generatedAt": "2026-11-23T00:43:55.326Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,54 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 253,
+      "title": "Extract the calibration codec, pointing adjustment and sanity checks with tests (#142 T2a)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/253",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T00:41:35Z",
+      "additions": 2361,
+      "deletions": 281,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Behind-the-scenes reorganization of how the guider saves and loads its calibration, adjusts it when guiding starts (for example after a meridian flip or a change of target position), and checks it for problems. Nothing changes for users. The code was moved into separate, self-contained pieces and covered by 46 new tests, as groundwork for upcoming larger changes. The tests deliberately record one known existing bug, where a change of camera binning can be missed in the calibration; it is fixed in a follow-up change rather than here.",
+      "category": "refactor",
+      "summaryHash": "40bce1cbbe32598fadda170d29f7eb43057cd6ed"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 247,
+      "title": "Clamp a negative elapsed time in the pulse wait (#142)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/247",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T00:41:35Z",
+      "additions": 34,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a bug where the computer's clock jumping backwards during a guide pulse could freeze guiding for as long as the jump, for example an hour after a time sync on a device that boots with a stale clock. Waits are now capped at the length of the pulse, and a mount that seems stuck is given up on instead of being waited on indefinitely. Two new tests cover the case. The underlying timer still uses the regular wall clock; switching it to a clock that never jumps is planned for later.",
+      "category": "fix",
+      "summaryHash": "09cd1052e654af5a06c3c3989a50347675813140"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 246,
+      "title": "Fail CI on new wx GUI symbols in phd2.bin (#115, slice P0)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/246",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T00:41:35Z",
+      "additions": 811,
+      "deletions": 0,
+      "changedFiles": 5,
+      "labels": [],
+      "summary": "Adds an automatic check to the build pipeline that fails if a change makes the guider program depend on any new piece of the desktop graphical interface library. The team is gradually removing that dependency, and this stops new uses from creeping back in while that work happens. The current list of allowed uses (625 items) can only shrink over time. Nothing changes in the guider itself.",
+      "category": "ci",
+      "summaryHash": "bbc57971c3216a4965ee12f6e696488b6663bee1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2565,
