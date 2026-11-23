@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T00:43:55.326Z",
+  "generatedAt": "2026-11-23T01:42:59.101Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 263,
+      "title": "Extract the settle timers and guide-distance tracking with tests (#142 T2e)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/263",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T01:35:36Z",
+      "additions": 878,
+      "deletions": 102,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Behind-the-scenes reorganization: the code that times how long the guider waits for the star to settle and the code that keeps a running average of how far the star drifts were moved into their own separate pieces, with new automated tests for both. Guiding should behave the same as before, apart from two tiny differences: times are now counted in whole milliseconds, and the averages start at zero. The new tests also record an existing problem where a sudden jump in the computer's clock can make a settle finish or time out early, or hang on longer than it should. That problem is left for a follow-up fix.",
+      "category": "refactor",
+      "summaryHash": "26dfbdad83a80c9a0d32f65a08bf874c67e494ce"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 256,
+      "title": "Pin the image-scale adjustments end to end before they leave AdvancedDialog (#115 N4)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/256",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T01:35:36Z",
+      "additions": 279,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [],
+      "summary": "Tests only, with no change to how the guider works. They lock in how the calibration step size is recalculated when the camera's image scale changes, covering each way the guider works out the telescope's guide speed and a binning change at guide start. This gives a safety net before that code is moved. The tests also record a known bug where guiding carries on without a calibration after a binning change. The test setup's fake telescope can now report custom guide speeds.",
+      "category": "tests",
+      "summaryHash": "8a5409773fb67a0e2d9e52abfe448e843f020c01"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 254,
+      "title": "See a 2-to-3 binning change as an image-scale change (#252)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/254",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T01:35:36Z",
+      "additions": 37,
+      "deletions": 16,
+      "changedFiles": 4,
+      "labels": [],
+      "summary": "Fixes a bug where switching camera binning by an uneven amount, such as from 2 to 3, was not noticed when guiding started. Because of a rounding mistake, the guider kept using a calibration that no longer matched the camera, with no alert. Now every binning change is treated as a change in image scale, so the old calibration is cleared and a new one is required. The tests were updated to check the exact values.",
+      "category": "fix",
+      "summaryHash": "7e1d47aa93c6e27422ffd7b546213b4d9ab0d50c"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 248,
+      "title": "Guard the calibration step math against an unknown image scale (#142)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/248",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T01:34:34Z",
+      "additions": 450,
+      "deletions": 24,
+      "changedFiles": 14,
+      "labels": [],
+      "summary": "Fixes a crash-prone bug where the recommended calibration step was calculated even when the telescope's focal length, the camera's pixel size or the guide speed was zero. Zero is the default for a new profile, and in those cases the calculation produced nonsense values. Now the guider skips that calculation and keeps the current calibration step, noting this in the debug log. The calculation was also moved into its own piece and checked against an exact copy of the old version, plus a set of known-good results.",
+      "category": "fix",
+      "summaryHash": "10f4ee492df187b5655811d24ca78d4012576728"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 253,
