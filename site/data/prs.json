@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T16:30:46.521Z",
+  "generatedAt": "2026-11-23T21:26:30.315Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,96 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2622,
+      "title": "Fail Celestron test threads' cases instead of terminating the run (#2585)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2622",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T20:55:50Z",
+      "additions": 30,
+      "deletions": 3,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change for the Celestron NexStar mount tests. Three tests ran part of their work in the background, and if that part hit an error, the whole test run crashed and every later test was skipped with no useful message. Now that error just fails the one test, with a clear message, and the rest of the run carries on. The driver itself is not changed.",
+      "category": "tests",
+      "summaryHash": "51cb2136e06b34ff54e93eec40092594f8f73a25"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2623,
+      "title": "Command gate: one shared constant for the just-below-1e-9 MoveAxis stop epsilon (#2606)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2623",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T20:53:11Z",
+      "additions": 16,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal cleanup with no change in behaviour. The ZWO and Bisque mount drivers each had their own hand-typed copy of the tiny cutoff that decides when a manual movement request counts as \"stop\". That number now lives in one shared place with a single built-in check that it is exactly right. Future drivers that need the same cutoff can reuse it instead of copying it.",
+      "category": "refactor",
+      "summaryHash": "b971c9ef9aa087ad438d9122c26ea55f1bf4f93e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2617,
+      "title": "Add shared mount motion model and iOptron mount fake ConformU row",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2617",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T20:53:11Z",
+      "additions": 1731,
+      "deletions": 3,
+      "changedFiles": 15,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a shared, simulated telescope mount that can slew, track, park, go home and guide, so the standard ASCOM compliance checker (ConformU) can be run against mount drivers in CI without real hardware. The iOptron mount is the first to use it and now runs in that automated check, with a saved report. The ZWO, Celestron, SynScan and OnStep mounts can reuse the same simulator in later work. This is test and CI infrastructure only, plus documentation notes; no driver code changes, and the results are from simulation, not real hardware.",
+      "category": "tests",
+      "summaryHash": "e1fd31f3f4633b1763a57c8807f60a8765254ecc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2621,
+      "title": "Sky-Watcher: decide the MoveAxis stop with the gate's epsilon (#2605)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2621",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T20:38:59Z",
+      "additions": 36,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Sky-Watcher mount driver and the shared command-checking layer used two different cutoffs for when a very slow manual movement request means \"stop\", so they could disagree. Both now use the same value, so they always agree. Users should see no difference, because the stop point is exactly where it was before. A new test confirms that a tiny rate still stops and anything just above it still moves.",
+      "category": "fix",
+      "summaryHash": "7a5f7f8e22ac25d2c076fd5cbb3980db6f91cfca"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2618,
+      "title": "Move the Alt/Az slews and SyncToAltAz onto the telescope command gate (#2418)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2618",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T20:34:21Z",
+      "additions": 262,
+      "deletions": 83,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Moves the safety checks for pointing a telescope by altitude and azimuth, and for syncing it that way, out of the OnStep and iOptron drivers and into the shared command-checking layer most other telescope commands already use. These checks cover valid angles, connected, parked, faults, a known location, and tracking turned off. Error messages, error types and the order of checks stay the same for users, and new tests lock that order in. It is one of a series of similar moves, with one command family still left to do.",
+      "category": "refactor",
+      "summaryHash": "86ff065a40aada1ee32ae77424d18e04c869b50d"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 319,
