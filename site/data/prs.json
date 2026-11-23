@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T10:35:38.846Z",
+  "generatedAt": "2026-11-23T10:48:28.361Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2601,
+      "title": "Move Bisque's MoveAxis stop threshold into the gate limits (#2582)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2601",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-23T10:35:03Z",
+      "additions": 34,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For Bisque (TheSkyX) mounts, the rule for deciding when a \"move this axis\" command actually means \"stop\" now lives in the shared safety checks used by all mounts, instead of being a separate number inside the Bisque code. Before this, the shared checks and the Bisque code had different ideas of what counted as a stop. No user could hit that difference yet, but it would have caused trouble once more code relied on the shared checks. Mount behavior is unchanged, and a new test confirms the cutoff stays exactly where it was. This follows an earlier identical fix for ZWO mounts; Sky-Watcher has the same mismatch and is not changed here.",
+      "category": "fix",
+      "summaryHash": "b6260cf438b51e28dd90fd8e45bf00ff0df564c4"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 306,
