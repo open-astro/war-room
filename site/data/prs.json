@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T12:33:46.484Z",
+  "generatedAt": "2026-11-23T13:32:49.475Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2615,
+      "title": "Remove leftover default Action and Command overrides",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2615",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T13:15:28Z",
+      "additions": 5,
+      "deletions": 36,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Cleanup that removes duplicate code from two device drivers, a focuser and a remote weather-conditions driver, so they share the standard 'not supported' answers every driver gets by default. The only visible difference is that when someone asks the weather-conditions driver for a custom action it doesn't support, the error message now names that action. The error code itself is unchanged. One existing test was updated to check the new message text.",
+      "category": "refactor",
+      "summaryHash": "a26281abbf5e387820c5b0077c4a618260274bae"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2613,
+      "title": "Fix SynScan guide estimate after a superseded pulse",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2613",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-23T12:59:40Z",
+      "additions": 297,
+      "deletions": 1,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes the sky position reported by SynScan telescope mounts during autoguiding. When a small guiding nudge was cut short, either by a newer nudge or by switching tracking on or off, the software still counted the full nudge, so the reported position drifted ahead of where the mount had actually moved. The driver now subtracts the part of the nudge that never happened, and new tests cover these cases. It has not been tested on real hardware, and the author notes the tracking-change case may read slightly short for a few seconds on some non-equatorial mounts.",
+      "category": "fix",
+      "summaryHash": "a60e10ea7ad8b0f1247c49a31323459b00f9483f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2612,
