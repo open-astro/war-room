@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T06:38:58.665Z",
+  "generatedAt": "2026-11-23T07:38:00.914Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 302,
+      "title": "Send alerts without the info bar (#115 S6.3)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/302",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T07:11:55Z",
+      "additions": 70,
+      "deletions": 360,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Alerts are no longer shown in a pop-up bar inside the guider's old desktop window. They are now only written to the log and sent to connected apps, with the same wording and in the same order as before. The bar's buttons (Don't show again, Help, Close, and other one-click actions) are gone, so the actions those buttons could trigger are still passed along in the code but can never run. This is behind-the-scenes cleanup, part of a step-by-step effort to remove the old desktop interface, and apps talking to the guider should notice no difference.",
+      "category": "refactor",
+      "summaryHash": "0aa31869e758c30cf6d86bde655dd9356a9d68ac"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 301,
+      "title": "Set the exposure and gamma without toolbar widgets (#115 S6.2)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/301",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T07:11:55Z",
+      "additions": 64,
+      "deletions": 238,
+      "changedFiles": 11,
+      "labels": [],
+      "summary": "Changing the guide camera's exposure time no longer works by quietly picking an option in a hidden on-screen dropdown and reading it back. The value is now applied directly, with the same results, messages and saved setting as before. The hidden exposure dropdown, its custom-exposure dialog and the image brightness (gamma) slider were removed, but the saved brightness setting is still used for preview images. This is internal cleanup in the effort to remove the old desktop interface, with no change for connected apps.",
+      "category": "refactor",
+      "summaryHash": "3eac297389bd46cf1545d378dc41054d7e115214"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 300,
+      "title": "Keep the dark library and defect map state in bools, not menu items (#115 S6.1)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/300",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T07:11:55Z",
+      "additions": 41,
+      "deletions": 62,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "The guider now tracks whether the dark library and the bad-pixel map are available and in use with simple internal on/off flags. Before, it read that information from checkmarks in a desktop menu. That menu and its two items were removed since nothing else needed them. Behaviour is the same, so this is internal cleanup and the first of four linked steps toward removing the old desktop interface.",
+      "category": "refactor",
+      "summaryHash": "4aa37ac854f8fefebaa75c205b34b2f136b8edb6"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 303,
+      "title": "Start guiding without GUI input (#115 S6.4)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/303",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T07:11:54Z",
+      "additions": 76,
+      "deletions": 554,
+      "changedFiles": 17,
+      "labels": [],
+      "summary": "Starting guiding no longer depends on anything typed or clicked in the old desktop window, so it behaves the same whether or not anyone is at the screen. Two desktop-only extras were removed: holding Shift while clicking Guide to force a recalibration, and a dialog asking for telescope coordinates. Apps can still request a recalibration through the normal guide command, and the coordinates dialog could no longer be reached anyway. If no guide star is selected, the guider now writes a log note instead of showing a pop-up, and otherwise behaves as before. This is the last of four linked cleanup steps, and merging it completes the set.",
+      "category": "refactor",
+      "summaryHash": "b2cd31fe5ebf467d379ff2e1dd469990d4278b12"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2600,
