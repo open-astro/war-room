@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T03:41:18.603Z",
+  "generatedAt": "2026-11-23T04:40:38.449Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,88 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 286,
+      "title": "Extract the guider state machine with a frozen twin (#142 T2c)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/286",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T04:39:54Z",
+      "additions": 3347,
+      "deletions": 422,
+      "changedFiles": 13,
+      "labels": [],
+      "summary": "Internal restructuring of the guider: the logic that decides what the guider does next (start, calibrate, guide, stop, react to a lost star, and how a dither moves away from the frame edge) now lives in its own separate piece, and guiding behaves exactly as before. A large set of new tests checks it, including a side-by-side comparison against a frozen copy of the old code that must produce identical results. Three existing quirks with the secondary adaptive-optics mount were found and recorded as a separate issue rather than fixed. This prepares the next step of removing the guider's dependence on the desktop window code.",
+      "category": "refactor",
+      "summaryHash": "9bfe5d3078c89d2664391a806eff3596df980cef"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2591,
+      "title": "Add four Switch rows to the fake ConformU run",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2591",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T04:15:34Z",
+      "additions": 2145,
+      "deletions": 11,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated checks now run the standard ASCOM compliance test suite against four more power and switch drivers (OnStep, iOptron, Gemini and ToupTek), using simulated devices instead of real hardware. All four passed with no issues, and their reports are saved in the project. No driver behaviour changed. The Gemini run takes about 14 minutes, so the check runs longer when it is included.",
+      "category": "ci",
+      "summaryHash": "17cb2e92daec938dab9c1ffdf65f8c7af3b81d3e"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 283,
+      "title": "Delete the Mount, Scope and AO panes (#115 S4.8)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/283",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T04:03:03Z",
+      "additions": 2,
+      "deletions": 2128,
+      "changedFiles": 28,
+      "labels": [],
+      "summary": "Removes the old, already-unused Advanced Settings screens for the mount, telescope and adaptive-optics device, about 2,100 lines of code. All the settings that could already be changed through the app's remote control interface still work the same way. A few adaptive-optics settings and the panes' Reset buttons had no remote equivalent and are now gone. As a side benefit, an old code path that changed guiding algorithms without the usual safety lock no longer exists.",
+      "category": "chore",
+      "summaryHash": "8f1eae791daba8375e25796739d9eb0016ec320e"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 282,
+      "title": "Delete the guide algorithm panes and GPExpertDialog (#115 S4.7)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/282",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T04:03:03Z",
+      "additions": 1,
+      "deletions": 884,
+      "changedFiles": 20,
+      "labels": [],
+      "summary": "Removes the old, already-unused settings screens for the guiding algorithms, including the expert dialog for the Predictive PEC algorithm, about 880 lines of code. The algorithms and their settings are unchanged, and they can still be read and changed through the app's remote control interface. A handful of expert Predictive PEC settings that only those screens could edit now have no way to be changed, but their saved values are still used.",
+      "category": "chore",
+      "summaryHash": "9fc1e651ba19303f4228dcbd91b63a1dfadfe666"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 284,
+      "title": "Delete AdvancedDialog and configdialog, completing step 4 (#115 S4.11)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/284",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T04:03:02Z",
+      "additions": 3,
+      "deletions": 2909,
+      "changedFiles": 33,
+      "labels": [],
+      "summary": "Deletes the last of the old Advanced Settings dialog and its supporting framework, along with a few helpers that nothing used anymore. This finishes a larger cleanup: every guider setting now lives with the part of the program it belongs to, and the remote control interface is the only way to change settings. Nothing changes for users, since this dialog was no longer being shown.",
+      "category": "chore",
+      "summaryHash": "1b4e485a08890ebe7c05b65ac70fb17905b2c63f"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 279,
@@ -171,9 +253,9 @@
       "deletions": 107,
       "changedFiles": 8,
       "labels": [],
-      "summary": "Polar Align motor moves now also stop by timing, not only when the mount reports it has reached the target. On a real iOptron mount the reported position lagged up to 2 seconds behind, so moves overshot, and one small move near the pole ran about three times too far. Each move now stops once its commanded speed and elapsed time cover the distance. It then checks where it actually ended, makes a small extra move if it is more than 0.1° short, and reports a stall if the mount clearly did not move. The wait for the mount to settle after a move is now 2.5 seconds instead of 1.5, so a stale reading is not mistaken for the final position.",
+      "summary": "Fixes Polar Align moving the mount too far on mounts that report their position late. On an iOptron HAE29C the reported position lagged up to 2 seconds behind the motor, so a small move toward the pole ran about 1 degree instead of 0.3, and could go past the pole. Each move now also stops based on how long the motor has run at its commanded speed, then checks where the mount really ended up and adds a small corrective move if it fell short. The wait for the mount to settle after a move also goes up from 1.5 to 2.5 seconds, so a late reading is not mistaken for the final position. All the existing safety checks stay in place, and new tests cover these cases.",
       "category": "fix",
-      "summaryHash": "579c1a0853db8de51aef56a7c14d3e198abab9b6"
+      "summaryHash": "6f675b0155a320291f1cad6d8f126042707a3bf6"
     },
     {
       "repo": "open-astro/AlpacaBridge",
