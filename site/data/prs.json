@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T15:31:38.737Z",
+  "generatedAt": "2026-11-23T16:30:46.521Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,70 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 319,
+      "title": "Fix dark library status and enable quirks (#295)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/319",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T16:06:11Z",
+      "additions": 104,
+      "deletions": 46,
+      "changedFiles": 8,
+      "labels": [],
+      "summary": "Fixes several oddities in how the guider reports and toggles its dark library, the reference frames used to clean up camera noise. The shortest and longest dark exposures are now reported in seconds, as their names always promised, instead of milliseconds; when no darks are loaded those values are simply left out instead of showing placeholder numbers like 9999. Turning the dark library off when nothing is loaded now succeeds instead of erroring. A failed attempt to turn darks or the defect map on no longer changes the saved auto-load setting or unloads a defect map that was already working. Ara already expected this behavior, so it needs no changes.",
+      "category": "fix",
+      "summaryHash": "8061fc48c603c73544f0489b8c4c6c8ada6c29ba"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 320,
+      "title": "Fix three AO calibration state-machine quirks (#285)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/320",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T16:06:10Z",
+      "additions": 278,
+      "deletions": 100,
+      "changedFiles": 12,
+      "labels": [],
+      "summary": "Fixes three problems, inherited from the original PHD2, that only affect setups with an adaptive optics unit (a secondary corrector alongside the mount). With an already-calibrated unit, guiding now starts one frame sooner instead of going through an empty calibration pass. An uncalibrated unit now starts its calibration once instead of twice. If its calibration fails to start, the guider now stops cleanly instead of trying to continue. Setups without that unit are unaffected. The included changes also contain the dark-library reporting fix from #319, which the description does not mention.",
+      "category": "fix",
+      "summaryHash": "0a85e8aa5c866bb4fcc78474b2641eddcdd96a91"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 322,
+      "title": "#142 Tier 4: nightly algorithm matrix, RC51 log replay, rig checklist",
+      "url": "https://github.com/open-astro/openastro-guider/pull/322",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T15:42:45Z",
+      "additions": 4835,
+      "deletions": 0,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "Adds testing and planning material only, with no change to how the guider behaves. A new nightly job measures how accurately each guiding method tracks under simulated good and bad sky and mount conditions, and flags any clear drop in accuracy. A new replay test confirms the guiding math reproduces a real night's guide log from the RC51 rig. It also adds a checklist of real-telescope checks, such as meridian flips and high-declination calibration. One finding: if guiding settings are changed mid-session, that night's log cannot be replayed exactly, because those changes are not recorded in the log.",
+      "category": "tests",
+      "summaryHash": "8f348b24b5212937781aa8c9dbd6cdc1d0099d90"
+    },
+    {
+      "repo": "open-astro/openastro-guider",
+      "number": 321,
+      "title": "Stop promptly during a hung PulseGuide; no Dec pulse after a failed RA move (#294)",
+      "url": "https://github.com/open-astro/openastro-guider/pull/321",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-23T15:42:06Z",
+      "additions": 552,
+      "deletions": 52,
+      "changedFiles": 19,
+      "labels": [],
+      "summary": "Pressing stop now takes effect within about a second, even when the mount stops responding to a guide command. Before, stopping could take around 30 seconds with no explanation. Hung guide commands also give up after 15 seconds instead of 30. If a guide move in one direction fails, the guider no longer sends the matching move in the other direction for that same outdated frame; the next frame corrects both. A hang on the mount's other status checks can still delay a stop by up to 30 seconds, and the change still needs to be checked on the real rig.",
+      "category": "fix",
+      "summaryHash": "c6d3dd48654248e31e2eaeaaa59a3193c3c53ea7"
+    },
     {
       "repo": "open-astro/openastro-guider",
       "number": 317,
@@ -117,9 +181,9 @@
       "deletions": 15501,
       "changedFiles": 96,
       "labels": [],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Completes the move to a background-only guider with no windows by deleting the old icons and desktop launcher files, so the installed package no longer adds a menu entry. A new automatic check fails the build if screen and window code reappears in the guider. It also fixes a startup problem: older startup scripts that passed a display setting made the guider refuse to start, and that setting is now accepted and ignored with a warning. These changes land together with earlier work in the same series, also part of this merge, that removed the guider's need for a graphical display entirely.",
+      "category": "chore",
+      "summaryHash": "19c5bbf3cd59f87482d0f4b1988aa670dc87e911"
     },
     {
       "repo": "open-astro/AlpacaBridge",
