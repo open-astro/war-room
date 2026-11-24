@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T06:28:23.767Z",
+  "generatedAt": "2026-11-24T07:17:53.251Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2653,
+      "title": "[6.0] NexStar: verify AbortSlew, fail a far miss and an unconfirmed GOTO reply, bound Sync, close the site-write window (#2409)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2653",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T07:09:00Z",
+      "additions": 1023,
+      "deletions": 55,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron NexStar telescope driver now reports a problem instead of claiming success when a mount does not actually do what it was told. A move-to-target that stops far from where it was aimed now fails and stops the mount. So does a move command the mount does not clearly acknowledge. Stop requests are now checked to confirm the mount really stopped, a position correction larger than 5 degrees is refused, and location and time changes can no longer be overtaken by a move that starts at the same moment. A connection that cannot start its background status checks now fails instead of appearing connected. The diff shown confirms the move-acknowledgement check and the updated notes. Most of the main driver changes were cut from the diff, and all of this is tested only against simulated mounts, not real hardware.",
+      "category": "fix",
+      "summaryHash": "9003e22f3e765fa3267b931e82e440389a566caa"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2658,
