@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T12:13:49.016Z",
+  "generatedAt": "2026-11-24T22:05:42.132Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2663,
+      "title": "Sky-Watcher: a goto that AbortSlew ended sends no stop as its body unwinds (#2635)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2663",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T22:00:19Z",
+      "additions": 65,
+      "deletions": 1,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "On Sky-Watcher mounts, cancelling a goto with Abort no longer sends a second, redundant pair of stop commands after the abort has already finished. Those extra stops never moved anything, but they occupied the connection to the mount right when a client might be sending its next command. This matches how Park and Find Home already behave. A goto that fails on its own, or is cut off by a disconnect, still stops both axes, and a new test covers the change.",
+      "category": "fix",
+      "summaryHash": "096bdb365060fea12f539d5e5ece4f2109c32b11"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2662,
+      "title": "Celestron CGX: label the Dec home a quarter turn so GOTOs cross the equator (#2640)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2662",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T21:57:21Z",
+      "additions": 515,
+      "deletions": 435,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Celestron CGX mounts can now complete gotos that cross the celestial equator on either side of the pier. Before, these gotos drove the declination axis the long way over the pole toward the ground and were stopped by a safety watchdog. Hands-on testing at the mount showed the controller will never move declination past one particular internal position, and the old home setting placed that position right on the equator; the driver now sets home a quarter turn differently so no reachable target hits it. Already-installed mounts pick this up at their next home search, and the change also adds extra debug logging, fixes an intermittently failing test, and refreshes the stored compatibility-test results and documentation.",
+      "category": "fix",
+      "summaryHash": "2456e3cc47b36e0858a232ea7c3ef179311c64fc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2659,
