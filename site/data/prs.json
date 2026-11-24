@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T01:22:54.367Z",
+  "generatedAt": "2026-11-24T02:22:05.718Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2644,
+      "title": "Celestron CGX: document the Sync bound after FindHome and the Dec take-up (#2463)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2644",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T01:46:21Z",
+      "additions": 16,
+      "deletions": 3,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation now explains why a Sync can fail on the Celestron CGX mount right after it returns to its home position. At home the mount points at the pole, so a request to sync onto a far-away object is refused for being more than 5 degrees off. The new advice is to move the telescope near the target first, then Sync. The guide also corrects its description of a small, known delay in north-south guiding corrections so it matches the rest of the docs, and one explanatory code comment was added with no change in how the software behaves.",
+      "category": "docs",
+      "summaryHash": "b8e7601582e4bd179459d05530520c3e2a292edd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2643,
+      "title": "Route management requests through one table (#2485)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2643",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T01:46:04Z",
+      "additions": 565,
+      "deletions": 575,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal cleanup of how the server handles its admin requests, such as device setup, logs, clock, Wi-Fi, updates and restarts. The list of these requests now lives in one table instead of being written out twice. The table also applies the safety check that blocks requests from other websites and the reply for a wrongly-formed request, rather than each part repeating that work by hand. Nothing should change for users, and a new test now fails if a future admin action that changes settings is added without that safety check.",
+      "category": "refactor",
+      "summaryHash": "1e74f0d9bfeb5035bf749836c39b39d8c0540776"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2641,
