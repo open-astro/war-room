@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T03:21:12.046Z",
+  "generatedAt": "2026-11-24T04:20:27.975Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2649,
+      "title": "[6.0] OnStep: stop on every relink, fail a far-miss GOTO, keep the GOTO bound, bound later syncs (#2406)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2649",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T04:18:15Z",
+      "additions": 340,
+      "deletions": 162,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "OnStep mounts are now safer when things go wrong. After any lost connection, reconnecting always stops the mount moving, even after a very short outage (previously outages under 5 seconds let motion continue). A slew that ends more than 10 arcminutes from its target is now stopped and reported as a failure instead of counted as arrived, and the 2-minute safety timeout on slews now holds even when the mount starts late or status checks fail. After the first sync of a session, any later sync that would shift the pointing by more than 5 degrees is refused; users who still want a slew after reconnecting need to start it again.",
+      "category": "fix",
+      "summaryHash": "bae1c4d13f5f8ac1765ae2f7ed5541749c73ca87"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2647,
+      "title": "[6.0] Sky-Watcher: bound Sync after the first of a session, raise an AbortSlew check that does not start (#2407)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2647",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T03:34:39Z",
+      "additions": 1300,
+      "deletions": 8,
+      "changedFiles": 11,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts now refuse a sync that would shift the pointing by more than 5 degrees, except for the first sync after each connect, which sets the starting reference. This stops one bad sync from throwing every later slew far off target. The mount's moving status now also reports a problem when a stop request could not be confirmed, instead of quietly saying the mount had stopped. The change also brings in a new set of shared motion-safety checks for all mount types (the bulk of the code size), though only the Sky-Watcher driver starts using them here.",
+      "category": "fix",
+      "summaryHash": "36761880c51ee81f4a8e34657723c52e3b26d617"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2646,
