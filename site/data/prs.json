@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T22:05:42.132Z",
+  "generatedAt": "2026-11-24T23:04:58.728Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2664,
+      "title": "Extract iOptron telescope status ingest and motion helpers",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2664",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-24T22:09:24Z",
+      "additions": 142,
+      "deletions": 162,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Behind-the-scenes reorganization of the iOptron telescope mount driver, with no change in how the mount behaves. The code that reads the mount's status and the code that finishes off a slew (including the small correction nudge that fixes a known firmware aiming error) were moved into their own clearly named pieces, and an unused calibration routine was removed. This is the second of three planned steps toward a larger rework of how the driver reports mount state, and it keeps the final step small and easier to review. The existing iOptron tests pass, but it has not yet been tried on real hardware.",
+      "category": "refactor",
+      "summaryHash": "f0b590b35c9837e77266f81c286bde3a6943b97f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2663,
