@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T05:19:45.677Z",
+  "generatedAt": "2026-11-24T06:18:31.744Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2658,
+      "title": "[6.0] Fix the SynScan AbortSlew-timing test race: step the clock only while the abort's own thread waits (#2412)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2658",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T06:05:30Z",
+      "additions": 42,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2652,
