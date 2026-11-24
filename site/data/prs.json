@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T07:17:53.251Z",
+  "generatedAt": "2026-11-24T08:16:55.833Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2657,
+      "title": "Celestron CGX: stop a GOTO leg that moves away from its target (#2640)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2657",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T07:25:42Z",
+      "additions": 415,
+      "deletions": 32,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2653,
