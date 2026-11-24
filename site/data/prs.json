@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T04:20:27.975Z",
+  "generatedAt": "2026-11-24T05:19:45.677Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2652,
+      "title": "[6.0] SynScan: verify AbortSlew, fail an unstarted GOTO, gate V3 landings, bound Sync (#2412)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2652",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T05:09:31Z",
+      "additions": 1115,
+      "deletions": 134,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Sky-Watcher mounts controlled through the SynScan hand controller now fail safely instead of quietly reporting success when something goes wrong. A stop command is now checked to confirm the mount actually stopped, and it is resent up to three times before an error is reported. A slew the hand controller never starts, or an older-handset slew that ends far from its target, is now reported as a failure. A sync that would shift the pointing by more than 5 degrees is refused. The same stop check also now applies after other failures, such as a timed-out slew or a failed park. All of this has been tested only against simulated mounts so far, with real hardware checks tracked separately.",
+      "category": "fix",
+      "summaryHash": "ee86838de3f20f5102672e4f416f61ba2c13a254"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2654,
+      "title": "[6.0] ZWO AM: verify the slew-bound stop, stop a Park lost to a link drop, fail e3, bound Sync (#2408)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2654",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T05:03:31Z",
+      "additions": 462,
+      "deletions": 232,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "ZWO AM3, AM5 and AM7 mounts now handle the remaining unsafe motion cases. The stop sent when a slew runs past 15 minutes is now checked and resent if needed. A mount that loses its connection during a park or homing is stopped when it reconnects. Re-confirming a connection while the mount is moving no longer rewrites the site location and time, or loses track of moves in progress. Two behavior changes for users: a \"mount busy\" reply to a slew is now reported as an error instead of being retried automatically, and syncs that would shift the position by more than 5 degrees are refused. Testing so far is on simulated mounts only.",
+      "category": "fix",
+      "summaryHash": "d3239d8e13dc128863e5072f0685c279d55cf724"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2656,
+      "title": "[6.0] Port #2544: NexStar blocking-slew reap test waits for the blocking slew's GOTO (#2518)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2656",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T04:46:00Z",
+      "additions": 7,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change that fixes an occasionally failing Celestron test on the 6.0 release branch. It copies over a fix already made on the main branch, so unrelated 6.0 pull requests stop failing their automated checks. The driver itself is not changed.",
+      "category": "tests",
+      "summaryHash": "b1adf7009020791019efc73bee8da3df6ce4732b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2650,
+      "title": "[6.0] Bisque: stop a timed-out Park, fail a far miss, bound Sync, retry a failed stop sooner (#2410)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2650",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-24T04:32:07Z",
+      "additions": 412,
+      "deletions": 35,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Paramount mounts driven through TheSkyX now handle several unsafe cases. A park that times out is now actively stopped instead of being left running, and a slew that ends far from its target is reported as a failure rather than a success. Syncs that would shift the pointing by more than 5 degrees are refused, and a stop that failed is retried after 10 seconds instead of 5 minutes. Slews may now report \"still moving\" slightly longer while the driver confirms the mount has come to rest. These changes have been tested only against a simulated TheSkyX, not real hardware.",
+      "category": "fix",
+      "summaryHash": "8423d31daa34eb68a704f69fabb87d43dbb698ce"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2649,
