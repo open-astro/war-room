@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T06:18:31.744Z",
+  "generatedAt": "2026-11-24T06:28:23.767Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "Fixes an automated test for the SynScan telescope's stop command that failed now and then on the project's build machines, holding up changes to the 6.0 release line. The test used a simulated clock and moved it forward too early, before the stop command had even started, so the stop seemed to take over 5 seconds when it really took well under the allowed 1.5 seconds. The test now moves the clock forward only while the stop command itself is waiting. The same fix was applied to a second, similar test, and the actual telescope driver was not changed.",
+      "category": "tests",
+      "summaryHash": "740fed0f1bb8f95023bf939e224a11855718eaed"
     },
     {
       "repo": "open-astro/AlpacaBridge",
