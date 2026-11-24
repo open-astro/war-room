@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T08:16:55.833Z",
+  "generatedAt": "2026-11-24T09:17:43.474Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "The Celestron CGX mount driver now watches every telescope move to a target and stops the mount if either axis starts heading away from where it should go. On the real mount, a move to a southern target sent the declination axis the long way round, over the pole and toward the ground, which risks hitting the pier when a telescope is attached; now such a move is stopped within a small fraction of a degree and reported as an error. This is a safety stop, not a cure: those targets still cannot be reached, and the related issue stays open until tests on the real mount show how the controller picks its direction. The change also adds a simulated mount that reproduces the wrong-way behavior, plus new tests and updated notes for developers.",
+      "category": "fix",
+      "summaryHash": "bb577f955cd9d4fc40efa1d09718c1cddc4871a8"
     },
     {
       "repo": "open-astro/AlpacaBridge",
