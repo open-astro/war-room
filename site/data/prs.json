@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T02:22:05.718Z",
+  "generatedAt": "2026-11-24T03:21:12.046Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2646,
+      "title": "Celestron CGX: trust a home reference only from a seen search, and refuse below-horizon GOTOs (#2640)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2646",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T02:48:37Z",
+      "additions": 655,
+      "deletions": 25,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Celestron CGX mount driver is now more careful about knowing where the mount is before it moves. It trusts a \"home\" position only if it actually saw the mount search for home, it forgets its position if a homing move is interrupted, and it now refuses any move that would point the telescope below the horizon or past safe limits before anything moves. This follows a real test where an interrupted homing sequence led the mount to swing the telescope toward the ground, risking a collision with the pier. The fix has only been checked against a simulated mount so far; a repeat test on real hardware is still pending, and the PR says it has not yet explained why the mount moved the wrong way in that test.",
+      "category": "fix",
+      "summaryHash": "c9a706db7d98322ce793bda352eb5dc2fa4a97b5"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2645,
+      "title": "Serve the OnStep telescope state through util::PolledState (#2495)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2645",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T02:47:43Z",
+      "additions": 433,
+      "deletions": 338,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope driver now uses the same shared system as the other drivers for checking the mount's status every second and deciding when the connection has failed. As a result, a mount that stops answering is treated as disconnected 30 seconds after its last good reply, about 3 seconds sooner than before and in line with the other drivers. There are small behaviour changes: only the regular once-a-second check now decides whether the connection is faulty, and a mount that does not answer at all when connecting now connects without an error but reports its status as not available until it responds. Several tests and docs were updated to match.",
+      "category": "refactor",
+      "summaryHash": "29f8b37eed4a6d8fc0a553d057e521fc31de211a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2644,
