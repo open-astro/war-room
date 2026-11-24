@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T22:25:38.642Z",
+  "generatedAt": "2026-11-24T00:24:00.613Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2638,
+      "title": "Fix four XS issues: zizmor 1.33.1, Falsified-by None, CaptureSession settings lock, SkyWatcher floor case",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2638",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-24T00:13:29Z",
+      "additions": 79,
+      "deletions": 11,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a camera problem that affected every camera driver. Right after a picture finished, changing one setting and then another (such as horizontal and vertical binning) could wrongly fail with \"cannot change camera settings during an exposure\". The PR also bundles three smaller internal fixes: a SkyWatcher mount test that failed at random was made reliable, a project check now accepts \"None\" when a change adds no new tests, and a workflow security scanner was updated to a newer version, with one known, reviewed warning marked as accepted.",
+      "category": "fix",
+      "summaryHash": "849a773e149f1127cf6cee12469bdb74cd98e0f2"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2637,
+      "title": "ci: raise the nightly test-optimized bound to 75 minutes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2637",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-24T00:13:29Z",
+      "additions": 6,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The nightly build's full test run now has 75 minutes instead of 40 before it is cut off. On November 23 one test file took much longer to compile, the job ran out of time with no tests failing, and no nightly install package was published. This change gets the nightly package published again. The slow test file itself is not fixed here.",
+      "category": "ci",
+      "summaryHash": "f91c4c72858e4de0f33812077b3be53b2a48f5b6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2639,
+      "title": "Record the CGX Dec reversal take-up as a qualification limit (#2044)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2639",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T00:09:02Z",
+      "additions": 106,
+      "deletions": 26,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Documentation-only change for the Celestron CGX mount. A known quirk was previously listed as unresolved and is now recorded as a known limit with its cause: the first north-south guiding nudge after the mount changes direction moves slightly too far, because of mechanical slack in the gears. The driver does not correct for this. Users are advised to use their guiding software's slack (backlash) compensation or to guide in one north-south direction only. New measurements from the November 22 test session were added as evidence.",
+      "category": "docs",
+      "summaryHash": "9451064acd843299b41d59363421f7f5a6e93d43"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2636,
+      "title": "ci: add SECURITY.md, pin the review CLI by sha256, check vendored binaries",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2636",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-23T23:54:06Z",
+      "additions": 352,
+      "deletions": 20,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Adds a security policy so researchers can report vulnerabilities privately. Private reporting is still switched off in the repository settings, so an admin must enable it before the reporting link works. The PR also tightens two weak spots in the build system. The automated review bot now downloads a pinned copy of its tool and checks its fingerprint (checksum) instead of running an unchecked install script. CI now fails if any of the bundled third-party hardware SDK files changes without being recorded.",
+      "category": "ci",
+      "summaryHash": "f8cb9c8ae1999db34d0a62430bf0092573bdbf6f"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2619,
