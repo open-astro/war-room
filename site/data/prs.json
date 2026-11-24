@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T00:24:00.613Z",
+  "generatedAt": "2026-11-24T01:22:54.367Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2641,
+      "title": "Advance the INDI OnStep baseline to 827e4cdf (#2624)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2641",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T00:33:36Z",
+      "additions": 3,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is internal bookkeeping with no change to how the software behaves. The project keeps track of which version of an outside telescope driver (from the INDI project) its own OnStep mount support was originally based on. That outside driver recently received three fixes, and the team checked each one and found that AlpacaBridge already handles those cases correctly. So this update simply records the newer version as reviewed and adds a changelog note, which closes the automatic reminder that flagged it.",
+      "category": "chore",
+      "summaryHash": "f1d03e572afa3cf8286b195dd334f4c70e9219ea"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2638,
