@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T21:46:12.841Z",
+  "generatedAt": "2026-11-25T22:34:19.543Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2674,
+      "title": "Add a red night theme to the web UI (#1764)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2674",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-25T22:03:18Z",
+      "additions": 424,
+      "deletions": 37,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The web control page now has a Night button in the header that switches everything to red on black, so operators using a phone at the telescope don't lose their night vision to white text, blue highlights or green status lights. In night mode, status lights also differ by shape (solid when connected, a hollow ring when idle, a square on an error), buttons are drawn as outlines, and the logo turns red. The choice is remembered by the browser and applied before the page appears, so there is no bright flash on load, and the normal look is unchanged. The style sheet changes were too large to review in full here, but the visible code and the new tests match the description.",
+      "category": "feature",
+      "summaryHash": "4d376d989b957a208fd262c5b07c8a2c2cc08769"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2670,
