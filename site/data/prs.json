@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T00:03:54.639Z",
+  "generatedAt": "2026-11-25T07:57:17.249Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2667,
+      "title": "Run the GPhoto exposure in a CaptureSession and report the actual length (#1982)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2667",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-25T07:56:19Z",
+      "additions": 412,
+      "deletions": 336,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "DSLR cameras (Canon, Nikon and Sony) now run their exposures on the same shared exposure-handling code that the Player One, ZWO, SVBONY, ToupTek and QHY cameras already use. This replaces this camera's own one-off version, and it still reports the length the camera actually exposed, such as a held bulb exposure. Users will notice some behavior changes. Starting a new exposure while one is running is now refused instead of stopping and restarting it. Gain, binning and image-area settings can no longer be changed during an exposure. Cancelling while idle no longer throws away a finished picture. This was only tested with a simulated camera, and a check on a real Canon (bulb and mirror lock-up) is still pending.",
+      "category": "refactor",
+      "summaryHash": "5261672ff14959204584fa69eb94616a4895a508"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2666,
+      "title": "iOptron telescope adopts the per-axis motion owner (#2522)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2666",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-25T07:55:25Z",
+      "additions": 200,
+      "deletions": 71,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron mount driver now uses the shared system other mounts already use to decide which command controls each axis of motion. Before, it used its own driver-wide counter for this. This is an internal cleanup and should not change anything users or client software can see. The PR also adds two tests confirming that moving one axis does not interrupt guiding on the other, and that a manual move cancels a pending go-to. Unlike the original plan, guiding pulses do not take control of an axis, which keeps existing behavior unchanged.",
+      "category": "refactor",
+      "summaryHash": "1a71027f99d4571a8cb9001869592b572e70feda"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2665,
