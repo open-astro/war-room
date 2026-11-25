@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T07:57:17.249Z",
+  "generatedAt": "2026-11-25T14:51:27.049Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2671,
+      "title": "Answer a wrong verb on wifi, update, api and buildinfo with 405",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2671",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-25T14:47:18Z",
+      "additions": 267,
+      "deletions": 44,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server's WiFi, software update, server info and build info addresses now give a clear \"wrong request type\" reply when a program asks them for something they don't support, such as trying to change a read-only status page. They also list which request types are allowed. Before, these addresses either quietly treated the wrong request as a normal read or replied \"OK\" with a vague error inside, so a client couldn't tell \"you asked the wrong way\" apart from \"this doesn't exist.\" Addresses that really don't exist keep their old answer, correct requests behave the same, and the built-in web interface was checked to make sure it still works. The code matches the description, and tests and docs were updated too.",
+      "category": "fix",
+      "summaryHash": "ba94e60b329619bf43c7fce8fe8717cec5b9c31d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2667,
