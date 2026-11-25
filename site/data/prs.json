@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T20:47:16.230Z",
+  "generatedAt": "2026-11-25T21:46:12.841Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2670,
+      "title": "Serve the iOptron telescope from a state poll",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2670",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-25T21:13:52Z",
+      "additions": 2340,
+      "deletions": 1346,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron telescope driver now checks the mount in the background four times a second and answers questions about position, tracking, slewing and parking from that saved snapshot, instead of talking to the mount each time an app asks. Apps no longer stall waiting on a slow mount, and a dropped connection is now noticed on its own rather than only when someone happens to ask. One small visible change: after an app turns tracking on or off or changes the tracking speed, the new setting is shown for two seconds instead of briefly flickering back to the old value. The visible code matches the description, though most of the main change was trimmed from what we could see; this finishes a three-part effort and includes many new tests and updated design notes.",
+      "category": "refactor",
+      "summaryHash": "056c0b6c12a50fa578a85e7d86ca2ab440ade208"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2672,
