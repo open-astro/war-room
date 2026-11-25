@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T23:04:58.728Z",
+  "generatedAt": "2026-11-25T00:03:54.639Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2665,
+      "title": "Give raced CGX stress homes enough searching reads for every reader (#2661)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2665",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-24T23:48:37Z",
+      "additions": 42,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a test-only fix for an automated stress test of the Celestron CGX mount that failed now and then when the test machine was busy. The cause was the simulated mount used in testing, not the real driver. When several actions overlapped, the simulated mount reported \"searching for home\" for too brief a moment, so the driver wrongly concluded no search had started. The stress tests now make the simulated mount behave more like real hardware, which keeps reporting the search for seconds; other tests are unchanged, and the code that runs real telescopes is untouched.",
+      "category": "tests",
+      "summaryHash": "086f5f3e9aead7ff3c9d792e02cbe384beb494de"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2664,
