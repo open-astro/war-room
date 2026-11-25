@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T22:34:19.543Z",
+  "generatedAt": "2026-11-25T23:44:30.573Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2199,
+      "title": "One Rig Occupancy register answers every busy question (#2141)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2199",
+      "author": "pauleyj",
+      "base": "master",
+      "mergedAt": "2026-11-25T23:21:39Z",
+      "additions": 389,
+      "deletions": 91,
+      "changedFiles": 31,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The telescope control app now has one shared place that answers \"is something already running on the rig?\", instead of eight separate checks that sometimes disagreed. Before, some actions, such as changing storage, switching profiles, restarting, or rebuilding the image catalog, could slip through while polar alignment, centering, or a stopping sequence was still running. Now they are reliably refused, and the refusal message names what is running. Some routines (autofocus, camera loops, Live View, End Night) are not yet part of this shared check and are planned for follow-up work.",
+      "category": "fix",
+      "summaryHash": "f8316c943d566411561d56d2232ce58dfcb69978"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2198,
+      "title": "Framing box turns the same way as the camera (#2150)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2198",
+      "author": "pauleyj",
+      "base": "master",
+      "mergedAt": "2026-11-25T23:18:47Z",
+      "additions": 238,
+      "deletions": 27,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The framing box drawn on the planetarium sky map was tilted the opposite way from how the camera actually turns. The picture the telescope took was a mirror image of what users had planned, and \"Snap to catalogue angle\" could leave the real frame off the object. The box, the mosaic panels, the session planner preview, and the Snap button now all match the camera, so what you frame is what you get. It also fixes a small marker on the solved-field box that showed the top edge on the bottom; this has not yet been checked on real telescope hardware.",
+      "category": "fix",
+      "summaryHash": "73529e54c88d6ebeb084e4b5570edcb1029a8f67"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2678,
+      "title": "Fix ASIAIR Plus RK3568 DC ports on pwm_gpio_compat",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2678",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-25T23:05:12Z",
+      "additions": 716,
+      "deletions": 98,
+      "changedFiles": 13,
+      "labels": [
+        "bug"
+      ],
+      "summary": "On the ZWO ASIAIR Plus (RK3568 model) running the OpenAstro mainline system image, the four 12 V power ports could not be switched on, and switching them off did nothing. The driver now detects which kind of power-port software the device runs and sends the correct commands for the newer one, while devices on the original ZWO software keep behaving exactly as before. The fix comes with new tests and updated setup docs, though the mainline image itself is new and not yet proven in the field.",
+      "category": "fix",
+      "summaryHash": "8a31e6b32cc447ab61261bd50136db5d219c9fb6"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2674,
