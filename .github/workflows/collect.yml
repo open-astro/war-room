@@ -70,5 +70,17 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+      # GitHub sometimes can't "see" the just-uploaded artifact for a few
+      # seconds, so deploy fails with "No artifacts named github-pages".
+      # Wait a bit first, and retry once if it still fails.
+      - name: Let the uploaded artifact settle
+        run: sleep 15
       - id: deploy
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait before retrying deploy
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 30
+      - id: deploy-retry
+        if: steps.deploy.outcome == 'failure'
         uses: actions/deploy-pages@v4
