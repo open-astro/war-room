@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T14:51:27.049Z",
+  "generatedAt": "2026-11-25T20:47:16.230Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2672,
+      "title": "Make every web UI colour a token (#1764)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2672",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-25T20:33:12Z",
+      "additions": 187,
+      "deletions": 75,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The web control page's colours are now defined in one central place instead of being scattered through the page, so the page looks exactly the same as before. This is groundwork for a red 'night mode' theme, coming in a follow-up change, which helps operators keep their dark-adapted eyes when using a phone at the telescope. A new automated check also stops anyone from adding hard-coded colours in the future. The visible code matches the description.",
+      "category": "refactor",
+      "summaryHash": "b371220692b1102d43e53e9b5a7c20a5b4e094fc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2669,
+      "title": "Release 6.0.0-beta.5",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2669",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-25T20:07:36Z",
+      "additions": 340,
+      "deletions": 3,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This prepares the 6.0.0-beta.5 release for beta testers. It updates the version number and dates, and adds release notes covering recent mount safety fixes: a telescope move that nobody keeps renewing now stops, a mount that lost its connection mid-move is stopped when it reconnects, and a GoTo that ends far from its target or takes too long is now reported as failed. No program code changes here, and the notes say these safety fixes have mostly been tested on simulated mounts so far.",
+      "category": "chore",
+      "summaryHash": "d476cd5466c7c57daf0e3ccab8e5e3e0b282dcb9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2671,
