@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T10:35:07.536Z",
+  "generatedAt": "2026-11-26T11:34:21.078Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2728,
+      "title": "[6.0] util: a TCP lookup with no address and no error is host not found (#2711 follow-up)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2728",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-26T11:33:07Z",
+      "additions": 22,
+      "deletions": 4,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "A small safety follow-up to the earlier ZWO network-connect fix that never made it into the 6.0 release branch. If an address lookup ever comes back with no address and no error, it is now treated as \"host not found\" instead of letting the code read past the end of an empty list. In practice the normal system lookup already reported an error in this case, so only test setups could hit it. A code comment was also corrected to say that only the ZWO and OnStep mount connections use this shared code today, not every mount.",
+      "category": "fix",
+      "summaryHash": "412e38f5df898fb896adf024a67ef66c1f76b5d3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2725,
+      "title": "fix(qhy): swap 3-channel frames from BGR to RGB planes (#2689)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2725",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T10:47:01Z",
+      "additions": 42,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Colour images from QHY cameras now have red and blue in the right places. QHY's documentation says colour pixels arrive as blue, green, red, but the driver copied them as-is, so red and blue were swapped; it now reorders them like the ZWO, SVBONY and Player One drivers already do. This was only checked with a simulated camera, not real hardware, and the author notes the colour path may not even be active today, so the visible effect is uncertain until someone tests a colour QHY camera.",
+      "category": "fix",
+      "summaryHash": "d8e20617414a95c14a58ca0e8756952bb8650c8d"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2713,
@@ -23,9 +59,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "Connecting to a ZWO mount over the network now gives up within about 7 seconds if the mount does not answer, and the error message says why (for example, no answer, host not found, or the system's own reason). Before, a mount that was switched off, at the wrong address or off the network could leave the Connect hanging for about two minutes, blocking the driver, and then fail with no explanation. Pressing Disconnect now also cancels a pending attempt right away, and these failures are logged as routine information rather than errors. The same shared, time-limited connect is now used by ZWO's automatic Wi-Fi detection and by the OnStep mount driver, which also now reports why its connect failed.",
+      "summary": "Connecting to a ZWO mount over the network no longer hangs for about two minutes when the mount is off, unreachable, or at the wrong address. The connection now gives up within 7 seconds, can be cut short by a Disconnect, and reports a clear reason such as \"no answer within 7000 ms\" or \"host not found\". This is built as a shared piece that ZWO's auto-detect Wi-Fi check and the OnStep mount connection also use now, with the other mounts planned to move to it later. The failure messages are also logged more quietly so a client retrying a dead address does not flood the logs with errors.",
       "category": "fix",
-      "summaryHash": "07bd93a8550c5c6424c7536fd43cbcd0a8cf7179"
+      "summaryHash": "79c76e601a17ffa5cd98685fd561f3933d1b29a8"
     },
     {
       "repo": "open-astro/AlpacaBridge",
