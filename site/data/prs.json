@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T09:36:01.439Z",
+  "generatedAt": "2026-11-26T10:35:07.536Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2713,
+      "title": "fix(zwo): bound the explicit network Connect and say why it failed (#2711)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2713",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-26T10:05:56Z",
+      "additions": 701,
+      "deletions": 112,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Connecting to a ZWO mount over the network now gives up within about 7 seconds if the mount does not answer, and the error message says why (for example, no answer, host not found, or the system's own reason). Before, a mount that was switched off, at the wrong address or off the network could leave the Connect hanging for about two minutes, blocking the driver, and then fail with no explanation. Pressing Disconnect now also cancels a pending attempt right away, and these failures are logged as routine information rather than errors. The same shared, time-limited connect is now used by ZWO's automatic Wi-Fi detection and by the OnStep mount driver, which also now reports why its connect failed.",
+      "category": "fix",
+      "summaryHash": "07bd93a8550c5c6424c7536fd43cbcd0a8cf7179"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2723,
@@ -23,9 +41,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "An audit of the project's written design rules found places where the code broke them, so this change fixes five such problems across several devices. iOptron mount slews no longer wait on an older slew, several Player One and ToupTek accessories now report a lost connection correctly, the web server's protection against requests from other websites now covers every device change, device names lose bracketed extras more reliably, and an SVBONY camera's image readout is now stopped by the safety timer when no one is checking on it. It also tightens three automated checks, corrects the design records so they match the code, and adds a weekly check that flags records pointing at follow-up issues that have already been closed. Only part of the code changes was visible for review, so the device fixes are taken from the description.",
+      "summary": "An audit of the project's written design rules found places where the code broke those rules, and this change fixes five of them. A newer iOptron slew now takes over from an older one without waiting for it to finish. Several Player One and ToupTek devices now correctly report a lost connection. The web server's check that blocks requests from other websites now covers every device change request, not just a few telescope ones. Device names with stray brackets are cleaned up properly, and SVBONY camera image readout now stops on its own when no app is checking on it. It also tightens three automated checks, corrects the rule documents so they match the code, and adds a weekly check that flags rules still marked unfinished whose tracking issue has been closed. The remaining known gaps are left open and tracked as separate issues.",
       "category": "fix",
-      "summaryHash": "f97849129b267d1a34884fbeb017305c7bab83aa"
+      "summaryHash": "9ce35185b4bca6898bc2710ed323d359f7156d95"
     },
     {
       "repo": "open-astro/openastro-ara",
