@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T11:34:21.078Z",
+  "generatedAt": "2026-11-26T12:33:18.105Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2726,
+      "title": "fix(qhy): bound abort and disconnect during an exposure; mark the ZWO camera adopted in 0020 (#2721)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2726",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T12:03:05Z",
+      "additions": 174,
+      "deletions": 17,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Stopping or disconnecting a QHY camera in the middle of a long exposure no longer hangs until the exposure finishes. It now responds within about a tenth of a second, because the software checks every 100 ms whether the exposure is still running instead of waiting blindly for the image. If the stop comes while the image is already being transferred off the camera, it still waits for that transfer to finish. The change has only been tested with simulated cameras, not a real QHY camera. For ZWO cameras the code itself is unchanged: a measurement on real hardware showed the final image step there takes only about 10 ms, so the notes and design records were updated to treat it as already acceptable.",
+      "category": "fix",
+      "summaryHash": "43e263a7dc8c4f4c01aa46df7316932b09f97ba1"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2728,
