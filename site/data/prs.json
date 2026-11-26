@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T06:38:35.657Z",
+  "generatedAt": "2026-11-26T09:36:01.439Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2723,
+      "title": "Decision-record audit: fix five rule breaks, tighten three checks and correct the records (#2716)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2723",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T09:35:06Z",
+      "additions": 632,
+      "deletions": 164,
+      "changedFiles": 47,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "An audit of the project's written design rules found places where the code broke them, so this change fixes five such problems across several devices. iOptron mount slews no longer wait on an older slew, several Player One and ToupTek accessories now report a lost connection correctly, the web server's protection against requests from other websites now covers every device change, device names lose bracketed extras more reliably, and an SVBONY camera's image readout is now stopped by the safety timer when no one is checking on it. It also tightens three automated checks, corrects the design records so they match the code, and adds a weekly check that flags records pointing at follow-up issues that have already been closed. Only part of the code changes was visible for review, so the device fixes are taken from the description.",
+      "category": "fix",
+      "summaryHash": "f97849129b267d1a34884fbeb017305c7bab83aa"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2203,
+      "title": "Move Admission 2/2: position limits bind every asker except safety moves (#2140)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2203",
+      "author": "pauleyj",
+      "base": "feat/ara-2139-move-admission",
+      "mergedAt": "2026-11-26T09:21:11Z",
+      "additions": 460,
+      "deletions": 142,
+      "changedFiles": 19,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The lowest-altitude and counterweight limits a person sets now protect the telescope during automated work too, not only when the person presses GoTo themselves. Automated GoTos, centering moves and meridian flips are now refused if they would break those limits, and the refusal comes with a clear warning. Safety parks still always go through. Park and Find Home requested by a person are now refused while another routine is using the mount, and Find Home is refused while the mount is parked. The flip check now also respects a custom horizon, not just the basic minimum altitude.",
+      "category": "feature",
+      "summaryHash": "6e3b49ad24e85bbf7a372a06e75254120f69f640"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2724,
+      "title": "Fix iOptron poll-race test flakes (#2682)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2724",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T09:09:52Z",
+      "additions": 18,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix for iOptron mount tests that failed now and then in the automated checks. The tests sometimes moved their simulated clock forward before the mount's background status check was ready, so that step was missed. They now wait until it is ready. No change to how the actual mount driver works.",
+      "category": "tests",
+      "summaryHash": "06df71cc35532aa4f8f4744d77cfe9c0458ea425"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2715,
+      "title": "[6.0] Tests: forward the gphoto version read outside LockedGPhotoSDK's shared mutex (backport #2149)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2715",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-26T08:58:16Z",
+      "additions": 71,
+      "deletions": 14,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix copied to the 6.0 release line from a change already on the main line. A test helper for gphoto cameras could make a camera check look slow while a connection was opening, which made unrelated pull requests on the 6.0 line fail at random. The helper now reads the version without waiting on the connection, and a new test makes sure it stays that way. No product code changes.",
+      "category": "tests",
+      "summaryHash": "bb359b86d7cb9c1f10336532035f01bfee03ad1a"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2201,
