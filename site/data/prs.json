@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T12:33:18.105Z",
+  "generatedAt": "2026-11-26T21:25:49.383Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2731,
+      "title": "OnStep telescope adopts the per-axis motion owner (#2522)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2731",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-26T20:54:49Z",
+      "additions": 227,
+      "deletions": 42,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The OnStep telescope driver now uses the same shared system as the other mounts for keeping track of which movement is in charge, replacing its own one-off bookkeeping. In practice, the driver now remembers that a slew, park, or home is still running until the mount reports it has finished. It refuses guiding pulses during that time. This fixes a gap where a guiding pulse could slip through while an older OnStep 4.x mount was homing, because those mounts report homing differently. A command the mount rejected or never received no longer blocks guiding afterwards, and the code changes match what the description says.",
+      "category": "fix",
+      "summaryHash": "25eb826be1109ad442e8a56f0f78703c2596a348"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2733,
+      "title": "Run the remotealpaca ObservingConditions fake ConformU row (#2696)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2733",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-26T20:51:27Z",
+      "additions": 271,
+      "deletions": 8,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated test pipeline now runs the official ASCOM compatibility checker against a simulated version of the Remote Alpaca weather-conditions device. That device was previously only checked by hand on real equipment. It passed with no problems, so any future change to that driver will now be checked automatically. This is test, build-pipeline, and documentation work only, and the driver itself is unchanged.",
+      "category": "ci",
+      "summaryHash": "96406d9f64b434f09ef3ea6dc19f11fe2f56419a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2726,
