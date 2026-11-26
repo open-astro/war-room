@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T23:44:30.573Z",
+  "generatedAt": "2026-11-26T00:43:46.608Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2200,
+      "title": "Stop ladders end routines through Rig Occupancy, and a stop is confirmed (#2142)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2200",
+      "author": "pauleyj",
+      "base": "master",
+      "mergedAt": "2026-11-26T00:25:07Z",
+      "additions": 704,
+      "deletions": 141,
+      "changedFiles": 29,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a safety gap where a telescope centering job started outside an imaging sequence could keep running after Emergency Stop, a safety park, a fault park, or End Night and the unattended shutdown, and slew the mount again. All four stop paths now end every running routine through one shared list of what is using the equipment, so centering and polar alignment are both stopped before the mount is parked or halted. If a centering fails to stop, Emergency Stop now reports it as a failed step. The code matches the description; most other routines such as autofocus are not yet on the shared list and are planned for a follow-up change.",
+      "category": "fix",
+      "summaryHash": "fd6a65da15a6b7d7fcf8730bbbbc3609c6bffb75"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2199,
