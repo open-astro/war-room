@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T21:25:49.383Z",
+  "generatedAt": "2026-11-26T22:25:00.430Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,96 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2736,
+      "title": "Add the remotealpaca SafetyMonitor proxied device (#1753 slice 4)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2736",
+      "author": "joeytroy",
+      "base": "main",
+      "mergedAt": "2026-11-26T22:09:31Z",
+      "additions": 1876,
+      "deletions": 559,
+      "changedFiles": 40,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server can now pass along a safety monitor from another Alpaca server, the device an observatory checks before opening its roof. If the connection to that other server is lost, the safety monitor reports \"not safe\" instead of an error, so a broken link can never let the roof open. The shared connection handling was first moved out of the existing weather-conditions proxy so both device types reuse it, and the web setup form, documentation and project rules were updated to match. It has only been tested against simulated devices, not real hardware.",
+      "category": "feature",
+      "summaryHash": "1c0a06ce5645ca5c31d657f9fbaeefca04034f99"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2732,
+      "title": "Make the WandererAstro cover fake follow open and close (#2694)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2732",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-26T22:00:41Z",
+      "additions": 249,
+      "deletions": 14,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The simulated WandererAstro telescope cover used in automated testing now actually opens and closes at about the speed of the real cover, instead of staying frozen. Before, the standard compatibility check timed out waiting for it. That check now passes, so changes to this cover's driver get automatic compatibility testing on every pull request. Only test tools and automation settings changed, not the driver itself.",
+      "category": "tests",
+      "summaryHash": "069c0b9df9141b8c1ed3b974a55edcf0180d0905"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2729,
+      "title": "Move three mount MoveAxis caps onto the shared motion guard",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2729",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T21:56:27Z",
+      "additions": 1168,
+      "deletions": 343,
+      "changedFiles": 20,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Three telescope mount drivers (iOptron, SynScan and Sky-Watcher) automatically stop a manual axis movement that nobody renews within 60 seconds. They now share one tested version of that safety stop instead of each keeping its own copy. Some behavior changes slightly: each axis is now timed and stopped on its own, and if a mount ignores the stop it is retried up to three times and then reported as an error rather than retried forever. Similar changes for the remaining mount drivers are planned in later pull requests.",
+      "category": "refactor",
+      "summaryHash": "bc4cf9b73715546bbd762471aba3704a127e0c3f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2737,
+      "title": "Cache the ConformU tarball and retry its download in the fake CI rows",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2737",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T21:42:21Z",
+      "additions": 21,
+      "deletions": 7,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal automated-testing change. The compatibility test jobs now keep a saved copy of the testing tool and retry its download a few times if GitHub briefly fails. This should mean fewer failed test runs that someone has to restart by hand.",
+      "category": "ci",
+      "summaryHash": "a0a8fb56eb72227bca2b6388c1b666fdf977df71"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2730,
+      "title": "Fix SynScan stepped-call helper aging the paused poll frame",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2730",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T21:30:57Z",
+      "additions": 64,
+      "deletions": 6,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal test fix. A test helper moved simulated time forward even while the code under test was waiting on something else. On slow test machines, that sometimes made a SynScan mount test wrongly report a lost connection. The helper now moves simulated time only when the code is actually waiting on it, which fixes that intermittent failure.",
+      "category": "tests",
+      "summaryHash": "a05b9ad5244c40a9f0bf4925d00ce88441908895"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2731,
