@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T23:20:10.330Z",
+  "generatedAt": "2026-11-26T23:25:32.390Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -23,9 +23,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This brings the recent 6.0 beta fixes into the main development line, so ZWO and OnStep mounts connected over the network now give up within a set time if the mount does not answer. Before, a connect to an unreachable mount could hang for about two minutes. The connection now fails quickly with a clear reason, such as no answer, host not found, or connection refused. For OnStep, the step that looks up the mount's network name is now covered by that time limit too, which it was not before, though this has only been tested in software and not on a real OnStepX over Wi-Fi. The description also mentions a camera version fix from the beta line, but no change for it appears in the code shown here.",
+      "category": "fix",
+      "summaryHash": "3a38231c2166b32d6330dab1c6d68bce62ea8a7b"
     },
     {
       "repo": "open-astro/AlpacaBridge",
