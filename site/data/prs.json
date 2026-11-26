@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T00:43:46.608Z",
+  "generatedAt": "2026-11-26T05:39:20.862Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,40 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2684,
+      "title": "Wait for the iOptron poll to park before latch_by_polls steps",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2684",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T05:14:49Z",
+      "additions": 5,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix: a set of automated tests for the iOptron telescope driver sometimes failed at random because they started simulating a connection fault before the driver's background checks were ready. The tests now wait for those background checks to be ready first, which should stop the random failures that were blocking unrelated changes from merging. The driver itself is not changed. The author could not run the tests locally and relied on the project's automated checks.",
+      "category": "tests",
+      "summaryHash": "c54aff41e714e86fecc1f49579cbb96ed104de51"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2192,
+      "title": "Polar Align: Home, Start, adjust, Done — timed turns judged by the plate solves, no checklist",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2192",
+      "author": "joeytroy",
+      "base": "stable/1.0",
+      "mergedAt": "2026-11-26T04:46:40Z",
+      "additions": 6266,
+      "deletions": 21456,
+      "changedFiles": 177,
+      "labels": [],
+      "summary": "Polar Align, the tool that guides you to line the mount up with the celestial pole, is now one simple flow: send the mount Home, press Start, adjust the knobs with the live readout, press Done, and the app sends the mount Home, measures again to check the result, and returns it Home. The mount turns are now timed, and the star-photo position fixes judge whether a turn worked, instead of the mount's own position reports, which were slow over Wi-Fi and caused every one of 15 attempts on a real mount to fail. To get there, this removes the start checklist, the confirmation steps, \"Move to start position\", the Rough and Check options and most of the earlier safety checks, though a parked mount, a missing site latitude and a mount clock problem still block Start. Only part of the code diff was visible, so the full rewrite could not be checked against the description in detail.",
+      "category": "feature",
+      "summaryHash": "ef8c6465d9f49d836b215bede1c5dc1c1274c1b2"
+    },
     {
       "repo": "open-astro/openastro-ara",
       "number": 2200,
