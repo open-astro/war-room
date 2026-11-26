@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T22:25:00.430Z",
+  "generatedAt": "2026-11-26T23:20:10.330Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2738,
+      "title": "Merge stable/6.0 into main after the #2711 connect fixes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2738",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-26T22:39:32Z",
+      "additions": 724,
+      "deletions": 136,
+      "changedFiles": 14,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2736,
