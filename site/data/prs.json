@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T02:21:32.482Z",
+  "generatedAt": "2026-11-27T04:19:51.829Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2745,
+      "title": "Fix Gemini focuser fake ConformU report to the arm64 run",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2745",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T03:40:06Z",
+      "additions": 105,
+      "deletions": 102,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a record-keeping correction with no change to how the software behaves. An earlier change saved a test report for the Gemini focuser driver under a name saying it came from the small ARM-based computers the project targets, but the report itself showed it had run on a regular desktop-type processor. This swaps in the correct report from the ARM test run, which passed with no errors or warnings, and fixes the matching release-notes entry so it names the right machine type and lists all seven new test cases. It also corrects one code comment so it mentions temperature compensation.",
+      "category": "docs",
+      "summaryHash": "1512fff6348a7fc1baabfd0f1ac00bba1d43bac2"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2742,
