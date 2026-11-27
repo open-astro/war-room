@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T06:18:06.778Z",
+  "generatedAt": "2026-11-27T09:15:34.140Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2758,
+      "title": "Add the remotealpaca Switch proxied device (#1753 slice 5, #2709)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2758",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T08:46:16Z",
+      "additions": 1671,
+      "deletions": 45,
+      "changedFiles": 28,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The server can now relay a switch device, such as a power box, from another Alpaca server and offer it as one of its own devices, alongside the weather, safety, rotator and filter wheel devices it could already relay. When connecting, it reads the list of switches and their details once, then keeps checking their current settings in the background so users get quick answers even if the other server is slow. Commands to turn switches on or off or change their levels are sent through in the order they were given, and are refused if the connection to the other server has been lost. The setup screen in the web interface gains fields for this new device, and the change comes with tests and updated documentation; the core driver code was not included in the excerpt reviewed, so the details rely on the description and docs.",
+      "category": "feature",
+      "summaryHash": "7a5c7887e1f27921ccb03d1925bd95e49f0f1308"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2752,
