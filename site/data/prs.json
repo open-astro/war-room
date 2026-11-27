@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T04:19:51.829Z",
+  "generatedAt": "2026-11-27T05:19:06.269Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,132 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2757,
+      "title": "Fail the mount link at once on a TCP hangup (iOptron, NexStar, SynScan)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2757",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T05:08:07Z",
+      "additions": 736,
+      "deletions": 214,
+      "changedFiles": 23,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "When an iOptron, Celestron NexStar or SynScan mount connected over Wi-Fi drops or resets its network connection, AlpacaBridge now reports the mount as disconnected right away instead of waiting 30 seconds. A dropped connection cannot fix itself without the user reconnecting, so the wait only delayed the bad news; these three mounts now behave like the others and like a pulled serial cable. Brief network slowness or an unreachable host is still treated as a temporary hiccup. Many existing tests were updated to match, and the docs were refreshed.",
+      "category": "fix",
+      "summaryHash": "d324b80ceee6807d5412684fd2443a6fb2b73cdc"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2756,
+      "title": "Add the remotealpaca FilterWheel proxied device (#1753 slice 5, #2706)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2756",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T04:47:10Z",
+      "additions": 1422,
+      "deletions": 115,
+      "changedFiles": 39,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now pass through a filter wheel from another Alpaca server, so users can control a remote filter wheel (for example, the ASCOM simulators) as if it were attached locally. It reads the filter names and focus offsets on connect, and reports the wheel as moving right after a change is requested. Filter wheel settings were added to the web setup page, along with tests and docs. The change also includes a small tweak to how the remote rotator reports that it is moving, which the description does not mention.",
+      "category": "feature",
+      "summaryHash": "a8b499c7baa03bda2ada7f9ccd75c31dd4393319"
+    },
+    {
+      "repo": "open-astro/openastro-ara",
+      "number": 2202,
+      "title": "Move Admission: one module admits every mount slew, park and home (#2139)",
+      "url": "https://github.com/open-astro/openastro-ara/pull/2202",
+      "author": "pauleyj",
+      "base": "master",
+      "mergedAt": "2026-11-27T04:34:59Z",
+      "additions": 1379,
+      "deletions": 389,
+      "changedFiles": 70,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The safety checks that decide whether the mount may slew, park or go home now live in one place instead of being scattered across many parts of the app, each checking something slightly different. Every move now says who is asking for it (a person, a running sequence, a meridian flip, a safety park, and so on), and one table decides which rules apply. Altitude and counterweight limits now protect the mount for every kind of move except emergency safety parks. A person's move is refused while something else is controlling the mount, with a clear message naming what holds it.",
+      "category": "feature",
+      "summaryHash": "e875f56b04cdeed2c1db60baa323a705088b1d33"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2751,
+      "title": "Wrap the RA move in the Sky-Watcher pulse-supersede test and pin it across 0h",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2751",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T04:33:22Z",
+      "additions": 13,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix: a Sky-Watcher automated test failed for a few minutes each day because it did not account for the sky position reading wrapping around from 24 hours back to 0. The test now handles the wrap correctly and is set up to cross that point on every run, so the case is always checked. No change to the driver itself.",
+      "category": "tests",
+      "summaryHash": "748be4322a616f5770b88248409ce35e1603cf19"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2734,
+      "title": "Time the QHY, Player One and SVBONY camera fakes; run the QHY and Player One rows (#2693)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2734",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T04:33:05Z",
+      "additions": 902,
+      "deletions": 21,
+      "changedFiles": 18,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The simulated QHY, Player One and SVBONY cameras used in testing now take real time to finish exposures and guide pulses, like real cameras do, instead of finishing instantly. With this, the official ASCOM compatibility checker (ConformU) now runs automatically for the QHY and Player One cameras, adding test coverage for two more camera drivers. The SVBONY camera is still not run because of a separate issue in its driver. Small fixes to the simulated cameras (pixel size, temperature reading) are included. This is test and build infrastructure only, with no change to the drivers.",
+      "category": "tests",
+      "summaryHash": "92f69f439e36b95aed76edb398363e41ca39abb6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2750,
+      "title": "Step the Sky-Watcher snapshot link-loss tests on the status poll (#2746)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2750",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T04:32:07Z",
+      "additions": 25,
+      "deletions": 4,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only fix for two flaky Sky-Watcher tests about losing the connection, which failed most runs on some build machines and blocked other changes from merging. The tests now wait for the right background task before moving the simulated clock forward. No change to the driver itself.",
+      "category": "tests",
+      "summaryHash": "360ecec0a67c260bd3fd2cc59af917c38593eb71"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2749,
+      "title": "Rotator moves always read IsMoving, one-lock CanReverse, an ordering rendezvous (#2708 follow-up)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2749",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T04:32:07Z",
+      "additions": 136,
+      "deletions": 72,
+      "changedFiles": 10,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2745,
