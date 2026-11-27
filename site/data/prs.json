@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T05:24:39.423Z",
+  "generatedAt": "2026-11-27T06:18:06.778Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2752,
+      "title": "Move the SynScan and NexStar ConformU fakes on the shared mount model",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2752",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T05:33:19Z",
+      "additions": 1242,
+      "deletions": 12,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is test-only work. The simulated Sky-Watcher SynScan and Celestron NexStar hand controllers, used to check the mount drivers against the standard ASCOM conformance tool (ConformU) without a real telescope, now behave more like real mounts: they report slewing for a while before arriving at a target, accept a sync to a new position, follow the sky while tracking, and move when told to. As a result, the SynScan conformance check now runs automatically in CI. The NexStar check stays switched off because two real driver problems remain, one of which (turning tracking on while the mount is parked is not refused) is recorded as a known failing test. The saved SynScan report is labelled as an arm64 run but actually came from a regular Intel/AMD machine, and is a placeholder until CI replaces it.",
+      "category": "tests",
+      "summaryHash": "5966c7f38f315609b977d87157fa547ce3c4cb09"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2757,
