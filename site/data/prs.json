@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T05:19:06.269Z",
+  "generatedAt": "2026-11-27T05:24:39.423Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -131,9 +131,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "This fixes two problems found after the recent work that lets the bridge pass through a rotator from another Alpaca server. Any move to a set angle now always reports the rotator as moving right away. Before, a move to the last angle the bridge had seen could report \"not moving\" while the rotator was actually turning, because that angle can be up to a minute out of date. Asking whether the rotator can reverse direction also no longer fails with an error when someone disconnects at the same moment. The tests that check commands arrive in the right order now catch a missing ordering safeguard every time, instead of relying on a short time window that could hide the problem on a slow machine.",
+      "category": "fix",
+      "summaryHash": "2436865211764c96cd61d7ff6feb6a7760f1057d"
     },
     {
       "repo": "open-astro/AlpacaBridge",
