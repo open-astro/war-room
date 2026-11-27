@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T23:25:32.390Z",
+  "generatedAt": "2026-11-27T01:22:29.359Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2740,
+      "title": "Test that iOptron DeviceState is empty while a fault is latched",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2740",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T01:13:33Z",
+      "additions": 8,
+      "deletions": 1,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Test-only change that tightens an existing check for the iOptron telescope driver. When the driver has hit a communication fault, the test now confirms that the telescope's combined status report comes back completely empty, rather than only checking that one item (sidereal time) is missing. This means a future bug that lets stale data slip through during a fault would be caught. No behavior changes for users; a changelog note was also added.",
+      "category": "tests",
+      "summaryHash": "7e3663aeacc9202c09f19b3c108edeabe26e0b1a"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2738,
