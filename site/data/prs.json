@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T11:14:04.133Z",
+  "generatedAt": "2026-11-27T12:13:05.924Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2776,
+      "title": "Fix iOptron SideOfPier and DestinationSideOfPier after a Sync",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2776",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-27T11:44:12Z",
+      "additions": 90,
+      "deletions": 3,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For iOptron telescope mounts, the server now correctly reports which side of the mount's pier the telescope is on, and which side it will end up on after a move, even after the user has done a Sync to correct the pointing. Before this fix, a Sync near the overhead meridian could make both answers name the wrong side. That matters because astronomy software uses these answers to avoid the telescope or camera hitting the tripod. The change was checked with automated tests only, not on a real mount.",
+      "category": "fix",
+      "summaryHash": "8c4c45f924ab66ec35ac291c7ff4cdb313731e92"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2772,
+      "title": "Fix PolledState losing a link that answers every poll",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2772",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-27T11:21:23Z",
+      "additions": 74,
+      "deletions": 5,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a bug where a healthy device could be wrongly reported as disconnected after about 30 seconds if the user's software kept sending changes to it very often. This affects several focusers and some Celestron and SynScan telescopes. The device now counts as still connected as long as it keeps answering, and a device that really stops answering is still marked as lost after the same 30 seconds. The author notes that the Sky-Watcher telescope driver may have the same problem, but it is not changed here.",
+      "category": "fix",
+      "summaryHash": "1213b46b3a3800557ce9961140ef9c5288194d24"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2741,
