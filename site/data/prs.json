@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T12:13:05.924Z",
+  "generatedAt": "2026-11-27T13:12:41.066Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2779,
+      "title": "ci(conformu-fake): a comment-only C/C++ edit selects no row",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2779",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T13:02:39Z",
+      "additions": 47,
+      "deletions": 2,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated compatibility test run no longer starts when a pull request only edits comments or blank lines in C/C++ code files. Before this, a one-line comment fix could start all 33 test jobs, about 102 minutes of build-machine time per push. Real code changes still start the right tests, and the nightly run still tests everything, so anything missed is caught within a day.",
+      "category": "ci",
+      "summaryHash": "6961c94d6384950150abb80d5c8accad4d2a1aef"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2754,
+      "title": "Add the remotealpaca Focuser proxied device (#1753 slice 5, #2707)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2754",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T12:48:25Z",
+      "additions": 1416,
+      "deletions": 50,
+      "changedFiles": 29,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now pass through a focuser from another Alpaca server, so clients can control a remote focuser, such as the ASCOM simulators, as if it were local. It works like the other pass-through devices: it serves the last known readings if the connection gets slow, keeps move targets within the focuser's limits, and still sends a Halt (stop) command when the connection is having problems. The change also adds a Focuser section to the web setup page, plus tests and documentation. It has only been tested against simulated devices so far.",
+      "category": "feature",
+      "summaryHash": "087b4521c7f7f1616b5b55139fefd07d94abb63c"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2774,
+      "title": "Move ZWO AM MoveAxis cap onto the shared motion guard",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2774",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T12:30:21Z",
+      "additions": 475,
+      "deletions": 70,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ZWO AM mount now uses the same shared safety timer as the other mount drivers to stop a manual axis movement that no client renews within 60 seconds. Before, the driver sent one stop command and never checked that it worked. Now it confirms the mount actually stopped, tries up to three times, and reports an error if the mount keeps moving. Stopping one axis also no longer stops the other axis. It has not yet been tested on real hardware.",
+      "category": "fix",
+      "summaryHash": "b5f72c81e825bc9dacf21c4b745a1796a5ea0d79"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2773,
+      "title": "Add a shared camera frame layout module for five cameras",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2773",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T12:30:21Z",
+      "additions": 405,
+      "deletions": 372,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Five camera brands (ZWO, SVBONY, Player One, ToupTek/Altair and QHY) each had their own code for turning raw camera data into an image, and this change replaces those copies with one shared piece of code that has its own tests. Camera images should look exactly the same as before. One small behavior change: Player One now rejects image data that is too short, as the other brands already did. The description says no existing tests changed, but one ToupTek test file was edited.",
+      "category": "refactor",
+      "summaryHash": "ae80414a755b258bcd8abf727d0976b5466324bc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2776,
