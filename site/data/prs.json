@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T14:11:35.699Z",
+  "generatedAt": "2026-11-27T15:10:39.752Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2789,
+      "title": "test(celestron): wait for the MoveAxis cap waiter in clock-trust cases",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2789",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T14:25:33Z",
+      "additions": 12,
+      "deletions": 9,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a flaky automated test for the Celestron telescope driver that was failing at random and blocking unrelated pull requests. The test now waits for the right number of background steps before moving on, after a recent change added one more of them. In the author's stress runs, failures went from 32 in 720 runs to none. Only the tests changed; the telescope driver itself is unchanged.",
+      "category": "tests",
+      "summaryHash": "22dd33e4b726ba5a4aacf7b41de7d9b4656e9fbf"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2777,
+      "title": "docs: move Adoption rosters out of the decision records",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2777",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T14:21:24Z",
+      "additions": 570,
+      "deletions": 393,
+      "changedFiles": 33,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Moves the lists that track which drivers follow each project design rule out of the official decision documents and into their own separate folder, one list per rule. Before, adding a driver to one of these lists counted as editing a decision document, which needed an extra sign-off from a maintainer. Now that sign-off is only needed when a rule itself changes, which should make everyday driver work faster to merge. The automated checks were updated to read the lists from the new place and to flag lists that are misplaced or misnamed. No rules or app behavior change.",
+      "category": "docs",
+      "summaryHash": "6ef799879a4f411b15009649dba8471b3824d46b"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2781,
