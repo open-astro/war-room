@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T01:22:29.359Z",
+  "generatedAt": "2026-11-27T02:21:32.482Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2742,
+      "title": "Add the remotealpaca Rotator proxied device (#1753 slice 5, #2708)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2742",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T01:46:38Z",
+      "additions": 1628,
+      "deletions": 93,
+      "changedFiles": 31,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now pass through a telescope rotator from another Alpaca server, so a user can control that rotator through AlpacaBridge the same way it already handles remote weather and safety devices. It has the same behavior when the connection drops, and an emergency stop still goes through even when the link is unreliable. The change also fixes a shared ordering problem: commands to any remote device now reach it in the order they were sent, so a stop can no longer arrive before the move it was meant to stop. The new rotator has an entry in the web setup form and is covered by new tests, but it has only been checked against simulated devices so far.",
+      "category": "feature",
+      "summaryHash": "6131139364ef530caa5a8b663f3dc303de4eb9a7"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2744,
+      "title": "Show the Authored code badge from an SVG on the badges branch",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2744",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T01:42:31Z",
+      "additions": 96,
+      "deletions": 40,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The \"Authored code\" badge on the project's GitHub front page showed as a broken image, because GitHub's image service timed out when it loaded it. The automated job that updates the line count now also saves a ready-made badge image on the project's badges branch, and the front page shows that saved image. Right after merge, the badge is missing for about 20 seconds until the first update runs. If the badge service is down when the job runs, the previous image stays.",
+      "category": "ci",
+      "summaryHash": "ae894d7f886fae0280b84929551027bc69e9d59b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2743,
+      "title": "Serve Gemini focuser TempComp from the polled state",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2743",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T01:27:19Z",
+      "additions": 291,
+      "deletions": 23,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Gemini focuser now reports whether temperature compensation is on from its regular background check of the device, so a request no longer has to wait for its own trip to the hardware. This fixes slow answers that failed a standard timing test in half of the simulated test runs. Turning the setting on or off shows the new value at once. If the device does not answer this one question, only that value is reported as unavailable, and the driver waits 30 seconds before it asks again. It has been tested only against a simulated focuser, not real hardware.",
+      "category": "fix",
+      "summaryHash": "09d37c01136293df03d9b62653d3e66fb1a6deb9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2740,
