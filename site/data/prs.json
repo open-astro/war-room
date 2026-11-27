@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T09:15:34.140Z",
+  "generatedAt": "2026-11-27T10:14:48.486Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2759,
+      "title": "Add the remotealpaca Telescope proxied device (#1753 slice 5)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2759",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T10:01:46Z",
+      "additions": 3220,
+      "deletions": 58,
+      "changedFiles": 33,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now pass through a telescope mount from another Alpaca server, so users can control, for example, a simulator's mount through AlpacaBridge as if it were a built-in mount. It follows the same safety rules as the built-in mount support: stop commands still go out when the connection is shaky, a lost connection is never reported as the mount having stopped, and a manual axis move is cut off after 60 seconds. The older 'wait until the slew finishes' style of move is deliberately not supported, and some optics settings cannot be changed; clients must use the standard background slews instead. Much of the change is tests and documentation, and the setup web page now lists the telescope option.",
+      "category": "feature",
+      "summaryHash": "e42cd52aa84e006d2f40dc4f7412b28741c809bc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2758,
