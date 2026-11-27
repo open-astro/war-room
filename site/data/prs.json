@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T23:03:50.053Z",
+  "generatedAt": "2026-11-27T23:46:50.843Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2816,
+      "title": "Skip the nightly publish when main changed a workflow; storm remotealpaca cases until their check lands",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2816",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T23:39:47Z",
+      "additions": 73,
+      "deletions": 17,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes two problems that made the nightly test build fail for reasons other than real bugs. If someone changes the project's automation settings while the nightly build is running, GitHub blocks the build from publishing. The build now notices this, skips publishing with a warning instead of failing, and the next night publishes as normal. Separately, some timing-sensitive tests could end before anything happened on the slower nightly test setup; they now retry up to eight times before giving up. The author notes one rare, unexplained test failure that this change does not address.",
+      "category": "ci",
+      "summaryHash": "b2599afd30f81053e3f1540ce21f56f45e961c4d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2814,
+      "title": "Fix SVBONY IsPulseGuiding answering while disconnected or lost (#2792)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2814",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T23:34:41Z",
+      "additions": 94,
+      "deletions": 11,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "SVBONY cameras now report \"not connected\" when a program asks whether a guiding pulse is in progress while the camera is disconnected or has lost its link. Before, the camera answered \"no\" or sometimes \"yes\", which breaks the ASCOM rules the project follows. This also fixes an intermittent test failure that had been bouncing other changes out of the merge line. The author notes that several other camera brands (ZWO, QHY, Player One, ToupTek, Altair, GPhoto) have the same gap, and this change does not fix those.",
+      "category": "fix",
+      "summaryHash": "1b4931c5b84b9a5208acc982e16f77fd4b19a887"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2813,
+      "title": "Bisque telescope: refuse AbortSlew and Tracking=true while parked, and MoveAxis rates outside AxisRates (#2697) (9a of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2813",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T23:34:41Z",
+      "additions": 134,
+      "deletions": 7,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Bisque (Paramount via TheSkyX) telescope driver now refuses three requests that the ASCOM standard says it must reject: stopping a slew while the mount is parked, turning tracking on while parked, and moving an axis faster than the maximum speed the driver advertises. These requests are refused before anything is sent to the mount, while turning tracking off and stopping a park that is still in progress still work. This clears six issues found by the official ASCOM compliance checker. Software that used to send axis speeds above the maximum will now get an error instead of the mount quietly moving.",
+      "category": "fix",
+      "summaryHash": "1cabc3175e5df68a0d6e46cfff2f535e5c0645c9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2797,
+      "title": "Fake ConformU: host the WeeWX ObservingConditions (#2697) (5 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2797",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T23:22:13Z",
+      "additions": 269,
+      "deletions": 6,
+      "changedFiles": 12,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The WeeWX weather station driver is now checked automatically by the official ASCOM compliance tool, using a simulated weather feed instead of a real station. The first run passed with no problems, and any future change to the WeeWX driver or its web connection code will now trigger this check. This is a testing and automation change; nothing changes for users of the driver. The report is from a simulated feed only, not real hardware.",
+      "category": "tests",
+      "summaryHash": "6c0df5ab92e6508826a27db1e85ccaba64125a40"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2791,
@@ -23,9 +95,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": null,
-      "category": null,
-      "summaryHash": null
+      "summary": "AlpacaBridge can now pass through a telescope dust cover and flat-field light panel (a \"CoverCalibrator\") from another Alpaca server, so clients can use it as if it were connected locally. Like the other passed-through device types, it follows the same rules for connecting and for losing the link, and the emergency \"stop the cover\" command still goes through when the connection is having trouble. The web setup page gains fields to configure this device type. It has been tested only against simulated devices, not real hardware.",
+      "category": "feature",
+      "summaryHash": "7e832361c6d0cccf0352fdb18aec1c417a38e58d"
     },
     {
       "repo": "open-astro/AlpacaBridge",
