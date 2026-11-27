@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T22:04:38.618Z",
+  "generatedAt": "2026-11-27T23:03:50.053Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2791,
+      "title": "Add the remotealpaca CoverCalibrator proxied device (#1753 slice 5, #2704)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2791",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T22:04:38Z",
+      "additions": 1648,
+      "deletions": 55,
+      "changedFiles": 28,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": null,
+      "category": null,
+      "summaryHash": null
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2782,
