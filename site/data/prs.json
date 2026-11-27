@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T15:10:39.752Z",
+  "generatedAt": "2026-11-27T22:04:38.618Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,78 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2782,
+      "title": "Verify the iOptron AbortSlew and bounded motion stops",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2782",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-27T21:58:09Z",
+      "additions": 525,
+      "deletions": 6,
+      "changedFiles": 7,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For iOptron mounts, telling the telescope to stop (an abort, the 5-minute safety cutoff, or the automatic stop when a manual move is no longer renewed) is now checked instead of trusted. The driver confirms the mount has actually stopped by watching its position, and resends the stop up to three times within about three seconds. If the mount still keeps moving, it reports an error rather than pretending all is well. This matters because over Wi-Fi some mounts claim to be stopped while still moving; it has been tested only against a simulated mount so far, not real hardware.",
+      "category": "fix",
+      "summaryHash": "cfd5cc8903e4a7aa0fc839364f57a898e6309de5"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2775,
+      "title": "Serve the remotealpaca Telescope UTCDate through UtcOffset and count every other axis in the cap stop (#2710)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2775",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T21:32:17Z",
+      "additions": 155,
+      "deletions": 35,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Two follow-up fixes for the recently added feature that relays a telescope from another Alpaca server. The date and time it reports now use the project's standard shared time-keeping, which does not change the value users see but makes it consistent and testable. It also fixes a false \"stop not verified\" error that could appear when one axis was stopped while this server was manually moving a mount's third axis. Matching tests and documentation updates are included.",
+      "category": "fix",
+      "summaryHash": "b8ad9b0b3f0ee3e28afc77ac3b16e66a1e113b89"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2755,
+      "title": "SVBONY camera PulseGuide returns at once and runs the pulse in a slot (#2735)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2755",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T21:32:17Z",
+      "additions": 735,
+      "deletions": 99,
+      "changedFiles": 13,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Guiding pulses on SVBONY cameras now return immediately instead of making the caller wait for the whole pulse. The pulses are queued and sent in order in the background. The camera's \"is guiding\" indicator stays on until the last queued pulse finishes, and up to three pulses can wait in line before new ones are refused. This lets the simulated SVBONY camera pass the standard compatibility checker, so it now runs in the automated checks. It has only been tested against the simulated camera, since the one real SVBONY camera on record does not support guiding.",
+      "category": "fix",
+      "summaryHash": "aabad673e4e838e9b052664197a98c10b43e5182"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2790,
+      "title": "Fix SynScan repeating a refused or limit-stopped GOTO",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2790",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-27T21:21:43Z",
+      "additions": 418,
+      "deletions": 14,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "SynScan mounts no longer blindly retry a pointing move that ended far from its target. The single automatic retry, added earlier to work around a known handset quirk, now happens only if the mount actually travelled at least three-quarters of the way and the miss looks like that quirk. A move the handset refused, or one a limit stopped partway, now fails right away with a clear reason instead of being sent again into the same problem. The same rule applies to parking; this was tested only on a simulated mount, and the authors note retries will now be rarer, so some short moves that used to succeed on a retry will now fail.",
+      "category": "fix",
+      "summaryHash": "b3d6e178276b64063fb7f4f4a3e1da9c109a4236"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2789,
