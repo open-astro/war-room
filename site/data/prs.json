@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T10:14:48.486Z",
+  "generatedAt": "2026-11-27T11:14:04.133Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2741,
+      "title": "Move OnStep, Bisque and NexStar MoveAxis cap onto the shared guard",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2741",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T10:35:33Z",
+      "additions": 1283,
+      "deletions": 256,
+      "changedFiles": 16,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Three more telescope mount types (OnStep, Software Bisque and Celestron NexStar) now use the project's shared safety timer that automatically stops a manual 'nudge' movement after 60 seconds, instead of each having its own separate version. If a mount ignores the stop, it is now sent three times and then reported as an error rather than retried forever. The change also fixes a few real problems: some OnStep mounts were never stopped at 60 seconds, a failed timer start could leave a mount moving with no limit, and a NexStar 'go home' during a nudge could leave the mount wrongly shown as still moving. The visible code mostly covers tests and documentation, since the main driver changes were cut from the diff, but nothing shown contradicts the description.",
+      "category": "refactor",
+      "summaryHash": "096b39277eb60fd8246b9b6e128551b2812c6818"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2759,
@@ -23,9 +41,9 @@
       "labels": [
         "safe-to-review"
       ],
-      "summary": "AlpacaBridge can now pass through a telescope mount from another Alpaca server, so users can control, for example, a simulator's mount through AlpacaBridge as if it were a built-in mount. It follows the same safety rules as the built-in mount support: stop commands still go out when the connection is shaky, a lost connection is never reported as the mount having stopped, and a manual axis move is cut off after 60 seconds. The older 'wait until the slew finishes' style of move is deliberately not supported, and some optics settings cannot be changed; clients must use the standard background slews instead. Much of the change is tests and documentation, and the setup web page now lists the telescope option.",
+      "summary": "AlpacaBridge can now take a telescope mount that is run by another Alpaca server and offer it as if it were connected locally. Previously this pass-through feature only supported a few simpler devices like weather sensors and rotators. Because a mount physically moves, the pass-through version keeps the same safety rules as directly connected mounts: stop commands still go out over a shaky connection, a lost connection never falsely reports the mount as stopped, and manual nudges are automatically stopped after 60 seconds. A few older, outdated slew commands are intentionally not supported. The change also updates the web setup page, the documentation, and adds tests.",
       "category": "feature",
-      "summaryHash": "e42cd52aa84e006d2f40dc4f7412b28741c809bc"
+      "summaryHash": "70d2c67589df7de82946ec8aab10eeb84a72fa91"
     },
     {
       "repo": "open-astro/AlpacaBridge",
