@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T13:12:41.066Z",
+  "generatedAt": "2026-11-27T14:11:35.699Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2781,
+      "title": "ci: skip build and test jobs when no changed file reaches them",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2781",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-27T13:22:56Z",
+      "additions": 166,
+      "deletions": 9,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal change to the automated checks that run on proposed changes. When a change touches only things that cannot affect the software itself, such as documentation, changelog notes or certain check scripts, the slow build and test jobs are now skipped, saving about 39 minutes of machine time per update on changes like that. Everything is still fully built and tested in the final check before a change is merged, so a wrong skip cannot break the main code. The automated review bot was also updated so it treats one of these deliberate skips as a pass rather than a failure.",
+      "category": "ci",
+      "summaryHash": "cb136264e66320bb950d2c2b9fac836b55723a54"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2779,
