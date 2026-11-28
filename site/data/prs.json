@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T07:57:17.081Z",
+  "generatedAt": "2026-11-28T08:56:28.281Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2832,
+      "title": "Release 6.0.0-beta.6",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2832",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-28T08:53:15Z",
+      "additions": 338,
+      "deletions": 4,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This prepares the sixth beta of AlpacaBridge 6.0 so beta testers can get eleven fixes made since the last beta. Those fixes cover ZWO cameras and mounts, Paramount, SynScan and iOptron mounts, and how the server handles a lost connection. The mount fixes are safety related, which is why the beta goes out now instead of waiting. The changes match the description: only the version number, dates, a code-size badge and the new release notes are updated, with no program changes of its own.",
+      "category": "chore",
+      "summaryHash": "4bf282821c6ed40ba3d63422084cdc4078556f8e"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2829,
+      "title": "fix(zwo): AbortExposure hands the SDK stop to the exposure body (#2721)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2829",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-28T08:23:24Z",
+      "additions": 246,
+      "deletions": 41,
+      "changedFiles": 8,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Cancelling or stopping an exposure on a ZWO camera now responds almost immediately, within about a twentieth of a second. Before, it could hang for up to about three seconds while waiting for the camera's own software to finish stopping. The slow stop now finishes in the background. If a new exposure is requested while that stop is still running, it waits up to two seconds and is then turned down, and disconnecting still waits for the camera to stop before closing it. New automated tests cover the change, and the description notes it has not yet been tried on a real camera.",
+      "category": "fix",
+      "summaryHash": "d550543b6430384af3d5eb4a01f62d97e42cedb3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2828,
