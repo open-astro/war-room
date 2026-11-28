@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T03:01:36.387Z",
+  "generatedAt": "2026-11-28T04:00:39.488Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2826,
+      "title": "Close an SVBONY camera lost during a pulse only after the pulse (#2748)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2826",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T03:34:58Z",
+      "additions": 135,
+      "deletions": 15,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a timing problem in the SVBONY camera driver: if the camera disconnected while a guiding pulse (a small nudge command used to keep the telescope on target) was still running, the driver could shut down its connection to the camera in the middle of that pulse. Now, if a pulse is in progress, the driver waits for it to finish and then closes the connection exactly once. An exposure that runs into the same disconnect also leaves the cleanup to the pulse. The code matches the description, and the fix has only been checked against a simulated camera, not real hardware.",
+      "category": "fix",
+      "summaryHash": "1ee8bb9b3e76775ee428f8a906248748129e72c9"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2794,
