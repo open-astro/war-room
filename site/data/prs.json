@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T23:46:50.843Z",
+  "generatedAt": "2026-11-28T00:04:18.247Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2812,
+      "title": "Remove the Windows branches from AlpacaCore (#2686)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2812",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-27T23:57:49Z",
+      "additions": 129,
+      "deletions": 2259,
+      "changedFiles": 138,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is an internal cleanup that removes about 2,000 lines of Windows-only code from the shared device driver code. That code was never built or run, because the project only runs on Linux single-board computers. Telescopes and other equipment should behave exactly the same, and future changes to how drivers connect will be smaller and easier to review. Alongside the deletion, the PR reformats nearby lines and updates a few developer notes that mentioned Windows.",
+      "category": "refactor",
+      "summaryHash": "7b821ea8a3962e306e279a4d32475ba7bfbf7bcc"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2816,
