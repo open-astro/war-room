@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T08:56:28.281Z",
+  "generatedAt": "2026-11-28T09:55:34.870Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,24 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2833,
+      "title": "Add a send-failure test seam for SynScan and iOptron mounts",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2833",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-28T09:19:57Z",
+      "additions": 612,
+      "deletions": 7,
+      "changedFiles": 9,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This is a testing improvement for the SynScan and iOptron telescope mounts. It adds a way for tests to make a single command to the mount fail while the network connection stays up, which is what happens in real life when a send times out or the network briefly can't reach the mount. With it, the team brought back 15 tests covering how the mounts behave after such failures, for example making sure the server doesn't wrongly report a mount as stopped or guiding. Normal operation is unchanged apart from a tiny extra check on each command sent, and Celestron mounts were left out on purpose.",
+      "category": "tests",
+      "summaryHash": "099d70eb3afb2a68c097797df56719085f5492d3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2832,
