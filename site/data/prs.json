@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T00:04:18.247Z",
+  "generatedAt": "2026-11-28T01:03:16.284Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2815,
+      "title": "remotealpaca Switch: derive a two-state switch's GetSwitch and warn on a slow poll (#2796)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2815",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:00:34Z",
+      "additions": 266,
+      "deletions": 17,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The bridge that relays switches from another Alpaca server now asks that server about half as many questions for simple on/off switches. It works out whether the switch is on from the value it already read, and the answers clients see stay the same. It also logs a single warning per connection when one round of checking takes longer than the chosen check interval, so users know to pick a longer interval. Multi-position switches, and cases where the upstream server reported an error, still ask the upstream directly as before.",
+      "category": "feature",
+      "summaryHash": "67dffc7ac7a8d61fc72f8140050d19225d074ed5"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2803,
+      "title": "Fake ConformU: host the ZWO dew heater, ASIAIR Pro and ASIAIR Plus switches (#2697) (4 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2803",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T00:56:21Z",
+      "additions": 1130,
+      "deletions": 61,
+      "changedFiles": 21,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The automated compatibility checks, which run the standard ASCOM conformance tool against simulated hardware, now cover three more ZWO devices: the camera dew heater, the ASIAIR Pro power switches and the ASIAIR Plus power switches. All three pass. This means future changes to these drivers get checked automatically. To make this work, the simulated ZWO camera was corrected so it reports camera positions the way the real software does, and the test helpers were reorganized. No driver code changed.",
+      "category": "tests",
+      "summaryHash": "5bf35a4c8308739170919833bf5d7fc123475295"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2817,
+      "title": "test: fix SVBONY pulse-removal and QHY late-exposure merge-queue flakes",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2817",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-28T00:04:19Z",
+      "additions": 10,
+      "deletions": 2,
+      "changedFiles": 3,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "This fixes two unreliable tests, one for SVBONY cameras and one for QHY cameras. They sometimes failed because of timing and were blocking unrelated changes from merging. Each test now waits for the right moment before checking its result. This is a test-only change, and no driver behavior changed.",
+      "category": "tests",
+      "summaryHash": "affbcc7d8d9f69f9246cda76142cb11073d238fb"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2812,
