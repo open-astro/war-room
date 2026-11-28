@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T01:03:16.284Z",
+  "generatedAt": "2026-11-28T02:02:29.009Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,186 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2805,
+      "title": "Fake ConformU: host the Bisque telescope on a moving TheSkyX fake (#2697) (9 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2805",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:55:38Z",
+      "additions": 4803,
+      "deletions": 177,
+      "changedFiles": 64,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Bisque (TheSkyX) telescope driver is now run through the automated ConformU compatibility checker in CI, using a simulated mount that actually moves, slews, parks and tracks instead of giving fixed answers. The checker found real problems in the driver, so the check is marked pending rather than active until follow-up work fixes them. This is the last of a nine-part series, and because it was stacked on the earlier parts its diff also carries their changes.",
+      "category": "tests",
+      "summaryHash": "a28e34180418677ebf04da9b14582c940ae8e52f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2821,
+      "title": "iOptron: restore Tracking after a verified dead-man or 300 s cap stop (#2762)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2821",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-28T01:38:23Z",
+      "additions": 170,
+      "deletions": 12,
+      "changedFiles": 4,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "iOptron mounts now go back to the right tracking state after the driver stops them by itself, either because a manual move was left running for 60 seconds or because a go-to was still going after 300 seconds. Before, the mount was left not tracking after those safety stops; now it behaves the same as when a user presses Abort. Tracking is only restored once the stop is confirmed, and if someone changes tracking in the meantime, their choice wins. This has not been tried on real hardware yet.",
+      "category": "fix",
+      "summaryHash": "ea83d99606023bf07a2946e35c6872b11893fd1f"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2810,
+      "title": "Fake ConformU: host the Gemini Cover Lite and Automatic FlatPanel v2 (#2697) (7 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2810",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:33:18Z",
+      "additions": 3450,
+      "deletions": 131,
+      "changedFiles": 46,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Gemini Flat Panel Cover Lite and the Automatic FlatPanel v2 are now checked by the automated ConformU compatibility tool in CI, alongside the Pro model that was already covered. To make this work, the simulated panel learned how these two older models talk, and both passed with no problems. No driver code changed. Because it was stacked on earlier parts of the series, the diff also contains their changes.",
+      "category": "tests",
+      "summaryHash": "26be1d40c6b1163684a50c1401403a005a224582"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2804,
+      "title": "Fake ConformU: host the WandererAstro WandererRotator Mini (#2697) (8 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2804",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:33:18Z",
+      "additions": 3856,
+      "deletions": 166,
+      "changedFiles": 52,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The WandererRotator Mini is now checked by the automated ConformU compatibility tool in CI. Its simulated rotator was renamed and now takes realistic time to turn, can be stopped partway, and can simulate a loss of motor power. It also now tracks angles the way the real device does instead of wrapping them, which had given a wrong reading for some moves. This is test-only work, and the diff also contains changes from the earlier stacked parts of the series.",
+      "category": "tests",
+      "summaryHash": "17dc27ce511a0b76655d05d18cadc4e85c0472f3"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2798,
+      "title": "Fake ConformU: host the iOptron iEFW filter wheel and iCAM camera (#2697) (6 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2798",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:33:18Z",
+      "additions": 2942,
+      "deletions": 106,
+      "changedFiles": 37,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The iOptron iEFW filter wheel and iCAM camera are now checked by the automated ConformU compatibility tool in CI, using simulated devices the project already had. The iCAM is a rebranded Player One camera, so the build setup was adjusted to include Player One support for that check. This part makes no driver or simulator changes of its own; those seen in the diff come from earlier stacked parts.",
+      "category": "tests",
+      "summaryHash": "a581ff6826ac0c2b55ba6fabc06b7ea3a73478b6"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2799,
+      "title": "Fake ConformU: host the QHY integrated filter wheel (#2697) (3 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2799",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:33:17Z",
+      "additions": 4107,
+      "deletions": 171,
+      "changedFiles": 57,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The QHY filter wheel built into some QHY cameras is now checked by the automated ConformU compatibility tool in CI, and it passed. The simulated wheel can now be set to pass through each slot on its way to the target, the way the real hardware reports it, so the check actually exercises the driver's handling of in-transit readings. This is test-only work, and the diff also contains changes from the earlier stacked parts of the series.",
+      "category": "tests",
+      "summaryHash": "640c885ed606e1db42ee8bf79b01af91fbcb79ae"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2802,
+      "title": "Tests: one wait_until in driver_rig.h replaces 29 local predicate waits, with a CI check (#2687)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2802",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:26:11Z",
+      "additions": 1217,
+      "deletions": 1292,
+      "changedFiles": 47,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Internal test cleanup with no change for users. Twenty-nine test files each had their own slightly different \"wait until this becomes true\" helper. This replaces all of them with one shared version, and adds an automated check that stops new copies from appearing. Fixes to flaky waits now only need to be made in one place. One timing-sensitive SynScan test keeps its old, slower checking pace on purpose until a separate race (#2795) is fixed.",
+      "category": "tests",
+      "summaryHash": "e2f0ec388c23485d8f208034362df6d7bbc1926b"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2800,
+      "title": "Fake ConformU: host the ToupTek thermal switch, filter wheel and focuser (#2697) (1 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2800",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:11:09Z",
+      "additions": 1986,
+      "deletions": 72,
+      "changedFiles": 29,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The ToupTek thermal switch, filter wheel and focuser are now checked by the ASCOM conformance tool (ConformU) in CI, using simulated devices instead of real hardware. All three passed cleanly. To make this possible, the simulated filter wheel and focuser now report that they are moving for a short while instead of arriving instantly. Because this PR was stacked on another, its diff also contains the ZWO dew heater and ASIAIR switch work from #2803.",
+      "category": "tests",
+      "summaryHash": "03a64514fc09a7076c5ebb75da4ee5897c908dbd"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2801,
+      "title": "Fake ConformU: host the Player One thermal switch (#2697) (2 of 9)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2801",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:11:07Z",
+      "additions": 2443,
+      "deletions": 82,
+      "changedFiles": 33,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The Player One camera's dew heater and fan switch is now checked by the ASCOM conformance tool in CI, using a simulated device, and it passed with no issues. To make this possible, the simulated device now remembers the heater and fan values it is given and rejects out-of-range values like the real hardware does. Before, it always read back 0. Because this PR was stacked, its diff also carries the ToupTek and ZWO changes from #2800 and #2803.",
+      "category": "tests",
+      "summaryHash": "baf3e9760beefd6380ce249a198b388a67d4e23d"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2820,
+      "title": "test(synscan): pause the status poll in the MoveAxis reset-connection case (#2795)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2820",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-28T01:03:58Z",
+      "additions": 6,
+      "deletions": 0,
+      "changedFiles": 2,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Fixes a SynScan mount test that failed now and then, mostly on busy CI machines. The test now pauses the driver's once-a-second background status check, so that check can no longer reach the dropped connection before the command under test does. Only the test changed, not the driver. The diff does not remove the slower-waiting workaround that #2802 added to this same test for this race.",
+      "category": "tests",
+      "summaryHash": "c732aa1f9a81fe9f5065876b30c06a2da7a097d8"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2815,
