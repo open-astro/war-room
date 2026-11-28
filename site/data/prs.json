@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T06:58:04.975Z",
+  "generatedAt": "2026-11-28T07:57:17.081Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,42 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2828,
+      "title": "Update PMD to 7.30.0 and advance three INDI review baselines",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2828",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-28T07:29:36Z",
+      "additions": 12,
+      "deletions": 9,
+      "changedFiles": 5,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "Routine maintenance with no change to how AlpacaBridge behaves. It updates the code-duplication checking tool used in the automated build checks to a newer version, which includes a security fix in parts of that tool the project does not use. It also marks three upstream telescope-driver files as reviewed, since their recent upstream changes need nothing new here. This clears out four open dependency-tracking issues.",
+      "category": "chore",
+      "summaryHash": "96bf76db8855a58d5f018b4eb980414e75b4d9c7"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2827,
+      "title": "Move the iMate and StellaVita switches onto the shared soft-PWM engine",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2827",
+      "author": "diegopereiran",
+      "base": "main",
+      "mergedAt": "2026-11-28T07:08:06Z",
+      "additions": 683,
+      "deletions": 1959,
+      "changedFiles": 36,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "The power-port controls on the iOptron iMate and ToupTek StellaVita boards now use the same shared code that already runs the ASIAIR boards' power ports, so all four boards rely on one tested piece of code. The board's own separate versions of that code were removed, which cut about 1,300 lines. Port names, defaults and saved settings are kept the same. There are two small behavior changes: a StellaVita port set to read-only is no longer taken over at all, and if a dimming (pulsed power) port fails to update, that port stops and reports an error until the device is reconnected. Most of the actual code changes were trimmed from what was provided, so this summary leans on the description for the details.",
+      "category": "refactor",
+      "summaryHash": "08ec3bedbdd3569228f6579db067c321952e0cf3"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2825,
