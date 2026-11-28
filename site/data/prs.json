@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T02:02:29.009Z",
+  "generatedAt": "2026-11-28T03:01:36.387Z",
   "repos": [
     "open-astro/AlpacaBridge",
     "open-astro/astap",
@@ -9,6 +9,60 @@
     "open-astro/phdlogview"
   ],
   "prs": [
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2794,
+      "title": "Add the remotealpaca Camera proxied device (#1753 slice 5, #2703)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2794",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T02:45:04Z",
+      "additions": 5342,
+      "deletions": 119,
+      "changedFiles": 49,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now pass through a camera from another Alpaca server, so users can take and download images from that remote camera as if it were attached locally. Images are fetched only when a client asks for them, with size and time limits so a large frame does not stall everything else, and the camera's other readings and settings follow the same connection-loss rules as the other pass-through devices. Because this change was stacked on two earlier ones, its diff also includes the pass-through dome and the switch polling improvement from those PRs.",
+      "category": "feature",
+      "summaryHash": "d47e108d076178fdbbafdb26b1e3f3d144f3f162"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2822,
+      "title": "Bisque telescope: Park and FindHome return at once (#2809)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2822",
+      "author": "diegopereiran",
+      "base": "stable/6.0",
+      "mergedAt": "2026-11-28T02:17:42Z",
+      "additions": 431,
+      "deletions": 86,
+      "changedFiles": 6,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "For telescopes controlled through TheSkyX (Bisque), the Park and Find Home commands now return right away instead of making the client wait while the mount moves, which could take up to two minutes. Clients now see that the mount is moving until it finishes, and then whether it parked or reached home, and a failed park or home is reported instead of leaving a call hanging. This brings the driver in line with the current ASCOM standard and was tested only with simulated hardware, not a real mount. It targets the 6.0 release line and will need to be reworked when merged into the main branch.",
+      "category": "fix",
+      "summaryHash": "3a4ae10738c55bbdb44aa423d4eb7f7cc7fcd4a9"
+    },
+    {
+      "repo": "open-astro/AlpacaBridge",
+      "number": 2793,
+      "title": "Add the remotealpaca Dome proxied device (#1753 slice 5, #2705)",
+      "url": "https://github.com/open-astro/AlpacaBridge/pull/2793",
+      "author": "pauleyj",
+      "base": "main",
+      "mergedAt": "2026-11-28T02:02:05Z",
+      "additions": 2285,
+      "deletions": 75,
+      "changedFiles": 32,
+      "labels": [
+        "safe-to-review"
+      ],
+      "summary": "AlpacaBridge can now pass through an observatory dome from another Alpaca server, the first dome support of any kind in the project. Users can open and close the shutter, rotate, park, and home the dome, and the bridge is careful never to report a move as finished until it has fresh confirmation from the remote server. Emergency stop still goes through even when the connection is unreliable. Because this change was stacked on an earlier one, its diff also includes that PR's change, which makes polling of on/off switches cheaper and logs a warning when polling falls behind.",
+      "category": "feature",
+      "summaryHash": "cc7fdc5a2c8a2498fb282751380728d3fcbedaa0"
+    },
     {
       "repo": "open-astro/AlpacaBridge",
       "number": 2805,
